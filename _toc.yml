@@ -1,0 +1,34 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: README
+- file: syllabus
+- file: module_01/README
+  sections:
+  - file: module_01/01_Interacting_with_Python
+  - file: module_01/02_Working_with_Python
+  - file: module_01/03_Numerical_error
+  - file: projects/01_Getting-started-project.md
+#- file: module_02/README
+#  sections:
+#  - file: module_02/01_Cheers_Stats_Beers
+#  - file: module_02/02_Seeing_Stats
+#  - file: module_02/03_Linear_Regression_with_Real_Data
+#  - file: module_02/04_Stats_and_Montecarlo
+#- file: module_03/README
+#  sections:
+#  - file: module_03/01_Catch_Motion
+#  - file: module_03/02_Step_Future
+#  - file: module_03/03_Get_Oscillations
+#  - file: module_03/04_Getting_to_the_root
+#- file: module_04/README
+#  sections:
+#  - file: module_04/01_Linear-Algebra
+#  - file: module_04/02_Gauss_elimination
+#  - file: module_04/03_Linear-regression-algebra
+#- file: module_05/README
+#  sections:
+#  - file: module_05/01_Revisiting_derivatives
+#  - file: module_05/02_Keep_it_steady
+#  - file: module_05/03_Good_Vibrations
+#

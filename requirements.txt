@@ -1,0 +1,4 @@
+jupyter-book==0.10.1
+numpy
+matplotlib
+scipy
