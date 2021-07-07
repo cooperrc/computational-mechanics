@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extra Material: Direct stiffness methof for Finite Element analysis (FEA) &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Getting-started-project.html#b">
+     (b)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Getting-started-project.html#c">
+     (c)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/projects/extra-FEA_material.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/projects/extra-FEA_material.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fprojects/extra-FEA_material.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/main?urlpath=tree/projects/extra-FEA_material.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/projects/extra-FEA_material.md&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Extra Material: Direct stiffness methof for Finite Element analysis (FEA)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combining-multiple-elements">
+   Combining multiple elements
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-matrix-creation">
+   Project Matrix creation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-and-element-arrays">
+     Node and element arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assemble-the-stiffness-matrix">
+     Assemble the stiffness matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-the-inputs-for-the-project">
+   Save the inputs for the project
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution-for-our-fea-problem">
+   Solution for our FEA problem
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#postprocess-fea-results">
+   Postprocess FEA results
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="extra-material-direct-stiffness-methof-for-finite-element-analysis-fea">
+<h1>Extra Material: Direct stiffness methof for Finite Element analysis (FEA)<a class="headerlink" href="#extra-material-direct-stiffness-methof-for-finite-element-analysis-fea" title="Permalink to this headline">¶</a></h1>
+<p>The direct stiffness approach looks at the stiffness of each individual element and adds them to the overall stiffness of the FEA structure. Starting with a single element, show below we have the following relation between forces applied and deformation</p>
+<p><img alt="Single link element with forces applied to both ends" src="../_images/link_elem.png" /></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{F}_{el} = \mathbf{K}_{el}\mathbf{u}\)</span></p>
+<p>where</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{F}_{el}=\left[\begin{array}{c}
+        F_{1x}\\
+        F_{1y}\\
+        F_{2x}\\
+        F_{2y}\end{array}\right]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{u}=\left[\begin{array}{c}
+        u_{1x}\\
+        u_{1y}\\
+        u_{2x}\\
+        u_{2y}\end{array}\right]\)</span>,</p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{K}_{el}=\frac{EA}{l}\left[\begin{array}{cccc}
+        \cos^2\theta &amp; \cos\theta\sin\theta &amp; -\cos^2\theta &amp; -\cos\theta\sin\theta\\
+        \cos\theta\sin\theta &amp; \sin^2\theta &amp; -\cos\theta\sin\theta &amp; -\sin^2\theta &amp;\\
+        -\cos^2\theta &amp; -\cos\theta\sin\theta &amp; \cos^2\theta &amp; \cos\theta\sin\theta\\
+        -\cos\theta\sin\theta &amp; -\sin^2\theta &amp; \cos\theta\sin\theta &amp; \sin^2\theta &amp;\\
+        \end{array}\right]\)</span>.</p>
+<p>For a linear-elastic, small deformation FEA, we assume that the angle <span class="math notranslate nohighlight">\(\theta\)</span> remains constant before/after deformation. So our stiffness matrix, <span class="math notranslate nohighlight">\(\mathbf{K}_{el}\)</span> is constant once the geometry of the simulation is initialized. So, for a single link element that is deformed by <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>, the force that is applied to create that deformation is given by our first equation.</p>
+<p>Consider a single aluminum bar <span class="math notranslate nohighlight">\((E=70~GPa)\)</span>, with cross-section of <span class="math notranslate nohighlight">\(1~mm^2\)</span>, and length of 1 meter. If it is initially at an angle of <span class="math notranslate nohighlight">\(45^{o}\)</span> pinned at one end and stretched 2 mm to along the x-direction, we have the following deformation and stiffness,</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{u}=\left[\begin{array}{c}
+        0\\
+        0\\
+        2\\
+        0\end{array}\right]~mm\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{K}_{el}=70\frac{N}{mm}\left[\begin{array}{cccc}
+        1/2 &amp; 1/2 &amp; -1/2 &amp; -1/2\\
+        1/2 &amp; 1/2 &amp; -1/2 &amp; -1/2 &amp;\\
+        -1/2 &amp; -1/2 &amp; 1/2 &amp; 1/2\\
+        -1/2 &amp; -1/2 &amp; 1/2 &amp; 1/2 &amp;\\
+        \end{array}\right]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sans&#39;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">K</span><span class="o">=</span><span class="mi">70</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">=</span><span class="n">K</span><span class="nd">@u</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[F1x, F1y, F2x, F2y] = &#39;</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[F1x, F1y, F2x, F2y] =  [-70. -70.  70.  70.] N
+</pre></div>
+</div>
+</div>
+</div>
+<p>So to stretch the 1-meter by <span class="math notranslate nohighlight">\(1~mm^2\)</span> link from its initial configuration to the right by 2 mm, it takes a <span class="math notranslate nohighlight">\(\mathbf{F}=70\hat{i}+70\hat{j}\)</span> force and a negative <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> reaction force.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scale factor</span>
+<span class="n">s</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">y0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">x</span><span class="o">=</span><span class="n">x0</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-3</span><span class="o">*</span><span class="n">s</span>
+<span class="n">y</span><span class="o">=</span><span class="n">y0</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-3</span><span class="o">*</span><span class="n">s</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;initial position&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;s-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;final position&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">s</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;forces and deformation of single Al-bar</span><span class="se">\n</span><span class="s1">scale factor = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;forces and deformation of single Al-bar\nscale factor = 10&#39;)
+</pre></div>
+</div>
+<img alt="../_images/extra-FEA_material_7_1.png" src="../_images/extra-FEA_material_7_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="combining-multiple-elements">
+<h1>Combining multiple elements<a class="headerlink" href="#combining-multiple-elements" title="Permalink to this headline">¶</a></h1>
+<p>This method can be extended to multiple, connected bars. We just have to do some extra book-keeping. Let’s consider the 3-bar element that we used in <span class="xref myst">02_Gauss_elimination</span>.</p>
+<p><img alt="Triangular truss" src="../_images/truss.png" /></p>
+<p>We have 3 elements and 3 nodes, so there are 6 degrees of freedom, with 3 constraints. Let’s use 1-m aluminum bars with <span class="math notranslate nohighlight">\(A=1~mm^2\)</span>, but set <span class="math notranslate nohighlight">\(\alpha=\beta=60^{o}\)</span>.</p>
+<p>Each element still has the stiffness defined above,</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{K}_{el}=\frac{EA}{l}\left[\begin{array}{cccc}
+        \cos^2\theta &amp; \cos\theta\sin\theta &amp; -\cos^2\theta &amp; -\cos\theta\sin\theta\\
+        \cos\theta\sin\theta &amp; \sin^2\theta &amp; -\cos\theta\sin\theta &amp; -\sin^2\theta &amp;\\
+        -\cos^2\theta &amp; -\cos\theta\sin\theta &amp; \cos^2\theta &amp; \cos\theta\sin\theta\\
+        -\cos\theta\sin\theta &amp; -\sin^2\theta &amp; \cos\theta\sin\theta &amp; \sin^2\theta &amp;\\
+        \end{array}\right]\)</span>,</p>
+<p>but there are two extra things to consider. The angle <span class="math notranslate nohighlight">\(\theta\)</span> is different for each bar, and the connections are in different locations for each bar.</p>
+<p>so if the initial geometry, <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>, is</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{r}=\left[\begin{array}{c}
+        x_1\\
+        y_{1}\\
+        x_{2}\\
+        y_{2}\\
+        x_3 \\
+        y_3\end{array}\right]=
+        \left[\begin{array}{c}
+        0\\
+        0\\
+        0.5 \\
+        \sqrt{3}/2\\
+        1 \\
+        0\end{array}\right]~m\)</span></p>
+<p>then, the displacement,</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{u}=\left[\begin{array}{c}
+        u_{1x}\\
+        u_{1y}\\
+        u_{2x}\\
+        u_{2y}\\
+        u_{3x}\\
+        u_{3y}\end{array}\right]=
+        \left[\begin{array}{c}
+        0\\
+        0\\
+        u_{2x}\\
+        u_{2y}\\
+        u_{3x}\\
+        0\end{array}\right]\)</span>,</p>
+<p>The forces applied at each joint must equal the sum of the terms</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{F} = \mathbf{K_1 u}+\mathbf{K_2 u}+\mathbf{K_3 u}\)</span></p>
+<p>where, <span class="math notranslate nohighlight">\(\mathbf{K_i}\)</span> is the stiffness of the structure due to element <span class="math notranslate nohighlight">\(\mathbf{i}\)</span>, as such</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{K}_{1}=\frac{EA}{l}\left[\begin{array}{cccc}
+        \cos^2\theta_1 &amp; \cos\theta_1\sin\theta_1 &amp; 0 &amp; 0 &amp; -\cos^2\theta_1 &amp; -\cos\theta_1\sin\theta_1 \\
+        \cos\theta_1\sin\theta_1 &amp; \sin^2\theta_1 &amp; 0 &amp; 0 &amp; -\cos\theta_1\sin\theta_1 &amp; -\sin^2\theta_1 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        -\cos^2\theta_1 &amp; -\cos\theta_1\sin\theta_1 &amp; 0 &amp; 0 &amp; \cos^2\theta_1 &amp; \cos\theta_1\sin\theta_1 \\
+        -\cos\theta_1\sin\theta_1 &amp; -\sin^2\theta_1 &amp; 0 &amp; 0 &amp; \cos\theta_1\sin\theta_1 &amp; \sin^2\theta_1 \\
+        \end{array}\right]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{K}_{2}=\frac{EA}{l}\left[\begin{array}{cccc}
+        \cos^2\theta_2 &amp; \cos\theta_2\sin\theta_2 &amp; -\cos^2\theta_2 &amp; -\cos\theta_2\sin\theta_2 &amp; 0 &amp; 0\\
+        \cos\theta_2\sin\theta_2 &amp; \sin^2\theta_2 &amp; -\cos\theta_2\sin\theta_2 &amp; -\sin^2\theta_2 &amp; 0 &amp; 0\\
+        -\cos^2\theta_2 &amp; -\cos\theta_2\sin\theta_2 &amp; \cos^2\theta_2 &amp; \cos\theta_2\sin\theta_2 &amp; 0 &amp; 0\\
+        -\cos\theta_2\sin\theta_2 &amp; -\sin^2\theta_2 &amp; \cos\theta_2\sin\theta_2 &amp; \sin^2\theta_2  &amp; 0 &amp; 0\\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+        \end{array}\right]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{K}_{3}=\frac{EA}{l}\left[\begin{array}{cccc}
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp;\cos^2\theta_3 &amp; \cos\theta_3\sin\theta_3 &amp; -\cos^2\theta_3 &amp; -\cos\theta_3\sin\theta_3 \\
+        0 &amp; 0 &amp;\cos\theta_3\sin\theta_3 &amp; \sin^2\theta_3 &amp; -\cos\theta_3\sin\theta_3 &amp; -\sin^2\theta_3 \\
+        0 &amp; 0 &amp;-\cos^2\theta_3 &amp; -\cos\theta_3\sin\theta_3 &amp; \cos^2\theta_3 &amp; \cos\theta_3\sin\theta_3 \\
+        0 &amp; 0 &amp;-\cos\theta_3\sin\theta_3 &amp; -\sin^2\theta_3 &amp; \cos\theta_3\sin\theta_3 &amp; \sin^2\theta_3 \\
+        \end{array}\right]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ke1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">Ke2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)],[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="n">K1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">K2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">K3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">K1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">Ke1</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">K1</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="n">Ke1</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">K1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="n">Ke2</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">K1</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">Ke2</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">K2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">Ke1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="n">Ke2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)],[</span><span class="n">Ke2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="n">Ke1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)]])</span>
+<span class="n">K3</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">Ke1</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="n">Ke2</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)],[</span><span class="n">Ke2</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="n">Ke1</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  0.  0.  0. -1. -0.]
+ [ 0.  0.  0.  0. -0. -0.]
+ [ 0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.]
+ [-1. -0.  0.  0.  1.  0.]
+ [-0. -0.  0.  0.  0.  0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="o">=</span><span class="mf">70e3</span>
+<span class="n">A</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">l</span><span class="o">=</span><span class="mf">1e3</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">E</span><span class="o">*</span><span class="n">A</span><span class="o">/</span><span class="n">l</span><span class="o">*</span><span class="p">(</span><span class="n">K1</span><span class="o">+</span><span class="n">K2</span><span class="o">+</span><span class="n">K3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">K</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 87.5         30.31088913 -17.5        -30.31088913 -70.
+   0.        ]
+[ 30.31088913  52.5        -30.31088913 -52.5          0.
+   0.        ]
+[-1.75000000e+01 -3.03108891e+01  3.50000000e+01  1.55431223e-14
+ -1.75000000e+01  3.03108891e+01]
+[-3.03108891e+01 -5.25000000e+01  1.55431223e-14  1.05000000e+02
+  3.03108891e+01 -5.25000000e+01]
+[-70.           0.         -17.5         30.31088913  87.5
+ -30.31088913]
+[  0.           0.          30.31088913 -52.5        -30.31088913
+  52.5       ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ufree</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">K</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cond</span><span class="p">(</span><span class="n">K</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.529210992451761
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">r0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">3</span><span class="o">**</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">1000</span>
+<span class="n">u</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="n">ufree</span>
+<span class="n">ix</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">iy</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">F</span><span class="o">=</span><span class="n">K</span><span class="nd">@u</span>
+<span class="n">r</span><span class="o">=</span><span class="n">r0</span><span class="o">+</span><span class="n">u</span><span class="o">*</span><span class="n">scale</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r0</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r0</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="s1">&#39;s-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;orignal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">r0</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r0</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;displacements&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deformed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">r0</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r0</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;applied forces&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">1200</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;original and deformed structure</span><span class="se">\n</span><span class="s1">scale = </span><span class="si">{}</span><span class="s1">x&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scale</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/extra-FEA_material_15_0.png" src="../_images/extra-FEA_material_15_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="project-matrix-creation">
+<h1>Project Matrix creation<a class="headerlink" href="#project-matrix-creation" title="Permalink to this headline">¶</a></h1>
+<p>In the project, we have 7 joints <em>(nodes)</em> and 11 bars <em>(elements)</em>. That means we have 7 locations where <span class="math notranslate nohighlight">\(\sum\mathbf{F} = \mathbf{0}\)</span> and 11 stiffness matrices <span class="math notranslate nohighlight">\((\mathbf{K_1}...\mathbf{K_{11}})\)</span>. The result is 14 equations with 14 unknowns, but we have some constraints on the system. <span class="math notranslate nohighlight">\(u_{1x}=u_{1y}=0\)</span> and <span class="math notranslate nohighlight">\(u_{7y}=0.\)</span> Which leaves us with 11 unknowns. There are 14 applied forces <span class="math notranslate nohighlight">\((F_{ix},~F_{iy})\)</span> that make up the vector <span class="math notranslate nohighlight">\(\mathbf{F}.\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{u}=\left[\begin{array}{c}
+        u_{1x}\\
+        u_{1y}\\
+        u_{2x}\\
+        u_{2y}\\
+        u_{3x}\\
+        u_{3y}\\
+        u_{4x}\\
+        u_{4y}\\
+        u_{5x}\\
+        u_{5y}\\
+        u_{6x}\\
+        u_{6y}\\
+        u_{7x}\\
+        u_{7y}\\\end{array}\right]=
+        \left[\begin{array}{c}
+        0\\
+        0\\
+        u_{2x}\\
+        u_{2y}\\
+        u_{3x}\\
+        u_{3y}\\
+        u_{4x}\\
+        u_{4y}\\
+        u_{5x}\\
+        u_{5y}\\
+        u_{6x}\\
+        u_{6y}\\
+        u_{7x}\\
+        0\\\end{array}\right]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{F} = \mathbf{K_1 u}+...+\mathbf{K_{11} u}\)</span></p>
+<div class="section" id="node-and-element-arrays">
+<h2>Node and element arrays<a class="headerlink" href="#node-and-element-arrays" title="Permalink to this headline">¶</a></h2>
+<p>In FEA, we typically store the node locations and their connections in two arrays called the node array: <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and the element array: <code class="docutils literal notranslate"><span class="pre">elems</span></code>. The array <code class="docutils literal notranslate"><span class="pre">nodes</span></code> stores the node number and its x-y location. The array <code class="docutils literal notranslate"><span class="pre">elems</span></code> stores the node numbers that define each element. Our <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">elems</span></code> are printed below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="mi">300</span> <span class="c1"># mm</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">3</span><span class="o">**</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">3</span><span class="o">**</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">3</span><span class="o">**</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">nodes</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">*=</span><span class="n">l</span>
+<span class="n">elems</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">11</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node array</span><span class="se">\n</span><span class="s1">---------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;element array</span><span class="se">\n</span><span class="s1">---------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elems</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>node array
+---------------
+[[  1.           0.           0.        ]
+ [  2.         150.         259.80762114]
+ [  3.         300.           0.        ]
+ [  4.         450.         259.80762114]
+ [  5.         600.           0.        ]
+ [  6.         750.         259.80762114]
+ [  7.         900.           0.        ]]
+element array
+---------------
+[[ 1  1  2]
+ [ 2  2  3]
+ [ 3  1  3]
+ [ 4  2  4]
+ [ 5  3  4]
+ [ 6  3  5]
+ [ 7  4  5]
+ [ 8  4  6]
+ [ 9  5  6]
+ [10  5  7]
+ [11  6  7]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can plot the mesh in different ways, here I have chosen to loop through each triangle in the mesh, <span class="math notranslate nohighlight">\(node~1\rightarrow node~2\rightarrow node~3 \rightarrow node~1 \rightarrow node~2 \rightarrow node~3 \rightarrow ...\)</span></p>
+<p>I create an array where each column is a loop around each triangle in the support structure for the x- and y-coords, <code class="docutils literal notranslate"><span class="pre">ix</span></code> and <code class="docutils literal notranslate"><span class="pre">iy</span></code>, respectively.</p>
+<p>The vector <code class="docutils literal notranslate"><span class="pre">r</span></code> is the coordinates for the structure, so <span class="math notranslate nohighlight">\(\mathbf{r} = \mathbf{r}_0+\mathbf{u}\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> is the location of each node without forces applied and <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is the distance each node moves after a force is applied.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ix</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)]])</span>
+<span class="n">iy</span> <span class="o">=</span> <span class="n">ix</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">])</span>
+<span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  0.        ,   0.        , 150.        , 259.80762114,
+       300.        ,   0.        , 450.        , 259.80762114,
+       600.        ,   0.        , 750.        , 259.80762114,
+       900.        ,   0.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1"># label the nodes</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.8</span><span class="o">*</span><span class="n">l</span><span class="p">:</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0.1</span>
+    <span class="k">else</span><span class="p">:</span> <span class="n">offset</span><span class="o">=-</span><span class="n">l</span><span class="o">/</span><span class="mi">5</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">l</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">offset</span><span class="p">,</span><span class="s1">&#39;n </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="c1"># label the elements</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">elems</span><span class="p">:</span>
+    <span class="n">n1</span><span class="o">=</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">n2</span><span class="o">=</span><span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">n2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">n1</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">n2</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">n1</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+    <span class="c1"># -----------------&gt;need elem labels&lt;-----------------</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">l</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="n">l</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;el </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Our truss structure</span><span class="se">\n</span><span class="s1">each element is 2 nodes and length L</span><span class="se">\n</span><span class="s1">triangle markers are constraints&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x (mm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y (mm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/extra-FEA_material_21_0.png" src="../_images/extra-FEA_material_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="assemble-the-stiffness-matrix">
+<h2>Assemble the stiffness matrix<a class="headerlink" href="#assemble-the-stiffness-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Creating the matrix to represent <span class="math notranslate nohighlight">\(\mathbf{K} = \mathbf{K}_1+...\mathbf{K}_{11}\)</span> is called <strong>assembling the stiffness matrix</strong>. We loop through each element and add the individual stiffness matrices, the same way we did for the 3-element truss above. First, we define our <span class="math notranslate nohighlight">\(\mathbf{K_{el}}\)</span> function, <code class="docutils literal notranslate"><span class="pre">Kel(node1,node2)</span></code>. The nodes define the initial length and the angle of the beam element. We can multipy the stiffness matrix by <span class="math notranslate nohighlight">\(EA\)</span> to get the actual N/m stiffness term. In our case, each beam is the same material and cross section, so we can factor out <span class="math notranslate nohighlight">\(EA\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Kel</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Kel(node1,node2) returns the diagonal and off-diagonal element stiffness matrices based upon</span>
+<span class="sd">    initial angle of a beam element and its length the full element stiffness is</span>
+<span class="sd">    K_el = np.block([[Ke1,Ke2],[Ke2,Ke1]])</span>
+<span class="sd">    </span>
+<span class="sd">    Out: [Ke1 Ke2]</span>
+<span class="sd">         [Ke2 Ke1]   </span>
+<span class="sd">    arguments:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    node1: is the 1st node number and coordinates from the nodes array</span>
+<span class="sd">    node2: is the 2nd node number and coordinates from the nodes array</span>
+<span class="sd">    outputs:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Ke1 : the diagonal matrix of the element stiffness</span>
+<span class="sd">    Ke2 : the off-diagonal matrix of the element stiffness</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">node2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">node1</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">node2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">node1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">node2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">node1</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">node2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">node1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Ke1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span>
+    <span class="n">Ke2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)],[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">Ke1</span><span class="p">,</span><span class="n">Ke2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we loop through each element (1-11) and add each element stiffness term to the <em>global</em> stiffness matrix, <span class="math notranslate nohighlight">\(\mathbf{K}\)</span>. The result is a <span class="math notranslate nohighlight">\(14\times 14\)</span> array that satisfies our <span class="math notranslate nohighlight">\(\sum \mathbf{F} = \mathbf{0}\)</span> at all 7 nodes.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{F} = \mathbf{Ku}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">elems</span><span class="p">:</span>
+    <span class="n">ni</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">nj</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">Ke1</span><span class="p">,</span><span class="n">Ke2</span> <span class="o">=</span> <span class="n">Kel</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span><span class="n">nj</span><span class="p">)</span>
+    <span class="c1">#--&gt; assemble K &lt;--</span>
+    <span class="n">i1</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">ni</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span>
+    <span class="n">i2</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">ni</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">2</span>
+    <span class="n">j1</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">nj</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span>
+    <span class="n">j2</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">nj</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">2</span>
+    
+    <span class="n">K</span><span class="p">[</span><span class="n">i1</span><span class="p">:</span><span class="n">i2</span><span class="p">,</span><span class="n">i1</span><span class="p">:</span><span class="n">i2</span><span class="p">]</span><span class="o">+=</span><span class="n">Ke1</span>
+    <span class="n">K</span><span class="p">[</span><span class="n">j1</span><span class="p">:</span><span class="n">j2</span><span class="p">,</span><span class="n">j1</span><span class="p">:</span><span class="n">j2</span><span class="p">]</span><span class="o">+=</span><span class="n">Ke1</span>
+    <span class="n">K</span><span class="p">[</span><span class="n">i1</span><span class="p">:</span><span class="n">i2</span><span class="p">,</span><span class="n">j1</span><span class="p">:</span><span class="n">j2</span><span class="p">]</span><span class="o">+=</span><span class="n">Ke2</span>
+    <span class="n">K</span><span class="p">[</span><span class="n">j1</span><span class="p">:</span><span class="n">j2</span><span class="p">,</span><span class="n">i1</span><span class="p">:</span><span class="n">i2</span><span class="p">]</span><span class="o">+=</span><span class="n">Ke2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp</span><span class="o">.</span><span class="n">array_latex</span><span class="p">([</span><span class="n">K</span><span class="o">*</span><span class="mi">1000</span><span class="p">],[</span><span class="s1">&#39;[K]&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">c7d32c73f0ef</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pp</span><span class="o">.</span><span class="n">array_latex</span><span class="p">([</span><span class="n">K</span><span class="o">*</span><span class="mi">1000</span><span class="p">],[</span><span class="s1">&#39;[K]&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;pp&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="save-the-inputs-for-the-project">
+<h1>Save the inputs for the project<a class="headerlink" href="#save-the-inputs-for-the-project" title="Permalink to this headline">¶</a></h1>
+<p>Here, we save the arrays needed to work on the project as a Linear Algebra problem. We need the <code class="docutils literal notranslate"><span class="pre">nodes</span></code>, <code class="docutils literal notranslate"><span class="pre">elems</span></code>, and <code class="docutils literal notranslate"><span class="pre">K</span></code> arrays. So, we save them in the file <code class="docutils literal notranslate"><span class="pre">fea_arrays.npz</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="s1">&#39;fea_arrays&#39;</span><span class="p">,</span><span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span><span class="n">elems</span><span class="o">=</span><span class="n">elems</span><span class="p">,</span><span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="solution-for-our-fea-problem">
+<h1>Solution for our FEA problem<a class="headerlink" href="#solution-for-our-fea-problem" title="Permalink to this headline">¶</a></h1>
+<p>In FEA, you have applied forces, in <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, and displacement in <span class="math notranslate nohighlight">\(\mathbf{u}.\)</span> Typically, you have a mix of known and unknown forces and displacements. In our example, we have 14 degrees of freedom - 3 constraints for our displacements. So, we solve the problem in two steps</p>
+<ol class="simple">
+<li><p>solve for the free nodes <code class="docutils literal notranslate"><span class="pre">uf</span></code> <span class="math notranslate nohighlight">\(\rightarrow \mathbf{K}[2:13,2:13] \mathbf{u}[2:13] = \mathbf{F} [2:13]\)</span></p></li>
+<li><p>plug in <code class="docutils literal notranslate"><span class="pre">u</span></code> to solve for <code class="docutils literal notranslate"><span class="pre">F</span></code> at constrained degrees of freedom <span class="math notranslate nohighlight">\(\rightarrow \mathbf{F}=\mathbf{K}\mathbf{u}\)</span></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="o">=</span><span class="mf">200e3</span>
+<span class="n">A</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">Ff</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Ff</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=-</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Ff</span><span class="p">)</span>
+<span class="c1"># step 1 solve for uf (the joints without constraints)</span>
+<span class="n">uf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">K</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span><span class="n">Ff</span><span class="p">)</span>
+<span class="n">u</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+<span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span><span class="o">=</span><span class="n">uf</span>
+
+<span class="c1"># step 2 solve for F (the solution should include reactions and applied forces)</span>
+<span class="n">F</span><span class="o">=</span><span class="n">E</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">K</span><span class="nd">@u</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">13</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xy</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;y&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;displacements:</span><span class="se">\n</span><span class="s1">----------------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;u_</span><span class="si">{}{}</span><span class="s1">:</span><span class="si">{:.2f}</span><span class="s1"> mm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">xy</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="k">2</span>],u[i]))
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">forces:</span><span class="se">\n</span><span class="s1">----------------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">F</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F_</span><span class="si">{}{}</span><span class="s1">:</span><span class="si">{:.2f}</span><span class="s1"> N&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">xy</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="k">2</span>],F[i]))
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="postprocess-fea-results">
+<h1>Postprocess FEA results<a class="headerlink" href="#postprocess-fea-results" title="Permalink to this headline">¶</a></h1>
+<p>The last step in FEA (and any applied linear algebra problem), is to post-process the results. I have chosen to show the deflections of each joint and the applied forces at each node. I imported the <code class="docutils literal notranslate"><span class="pre">interact</span></code> widget to animate the deformation of the structure. What you should see is that the sum of external forces <span class="math notranslate nohighlight">\(\sum F_x=0\)</span> and <span class="math notranslate nohighlight">\(\sum F_y=0\)</span>. This is what we see, since our the sum of the reaction forces is equal to the applied force.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="n">r</span><span class="p">[</span><span class="n">iy</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="n">iy</span><span class="p">]</span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="c1">#plt.quiver(r[ix],r[iy],u[ix],u[iy],color=(0,0,1,1),label=&#39;displacements&#39;)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;applied forces&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span><span class="n">u</span><span class="p">[</span><span class="n">iy</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;displacements&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x (mm)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y (mm)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Deformation scale = </span><span class="si">{:.1f}</span><span class="s1">x&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">steel</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/steel_price.csv&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">al</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/al_price.csv&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steel</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">steel</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">al</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">al</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

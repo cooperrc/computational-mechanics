@@ -1,0 +1,1317 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 - Numerical Error &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Computational Mechanics Project #01 - Heat Transfer in Forensic Science" href="../projects/01_Getting-started-project.html" />
+    <link rel="prev" title="02 - Working with Python" href="02_Working_with_Python.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html#b">
+     (b)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html#c">
+     (c)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/module_01/03_Numerical_error.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_01/03_Numerical_error.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_01/03_Numerical_error.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/main?urlpath=tree/module_01/03_Numerical_error.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_01/03_Numerical_error.md&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   03 - Numerical Error
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freefall-model-computational-solution">
+     Freefall Model Computational solution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-constants-and-analytical-solution-meters-kilogram-sec">
+       Define constants and analytical solution (meters-kilogram-sec)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analytical-vs-computational-solution">
+     Analytical vs Computational Solution
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-numerical-method">
+     Define numerical method
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#finite-difference-approximation">
+       Finite difference approximation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-solutions-plotting">
+     Compare solutions (plotting)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#errors-in-numerical-modeling">
+     Errors in Numerical Modeling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#truncation">
+     1 - Truncation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roundoff">
+     2 - Roundoff
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#truncation-error">
+     1- Truncation error
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#freefall-is-example-of-truncation-error">
+       Freefall is example of “truncation error”
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#truncation-error-results-from-approximating-exact-mathematical-procedure">
+         Truncation error results from approximating exact mathematical procedure
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#truncation-error-as-a-taylor-series">
+       Truncation error as a Taylor series
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2- Roundoff
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#just-storing-a-number-in-a-computer-requires-rounding">
+       Just storing a number in a computer requires rounding
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#machine-epsilon">
+       Machine epsilon
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freefall-model-revisited">
+     Freefall Model (revisited)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#freefall-example">
+       Freefall example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-model-error-truncation-roundoff">
+     Computer model error =  truncation + roundoff
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Exercise
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convergence-of-a-numerical-model">
+       Convergence of a numerical model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-ve-learned">
+     What you’ve learned
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<div class="section" id="numerical-error">
+<h1>03 - Numerical Error<a class="headerlink" href="#numerical-error" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="freefall-model-computational-solution">
+<h2>Freefall Model Computational solution<a class="headerlink" href="#freefall-model-computational-solution" title="Permalink to this headline">¶</a></h2>
+<img src="../images/freefall.png" style="width: 200px;"/> 
+<p>Here is your first computational mechanics model.</p>
+<p>An object falling is subject to the force of</p>
+<ul class="simple">
+<li><p>gravity (<span class="math notranslate nohighlight">\(F_g\)</span>=mg) and</p></li>
+<li><p>drag (<span class="math notranslate nohighlight">\(F_d=cv^2\)</span>)</p></li>
+</ul>
+<p>Acceleration of the object:</p>
+<p><span class="math notranslate nohighlight">\(\sum F=ma=F_g-F_d=mg - cv^2 = m\frac{dv}{dt}\)</span></p>
+<div class="section" id="define-constants-and-analytical-solution-meters-kilogram-sec">
+<h3>Define constants and analytical solution (meters-kilogram-sec)<a class="headerlink" href="#define-constants-and-analytical-solution-meters-kilogram-sec" title="Permalink to this headline">¶</a></h3>
+<p>Define parameters as the acceleration due to gravity, g, drag
+coefficient, c, and mass of the object, m. Once you have defined these
+parameters, You have a single variable whose derivative <span class="math notranslate nohighlight">\(\frac{dv}{dt}\)</span>
+is equal to a function of itself <span class="math notranslate nohighlight">\(v\)</span> i.e. <span class="math notranslate nohighlight">\(\frac{dv}{dt} =
+f(v,~parameters)\)</span>.</p>
+<p><strong>parameters:</strong></p>
+<p>g=9.81 m/s<span class="math notranslate nohighlight">\(^2\)</span>, c=0.25 kg/m, m=60 kg</p>
+<p><strong>function:</strong></p>
+<p><span class="math notranslate nohighlight">\(\frac{dv}{dt} = g-\frac{c}{m}v^2\)</span></p>
+<p>We can solve for the analytical solution in this case. First, consider the speed of the falling object when acceleration is <span class="math notranslate nohighlight">\(\frac{dv}{dt}=0\)</span>, this is called the terminal velocity, <span class="math notranslate nohighlight">\(v_{terminal}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(v_{terminal}=\sqrt{\frac{mg}{c}}\)</span></p>
+<p>Now, substitute this terminal velocity into the equation and integrate to get the analytical solution v(t):</p>
+<p><span class="math notranslate nohighlight">\(v(t)=v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Calculate the terminal velocity for the given parameters, g=9.81 m/s<span class="math notranslate nohighlight">\(^2\)</span>, c=0.25 kg/m, m=60 kg.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="mf">0.25</span> 
+<span class="n">m</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">g</span><span class="o">=</span><span class="mf">9.81</span> 
+
+
+<span class="k">def</span> <span class="nf">v_analytical</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Analytical solution for the velocity of an object released from rest subject to </span>
+<span class="sd">    the force of gravity and the force of drag with drag coefficient, c</span>
+<span class="sd">    </span>
+<span class="sd">        Arguments </span>
+<span class="sd">    ---------</span>
+<span class="sd">    t: time, the independent variable</span>
+<span class="sd">    m: mass of the object</span>
+<span class="sd">    g: acceleration due to gravity</span>
+<span class="sd">    c: drag coefficient</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    v: the speed of the object at time t&#39;&#39;&#39;</span>
+    
+    <span class="n">v_terminal</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">v</span><span class="o">=</span> <span class="n">v_terminal</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">v_terminal</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inside the curly brackets—the placeholders for the values you want to
+print—the <code class="docutils literal notranslate"><span class="pre">f</span></code> is for <code class="docutils literal notranslate"><span class="pre">float</span></code> and the <code class="docutils literal notranslate"><span class="pre">.4</span></code> is for four digits after the
+decimal dot. The colon here marks the beginning of the format
+specification (as there are options that can be passed before). There
+are so many tricks to Python’s string formatter that you’ll usually look
+up just what you need.  Another useful resource for string formatting is
+the <a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/">Python String Format
+Cookbook</a>. Check
+it out!</p>
+<p>If you print these values using the string formatter,  with a total
+length of <code class="docutils literal notranslate"><span class="pre">5</span></code> and only printing 2 decimal digits, you can display our
+solution in a human-readable way.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{:</span><span class="mf">5.2</span><span class="n">f</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:5</span></code> prints something with whitespace that is 5 spaces total</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.2</span></code> prints 2 significant figures after the decimal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> tells <code class="docutils literal notranslate"><span class="pre">format</span></code> that the input is a floating point number to print</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;at time </span><span class="si">{:5.2f}</span><span class="s1"> s, speed is </span><span class="si">{:5.2f}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v_analytical</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">c</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at time  0.00 s, speed is  0.00 m/s
+at time  2.00 s, speed is 18.62 m/s
+at time  4.00 s, speed is 32.46 m/s
+at time  6.00 s, speed is 40.64 m/s
+at time  8.00 s, speed is 44.85 m/s
+at time 10.00 s, speed is 46.85 m/s
+at time 12.00 s, speed is 47.77 m/s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analytical-vs-computational-solution">
+<h2>Analytical vs Computational Solution<a class="headerlink" href="#analytical-vs-computational-solution" title="Permalink to this headline">¶</a></h2>
+<p>The analytical solution above gives us an exact function for <span class="math notranslate nohighlight">\(v(t)\)</span>. We can input any time, <code class="docutils literal notranslate"><span class="pre">t</span></code>, and calculate the speed, <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
+<p>In many engineering problems, you cannot find or may not need an exact
+mathematical formula for our design process. It is always helpful to
+compare a computational solution to an analytical solution, because it
+will tell us if our computational solution is correct. Next, you will
+develop the <strong>Euler approximation</strong> to solve the same problem.</p>
+</div>
+<div class="section" id="define-numerical-method">
+<h2>Define numerical method<a class="headerlink" href="#define-numerical-method" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="finite-difference-approximation">
+<h3>Finite difference approximation<a class="headerlink" href="#finite-difference-approximation" title="Permalink to this headline">¶</a></h3>
+<p>Computational models do not solve for functions e.g. v(t), but rather
+functions at given points in time (or space). In the given freefall
+example, you can approximate the derivative of speed, <span class="math notranslate nohighlight">\(\frac{dv}{dt}\)</span>, as
+a finite difference, <span class="math notranslate nohighlight">\(\frac{\Delta v}{\Delta t}\)</span> as such,</p>
+<p><span class="math notranslate nohighlight">\(\frac{v(t_{i+1})-v(t_{i})}{t_{i+1}-t_{i}}=g-\frac{c}{m}v(t_{i})^2\)</span>.</p>
+<p>Then, you solve for <span class="math notranslate nohighlight">\(v(t_{i+1})\)</span>, which is the velocity at the next time step</p>
+<p><span class="math notranslate nohighlight">\(v(t_{i+1})=v(t_{i})+\left(g-\frac{c}{m}v(t_{i})^2\right)(t_{i+1}-t_{i})\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(v(t_{i+1})=v(t_{i})+\frac{dv_{i}}{dt}(t_{i+1}-t_{i})\)</span></p>
+<p>Now, you have function that describes velocity at the next timestep in
+terms of a current time step. This finite difference approximation is
+the basis for a number of computational solutions to ordinary and
+partial differential equations.</p>
+<p>Therefore, when you solve a computational problem you have to choose
+which points in time you want to know the velocity. To start, define
+time from 0 to 12 seconds</p>
+<p>t=[0,2,4,6,8,10,12]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">#t=np.array([0,2,4,6,8,10,12])</span>
+<span class="c1"># or </span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you create a <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop to solve for <code class="docutils literal notranslate"><span class="pre">v_numerical</span></code> at times 2, 4, 6, 8, 10, and 12 sec. We don’t need to solve for <code class="docutils literal notranslate"><span class="pre">v_numerical</span></code> at time 0 seconds because this is the initial velocity of the object. In this example, the initial velocity is v(0)=0 m/s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v_numerical</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="n">v_numerical</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">v_numerical</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">((</span><span class="n">g</span><span class="o">-</span><span class="n">c</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">v_numerical</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="n">v_numerical</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        , 19.62      , 36.03213   , 44.8328434 , 47.702978  ,
+       48.35986042, 48.49089292])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s print the time, velocity (analytical) and velocity (numerical) to compare the results in a table. We’ll use the <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">format</span></code> commands to look at the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;time (s)|vel analytical (m/s)|vel numerical (m/s)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-----------------------------------------------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:7.1f}</span><span class="s1"> | </span><span class="si">{:18.2f}</span><span class="s1"> | </span><span class="si">{:15.2f}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">v_analytical</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">m</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">c</span><span class="p">),</span><span class="n">v_numerical</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time (s)|vel analytical (m/s)|vel numerical (m/s)
+-----------------------------------------------
+    0.0 |               0.00 |            0.00
+
+    2.0 |              18.62 |           19.62
+
+    4.0 |              32.46 |           36.03
+
+    6.0 |              40.64 |           44.83
+
+    8.0 |              44.85 |           47.70
+
+   10.0 |              46.85 |           48.36
+
+   12.0 |              47.77 |           48.49
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-solutions-plotting">
+<h2>Compare solutions (plotting)<a class="headerlink" href="#compare-solutions-plotting" title="Permalink to this headline">¶</a></h2>
+<p>We can compare solutions in a figure in a number of ways:</p>
+<ol class="simple">
+<li><p>plot the values, e.g. <span class="math notranslate nohighlight">\(v_{analytical}\)</span> and <span class="math notranslate nohighlight">\(v_{numerical}\)</span></p></li>
+<li><p>plot the difference between the values (the absolute error) e.g. <span class="math notranslate nohighlight">\(v_{numerical}-v_{analytical}\)</span></p></li>
+<li><p>plot the ratio of the values e.g. <span class="math notranslate nohighlight">\(\frac{v_{numerical}}{v_{analytical}}\)</span> (useful in finding bugs, unit analysis, etc.)</p></li>
+<li><p>plot the ratio of the error to the best estimate (the relative error) e.g. <span class="math notranslate nohighlight">\(\frac{v_{numerical}-v_{analytical}}{v_{analytical}}\)</span></p></li>
+</ol>
+<p>Let’s start with method (1) to compare our analytical and computational solutions.</p>
+<p>Import <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> and update the default plotting parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v_analytical</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">c</span><span class="p">),</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;analytical&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v_numerical</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;numerical&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;velocity (m/s)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;velocity (m/s)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/03_Numerical_error_19_1.png" src="../_images/03_Numerical_error_19_1.png" />
+</div>
+</div>
+<p><strong>Note:</strong> In the above plot, the numerical solution is given at discrete points connected by lines, while the analytical solution is drawn as a line. This is a helpful convention. We plot discrete data such as numerical solutions or measured data as points and lines while analytical solutions are drawn as lines.</p>
+</div>
+<div class="section" id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Play with the values of <code class="docutils literal notranslate"><span class="pre">t</span></code> (defined above as <code class="docutils literal notranslate"><span class="pre">t=np.linspace(0,12,7)</span></code>).</p>
+<p>If you increase the number of time steps from 0 to 12 seconds what happens to v_analytical? to v_numerical?</p>
+<p>What happens when you decrease the number of time steps?</p>
+</div>
+<div class="section" id="errors-in-numerical-modeling">
+<h2>Errors in Numerical Modeling<a class="headerlink" href="#errors-in-numerical-modeling" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="truncation">
+<h2>1 - Truncation<a class="headerlink" href="#truncation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="roundoff">
+<h2>2 - Roundoff<a class="headerlink" href="#roundoff" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="truncation-error">
+<h2>1- Truncation error<a class="headerlink" href="#truncation-error" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="freefall-is-example-of-truncation-error">
+<h3>Freefall is example of “truncation error”<a class="headerlink" href="#freefall-is-example-of-truncation-error" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="truncation-error-results-from-approximating-exact-mathematical-procedure">
+<h4>Truncation error results from approximating exact mathematical procedure<a class="headerlink" href="#truncation-error-results-from-approximating-exact-mathematical-procedure" title="Permalink to this headline">¶</a></h4>
+<p>We approximated the derivative as <span class="math notranslate nohighlight">\(\frac{d v}{d t}\approx\frac{\Delta v}{\Delta t}\)</span></p>
+<p>Can reduce error in two ways</p>
+<ol class="simple">
+<li><p>Decrease step size -&gt; <span class="math notranslate nohighlight">\(\Delta t\)</span>=<code class="docutils literal notranslate"><span class="pre">delta_time</span></code></p></li>
+<li><p>Increase the accuracy of the approximation</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="truncation-error-as-a-taylor-series">
+<h3>Truncation error as a Taylor series<a class="headerlink" href="#truncation-error-as-a-taylor-series" title="Permalink to this headline">¶</a></h3>
+<p>The freefall problem solution used a first-order Taylor series approximation</p>
+<p>Taylor series:
+<span class="math notranslate nohighlight">\(f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^{2}+\frac{f'''(a)}{3!}(x-a)^{3}+...\)</span></p>
+<p>First-order approximation:
+<span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h\)</span></p>
+<p>We can increase accuracy in a function by adding Taylor series terms:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Approximation</p></th>
+<th class="head"><p>formula</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0^{th}\)</span>-order</p></td>
+<td><p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+R_{1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1^{st}\)</span>-order</p></td>
+<td><p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+R_{2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2^{nd}\)</span>-order</p></td>
+<td><p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^{2}+R_{3}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n^{th}\)</span>-order</p></td>
+<td><p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^{2}+...\frac{f^{(n)}}{n!}h^{n}+R_{n}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Where <span class="math notranslate nohighlight">\(R_{n}=O(h^{n+1})\)</span> is the error associated with truncating the approximation at order <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>In the .gif below, the error in the function is reduced by including higher-order terms in the Taylor series approximation.</p>
+<p><img alt="3" src="https://media.giphy.com/media/xA7G2n20MzTOw/giphy.gif" /></p>
+<p><span class="math notranslate nohighlight">\(n^{th}\)</span>-order approximation equivalent to
+an <span class="math notranslate nohighlight">\(n^{th}\)</span>-order polynomial.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>2- Roundoff<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="just-storing-a-number-in-a-computer-requires-rounding">
+<h3>Just storing a number in a computer requires rounding<a class="headerlink" href="#just-storing-a-number-in-a-computer-requires-rounding" title="Permalink to this headline">¶</a></h3>
+<p>In our analytical solution, <span class="math notranslate nohighlight">\(v(t) =
+v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span>, you can solve
+for velocity, <span class="math notranslate nohighlight">\(v\)</span> at any given time, <span class="math notranslate nohighlight">\(t\)</span> by hand to avoid roundoff
+error, but this is typically more trouble than its worth. Roundoff error
+comes in two forms:</p>
+<ol class="simple">
+<li><p>digital representation of a number is rarely exact</p></li>
+<li><p>arithmetic (+,-,/,*) causes roundoff error</p></li>
+</ol>
+<ol class="simple">
+<li><p>digital representation of <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
+</ol>
+<p><a class="reference external" href="https://www.piday.org/million/">Consider the number <span class="math notranslate nohighlight">\(\pi\)</span></a>. How many digits can a floating point number in a computer accurately represent?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">double</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pi</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">single</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pi</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;double precision 64 bit pi = </span><span class="si">{:1.27f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">double</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1"># 64-bit</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;single precision 32 bit pi = </span><span class="si">{:1.27f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">single</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1"># 32-bit</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First 27 digits of pi      = 3.141592653589793238462643383&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>double precision 64 bit pi = 3.141592653589793115997963469
+single precision 32 bit pi = 3.141592741012573242187500000
+First 27 digits of pi      = 3.141592653589793238462643383
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to store the number in a computer you can only use so many bits, shown below is the <a class="reference external" href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">64-bit standard for floating point numbers</a>:</p>
+<img src="../images/1236px-IEEE_754_Double_Floating_Point_Format.png" style="width: 400px;"/> 
+<p>Where the sign is either + or -, the exponent is a power of two as in,
+<span class="math notranslate nohighlight">\(2^{exponent}\)</span>, and the fraction (or base) is the binary representation
+of the number, <span class="math notranslate nohighlight">\(1+\sum_{i=1}^{52}b_i2^{-i}\)</span>. We examine the floating
+point number representation to highlight that any number you store in a
+computer is an approximation of the real number you are trying to save.
+With 64-bit floating point numbers, these approximations are
+<strong>extremely</strong> good.</p>
+<ol class="simple">
+<li><p>Floating point arithmetic</p></li>
+</ol>
+<p>Each time you use an operation, e.g. <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">/</span> <span class="pre">*</span></code> you lose some precision as well.</p>
+<p>Consider <span class="math notranslate nohighlight">\(\pi\)</span> again, but this time you will use a for loop to multiply
+<span class="math notranslate nohighlight">\(\pi\)</span> by a 1e-16 then divide by 1e-16, then multiply by 2e-16 and divide
+by 2e-16, and so on until you reach 10e-16. If we do these calculations
+by hand, we see that each step in the for loop returns <span class="math notranslate nohighlight">\(\pi\)</span>, but due to
+floating point arithmetic errors we accumulate some error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pi</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">double_operated</span><span class="o">=</span><span class="n">double</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">double_operated</span><span class="o">=</span><span class="n">double_operated</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0e-16</span>
+    <span class="n">double_operated</span><span class="o">=</span><span class="n">double_operated</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0e16</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; 0 operations 64 bit pi = </span><span class="si">%1.26f</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">double</span>) # 64-bit
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;20 operations 64 bit pi = </span><span class="si">%1.26f</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">double_operated</span>) # 64-bit after 1000 additions and 1 subtraction
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First 26 digits of pi   = 3.14159265358979323846264338&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0 operations 64 bit pi = 3.14159265358979311599796347
+
+20 operations 64 bit pi = 3.14159265358979089555191422
+
+First 26 digits of pi   = 3.14159265358979323846264338
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the previous block of code, you see <span class="math notranslate nohighlight">\(\pi\)</span> printed for 3 cases:</p>
+<ol class="simple">
+<li><p>the 64-bit representation of <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
+<li><p>the value of <span class="math notranslate nohighlight">\(\pi\)</span> after it has gone through 20 math operations (<span class="math notranslate nohighlight">\(\times (0..10)10^{-16}\)</span>, then <span class="math notranslate nohighlight">\(\times 1/(0..10)10^{16}\)</span>)</p></li>
+<li><p>the actual value of <span class="math notranslate nohighlight">\(\pi\)</span> for the first 26 digits</p></li>
+</ol>
+<p>All three (1-3) have the same first 14 digits after the decimal, then
+you see a divergence between the actual value of <span class="math notranslate nohighlight">\(\pi\)</span> (3), and <span class="math notranslate nohighlight">\(\pi\)</span> as represented by floating point numbers.</p>
+<p>We can get an idea for computational limits using some built-in functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.info('float64').max</span></code>: the largest floating point 64-bit number the computer can represent</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.info('float64').tiny</span></code>: the smallest non-negative 64-bit number the computer can represent</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.info('float64').eps</span></code>: the smallest number that can be added to 1</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;realmax = </span><span class="si">%1.20e</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.finfo(&#39;float64&#39;).max)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;realmin = </span><span class="si">%1.20e</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.finfo(&#39;float64&#39;).tiny)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;maximum relative error = </span><span class="si">%1.20e</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.finfo(&#39;float64&#39;).eps)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>realmax = 1.79769313486231570815e+308
+
+realmin = 2.22507385850720138309e-308
+
+maximum relative error = 2.22044604925031308085e-16
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="machine-epsilon">
+<h3>Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Permalink to this headline">¶</a></h3>
+<p>The smallest number that can be added to 1 and change the value in a computer is called “machine epsilon”, <span class="math notranslate nohighlight">\(eps\)</span>. If your numerical results are supposed to return 0, but instead return <span class="math notranslate nohighlight">\(2eps\)</span>, have a drink and move on. You won’t get any closer to your result.</p>
+<p>In the following example, you will add <span class="math notranslate nohighlight">\(eps/2\)</span> 1,000<span class="math notranslate nohighlight">\(\times\)</span> to the
+variable s, set to 1. The result should be <span class="math notranslate nohighlight">\(s=1+500\cdot eps\)</span>, but
+because <span class="math notranslate nohighlight">\(eps/2\)</span> is smaller than floating point operations can track, you
+will get a different result depending upon how we do the addition.</p>
+<p>a. We make a <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop and add <span class="math notranslate nohighlight">\(eps/2\)</span> 1000 times in the loop</p>
+<p>b. We multiply <span class="math notranslate nohighlight">\(1000*eps/2\)</span> and add it to the result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">1000</span>
+<span class="n">eps</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">s1</span><span class="o">+=</span><span class="n">eps</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="n">s2</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="mi">500</span><span class="o">*</span><span class="n">eps</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;summation 1+eps/2 over &#39;</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="s1">&#39; minus 1 =&#39;</span><span class="p">,(</span><span class="n">s2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;*eps=&#39;</span><span class="p">,(</span><span class="n">s2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>summation 1+eps/2 over  1000  minus 1 = 1.1102230246251565e-13
+500.0 *eps= 1.1102230246251565e-13
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Try adding <span class="math notranslate nohighlight">\(2eps\)</span> to 1 and determine the result of the previous exercise.</p></li>
+<li><p>What is machine epsilon for a 32-bit floating point number?</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="freefall-model-revisited">
+<h2>Freefall Model (revisited)<a class="headerlink" href="#freefall-model-revisited" title="Permalink to this headline">¶</a></h2>
+<p>In the following example, you judge the <strong>convergence</strong> of our solution with the new knowledge of truncation error and roundoff error.</p>
+<p><strong>The definition for convergence in mathematics is the limit of a sequence exists.</strong></p>
+<p>In the case of the Euler approximation, the sequence is smaller timesteps, <span class="math notranslate nohighlight">\(\Delta t\)</span>, should converge to the analytical solution.</p>
+<p>Define time from 0 to 12 seconds with <code class="docutils literal notranslate"><span class="pre">N</span></code> timesteps
+function defined as <code class="docutils literal notranslate"><span class="pre">freefall</span></code></p>
+<p>m=60 kg, c=0.25 kg/m</p>
+<div class="section" id="freefall-example">
+<h3>Freefall example<a class="headerlink" href="#freefall-example" title="Permalink to this headline">¶</a></h3>
+<p>Estimated the function with a <span class="math notranslate nohighlight">\(1^{st}\)</span>-order approximation, so</p>
+<p><span class="math notranslate nohighlight">\(v(t_{i+1})=v(t_{i})+v'(t_{i})(t_{i+1}-t_{i})+R_{1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(v'(t_{i})=\frac{v(t_{i+1})-v(t_{i})}{t_{i+1}-t_{i}}-\frac{R_{1}}{t_{i+1}-t_{i}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{R_{1}}{t_{i+1}-t_{i}}=\frac{v''(\xi)}{2!}(t_{i+1}-t_{i})\)</span></p>
+<p>or the truncation error for a first-order Taylor series approximation is</p>
+<p><span class="math notranslate nohighlight">\(R_{1}=O(\Delta t^{2})\)</span></p>
+</div>
+</div>
+<div class="section" id="computer-model-error-truncation-roundoff">
+<h2>Computer model error =  truncation + roundoff<a class="headerlink" href="#computer-model-error-truncation-roundoff" title="Permalink to this headline">¶</a></h2>
+<p>In the function <code class="docutils literal notranslate"><span class="pre">freefall(N)</span></code>, the speed of a 60-kg object is predicted in two ways:</p>
+<ol class="simple">
+<li><p>The analytical 64-bit representation,
+<span class="math notranslate nohighlight">\(v(t)=v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span></p></li>
+<li><p>The numerical 32-bit<span class="math notranslate nohighlight">\(^{+}\)</span> Euler approximation for <code class="docutils literal notranslate"><span class="pre">N</span></code>-steps from 0 to 2 seconds</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(^{+}\)</span>Here, you use a 32-bit representation to observe the transition from truncation error to floating point error in a reasonable number of steps.</p>
+<p>We can reduce truncation error by decreasing the timestep, <span class="math notranslate nohighlight">\(\Delta t\)</span>.
+Here, consider the speed from 0 to 2 seconds, so <code class="docutils literal notranslate"><span class="pre">N=3</span></code> means <span class="math notranslate nohighlight">\(\Delta t\)</span>= 1 s and <code class="docutils literal notranslate"><span class="pre">N=21</span></code> means <span class="math notranslate nohighlight">\(\Delta t\)</span>=0.1 s</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>N=</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\Delta t\)</span>=</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>0.1 s</p></td>
+</tr>
+<tr class="row-even"><td><p>201</p></td>
+<td><p>0.01 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>??</p></td>
+<td><p>0.05 s</p></td>
+</tr>
+<tr class="row-even"><td><p>??</p></td>
+<td><p>0.001 s</p></td>
+</tr>
+</tbody>
+</table>
+<p>What is N for 0.05 s and 0.001 s in the table above?</p>
+<p>Answer (0.05 s): <span style="color:white"> 41 </span></p>
+<p>Answer (0.001 s): <span style="color:white"> 2001 </span></p>
+<p>Highlight lines above for answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">freefall</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;  </span>
+<span class="sd">    help file for freefall(N)</span>
+<span class="sd">    computes the velocity as a function of time, t, for a</span>
+<span class="sd">    60-kg object with zero initial velocity and drag </span>
+<span class="sd">    coefficient of 0.25 kg/s</span>
+<span class="sd">    Arguments:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    N : number of timesteps between 0 and 2 sec</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    v_analytical : the 32-bit floating point &quot;true&quot; solution</span>
+<span class="sd">    v_numerical : the 32-bit approximation of the velocity</span>
+<span class="sd">    t : the timesteps between 0 and 10 sec, divided into N steps</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">=</span><span class="mf">0.25</span>
+    <span class="n">m</span><span class="o">=</span><span class="mi">60</span>
+    <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span>
+    <span class="n">v_terminal</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="n">v_analytical</span> <span class="o">=</span> <span class="n">v_terminal</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">v_terminal</span><span class="p">);</span>
+    <span class="n">v_numerical</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">delta_time</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">v_numerical</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">v_numerical</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">g</span><span class="o">-</span><span class="n">c</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">v_numerical</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">delta_time</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    
+    <span class="k">return</span> <span class="n">v_analytical</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">v_numerical</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">t</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can visualize how the approximation approaches the exact solution with this method. The process of approaching the “true” solution is called <strong>convergence</strong>.</p>
+<p>First, solve for <code class="docutils literal notranslate"><span class="pre">n=2</span></code> steps, so t=[0,2]. We can time the solution to get a sense of how long the computation will take for larger values of <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">5</span>
+
+<span class="n">v_analytical</span><span class="p">,</span><span class="n">v_numerical</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">freefall</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 95 µs, sys: 9 µs, total: 104 µs
+Wall time: 104 µs
+</pre></div>
+</div>
+</div>
+</div>
+<p>The block of code above assigned three variables from the function <code class="docutils literal notranslate"><span class="pre">freefall</span></code>.</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">v_analytical</span></code> = <span class="math notranslate nohighlight">\(v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v_numerical</span></code> = Euler step integration of  <span class="math notranslate nohighlight">\(\frac{dv}{dt}= g - \frac{c}{m}v^2\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> = timesteps from 0..2 with <code class="docutils literal notranslate"><span class="pre">n</span></code> values, here t=np.array([0,2])</p></li>
+</ol>
+<p>All three variables have the same length, so you can plot them and visually compare <code class="docutils literal notranslate"><span class="pre">v_analytical</span></code> and <code class="docutils literal notranslate"><span class="pre">v_numerical</span></code>. This is the comparison method (1) from above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v_numerical</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; Euler steps&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v_analytical</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;analytical&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;First 2 seconds of freefall&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;speed (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1b9b4c03a0&gt;
+</pre></div>
+</div>
+<img alt="../_images/03_Numerical_error_44_1.png" src="../_images/03_Numerical_error_44_1.png" />
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Try adjusting <code class="docutils literal notranslate"><span class="pre">n</span></code> in the code above to watch the solution converge. You should notice the Euler approximation becomes almost indistinguishable from the analytical solution as <code class="docutils literal notranslate"><span class="pre">n</span></code> increases.</p>
+</div>
+<div class="section" id="convergence-of-a-numerical-model">
+<h3>Convergence of a numerical model<a class="headerlink" href="#convergence-of-a-numerical-model" title="Permalink to this headline">¶</a></h3>
+<p>You should see that the more time steps you use, the closer the Euler
+approximation resembles the analytical solution. This is true only to a
+point, due to <strong>roundoff error</strong>. In the <code class="docutils literal notranslate"><span class="pre">freefall</span></code> function, the
+numerical result is saved as a 32-bit floating point array. The best analytical equation result is
+<code class="docutils literal notranslate"><span class="pre">v_terminal*np.tanh(g*t/v_terminal)</span></code>.<span class="math notranslate nohighlight">\(^{+}\)</span></p>
+<p>In the next plot, you consider the relative error for the velocity at t=2 s, as a function of <code class="docutils literal notranslate"><span class="pre">N</span></code>.</p>
+<p><span class="math notranslate nohighlight">\(^+\)</span> Note: In practice, there is no reason to restrict the precision of floating point numbers. The function was written this way to highlight the effect of roundoff error without significant computational resources. You would need more timesteps to observe floating point error with 64-bit floating point numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="c1"># create an array from 10^1 to 10^3 with N values</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>    <span class="c1"># initialize an N-valued array of relative errors</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">v_an</span><span class="p">,</span> <span class="n">v_num</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">freefall</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># return the analytical and numerical solutions to your equation</span>
+    <span class="n">error</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">v_num</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">v_an</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="n">v_an</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#calculate relative error in velocity at final time t=2 s</span>
+
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of timesteps N&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;relative error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Truncation and roundoff error </span><span class="se">\n</span><span class="s1">accumulation in log-log plot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Truncation and roundoff error \naccumulation in log-log plot&#39;)
+</pre></div>
+</div>
+<img alt="../_images/03_Numerical_error_48_1.png" src="../_images/03_Numerical_error_48_1.png" />
+</div>
+</div>
+<p>In the above plot “Truncation and roundoff error accumulation in log-log
+plot”, you see that around <span class="math notranslate nohighlight">\(N=10^4\)</span> steps you stop decreasing the error
+with more steps. This is because we are approaching the limit of how
+precise we can store a number using a 32-bit floating point number.</p>
+<p>In any computational solution, there will be some point of similar diminishing in terms of accuracy (error) and computational time (in this case, number of timesteps). If you were to attempt a solution for N=1 billion, the solution could take <span class="math notranslate nohighlight">\(\approx\)</span>(1 billion)(200 <span class="math notranslate nohighlight">\(\mu s\)</span>[cpu time for N=5])<span class="math notranslate nohighlight">\(\approx\)</span> 55 hours, but would not increase the accuracy of the solution.</p>
+</div>
+</div>
+<div class="section" id="what-you-ve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Numerical integration with the Euler approximation</p></li>
+<li><p>The source of truncation errors</p></li>
+<li><p>The source of roundoff errors</p></li>
+<li><p>How to time a numerical solution or a function</p></li>
+<li><p>How to compare solutions</p></li>
+<li><p>The definition of absolute error and relative error</p></li>
+<li><p>How a numerical solution converges</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>The growth of populations of organisms has many engineering and scientific applications. One of the simplest
+models assumes that the rate of change of the population p is proportional to the existing population at any time t:</p>
+<p><span class="math notranslate nohighlight">\(\frac{dp}{dt} = k_g p\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(t\)</span> is time in years, and <span class="math notranslate nohighlight">\(k_g\)</span> is growth rate in [1/years].</p>
+<p>The world population has been increasing dramatically, let’s make a prediction based upon the <a class="reference external" href="https://worldpopulationhistory.org/map/2020/mercator/1/0/25/">following data</a> saved in <span class="xref myst">world_population_1900-2020.csv</span>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>year</p></th>
+<th class="head"><p>world population</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1900</p></td>
+<td><p>1,578,000,000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1950</p></td>
+<td><p>2,526,000,000</p></td>
+</tr>
+<tr class="row-even"><td><p>2000</p></td>
+<td><p>6,127,000,000</p></td>
+</tr>
+<tr class="row-odd"><td><p>2020</p></td>
+<td><p>7,795,482,000</p></td>
+</tr>
+</tbody>
+</table>
+<p>a. Calculate the average population growth, <span class="math notranslate nohighlight">\(\frac{\Delta p}{\Delta t}\)</span>, from 1900-1950, 1950-2000, and 2000-2020</p>
+<p>b. Determine the average growth rates. <span class="math notranslate nohighlight">\(k_g\)</span>, from 1900-1950, 1950-2000, and 2000-2020</p>
+<p>c. Use a growth rate of <span class="math notranslate nohighlight">\(k_g=0.013\)</span> [1/years] and compare the analytical solution (use initial condition p(1900) = 1578000000) to the Euler integration for time steps of 20 years from 1900 to 2020 (Hint: use method (1)- plot the two solutions together with the given data)</p>
+<p>d. Discussion question: If you decrease the time steps further and the solution converges, will it converge to the actual world population? Why or why not?</p>
+</li>
+</ol>
+<p><strong>Note: We have used a new function <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> here. Use the <code class="docutils literal notranslate"><span class="pre">help</span></code> or <code class="docutils literal notranslate"><span class="pre">?</span></code> to learn about what this function does and how the arguments can change the output. In the next module, we will go into more details on how to load data, plot data, and present trends.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">year</span><span class="p">,</span> <span class="n">pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/world_population_1900-2020.csv&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;years=&#39;</span><span class="p">,</span><span class="n">year</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;population =&#39;</span><span class="p">,</span> <span class="n">pop</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>years= [1900. 1950. 2000. 2020.]
+population = [1.578000e+09 2.526000e+09 6.127000e+09 7.795482e+09]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dpdt</span> <span class="o">=</span> <span class="p">(</span><span class="n">pop</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">year</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;population changes in millions of people/year</span><span class="se">\n</span><span class="s1">1900: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">1950: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">2000: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">dpdt</span><span class="o">/</span><span class="mf">1e6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>population changes in millions of people/year
+1900: 18.96
+1950: 72.02
+2000: 83.4241
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;population growth rate in 1/years </span><span class="se">\n</span><span class="s1">1900: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">1950: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">2000: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">dpdt</span><span class="o">/</span><span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>population growth rate in 1/years 
+1900: 0.012015209125475285
+1950: 0.028511480601741884
+2000: 0.013615815244001959
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.013</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2030</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">dt</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;analytical&#39;</span><span class="p">)</span>
+<span class="n">p_euler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">p_euler</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">p_euler</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">p_euler</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.013</span><span class="o">*</span><span class="n">p_euler</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">p_euler</span><span class="p">,</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;euler </span><span class="si">{}</span><span class="s1"> steps&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2030</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">dt</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">p_euler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">p_euler</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">p_euler</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">p_euler</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.013</span><span class="o">*</span><span class="n">p_euler</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">p_euler</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;euler </span><span class="si">{}</span><span class="s1"> steps&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">pop</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;measured populations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Numerical_error_55_0.png" src="../_images/03_Numerical_error_55_0.png" />
+</div>
+</div>
+<p><strong>d.</strong> As the number of time steps increases, the Euler approximation approaches the analytical solution, not the measured data. The best-case scenario is that the Euler solution is the same as the analytical solution.</p>
+<ol>
+<li><p>In the freefall example you used smaller time steps to decrease the <strong>truncation error</strong> in our Euler approximation. Another way to decrease approximation error is to continue expanding the Taylor series. Consider the function f(x)</p>
+<p><span class="math notranslate nohighlight">\(f(x)=e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+...\)</span></p>
+<p>We can approximate <span class="math notranslate nohighlight">\(e^x\)</span> as <span class="math notranslate nohighlight">\(1+x\)</span> (first order), <span class="math notranslate nohighlight">\(1+x+x^2/2\)</span> (second order), and so on each higher order results in smaller error.</p>
+<p>a. Use the given <code class="docutils literal notranslate"><span class="pre">exptaylor</span></code> function to approximate the value of exp(1) with a second-order Taylor series expansion. What is the relative error compared to <code class="docutils literal notranslate"><span class="pre">np.exp(1)</span></code>?</p>
+<p>b. Time the solution for a second-order Taylor series and a tenth-order Taylor series. How long would a 100,000-order series take (approximate this, you don’t have to run it)</p>
+<p>c. Plot the relative error as a function of the Taylor series expansion order from first order upwards. (Hint: use method (4) in the comparison methods from the “Truncation and roundoff error accumulation in log-log plot” figure)</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
+<span class="k">def</span> <span class="nf">exptaylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Taylor series expansion about x=0 for the function e^x</span>
+<span class="sd">    the full expansion follows the function</span>
+<span class="sd">    e^x = 1+ x + x**2/2! + x**3/3! + x**4/4! + x**5/5! +...&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lowest order expansion is 0 where e^x = 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ex</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="n">x</span> <span class="c1"># define the first-order taylor series result</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">ex</span><span class="o">+=</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># add the nth-order result for each step in loop</span>
+        <span class="k">return</span> <span class="n">ex</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">exp1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+    <span class="n">e1</span><span class="o">=</span><span class="n">exptaylor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">error</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">e1</span><span class="o">-</span><span class="n">exp1</span><span class="p">)</span><span class="o">/</span><span class="n">exp1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;reduction in truncation error for exp(1)</span><span class="se">\n</span><span class="s1">after ~20 terms you reach the machine epsilon&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lowest order expansion is 0 where e^x = 1
+</pre></div>
+</div>
+<img alt="../_images/03_Numerical_error_59_1.png" src="../_images/03_Numerical_error_59_1.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02_Working_with_Python.html" title="previous page">02 - Working with Python</a>
+    <a class='right-next' id="next-link" href="../projects/01_Getting-started-project.html" title="next page">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

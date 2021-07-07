@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computational Mechanics 01 - Getting Started &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="01 - Interacting with Python" href="01_Interacting_with_Python.html" />
+    <link rel="prev" title="Syllabus - Computational Mechanics" href="../syllabus.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="current reference internal" href="#">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html#b">
+     (b)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html#c">
+     (c)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_01/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_01/README.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-python-and-numerical-methods">
+   Working with Python and Numerical Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computational-mechanics-project-01-heat-transfer-in-forensic-science">
+   <span class="xref myst">
+    Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+   </span>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="computational-mechanics-01-getting-started">
+<h1>Computational Mechanics 01 - Getting Started<a class="headerlink" href="#computational-mechanics-01-getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="working-with-python-and-numerical-methods">
+<h2>Working with Python and Numerical Methods<a class="headerlink" href="#working-with-python-and-numerical-methods" title="Permalink to this headline">¶</a></h2>
+<p>Welcome to Computational Mechanics Module #1 - Getting Started!</p>
+<p>There are three modules and one final project. The modules will get us started on our exploration of computational
+mechanics using Python, listed below each module are the learning objectives.</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="notebooks/01_Interacting_with_Python.html"><span class="doc std std-doc">01_Interacting_with_Python</span></a></p></li>
+</ol>
+<ul class="simple">
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. The concept of <em>function</em>.</p></li>
+<li><p>Using Python as a calculator.</p></li>
+<li><p>Concepts of variable, type, assignment.</p></li>
+<li><p>Special variables: <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Supported operations, logical operations.</p></li>
+<li><p>Reading error messages.</p></li>
+</ul>
+<ol class="simple">
+<li><p><span class="xref myst">02_Working_with_Python</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>Good coding habits and file naming</p></li>
+<li><p>How to define a function and return outputs</p></li>
+<li><p>How to import libraries</p></li>
+<li><p>Multidimensional arrays using NumPy</p></li>
+<li><p>Accessing values and slicing in NumPy arrays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%%time</span></code> magic to time cell execution.</p></li>
+<li><p>Performance comparison: lists vs NumPy arrays</p></li>
+<li><p>Basic plotting with <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>.</p></li>
+</ul>
+<ol class="simple">
+<li><p><span class="xref myst">03-Numerical_error</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>Numerical integration with the Euler approximation</p></li>
+<li><p>The source of truncation errors</p></li>
+<li><p>The source of roundoff errors</p></li>
+<li><p>How to time a numerical solution or a function</p></li>
+<li><p>How to compare solutions</p></li>
+<li><p>The definition of absolute error and relative error</p></li>
+<li><p>How a numerical solution converges</p></li>
+</ul>
+</div>
+<div class="section" id="computational-mechanics-project-01-heat-transfer-in-forensic-science">
+<h2><span class="xref myst">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</span><a class="headerlink" href="#computational-mechanics-project-01-heat-transfer-in-forensic-science" title="Permalink to this headline">¶</a></h2>
+<p>We can use our current skillset for a macabre application. We can predict the
+time of death based upon the current temperature and change in temperature of a
+corpse.</p>
+<p>Forensic scientists use Newton’s law of cooling to determine the time elapsed
+since the loss of life,</p>
+<p><span class="math notranslate nohighlight">\(\frac{dT}{dt} = -K(T-T_a)\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the current temperature, <span class="math notranslate nohighlight">\(T_a\)</span> is the ambient temperature, <span class="math notranslate nohighlight">\(t\)</span> is
+the elapsed time in hours, and <span class="math notranslate nohighlight">\(K\)</span> is an empirical constant.</p>
+<p>Suppose the temperature of the corpse is 85<span class="math notranslate nohighlight">\(^o\)</span>F at 11:00 am. Then, 2 hours
+later the temperature is 74<span class="math notranslate nohighlight">\(^{o}\)</span>F.</p>
+<p>Assume ambient temperature is a constant 65<span class="math notranslate nohighlight">\(^{o}\)</span>F.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../syllabus.html" title="previous page">Syllabus - Computational Mechanics</a>
+    <a class='right-next' id="next-link" href="01_Interacting_with_Python.html" title="next page">01 - Interacting with Python</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

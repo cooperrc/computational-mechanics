@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computational Mechanics Project #01 - Heat Transfer in Forensic Science &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="03 - Numerical Error" href="../module_01/03_Numerical_error.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#b">
+     (b)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#c">
+     (c)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/projects/01_Getting-started-project.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/projects/01_Getting-started-project.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fprojects/01_Getting-started-project.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/main?urlpath=tree/projects/01_Getting-started-project.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/projects/01_Getting-started-project.md&branch=main"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b">
+   (b)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c">
+   (c)
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="computational-mechanics-project-01-heat-transfer-in-forensic-science">
+<h1>Computational Mechanics Project #01 - Heat Transfer in Forensic Science<a class="headerlink" href="#computational-mechanics-project-01-heat-transfer-in-forensic-science" title="Permalink to this headline">¶</a></h1>
+<p>We can use our current skillset for a macabre application. We can predict the time of death based upon the current temperature and change in temperature of a corpse.</p>
+<p>Forensic scientists use Newton’s law of cooling to determine the time elapsed since the loss of life,</p>
+<p><span class="math notranslate nohighlight">\(\frac{dT}{dt} = -K(T-T_a)\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the current temperature, <span class="math notranslate nohighlight">\(T_a\)</span> is the ambient temperature, <span class="math notranslate nohighlight">\(t\)</span> is the elapsed time in hours, and <span class="math notranslate nohighlight">\(K\)</span> is an empirical constant.</p>
+<p>Suppose the temperature of the corpse is 85<span class="math notranslate nohighlight">\(^o\)</span>F at 11:00 am. Then, 2 hours later the temperature is 74<span class="math notranslate nohighlight">\(^{o}\)</span>F.</p>
+<p>Assume ambient temperature is a constant 65<span class="math notranslate nohighlight">\(^{o}\)</span>F.</p>
+<ol class="simple">
+<li><p>Use Python to calculate <span class="math notranslate nohighlight">\(K\)</span> using a finite difference approximation, <span class="math notranslate nohighlight">\(\frac{dT}{dt} \approx \frac{T(t+\Delta t)-T(t)}{\Delta t}\)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T11</span><span class="o">=</span><span class="mi">85</span>
+<span class="n">T13</span><span class="o">=</span><span class="mi">65</span>
+<span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mi">74</span><span class="o">-</span><span class="mi">85</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">85</span><span class="o">-</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;K=</span><span class="si">{:.3f}</span><span class="s1"> 1/hours&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>K=0.275 1/hours
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Change your work from problem 1 to create a function that accepts the temperature at two times, ambient temperature, and the time elapsed to return <span class="math notranslate nohighlight">\(K\)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">measure_K</span><span class="p">(</span><span class="n">Temp_t1</span><span class="p">,</span><span class="n">Temp_t2</span><span class="p">,</span><span class="n">Temp_ambient</span><span class="p">,</span><span class="n">delta_t</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Determine the value of K based upon temperature of corpse </span>
+<span class="sd">    when discovered, Temp_t1</span>
+<span class="sd">    after time, delta_t, Temp_t2</span>
+<span class="sd">    with ambient temperature, Temp_ambient</span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    Temp_t1: initial temperature (F)</span>
+<span class="sd">    Temp_t2: temperature after time delta_t (F)</span>
+<span class="sd">    Temp_ambient: ambient temperature (F)</span>
+<span class="sd">    delta_t: time passed between temperature measures (hours)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    K: heat transfer coefficient (1/hours)</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">Temp_t2</span><span class="o">-</span><span class="n">Temp_t1</span><span class="p">)</span><span class="o">/</span><span class="n">delta_t</span><span class="o">/</span><span class="p">(</span><span class="n">Temp_t1</span><span class="o">-</span><span class="n">Temp_ambient</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">K</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;K=</span><span class="si">{:.3f}</span><span class="s1"> 1/hours&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">measure_K</span><span class="p">(</span><span class="mi">85</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>K=0.275 1/hours
+</pre></div>
+</div>
+</div>
+</div>
+<ol>
+<li><p>A first-order thermal system has the following analytical solution,</p>
+<p><span class="math notranslate nohighlight">\(T(t) =T_a+(T(0)-T_a)e^{-Kt}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(T(0)\)</span> is the temperature of the corpse at t=0 hours i.e. at the time of discovery and <span class="math notranslate nohighlight">\(T_a\)</span> is a constant ambient temperature.</p>
+<p>a. Show that an Euler integration converges to the analytical solution as the time step is decreased. Use the constant <span class="math notranslate nohighlight">\(K\)</span> derived above and the initial temperature, T(0) = 85<span class="math notranslate nohighlight">\(^o\)</span>F.</p>
+<p>b. What is the final temperature as t<span class="math notranslate nohighlight">\(\rightarrow\infty\)</span>?</p>
+<p>c. At what time was the corpse 98.6<span class="math notranslate nohighlight">\(^{o}\)</span>F? i.e. what was the time of death?</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">T_ambient</span> <span class="o">=</span> <span class="mi">65</span>
+<span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">]:</span>
+    <span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">T</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+    <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">85</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+        <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">K</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">T_ambient</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+
+    <span class="k">def</span> <span class="nf">T_an</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T_0</span><span class="o">=</span><span class="mi">85</span><span class="p">,</span><span class="n">T_ambient</span><span class="o">=</span><span class="mi">65</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">T_ambient</span><span class="o">+</span><span class="p">(</span><span class="n">T_0</span><span class="o">-</span><span class="n">T_ambient</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;dt =</span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dt</span><span class="p">))</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T_an</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;analytical&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temp (F)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01_Getting-started-project_7_0.png" src="../_images/01_Getting-started-project_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="b">
+<h1>(b)<a class="headerlink" href="#b" title="Permalink to this headline">¶</a></h1>
+<p><span class="math notranslate nohighlight">\(T(t= \infty) = 65^{o}F\)</span></p>
+</div>
+<div class="section" id="c">
+<h1>(c)<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_death</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mf">98.6</span><span class="o">-</span><span class="n">T_ambient</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">T_ambient</span><span class="p">))</span><span class="o">/-</span><span class="n">K</span>
+
+<span class="n">hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="o">+</span><span class="n">t_death</span><span class="p">)</span>
+<span class="n">minute</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="o">+</span><span class="n">t_death</span><span class="o">-</span><span class="n">hour</span><span class="p">)</span><span class="o">*</span><span class="mi">60</span>
+<span class="n">t_death</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.8865228851460631
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T_an</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_death</span><span class="p">,</span><span class="n">T_an</span><span class="p">(</span><span class="n">t_death</span><span class="p">),</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time of death = </span><span class="si">{}</span><span class="s1">:</span><span class="si">{:02.0f}</span><span class="s1"> am&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span><span class="n">minute</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temp (F)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Temp (F)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/01_Getting-started-project_10_1.png" src="../_images/01_Getting-started-project_10_1.png" />
+</div>
+</div>
+<ol>
+<li><p>Now that we have a working numerical model, we can look at the results if the
+ambient temperature is not constant i.e. T_a=f(t). We can use the weather to improve our estimate for time of death. Consider the following Temperature for the day in question.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>time</p></th>
+<th class="head"><p>Temp (<span class="math notranslate nohighlight">\(^o\)</span>F)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>8am</p></td>
+<td><p>55</p></td>
+</tr>
+<tr class="row-odd"><td><p>9am</p></td>
+<td><p>58</p></td>
+</tr>
+<tr class="row-even"><td><p>10am</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-odd"><td><p>11am</p></td>
+<td><p>65</p></td>
+</tr>
+<tr class="row-even"><td><p>noon</p></td>
+<td><p>66</p></td>
+</tr>
+<tr class="row-odd"><td><p>1pm</p></td>
+<td><p>67</p></td>
+</tr>
+</tbody>
+</table>
+<p>a. Create a function that returns the current temperature based upon the time (0 hours=11am, 65<span class="math notranslate nohighlight">\(^{o}\)</span>F)
+*Plot the function <span class="math notranslate nohighlight">\(T_a\)</span> vs time. Does it look correct? Is there a better way to get <span class="math notranslate nohighlight">\(T_a(t)\)</span>?</p>
+<p>b. Modify the Euler approximation solution to account for changes in temperature at each hour.
+Compare the new nonlinear Euler approximation to the linear analytical model.
+At what time was the corpse 98.6<span class="math notranslate nohighlight">\(^{o}\)</span>F? i.e. what was the time of death?</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_T_amb</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">T_ambient</span> <span class="o">=</span> <span class="mi">55</span>
+    <span class="k">if</span> <span class="n">t</span><span class="o">&lt;-</span><span class="mi">3</span><span class="p">:</span>
+        <span class="n">T_ambient</span> <span class="o">=</span> <span class="mi">55</span>
+    <span class="k">elif</span> <span class="n">t</span><span class="o">&lt;-</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">t</span><span class="o">&gt;=-</span><span class="mi">3</span><span class="p">:</span>
+        <span class="n">T_ambient</span> <span class="o">=</span> <span class="mi">58</span>
+    <span class="k">elif</span> <span class="n">t</span><span class="o">&lt;-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">t</span><span class="o">&gt;=-</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">T_ambient</span> <span class="o">=</span> <span class="mi">60</span>
+    <span class="k">elif</span> <span class="n">t</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">t</span><span class="o">&gt;=-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">T_ambient</span> <span class="o">=</span><span class="mi">65</span>
+    <span class="k">elif</span> <span class="n">t</span><span class="o">&lt;</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">T_ambient</span> <span class="o">=</span> <span class="mi">66</span>
+    <span class="k">elif</span> <span class="n">t</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">T_ambient</span> <span class="o">=</span> <span class="mi">67</span>
+    <span class="k">return</span> <span class="n">T_ambient</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T_amb_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="n">T_amb_var</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_T_amb</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T_amb_var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd2cc2255e0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/01_Getting-started-project_13_1.png" src="../_images/01_Getting-started-project_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">T</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">i0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">T</span><span class="p">[</span><span class="n">i0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">85</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i0</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">K</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">f_T_amb</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">*</span><span class="n">dt</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">K</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">f_T_amb</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span><span class="o">*</span><span class="n">dt</span>
+    
+<span class="k">def</span> <span class="nf">T_an</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T_0</span><span class="o">=</span><span class="mi">85</span><span class="p">,</span><span class="n">T_ambient</span><span class="o">=</span><span class="mi">65</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">T_ambient</span><span class="o">+</span><span class="p">(</span><span class="n">T_0</span><span class="o">-</span><span class="n">T_ambient</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;numerical Tamb=f(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T_an</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tamb = 65&#39;</span><span class="p">)</span>
+<span class="n">T_amb_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="n">T_amb_var</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_T_amb</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T_amb_var</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;ambient temp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temp (F)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01_Getting-started-project_14_0.png" src="../_images/01_Getting-started-project_14_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">/</span><span class="n">dt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../module_01/03_Numerical_error.html" title="previous page">03 - Numerical Error</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
