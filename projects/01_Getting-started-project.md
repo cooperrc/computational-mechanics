@@ -59,20 +59,6 @@ Assume ambient temperature is a constant 65$^{o}$F.
 ```{code-cell} ipython3
 ```
 
-```{code-cell} ipython3
-```
-
-# (b)
-
-$T(t= \infty) = 65^{o}F$
-
-# (c)
-
-```{code-cell} ipython3
-```
-
-```{code-cell} ipython3
-```
 
 4. Now that we have a working numerical model, we can look at the results if the
 ambient temperature is not constant i.e. T_a=f(t). We can use the weather to improve our estimate for time of death. Consider the following Temperature for the day in question. 
