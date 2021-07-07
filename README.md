@@ -66,6 +66,6 @@ is under BSD-3
 clause](https://github.uconn.edu/rcc02007/Computational_Mechanics/LICENSE). We are
 happy if you re-use the content in any way!
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![Join the chat at https://gitter.im/me3255-summer-2021/logistics](https://badges.gitter.im/me3255-summer-2021/logistics.svg)](https://gitter.im/me3255-summer-2021/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
