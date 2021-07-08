@@ -9,12 +9,12 @@
   - file: module_01/02_Working_with_Python
   - file: module_01/03_Numerical_error
   - file: projects/01_Getting-started-project.md
-#- file: module_02/README
-#  sections:
-#  - file: module_02/01_Cheers_Stats_Beers
-#  - file: module_02/02_Seeing_Stats
-#  - file: module_02/03_Linear_Regression_with_Real_Data
-#  - file: module_02/04_Stats_and_Montecarlo
+- file: module_02/README
+  sections:
+  - file: module_02/01_Cheers_Stats_Beers
+  - file: module_02/02_Seeing_Stats
+  - file: module_02/03_Linear_Regression_with_Real_Data
+  - file: module_02/04_Stats_and_Montecarlo
 #- file: module_03/README
 #  sections:
 #  - file: module_03/01_Catch_Motion
