@@ -15,6 +15,7 @@
   - file: module_02/02_Seeing_Stats
   - file: module_02/03_Linear_Regression_with_Real_Data
   - file: module_02/04_Stats_and_Montecarlo
+  - file: projects/02_Analyze-data_project
 #- file: module_03/README
 #  sections:
 #  - file: module_03/01_Catch_Motion

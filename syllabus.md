@@ -22,7 +22,7 @@ We will work through five modules:
 ## Course Objectives
 
 This course introduces students to computational methods in
-[Python](https://www.python.org/).  The course introduces computational
+[Python](https://www.python.org/).  The course introduces numerical
 methods, best programming practices, and version control.
 These methods will be applied to a number of physics-based problems.
 

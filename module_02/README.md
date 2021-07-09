@@ -40,33 +40,32 @@ mechanics using Python, listed below each module are the learning objectives.
   * The Earth is warming up!!!
 
 4. [04_Stats_and_Montecarlo](./notebooks/04_Stats_and_Montecarlo.ipynb)
-  - How to generate "random" numbers in Python+
-  - The definition of a Monte Carlo model
-  - How to calculate $\pi$ with Monte Carlo
-  - How to take the integral of a function with Monte Carlo
-  - How to propagate uncertainty in a model with Monte Carlo
-  - **Bonus**: use Sympy to do calculus and algebra for us! _no need for
-  - Wolfram, sorry Stephen_
-  - How to generate a normal distribution using uniformly random numbers
+  * How to generate "random" numbers in Python$^+$
+  * The definition of a Monte Carlo model
+  * How to calculate $\pi$ with Monte Carlo
+  * How to model Brownian motion with Monte Carlo
+  * How to propagate uncertainty in a model with Monte Carlo
+  * How to generate a normal distribution using uniformly random numbers
 
-  +The computer only generates pseudo-random numbers. For further
-  information **and** truly random numbers  check
+  $^+$ Remember, the computer only generates pseudo-random numbers. For
+  further information **and** truly random numbers  check
   [www.random.org](https://www.random.org/randomness/) 
 
-## [Computational Mechanics Project #02 - Create specifications for a spitballing robot](./project/02_Analyze-data_project.ipynb)
+# [Project #02 - NYSE random walk predictor](../projects/02_Analyze-data_project)
 
-On the first day of class, we threw $2"\times~2"$ dampened paper (spitballs) at
-a target on the whiteboard. Now, we are going to analyze the accuracy of the
-class with some cool Python tools and design a robot that has the same accuracy
-and precision as the class. 
+In the [Stats and Monte Carlo](../module_02/04_Stats_and_Montecarlo) module, you created a Brownian motion model to predict the motion of particles in a fluid. The Monte Carlo model took steps in the x- and y-directions with random magnitudes. 
 
-The goal of this project is to determine the precision of necessary components
-for a robot that can reproduce the class throwing distibution. We have generated
-pseudo random numbers using `numpy.random`, but the class target practice is an
-example of truly random distributions. If we repeated the exercise, there is a
-vanishingly small probability that we would hit the same points on the target,
-and there are no deterministic models that could take into account all of the
-factors that affected each hit on the board. 
+This [random walk](https://en.wikipedia.org/wiki/Random_walk_hypothesis) can be used to predict stock prices. Let's take a look at some data from the New York Stock Exchange [NYSE](https://www.kaggle.com/dgawlik/nyse) from 2010 through 2017. 
 
-<img src="./images/robot_design.png" style="height: 250px;"/>
+> __Important Note__: 
+> I am not a financial advisor and these models are _purely_ for academic exercises. If you decide to use anything in these notebooks to make financial decisions, it is _at your own risk_. _I am not an economist/financial advisor/etc., I am just a Professor who likes to learn and exeriment._
 
+Here, I will show an example workflow to analyze and predict the Google
+stock price [[GOOGL]](https://en.wikipedia.org/wiki/Alphabet_Inc.) from
+2010 - 2014. Then, you can choose your own stock price to evaluate and
+create a predictive model. 
+
+1. Explore data and select data of interest
+2. Find statistical description of data: mean and standard deviation
+3. Create random variables
+4. Generate random walk for [[GOOGL]](https://en.wikipedia.org/wiki/Alphabet_Inc.) stock opening price
