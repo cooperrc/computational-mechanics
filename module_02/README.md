@@ -51,7 +51,7 @@ mechanics using Python, listed below each module are the learning objectives.
   further information **and** truly random numbers  check
   [www.random.org](https://www.random.org/randomness/) 
 
-# [Project #02 - NYSE random walk predictor](../projects/02_Analyze-data_project)
+## [Project #02 - NYSE random walk predictor](../projects/02_Analyze-data_project)
 
 In the [Stats and Monte Carlo](../module_02/04_Stats_and_Montecarlo) module, you created a Brownian motion model to predict the motion of particles in a fluid. The Monte Carlo model took steps in the x- and y-directions with random magnitudes. 
 
