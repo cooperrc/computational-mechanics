@@ -585,6 +585,8 @@ Throughout this course module, you will be drawing from the following references
     d. How could you force (b) to be true? [Hint](https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.lower) or [Hint](https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.upper)
 
 ```{code-cell} ipython3
+str1 = 'Python'
+str2 = 'python'
 
 ```
 
