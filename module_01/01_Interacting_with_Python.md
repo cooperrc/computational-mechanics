@@ -590,7 +590,14 @@ print('volume > 1000 is {}'.format(V > 1000))
     d. How could you force (b) to be true? [Hint](https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.lower) or [Hint](https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.upper)
 
 ```{code-cell} ipython3
+str1 = 'Python'
+str2 = 'python'
 
+print(str1 < str2)
+print(str1 == str2)
+print(str1 > str2)
+
+print(str1.lower() == str2.lower())
 ```
 
 3. The following code has an error, fix the error so that the correct result is returned:
