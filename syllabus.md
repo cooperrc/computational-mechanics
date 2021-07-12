@@ -34,7 +34,7 @@ differentiation and integration. Students are also expected to learn basics of
 git version control, Python functions and programming best practices. 
 
 ## Course Information
-__Course Title:__ CE2120 - Applied Mechanics II
+__Course Title:__ ME3255 - Computational Mechanics
 
 __Format:__ Online
 
