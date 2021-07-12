@@ -1,6 +1,6 @@
 # Computational Mechanics
 
-Welcome to Computational Mechanics.  
+Welcome to Computational Mechanics! 
 
 This project is a collection of learning modules in engineering computations for
 undergraduate students. These materials are a combination of work from [Prof.
