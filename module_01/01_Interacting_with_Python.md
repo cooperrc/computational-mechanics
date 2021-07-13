@@ -579,11 +579,6 @@ Throughout this course module, you will be drawing from the following references
     c. What is the result of the following logical operation, `volume>1000` (in inches^3)
 
 ```{code-cell} ipython3
-V = 12.5*11*14
-density = V/31
-print('volume is {}'.format(V))
-print('density is {}'.format(density))
-print('volume > 1000 is {}'.format(V > 1000))
 ```
 
 2. Use the variables given below, `str1` and `str2`, and check the following 
@@ -599,14 +594,7 @@ print('volume > 1000 is {}'.format(V > 1000))
 ```{code-cell} ipython3
 str1 = 'Python'
 str2 = 'python'
-
-print(str1 < str2)
-print(str1 == str2)
-print(str1 > str2)
-
-print(str1.lower() == str2.lower())
 ```
-
 3. The following code has an error, fix the error so that the correct result is returned:
 
 ```y is 20 and x is less than y```
