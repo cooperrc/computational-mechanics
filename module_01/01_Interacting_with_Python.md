@@ -220,7 +220,8 @@ __Group 1 argued that__:
 ```{code-cell} ipython3
 8 / (2 * (2 + 2))
 ```
-__Group 2 argued that__: 
+
+__Group 2 argued that__:
 
 ```{code-cell} ipython3
 8 / 2 * (2 + 2)
@@ -571,7 +572,11 @@ Throughout this course module, you will be drawing from the following references
     c. What is the result of the following logical operation, `volume>1000` (in inches^3)
 
 ```{code-cell} ipython3
-
+V = 12.5*11*14
+density = V/31
+print('volume is {}'.format(V))
+print('density is {}'.format(density))
+print('volume > 1000 is {}'.format(V > 1000))
 ```
 
 2. Use the variables given below, `str1` and `str2`, and check the following 
@@ -588,6 +593,11 @@ Throughout this course module, you will be drawing from the following references
 str1 = 'Python'
 str2 = 'python'
 
+print(str1 < str2)
+print(str1 == str2)
+print(str1 > str2)
+
+print(str1.lower() == str2.lower())
 ```
 
 3. The following code has an error, fix the error so that the correct result is returned:
