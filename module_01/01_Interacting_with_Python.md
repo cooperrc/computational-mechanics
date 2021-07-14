@@ -438,7 +438,6 @@ It returns… you guessed it… `False`.
 
 The Python function `bool()` returns a truth value assigned to any argument. Any number other than zero has a truth value of `True`, as well as any nonempty string or list. The number zero and any empty string or list will have a truth value of `False`. Explore the `bool()` function with various arguments.
 
-
 ```{code-cell} ipython3
 bool(0)
 ```
@@ -516,7 +515,7 @@ a > b and b > c
 
 Remember that the logical operator `and` is `True` only when both operands are `True`. In the case above the first operand is `True` but the second one is `False`. 
 
-If you try the `or` operation using the same operands you should get a `True`. 
+If you try the `or` operation using the same operands you should get a `True`.
 
 ```{code-cell} ipython3
 a > b or b > c
@@ -543,7 +542,7 @@ If you don't rememeber this, make sure to use parentheses to indicate the order 
 
 ##### Exercise:
 
-What is happening in the case below? Play around with logical operators and try some examples. 
+What is happening in the case below? Play around with logical operators and try some examples.
 
 ```{code-cell} ipython3
 a > b and not b > c
@@ -579,6 +578,7 @@ Throughout this course module, you will be drawing from the following references
     c. What is the result of the following logical operation, `volume>1000` (in inches^3)
 
 ```{code-cell} ipython3
+
 ```
 
 2. Use the variables given below, `str1` and `str2`, and check the following 
@@ -595,6 +595,7 @@ Throughout this course module, you will be drawing from the following references
 str1 = 'Python'
 str2 = 'python'
 ```
+
 3. The following code has an error, fix the error so that the correct result is returned:
 
 ```y is 20 and x is less than y```
@@ -616,6 +617,14 @@ else:
 4. Create a script that takes the clock hour in 24 hours and prints the clock hour with am or pm. 
 
     Hint: Use an if-else statement with `print` commands
+
+```{code-cell} ipython3
+time = 22
+if time > 12:
+    print(time - 12, 'PM')
+elif time < 12:
+    print(time, 'AM')
+```
 
 ```{code-cell} ipython3
 
