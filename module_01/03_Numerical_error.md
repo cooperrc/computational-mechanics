@@ -609,26 +609,26 @@ In any computational solution, there will be some point of similar diminishing i
 1. The growth of populations of organisms has many engineering and scientific applications. One of the simplest
 models assumes that the rate of change of the population p is proportional to the existing population at any time t:
 
-    $\frac{dp}{dt} = k_g p$
+$\frac{dp}{dt} = k_g p$
 
-    where $t$ is time in years, and $k_g$ is growth rate in \[1/years\]. 
-    
-    The world population has been increasing dramatically, let's make a prediction based upon the [following data](https://worldpopulationhistory.org/map/2020/mercator/1/0/25/) saved in [world_population_1900-2020.csv](../data/world_population_1900-2020.csv):
-    
-    |year| world population |
-    |---|---|
-    |1900|1,578,000,000|
-    |1950|2,526,000,000|
-    |2000|6,127,000,000|
-    |2020|7,795,482,000|
-    
-    a. Calculate the average population growth, $\frac{\Delta p}{\Delta t}$, from 1900-1950, 1950-2000, and 2000-2020
-    
-    b. Determine the average growth rates. $k_g$, from 1900-1950, 1950-2000, and 2000-2020
-    
-    c. Use a growth rate of $k_g=0.013$ [1/years] and compare the analytical solution (use initial condition p(1900) = 1578000000) to the Euler integration for time steps of 20 years from 1900 to 2020 (Hint: use method (1)- plot the two solutions together with the given data) 
-    
-    d. Discussion question: If you decrease the time steps further and the solution converges, will it converge to the actual world population? Why or why not? 
+where $t$ is time in years, and $k_g$ is growth rate in \[1/years\]. 
+
+The world population has been increasing dramatically, let's make a prediction based upon the [following data](https://worldpopulationhistory.org/map/2020/mercator/1/0/25/) saved in [world_population_1900-2020.csv](../data/world_population_1900-2020.csv):
+
+|year| world population |
+|---|---|
+|1900|1,578,000,000|
+|1950|2,526,000,000|
+|2000|6,127,000,000|
+|2020|7,795,482,000|
+
+a. Calculate the average population growth, $\frac{\Delta p}{\Delta t}$, from 1900-1950, 1950-2000, and 2000-2020
+
+b. Determine the average growth rates. $k_g$, from 1900-1950, 1950-2000, and 2000-2020
+
+c. Use a growth rate of $k_g=0.013$ [1/years] and compare the analytical solution (use initial condition p(1900) = 1578000000) to the Euler integration for time steps of 20 years from 1900 to 2020 (Hint: use method (1)- plot the two solutions together with the given data) 
+
+d. Discussion question: If you decrease the time steps further and the solution converges, will it converge to the actual world population? Why or why not? 
 
 **Note: We have used a new function `np.loadtxt` here. Use the `help` or `?` to learn about what this function does and how the arguments can change the output. In the next module, we will go into more details on how to load data, plot data, and present trends.**
 
@@ -637,39 +637,6 @@ import numpy as np
 year, pop = np.loadtxt('../data/world_population_1900-2020.csv',skiprows=1,delimiter=',',unpack=True)
 print('years=',year)
 print('population =', pop)
-```
-
-```{code-cell} ipython3
-dpdt = (pop[1:]-pop[0:-1])/(year[1:]-year[0:-1])
-print('population changes in millions of people/year\n1900: {}\n1950: {}\n2000: {}'.format(*dpdt/1e6))
-```
-
-```{code-cell} ipython3
-print('population growth rate in 1/years \n1900: {}\n1950: {}\n2000: {}'.format(*dpdt/pop[0:-1]))
-```
-
-```{code-cell} ipython3
-p = lambda t: pop[0]*np.exp(0.013*(t-year[0]))
-t=np.linspace(1900,2030,30)
-dt=t[1]-t[0]
-plt.plot(t,p(t),label='analytical')
-p_euler = np.zeros(len(t))
-p_euler[0] = pop[0]
-for i in range(0,len(t)-1):
-    p_euler[i+1]= p_euler[i]+0.013*p_euler[i]*dt
-
-plt.plot(t,p_euler,'-.',label='euler {} steps'.format(len(t)))
-
-t=np.linspace(1900,2030,100)
-dt=t[1]-t[0]
-p_euler = np.zeros(len(t))
-p_euler[0] = pop[0]
-for i in range(0,len(t)-1):
-    p_euler[i+1]= p_euler[i]+0.013*p_euler[i]*dt
-plt.plot(t,p_euler,'--',label='euler {} steps'.format(len(t)))
-
-plt.plot(year,pop,'s',label='measured populations')
-plt.legend();
 ```
 
 __d.__ As the number of time steps increases, the Euler approximation approaches the analytical solution, not the measured data. The best-case scenario is that the Euler solution is the same as the analytical solution. 
@@ -703,17 +670,6 @@ def exptaylor(x,n):
             ex+=x**(i+1)/factorial(i+1) # add the nth-order result for each step in loop
         return ex
         
-```
-
-```{code-cell} ipython3
-n=np.arange(0,100)
-error = np.zeros(len(n))
-exp1 = np.exp(1)
-for i in range(len(n)):
-    e1=exptaylor(1,n[i])
-    error[i] = np.abs(e1-exp1)/exp1
-plt.loglog(n,error)
-plt.title('reduction in truncation error for exp(1)\nafter ~20 terms you reach the machine epsilon');
 ```
 
 ```{code-cell} ipython3
