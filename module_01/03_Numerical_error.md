@@ -4,8 +4,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.10.3
+    format_version: 0.12
+    jupytext_version: 1.6.0
 kernelspec:
   display_name: Python 3
   language: python
@@ -33,7 +33,6 @@ Acceleration of the object:
 
 $\sum F=ma=F_g-F_d=mg - cv^2 = m\frac{dv}{dt}$
 
-
 +++
 
 ### Define constants and analytical solution (meters-kilogram-sec)
@@ -58,7 +57,7 @@ $v_{terminal}=\sqrt{\frac{mg}{c}}$
 
 Now, substitute this terminal velocity into the equation and integrate to get the analytical solution v(t):
 
-$v(t)=v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}$. 
+$v(t)=v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}$.
 
 ```{code-cell} ipython3
 import numpy as np
@@ -189,7 +188,7 @@ for i in range(1,len(t)):
 v_numerical
 ```
 
-Let's print the time, velocity (analytical) and velocity (numerical) to compare the results in a table. We'll use the `print` and `format` commands to look at the results. 
+Let's print the time, velocity (analytical) and velocity (numerical) to compare the results in a table. We'll use the `print` and `format` commands to look at the results.
 
 ```{code-cell} ipython3
 print('time (s)|vel analytical (m/s)|vel numerical (m/s)')
@@ -246,7 +245,7 @@ What happens when you decrease the number of time steps?
 ## Errors in Numerical Modeling
 
 ## 1 - Truncation
-## 2 - Roundoff  
+## 2 - Roundoff
 
 +++
 
@@ -293,7 +292,7 @@ In the .gif below, the error in the function is reduced by including higher-orde
 ![3](https://media.giphy.com/media/xA7G2n20MzTOw/giphy.gif)
 
 $n^{th}$-order approximation equivalent to 
-an $n^{th}$-order polynomial. 
+an $n^{th}$-order polynomial.
 
 +++
 
@@ -347,7 +346,7 @@ Consider $\pi$ again, but this time you will use a for loop to multiply
 $\pi$ by a 1e-16 then divide by 1e-16, then multiply by 2e-16 and divide
 by 2e-16, and so on until you reach 10e-16. If we do these calculations
 by hand, we see that each step in the for loop returns $\pi$, but due to
-floating point arithmetic errors we accumulate some error. 
+floating point arithmetic errors we accumulate some error.
 
 ```{code-cell} ipython3
 double=np.array([pi],dtype='float64')
@@ -513,7 +512,7 @@ def freefall(N):
 
 We can visualize how the approximation approaches the exact solution with this method. The process of approaching the "true" solution is called **convergence**. 
 
-First, solve for `n=2` steps, so t=[0,2]. We can time the solution to get a sense of how long the computation will take for larger values of `n`. 
+First, solve for `n=2` steps, so t=[0,2]. We can time the solution to get a sense of how long the computation will take for larger values of `n`.
 
 ```{code-cell} ipython3
 %%time
@@ -530,7 +529,7 @@ The block of code above assigned three variables from the function `freefall`.
 
 3. `t` = timesteps from 0..2 with `n` values, here t=np.array([0,2])
 
-All three variables have the same length, so you can plot them and visually compare `v_analytical` and `v_numerical`. This is the comparison method (1) from above. 
+All three variables have the same length, so you can plot them and visually compare `v_analytical` and `v_numerical`. This is the comparison method (1) from above.
 
 ```{code-cell} ipython3
 import matplotlib.pyplot as plt
@@ -548,7 +547,7 @@ plt.legend()
 
 ### Exercise
 
-Try adjusting `n` in the code above to watch the solution converge. You should notice the Euler approximation becomes almost indistinguishable from the analytical solution as `n` increases. 
+Try adjusting `n` in the code above to watch the solution converge. You should notice the Euler approximation becomes almost indistinguishable from the analytical solution as `n` increases.
 
 +++
 
@@ -562,7 +561,7 @@ numerical result is saved as a 32-bit floating point array. The best analytical 
 
 In the next plot, you consider the relative error for the velocity at t=2 s, as a function of `N`. 
 
-$^+$ Note: In practice, there is no reason to restrict the precision of floating point numbers. The function was written this way to highlight the effect of roundoff error without significant computational resources. You would need more timesteps to observe floating point error with 64-bit floating point numbers. 
+$^+$ Note: In practice, there is no reason to restrict the precision of floating point numbers. The function was written this way to highlight the effect of roundoff error without significant computational resources. You would need more timesteps to observe floating point error with 64-bit floating point numbers.
 
 ```{code-cell} ipython3
 n = np.arange(500, 100000, 500) # create an array from 10^1 to 10^3 with N values
@@ -588,7 +587,7 @@ plot", you see that around $N=10^4$ steps you stop decreasing the error
 with more steps. This is because we are approaching the limit of how
 precise we can store a number using a 32-bit floating point number. 
 
-In any computational solution, there will be some point of similar diminishing in terms of accuracy (error) and computational time (in this case, number of timesteps). If you were to attempt a solution for N=1 billion, the solution could take $\approx$(1 billion)(200 $\mu s$\[cpu time for N=5\])$\approx$ 55 hours, but would not increase the accuracy of the solution. 
+In any computational solution, there will be some point of similar diminishing in terms of accuracy (error) and computational time (in this case, number of timesteps). If you were to attempt a solution for N=1 billion, the solution could take $\approx$(1 billion)(200 $\mu s$\[cpu time for N=5\])$\approx$ 55 hours, but would not increase the accuracy of the solution.
 
 +++
 
@@ -615,20 +614,20 @@ models assumes that the rate of change of the population p is proportional to th
     
     The world population has been increasing dramatically, let's make a prediction based upon the [following data](https://worldpopulationhistory.org/map/2020/mercator/1/0/25/) saved in [world_population_1900-2020.csv](../data/world_population_1900-2020.csv):
     
-    |year| world population |
-    |---|---|
-    |1900|1,578,000,000|
-    |1950|2,526,000,000|
-    |2000|6,127,000,000|
-    |2020|7,795,482,000|
+|year| world population |
+|---|---|
+|1900|1,578,000,000|
+|1950|2,526,000,000|
+|2000|6,127,000,000|
+|2020|7,795,482,000|
     
-    a. Calculate the average population growth, $\frac{\Delta p}{\Delta t}$, from 1900-1950, 1950-2000, and 2000-2020
-    
-    b. Determine the average growth rates. $k_g$, from 1900-1950, 1950-2000, and 2000-2020
-    
-    c. Use a growth rate of $k_g=0.013$ [1/years] and compare the analytical solution (use initial condition p(1900) = 1578000000) to the Euler integration for time steps of 20 years from 1900 to 2020 (Hint: use method (1)- plot the two solutions together with the given data) 
-    
-    d. Discussion question: If you decrease the time steps further and the solution converges, will it converge to the actual world population? Why or why not? 
+a. Calculate the average population growth, $\frac{\Delta p}{\Delta t}$, from 1900-1950, 1950-2000, and 2000-2020
+
+b. Determine the average growth rates. $k_g$, from 1900-1950, 1950-2000, and 2000-2020
+
+c. Use a growth rate of $k_g=0.013$ [1/years] and compare the analytical solution (use initial condition p(1900) = 1578000000) to the Euler integration for time steps of 20 years from 1900 to 2020 (Hint: use method (1)- plot the two solutions together with the given data) 
+
+d. Discussion question: If you decrease the time steps further and the solution converges, will it converge to the actual world population? Why or why not? 
 
 **Note: We have used a new function `np.loadtxt` here. Use the `help` or `?` to learn about what this function does and how the arguments can change the output. In the next module, we will go into more details on how to load data, plot data, and present trends.**
 
@@ -640,39 +639,13 @@ print('population =', pop)
 ```
 
 ```{code-cell} ipython3
-dpdt = (pop[1:]-pop[0:-1])/(year[1:]-year[0:-1])
-print('population changes in millions of people/year\n1900: {}\n1950: {}\n2000: {}'.format(*dpdt/1e6))
+print('average population changes 1900-1950, 1950-2000, 2000-2020')
+print((pop[1:] - pop[0:-1])/(year[1:] - year[0:-1]))
+print('average growth of 1900 - 2020')
+print(np.mean((pop[1:] - pop[0:-1])/(year[1:] - year[0:-1])))
 ```
 
-```{code-cell} ipython3
-print('population growth rate in 1/years \n1900: {}\n1950: {}\n2000: {}'.format(*dpdt/pop[0:-1]))
-```
-
-```{code-cell} ipython3
-p = lambda t: pop[0]*np.exp(0.013*(t-year[0]))
-t=np.linspace(1900,2030,30)
-dt=t[1]-t[0]
-plt.plot(t,p(t),label='analytical')
-p_euler = np.zeros(len(t))
-p_euler[0] = pop[0]
-for i in range(0,len(t)-1):
-    p_euler[i+1]= p_euler[i]+0.013*p_euler[i]*dt
-
-plt.plot(t,p_euler,'-.',label='euler {} steps'.format(len(t)))
-
-t=np.linspace(1900,2030,100)
-dt=t[1]-t[0]
-p_euler = np.zeros(len(t))
-p_euler[0] = pop[0]
-for i in range(0,len(t)-1):
-    p_euler[i+1]= p_euler[i]+0.013*p_euler[i]*dt
-plt.plot(t,p_euler,'--',label='euler {} steps'.format(len(t)))
-
-plt.plot(year,pop,'s',label='measured populations')
-plt.legend();
-```
-
-__d.__ As the number of time steps increases, the Euler approximation approaches the analytical solution, not the measured data. The best-case scenario is that the Euler solution is the same as the analytical solution. 
+__d.__ As the number of time steps increases, the Euler approximation approaches the analytical solution, not the measured data. The best-case scenario is that the Euler solution is the same as the analytical solution.
 
 +++
 
@@ -703,17 +676,6 @@ def exptaylor(x,n):
             ex+=x**(i+1)/factorial(i+1) # add the nth-order result for each step in loop
         return ex
         
-```
-
-```{code-cell} ipython3
-n=np.arange(0,100)
-error = np.zeros(len(n))
-exp1 = np.exp(1)
-for i in range(len(n)):
-    e1=exptaylor(1,n[i])
-    error[i] = np.abs(e1-exp1)/exp1
-plt.loglog(n,error)
-plt.title('reduction in truncation error for exp(1)\nafter ~20 terms you reach the machine epsilon');
 ```
 
 ```{code-cell} ipython3
