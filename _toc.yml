@@ -22,6 +22,7 @@
   - file: module_03/02_Step_Future
   - file: module_03/03_Get_Oscillations
   - file: module_03/04_Getting_to_the_root
+  - file: projects/03_IVP-project
 #- file: module_04/README
 #  sections:
 #  - file: module_04/01_Linear-Algebra
