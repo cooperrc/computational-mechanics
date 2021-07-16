@@ -16,12 +16,12 @@
   - file: module_02/03_Linear_Regression_with_Real_Data
   - file: module_02/04_Stats_and_Montecarlo
   - file: projects/02_Analyze-data_project
-#- file: module_03/README
-#  sections:
-#  - file: module_03/01_Catch_Motion
-#  - file: module_03/02_Step_Future
-#  - file: module_03/03_Get_Oscillations
-#  - file: module_03/04_Getting_to_the_root
+- file: module_03/README
+  sections:
+  - file: module_03/01_Catch_Motion
+  - file: module_03/02_Step_Future
+  - file: module_03/03_Get_Oscillations
+  - file: module_03/04_Getting_to_the_root
 #- file: module_04/README
 #  sections:
 #  - file: module_04/01_Linear-Algebra
