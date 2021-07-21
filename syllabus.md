@@ -33,6 +33,21 @@ and numerical approaches and solve differential equations using numerical
 differentiation and integration. Students are also expected to learn basics of
 git version control, Python functions and programming best practices. 
 
+Students are expected to work together, share resources, and build
+collaboratively. Any work that is turned in by an individual should
+reflect the student's understanding of the material. 
+
+Students _should_ 
+- copy/paste code from textbook, then read through it to understand
+- post/share code examples and error messages 
+- post/share code examples to resolve other students' issues
+- submit work that they can explain
+
+Students _should not_
+- submit other students' work as their own
+- submit work that they do not understand (copy-pasted without
+reading/understanding)
+
 ## Course Information
 __Course Title:__ ME3255 - Computational Mechanics
 
