@@ -798,4 +798,8 @@ until 2015.
     a. Use the `!head ../data/transistor_data.csv` command to look at
     the top of the csv. What are the headings for the columns?
 
-    b. Load the csv into a pandas dataframe. How many 
+    b. Load the csv into a pandas dataframe. How many missing values
+    (`NaN`) are
+    in the column with the number of transistors? What fraction are
+    missing?
+
