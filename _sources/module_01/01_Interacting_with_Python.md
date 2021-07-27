@@ -220,7 +220,8 @@ __Group 1 argued that__:
 ```{code-cell} ipython3
 8 / (2 * (2 + 2))
 ```
-__Group 2 argued that__: 
+
+__Group 2 argued that__:
 
 ```{code-cell} ipython3
 8 / 2 * (2 + 2)
@@ -374,15 +375,15 @@ It will just behave like it's supposed to when you operate with it
 
 But sometimes you need to make sure you know the type of a variable. Thankfully, Python offers a function to find out the type of a variable: `type()`.
 
-```python
+```{code-cell} ipython3
 type(x)
 ```
 
-```python
+```{code-cell} ipython3
 type(w)
 ```
 
-```python
+```{code-cell} ipython3
 type(y)
 ```
 
@@ -390,12 +391,12 @@ type(y)
 
 Here you assign a new variable to the result of an operation that involves other variables.
 
-```python
+```{code-cell} ipython3
 sum_xy = x + y
 diff_xy = x - y
 ```
 
-```python
+```{code-cell} ipython3
 print('The sum of x and y is:', sum_xy)
 print('The difference between x and y is:', diff_xy)
 ```
@@ -405,11 +406,11 @@ message, followed by a variable, and Python printed a useful combination
 of the message and the variable value. This is a pro tip! You want to
 print for humans. Let's now check the type of the new variables you just created above:
 
-```python
+```{code-cell} ipython3
 type(sum_xy)
 ```
 
-```python
+```{code-cell} ipython3
 type(diff_xy)
 ```
 
@@ -429,7 +430,7 @@ For now, you will look at just the first three of these.
 **Boolean variables** are used to represent truth values, and they can take one of two possible values: `True` and `False`.
 _Logical expressions_ return a boolean. Here is the simplest logical expression, using the keyword `not`:
 
-```Python
+```{code-cell} ipython3
   not True
 ```
 
@@ -437,16 +438,15 @@ It returns… you guessed it… `False`.
 
 The Python function `bool()` returns a truth value assigned to any argument. Any number other than zero has a truth value of `True`, as well as any nonempty string or list. The number zero and any empty string or list will have a truth value of `False`. Explore the `bool()` function with various arguments.
 
-
-```python
+```{code-cell} ipython3
 bool(0)
 ```
 
-```python
+```{code-cell} ipython3
 bool('Do we need oxygen?')
 ```
 
-```python
+```{code-cell} ipython3
 bool('We do need oxygen')
 ```
 
@@ -455,40 +455,47 @@ bool('We do need oxygen')
 You can check that it is not zero by trying to add it to a number. Let's
 see what happens when you try that:
 
-```python jupyter={"outputs_hidden": true}
+```{code-cell} ipython3
 a = None
 
 b = 3
 ```
 
 ```python
-a + b
+>>> a + b
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call
+last)
+<ipython-input-5-bd58363a63fc> in <module>
+----> 1 a + b
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 ```
 
 ### Logical and comparison operators
 
 The Python comparison operators are: `<`, `<=`, `>`, `>=`, `==`, `!=`. They compare two objects and return either `True` or `False`: smaller than, smaller or equal, greater than, greater or equal, equal, not equal. Try it!
 
-```python jupyter={"outputs_hidden": true}
+```{code-cell} ipython3
 x = 3
 y = 5
 ```
 
-```python
+```{code-cell} ipython3
 x > y
 ```
 
 You can assign the truth value of a comparison operation to a new variable name:
 
-```python jupyter={"outputs_hidden": true}
+```{code-cell} ipython3
 z = x > y
 ```
 
-```python
+```{code-cell} ipython3
 z
 ```
 
-```python
+```{code-cell} ipython3
 type(z)
 ```
 
@@ -496,27 +503,27 @@ Logical operators are the following: `and`, `or`, and `not`. They work just like
 
 Let's do some examples:
 
-```python jupyter={"outputs_hidden": true}
+```{code-cell} ipython3
 a = 5
 b = 3
 c = 10
 ```
 
-```python
+```{code-cell} ipython3
 a > b and b > c
 ```
 
 Remember that the logical operator `and` is `True` only when both operands are `True`. In the case above the first operand is `True` but the second one is `False`. 
 
-If you try the `or` operation using the same operands you should get a `True`. 
+If you try the `or` operation using the same operands you should get a `True`.
 
-```python
+```{code-cell} ipython3
 a > b or b > c
 ```
 
 And the negation of the second operand results in …
 
-```python
+```{code-cell} ipython3
 not b > c
 ```
 
@@ -535,9 +542,9 @@ If you don't rememeber this, make sure to use parentheses to indicate the order 
 
 ##### Exercise:
 
-What is happening in the case below? Play around with logical operators and try some examples. 
+What is happening in the case below? Play around with logical operators and try some examples.
 
-```python
+```{code-cell} ipython3
 a > b and not b > c
 ```
 
@@ -585,7 +592,8 @@ Throughout this course module, you will be drawing from the following references
     d. How could you force (b) to be true? [Hint](https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.lower) or [Hint](https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.upper)
 
 ```{code-cell} ipython3
-
+str1 = 'Python'
+str2 = 'python'
 ```
 
 3. The following code has an error, fix the error so that the correct result is returned:
@@ -609,6 +617,14 @@ else:
 4. Create a script that takes the clock hour in 24 hours and prints the clock hour with am or pm. 
 
     Hint: Use an if-else statement with `print` commands
+
+```{code-cell} ipython3
+time = 22
+if time > 12:
+    print(time - 12, 'PM')
+elif time < 12:
+    print(time, 'AM')
+```
 
 ```{code-cell} ipython3
 

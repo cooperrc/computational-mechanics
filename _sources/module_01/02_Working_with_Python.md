@@ -799,6 +799,17 @@ of the two indices from 0 to 9 e.g. A_99[3,2]=6 and A_99[4,4]=16.
 
 4. The following linear interpolation function has an error. It is supposed to return y(x) given the the two points $p_1=[x_1,~y_1]$ and $p_2=[x_2,~y_2]$. Currently, it just returns and error.
 
+```python
+def linInterp(x,p1,p2):
+    '''linear interplation function
+    return y(x) given the two endpoints 
+    p1=np.array([x1,y1])
+    and
+    p2=np.array([x2,y2])'''
+    slope = (p2[2]-p1[2])/(p2[1]-p1[1])
+    
+    return p1[2]+slope*(x - p1[1])
+```
 ```{code-cell} ipython3
 
 ```

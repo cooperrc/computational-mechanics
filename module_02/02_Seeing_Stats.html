@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - Seeing stats in a new light &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="03 - Linear regression with real data" href="03_Linear_Regression_with_Real_Data.html" />
+    <link rel="prev" title="01 - Cheers! Stats with Beers" href="01_Cheers_Stats_Beers.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   Computational Mechanics 02 - Analyze Data
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Cheers_Stats_Beers.html">
+     01 - Cheers!  Stats with Beers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Cheers_Stats_Beers.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     02 - Seeing stats in a new light
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html">
+     03 - Linear regression with real data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Stats_and_Montecarlo.html">
+     04 - Statistics and Monte-Carlo Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Stats_and_Montecarlo.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
+     Project #02 - NYSE random walk predictor
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_03/README.html">
+   Computational Mechanics 03- Initial Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
+     Catch things in motion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/01_Catch_Motion.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/02_Step_Future.html">
+     Step to the future
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/02_Step_Future.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
+     Get with the oscillations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/03_Get_Oscillations.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
+     Roots of Nonlinear functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/03_IVP-project.html">
+     Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/module_02/02_Seeing_Stats.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_02/02_Seeing_Stats.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/02_Seeing_Stats.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/02_Seeing_Stats.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/02_Seeing_Stats.md&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   02 - Seeing stats in a new light
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-the-data">
+     Read the data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note">
+       Note:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantitative-vs-categorical-data">
+     Quantitative vs. categorical data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-quantitative-data">
+     Visualizing quantitative data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exploring-quantitative-data-continued">
+       Exploring quantitative data (continued)
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exercise">
+         Exercise:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercise:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#median-value">
+       Median value
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Exercise:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#box-plots">
+       Box plots
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Exercise:
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#a-bit-of-history">
+         A bit of history:
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Note:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-categorical-data">
+     Visualizing categorical data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-multiple-data">
+     Visualizing multiple data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scatter-plots">
+       Scatter plots
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bubble-chart">
+       Bubble chart
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#discuss-with-your-neighbor">
+         Discuss with your neighbor:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-ve-learned">
+     What you’ve learned
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<div class="section" id="seeing-stats-in-a-new-light">
+<h1>02 - Seeing stats in a new light<a class="headerlink" href="#seeing-stats-in-a-new-light" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the second lesson in “Analyze Data,” Module 2 of your series
+in <em>Computational Mechanics</em>. In the previous lesson, <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">Cheers! Stats
+with Beers</span></a>, You did some exploratory
+data analysis with a data set of canned craft beers in the US [1]. We’ll
+continue using that same data set here, but with a new focus on
+<em>visualizing statistics</em>.</p>
+<p>In her lecture <a class="reference external" href="https://youtu.be/QYDuAo9r1xE">“Looking at Data”</a>, Prof. Kristin Sainani says that you should always plot your data. Immediately, several things can come to light: are there outliers in your data? (Outliers are data points that look abnormally far from other values in the sample.) Are there data points that don’t make sense? (Errors in data entry can be spotted this way.) And especially, you want to get a <em>visual</em> representation of how data are distributed in your sample.</p>
+<p>In this lesson, you’ll play around with different ways of visualizing
+data. You have so many ways to play! Have a look at the gallery of <a class="reference external" href="http://datavizproject.com">The
+Data Viz Project</a> by <em>ferdio</em> (a data viz
+agency in Copenhagen). Aren’t those gorgeous? Wouldn’t you like to be
+able to make some pretty pics like that? Python can help!</p>
+<p>Let’s begin. You’ll import your favorite Python libraries, and set some
+font parameters for your plots to look nicer. Then you’ll load our data
+set for craft beers and begin!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="read-the-data">
+<h2>Read the data<a class="headerlink" href="#read-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Like in the previous lesson, you will load the data from a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file. You may have the file in your working directory if you downloaded it when working through the previous lesson. In that case, you could load it like this:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;beers.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you downloaded the full set of lesson files from your public repository, you can find the file in the <code class="docutils literal notranslate"><span class="pre">/data</span></code> folder, and you can load it with the full path:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the beers data set using pandas, and assign it to a dataframe</span>
+<span class="n">beers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/beers.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="note">
+<h3>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t have the data file locally, download it by adding a code cell, and executing the following code in it:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://go.gwu.edu/engcomp2data1?accessType=DOWNLOAD&#39;</span>
+<span class="n">urlretrieve</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="s1">&#39;beers.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The data file will be downloaded to your working directory, and you will load it like described above.</p>
+<p>OK. Let’s have a look at the first few rows of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe
+you just created from the file, and confirm that it’s a dataframe using
+the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function. You only display the first 10 rows to save some
+space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">beers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span><span class="p">[</span><span class="n">beers</span><span class="p">[</span><span class="s1">&#39;style&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;American IPA&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>id</th>
+      <th>name</th>
+      <th>style</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.071</td>
+      <td>NaN</td>
+      <td>2264</td>
+      <td>Rise of the Phoenix</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.075</td>
+      <td>NaN</td>
+      <td>2262</td>
+      <td>Sex and Candy</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>28</td>
+      <td>0.070</td>
+      <td>70.0</td>
+      <td>799</td>
+      <td>21st Amendment IPA (2006)</td>
+      <td>American IPA</td>
+      <td>368</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>29</td>
+      <td>0.070</td>
+      <td>70.0</td>
+      <td>797</td>
+      <td>Brew Free! or Die IPA (2008)</td>
+      <td>American IPA</td>
+      <td>368</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>30</td>
+      <td>0.070</td>
+      <td>70.0</td>
+      <td>796</td>
+      <td>Brew Free! or Die IPA (2009)</td>
+      <td>American IPA</td>
+      <td>368</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2387</th>
+      <td>2390</td>
+      <td>0.059</td>
+      <td>135.0</td>
+      <td>1676</td>
+      <td>Troopers Alley IPA</td>
+      <td>American IPA</td>
+      <td>344</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>2390</th>
+      <td>2393</td>
+      <td>0.065</td>
+      <td>82.0</td>
+      <td>2417</td>
+      <td>4000 Footer IPA</td>
+      <td>American IPA</td>
+      <td>109</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>2392</th>
+      <td>2395</td>
+      <td>0.065</td>
+      <td>69.0</td>
+      <td>1697</td>
+      <td>Be Hoppy IPA</td>
+      <td>American IPA</td>
+      <td>339</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>2393</th>
+      <td>2396</td>
+      <td>0.069</td>
+      <td>69.0</td>
+      <td>2194</td>
+      <td>Worthy IPA</td>
+      <td>American IPA</td>
+      <td>199</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>2396</th>
+      <td>2399</td>
+      <td>0.069</td>
+      <td>69.0</td>
+      <td>1512</td>
+      <td>Worthy IPA (2013)</td>
+      <td>American IPA</td>
+      <td>199</td>
+      <td>12.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>424 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Unnamed: 0&#39;, &#39;abv&#39;, &#39;ibu&#39;, &#39;id&#39;, &#39;name&#39;, &#39;style&#39;, &#39;brewery_id&#39;,
+       &#39;ounces&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quantitative-vs-categorical-data">
+<h2>Quantitative vs. categorical data<a class="headerlink" href="#quantitative-vs-categorical-data" title="Permalink to this headline">¶</a></h2>
+<p>As you can see in the nice table that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> printed for the
+dataframe, you have several features for each beer: the label <code class="docutils literal notranslate"><span class="pre">abv</span></code>
+corresponds to the acohol-by-volume fraction, label <code class="docutils literal notranslate"><span class="pre">ibu</span></code> refers to the
+international bitterness unit (IBU), then you have the <code class="docutils literal notranslate"><span class="pre">name</span></code> of the beer
+and the <code class="docutils literal notranslate"><span class="pre">style</span></code>, the brewery ID number, and the liquid volume of the
+beer can, in ounces.</p>
+<p>Alcohol-by-volume is a numeric feature: a volume fraction, with possible
+values from 0 to 1 (sometimes also given as a percentage). In the first
+10 rows of your dataframe, the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> value is missing (all those <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s),
+but you saw in the previous lesson that <code class="docutils literal notranslate"><span class="pre">ibu</span></code> is also a numeric feature,
+with values that go from a minimum of 4 to a maximum of 138 (in your data
+set). IBU is pretty mysterious: how do you measure the bitterness of
+beer? It turns out that bitterness is measured as parts per million of
+<em>isohumulone</em>, the acid found in hops [2].</p>
+<p>For these numeric features, you learned that you can get an idea of the
+<em>central tendency</em> in the data using the <strong>mean value</strong>, and you get
+ideas of <em>spread</em> of the data with the <strong>standard deviation</strong> (and also
+with the range, but standard deviation is the most common).</p>
+<p>Notice that the beer data also has a feature named <code class="docutils literal notranslate"><span class="pre">style</span></code>: it can be
+“American IPA” or “American Porter” or a bunch of other styles of beer.
+If you want to study the beers according to style, you’ll have to come up
+with some new ideas, because you can’t take the mean or standard
+deviation of this feature!</p>
+<p><strong>Quantitative data</strong> have meaning through a numeric feature, either on
+a continuous scale (like a fraction from 0 to 1), or a discrete count.
+<strong>Categorical data</strong>, in contrast, have meaning through a qualitative
+feature (like the style of beer). Data in this form can be collected in
+groups (categories), and then you can count the number of data items in
+that group. For example, you could ask how many beers (in your set) are of
+the style “American IPA,” or ask how many beers you have in each style.</p>
+</div>
+<div class="section" id="visualizing-quantitative-data">
+<h2>Visualizing quantitative data<a class="headerlink" href="#visualizing-quantitative-data" title="Permalink to this headline">¶</a></h2>
+<p>In the previous lesson, you played around a bit with the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>
+columns of the dataframe <code class="docutils literal notranslate"><span class="pre">beers</span></code>. For each of these columns, you
+extracted it from the dataframe and saved it into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> series,
+then you used the <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> method to get rid of null values. This
+“clean” data was your starting point for some exploratory data analysis,
+and for plotting the data distributions using <strong>histograms</strong>. Here, you
+will add a few more ingredients to your recipes for data exploration, and
+you’ll learn about a new type of visualization: the <strong>box plot</strong>.</p>
+<p>Let’s repeat here the process for extracting and cleaning the two series, and getting the values into NumPy arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Repeat cleaning values abv</span>
+<span class="n">abv_series</span> <span class="o">=</span> <span class="n">beers</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">]</span>
+<span class="n">abv_clean</span> <span class="o">=</span> <span class="n">abv_series</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">abv</span> <span class="o">=</span> <span class="n">abv_clean</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Repeat cleaning values ibu</span>
+<span class="n">ibu_series</span> <span class="o">=</span> <span class="n">beers</span><span class="p">[</span><span class="s1">&#39;ibu&#39;</span><span class="p">]</span>
+<span class="n">ibu_clean</span> <span class="o">=</span> <span class="n">ibu_series</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">ibu</span> <span class="o">=</span> <span class="n">ibu_clean</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also repeat a histogram plot for the <code class="docutils literal notranslate"><span class="pre">abv</span></code> variable, but this time choose to plot just 10 bins (you’ll see why in a moment).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Alcohol by Volume (abv) </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;abv&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_15_0.png" src="../_images/02_Seeing_Stats_15_0.png" />
+</div>
+</div>
+<p>You can tell that the most frequent values of <code class="docutils literal notranslate"><span class="pre">abv</span></code> fall in the bin just
+above 0.05 (5% alcohol), and the bin below. The mean value of your data
+is 0.06, which happens to be within the top-frequency bin, but data is
+not always so neat (sometimes, extreme values weigh heavily on the
+mean). Note also that you have a <em>right skewed</em> distribution, with
+higher-frequency bins occuring in the lower end of the range than in the
+higher end.</p>
+<p>If you played around with the bin sizes in the previous lesson, you might have noticed that with a lot of bins, it becomes harder to visually pick out the patterns in the data. But if you use too few bins, the plot is also unhelpful. What number of bins is just right? Well, it depends on your data, so you’ll just have to experiment and use your best judgement.</p>
+<p>Let’s learn a new trick. It turns out that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has built-in methods to make histograms directly from columns of a dataframe! (It uses Matplotlib internally for that.) The syntax is short and sweet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataframe</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And <code class="docutils literal notranslate"><span class="pre">pandas</span></code> plots a pretty nice histogram without help. You can add optional parameters to set these to your liking; see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html">documentation</a>. Check it out, and compare with your previous plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;abv&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Alcohol by Volume (abv) </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_18_0.png" src="../_images/02_Seeing_Stats_18_0.png" />
+</div>
+</div>
+<p>Which one do you like better? Well, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> histogram took fewer lines of code to create.  And it doesn’t look bad at all. But you do have more fine-grained control with Matplotlib. Which method you choose in a real situation will just depend on the situation and your preference.</p>
+<div class="section" id="exploring-quantitative-data-continued">
+<h3>Exploring quantitative data (continued)<a class="headerlink" href="#exploring-quantitative-data-continued" title="Permalink to this headline">¶</a></h3>
+<p>In the <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">previous lesson</span></a>, you learned how to compute the mean of the data using <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code>. How easy is that? But then you wrote your own custom functions to compute variance or standard deviation. There are some standard numpy libraries that you can use instead.</p>
+<div class="section" id="exercise">
+<h4>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Go to the documentation of <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.var.html"><code class="docutils literal notranslate"><span class="pre">np.var()</span></code></a> and analyze if this function is computing the <em>sample variance</em>.
+<strong>Hint</strong>: Check what it says about the “data degrees of freedom.”</p></li>
+</ul>
+<p>If you did the reading, you might have noticed that, by default, the argument <code class="docutils literal notranslate"><span class="pre">ddof</span></code> in <code class="docutils literal notranslate"><span class="pre">np.var()</span></code> is set to zero. If you use the default option, then you are not really calculating the sample variance. Recall from the previous lesson that the <strong>sample variance</strong> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}     
+     \text{var}_{sample} = \frac{1}{N-1}\sum_{i} (x_i - \bar{x})^2
+\end{equation*}
+\]</div>
+<p>Therefore, you need to be explicit about the division by <span class="math notranslate nohighlight">\(N-1\)</span> when calling <code class="docutils literal notranslate"><span class="pre">np.var()</span></code>. How do you do that? you explicitly set <code class="docutils literal notranslate"><span class="pre">ddof</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>For example, to compute the sample variance for your <code class="docutils literal notranslate"><span class="pre">abv</span></code> variable, you do:</p>
+<p>Now, you can compute the standard deviation by taking the square root of <code class="docutils literal notranslate"><span class="pre">var_abv</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">std_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_abv</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">std_abv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">17</span><span class="n">beaeecaa78</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">std_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_abv</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">std_abv</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;var_abv&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>You might be wondering if there is a built-in function for the standard deviation in NumPy. Go on and search online and try to find something.</p>
+<p><strong>Spoiler alert!</strong>
+You will.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Exercise:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Read the documentation about the NumPy standard deviation function, compute the standard deviation for <code class="docutils literal notranslate"><span class="pre">abv</span></code> using this function, and check that you obtained the same value than if you take the square root of the variance computed with NumPy.</p></li>
+<li><p>Compute the variance and standard deviation for the variable <code class="docutils literal notranslate"><span class="pre">ibu</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>np.std
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="median-value">
+<h3>Median value<a class="headerlink" href="#median-value" title="Permalink to this headline">¶</a></h3>
+<p>So far, you’ve learned to characterize quantitative data using the mean, variance and standard deviation.</p>
+<p>If you watched Prof. Sainani’s lecture <a class="reference external" href="https://youtu.be/tQ5slNYRcC4">Describing Quantitative Data: Where is the center?</a> (recommended in your previous lesson), you’ll recall that she also introduced the <strong>median</strong>: the middle value in the data, the value that separates your data set in half. (If there’s an even number of data values, you take the average between the two middle values.)</p>
+<p>As you may anticipate, NumPy has a built-in function that computes the median, helpfully named <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.median.html"><code class="docutils literal notranslate"><span class="pre">numpy.median()</span></code></a>.</p>
+<div class="section" id="id2">
+<h4>Exercise:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Using NumPy, compute the median for your variables <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>. Compare the median with the mean, and look at the histogram to locate where the values fall on the x-axis.</p>
+</div>
+</div>
+<div class="section" id="box-plots">
+<h3>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">¶</a></h3>
+<p>Another handy way to visualize the distribution of quantitative data is using <strong>box plots</strong>. By “distribution” of the data, you mean some idea of the dataset’s “shape”: where is the center, what is the range, what is the variation in the data.
+Histograms are the most popular type of plots in exploratory data analysis. But check out box plots: they are easy to make with <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Alcohol by volume&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ibu</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;International bitterness unit&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is going on here? Obviously, there is a <em>box</em>: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the <em>median</em>.</p>
+<p>The bottom of the box is at the 25th <em>percentile</em>, while the top of the box is at the 75th percentile. In other words, the bottom 25% of the data falls below the box, and the top 25% of the data falls above the box.</p>
+<p><em>Confused by percentiles?</em>
+The Nth percentile is the value below which N% of the observations fall.</p>
+<p>Recall the bell curve from your previous lesson: you said that 95% of the data falls at a distance <span class="math notranslate nohighlight">\(\pm 2 \sigma\)</span> from the mean. This implies that 5% of the data (the rest) falls in the (symmetrical) tails, which in turn implies that the 2.5 percentile is at <span class="math notranslate nohighlight">\(-2\sigma\)</span> from the mean, and the 97.5 percentile is at <span class="math notranslate nohighlight">\(+2\sigma\)</span> from the mean.</p>
+<p>The percentiles 25, 50, and 75 are also named <em>quartiles</em>, since they divide the data into quarters. They are named first (Q1), second (Q2 or median) and third quartile (Q3), respectively.</p>
+<p>Fortunately, NumPy has a function to compute percentiles and you can do it in just one line. Let’s use <a class="reference external" href="https://docs.scipy.org/doc/numpy-dev/reference/generated/np.percentile.html"><code class="docutils literal notranslate"><span class="pre">np.percentile()</span></code></a> to compute the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>  quartiles.</p>
+<p>** abv quartiles **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q1_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">Q2_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">Q3_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The first quartile for abv is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Q1_abv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The second quartile for abv is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Q2_abv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The third quartile for abv is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Q3_abv</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>ibu quartiles</strong></p>
+<p>You can also pass a list of percentiles to <code class="docutils literal notranslate"><span class="pre">np.percentile()</span></code> and calculate several of them in one go. For example, to compute the quartiles of <code class="docutils literal notranslate"><span class="pre">ibu</span></code>, you do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quartiles_ibu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">ibu</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The first quartile for ibu is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The second quartile for ibu is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The third quartile for ibu is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, back to box plots. The height of the box—between the 25th and 75th percentile—is called the <em>interquartile range</em> (IQR). Outside the box, you have two vertical lines—the so-called “whiskers” of the box plot—which used to be called “box and whiskers plot” [3].</p>
+<p>The whiskers extend to the upper and lower extremes (short horizontal lines). The extremes follow the following rules:</p>
+<ul class="simple">
+<li><p>Top whisker: lower value between the <strong>maximum</strong> and <code class="docutils literal notranslate"><span class="pre">Q3</span> <span class="pre">+</span> <span class="pre">1.5</span> <span class="pre">x</span> <span class="pre">IQR</span></code>.</p></li>
+<li><p>Bottom whisker: higher value between the <strong>minimum</strong> and <code class="docutils literal notranslate"><span class="pre">Q1</span> <span class="pre">-</span> <span class="pre">1.5</span> <span class="pre">x</span> <span class="pre">IQR</span></code></p></li>
+</ul>
+<p>Any data values beyond the upper and lower extremes are shown with a marker (here, small circles) and are an indication of outliers in the data.</p>
+<div class="section" id="id3">
+<h4>Exercise:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Calculate the end-points of the top and bottom whiskers for both the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> variables, and compare the results with the whisker end-points you see in the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IQR</span> <span class="o">=</span> <span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">TW</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ibu</span><span class="p">),</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">])</span>
+<span class="n">BW</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ibu</span><span class="p">),</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ibu:</span><span class="se">\n</span><span class="s1">----------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;top whisker = </span><span class="si">{:.1f}</span><span class="s1"> ibu&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">TW</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bottom whisker = </span><span class="si">{:.1f}</span><span class="s1"> ibu&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">BW</span><span class="p">))</span>
+
+<span class="n">quartiles_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">])</span>
+
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">quartiles_abv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">quartiles_abv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">TW</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abv</span><span class="p">),</span><span class="n">quartiles_abv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">])</span>
+<span class="n">BW</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">abv</span><span class="p">),</span><span class="n">quartiles_abv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">abv:</span><span class="se">\n</span><span class="s1">----------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;top whisker = </span><span class="si">{:.1f}% a</span><span class="s1">bv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">TW</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bottom whisker = </span><span class="si">{:.1f}% a</span><span class="s1">bv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">BW</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-bit-of-history">
+<h4>A bit of history:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this headline">¶</a></h4>
+<p>“Box-and-whiskers” plots were invented by John Tukey over 45 years ago. Tukey was a famous mathematician/statistician who is credited with coining the words <em>software</em> and <em>bit</em> [4]. He was active in the efforts to break the <em>Enigma</em> code during WWII, and worked at Bell Labs in the first surface-to-air guided missile (“Nike”). A classic 1947 work on early design of the electonic computer acknowledged Tukey: he designed the electronic circuit for computing addition. Tukey was also a long-time advisor for the US Census Bureau, and a consultant for the Educational Testing Service (ETS), among many other contributions [5].</p>
+</div>
+<div class="section" id="id4">
+<h4>Note:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Box plots are also drawn horizontally. Often, several box plots are drawn side-by-side with the purpose of comparing distributions.</p>
+</div>
+</div>
+</div>
+<div class="section" id="visualizing-categorical-data">
+<h2>Visualizing categorical data<a class="headerlink" href="#visualizing-categorical-data" title="Permalink to this headline">¶</a></h2>
+<p>The typical method of visualizing categorical data is using <strong>bar plots</strong>. These show visually the frequency of appearance of items in each category, or the proportion of data in each category. Suppose you wanted to know how many beers of the same style are in your data set. Remember: the <em>style</em> of the beer is an example of <em>categorical data</em>. Let’s extract the column with the style information from the <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe, assign it to a variable named <code class="docutils literal notranslate"><span class="pre">style_series</span></code>, check the type of this variable, and view the first 10 elements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_series</span> <span class="o">=</span> <span class="n">beers</span><span class="p">[</span><span class="s1">&#39;style&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">style_series</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_series</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Already in the first 10 elements you see that you have two beers of the style “American IPA,” two beers of the style “American Pale Ale (APA),” but only one beer of the style “Oatmeal Stout.” The question is: how many beers of each style are contained in the whole series?</p>
+<p>Luckily, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has a built-in function to answer that question: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html"><code class="docutils literal notranslate"><span class="pre">series.value_counts()</span></code></a> (where <code class="docutils literal notranslate"><span class="pre">series</span></code> is the variable name of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> series you want the counts for). Let’s try it on your <code class="docutils literal notranslate"><span class="pre">style_series</span></code>, and save the result in a new variable named <code class="docutils literal notranslate"><span class="pre">style_counts</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_counts</span> <span class="o">=</span> <span class="n">style_series</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">style_counts</span><span class="p">[</span><span class="o">-</span><span class="mi">50</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">style_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">style_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function tells us that <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> has 99 elements. That is, there are a total of 99 styles of beer in your data set. Wow, that’s a lot!</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> returned the counts sorted in decreasing order: the most popular beer in your data set is “American IPA” with 424 entries in our data. The next-most popular beer is “American Pale Ale (APA)” with a lot fewer entries (245), and the counts decrease sharply after that. Naturally, you’d like to know how much more popular are the top-2 beers from the rest. Bar plot to the rescue!</p>
+<p>Below, you’ll draw a horizontal bar plot directly with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (which uses Matplotlib internally) using the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.barh.html"><code class="docutils literal notranslate"><span class="pre">plot.barh()</span></code></a> method for series. We’ll only show the first 20 beers, because otherwise you’ll get a huge plot. This plot gives us a clear visualization of the popularity ranking of beer styles in the US!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_counts</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#008367&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualizing-multiple-data">
+<h2>Visualizing multiple data<a class="headerlink" href="#visualizing-multiple-data" title="Permalink to this headline">¶</a></h2>
+<p>These visualizations are really addictive! We’re now getting ambitious: what if you wanted to show more than one feature, together on the same plot? What if you wanted to get insights about the relationship between two features through a multi-variable plot?</p>
+<p>For example, you can explore the relationship between bitterness of beers and the alcohol-by-volume fraction.</p>
+<div class="section" id="scatter-plots">
+<h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h3>
+<p>Maybe you can do this: imagine a plot that has the alcohol-by-volume on the absissa, and the IBU value on the ordinate. For each beer, you can place a dot on this plot with its <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values as <span class="math notranslate nohighlight">\((x, y)\)</span> coordinates. This is called a <strong>scatter plot</strong>.</p>
+<p>We run into a bit of a problem, though. The way you handled the beer data above, you extracted the column for <code class="docutils literal notranslate"><span class="pre">abv</span></code> into a series, dropped the null entries, and saved the values into a NumPy array. You then repeated this process for the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> column. Because a lot more <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values are missing, you ended up with two arrays of different length: 2348 entries for the <code class="docutils literal notranslate"><span class="pre">abv</span></code> series, and 1405 entries for the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> series. If you want to make a scatter plot with these two features, you’ll need series (or arrays) of the same length.</p>
+<p>Let’s instead clean the whole <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe (which will completely remove any row that has a null entry), and <em>then</em> extract the values of the two series into NumPy arrays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers_clean</span> <span class="o">=</span> <span class="n">beers</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ibu</span> <span class="o">=</span> <span class="n">beers_clean</span><span class="p">[</span><span class="s1">&#39;ibu&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ibu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv</span> <span class="o">=</span> <span class="n">beers_clean</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that both arrays now have 1403 entries—not 1405 (the length of the clean <code class="docutils literal notranslate"><span class="pre">ibu</span></code> data), because two rows that had a non-null <code class="docutils literal notranslate"><span class="pre">ibu</span></code> value <em>did</em> have a null <code class="docutils literal notranslate"><span class="pre">abv</span></code> value and were dropped.</p>
+<p>With the two arrays of the same length, you can now call the <a class="reference external" href="https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.scatter.html"><code class="docutils literal notranslate"><span class="pre">pyplot.scatter()</span></code></a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">ibu</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3498db&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatter plot of alcohol-by-volume vs. IBU </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;abv&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;IBU&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hmm. That’s a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there’s a lot of vertical spread on those dots to the right of the plot.</p>
+<p>An idea! What if the bitterness has something to do with <em>style</em>?</p>
+</div>
+<div class="section" id="bubble-chart">
+<h3>Bubble chart<a class="headerlink" href="#bubble-chart" title="Permalink to this headline">¶</a></h3>
+<p>What you imagined is that you could group together the beers by style, and then make a new scatter plot where each marker corresponds to a style. The beers within a style, though, have many values of alcohol fraction and bitterness: you have to come up with a “summary value” for each style. Well, why not the <em>mean</em>… you can calculate the average <code class="docutils literal notranslate"><span class="pre">abv</span></code> and the average <code class="docutils literal notranslate"><span class="pre">ibu</span></code> for all the beers in each style, use that pair as <span class="math notranslate nohighlight">\((x,y)\)</span> coordinate, and put a dot there representing the style.</p>
+<p>Better yet! We’ll make the size of the “dot” proportional to the popularity of the style in your data set! This is called a <strong>bubble chart</strong>.</p>
+<p>How to achieve this idea? you searched online for “mean of a column with pandas” and you landed in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html"><code class="docutils literal notranslate"><span class="pre">dataframe.mean()</span></code></a>. This could be helpful… But you don’t want the mean of a <em>whole</em> column—we want the mean of the column values grouped by <em>style</em>. Searching online again, you landed in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html"><code class="docutils literal notranslate"><span class="pre">dataframe.groupby()</span></code></a>. This is amazing: <code class="docutils literal notranslate"><span class="pre">pandas</span></code> can group a series for you!</p>
+<p>Here’s what you want to do: group beers by style, then compute the mean of <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> in the groups. You experimented with <code class="docutils literal notranslate"><span class="pre">beers_clean.groupby('style').mean()</span></code> and were amazed… However, one thing was bothersome: <code class="docutils literal notranslate"><span class="pre">pandas</span></code> computed the mean (by style) of every column, including the <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">brewery_id</span></code>, which have no business being averaged. So you decided to first drop the columns you don’t need, leaving only <code class="docutils literal notranslate"><span class="pre">abv</span></code>, <code class="docutils literal notranslate"><span class="pre">ibu</span></code> and <code class="docutils literal notranslate"><span class="pre">style</span></code>. You can use the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.drop.html"><code class="docutils literal notranslate"><span class="pre">dataframe.drop()</span></code></a> method for that. Check it out!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers_styles</span> <span class="o">=</span> <span class="n">beers_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;brewery_id&#39;</span><span class="p">,</span><span class="s1">&#39;ounces&#39;</span><span class="p">,</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now have a dataframe with only the numeric features <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>, and the categorical feature <code class="docutils literal notranslate"><span class="pre">style</span></code>. Let’s find out how many beers you have of each style—you’d like to use this information to set the size of the style bubbles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_counts</span> <span class="o">=</span> <span class="n">beers_styles</span><span class="p">[</span><span class="s1">&#39;style&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">style_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">style_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The number of beers in each style appears on each row of <code class="docutils literal notranslate"><span class="pre">style_counts</span></code>, sorted in decreasing order of count. You have 90 different styles, and the most popular style is the “American IPA,” with 301 beers…</p>
+<div class="section" id="discuss-with-your-neighbor">
+<h4>Discuss with your neighbor:<a class="headerlink" href="#discuss-with-your-neighbor" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>What happened? you used to have 99 styles and 424 counts in the “American IPA” style. Why is it different now?</p></li>
+</ul>
+<p>OK. You want to characterize each style of beer with the <em>mean values</em> of the numeric features, <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>, within that style. Let’s get those means.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_means</span> <span class="o">=</span> <span class="n">beers_styles</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;style&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_means</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looking good! you have the information you need: the average <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> by style, and the counts by style. The only problem is that <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> is sorted by decreasing count value, while <code class="docutils literal notranslate"><span class="pre">style_means</span></code> is sorted alphabetically by style. Ugh.</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">style_means</span></code> is a dataframe that is now using the style string as a <em>label</em> for each row. Meanwhile, <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> is a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> series, and it also uses the style as label or index to each element.</p>
+<p>More online searching and you find the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sort_index.html"><code class="docutils literal notranslate"><span class="pre">series.sort_index()</span></code></a> method. It will sort your style counts in alphabetical order of style, which is what you want.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_counts</span> <span class="o">=</span> <span class="n">style_counts</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_counts</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above, you used Matplotlib to create a scatter plot using two NumPy arrays as the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> parameters. Like you saw previously with histograms, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> also has available some plotting methods (calling Matplotlib internally). Scatter plots made easy!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_means</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> 
+                         <span class="n">x</span><span class="o">=</span><span class="s1">&#39;abv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;ibu&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">style_counts</span><span class="p">,</span> 
+                         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Beer ABV vs. IBU mean values by style&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s rad! Perhaps the bubbles are too small. You could multiply the <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> by a factor of 5, or maybe 10? You should experiment.</p>
+<p>But you are feeling gung-ho about this now, and decided to find a way to make the <em>color</em> of the bubbles also vary with the style counts. Below, you import the <a class="reference external" href="https://matplotlib.org/api/cm_api.html"><code class="docutils literal notranslate"><span class="pre">colormap</span></code></a> module of Matplotlib, and you set your colors using the <a class="reference external" href="https://matplotlib.org/examples/color/colormaps_reference.html"><em>viridis</em> colormap</a> on the values of <code class="docutils literal notranslate"><span class="pre">style_counts</span></code>, then you repeat the plot with these colors on the bubbles and some transparency. <em>What do you think?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">style_counts</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_means</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> 
+                         <span class="n">x</span><span class="o">=</span><span class="s1">&#39;abv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;ibu&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">style_counts</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+                         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Beer ABV vs. IBU mean values by style</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+                         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span> <span class="c1">#alpha sets the transparency</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like the most popular beers do follow a linear relationship between alcohol fraction and IBU. You learned a lot about beer without having a sip!</p>
+<p><em>Wait… one more thing!</em> What if you add a text label next to the bigger bubbles, to identify the style?</p>
+<p>OK, here you go a bit overboard, but you couldn’t help it. You played around a lot to get this version of the plot. It uses <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> to get pairs of indices and values from a list of style names; an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to select only the large-count styles; and the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.iloc.html"><code class="docutils literal notranslate"><span class="pre">iloc[]</span></code></a> slicing method of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to get a slice based on index position, and extract <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values to an <span class="math notranslate nohighlight">\((x,y)\)</span> coordinate for placing the annotation text. <em>Are you overkeen or what!</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">style_means</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> 
+                               <span class="n">x</span><span class="o">=</span><span class="s1">&#39;abv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;ibu&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">style_counts</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+                               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Beer ABV vs. IBU mean values by style</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+                               <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">style_counts</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">style_counts</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="p">(</span><span class="n">style_means</span><span class="o">.</span><span class="n">abv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">style_means</span><span class="o">.</span><span class="n">ibu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-you-ve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>You should always plot your data.</p></li>
+<li><p>The concepts of quantitative and categorical data.</p></li>
+<li><p>Plotting histograms directly on columns of dataframes, using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
+<li><p>Computing variance and standard deviation using NumPy built-in functions.</p></li>
+<li><p>The concept of median, and how to compute it with NumPy.</p></li>
+<li><p>Making box plots using <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>.</p></li>
+<li><p>Five statistics of a box plot: the quartiles Q1, Q2 (median) and Q3 (and  interquartile range Q3<span class="math notranslate nohighlight">\(-\)</span>Q1), upper and lower extremes.</p></li>
+<li><p>Visualizing categorical data with bar plots.</p></li>
+<li><p>Visualizing multiple data with scatter plots and bubble charts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> is awesome!</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://github.com/nickhould/craft-beers-dataset">Craft beer datatset</a> by Jean-Nicholas Hould.</p></li>
+<li><p><a class="reference external" href="https://beerconnoisseur.com/articles/whats-meaning-ibu">What’s The Meaning Of IBU?</a> by Jim Dykstra for The Beer Connoisseur (2015).</p></li>
+<li><p>40 years of boxplots (2011). Hadley Wickham and Lisa Stryjewski, <em>Am. Statistician</em>. <a class="reference external" href="http://vita.had.co.nz/papers/boxplots.pdf">PDF available</a></p></li>
+<li><p><a class="reference external" href="https://www.britannica.com/biography/John-Wilder-Tukey">John Wilder Tukey</a>, Encyclopædia Britannica.</p></li>
+<li><p>John W. Tukey: His life and professional contributions (2002). David R. Brillinger, <em>Ann. Statistics</em>. <a class="reference external" href="https://www.stat.berkeley.edu/~brill/Papers/life.pdf">PDF available</a></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>Many beers do not report the IBU of the beer because it is very
+small. You may be accidentally removing whole categories of beer from
+our dataset by removing rows that do not include the IBU measure.</p>
+<p>a. Use the command <code class="docutils literal notranslate"><span class="pre">beers_filled</span> <span class="pre">=</span> <span class="pre">beers.fillna(0)</span></code> to clean the <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe</p>
+<p>b. Repeat the steps above to recreate the plot “Beer ABV vs. IBU mean values by style”
+scatter plot with <code class="docutils literal notranslate"><span class="pre">beers_filled</span></code>. What differences do you notice between the plots?</p>
+</li>
+</ol>
+<ol>
+<li><p>Gordon Moore created an empirical prediction that the rate of
+semiconductors on a computer chip would double every two years. This
+prediction was known as Moore’s law. Gordon Moore had originally only
+expected this empirical relation to hold from 1965 - 1975
+[<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>],
+but semiconductor manufacturers were able to keep up with Moore’s law
+until 2015.</p>
+<p>In the folder “../data” is a comma separated value (CSV) file, “transistor_data.csv” <a class="reference external" href="https://en.wikipedia.org/wiki/Transistor_count#Microprocessors">taken from wikipedia 01/2020</a>.
+Load the csv into a pandas dataframe, it has the following headings:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Processor</p></th>
+<th class="head"><p>MOS transistor count</p></th>
+<th class="head"><p>Date of Introduction</p></th>
+<th class="head"><p>Designer</p></th>
+<th class="head"><p>MOSprocess</p></th>
+<th class="head"><p>Area</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>a. In the years 2017, what was the average MOS transistor count?
+Make a boxplot of the transistor count in 2017 and find the first, second and third quartiles.</p>
+<p>b. Create a semilog y-axis scatter plot (i.e. <code class="docutils literal notranslate"><span class="pre">plt.semilogy</span></code>) for the
+“Date of Introduction” vs “MOS transistor count”.
+Color the data according to the “Designer”.</p>
+</li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01_Cheers_Stats_Beers.html" title="previous page">01 - Cheers!  Stats with Beers</a>
+    <a class='right-next' id="next-link" href="03_Linear_Regression_with_Real_Data.html" title="next page">03 - Linear regression with real data</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1427 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roots of Nonlinear functions &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Initial Value Problems - Project" href="../projects/03_IVP-project.html" />
+    <link rel="prev" title="Get with the oscillations" href="03_Get_Oscillations.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_02/README.html">
+   Computational Mechanics 02 - Analyze Data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">
+     01 - Cheers!  Stats with Beers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
+     02 - Seeing stats in a new light
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/02_Seeing_Stats.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">
+     03 - Linear regression with real data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
+     04 - Statistics and Monte-Carlo Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
+     Project #02 - NYSE random walk predictor
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   Computational Mechanics 03- Initial Value Problems
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Catch_Motion.html">
+     Catch things in motion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Catch_Motion.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Step_Future.html">
+     Step to the future
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Step_Future.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Get_Oscillations.html">
+     Get with the oscillations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Get_Oscillations.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Roots of Nonlinear functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/03_IVP-project.html">
+     Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/module_03/04_Getting_to_the_root.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_03/04_Getting_to_the_root.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_03/04_Getting_to_the_root.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_03/04_Getting_to_the_root.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_03/04_Getting_to_the_root.md&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Roots of Nonlinear functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#it-s-not-always-possible-to-analytically-solve-for-a-given-variable">
+     It’s not always possible to analytically solve for a given variable.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-to-the-root-of-a-problem">
+     Getting to the root of a problem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#freefall-example">
+       Freefall example:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incremental-searching-a-smarter-brute-force-approach">
+     Incremental searching ( a smarter brute force approach)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion">
+     Discussion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-your-function">
+     Test your function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#success-incsearch-works">
+     Success - incsearch works
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bisection-method">
+     Bisection method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bisect-function">
+     Bisect Function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Discussion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recursive-functions">
+     Recursive functions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#newton-raphson-open-method">
+     Newton-Raphson: Open method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#newton-raphson-example">
+     Newton-Raphson example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Discussion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-newton-raphson-function">
+     Create a Newton-Raphson function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-techniques">
+     Compare techniques
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Discussion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#secant-methods">
+     Secant Methods
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modified-secant-method">
+     Modified Secant method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shooting-method">
+     Shooting method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-your-problem-for-python">
+     Defining your problem for Python
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-the-engineering-problem">
+     Solving the engineering problem
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-ve-learned">
+     What you’ve learned
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<div class="section" id="roots-of-nonlinear-functions">
+<h1>Roots of Nonlinear functions<a class="headerlink" href="#roots-of-nonlinear-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="it-s-not-always-possible-to-analytically-solve-for-a-given-variable">
+<h2>It’s not always possible to analytically solve for a given variable.<a class="headerlink" href="#it-s-not-always-possible-to-analytically-solve-for-a-given-variable" title="Permalink to this headline">¶</a></h2>
+<p>In the last <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">Module 03</span></a>, you created an <em>implicit</em> Heun’s method that created the following problem: How can you solve for a value of <span class="math notranslate nohighlight">\(y\)</span>, a dependent variable, when the function is a function of <span class="math notranslate nohighlight">\(y\)</span>, in an equation format it becomes</p>
+<p><span class="math notranslate nohighlight">\(y=f(y,parameters)\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(parameters\)</span> are known inputs to the equation, but the variable <span class="math notranslate nohighlight">\(y\)</span> is not separable from the function <span class="math notranslate nohighlight">\(f\)</span>. You can rewrite the problem as</p>
+<p><span class="math notranslate nohighlight">\(0=y-f(y,parameters).\)</span></p>
+<p>Many times, you may have a deeper problem such as wanting to know when two functions are equal to each other:</p>
+<p><span class="math notranslate nohighlight">\(0 = g(y,parameters) -f(y,parameters)\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(g(y,parameters)\)</span> in the previous equation was <span class="math notranslate nohighlight">\(g(y)=y\)</span>.</p>
+</div>
+<div class="section" id="getting-to-the-root-of-a-problem">
+<h2>Getting to the root of a problem<a class="headerlink" href="#getting-to-the-root-of-a-problem" title="Permalink to this headline">¶</a></h2>
+<p>This is a very common problem in engineering designs. You may have mathematical models for designs, but you can’t explicitly solve for the variables you can control or see [1].</p>
+<div class="section" id="freefall-example">
+<h3>Freefall example:<a class="headerlink" href="#freefall-example" title="Permalink to this headline">¶</a></h3>
+<p>Consider an observation of an object, with a known shape, so its drag coefficient c=0.25 kg/m. If the object reaches a velocity of 36 m/s after 4 seconds of freefalling, what is its mass?</p>
+<p><span class="math notranslate nohighlight">\(v(t)=\sqrt{\frac{gm}{c_{d}}}\tanh(\sqrt{\frac{gc_{d}}{m}}t)\)</span></p>
+<p>We can plug in the known parameters, <span class="math notranslate nohighlight">\(t=4~s\)</span>, <span class="math notranslate nohighlight">\(v=36~m/s\)</span>, <span class="math notranslate nohighlight">\(c_d=0.25\)</span> kg/s, and <span class="math notranslate nohighlight">\(g=9.81~m/s^2\)</span>, but you cannot separate <span class="math notranslate nohighlight">\(m\)</span> from the <span class="math notranslate nohighlight">\(\tanh\)</span> and <span class="math notranslate nohighlight">\(\sqrt{}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(36 = \sqrt{\frac{9.81m}{0.25}}\tanh(\sqrt{\frac{9.81*0.25}{m}}4)\)</span></p>
+<p>Instead, you can use computational methods to solve the problem by creating a new function f(m) where</p>
+<p><span class="math notranslate nohighlight">\(f(m)=36 - \sqrt{\frac{9.81m}{0.25}}\tanh(\sqrt{\frac{9.81*0.25}{m}}4)\)</span>.</p>
+<p>When f(m) = 0, you have solved for m in terms of the other variables (e.g. for a given time, velocity, drag coefficient and acceleration due to gravity)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">=</span><span class="mf">9.81</span> <span class="c1"># acceleration due to gravity</span>
+
+<span class="k">def</span> <span class="nf">f_m</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">v</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">c_d</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,):</span>
+    <span class="sd">&#39;&#39;&#39; define a function f(m) that returns </span>
+<span class="sd">    v(t)-sqrt(mg/cd)*tanh(sqrt(gcd/m)*t)</span>
+<span class="sd">    </span>
+<span class="sd">    arguments:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    m: mass of object</span>
+<span class="sd">    c_d: drag coefficient default=0.25 kg/m  # drag coefficient</span>
+<span class="sd">    t: time of velocity measure default=4 seconds</span>
+<span class="sd">    v: velocity measure at time, t default=36 m/s</span>
+<span class="sd">    </span>
+<span class="sd">    returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_m: the difference between v(t) and sqrt(mg/cd)*tanh(sqrt(gcd/m)*t)</span>
+<span class="sd">            if f_m ==0, then mass is correctly chosen</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">f_m</span> <span class="o">=</span> <span class="n">v</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">m</span><span class="o">/</span><span class="n">c_d</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">c_d</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f_m</span>
+
+<span class="n">m</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span> <span class="c1"># possible values for mass 50 to 200 kg</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">f_m</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mass, m (kg)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(m)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_Getting_to_the_root_3_0.png" src="../_images/04_Getting_to_the_root_3_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_m</span><span class="p">(</span><span class="mi">149</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.12322824302261637
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Brute force method is plot f_m vs m and with smaller and smaller steps until f_m ~ 0, but you can do much better.</p>
+<p>We will look at two classes of methods, most numerical solutions use a combination of these two types of solvers:</p>
+<ol class="simple">
+<li><p>Bracketing methods</p></li>
+<li><p>Open methods</p></li>
+</ol>
+<p>In <strong>Bracketing</strong> methods, you choose an upper and lower bound and find the best solution in that range.</p>
+<p>In <strong>Open</strong> methods, you choose an initial guess, then you have a function that brings us closer to the solution with every iteration.</p>
+</div>
+</div>
+<div class="section" id="incremental-searching-a-smarter-brute-force-approach">
+<h2>Incremental searching ( a smarter brute force approach)<a class="headerlink" href="#incremental-searching-a-smarter-brute-force-approach" title="Permalink to this headline">¶</a></h2>
+<p>If you consider a range of possible masses, e.g. 50 kg - 200 kg, then you can evaluate your function <span class="math notranslate nohighlight">\(f(m)\)</span> at evenly-spaced intervals and look for x-axis crossings. If the value of <span class="math notranslate nohighlight">\(f(m_{i})\)</span> is positive, and the value of <span class="math notranslate nohighlight">\(f(m_{i+1})\)</span> is negative, then the correct mass is somewhere between <span class="math notranslate nohighlight">\(m_i\)</span> and <span class="math notranslate nohighlight">\(m_{i+1}\)</span>.</p>
+<p>Take a look at the implementation you have below of the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function.</p>
+<p>There are a few key lines to look at:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ns</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In these two lines, you are dividing the interval into <code class="docutils literal notranslate"><span class="pre">ns</span></code>-equally-spaced values (our default is ns=50). Then, you evaluate your function (<span class="math notranslate nohighlight">\(f(m)\)</span>) <code class="docutils literal notranslate"><span class="pre">ns</span></code> times for each value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">sign_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">delta_sign_f</span> <span class="o">=</span> <span class="n">sign_f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">sign_f</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">i_zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">delta_sign_f</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On these three lines, you are looking for sign-changes in the array <code class="docutils literal notranslate"><span class="pre">f</span></code>. First, you get just the sign of each array value with <code class="docutils literal notranslate"><span class="pre">np.sign</span></code>. Then, you look at the changes in sign with the difference between f[i] and f[i-1] for i=1…len(f). Finally, you get the indices sign changes by looking for nonzero elements in <code class="docutils literal notranslate"><span class="pre">delta_sign_f</span></code>.</p>
+</div>
+<div class="section" id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<p>Why can’t you just consider cases where <code class="docutils literal notranslate"><span class="pre">delta_sign_f&gt;0</span></code>? Why do you care about all nonzero sign changes?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incsearch</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ns</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;incsearch: incremental search root locator</span>
+<span class="sd">    xb = incsearch(func,xmin,xmax,ns):</span>
+<span class="sd">      finds brackets of x that contain sign changes</span>
+<span class="sd">      of a function on an interval</span>
+<span class="sd">    arguments:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    func = name of function</span>
+<span class="sd">    xmin, xmax = endpoints of interval</span>
+<span class="sd">    ns = number of subintervals (default = 50)</span>
+<span class="sd">    returns:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    xb(k,1) is the lower bound of the kth sign change</span>
+<span class="sd">    xb(k,2) is the upper bound of the kth sign change</span>
+<span class="sd">    If no brackets found, xb = [].&#39;&#39;&#39;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ns</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">sign_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">delta_sign_f</span> <span class="o">=</span> <span class="n">sign_f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">sign_f</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">i_zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">delta_sign_f</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">i_zeros</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">xb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span> <span class="n">x</span><span class="p">[</span><span class="n">i_zeros</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]],[</span><span class="n">x</span><span class="p">[</span><span class="n">i_zeros</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="p">]]</span> <span class="p">)</span>
+
+    
+    <span class="k">if</span> <span class="n">nb</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no brackets found</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;check interval or increase ns</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of brackets:  </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nb</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">xb</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="test-your-function">
+<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this headline">¶</a></h2>
+<p>To test your <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function on a known function, let’s try finding all the times that <span class="math notranslate nohighlight">\(sin(x)\)</span> crosses the x-axis from <span class="math notranslate nohighlight">\(x=-1...7\)</span>. Our function should return values at <span class="math notranslate nohighlight">\(x=0,~x=\pi/2,~x=\pi.\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mn</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">mx</span><span class="o">=</span><span class="mi">7</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span><span class="n">mx</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">xb</span> <span class="o">=</span> <span class="n">incsearch</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">mn</span><span class="p">,</span><span class="n">mx</span><span class="p">,</span><span class="n">ns</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xb</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xb</span><span class="p">),</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\sin(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Upper bounds=</span><span class="si">{:.2f}</span><span class="s1">,</span><span class="si">{:.2f}</span><span class="s1">,</span><span class="si">{:.2f}</span><span class="se">\n</span><span class="s1">Lower bounds=</span><span class="si">{:.2f}</span><span class="s1">,</span><span class="si">{:.2f}</span><span class="s1">,</span><span class="si">{:.2f}</span><span class="s1">,&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">xb</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span><span class="o">*</span><span class="n">xb</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of brackets:  3
+</pre></div>
+</div>
+<img alt="../_images/04_Getting_to_the_root_9_1.png" src="../_images/04_Getting_to_the_root_9_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="success-incsearch-works">
+<h2>Success - incsearch works<a class="headerlink" href="#success-incsearch-works" title="Permalink to this headline">¶</a></h2>
+<p>You should see that <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> returns intervals in the correct locations near x=0, x=<span class="math notranslate nohighlight">\(\pi/2\)</span> and x=<span class="math notranslate nohighlight">\(\pi.\)</span> Now, let’s apply it to the freefall problem and discover what mass is necessary to reach 36 m/s at t=4 sec of freefall.</p>
+<p>Depending upon what <code class="docutils literal notranslate"><span class="pre">ns</span></code> you choose, you should see that a mass of 142-143 kg will reach 36 m/s in 4 seconds of freefall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xb</span> <span class="o">=</span> <span class="n">incsearch</span><span class="p">(</span><span class="n">f_m</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="n">ns</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Upper bound on mass = </span><span class="si">{:.2f}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">xb</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lower bound on mass = </span><span class="si">{:.2f}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">xb</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of brackets:  1
+
+Upper bound on mass = 143.94 kg
+Lower bound on mass = 142.42 kg
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function to find the number of times <span class="math notranslate nohighlight">\(cos(x)=0\)</span> in the interval <span class="math notranslate nohighlight">\(x=0...8\)</span>.</p>
+<p>Plot x-vs-cos(x)</p>
+<p>and</p>
+<p>plot the values of <code class="docutils literal notranslate"><span class="pre">xb</span></code> and <code class="docutils literal notranslate"><span class="pre">np.cos(xb)</span></code> as <span class="math notranslate nohighlight">\(\circ\)</span>-markers (<code class="docutils literal notranslate"><span class="pre">'o'</span></code>)</p>
+</div>
+<div class="section" id="bisection-method">
+<h2>Bisection method<a class="headerlink" href="#bisection-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function will always return a set of upper and lower bounds on the zeros of a function, but if you want to increase the accuracy of your solutions, you have to calculate <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>a lot</strong>. The error in the solution is always</p>
+<p><span class="math notranslate nohighlight">\(error = \frac{x_{max}-x_{min}}{ns}\)</span></p>
+<p>We can reduce the number of times you have to evaluate the function with more insight.</p>
+<p>Let’s divide interval in half until, then evaluate <span class="math notranslate nohighlight">\(f(x_{max})\)</span>, <span class="math notranslate nohighlight">\(f(x_{min})\)</span>,  and <span class="math notranslate nohighlight">\(\frac{x_{max}+x_{min}}{2}\)</span>. Now, you can look for a sign change between these three locations. You focus your attention on the bisected bracket. Look at the figure below that illustrates choosing the region of interest on the right vs left side of the interval.</p>
+<p><img alt="Using the bisection method to reduce search to half of interval" src="../_images/bisection.png" /></p>
+<p>Let’s use the same interval you started with to illustrate a few steps in the right direction.</p>
+<p><span class="math notranslate nohighlight">\(x_{max}=200\)</span> kg</p>
+<p><span class="math notranslate nohighlight">\(x_{min}=50\)</span> kg</p>
+<p><span class="math notranslate nohighlight">\(x_{mid}=125\)</span> kg</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">fx</span><span class="o">=</span><span class="n">f_m</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(xmin) = </span><span class="si">{:.2f}</span><span class="s1">, f(xmid) = </span><span class="si">{:.2f}</span><span class="s1">, f(xmax)=</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">fx</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(xmin) = 4.58, f(xmid) = 0.41, f(xmax)=-0.86
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you have reduced your region of interest to just 125-200 kg.</p>
+</div>
+<div class="section" id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Divide the region 125-200 kg into two, and repeat the above step. Is the solution in the upper (163-200 kg)? or lower (125-163 kg) region? What are the values of f_m(m)?</p>
+</div>
+<div class="section" id="bisect-function">
+<h2>Bisect Function<a class="headerlink" href="#bisect-function" title="Permalink to this headline">¶</a></h2>
+<p>We can automate this process with a <code class="docutils literal notranslate"><span class="pre">bisect</span></code> function. Its a much better root locator because you can reduce the error without evaluating the function a lot of times [1, 2].</p>
+<p><em>Note the use of the function <code class="docutils literal notranslate"><span class="pre">break</span></code>:</em></p>
+<p>We can use an <code class="docutils literal notranslate"><span class="pre">if</span></code>-statement to check a condition and <code class="docutils literal notranslate"><span class="pre">break</span></code> the loop if that condition is met. These break statements are often used in <code class="docutils literal notranslate"><span class="pre">while</span></code>-loops so that you can have some stopping criteria. In your case, you use the specified error, <code class="docutils literal notranslate"><span class="pre">es</span></code>, as a stopping criteria. If your relative error,</p>
+<p><span class="math notranslate nohighlight">\(e_{relative} = \frac{|x_{new}-x_{old}|}{x_{new}}\)</span></p>
+<p>is less than your specified error, the loop is broken and the number of iterations halts at that point.</p>
+</div>
+<div class="section" id="id2">
+<h2>Discussion<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>What is another stopping criteria that you could use?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bisect</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">xl</span><span class="p">,</span><span class="n">xu</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;bisect: root location zeroes</span>
+<span class="sd">    root,fx,ea,iter=bisect(func,xl,xu,es,maxit,p1,p2,...):</span>
+<span class="sd">    uses bisection method to find the root of func</span>
+<span class="sd">    arguments:</span>
+<span class="sd">    ------</span>
+<span class="sd">    func = name of function</span>
+<span class="sd">    xl, xu = lower and upper guesses</span>
+<span class="sd">    es = desired relative error (default = 0.0001 )</span>
+<span class="sd">    maxit = maximum allowable iterations (default = 50)</span>
+<span class="sd">    p1,p2,... = additional parameters used by func</span>
+<span class="sd">    returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    root = real root</span>
+<span class="sd">    and a list of [fx, ea, iter]</span>
+<span class="sd">    fx = function value at root</span>
+<span class="sd">    ea = approximate relative error ( )</span>
+<span class="sd">    iter = number of iterations&#39;&#39;&#39;</span>
+    <span class="n">xr</span> <span class="o">=</span> <span class="n">xl</span>
+    <span class="n">ea</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="p">):</span>
+        <span class="n">xrold</span> <span class="o">=</span> <span class="n">xr</span>
+        <span class="n">xr</span> <span class="o">=</span> <span class="p">(</span><span class="n">xl</span> <span class="o">+</span> <span class="n">xu</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="k">if</span> <span class="n">xr</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ea</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">xr</span> <span class="o">-</span> <span class="n">xrold</span><span class="p">)</span><span class="o">/</span><span class="n">xr</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ea</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">xr</span> <span class="o">-</span> <span class="n">xrold</span><span class="p">)</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xl</span><span class="p">)</span><span class="o">*</span><span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">test</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">xu</span> <span class="o">=</span> <span class="n">xr</span><span class="p">;</span>
+        <span class="k">elif</span> <span class="n">test</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">xl</span> <span class="o">=</span> <span class="n">xr</span><span class="p">;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ea</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="n">ea</span> <span class="o">&lt;=</span> <span class="n">es</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="n">root</span> <span class="o">=</span> <span class="n">xr</span>
+    <span class="n">fx</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">root</span><span class="p">,[</span><span class="n">fx</span><span class="p">,</span><span class="n">ea</span><span class="p">,</span><span class="nb">iter</span><span class="p">]</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mass_at_36ms</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">bisect</span><span class="p">(</span><span class="n">f_m</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The best estimate for the mass is </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Mass_at_36ms</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We reached a relative error of </span><span class="si">{}</span><span class="s1"> with </span><span class="si">{}</span><span class="s1"> iterations&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">out</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The best estimate for the mass is 142.73769855499268 kg
+We reached a relative error of 5.0109798921069224e-05 with 20 iterations
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="recursive-functions">
+<h2>Recursive functions<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the next two open root solvers (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code> and <code class="docutils literal notranslate"><span class="pre">modsecant</span></code>) make use of a recursive function.</p>
+<p>Definition:</p>
+<p><strong>recursive: for a definition of recursive, see recursive.</strong></p>
+<p>Recursive functions work by updating an initial assignment each time the function is called. In the bisection method, the initial solution is assumed to be halfway between the upper and lower bound</p>
+<p><span class="math notranslate nohighlight">\(x_{r} = \frac{x_u+x_l}{2},\)</span></p>
+<p>but once the upper or lower bound is updated, the value of <span class="math notranslate nohighlight">\(x_r\)</span> is updated as well. This is why the first step in the loop is to temporarily save <span class="math notranslate nohighlight">\(x_r\)</span> as <code class="docutils literal notranslate"><span class="pre">xrold</span></code>. With the <code class="docutils literal notranslate"><span class="pre">xrold</span></code> variable, you can track the progress of your solution.</p>
+</div>
+<div class="section" id="newton-raphson-open-method">
+<h2>Newton-Raphson: Open method<a class="headerlink" href="#newton-raphson-open-method" title="Permalink to this headline">¶</a></h2>
+<p>Bracketing methods are great, but they are burdened by slow convergence rates. In the bisection method, you reduce your error by 50% with each region of interest selection, but this is rather slow.</p>
+<p>One of the fastest root-finding methods is the <strong>Newton-Raphson</strong> method, it is an <strong>open method</strong> so it does not require an upper- and lower-bound [1,2].</p>
+<p>The <strong>Newton-Raphson</strong> works by creating a Taylor series expansion around your initial guess of the function,</p>
+<p><span class="math notranslate nohighlight">\(f(x_{0}+\Delta x) = f(x_{0}) +\frac{df}{dx}\Delta x +...\)</span></p>
+<p>We want to determine what step, <span class="math notranslate nohighlight">\(\Delta x\)</span>,  to take in order for <span class="math notranslate nohighlight">\(f(x_{0}+\Delta x)=0\)</span>. So you set your right hand side to 0 and ignore the <span class="math notranslate nohighlight">\(...\)</span> -higher order terms.</p>
+<p><span class="math notranslate nohighlight">\(0 = f(x_{0}) +\frac{df}{dx}\Delta x\)</span></p>
+<p>So your best guess for a solution is then</p>
+<p><span class="math notranslate nohighlight">\(x_{solution} = x_{0}+ \Delta x\)</span></p>
+<p>where</p>
+<p><span class="math notranslate nohighlight">\(\Delta x = -f(x) \left({\frac{df}{dx}}\right)^{-1}.\)</span></p>
+</div>
+<div class="section" id="newton-raphson-example">
+<h2>Newton-Raphson example<a class="headerlink" href="#newton-raphson-example" title="Permalink to this headline">¶</a></h2>
+<p>Let’s use the <strong>Newton-Raphson</strong> method to solve an engineering problem. Consider a spherical tank of water that can be filled to a height, <span class="math notranslate nohighlight">\(h\)</span>, and has radius, <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>The volume of water, <span class="math notranslate nohighlight">\(V\)</span>, in the tank is</p>
+<p><span class="math notranslate nohighlight">\(V= \pi h^2\frac{3R-h}{3}.\)</span></p>
+<p>If your tank has a radius of <span class="math notranslate nohighlight">\(R=2~m\)</span> and you need a volume of 29 <span class="math notranslate nohighlight">\(m^3\)</span>, what height should you fill it to?</p>
+<p>To answer this question with the Newton-Raphson method, you first define a new function, <span class="math notranslate nohighlight">\(f(h,parameters)\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(h,parameters) = V-\pi h^2\frac{3R-h}{3}.\)</span></p>
+<p>Now you can plug in your known parameters</p>
+<p><span class="math notranslate nohighlight">\(f(h) = 29-\pi h^2\frac{6-h}{3},\)</span></p>
+<p>and calculate the derivative,</p>
+<p><span class="math notranslate nohighlight">\(\frac{d}{dh}(f(h)) = -\pi \frac{12h-3h^2}{3}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_h</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">V</span><span class="o">=</span><span class="mi">29</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">V</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">R</span><span class="o">-</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">dfdh</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">V</span><span class="o">=</span><span class="mi">29</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">h</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the definitions of <code class="docutils literal notranslate"><span class="pre">f_h</span></code> and <code class="docutils literal notranslate"><span class="pre">dfdh</span></code> to calculate the height, <span class="math notranslate nohighlight">\(h\)</span> to fill the tank.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xguess</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">deltax</span> <span class="o">=</span> <span class="o">-</span><span class="n">f_h</span><span class="p">(</span><span class="n">xguess</span><span class="p">)</span><span class="o">/</span><span class="n">dfdh</span><span class="p">(</span><span class="n">xguess</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xguess</span><span class="o">+</span><span class="n">deltax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.974413341499149
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Discussion<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Try changing the value of <code class="docutils literal notranslate"><span class="pre">xguess</span></code>. Is there any way to choose the best <code class="docutils literal notranslate"><span class="pre">xguess</span></code> value? Are there any <code class="docutils literal notranslate"><span class="pre">xguess</span></code> values that return an Python error? Why?</p>
+</div>
+<div class="section" id="create-a-newton-raphson-function">
+<h2>Create a Newton-Raphson function<a class="headerlink" href="#create-a-newton-raphson-function" title="Permalink to this headline">¶</a></h2>
+<p>In the same way that you created bracketing method functions, you can create the Newton-Raphson method function to update your <code class="docutils literal notranslate"><span class="pre">xguess</span></code> until a desired tolerance is achieved.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">newtraph</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">dfunc</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;newtraph: Newton-Raphson root location zeroes</span>
+<span class="sd">    root,[ea,iter]=newtraph(func,dfunc,x0,es,maxit,p1,p2,...):</span>
+<span class="sd">    uses Newton-Raphson method to find the root of func</span>
+<span class="sd">    arguments:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    func = name of function</span>
+<span class="sd">    dfunc = name of derivative of function</span>
+<span class="sd">    x0 = initial guess</span>
+<span class="sd">    es = desired relative error (default = 0.0001 )</span>
+<span class="sd">    maxit = maximum allowable iterations (default = 50)</span>
+<span class="sd">    returns:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    root = real root</span>
+<span class="sd">    ea = approximate relative error (%)</span>
+<span class="sd">    iter = number of iterations&#39;&#39;&#39;</span>
+    <span class="n">xr</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="n">ea</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">maxit</span><span class="p">):</span>
+        <span class="n">xrold</span> <span class="o">=</span> <span class="n">xr</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span><span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">)</span><span class="o">/</span><span class="n">dfunc</span><span class="p">(</span><span class="n">xr</span><span class="p">)</span>
+        <span class="n">xr</span> <span class="o">=</span> <span class="n">xrold</span><span class="o">+</span><span class="n">dx</span>
+        <span class="k">if</span> <span class="n">xr</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">ea</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">xr</span><span class="o">-</span><span class="n">xrold</span><span class="p">)</span><span class="o">/</span><span class="n">xr</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># relative error in %</span>
+        <span class="k">if</span> <span class="n">ea</span> <span class="o">&lt;</span> <span class="n">es</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">xr</span><span class="p">,[</span><span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">),</span><span class="n">ea</span><span class="p">,</span><span class="nb">iter</span><span class="p">]</span>
+      
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hr</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">newtraph</span><span class="p">(</span><span class="n">f_h</span><span class="p">,</span><span class="n">dfdh</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0791382579723865
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-techniques">
+<h2>Compare techniques<a class="headerlink" href="#compare-techniques" title="Permalink to this headline">¶</a></h2>
+<p>Let’s compare the relative error in finding the height, <span class="math notranslate nohighlight">\(h\)</span>, in the previous example as a function of the number of iterations in the bisection (<code class="docutils literal notranslate"><span class="pre">bisect</span></code>) method and the Newton-Raphson (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code>).</p>
+<p>What you should see is that as you increase the number of iterations, the relative error decreases. You can compare the rate that the error decreases, <span class="math notranslate nohighlight">\(\frac{\Delta error}{\# iterations},\)</span> for your two root locators.</p>
+<p>We are going to set the maximum iterations, <code class="docutils literal notranslate"><span class="pre">maxit=n[i]</span></code>, to the desired value in the loop, but you want as low of an error as possible. You set your specified error to <code class="docutils literal notranslate"><span class="pre">es=0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">err_bisect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">err_newtraph</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+    <span class="n">root</span><span class="p">,</span><span class="n">out</span> <span class="o">=</span> <span class="n">bisect</span><span class="p">(</span><span class="n">f_h</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">err_bisect</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">root</span><span class="p">,</span><span class="n">out</span> <span class="o">=</span> <span class="n">newtraph</span><span class="p">(</span><span class="n">f_h</span><span class="p">,</span><span class="n">dfdh</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="n">err_newtraph</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span><span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">err_bisect</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;bisection&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">err_newtraph</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Newton-Raphson&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of iterations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;relative error (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_Getting_to_the_root_29_0.png" src="../_images/04_Getting_to_the_root_29_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Discussion<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>There is a drastic difference between the <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the <code class="docutils literal notranslate"><span class="pre">newtraph</span></code> function. How many iterations are necessary for the bisection method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %? How many iterations are necessary for the Newton-Raphson method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %?</p>
+<p>Are there any benefits to the bisection method? When would the Newton-Raphson method not work? or not be appropriate?</p>
+</div>
+<div class="section" id="secant-methods">
+<h2>Secant Methods<a class="headerlink" href="#secant-methods" title="Permalink to this headline">¶</a></h2>
+<p>The key to the Newton-Raphson method is its evaluation of the derivative of the function, but you can’t always evaluate the derivative. Many numerical functions, such as the solution to differential equations that you worked on in notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a>, <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a>, and <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">03</span></a> do not have analytical derivatives. Instead, you will approximate the derivative with a modified secant method.</p>
+<p>Approximation of derivative:</p>
+<p><span class="math notranslate nohighlight">\(f'(x) \approx \frac{f(x+\delta x)-f(x)}{\delta x}\)</span></p>
+</div>
+<div class="section" id="modified-secant-method">
+<h2>Modified Secant method<a class="headerlink" href="#modified-secant-method" title="Permalink to this headline">¶</a></h2>
+<p>Change the x evaluations to a perturbation <span class="math notranslate nohighlight">\(\delta\)</span> [1,2].</p>
+<p><span class="math notranslate nohighlight">\(x_{i+1}=x_{i}-\frac{f(x_{i})(\delta x_{i})}{f(x_{i}+\delta x_{i})-f(x_{i})}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mod_secant</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">dx</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;mod_secant: Modified secant root location zeroes</span>
+<span class="sd">    root,[fx,ea,iter]=mod_secant(func,dfunc,xr,es,maxit,p1,p2,...):</span>
+<span class="sd">    uses modified secant method to find the root of func</span>
+<span class="sd">    arguments:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    func = name of function</span>
+<span class="sd">    dx = perturbation fraction</span>
+<span class="sd">    xr = initial guess</span>
+<span class="sd">    es = desired relative error (default = 0.0001 )</span>
+<span class="sd">    maxit = maximum allowable iterations (default = 50)</span>
+<span class="sd">    p1,p2,... = additional parameters used by function</span>
+<span class="sd">    returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    root = real root</span>
+<span class="sd">    fx = func evaluated at root</span>
+<span class="sd">    ea = approximate relative error ( )</span>
+<span class="sd">    iter = number of iterations&#39;&#39;&#39;</span>
+
+    <span class="nb">iter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">xr</span><span class="o">=</span><span class="n">x0</span>
+    <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="p">):</span>
+        <span class="n">xrold</span> <span class="o">=</span> <span class="n">xr</span><span class="p">;</span>
+        <span class="n">dfunc</span><span class="o">=</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="o">+</span><span class="n">dx</span><span class="p">)</span><span class="o">-</span><span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">))</span><span class="o">/</span><span class="n">dx</span><span class="p">;</span>
+        <span class="n">xr</span> <span class="o">=</span> <span class="n">xr</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">)</span><span class="o">/</span><span class="n">dfunc</span><span class="p">;</span>
+        <span class="k">if</span> <span class="n">xr</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ea</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">xr</span> <span class="o">-</span> <span class="n">xrold</span><span class="p">)</span><span class="o">/</span><span class="n">xr</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ea</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">xr</span> <span class="o">-</span> <span class="n">xrold</span><span class="p">)</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="k">if</span> <span class="n">ea</span> <span class="o">&lt;=</span> <span class="n">es</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">xr</span><span class="p">,[</span><span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">),</span><span class="n">ea</span><span class="p">,</span><span class="nb">iter</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">err_bisect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">err_newtraph</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">err_modsec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+    <span class="n">root</span><span class="p">,</span><span class="n">out</span> <span class="o">=</span> <span class="n">bisect</span><span class="p">(</span><span class="n">f_h</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">err_bisect</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">root</span><span class="p">,</span><span class="n">out</span> <span class="o">=</span> <span class="n">newtraph</span><span class="p">(</span><span class="n">f_h</span><span class="p">,</span><span class="n">dfdh</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">err_newtraph</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span><span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">root</span><span class="p">,</span><span class="n">out</span> <span class="o">=</span> <span class="n">mod_secant</span><span class="p">(</span><span class="n">f_h</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">err_modsec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span><span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">err_bisect</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;bisection&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">err_newtraph</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Newton-Raphson&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">err_modsec</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;modified secant&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Convergence rates of solvers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of iterations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;relative error (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_Getting_to_the_root_32_0.png" src="../_images/04_Getting_to_the_root_32_0.png" />
+</div>
+</div>
+<p>The modified secant can converge as quick as the Newton-Raphson method, but there is no universal <span class="math notranslate nohighlight">\(\delta x\)</span> that works well for every problem. Typically, it is set as a small number and then varied based upon the conergence rate for the problem.</p>
+</div>
+<div class="section" id="shooting-method">
+<h2>Shooting method<a class="headerlink" href="#shooting-method" title="Permalink to this headline">¶</a></h2>
+<p>Now, you have multiple solving methods to revisit your <strong>Initial Value Problems</strong>. In notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a> and <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a> you measured the displacement of a ball as a function of time. You <em>assumed</em> the initial velocity was 0 in the case of the dropped object, or you approximated the velocity based upon the first two measured displacements and a finite difference approximation.</p>
+<p>Consider the case of the tennis ball that was dropped in the <span class="xref myst">‘data/fallingtennisball02.txt file’</span>. After it strikes the ground, you don’t really <em>know</em> the velocity. What you <em>do know</em> is that the position was <span class="math notranslate nohighlight">\(\approx 0\)</span> at t=0.58 s and it was <span class="math notranslate nohighlight">\(\approx 0\)</span> m at t=1.43 s. Solving your differential equation without an initial velocity is known as a “shooting” method.</p>
+<p><img alt="The shooting method imagined as a catapult aiming at a target" src="../_images/shooting.png" /></p>
+<p>Solving this type of problem where the <strong>boundaries</strong> are known is referred to as a <em>Boundary value problem</em>. Typically, boudary value problems happen over a distance, rather than points in time, but you will come back to those in the fifth module on boundary value problems.</p>
+<p>For now, let’s reframe your engineering problem into a root-finding problem. You have a length of time of interest:</p>
+<p>t=0.58 - 1.43 sec</p>
+<p>in this time, the ball had just struck the ground and is traveling upwards. What is the initial velocity necessary to keep it in the air for <span class="math notranslate nohighlight">\(\Delta t = 0.85~s\)</span> ?</p>
+<p>We know that the ball is acted upon by gravity and the force of drag, but you do not an analytical solution for the position as a function of time. First, let’s look at the data you have.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;../data/fallingtennisball02.txt&#39;</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tbounce</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">580</span><span class="p">:</span><span class="mi">1425</span><span class="p">]</span>
+<span class="n">ybounce</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">580</span><span class="p">:</span><span class="mi">1425</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;at time t=</span><span class="si">{:.2f}</span><span class="s1"> s, y=</span><span class="si">{:.4f}</span><span class="s1"> m&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tbounce</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ybounce</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;at time t=</span><span class="si">{:.2f}</span><span class="s1"> s, y=</span><span class="si">{:.4f}</span><span class="s1"> m&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tbounce</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">ybounce</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tbounce</span><span class="p">,</span><span class="n">ybounce</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;after bounce 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time between bounce 1 and 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;height y(t) (m)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at time t=0.58 s, y=-0.0152 m
+at time t=1.42 s, y=-0.0110 m
+</pre></div>
+</div>
+<img alt="../_images/04_Getting_to_the_root_35_1.png" src="../_images/04_Getting_to_the_root_35_1.png" />
+</div>
+</div>
+<p>Now, let’s look at the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> function you created that described the motion of the tennis ball. Remember, this function returns the derivative of the state. So if you input</p>
+<p>state = <span class="math notranslate nohighlight">\([x,~v]\)</span></p>
+<p>it will return</p>
+<p>d(state)/dt = <span class="math notranslate nohighlight">\(\left[v,~-9.81+\frac{F_{D}}{m}\right]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fall_drag</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">C_d</span><span class="o">=</span><span class="mf">0.47</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mf">0.0577</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="mf">0.0661</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
+<span class="sd">    for the fall of a ball, with drag, in SI units.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ----------    </span>
+<span class="sd">    state : array of two dependent variables [y v]^T</span>
+<span class="sd">    m : mass in kilograms default set to 0.0577 kg</span>
+<span class="sd">    C_d : drag coefficient for a sphere default set to 0.47 (no units)</span>
+<span class="sd">    R : radius of ball default in meters is 0.0661/2 m (tennis ball)</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    derivs: array of two derivatives [v (-g+a_drag)]^T</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.22</span>   <span class="c1"># air density kg/m^3</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    
+    <span class="n">a_drag</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">C_d</span> <span class="o">*</span> <span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="n">derivs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="mf">9.81</span> <span class="o">+</span> <span class="n">a_drag</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">derivs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the position as a function of time, you can use any of the integration methods that you defined in <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">03_Get_Oscillations</span></a>. Here you copy in the second-order Runge-Kutta explicit method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk2_step</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Update a state to the next time increment using modified Euler&#39;s method.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    state : array of dependent variables</span>
+<span class="sd">    rhs   : function that computes the RHS of the DiffEq</span>
+<span class="sd">    dt    : float, time increment</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    next_state : array, updated after one time increment&#39;&#39;&#39;</span>
+    
+    <span class="n">mid_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span><span class="o">*</span><span class="mf">0.5</span>    
+    <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">mid_state</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+ 
+    <span class="k">return</span> <span class="n">next_state</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="defining-your-problem-for-python">
+<h2>Defining your problem for Python<a class="headerlink" href="#defining-your-problem-for-python" title="Permalink to this headline">¶</a></h2>
+<p>Now, you can finally ask your engineering question in a Python way.</p>
+<p>We need a function, <span class="math notranslate nohighlight">\(f(v_0)\)</span>, such that when you input the correct velocity for the initial condition, <span class="math notranslate nohighlight">\(f(v_0^{correct})=0\)</span></p>
+<p>So you define a new function with <code class="docutils literal notranslate"><span class="pre">def</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_v</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="n">y0</span><span class="o">=</span><span class="n">ybounce</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yT</span><span class="o">=</span><span class="n">ybounce</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="n">tbounce</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tbounce</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span><span class="n">N</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; define a function f(v) that returns </span>
+<span class="sd">    ymeasured(T)-ypredicted(T)</span>
+<span class="sd">    here, the time span is based upon the tbounce variable defined above from </span>
+<span class="sd">    the first bounce to the second bounce</span>
+<span class="sd">    </span>
+<span class="sd">    arguments:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    v0: the unknown initial vy velocity component</span>
+<span class="sd">    y0: the known initial position</span>
+<span class="sd">    yT: the known final position</span>
+<span class="sd">    T: a list of two times (beginning time, end time)</span>
+<span class="sd">    N: the number of time steps to integrate the RK2 method default = 50</span>
+<span class="sd">    </span>
+<span class="sd">    returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    error: the difference between vmeasured(T) and vpredicted(T)</span>
+<span class="sd">        when f_v(v0)= 0, the correct initial velocity was chosen</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    
+    <span class="c1"># initialize array</span>
+    <span class="n">t_sol</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">dt</span><span class="o">=</span><span class="n">t_sol</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_sol_drag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># Set intial conditions</span>
+    <span class="n">num_sol_drag</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="n">num_sol_drag</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">num_sol_drag</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rk2_step</span><span class="p">(</span><span class="n">num_sol_drag</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fall_drag</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">num_sol_drag</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">yT</span>
+    <span class="c1">#plt.plot(t_sol,num_sol_drag[:,0])</span>
+    <span class="k">return</span> <span class="n">error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take a look at the pieces of this function:</p>
+<ol class="simple">
+<li><p>Create an array of time <code class="docutils literal notranslate"><span class="pre">t_sol</span></code></p></li>
+<li><p>Set initial conditions to <code class="docutils literal notranslate"><span class="pre">y0</span></code> and <code class="docutils literal notranslate"><span class="pre">v0</span></code> &lt;- <strong>here <code class="docutils literal notranslate"><span class="pre">v0</span></code> is your unknown value</strong></p></li>
+<li><p>Use Runge-Kutta second order to integrate the function for <code class="docutils literal notranslate"><span class="pre">t_sol[0]</span></code> to <code class="docutils literal notranslate"><span class="pre">t_sol[-1]</span></code></p></li>
+<li><p>Create an output, <code class="docutils literal notranslate"><span class="pre">error</span></code> of the difference between the measured y(T), <code class="docutils literal notranslate"><span class="pre">yT</span></code>, and the current solution for y(T), <code class="docutils literal notranslate"><span class="pre">num_sol_drag[-1,0]</span></code></p></li>
+</ol>
+<p>When <code class="docutils literal notranslate"><span class="pre">error</span></code> is 0, you have chosen the correct initial velocity, <code class="docutils literal notranslate"><span class="pre">v0</span></code>.</p>
+<p>To see what the output looks like, below you can take out the integration part and plot the results for a guess of <code class="docutils literal notranslate"><span class="pre">v0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize array</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="n">tbounce</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tbounce</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">t_sol</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">N</span><span class="p">)</span>
+<span class="n">dt</span><span class="o">=</span><span class="n">t_sol</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num_sol_drag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">num_sol_drag</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ybounce</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num_sol_drag</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">num_sol_drag</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rk2_step</span><span class="p">(</span><span class="n">num_sol_drag</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fall_drag</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_sol</span><span class="p">,</span><span class="n">num_sol_drag</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted motion after bounce&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;height y(t) (m)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_Getting_to_the_root_44_0.png" src="../_images/04_Getting_to_the_root_44_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Enter your best guess for <code class="docutils literal notranslate"><span class="pre">v0</span></code>. What is the error between the measured <code class="docutils literal notranslate"><span class="pre">yT</span></code> and your predicted y(T)? <em>Hint: use your function, <code class="docutils literal notranslate"><span class="pre">f_v</span></code>, and plot the results.</em></p>
+</div>
+<div class="section" id="solving-the-engineering-problem">
+<h2>Solving the engineering problem<a class="headerlink" href="#solving-the-engineering-problem" title="Permalink to this headline">¶</a></h2>
+<p>Now, you have all the components you need for this “shooting” problem. You can’t evaluate a derivative easily and the bisection method is too slow. Therefore, you will use the <code class="docutils literal notranslate"><span class="pre">mod_secant</span></code> function to find the correct initial velocity.</p>
+<p>Below is the solution. <em>Just one line of code!</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span><span class="p">,</span><span class="n">out</span> <span class="o">=</span> <span class="n">mod_secant</span><span class="p">(</span><span class="n">f_v</span><span class="p">,</span><span class="mf">0.0001</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.000001</span><span class="p">)</span> <span class="c1"># &lt;-- solution line</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="s1">&#39;m/s is the correct initial velocity to match the height at beginning and end of bounce&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the solve took &#39;</span><span class="p">,</span><span class="n">out</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39; iterations&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.175915400675785 m/s is the correct initial velocity to match the height at beginning and end of bounce
+the solve took  3  iterations
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Change the value of the <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">x0</span></code>. Does it change the final result? Does it change the time it took to arrive at the solution or the number of iterations?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>mod_secant<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-you-ve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>How to find the 0 of a function, aka root-finding</p></li>
+<li><p>The difference between a bracketing and an open methods for finding roots</p></li>
+<li><p>Two bracketing methods: incremental search and bisection methods</p></li>
+<li><p>Two open methods: Newton-Raphson and modified secant methods</p></li>
+<li><p>How to measure relative error</p></li>
+<li><p>How to compare root-finding methods</p></li>
+<li><p>How to frame an engineering problem as a root-finding problem</p></li>
+<li><p>Solve an initial value problem with missing initial conditions (the shooting method)</p></li>
+<li><p><em>Bonus: In the Problems you’ll consider stability of bracketing and open methods.</em></p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> McGraw Hill.</p></li>
+<li><p><em>Computational Physics with Python</em>, lecture notes by Eric Ayars, California State University, Chico. Available online on the author’s website: https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>One of the main benefits of a bracketing method is the stability of solutions. Open methods are not always stable. Here is an example. One way engineers and data scientists model the probability of failure is with a <a class="reference external" href="https://byuistats.github.io/M325_Hathaway/textbook/challengerLogisticReg.html">sigmoid function e.g. this Challenger O-ring case study</a></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    \sigma(T) = \frac{e^{a_0-a_1 T}}{1+e^{a_0-a_1 T}}
+\end{equation}\]</div>
+<p>The Challenger explosion was a terrible incident that occurred due to the failure of an O-ring. The post-mortem data analysis showed that at low temperatures the O-rings were brittle and more likely to fail. You can use the function <span class="math notranslate nohighlight">\(\sigma(T)\)</span> to determine the point at which there is a 50% chance of O-ring failure. Using the pass-fail data, the two constants are</p>
+<p><span class="math notranslate nohighlight">\(a_0 = 15.043\)</span></p>
+<p><span class="math notranslate nohighlight">\(a_1 = 0.232\)</span></p>
+<p>a. Plot the function <span class="math notranslate nohighlight">\(\sigma(T)\)</span> for <span class="math notranslate nohighlight">\(T=0-100^{o}F\)</span>. Where do you see the function cross 50% (0.5)?</p>
+<p>b. Create two functions <code class="docutils literal notranslate"><span class="pre">f_T</span></code> and <code class="docutils literal notranslate"><span class="pre">dfdT</span></code> where <code class="docutils literal notranslate"><span class="pre">f_T</span></code>=<span class="math notranslate nohighlight">\(f(T)=\sigma(T) - 0.5\)</span> and <code class="docutils literal notranslate"><span class="pre">dfdT</span></code>=<span class="math notranslate nohighlight">\(\frac{df}{dT}\)</span></p>
+<p>c. Use the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> and <code class="docutils literal notranslate"><span class="pre">newtraph</span></code> functions to find the root of f(T). When does Newton-Raphson fail to converge? Why does it fail? <em>Hint: if you’re stuck here, take a look at this <a class="reference external" href="https://youtu.be/zyXRo8Qjj0A">youtube video finding an interval of convergence for the Newton-Raphson method</a>. Look at the animation of how the method converges and diverges.</em></p>
+<ol>
+<li><p>In the examples shown above, you determined the initial velocity after the first bounce by specifying the beginning y(0) and end y(T) for an object subject to gravity and drag. Repeat this analysis for the time period just after the second bounce and just before the third bounce. The indices are given below for t[1430:2051] = 1.43-2.05 seconds.</p>
+<p>a. What is the velocity just after the second bounce?</p>
+<p>b. What is the coefficient of restitution for the second bounce? <em>Hint: use the ratio of the last velocity from above to the initial velocity calculated here.</em></p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i0</span><span class="o">=</span><span class="mi">1430</span>
+<span class="n">ie</span><span class="o">=</span><span class="mi">2051</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i0</span><span class="p">],</span><span class="n">t</span><span class="p">[</span><span class="n">ie</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">ie</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">ie</span><span class="p">],</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4300000000009008 2.051000000004969
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f938bae0d30&gt;]
+</pre></div>
+</div>
+<img alt="../_images/04_Getting_to_the_root_56_2.png" src="../_images/04_Getting_to_the_root_56_2.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="03_Get_Oscillations.html" title="previous page">Get with the oscillations</a>
+    <a class='right-next' id="next-link" href="../projects/03_IVP-project.html" title="next page">Initial Value Problems - Project</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

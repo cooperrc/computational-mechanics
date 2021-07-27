@@ -1,0 +1,1141 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step to the future &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Get with the oscillations" href="03_Get_Oscillations.html" />
+    <link rel="prev" title="Catch things in motion" href="01_Catch_Motion.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_02/README.html">
+   Computational Mechanics 02 - Analyze Data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">
+     01 - Cheers!  Stats with Beers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
+     02 - Seeing stats in a new light
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/02_Seeing_Stats.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">
+     03 - Linear regression with real data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
+     04 - Statistics and Monte-Carlo Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
+     Project #02 - NYSE random walk predictor
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   Computational Mechanics 03- Initial Value Problems
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Catch_Motion.html">
+     Catch things in motion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Catch_Motion.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Step to the future
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Get_Oscillations.html">
+     Get with the oscillations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Get_Oscillations.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Getting_to_the_root.html">
+     Roots of Nonlinear functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Getting_to_the_root.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/03_IVP-project.html">
+     Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/module_03/02_Step_Future.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_03/02_Step_Future.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_03/02_Step_Future.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_03/02_Step_Future.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_03/02_Step_Future.md&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Step to the future
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-things-up-to-compute-velocity-and-position">
+     Set things up to compute velocity and position
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-through-time">
+     Step through time
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#euler-s-method">
+     Euler’s method
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#euler-s-method-is-a-first-order-method-because-the-error-in-the-approximation-goes-is-proportional-to-the-first-power-of-the-time-increment-delta-t">
+       <strong>
+        Euler’s method is a first-order method
+       </strong>
+       because the error in the approximation goes is proportional to the first power of the time increment
+       <span class="math notranslate nohighlight">
+        \(\Delta t\)
+       </span>
+       .
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initial-value-problems">
+     Initial-value problems
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-solution-vs-experiment">
+     Numerical solution vs. experiment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#air-resistance">
+     Air resistance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note">
+       Note:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion">
+     Discussion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-ve-learned">
+     What you’ve learned
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<div class="section" id="step-to-the-future">
+<h1>Step to the future<a class="headerlink" href="#step-to-the-future" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to Lesson 2 of the course module “Initial Value Problems
+(IVPs),” in <em>Computational Mechanics</em> The previous lesson, <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">Catch things
+in motion</span></a>, showed you how to compute
+velocity and acceleration of a moving body whose positions were known.</p>
+<p>Time history of position can be captured on a long-exposure photograph
+(using a strobe light), or on video. But digitizing the positions from
+images can be a bit tedious, and error-prone. Luckily, you found online a
+data set from a motion-capture experiment of a falling ball, with high
+resolution [1]. You computed acceleration and found that it was smaller
+than the theoretical value of <span class="math notranslate nohighlight">\(9.8 \rm{m/s}^2\)</span> and <em>decreased</em> over
+time. The effect is due to air resistance and is what leads to objects
+reaching a <em>terminal velocity</em> in freefall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="set-things-up-to-compute-velocity-and-position">
+<h2>Set things up to compute velocity and position<a class="headerlink" href="#set-things-up-to-compute-velocity-and-position" title="Permalink to this headline">¶</a></h2>
+<p>Your challenge now is to find the motion description—the position
+<span class="math notranslate nohighlight">\(x(t)\)</span>—from a function of acceleration. In the <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">previous
+lesson</span></a>, you did the opposite: with
+position data, get the velocity and acceleration, using <em>numerical
+derivatives</em>:</p>
+<p>\begin{equation}
+v(t_i) = \frac{dx}{dt} \approx \frac{x(t_i+\Delta t)-x(t_i)}{\Delta t}
+\end{equation}</p>
+<p>\begin{equation}
+a(t_i) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
+\end{equation}</p>
+<p>Almost every problem that deals with Newton’s second law is a second-order differential equation. The acceleration is a function of position, velocity, and sometimes time <em>if there is a forcing function f(t)</em>.</p>
+<p>The key to solving a second order differential equation is realizing that if you have the initial velocity, you can use the acceleration to find the velocity after a short interval of time. And if you have the initial position, you can use the known velocity to find the new position after a short interval of time. Let’s rearrange the equation for acceleration above, by solving for the velocity at <span class="math notranslate nohighlight">\(t_i + \Delta t\)</span>:</p>
+<p>\begin{equation}
+v(t_i+\Delta t)   \approx  v(t_i) + a(t_i) \Delta t
+\end{equation}</p>
+<p>Consider our first computational mechanics model of a freefalling object that is dropped.</p>
+<img src="../images/freefall.png" style="width: 200px;"/> 
+<p>An object falling is subject to the force of</p>
+<ul class="simple">
+<li><p>gravity (<span class="math notranslate nohighlight">\(F_g\)</span>=mg) and</p></li>
+<li><p>drag (<span class="math notranslate nohighlight">\(F_d=cv^2\)</span>)</p></li>
+</ul>
+<p>Acceleration of the object:</p>
+<p><span class="math notranslate nohighlight">\(\sum F=ma=F_g-F_d=cv^2 - mg = m\frac{dv}{dt}\)</span></p>
+<p>so,</p>
+<p><span class="math notranslate nohighlight">\(a=\frac{c}{m}v(t_{i})^2-g\)</span></p>
+<p>then, our acceleration is defined from Newton’s second law and position is defined through its definition, <span class="math notranslate nohighlight">\(v=\frac{dx}{dt}\)</span>.</p>
+<p><em>Note: the direction of positive acceleration was changed to up, so that a positive <span class="math notranslate nohighlight">\(x\)</span> is altitude, you will still have the same speed vs time function from <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/notebooks/03_Numerical_error.ipynb">Module_01-03_Numerical_error</a></em></p>
+</div>
+<div class="section" id="step-through-time">
+<h2>Step through time<a class="headerlink" href="#step-through-time" title="Permalink to this headline">¶</a></h2>
+<p>In the code cell below, you define acceleration as a function of velocity and add two parameters <code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">m</span></code> to define drag coefficient and mass of the object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a_freefall</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the acceleration of an object given its </span>
+<span class="sd">    drag coefficient and mass</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    v: current velocity (m/s)</span>
+<span class="sd">    c: drag coefficient set to a default value of c=0.25 kg/m</span>
+<span class="sd">    m: mass of object set to a defualt value of m=60 kg</span>
+<span class="sd">    </span>
+<span class="sd">    returns:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    a: acceleration of freefalling object under the force of gravity and drag</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">a</span><span class="o">=-</span><span class="n">c</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">-</span><span class="mf">9.81</span>
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now you use a <code class="docutils literal notranslate"><span class="pre">for</span></code> statement to step through the sequence of
+acceleration values, each time computing the velocity and position at
+the subsequent time instant. You first have to <strong>initialize</strong> our
+variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code>. You can use initial conditions to set <code class="docutils literal notranslate"><span class="pre">x[0]</span></code> and
+<code class="docutils literal notranslate"><span class="pre">v[0]</span></code>. The rest of the values you will overwrite based upon our
+stepping solution.</p>
+<p>You are applying the equation for <span class="math notranslate nohighlight">\(v(t_i + \Delta t)\)</span> above, and a similar equation for position:</p>
+<p>\begin{equation}
+x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># define number of time steps</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="n">N</span><span class="p">)</span> <span class="c1"># set values for time (our independent variable)</span>
+<span class="n">dt</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="c1"># initialize x</span>
+<span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="c1"># initialize v</span>
+
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">440</span> <span class="c1"># define initial altitude of the object</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">dvdt</span> <span class="o">=</span> <span class="n">a_freefall</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dvdt</span><span class="o">*</span><span class="n">dt</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_freefall</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-9.393333333333334
+</pre></div>
+</div>
+</div>
+</div>
+<p>And there you have it. You have computed the velocity <strong>and position</strong>
+over time from Newton’s second law. You can now make plots of the
+computed variables. Note that you use the Matplotlib
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplot.html?highlight=matplotlib%20pyplot%20subplot#matplotlib.pyplot.subplot"><code class="docutils literal notranslate"><span class="pre">subplot()</span></code></a>
+function to get the two plots in one figure. The argument to <code class="docutils literal notranslate"><span class="pre">subplot()</span></code>
+is a set of three digits, corresponding to the number of rows, number of
+columns, and plot number in a matrix of sub-plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot velocity and position over time</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span>  <span class="n">v</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#0096d6&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Velocity and position of </span><span class="se">\n</span><span class="s1">freefalling object m=60-kg and c=0.25 kg/s. </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$v$ (m/s) &#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#008367&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$ (m)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Step_Future_10_0.png" src="../_images/02_Step_Future_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>The initial height is 440 m, the height of the tip of the <a class="reference external" href="https://en.wikipedia.org/wiki/Empire_State_Building">Empire State Building</a>. How long would it take for the object to reach the ground from this height? How accurate is your estimation e.g. what is the error bar for your solution?</p>
+</div>
+<div class="section" id="euler-s-method">
+<h2>Euler’s method<a class="headerlink" href="#euler-s-method" title="Permalink to this headline">¶</a></h2>
+<p>You first used Euler’s method in <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/notebooks/03_Numerical_error.ipynb">Module_01: 03_Numerical_error</a>. Here you will look at it with more depth.</p>
+<p>The eminent Swiss mathematician Leonhard Euler presented it in his book <em>“Institutionum calculi integralis,”</em> published around 1770 [3].</p>
+<p>You can understand why it works by writing out a Taylor expansion for <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
+<p>\begin{equation}
+x(t+\Delta t) = x(t) + \frac{d x}{dt}\Delta t + \frac{d^2 x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta t^3}{3!}+\cdots
+\end{equation}</p>
+<p>With <span class="math notranslate nohighlight">\(v=dx/dt\)</span>, you can see that the first two terms on the right-hand side correspond to what you used in the code above. That means that Euler’s method makes an approximation by throwing away the terms <span class="math notranslate nohighlight">\(\frac{d^2 x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta t^3}{3!}+\cdots\)</span>. So the error made in <em>one step</em> of Euler’s method is proportional to <span class="math notranslate nohighlight">\(\Delta t^2\)</span>. Since you take <span class="math notranslate nohighlight">\(N=T/\Delta t\)</span> steps (for a final time instant <span class="math notranslate nohighlight">\(T\)</span>), you conclude that the error overall is proportional to <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<div class="section" id="euler-s-method-is-a-first-order-method-because-the-error-in-the-approximation-goes-is-proportional-to-the-first-power-of-the-time-increment-delta-t">
+<h3><strong>Euler’s method is a first-order method</strong> because the error in the approximation goes is proportional to the first power of the time increment <span class="math notranslate nohighlight">\(\Delta t\)</span>.<a class="headerlink" href="#euler-s-method-is-a-first-order-method-because-the-error-in-the-approximation-goes-is-proportional-to-the-first-power-of-the-time-increment-delta-t" title="Permalink to this headline">¶</a></h3>
+<p>i.e.</p>
+<p>error <span class="math notranslate nohighlight">\(\propto\)</span> <span class="math notranslate nohighlight">\(\Delta t\)</span></p>
+</div>
+</div>
+<div class="section" id="initial-value-problems">
+<h2>Initial-value problems<a class="headerlink" href="#initial-value-problems" title="Permalink to this headline">¶</a></h2>
+<p>To get velocity and position from the acceleration data, you needed to know the <em>initial values</em> of the velocity and position. Then you could apply Euler’s method to <em>step in time</em> starting at <span class="math notranslate nohighlight">\(t_0\)</span>, with time increment <span class="math notranslate nohighlight">\(\Delta t\)</span>. This setting corresponds to the numerical solution of <em>initial-value problems</em>.
+(Follow here the presentation in [4], p.86.)</p>
+<p>Consider the differential equation corresponding to an object in free fall:</p>
+<p>\begin{equation}
+\ddot{y}=\frac{c}{m}v^2-g,
+\end{equation}</p>
+<p>where the dot above a variable represents the time derivative, and <span class="math notranslate nohighlight">\(g\)</span> is the acceleration of gravity. Introducing the velocity as intermediary variable, you can write:</p>
+<p>\begin{eqnarray}
+\dot{y} &amp;=&amp; v \nonumber\
+\dot{v} &amp;=&amp; \frac{c}{m}v^2-g
+\end{eqnarray}</p>
+<p>The above is a system of two ordinary differential equations, with time as the independent variable. For its numerical solution, you need two initial conditions, and Euler’s method:</p>
+<p>\begin{eqnarray}
+y(t_0) = y_0, \qquad y_{i+1} &amp;=&amp; y_i + \dot{y} \Delta t \nonumber\
+v(t_0) = v_0, \qquad v_{i+1} &amp;=&amp; v_i + \dot{v} \Delta t
+\end{eqnarray}</p>
+<p>It’s so neatly symmetrical that it’s just asking for a vectorized equation! Combine the two dependent variables into a vector of unknowns, <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>:</p>
+<p>\begin{equation}
+\mathbf{y} = \begin{bmatrix}
+y \ v
+\end{bmatrix},
+\end{equation}</p>
+<p>and write the differential equation in vector form, as follows:</p>
+<p>\begin{equation}
+\dot{\mathbf{y}} = \begin{bmatrix}
+v \ \frac{c}{m}v^2-g
+\end{bmatrix}.
+\end{equation}</p>
+<p>Equation (9) above represents the <em>state</em> of the system, at any given instant in time. A code design for the numerical solution that generalizes to other changing systems (or <em>dynamical systems</em>) is to write one function that computes the right-hand side of the differential equation (the derivatives of the state variables), and another function that takes a state and applies the numerical method for each time increment. The solution is then computed in one <code class="docutils literal notranslate"><span class="pre">for</span></code> statement that calls these functions.</p>
+<p>Study the code below: the function <code class="docutils literal notranslate"><span class="pre">freefall()</span></code> computes the right-hand side of the equation, and the function <code class="docutils literal notranslate"><span class="pre">eulerstep()</span></code> takes the state and applies Euler’s method to update it one time increment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">freefall</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the freefall differential </span>
+<span class="sd">    equation, in SI units.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ----------    </span>
+<span class="sd">    state : array of two dependent variables [y v]^T</span>
+<span class="sd">    c : drag coefficient for object; default set to 0 kg/m (so no drag considered)</span>
+<span class="sd">    m : mass of falling object; default set to 60 kg</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    derivs: array of two derivatives [v, c/m*v**2-g]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">derivs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">c</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">-</span><span class="mf">9.81</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">derivs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eulerstep</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Uses Euler&#39;s method to update a state to the next one. </span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    state: array of two dependent variables [y v]^T</span>
+<span class="sd">    rhs  : function that computes the right hand side of the </span>
+<span class="sd">           differential equation.</span>
+<span class="sd">    dt   : float, time increment. </span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    next_state: array, updated state after one time increment.       </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="k">return</span> <span class="n">next_state</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numerical-solution-vs-experiment">
+<h2>Numerical solution vs. experiment<a class="headerlink" href="#numerical-solution-vs-experiment" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">freefall()</span></code> and <code class="docutils literal notranslate"><span class="pre">eulerstep()</span></code> functions to obtain a numerical solution with the same initial conditions as the falling-ball experiment from <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">Lesson 1</span></a>, and compare with the experimental data.</p>
+<p>In <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">Lesson 1</span></a>, you had considered only the acceleration due to gravity. So before you get into the specifics of the effects on drag, leave c=0 so that you have a constant acceleration problem,</p>
+<p><span class="math notranslate nohighlight">\(\ddot{y} = -g\)</span></p>
+<p>and our vector form is</p>
+<p>\begin{equation}
+\dot{\mathbf{y}} = \begin{bmatrix}
+v \ -g
+\end{bmatrix}.
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;../data/fallingtennisball02.txt&#39;</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll need to use the same time increment, so let’s compute it from two
+time samples. The initial position is the first value of the <code class="docutils literal notranslate"><span class="pre">y</span></code> array,
+while the initial velocity is zero. And you’ll only look at the section
+of data before the ball bounces from the ground, which gives us the
+number of time steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#time increment</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#initial position</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1">#initial velocity</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">576</span>   <span class="c1">#number of steps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s create a new array, called <code class="docutils literal notranslate"><span class="pre">num_sol</span></code>, to hold the results of the numerical solution. The array has dimensions <code class="docutils literal notranslate"><span class="pre">Nx2</span></code>, with each two-element row holding the state variables, <span class="math notranslate nohighlight">\((y,v)\)</span>, at a given time instant. After saving the initial conditions in the solution array, you are ready to start stepping in time in a <code class="docutils literal notranslate"><span class="pre">for</span></code> statement. Study the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#initialize array</span>
+<span class="n">num_sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set intial conditions</span>
+<span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="n">eulerstep</span><span class="p">(</span><span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">freefall</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.6    , -0.00981])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eulerstep</span><span class="p">(</span><span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">freefall</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Did it work? Exciting! Let’s plot in the same figure both the numerical solution and the experimental data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">num_sol</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numerical solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$ (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Free fall tennis ball (no air resistance) </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Step_Future_27_0.png" src="../_images/02_Step_Future_27_0.png" />
+</div>
+</div>
+<p>The two lines look very close… but let’s plot the difference to get understand the <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/notebooks/03_Numerical_error.ipynb">error</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span><span class="o">-</span><span class="n">num_sol</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Difference between numerical solution and experimental data.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$ [m]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Step_Future_29_0.png" src="../_images/02_Step_Future_29_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Create a plot of the analytical solution for y-vs-t for an object that accelerates due to gravity, plot the difference between the analytical solution and the experimental data with the plot above.</p>
+<p><em>Hint: remember the kinematic equations for constant acceleration</em> <span class="math notranslate nohighlight">\(y(t) = y(0) + \dot{y}(0)t - \frac{gt^2}{2}\)</span></p>
+</div>
+<div class="section" id="air-resistance">
+<h2>Air resistance<a class="headerlink" href="#air-resistance" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">Lesson 1</span></a> of this module, you computed the acceleration of gravity and got a value less than the theoretical <span class="math notranslate nohighlight">\(9.8 \rm{m/s}^2\)</span>, even when using high-resolution experimental data.</p>
+<p>You did not account for air resistance. When an object moves in a fluid, like air, it applies a force on the fluid, and consequently the fluid applies an equal and opposite force on the object (Newton’s third law).</p>
+<p>This force is the <em>drag</em> of the fuid, and it opposes the direction of travel. The drag force depends on the object’s geometry, and its velocity: for a sphere, its magnitude is given by:</p>
+<p>\begin{equation}
+F_d = \frac{1}{2} \pi R^2 \rho C_d v^2,
+\end{equation}</p>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the radius of the sphere, <span class="math notranslate nohighlight">\(\rho\)</span> the density of the fluid, <span class="math notranslate nohighlight">\(C_d\)</span> the drag coefficient of a sphere, and <span class="math notranslate nohighlight">\(v\)</span> is the velocity.</p>
+<p>In the first module, you used the constant <span class="math notranslate nohighlight">\(c\)</span>, where <span class="math notranslate nohighlight">\(c= \frac{1}{2} \pi R^2 \rho C_d\)</span>.</p>
+<p>You can update our defintion for drag with this <em>higher fidelity</em> description of drag</p>
+<p>With <span class="math notranslate nohighlight">\(F_{\text{drag}} = m a_{\text{drag}}\)</span>:</p>
+<p>\begin{equation}
+a_{\text{drag}} = \frac{1}{2m} \pi R^2 \rho C_d v^2
+\end{equation}</p>
+<p>Finally, you can write our differential equation as:</p>
+<p>\begin{equation}
+\dot{\mathbf{y}} = \begin{bmatrix}
+v \ -g + a_{\text{drag}}
+\end{bmatrix}.
+\end{equation}</p>
+<p>Let’s write a new function for this modified right-hand side of a falling tennis ball with air resistance.</p>
+<div class="section" id="note">
+<h3>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
+<p>According to the International Tennis Federation,
+<a class="reference external" href="http://www.itftennis.com/home.aspx">ITF</a>, the diameter of a tennis ball
+has to be in the range of <span class="math notranslate nohighlight">\(6.54\)</span>–<span class="math notranslate nohighlight">\(6.86 \rm{cm}\)</span>, and its mass in the
+range of <span class="math notranslate nohighlight">\(56.0\)</span>–<span class="math notranslate nohighlight">\(59.4 \rm{g}\)</span>. Choose a value in the middle of the range for each quantity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fall_drag</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">C_d</span><span class="o">=</span><span class="mf">0.47</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mf">0.0577</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="mf">0.0661</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
+<span class="sd">    for the fall of a ball, with drag, in SI units.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ----------    </span>
+<span class="sd">    state : array of two dependent variables [y v]^T</span>
+<span class="sd">    m : mass in kilograms default set to 0.0577 kg</span>
+<span class="sd">    C_d : drag coefficient for a sphere default set to 0.47 (no units)</span>
+<span class="sd">    R : radius of ball default in meters is 0.0661/2 m (tennis ball)</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    derivs: array of two derivatives [v (-g+a_drag)]^T</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.22</span>   <span class="c1"># air density kg/m^3</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    
+    <span class="n">a_drag</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">C_d</span> <span class="o">*</span> <span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="n">derivs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="mf">9.8</span> <span class="o">+</span> <span class="n">a_drag</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">derivs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Assume the same initial conditions as before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># initial position</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># initial velocity</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">576</span>   <span class="c1"># number of steps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize array</span>
+<span class="n">num_sol_drag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set intial conditions</span>
+<span class="n">num_sol_drag</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">num_sol_drag</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">num_sol_drag</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eulerstep</span><span class="p">(</span><span class="n">num_sol_drag</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fall_drag</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Time to plot and see how it looks! Would you expect the results to be better than in the previous case? Let’s plot the three cases and check the differences.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">num_sol</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Num-solution no drag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">num_sol_drag</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Num-solution drag&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Free fall tennis ball </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$ [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Step_Future_41_0.png" src="../_images/02_Step_Future_41_0.png" />
+</div>
+</div>
+<p>All the lines look very close… but let’s plot the differences with the experimental data in both cases, to get an idea of the error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span><span class="o">-</span><span class="n">num_sol</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No drag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span><span class="o">-</span><span class="n">num_sol_drag</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;With drag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Difference between numerical solution and experimental data.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$ [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Step_Future_43_0.png" src="../_images/02_Step_Future_43_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What do you see in the plot of the difference between the numerical solution and the experimental data?</p></li>
+<li><p>Is the error plotted above related to truncation error? Is it related to roundoff error?</p></li>
+</ul>
+</div>
+<div class="section" id="what-you-ve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Integrating an equation of motion numerically.</p></li>
+<li><p>Drawing multiple plots in one figure,</p></li>
+<li><p>Solving initial-value problems numerically</p></li>
+<li><p>Using Euler’s method.</p></li>
+<li><p>Euler’s method is a first-order method.</p></li>
+<li><p>Freefall with air resistance is a more realistic model.</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><em>Elementary Mechanics Using Python</em> (2015), Anders Malthe-Sorenssen, Undergraduate Lecture Notes in Physics, Springer. Data at http://folk.uio.no/malthe/mechbook/</p></li>
+<li><p><em>The Physics Hyptertextbook</em> (n/a), Glenn Elert, <a class="reference external" href="https://physics.info/acceleration/">Acceleration</a></p></li>
+<li><p>Euler method. (2017, October 13). In Wikipedia, The Free Encyclopedia. Retrieved 01:21, November 10, 2017, from https://en.wikipedia.org/w/index.php?title=Euler_method&amp;oldid=805120184</p></li>
+<li><p><em>Computational Physics with Python</em>, lecture notes by Eric Ayars, California State University, Chico. Available online on the author’s youbsite: https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Integrate the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> equations for a tennis ball and a <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a> with the same initial conditions as above. Plot the resulting height vs time.</p></li>
+</ol>
+<p><em>Given:</em> y(0) = 1.6 m, v(0) = 0 m/s</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ball</p></th>
+<th class="head"><p>diameter</p></th>
+<th class="head"><p>mass</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tennis</p></td>
+<td><p><span class="math notranslate nohighlight">\(6.54\)</span>–<span class="math notranslate nohighlight">\(6.86 \rm{cm}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(56.0\)</span>–<span class="math notranslate nohighlight">\(59.4 \rm{g}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>lacrosse</p></td>
+<td><p><span class="math notranslate nohighlight">\(6.27\)</span>–<span class="math notranslate nohighlight">\(6.47 \rm{cm}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(140\)</span>–<span class="math notranslate nohighlight">\(147 \rm{g}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Is there a difference in the two solutions? At what times do the tennis ball and lacrosse balls reach the ground? Which was first?</p>
+<p><img alt="Projectile motion with drag" src="../_images/projectile.png" /></p>
+<p>The figure above shows the forces acting on a projectile object, like the <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a> from <a class="reference external" href="http://www.flippingphysics.com">Flipping Physics</a> that you analyzed in <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">lesson 01_Catch_Motion</span></a>. Consider the 2D motion of the <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a>, now the state vector has two extra variables,</p>
+<p>\begin{equation}
+\mathbf{y} = \begin{bmatrix}
+x \ v_x \
+y \ v_y
+\end{bmatrix},
+\end{equation}</p>
+<p>and its derivative is now,</p>
+<p>\begin{equation}
+\dot{\mathbf{y}} = \begin{bmatrix}
+v_x \ -c v_x^2 \
+v_y \ g - cv_y^2
+\end{bmatrix},
+\end{equation}</p>
+<p>where <span class="math notranslate nohighlight">\(c= \frac{1}{2} \pi R^2 \rho C_d\)</span>.</p>
+<ol>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">projectile_drag</span></code> function that returns the derivative of <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, given <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> e.g.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{\dot{y}} = projectile\_drag(\mathbf{y})\)</span></p>
+<p>Below is the start of a function definition, be sure to update the help file.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">projectile_drag</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">C_d</span><span class="o">=</span><span class="mf">0.47</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mf">0.143</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="mf">0.0661</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
+<span class="sd">    for the fall of a projectile lacrosee ball, with drag, in SI units.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ----------    </span>
+<span class="sd">    state : array of two dependent variables [y v]^T</span>
+<span class="sd">    m : mass in kilograms default set to 0.143 kg (mass of lax ball source wiki)</span>
+<span class="sd">    C_d : drag coefficient for a sphere default set to 0.47 (no units)</span>
+<span class="sd">    R : radius of ball default in meters is 0.0661/2 m (tennis ball)</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    derivs: array of four derivatives [?? ?? ?? ??]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.22</span>   <span class="c1"># air density kg/m^3</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="k">return</span> <span class="n">derivs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Integrate your <code class="docutils literal notranslate"><span class="pre">projectile_drag</span></code> function using the Euler integration method. Use initial conditions from the saved data in lesson  <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01_Catch_Motion</span></a>, there is a numpy <code class="docutils literal notranslate"><span class="pre">npz</span></code> file in the data folder if you want to check your results from lesson 1. The initial conditions in the provided npz file are</p></li>
+</ol>
+<p>\begin{equation}
+\mathbf{y}(0) = \begin{bmatrix}
+x(0) \ v_x(0) \
+y(0) \ v_y(0)
+\end{bmatrix}
+= \begin{bmatrix}
+0.5610~m \ 2.6938~m/s \
+-0.1858~m \ -0.0759~m/s
+\end{bmatrix},
+\end{equation}</p>
+<p>Compare your converged numerical integration to the data points in <span class="xref myst">projectile_coords.npz</span>. Is there a noticeable effect of drag on the lacrosse ball?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">npz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/projectile_coords.npz&#39;</span><span class="p">)</span>
+<span class="n">t3</span><span class="o">=</span><span class="n">npz</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span>
+<span class="n">x3</span><span class="o">=</span><span class="n">npz</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">y3</span><span class="o">=</span><span class="n">npz</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01_Catch_Motion.html" title="previous page">Catch things in motion</a>
+    <a class='right-next' id="next-link" href="03_Get_Oscillations.html" title="next page">Get with the oscillations</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

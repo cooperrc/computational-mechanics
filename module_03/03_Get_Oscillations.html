@@ -1,0 +1,1292 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get with the oscillations &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Roots of Nonlinear functions" href="04_Getting_to_the_root.html" />
+    <link rel="prev" title="Step to the future" href="02_Step_Future.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_02/README.html">
+   Computational Mechanics 02 - Analyze Data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">
+     01 - Cheers!  Stats with Beers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
+     02 - Seeing stats in a new light
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/02_Seeing_Stats.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">
+     03 - Linear regression with real data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
+     04 - Statistics and Monte-Carlo Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
+     Project #02 - NYSE random walk predictor
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   Computational Mechanics 03- Initial Value Problems
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Catch_Motion.html">
+     Catch things in motion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Catch_Motion.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Step_Future.html">
+     Step to the future
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Step_Future.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Get with the oscillations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Getting_to_the_root.html">
+     Roots of Nonlinear functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Getting_to_the_root.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/03_IVP-project.html">
+     Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/module_03/03_Get_Oscillations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_03/03_Get_Oscillations.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_03/03_Get_Oscillations.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_03/03_Get_Oscillations.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_03/03_Get_Oscillations.md&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Get with the oscillations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spring-mass-system">
+     Spring-mass system
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-spring-mass-system-without-friction">
+     Simple spring-mass system, without friction.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#system-in-vector-form">
+       System in vector form
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exercise">
+         Exercise:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#euler-cromer-method">
+     Euler-Cromer method
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sketch-of-two-euler-steps-on-a-curved-function">
+       Sketch of two Euler steps on a curved function.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-euler-cromer-method-is-first-order-accurate-just-like-euler-s-method-the-global-error-is-proportional-to-delta-t">
+       The Euler-Cromer method is first-order accurate, just like Euler’s method. The global error is proportional to
+       <span class="math notranslate nohighlight">
+        \(\Delta t\)
+       </span>
+       .
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#note">
+         Note:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convergence">
+     Convergence
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modified-euler-s-method">
+     Modified Euler’s method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-implicit-integration-approach">
+     An implicit integration approach
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-heun-s-method">
+     Using Heun’s method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-use-implicit-methods">
+     Why use implicit methods?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion">
+     Discussion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-ve-learned">
+     What you’ve learned
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<div class="section" id="get-with-the-oscillations">
+<h1>Get with the oscillations<a class="headerlink" href="#get-with-the-oscillations" title="Permalink to this headline">¶</a></h1>
+<p>So far, in this module you have learned to:</p>
+<ul class="simple">
+<li><p>capture time histories of a body’s position from images and video;</p></li>
+<li><p>compute velocity and acceleration of a body, from known positions over time—i.e., take numerical derivatives;</p></li>
+<li><p>find the motion description (position versus time) from acceleration data, stepping in time with Euler’s method;</p></li>
+<li><p>form the state vector and the vectorized form of a second-order dynamical system;</p></li>
+<li><p>improve the simple free-fall model by adding air resistance.</p></li>
+</ul>
+<p>You also learned that Euler’s method is a <em>first-order</em> method: a Taylor series expansion shows that stepping in time with Euler makes an error—called the <em>truncation error</em> —proportional to the time increment, <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<p>In this lesson, you’ll work with oscillating systems. Euler’s method
+doesn’t do very well with oscillating systems, but you’ll show you a clever way to fix this. (The modified method is <em>still</em> first order, however. You will also confirm the <strong>order of convergence</strong> by computing the error using different values of <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<p>As always, you will need our best-loved numerical Python libraries, and
+you’ll also re-use the <code class="docutils literal notranslate"><span class="pre">eulerstep()</span></code> function from the <a class="reference external" href="http://go.gwu.edu/engcomp3lesson2">previous lesson</a>. So let’s get that out of the way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eulerstep</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Update a state to the next time increment using Euler&#39;s method.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    state : array of dependent variables</span>
+<span class="sd">    rhs   : function that computes the RHS of the DiffEq</span>
+<span class="sd">    dt    : float, time increment</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    next_state : array, updated after one time increment&#39;&#39;&#39;</span>
+    
+    <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="k">return</span> <span class="n">next_state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="spring-mass-system">
+<h2>Spring-mass system<a class="headerlink" href="#spring-mass-system" title="Permalink to this headline">¶</a></h2>
+<p>A prototypical mechanical system is a mass <span class="math notranslate nohighlight">\(m\)</span> attached to a spring, in the simplest case without friction. The elastic constant of the spring, <span class="math notranslate nohighlight">\(k\)</span>, determines the restoring force it will apply to the mass when displaced by a distance <span class="math notranslate nohighlight">\(x\)</span>. The system then oscillates back and forth around its position of equilibrium.</p>
+<img src="../images/spring-mass.png" style="width: 400px;"/></div>
+<div class="section" id="simple-spring-mass-system-without-friction">
+<h2>Simple spring-mass system, without friction.<a class="headerlink" href="#simple-spring-mass-system-without-friction" title="Permalink to this headline">¶</a></h2>
+<p>Newton’s law applied to the friction-less spring-mass system is:</p>
+<p>\begin{equation}
+-k x = m \ddot{x}
+\end{equation}</p>
+<p>Introducing the parameter <span class="math notranslate nohighlight">\(\omega = \sqrt{k/m}\)</span>, the equation of motion is rewriten as:</p>
+<p>\begin{equation}
+\ddot{x} + \omega^2 x = 0
+\end{equation}</p>
+<p>where a dot above a dependent variable denotes the time derivative. This is a second-order differential equation for the position <span class="math notranslate nohighlight">\(x\)</span>, having a known analytical solution that represents <em>simple harmonic motion</em>:</p>
+<p><span class="math notranslate nohighlight">\(x(t) = x_0 \cos(\omega t)\)</span></p>
+<p>The solution represents oscillations with period <span class="math notranslate nohighlight">\(P = 2 \pi/ \omega \)</span>  (the time between two peaks), and amplitude <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<div class="section" id="system-in-vector-form">
+<h3>System in vector form<a class="headerlink" href="#system-in-vector-form" title="Permalink to this headline">¶</a></h3>
+<p>It’s useful to write a second-order differential equation as a set of two first-order equations: in this case, for position and velocity, respectively:</p>
+<p>\begin{eqnarray}
+\dot{x} &amp;=&amp; v \nonumber\
+\dot{v} &amp;=&amp; -\omega^2 x
+\end{eqnarray}</p>
+<p>Like you did in <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">Lesson 2</span></a> of this module, you write the state of the system as a two-dimensional vector,</p>
+<p>\begin{equation}
+\mathbf{x} = \begin{bmatrix}
+x \ v
+\end{bmatrix},
+\end{equation}</p>
+<p>and the differential equation in vector form:</p>
+<p>\begin{equation}
+\dot{\mathbf{x}} = \begin{bmatrix}
+v \ -\omega^2 x
+\end{bmatrix}.
+\end{equation}</p>
+<p>Several advantages come from writing the differential equation in vector form, both  theoretical and practical. In the study of dynamical systems, for example, the state vector lives in a state space called the <em>phase plane</em>, and many things can be learned from studying solutions to differential equations graphically on a phase plane.</p>
+<p>Practically, writing the equation in vector form results in more general, compact code. Let’s write a function to obtain the right-hand side of the spring-mass differential equation, in vector form.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">springmass</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the spring-mass differential </span>
+<span class="sd">    equation, without friction.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------   </span>
+<span class="sd">    state : array of two dependent variables [x v]^T</span>
+<span class="sd">    </span>
+<span class="sd">    Returns </span>
+<span class="sd">    -------</span>
+<span class="sd">    derivs: array of two derivatives [v - w*w*x]^T</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">derivs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">derivs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This worked example follows Reference [1], section 4.3 (note that the source is open access). You set the parameters of the system, choose a time interval equal to 1-20th of the oscillation period, and decide to solve the motion for a duration equal to 3 periods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">period</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">w</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">period</span><span class="o">/</span><span class="mi">20</span>  <span class="c1"># you choose 20 time intervals per period </span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">period</span>    <span class="c1"># solve for 3 periods</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60
+0.15707963267948966
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, set up the time array and initial conditions, initialize the solution array with zero values, and assign the initial values to the first elements of the solution array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># initial position</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># initial velocity</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#initialize solution array</span>
+<span class="n">num_sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set intial conditions</span>
+<span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’re ready to solve! Step through the time increments, calling the <code class="docutils literal notranslate"><span class="pre">eulerstep()</span></code> function with the <code class="docutils literal notranslate"><span class="pre">springmass</span></code> right-hand-side derivatives and time increment as inputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eulerstep</span><span class="p">(</span><span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">springmass</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s compute the position with respect to time using the known analytical solution, so that you can compare the numerical result with it. Below, you make a plot including both numerical and analytical values in our chosen time range.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_an</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot solution with Euler&#39;s method</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">num_sol</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numerical solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_an</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Analytical solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$ [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spring-mass system with Euler</span><span class="se">\&#39;</span><span class="s1">s method (dashed line).</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Get_Oscillations_20_0.png" src="../_images/03_Get_Oscillations_20_0.png" />
+</div>
+</div>
+<p>Yikes! The numerical solution exhibits a marked growth in amplitude over time, which certainly is not what the physical system displays. <em>What is wrong with Euler’s method?</em></p>
+<div class="section" id="exercise">
+<h4>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Try repeating the calculation above using smaller values of the time increment, <code class="docutils literal notranslate"><span class="pre">dt</span></code>, and see if the results improve. Try <code class="docutils literal notranslate"><span class="pre">dt=P/40</span></code>,  <code class="docutils literal notranslate"><span class="pre">P/160</span></code> and  <code class="docutils literal notranslate"><span class="pre">P/2000</span></code>.</p></li>
+<li><p>Although the last case, with 2000 steps per oscillation, does look good enough, see what happens if you then increase the time of simulation, for example to 20 periods. —Run the case again: <em>What do you see now?</em></p></li>
+</ul>
+<p>Observe a growth in amplitude in the numerical solution, worsening over
+time. The solution does improve when you reduce the time increment <code class="docutils literal notranslate"><span class="pre">dt</span></code>
+(as it should), but the amplitude still displays unphysical growth for
+longer simulations.</p>
+</div>
+</div>
+</div>
+<div class="section" id="euler-cromer-method">
+<h2>Euler-Cromer method<a class="headerlink" href="#euler-cromer-method" title="Permalink to this headline">¶</a></h2>
+<p>The thing is, Euler’s method has a fundamental problem with oscillatory systems. Look again at the approximation made by Euler’s method to get the position at the next time interval:</p>
+<p>\begin{equation}
+x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t
+\end{equation}</p>
+<p>It uses the velocity value at the <em>beginning</em> of the time interval to step the solution to the future.</p>
+<p>A graphical explanation can help here. Remember that the derivative of a function corresponds to the slope of the tangent at a point. Euler’s method approximates the derivative using the slope at the initial point in an interval, and advances the numerical position with that initial velocity. The sketch below illustrates two consecutive Euler steps on a function with high curvature.</p>
+<img src="../images/two-euler-steps.png" style="width: 500px;"/> 
+<div class="section" id="sketch-of-two-euler-steps-on-a-curved-function">
+<h3>Sketch of two Euler steps on a curved function.<a class="headerlink" href="#sketch-of-two-euler-steps-on-a-curved-function" title="Permalink to this headline">¶</a></h3>
+<p>Since Euler’s method makes a linear approximation to project the solution into the future, assuming the value of the derivative at the start of the interval, it’s not very good on oscillatory functions.</p>
+<p>A clever idea that improves on Euler’s method is to use the updated value of the derivatives for the <em>second</em> equation.</p>
+<p>Pure Euler’s method applies:</p>
+<p>\begin{eqnarray}
+x(t_0) = x_0, \qquad x_{i+1} &amp;=&amp; x_i + v_i \Delta t \nonumber\
+v(t_0) = v_0, \qquad v_{i+1} &amp;=&amp; v_i - {\omega}^2 x_i \Delta t
+\end{eqnarray}</p>
+<p>What if in the equation for <span class="math notranslate nohighlight">\(v\)</span> you used the value <span class="math notranslate nohighlight">\(x_{i+1}\)</span> that was just computed? Like this:</p>
+<p>\begin{eqnarray}
+x(t_0) = x_0, \qquad x_{i+1} &amp;=&amp; x_i + v_i \Delta t \nonumber\
+v(t_0) = v_0, \qquad v_{i+1} &amp;=&amp; v_i - {\omega}^2 x_{i+1} \Delta t
+\end{eqnarray}</p>
+<p>Notice the <span class="math notranslate nohighlight">\(x_{i+1}\)</span> on the right-hand side of the second equation: that’s the updated value, giving the acceleration at the <em>end</em> of the time interval. This modified scheme is called Euler-Cromer method, to honor clever Mr Cromer, who came up with the idea [2].</p>
+<p>Let’s see what it does. Study the function below carefully—it helps a lot if you write things out on a piece of paper!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler_cromer</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Update a state to the next time increment using Euler-Cromer&#39;s method.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    state : array of dependent variables</span>
+<span class="sd">    rhs   : function that computes the RHS of the DiffEq</span>
+<span class="sd">    dt    : float, time increment</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    next_state : array, updated after one time increment&#39;&#39;&#39;</span>
+    
+    <span class="n">mid_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span> <span class="c1"># Euler step</span>
+    <span class="n">mid_derivs</span> <span class="o">=</span> <span class="n">rhs</span><span class="p">(</span><span class="n">mid_state</span><span class="p">)</span>       <span class="c1"># updated derivatives</span>
+    
+    <span class="n">next_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mid_state</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mid_derivs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">next_state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ve copied the whole problem set-up below, to get the solution in one
+code cell, for easy trial with different parameter choices. Try it out!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">period</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">w</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">period</span><span class="o">/</span><span class="mi">200</span>  <span class="c1"># time intervals per period </span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">800</span><span class="o">*</span><span class="n">period</span>   <span class="c1"># simulation time, in number of periods</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number of time steps is </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">N</span> <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The time increment is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">dt</span> <span class="p">))</span>
+
+<span class="c1"># time array</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># initial position</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># initial velocity</span>
+
+<span class="c1">#initialize solution array</span>
+<span class="n">num_sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1">#Set intial conditions</span>
+<span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">euler_cromer</span><span class="p">(</span><span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">springmass</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of time steps is 160000.
+The time increment is 0.015707963267948967
+</pre></div>
+</div>
+</div>
+</div>
+<p>Recompute the analytical solution, and plot it alongside the numerical
+one, when you’re ready. You computed a crazy number of oscillations, so
+you’ll need to pick carefully the range of time to plot.</p>
+<p>First, get the analytical solution. You chose to then plot the first few periods of the oscillatory motion: numerical and analytical.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_an</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="c1"># analytical solution</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iend</span> <span class="o">=</span> <span class="mi">800</span> <span class="c1"># in number of time steps</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">iend</span><span class="p">],</span> <span class="n">num_sol</span><span class="p">[:</span><span class="n">iend</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numerical solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="n">iend</span><span class="p">],</span> <span class="n">x_an</span><span class="p">[:</span><span class="n">iend</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Analytical solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$ [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spring-mass system, with Euler-Cromer method.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Get_Oscillations_30_0.png" src="../_images/03_Get_Oscillations_30_0.png" />
+</div>
+</div>
+<p>The plot shows that Euler-Cromer does not have the problem of growing
+amplitudes. You should be happy with it in that sense.</p>
+<p>But if you plot the end of a long period of simulation, you can see that it does start to  deviate from the analytical solution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">istart</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="n">istart</span><span class="p">:],</span> <span class="n">num_sol</span><span class="p">[</span><span class="o">-</span><span class="n">istart</span><span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numerical solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="n">istart</span><span class="p">:],</span> <span class="n">x_an</span><span class="p">[</span><span class="o">-</span><span class="n">istart</span><span class="p">:],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Analytical solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$ [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spring-mass system, with Euler-Cromer method. </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Get_Oscillations_33_0.png" src="../_images/03_Get_Oscillations_33_0.png" />
+</div>
+</div>
+<p>Looking at the last few oscillations in a very long run shows a slight phase difference, even with a very small time increment. So although the Euler-Cromer method fixes a big problem with Euler’s method, it still has some error. It’s still a first-order method!</p>
+</div>
+<div class="section" id="the-euler-cromer-method-is-first-order-accurate-just-like-euler-s-method-the-global-error-is-proportional-to-delta-t">
+<h3>The Euler-Cromer method is first-order accurate, just like Euler’s method. The global error is proportional to <span class="math notranslate nohighlight">\(\Delta t\)</span>.<a class="headerlink" href="#the-euler-cromer-method-is-first-order-accurate-just-like-euler-s-method-the-global-error-is-proportional-to-delta-t" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="note">
+<h4>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h4>
+<p>You’ll often find the presentation of the Euler-Cromer method with the reverse order of the equations, i.e., the velocity equation solved first, then the position equation solved with the updated value of the velocity. This makes no difference in the results: it’s just a convention among physicists.</p>
+<p>The Euler-Cromer method is equivalent to a <a class="reference external" href="https://en.wikipedia.org/wiki/Semi-implicit_Euler_method"><em>semi-implicit Euler method</em></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="convergence">
+<h2>Convergence<a class="headerlink" href="#convergence" title="Permalink to this headline">¶</a></h2>
+<p>Both Euler’s method and the Cromer variant are <em>first-order accurate</em>: the error goes as the first power of <span class="math notranslate nohighlight">\(\Delta t\)</span>. In <a class="reference external" href="http://go.gwu.edu/engcomp3lesson2">Lesson 2</a> of this module, you showed this using a Taylor series. Let’s now confirm it numerically.</p>
+<p>Because simple harmonic motion has a known analytical function that solves the differential equation, you can directly compute a measure of the error made by the numerical solution.</p>
+<p>Suppose you ran a numerical solution in the interval from <span class="math notranslate nohighlight">\(t_0\)</span> to <span class="math notranslate nohighlight">\(T=N/\Delta t\)</span>. You could then compute the error, as follows:</p>
+<p>\begin{equation}
+e = x_N - x_0 \cos(\omega T)
+\end{equation}</p>
+<p>where <span class="math notranslate nohighlight">\(x_N\)</span> represents the numerical solution at the <span class="math notranslate nohighlight">\(N\)</span>-th time step.</p>
+<p>How could you confirm the order of convergence of a numerical method? In the lucky scenario of having an analytical solution to directly compute the error, all you need to do is solve numerically with different values of <span class="math notranslate nohighlight">\(\Delta t\)</span> and see if the error really varies linearly with this parameter.</p>
+<p>In the code cell below, you compute the numerical solution with different time increments. You use two nested <code class="docutils literal notranslate"><span class="pre">for</span></code>-statements: one iterates over the values of <span class="math notranslate nohighlight">\(\Delta t\)</span>, and the other iterates over the time steps from the initial condition to the final time. You save the results in a new variable called <code class="docutils literal notranslate"><span class="pre">num_sol_time</span></code>, which is an array of arrays. Check it out!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">period</span><span class="o">/</span><span class="mi">50</span><span class="p">,</span> <span class="n">period</span><span class="o">/</span><span class="mi">100</span><span class="p">,</span> <span class="n">period</span><span class="o">/</span><span class="mi">200</span><span class="p">,</span> <span class="n">period</span><span class="o">/</span><span class="mi">400</span><span class="p">])</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">period</span>
+
+<span class="n">num_sol_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">dt_values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">dt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dt_values</span><span class="p">):</span>
+
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    
+    <span class="c1">#initialize solution array</span>
+    <span class="n">num_sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+    
+    
+    <span class="c1">#Set intial conditions</span>
+    <span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eulerstep</span><span class="p">(</span><span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">springmass</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+    <span class="n">num_sol_time</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_sol</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You need to compute the error with our chosen norm, so let’s write a function for that. It includes a line to obtain the values of the analytical solution at the needed instant of time, and then it takes the difference with the numerical solution to compute the error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_error</span><span class="p">(</span><span class="n">num_sol</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    
+    <span class="n">x_an</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span> <span class="c1"># analytical solution at final time</span>
+    
+    <span class="n">error</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">num_sol</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x_an</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>All that is left to do is to call the error function with our chosen values of <span class="math notranslate nohighlight">\(\Delta t\)</span>, and plot the results. A logarithmic scale on the plot confirms close to linear scaling between error and time increment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">dt_values</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dt_values</span><span class="p">)):</span>
+    
+    <span class="n">error_values</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_error</span><span class="p">(</span><span class="n">num_sol_time</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the solution errors with respect to the time incremetn</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">dt_values</span><span class="p">,</span> <span class="n">error_values</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>  <span class="c1">#log-log plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">dt_values</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">dt_values</span><span class="p">,</span> <span class="s1">&#39;k:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>                         <span class="c1">#turn on grid lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>                      <span class="c1">#make axes scale equally</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$\Delta t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Convergence of the Euler method (dotted line: slope 1)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Get_Oscillations_42_0.png" src="../_images/03_Get_Oscillations_42_0.png" />
+</div>
+</div>
+<p>What do you see in the plot of the error as a function of <span class="math notranslate nohighlight">\(\Delta t\)</span>? It looks like a straight line, with a slope close to 1. On a log-log convergence plot, a slope of 1 indicates that you have a first-order method: the error scales as <span class="math notranslate nohighlight">\({\mathcal O}(\Delta t)\)</span>—using the “big-O” notation. It means that the error is proportional to the time increment: <span class="math notranslate nohighlight">\( error \propto \Delta t.\)</span></p>
+</div>
+<div class="section" id="modified-euler-s-method">
+<h2>Modified Euler’s method<a class="headerlink" href="#modified-euler-s-method" title="Permalink to this headline">¶</a></h2>
+<p>Another improvement on Euler’s method is achieved by stepping the numerical solution to the midpoint of a time interval, computing the derivatives there, and then going back and updating the system state using the midpoint derivatives. This is called <em>modified Euler’s method</em>.</p>
+<p>If you write the vector form of the differential equation as:</p>
+<p>\begin{equation}
+\dot{\mathbf{x}} = f(\mathbf{x}),
+\end{equation}</p>
+<p>then modified Euler’s method is:
+\begin{align}
+\mathbf{x}_{n+1/2}   &amp; = \mathbf{x}_n + \frac{\Delta t}{2} f(\mathbf{x}<em>n) \
+\mathbf{x}</em>{n+1} &amp; = \mathbf{x}<em>n + \Delta t ,, f(\mathbf{x}</em>{n+1/2}).
+\end{align}</p>
+<p>Now write a Python function to update the state using this method. It’s equivalent to a so-called <em>Runge-Kutta second-order</em> method, so you call it <code class="docutils literal notranslate"><span class="pre">rk2_step()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk2_step</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Update a state to the next time increment using modified Euler&#39;s method.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    state : array of dependent variables</span>
+<span class="sd">    rhs   : function that computes the RHS of the DiffEq</span>
+<span class="sd">    dt    : float, time increment</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    next_state : array, updated after one time increment&#39;&#39;&#39;</span>
+    
+    <span class="n">mid_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span><span class="o">*</span><span class="mf">0.5</span>    
+    <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">mid_state</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+ 
+    <span class="k">return</span> <span class="n">next_state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see how it performs with our spring-mass model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">period</span><span class="o">/</span><span class="mi">50</span><span class="p">,</span> <span class="n">period</span><span class="o">/</span><span class="mi">100</span><span class="p">,</span> <span class="n">period</span><span class="o">/</span><span class="mi">200</span><span class="p">,</span><span class="n">period</span><span class="o">/</span><span class="mi">400</span><span class="p">,</span><span class="n">period</span><span class="o">/</span><span class="mi">1000</span><span class="p">])</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">period</span>
+
+<span class="n">num_sol_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">dt_values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">dt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dt_values</span><span class="p">):</span>
+
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    
+    <span class="c1">#initialize solution array</span>
+    <span class="n">num_sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+    
+    
+    <span class="c1">#Set intial conditions</span>
+    <span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="n">num_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rk2_step</span><span class="p">(</span><span class="n">num_sol</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">springmass</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+    <span class="n">num_sol_time</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_sol</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">num_sol</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f532c2632e0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/03_Get_Oscillations_48_1.png" src="../_images/03_Get_Oscillations_48_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">dt_values</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">dt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dt_values</span><span class="p">):</span>
+    
+    <span class="n">error_values</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_error</span><span class="p">(</span><span class="n">num_sol_time</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot of convergence for modified Euler&#39;s</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">dt_values</span><span class="p">,</span> <span class="n">error_values</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">dt_values</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">dt_values</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$\Delta t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Convergence of modified Euler</span><span class="se">\&#39;</span><span class="s1">s method (dotted line: slope 2)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Get_Oscillations_50_0.png" src="../_images/03_Get_Oscillations_50_0.png" />
+</div>
+</div>
+<p>The convergence plot, in this case, does look close to a slope-2 line. Modified Euler’s method is second-order accurate:
+the effect of computing the derivatives (slope) at the midpoint of the time interval, instead of the starting point, is to increase the accuracy by one order!</p>
+<p>Using the derivatives at the midpoint of the time interval is equivalent to using the average of the derivatives at <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+\Delta t\)</span>:
+this corresponds to a second-order <em>Runge-Kutta method</em>, or RK2, for short.
+Combining derivatives evaluated at different points in the time interval is the key to Runge-Kutta methods that achieve higher orders of accuracy.</p>
+</div>
+<div class="section" id="an-implicit-integration-approach">
+<h2>An implicit integration approach<a class="headerlink" href="#an-implicit-integration-approach" title="Permalink to this headline">¶</a></h2>
+<p>In the Modified Euler’s method, which is a type of second order Runge-Kutta method, you increased the accuracy of the method by approximating the average slope over the time step. The Euler method assumes the slope is constant during each time step. You can increase accuracy the accuracy of our average slope with an <em>implicit</em> <em>predictor-corrector approach</em>.</p>
+<p>Heun’s method is an integration method that uses the same second order Runge Kutta method, but with one important distinction. It uses the actual derivative at the next state as part of its correction.</p>
+<p><span class="math notranslate nohighlight">\(y_{i+1}=y_{i}+f(t_{i},y_{i}) \Delta t\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_{i+1}=y_{i}+
+\frac{f(t_{i},y_{i})+f(t_{i+1},y_{i+1})}{2} \Delta t\)</span></p>
+<p>The error is <span class="math notranslate nohighlight">\( error \propto \Delta t^2.\)</span> This is the same convergence as the Modified Euler’s method. Let’s compare the two methods.</p>
+</div>
+<div class="section" id="using-heun-s-method">
+<h2>Using Heun’s method<a class="headerlink" href="#using-heun-s-method" title="Permalink to this headline">¶</a></h2>
+<p>The problem with an <em>implicit</em> method is that our unknown <span class="math notranslate nohighlight">\(\mathbf{y}_{i+1}\)</span> is on both sides of the equation. In an <em>explicit</em> method (such as the Euler and Modified Euler) you estimate the next state, with an equation that is only based upon the current state as such</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y}_{i+1} = f(\mathbf{y_{i}}),\)</span></p>
+<p>but with an implicit method you have a nonlinear function where</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y}_{i+1} = g(\mathbf{y}_{i},\mathbf{y}_{i+1}). \)</span></p>
+<p>This extra step introduces the topic of solving a nonlinear problem with
+a computer. How can you solve an equation if the value you want is also
+part of our function? You’ll take a look at methods to solve this next
+module, but for now lets set a tolerance <code class="docutils literal notranslate"><span class="pre">etol</span></code> for the <em>implicit</em> Heun
+method and see what the resulting solution is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">heun_step</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">rhs</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">etol</span><span class="o">=</span><span class="mf">0.000001</span><span class="p">,</span><span class="n">maxiters</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Update a state to the next time increment using the implicit Heun&#39;s method.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    state : array of dependent variables</span>
+<span class="sd">    rhs   : function that computes the RHS of the DiffEq</span>
+<span class="sd">    dt    : float, time increment</span>
+<span class="sd">    etol  : tolerance in error for each time step corrector</span>
+<span class="sd">    maxiters: maximum number of iterations each time step can take</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    next_state : array, updated after one time increment&#39;&#39;&#39;</span>
+    <span class="n">e</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">eps</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
+    <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">rhs</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+    <span class="c1">################### New iterative correction #########################</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">maxiters</span><span class="p">):</span>
+        <span class="n">next_state_old</span> <span class="o">=</span> <span class="n">next_state</span>
+        <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="p">(</span><span class="n">rhs</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">+</span><span class="n">rhs</span><span class="p">(</span><span class="n">next_state</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">dt</span>
+        <span class="n">e</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">next_state</span><span class="o">-</span><span class="n">next_state_old</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">next_state</span><span class="o">+</span><span class="n">eps</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">&lt;</span><span class="n">etol</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="c1">############### end of iterative correction #########################</span>
+    <span class="k">return</span> <span class="n">next_state</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="why-use-implicit-methods">
+<h2>Why use implicit methods?<a class="headerlink" href="#why-use-implicit-methods" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>benefit</strong> of an implicit solution is that it is a <strong>stable</strong> solution. When you solve a set of differential equations, many times it may not be apparent what time step to choose. If you use an <em>implicit</em> integration method, then it may converge at the same rate as an <em>explicit</em> method, but it will always provide bounded errors.</p>
+<p>Consider the spring-mass equation if timesteps are large, in this case you have 10 steps/time period, then the second order Runge-Kutta that you defined above has the same increasing error as the Euler method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">period</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">w</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">period</span><span class="o">/</span><span class="mi">10</span>  <span class="c1"># time intervals per period </span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">period</span>   <span class="c1"># simulation time, in number of periods</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number of time steps is </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">N</span> <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The time increment is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">dt</span> <span class="p">))</span>
+
+<span class="c1"># time array</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># initial position</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># initial velocity</span>
+
+<span class="c1">#initialize solution array</span>
+<span class="n">num_heun</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">num_rk2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1">#Set intial conditions</span>
+<span class="n">num_heun</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_heun</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="n">num_rk2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_rk2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">num_heun</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">heun_step</span><span class="p">(</span><span class="n">num_heun</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">springmass</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">num_rk2</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rk2_step</span><span class="p">(</span><span class="n">num_rk2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">springmass</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of time steps is 80.
+The time increment is 0.3141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">num_heun</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;implicit Heun&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">num_rk2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;s-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;explicit RK2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="c1">#plt.xlim(np.max(t)-5,np.max(t))</span>
+<span class="c1">#plt.xlim(np.max(t)-period,np.max(t))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Get_Oscillations_57_0.png" src="../_images/03_Get_Oscillations_57_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<p>Change the number of steps per time period in the above solutions for the second order Runge Kutta and the implicit Heun’s method. Why do you think the implicit method does not have an increasing magnitude of oscillation?</p>
+</div>
+<div class="section" id="what-you-ve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>vector form of the spring-mass differential equation</p></li>
+<li><p>Euler’s method produces unphysical amplitude growth in oscillatory systems</p></li>
+<li><p>the Euler-Cromer method fixes the amplitude growth (while still being first order)</p></li>
+<li><p>Euler-Cromer does show a phase lag after a long simulation</p></li>
+<li><p>a convergence plot confirms the first-order accuracy of Euler’s method</p></li>
+<li><p>a convergence plot shows that modified Euler’s method, using the derivatives evaluated at the midpoint of the time interval, is a second-order method</p></li>
+<li><p>How to create an implicit integration method</p></li>
+<li><p>The difference between <em>implicit</em> and <em>explicit</em> integration</p></li>
+<li><p>The difference between stable and unstable methods</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Linge S., Langtangen H.P. (2016) Solving Ordinary Differential Equations. In: Programming for Computations - Python. Texts in Computational Science and Engineering, vol 15. Springer, Cham, https://doi.org/10.1007/978-3-319-32428-9_4, open access and reusable under <a class="reference external" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC</a> license.</p></li>
+<li><p>Cromer, A. (1981). Stable solutions using the Euler approximation. <em>American Journal of Physics</em>, 49(5), 455-459. https://doi.org/10.1119/1.12478</p></li>
+<li><p>Chapra, Steven, <em>Applied Numerical Methods with MATLAB for Engineers and Scientists</em> 4th edition. ch. 22.3 Improvements to Euler’s method</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Show that the implicit Heun’s method has the same second order convergence as the Modified Euler’s method. <em>Hint: you can use the same code from above to create the log-log plot to get the error between <span class="math notranslate nohighlight">\(2\cos(\omega t)\)</span> and the <code class="docutils literal notranslate"><span class="pre">heun_step</span></code> integration. Use the same initial conditions x(0) = 2 m and v(0)=0m/s and the same RHS function, <code class="docutils literal notranslate"><span class="pre">springmass</span></code>.</em></p></li>
+</ol>
+<img src="../images/damped-spring.png" style="width: 400px;"/><ol class="simple">
+<li><p>In the image above, you have a spring, mass, <em>and damper</em>. A damper is designed to slow down a moving object. These devices are typical in automobiles, mountain bikes, doors, any place where oscillations may not be desired, but motion is required. The new differential equation, if F(t)=0, that results from this addition is</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\ddot{x} = -\frac{b}{m}\dot{x} -\frac{k}{m}x\)</span></p>
+<p>or keeping our <em>natural frequency</em> above,</p>
+<p><span class="math notranslate nohighlight">\(\ddot{x} = -\zeta\omega\dot{x} -\omega^2x\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\zeta\)</span> is a new constant called the <strong>damping ratio</strong> of a system. When <span class="math notranslate nohighlight">\(\zeta\gt 1\)</span>, there are no oscillations and when <span class="math notranslate nohighlight">\(0&lt;\zeta&lt;1\)</span> the system oscillates, but decays to v=0 m/s eventually.</p>
+<p>Create the system of equations that returns the right hand side (RHS) of the state equations, e.g. <span class="math notranslate nohighlight">\(\mathbf{\dot{y}} = f(\mathbf{y}) = RHS\)</span></p>
+<p>Use <span class="math notranslate nohighlight">\(\omega = 2\)</span> rad/s and <span class="math notranslate nohighlight">\(\zeta = 0.2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">smd</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the spring-mass-damper</span>
+<span class="sd">    differential equation, without friction.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------   </span>
+<span class="sd">    state : array of two dependent variables [x, v]^T</span>
+<span class="sd">    </span>
+<span class="sd">    Returns </span>
+<span class="sd">    -------</span>
+<span class="sd">    derivs: array of two derivatives [v, zeta*w*v - w*w*x]^T</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">## your work here ##</span>
+    
+    <span class="k">return</span> <span class="n">derivs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Use three methods to integrate your <code class="docutils literal notranslate"><span class="pre">smd</span></code> function for 3 time periods of oscillation ( <span class="math notranslate nohighlight">\(t=0...6\pi\)</span> ) and initial conditions x(0)=2 m and v(0)=0 m/s. Plot the three solutions on one graph with labels.</p></li>
+</ol>
+<p>a. Euler integration</p>
+<p>b. second order Runge Kutta method (modified Euler method)</p>
+<p>c. the implicit Heun’s method</p>
+<p>How many time steps does each method need to converge to the same results? <em>Remember that each method has a certain convergence rate</em></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="02_Step_Future.html" title="previous page">Step to the future</a>
+    <a class='right-next' id="next-link" href="04_Getting_to_the_root.html" title="next page">Roots of Nonlinear functions</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

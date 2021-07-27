@@ -1,0 +1,1315 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 - Linear regression with real data &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="04 - Statistics and Monte-Carlo Models" href="04_Stats_and_Montecarlo.html" />
+    <link rel="prev" title="02 - Seeing stats in a new light" href="02_Seeing_Stats.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   Computational Mechanics 02 - Analyze Data
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Cheers_Stats_Beers.html">
+     01 - Cheers!  Stats with Beers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Cheers_Stats_Beers.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Seeing_Stats.html">
+     02 - Seeing stats in a new light
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Seeing_Stats.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     03 - Linear regression with real data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Stats_and_Montecarlo.html">
+     04 - Statistics and Monte-Carlo Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Stats_and_Montecarlo.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
+     Project #02 - NYSE random walk predictor
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_03/README.html">
+   Computational Mechanics 03- Initial Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
+     Catch things in motion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/01_Catch_Motion.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/02_Step_Future.html">
+     Step to the future
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/02_Step_Future.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
+     Get with the oscillations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/03_Get_Oscillations.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
+     Roots of Nonlinear functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/03_IVP-project.html">
+     Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/module_02/03_Linear_Regression_with_Real_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_02/03_Linear_Regression_with_Real_Data.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/03_Linear_Regression_with_Real_Data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/03_Linear_Regression_with_Real_Data.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/03_Linear_Regression_with_Real_Data.md&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   03 - Linear regression with real data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#earth-temperature-over-time">
+     Earth temperature over time
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-read-a-data-file">
+     Step 1: Read a data file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-plot-the-data">
+     Step 2: Plot the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-least-squares-linear-regression">
+     Step 3: Least-squares linear regression
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-the-best-fit">
+       What is the “best” fit?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#linear-regression">
+       Linear regression
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#let-s-fit">
+       Let’s fit!
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercise
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-apply-regression-using-numpy">
+     Step 4: Apply regression using NumPy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-regression">
+     “Split regression”
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-exercise">
+     Discussion exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#you-learned">
+     you learned:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<div class="section" id="linear-regression-with-real-data">
+<h1>03 - Linear regression with real data<a class="headerlink" href="#linear-regression-with-real-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="earth-temperature-over-time">
+<h2>Earth temperature over time<a class="headerlink" href="#earth-temperature-over-time" title="Permalink to this headline">¶</a></h2>
+<p>In this lesson, you will analyze real data of Earth temperature over time.</p>
+<p>Is global temperature rising? How much? This is a question of burning importance in today’s world!</p>
+<p>Data about global temperatures are available from several sources: NASA, the National Climatic Data Center (NCDC) and the University of East Anglia in the UK. Check out the <a class="reference external" href="https://www2.ucar.edu/climate/faq/how-much-has-global-temperature-risen-last-100-years">University Corporation for Atmospheric Research</a> (UCAR) for an in-depth discussion.</p>
+<p>The <a class="reference external" href="http://svs.gsfc.nasa.gov/goto?3901">NASA Goddard Space Flight Center</a> is one of our sources of global climate data. They produced the video below showing a color map of the changing global surface <strong>temperature anomalies</strong> from 1880 to 2015.</p>
+<p>The term <a class="reference external" href="https://www.ncdc.noaa.gov/monitoring-references/faq/anomalies.php">global temperature anomaly</a> means the difference in temperature with respect to a reference value or a long-term average. It is a very useful way of looking at the problem and in many ways better than absolute temperature. For example, a winter month may be colder than average in Washington DC, and also in Miami, but the absolute temperatures will be different in both places.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;gGOzHVUQCw0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="400"
+            height="300"
+            src="https://www.youtube.com/embed/gGOzHVUQCw0"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        </div></div>
+</div>
+<p>How would you go about understanding the <em>trends</em> from the data on global temperature?</p>
+<p>The first step in analyzing unknown data is to generate some simple plots using <strong>Matplotlib</strong>. You are going to look at the temperature-anomaly history, contained in a file, and make our first plot to explore this data.</p>
+<p>We are going to smooth the data and then you’ll fit a line to it to find a trend, plotting along the way to see how it all looks.</p>
+<p>Let’s get started!</p>
+</div>
+<div class="section" id="step-1-read-a-data-file">
+<h2>Step 1: Read a data file<a class="headerlink" href="#step-1-read-a-data-file" title="Permalink to this headline">¶</a></h2>
+<p>We took the data from the <a class="reference external" href="https://www.ncdc.noaa.gov/cag/">NOAA</a> (National Oceanic and Atmospheric Administration) webpage. Feel free to play around with the webpage and analyze data on your own, but for now, let’s make sure you’re working with the same dataset.</p>
+<p>We have a file named <code class="docutils literal notranslate"><span class="pre">land_global_temperature_anomaly-1880-2016.csv</span></code> in our <code class="docutils literal notranslate"><span class="pre">data</span></code> folder. This file contains the year on the first column, and averages of land temperature anomaly listed sequentially on the second column, from the year 1880 to 2016. You will load the file, then make an initial plot to see what it looks like.</p>
+<p>Start by importing NumPy and pandas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To load our data from the file, you’ll use the function <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html"><code class="docutils literal notranslate"><span class="pre">numpy.loadtxt()</span></code></a>, which lets us immediately save the data into NumPy arrays. (We encourage you to read the documentation for details on how the function works.) Here, you’ll save the data into the arrays <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">temp_anomaly</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;../data/land_global_temperature_anomaly-1880-2016.csv&#39;</span>
+
+<span class="n">temp_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Inspect the data by printing <code class="docutils literal notranslate"><span class="pre">temp_data</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1880</td>
+      <td>-0.47</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1881</td>
+      <td>-0.45</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1882</td>
+      <td>-0.41</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1883</td>
+      <td>-0.60</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1884</td>
+      <td>-0.60</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>2012</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>2013</td>
+      <td>1.01</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>2014</td>
+      <td>1.02</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>2015</td>
+      <td>1.35</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>2016</td>
+      <td>1.45</td>
+    </tr>
+  </tbody>
+</table>
+<p>137 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="step-2-plot-the-data">
+<h2>Step 2: Plot the data<a class="headerlink" href="#step-2-plot-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Let’s first load the <strong>Matplotlib</strong> module called <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, for making 2D plots. Remember that to get the plots inside the notebook, you use a special “magic” command, <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function of the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module makes simple line plots. You avoid that stuff that appeared on top of the figure, that <code class="docutils literal notranslate"><span class="pre">Out[x]:</span> <span class="pre">[&lt;</span> <span class="pre">...&gt;]</span></code> ugliness, by adding a semicolon at the end of the plotting command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#You can set the size of the figure by doing:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1">#Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2929a3&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Land global temperature anomalies. </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Land temperature anomaly [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear_Regression_with_Real_Data_14_0.png" src="../_images/03_Linear_Regression_with_Real_Data_14_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="step-3-least-squares-linear-regression">
+<h2>Step 3: Least-squares linear regression<a class="headerlink" href="#step-3-least-squares-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>In order to have an idea of the general behavior of our data, you can find a smooth curve that (approximately) fits the points. You generally look for a curve that’s simple (e.g., a polynomial), and does not reproduce the noise that’s always present in experimental data.</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be the function that you’ll fit to the <span class="math notranslate nohighlight">\(n+1\)</span> data points: <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, <span class="math notranslate nohighlight">\(i = 0, 1, ... ,n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ 
+    f(x) = f(x; a_0, a_1, ... , a_m) 
+\]</div>
+<p>The notation above means that <span class="math notranslate nohighlight">\(f\)</span> is a function of <span class="math notranslate nohighlight">\(x\)</span>, with <span class="math notranslate nohighlight">\(m+1\)</span> variable parameters <span class="math notranslate nohighlight">\(a_0, a_1, ... , a_m\)</span>, where <span class="math notranslate nohighlight">\(m &lt; n\)</span>. You need to choose the form of <span class="math notranslate nohighlight">\(f(x)\)</span> <em>a priori</em>, by inspecting the experimental data and knowing something about the phenomenon you’ve measured. Thus, curve fitting consists of two steps:</p>
+<ol class="simple">
+<li><p>Choosing the form of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p></li>
+<li><p>Computing the parameters that will give us the “best fit” to the data.</p></li>
+</ol>
+<div class="section" id="what-is-the-best-fit">
+<h3>What is the “best” fit?<a class="headerlink" href="#what-is-the-best-fit" title="Permalink to this headline">¶</a></h3>
+<p>When the noise in the data is limited to the <span class="math notranslate nohighlight">\(y\)</span>-coordinate, it’s common to use a <strong>least-squares fit</strong> [2], which minimizes the function</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}    
+    S(a_0, a_1, ... , a_m) = \sum_{i=0}^{n} [y_i - f(x_i)]^2
+\end{equation}~~~~~~(1)   
+\]</div>
+<p>with respect to each <span class="math notranslate nohighlight">\(a_j\)</span>. You find the values of the parameters for the best fit by solving the following equations:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+    \frac{\partial{S}}{\partial{a_k}} = 0, \quad k = 0, 1, ... , m.
+\end{equation}~~~~~~(2)
+\]</div>
+<p>Here, the terms <span class="math notranslate nohighlight">\(r_i = y_i - f(x_i)\)</span> are called residuals: they tell us the discrepancy between the data and the fitting function at <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
+<p>Take a look at the function <span class="math notranslate nohighlight">\(S\)</span>: what you want to minimize is the sum of the squares of the residuals. The equations (2) are generally nonlinear in <span class="math notranslate nohighlight">\(a_j\)</span> and might be difficult to solve. Therefore, the fitting function is commonly chosen as a linear combination of specified functions <span class="math notranslate nohighlight">\(f_j(x)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+    f(x) = a_0f_0(x) + a_1f_1(x) + ... + a_mf_m(x)
+\end{equation*}~~~~~~(3)
+\]</div>
+<p>which results in equations (2) being linear. In the case that the fitting function is polynomial, you have have <span class="math notranslate nohighlight">\(f_0(x) = 1, \; f_1(x) = x, \; f_2(x) = x^2\)</span>, and so on.</p>
+</div>
+<div class="section" id="linear-regression">
+<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h3>
+<p>When you talk about linear regression you mean “fitting a function to the data.” In this case,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+    f(x) = a_0 + a_1x
+\end{equation}~~~~~~(4)
+\]</div>
+<p>The function that you’ll minimize is:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+    S(a_0, a_1) = \sum_{i=0}^{n} [y_i - f(x_i)]^2 = \sum_{i=0}^{n} (y_i - a_0 - a_1x_i)^2 
+\end{equation}~~~~~~(5)    
+\]</div>
+<p>Equations (2) become:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+    \frac{\partial{S}}{\partial{a_0}} =  \sum_{i=0}^{n} -2(y_i - a_0 - a_1x_i) = 2 \left[ a_0(n+1) + a_1\sum_{i=0}^{n} x_i - \sum_{i=0}^{n} y_i \right] = 0
+\end{equation}~~~~~~(6)    
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+    \frac{\partial{S}}{\partial{a_1}} =  \sum_{i=0}^{n} -2(y_i - a_0 - a_1x_i)x_i = 2 \left[ a_0\sum_{i=0}^{n} x_i + a_1\sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_iy_i \right] = 0
+\end{equation}~~~~~~(7)    
+\]</div>
+<p>Let’s divide both equations by <span class="math notranslate nohighlight">\(2(n+1)\)</span> and rearrange terms.</p>
+<p>Rearranging (6) and (7):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    2 \left[ a_0(n+1) + a_1\sum_{i=0}^{n} x_i - \sum_{i=0}^{n} y_i \right] &amp;= 0 \nonumber \\ 
+    \frac{a_0(n+1)}{n+1} + a_1 \frac{\sum_{i=0}^{n} x_i}{n+1} - \frac{\sum_{i=0}^{n} y_i}{n+1} &amp;= 0 \\
+\end{align}~~~~~~(8)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+    a_0  = \bar{y} - a_1\bar{x}
+\end{align}~~~~~~(9)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{x} = \frac{\sum_{i=0}^{n} x_i}{n+1}\)</span> and <span class="math notranslate nohighlight">\(\bar{y} = \frac{\sum_{i=0}^{n} y_i}{n+1}\)</span>.</p>
+<p>Rearranging (7):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    2 \left[ a_0\sum_{i=0}^{n} x_i + a_1\sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_iy_i \right] &amp;= 0 \\
+    a_0\sum_{i=0}^{n} x_i + a_1\sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_iy_i &amp;=0 \\
+\end{align}~~~~~~(10)
+\end{split}\]</div>
+<p>Now, if you replace <span class="math notranslate nohighlight">\(a_0\)</span> from equation (8) into (9) and rearrange terms:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    (\bar{y} - a_1\bar{x})\sum_{i=0}^{n} x_i  + a_1\sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_iy_i  &amp;= 0 \\ 
+\end{align*}~~~~~~(11)
+\end{split}\]</div>
+<p>Replacing the definitions of the mean values into the equation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    \left[\frac{1}{n+1}\sum_{i=0}^{n} y_i  - \frac{a_1}{n+1}\sum_{i=0}^{n} x_i \right]\sum_{i=0}^{n} x_i  + a_1\sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_iy_i  &amp;= 0  \\ 
+     \frac{1}{n+1}\sum_{i=0}^{n} y_i \sum_{i=0}^{n} x_i - \frac{a_1}{n+1}\sum_{i=0}^{n} x_i \sum_{i=0}^{n} x_i  + a_1\sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_iy_i  &amp;= 0  \\ 
+\end{align*}~~~~~~(12)
+\end{split}\]</div>
+<p>Leaving everything in terms of <span class="math notranslate nohighlight">\(\bar{x}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+    \sum_{i=0}^{n} y_i \bar{x} - a_1\sum_{i=0}^{n} x_i \bar{x} + a_1\sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_iy_i  = 0  
+\end{align*}~~~~~~(13)
+\]</div>
+<p>Grouping the terms that have <span class="math notranslate nohighlight">\(a_1\)</span> on the left-hand side and the rest on the right-hand side:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    a_1\left[ \sum_{i=0}^{n} x_{i}^2 - \sum_{i=0}^{n} x_i \bar{x}\right] &amp;= \sum_{i=0}^{n} x_iy_i - \sum_{i=0}^{n} y_i \bar{x} \\
+    a_1 \sum_{i=0}^{n} (x_{i}^2 - x_i \bar{x}) &amp;= \sum_{i=0}^{n} (x_iy_i -  y_i \bar{x}) \\
+    a_1 \sum_{i=0}^{n} x_{i}(x_{i} -\bar{x}) &amp;= \sum_{i=0}^{n} y_i(x_i - \bar{x})    
+\end{align*}~~~~~~(14)
+\end{split}\]</div>
+<p>Finally, you get that:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+    a_1 = \frac{ \sum_{i=0}^{n} y_{i} (x_i - \bar{x})}{\sum_{i=0}^{n} x_i (x_i - \bar{x})}
+\end{align}~~~~~~(15)
+\]</div>
+<p>Then our coefficients are:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+    a_1 = \frac{ \sum_{i=0}^{n} y_{i} (x_i - \bar{x})}{\sum_{i=0}^{n} x_i (x_i - \bar{x})} \quad , \quad a_0  = \bar{y} - a_1\bar{x}
+\end{align}~~~~~~(16)
+\]</div>
+</div>
+<div class="section" id="let-s-fit">
+<h3>Let’s fit!<a class="headerlink" href="#let-s-fit" title="Permalink to this headline">¶</a></h3>
+<p>Let’s now fit a straight line through the temperature-anomaly data, to see the trend over time. We’ll use least-squares linear regression to find the slope and intercept of a line</p>
+<p><span class="math notranslate nohighlight">\(y = a_1x+a_0\)</span></p>
+<p>that fits our data.</p>
+<p>In our case, the <code class="docutils literal notranslate"><span class="pre">x</span></code>-data corresponds to <code class="docutils literal notranslate"><span class="pre">Year</span></code>, and the <code class="docutils literal notranslate"><span class="pre">y</span></code>-data is <code class="docutils literal notranslate"><span class="pre">Value</span></code>. To calculate our coefficients with the formula above, you need the mean values of our data. Since you’ll need to compute the mean for both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>It is good coding practice to <em>avoid repeating</em> ourselves: you want to write code that is reusable, not only because it leads to less typing but also because it reduces errors. If you find yourself doing the same calculation multiple times, it’s better to encapsulate it into a <em>function</em>.</p>
+<p>Remember the <em>key concept</em> from <a class="reference internal" href="../module_01/02_Working_with_Python.html"><span class="doc std std-doc">02_Working_with_Python</span></a>: A function is a compact collection of code that executes some action on its arguments.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Calculate the mean of the <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">temp_anomaly</span></code> arrays using the NumPy built-in function, <code class="docutils literal notranslate"><span class="pre">np.mean</span></code>.</p>
+<p>Assign the means to <code class="docutils literal notranslate"><span class="pre">mean_x</span></code> and <code class="docutils literal notranslate"><span class="pre">mean_y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
+
+<span class="n">mean_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">mean_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean_x=&#39;</span><span class="p">,</span><span class="n">mean_x</span><span class="p">,</span><span class="s1">&#39;mean_y=&#39;</span><span class="p">,</span><span class="n">mean_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean_x= 1948.0 mean_y= 0.05262773722627735
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that you have mean values, you can compute our coefficients by following equations (12). You first calculate <span class="math notranslate nohighlight">\(a_1\)</span> and then use that value to calculate <span class="math notranslate nohighlight">\(a_0\)</span>.</p>
+<p>Our coefficients are:</p>
+<div class="math notranslate nohighlight">
+\[
+    a_1 = \frac{ \sum_{i=0}^{n} y_{i} (x_i - \bar{x})}{\sum_{i=0}^{n} x_i (x_i - \bar{x})} \quad , \quad a_0  = \bar{y} - a_1\bar{x}
+\]</div>
+<p>We already calculated the mean values of the data arrays, but the formula requires two sums over new derived arrays. Guess what, NumPy has a built-in function for that: <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html"><code class="docutils literal notranslate"><span class="pre">numpy.sum()</span></code></a>. Study the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span> <span class="o">=</span> <span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">yi</span> <span class="o">=</span> <span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">x_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
+<span class="n">y_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">yi</span><span class="p">)</span>
+
+<span class="n">a_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yi</span><span class="o">*</span><span class="p">(</span><span class="n">xi</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xi</span><span class="o">*</span><span class="p">(</span><span class="n">xi</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01037028394347266
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_0</span> <span class="o">=</span> <span class="n">y_mean</span> <span class="o">-</span> <span class="n">a_1</span><span class="o">*</span><span class="n">x_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-20.148685384658464
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Write a function that computes the coefficients, call the function to compute them and compare the result with the values you obtained before. As a hint, you give you the structure that you should follow:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coefficients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x_mean</span><span class="p">,</span> <span class="n">y_mean</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write docstrings here</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">a_1</span> <span class="o">=</span> 
+    <span class="n">a_0</span> <span class="o">=</span> 
+    
+    <span class="k">return</span> <span class="n">a_1</span><span class="p">,</span> <span class="n">a_0</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coefficients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x_mean</span><span class="p">,</span> <span class="n">y_mean</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write docstrings here</span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    x: independent variable </span>
+<span class="sd">    y: dependent variable measurements</span>
+<span class="sd">    x_mean: mean of independent variable</span>
+<span class="sd">    y_mean: mean of dependent variable</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    a_1: the least-squares regression slope</span>
+<span class="sd">    a_0: the least-squares regression intercept</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yi</span><span class="o">*</span><span class="p">(</span><span class="n">xi</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xi</span><span class="o">*</span><span class="p">(</span><span class="n">xi</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">))</span>
+    <span class="n">a_0</span> <span class="o">=</span> <span class="n">y_mean</span> <span class="o">-</span> <span class="n">a_1</span><span class="o">*</span><span class="n">x_mean</span>
+    
+    <span class="k">return</span> <span class="n">a_1</span><span class="p">,</span> <span class="n">a_0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coefficients</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">yi</span><span class="p">,</span><span class="n">x_mean</span><span class="p">,</span><span class="n">y_mean</span><span class="p">)</span> <span class="c1"># verify result is the same as above</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.01037028394347266, -20.148685384658464)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now have the coefficients of a linear function that best fits our data. With them, you can compute the predicted values of temperature anomaly, according to our fit. Check again the equations above: the values you are going to compute are <span class="math notranslate nohighlight">\(f(x_i)\)</span>.</p>
+<p>Let’s call <code class="docutils literal notranslate"><span class="pre">reg</span></code> the array obtined from evaluating <span class="math notranslate nohighlight">\(f(x_i)\)</span> for all years.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">a_0</span> <span class="o">+</span> <span class="n">a_1</span> <span class="o">*</span> <span class="n">xi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the values of our linear regression, you can plot it on top of the original data to see how they look together. Study the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2929a3&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured anomoly&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear regression&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Land temperature anomaly [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear_Regression_with_Real_Data_33_0.png" src="../_images/03_Linear_Regression_with_Real_Data_33_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-apply-regression-using-numpy">
+<h2>Step 4: Apply regression using NumPy<a class="headerlink" href="#step-4-apply-regression-using-numpy" title="Permalink to this headline">¶</a></h2>
+<p>Above, you coded linear regression from scratch. But, guess what: you didn’t have to because NumPy has built-in functions that do what you need!</p>
+<p>Yes! Python and NumPy are here to help! With <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">polyfit()</span></code></a>, you get the slope and <span class="math notranslate nohighlight">\(y\)</span>-intercept of the line that best fits the data. With <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.poly1d.html"><code class="docutils literal notranslate"><span class="pre">poly1d()</span></code></a>, you can build the linear function from its slope and <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
+<p>Check it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First fit with NumPy, then name the coefficients obtained a_1n, a_0n:</span>
+<span class="n">a_1n</span><span class="p">,</span> <span class="n">a_0n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">f_linear</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">((</span><span class="n">a_1n</span><span class="p">,</span> <span class="n">a_0n</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a_1n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.010370283943472659
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a_0n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-20.148685384658457
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f_linear</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+0.01037 x - 20.15
+</pre></div>
+</div>
+</div>
+</div>
+<p>The assignment <code class="docutils literal notranslate"><span class="pre">f_linear</span> <span class="pre">=</span> <span class="pre">np.poly1d((a_1n,a_0n))</span></code> creates a 1D polynomial. This means that the function only has one independent variable i.e. f(x) = (some value). You can create your own polynomial functions in a similar way using <em>anonymous functions</em> i.e. <code class="docutils literal notranslate"><span class="pre">lambda</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f_linear</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">a_1n</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">a_0n</span>
+</pre></div>
+</div>
+<p>In the line of code given above, you create the same assignment for <code class="docutils literal notranslate"><span class="pre">f_linear(x)</span></code>. One benefit of writing this out yourself is that you can see how each input is used directly.</p>
+</div>
+<div class="section" id="id3">
+<h2>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function to assign <code class="docutils literal notranslate"><span class="pre">f_linear</span></code> to our 1D polynomial instead of the <code class="docutils literal notranslate"><span class="pre">np.poly1d</span></code> assignment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_linear</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">a_1n</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">a_0n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2929a3&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured anomoly&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">f_linear</span><span class="p">(</span><span class="n">xi</span><span class="p">),</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear regression&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Land temperature anomaly [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear_Regression_with_Real_Data_43_0.png" src="../_images/03_Linear_Regression_with_Real_Data_43_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="split-regression">
+<h2>“Split regression”<a class="headerlink" href="#split-regression" title="Permalink to this headline">¶</a></h2>
+<p>If you look at the plot above, you might notice that around 1970 the temperature starts increasing faster that the previous trend. So maybe one single straight line does not give us a good-enough fit.</p>
+<p>What if you break the data in two (before and after 1970) and do a linear regression in each segment?</p>
+<p>To do that, you first need to find the position in our <code class="docutils literal notranslate"><span class="pre">year</span></code> array where the year 1970 is located. Thankfully, NumPy has a function called  <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html"><code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code></a> that can help us. You pass a condition and <code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code> tells us where in the array the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xi</span><span class="o">==</span><span class="mi">1970</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([90]),)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To split the data, you use the powerful instrument of <em>slicing</em> with the colon notation. Remember that a colon between two indices indicates a range of values from a <code class="docutils literal notranslate"><span class="pre">start</span></code> to an <code class="docutils literal notranslate"><span class="pre">end</span></code>. The rule is that <code class="docutils literal notranslate"><span class="pre">[start:end]</span></code> includes the element at index <code class="docutils literal notranslate"><span class="pre">start</span></code> but excludes the one at index <code class="docutils literal notranslate"><span class="pre">end</span></code>. For example, to grab the first 3 years in our <code class="docutils literal notranslate"><span class="pre">year</span></code> array, you do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">temp_anomaly</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1880
+1    1881
+2    1882
+Name: Year, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now you know how to split our data in two sets, to get two regression lines. You need two slices of the arrays <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">temp_anomaly</span></code>, which you’ll save in new variable names below. After that, you complete two linear fits using the helpful NumPy functions you learned above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year_1</span> <span class="p">,</span> <span class="n">temp_anomaly_1</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">90</span><span class="p">],</span> <span class="n">temp_anomaly</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">90</span><span class="p">]</span>
+<span class="n">year_2</span> <span class="p">,</span> <span class="n">temp_anomaly_2</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">90</span><span class="p">:],</span> <span class="n">temp_anomaly</span><span class="p">[</span><span class="mi">90</span><span class="p">:]</span>
+
+<span class="n">m1</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">year_1</span><span class="p">,</span> <span class="n">temp_anomaly_1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">m2</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">year_2</span><span class="p">,</span> <span class="n">temp_anomaly_2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">f_linear_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">((</span><span class="n">m1</span><span class="p">,</span> <span class="n">b1</span><span class="p">))</span>
+<span class="n">f_linear_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">((</span><span class="n">m2</span><span class="p">,</span> <span class="n">b2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">temp_anomaly</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2929a3&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">year_1</span><span class="p">,</span> <span class="n">f_linear_1</span><span class="p">(</span><span class="n">year_1</span><span class="p">),</span> <span class="s1">&#39;g--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;1880-1969&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">year_2</span><span class="p">,</span> <span class="n">f_linear_2</span><span class="p">(</span><span class="n">year_2</span><span class="p">),</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;1970-2016&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Land temperature anomaly [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear_Regression_with_Real_Data_51_0.png" src="../_images/03_Linear_Regression_with_Real_Data_51_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="discussion-exercise">
+<h2>Discussion exercise<a class="headerlink" href="#discussion-exercise" title="Permalink to this headline">¶</a></h2>
+<p>We have two different curves for two different parts of our data set. A little problem with this and is that the end point of our first regression doesn’t match the starting point of the second regression. You did this for the purpose of learning, but it is not rigorously correct.</p>
+<p>How would you fix this issue?</p>
+<p>What would your new function, <span class="math notranslate nohighlight">\(f(x)\)</span>, look like?</p>
+<p><em>To fix this discontinuity, I would do one of two things:</em></p>
+<ol class="simple">
+<li><p>Force the line to remain continuous so the slope changes. This would lead to a piecewise linear fit, with zig-zagging lines</p></li>
+<li><p>Use a higher order polynomial like a quadratic curve, this would like a parabola curving upwards.</p></li>
+</ol>
+</div>
+<div class="section" id="you-learned">
+<h2>you learned:<a class="headerlink" href="#you-learned" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Making our plots more beautiful</p></li>
+<li><p>Defining and calling custom Python functions</p></li>
+<li><p>Applying linear regression to data</p></li>
+<li><p>NumPy built-ins for linear regression</p></li>
+<li><p>The Earth is warming up!!!</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://barbagroup.github.io/essential_skills_RRC/"><em>Essential skills for reproducible research computing</em></a> (2017). Lorena A. Barba,  Natalia C. Clementi, Gilbert Forsyth.</p></li>
+<li><p><em>Numerical Methods in Engineering with Python 3</em> (2013). Jaan Kiusalaas. Cambridge University Press.</p></li>
+<li><p><em>Effective Computation in Physics: Field Guide to Research with Python</em> (2015). Anthony Scopatz &amp; Kathryn D. Huff. O’Reilly Media, Inc.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>There is a csv file in ‘../data/primary-energy-consumption-by-region.csv’ that has the energy consumption of different regions of the world from 1965 until 2018 <a class="reference external" href="https://ourworldindata.org/energy">Our world in Data</a>.
+We are going to compare the energy consumption of the United States to all of Europe. Load the data into a pandas dataframe. <em>Note: you can get certain rows of the data frame by specifying what you’re looking for e.g.
+<code class="docutils literal notranslate"><span class="pre">EUR</span> <span class="pre">=</span> <span class="pre">dataframe[dataframe['Entity']=='Europe']</span></code> will give us all the rows from Europe’s energy consumption.</em></p>
+<p>a. Plot the total energy consumption of the United States and Europe</p>
+<p>b. Use a linear least-squares regression to find a function for the energy consumption as a function of year</p>
+<p>energy consumed = <span class="math notranslate nohighlight">\(f(t) = At+B\)</span></p>
+<p>c. At what year would you change split the data and use two lines like you did in the
+land temperature anomoly? Split the data and perform two linear fits.</p>
+<p>d. What is your prediction for US energy use in 2025? How about European energy use in 2025?</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/primary-energy-consumption-by-region.csv&#39;</span><span class="p">)</span>
+<span class="n">CAN</span> <span class="o">=</span> <span class="n">energy</span><span class="p">[</span><span class="n">energy</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Canada&#39;</span><span class="p">]</span>
+<span class="n">USA</span> <span class="o">=</span> <span class="n">energy</span><span class="p">[</span><span class="n">energy</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;United States&#39;</span><span class="p">]</span>
+<span class="n">EUR</span> <span class="o">=</span> <span class="n">energy</span><span class="p">[</span><span class="n">energy</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Europe&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span><span class="s1">&#39;-s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7b957be310&gt;]
+</pre></div>
+</div>
+<img alt="../_images/03_Linear_Regression_with_Real_Data_56_1.png" src="../_images/03_Linear_Regression_with_Real_Data_56_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">yUSA</span><span class="o">=</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">yEUR</span><span class="o">=</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">isplit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">1980</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">x1</span> <span class="p">,</span> <span class="n">yUSA1</span><span class="p">,</span> <span class="n">yEUR1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">isplit</span><span class="p">],</span> <span class="n">yUSA</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">isplit</span><span class="p">],</span> <span class="n">yEUR</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">isplit</span><span class="p">]</span>
+<span class="n">x2</span> <span class="p">,</span> <span class="n">yUSA2</span><span class="p">,</span> <span class="n">yEUR2</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">isplit</span><span class="p">:],</span> <span class="n">yUSA</span><span class="p">[</span><span class="n">isplit</span><span class="p">:],</span> <span class="n">yEUR</span><span class="p">[</span><span class="n">isplit</span><span class="p">:]</span>
+
+<span class="n">mUSA1</span><span class="p">,</span> <span class="n">bUSA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">yUSA1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mUSA2</span><span class="p">,</span> <span class="n">bUSA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">yUSA2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">mEUR1</span><span class="p">,</span> <span class="n">bEUR1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">yEUR1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mEUR2</span><span class="p">,</span> <span class="n">bEUR2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">yEUR2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span>
+         <span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span>
+         <span class="s1">&#39;-o&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span>
+         <span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span>
+         <span class="s1">&#39;-s&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">mUSA1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">bUSA1</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">mUSA2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="n">bUSA2</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">mEUR1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">bEUR1</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">mEUR2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="n">bEUR2</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Energy Consumption (TW-hrs)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Regression of Energy use in USA and EUR</span><span class="se">\n</span><span class="s1">Before/After 1980&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear_Regression_with_Real_Data_57_0.png" src="../_images/03_Linear_Regression_with_Real_Data_57_0.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>You plotted Gordon Moore’s empirical prediction that the rate of semiconductors on a computer chip would double every two years in <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">02_Seeing_Stats</span></a>. This prediction was known as Moore’s law. Gordon Moore had originally only expected this empirical relation to hold from 1965 - 1975 [<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>], but semiconductor manufacuturers were able to keep up with Moore’s law until 2015.</p></li>
+</ol>
+<p>Use a linear regression to find our own historical Moore’s Law.</p>
+<p>Use your code from <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">02_Seeing_Stats</span></a> to plot the semilog y-axis scatter plot
+(i.e. <code class="docutils literal notranslate"><span class="pre">plt.semilogy</span></code>) for the “Date of Introduction” vs “MOS transistor count”.
+Color the data according to the “Designer”.</p>
+<p>Create a linear regression for the data in the form of</p>
+<p><span class="math notranslate nohighlight">\(log(transistor~count)= f(date) = A\cdot date+B\)</span></p>
+<p>rearranging</p>
+<p><span class="math notranslate nohighlight">\(transistor~count= e^{f(date)} = e^B e^{A\cdot date}\)</span></p>
+<p>You can perform a least-squares linear regression using the following assignments</p>
+<p><span class="math notranslate nohighlight">\(x_i=\)</span> <code class="docutils literal notranslate"><span class="pre">dataframe['Date</span> <span class="pre">of</span> <span class="pre">Introduction'].values</span></code></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(y_i=\)</span> as <code class="docutils literal notranslate"><span class="pre">np.log(dataframe['MOS</span> <span class="pre">transistor</span> <span class="pre">count'].values)</span></code></p>
+<p>a. Plot your function on the semilog y-axis scatter plot</p>
+<p>b. What are the values of constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> for our Moore’s law fit? How does this compare to Gordon Moore’s prediction that MOS transistor count doubles every two years?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/transistor_data.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">xi</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date of Introduction&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">TC</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MOS transistor count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">yi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">TC</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">yi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">TC</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;MOS transistor count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">xi</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;linear regression&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MOS transistor count of all Designers</span><span class="se">\n</span><span class="s1">every two years </span><span class="se">\n</span><span class="s1">Transistor count was x</span><span class="si">{:.2f}</span><span class="s1"> higher&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="mi">2</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;year introduced&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# of transistors&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear_Regression_with_Real_Data_59_0.png" src="../_images/03_Linear_Regression_with_Real_Data_59_0.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="02_Seeing_Stats.html" title="previous page">02 - Seeing stats in a new light</a>
+    <a class='right-next' id="next-link" href="04_Stats_and_Montecarlo.html" title="next page">04 - Statistics and Monte-Carlo Models</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

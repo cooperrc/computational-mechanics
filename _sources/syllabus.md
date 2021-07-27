@@ -2,6 +2,7 @@
 ## ME 3255 Summer 2021
 ### GitHub page: [github.com/cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 ### JupyterHub server: <https://compmech.uconn.edu/>
+### ME3255 - chat room: [![Gitter](https://badges.gitter.im/me3255-summer-2021/community.svg)](https://gitter.im/me3255-summer-2021/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Course Description
 
@@ -21,7 +22,7 @@ We will work through five modules:
 ## Course Objectives
 
 This course introduces students to computational methods in
-[Python](https://www.python.org/).  The course introduces computational
+[Python](https://www.python.org/).  The course introduces numerical
 methods, best programming practices, and version control.
 These methods will be applied to a number of physics-based problems.
 
@@ -32,8 +33,23 @@ and numerical approaches and solve differential equations using numerical
 differentiation and integration. Students are also expected to learn basics of
 git version control, Python functions and programming best practices. 
 
+Students are expected to work together, share resources, and build
+collaboratively. Any work that is turned in by an individual should
+reflect the student's understanding of the material. 
+
+Students _should_ 
+- copy/paste code from textbook, then read through it to understand
+- post/share code examples and error messages 
+- post/share code examples to resolve other students' issues
+- submit work that they can explain
+
+Students _should not_
+- submit other students' work as their own
+- submit work that they do not understand (copy-pasted without
+reading/understanding)
+
 ## Course Information
-__Course Title:__ CE2120 - Applied Mechanics II
+__Course Title:__ ME3255 - Computational Mechanics
 
 __Format:__ Online
 
@@ -43,9 +59,11 @@ __Instructor__: Prof. Ryan C. Cooper __<ryan.c.cooper@uconn.edu>__
 
 __Office Hours/Availability:__ Mon-Thur 10-11am (EST)
 
-__Preferred Contact:__ Post questions and comments to Campuswire
+__Preferred Contact:__ Post questions and comments to
+[Gitter](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
-__Lectures__: I will post videos each week on Campuswire. I expect you
+__Lectures__: I will post videos each week on
+[Gitter](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link). I expect you
 to respond to my question prompts and post your own questions. 
 
 __Prerequisite:__ CE 3110, MATH 2410Q 
@@ -72,6 +90,12 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
 - [GitHub](https://github.com) If you prefer to
   keep your work private, you can create private repositories and share them
   with myself [@cooperrc](https://github.com/cooperrc).
+
+- [Gitter - ME3255 chat
+  room](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+  you can sign up to join the classroom discussion once you create a
+  GitHub account
+
 ### Recommended _Free_ Resources:
 
 - [Youtube: A hands-on Intro to Python for beginning programmers](https://youtu.be/rkx5_MRAV3A)
@@ -115,7 +139,8 @@ Scientists_ 4th edition.
 
 | Item | Percent | Requirement |
 |---------|---|---------------------------|
-| Participation | 30 % | Complete the notebook exercises and discussion questions on Campuswire|
+| Participation | 30 % | Complete the notebook exercises and discussion
+questions on Gitter|
 | Homework | 30 % | Complete the end-of-notebook problems|
 | Projects | 40 % | Complete the module project and submit to GitHub| 
 
