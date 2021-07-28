@@ -256,9 +256,7 @@ The **mean** value is one of the main measures to describe the central
 tendency of the data: an indication of where's the "center" of the data.
 If you have a sample of $N$ values, $x_i$, the mean, $\bar{x}$, is calculated by:
 
-\begin{equation*}
-    \bar{x} = \frac{1}{N}\sum_{i} x_i
-\end{equation*}
+$\bar{x} = \frac{1}{N}\sum_{i} x_i$
 
 In words, that is the sum of the data values divided by the number of values, $N$. 
 
@@ -324,16 +322,12 @@ suggest using absolute values. But this is just mathematically
 inconvenient. Another way to get rid of negative values is to take the
 squares. And that's how you get to the expression for the _variance_: it is the average of the squares of the deviations from the mean. For a set of $N$ values,
 
-\begin{equation*}
-     \text{var} = \frac{1}{N}\sum_{i} (x_i - \bar{x})^2
-\end{equation*}
+$\text{var} = \frac{1}{N}\sum_{i} (x_i - \bar{x})^2$
 
 
 The variance itself is hard to interpret. The problem with it is that the units are strange (they are the square of the original units). The **standard deviation**, the square root of the variance, is more meaningful because it has the same units as the original variable. Often, the symbol $\sigma$ is used for it:
 
-\begin{equation*} 
-    \sigma = \sqrt{\text{var}} = \sqrt{\frac{1}{N}\sum_{i} (x_i - \bar{x})^2}
-\end{equation*}
+$\sigma = \sqrt{\text{var}} = \sqrt{\frac{1}{N}\sum_{i} (x_i - \bar{x})^2}$
 
 +++
 
@@ -347,9 +341,7 @@ real data since usually you have samples of populations.
 
 The **standard deviation** of a sample is denoted by $s$, and the formula is:
 
-\begin{equation*}     
-     s = \sqrt{\frac{1}{N-1}\sum_{i} (x_i - \bar{x})^2}
-\end{equation*}
+$s = \sqrt{\frac{1}{N-1}\sum_{i} (x_i - \bar{x})^2}$
 
 Why? This gets a little technical, but the reason is that if you have a
 _sample_ of the population, you don't know the _real_ value of the mean,
@@ -651,6 +643,7 @@ how the following piece of code works.
 2. Check what happens if you sum booleans. For example, `True + True`, `True + False` and so on.
 
 ```{code-cell} ipython3
+
 ```
 
 Now, using the same idea, you will calculate the number of elements in each interval of width $(1\sigma, 2\sigma, 3\sigma)$, and get the corresponding percentage. 
@@ -791,15 +784,15 @@ expected this empirical relation to hold from 1965 - 1975
 but semiconductor manufacturers were able to keep up with Moore's law
 until 2015. 
 
-    In the folder "../data" is a comma separated value (CSV) file,
-    "transistor_data.csv" [taken from wikipedia
-    01/2020](https://en.wikipedia.org/wiki/Transistor_count#Microprocessors).
-    
-    a. Use the `!head ../data/transistor_data.csv` command to look at
-    the top of the csv. What are the headings for the columns?
+In the folder "../data" is a comma separated value (CSV) file,
+"transistor_data.csv" [taken from wikipedia
+01/2020](https://en.wikipedia.org/wiki/Transistor_count#Microprocessors).
 
-    b. Load the csv into a pandas dataframe. How many missing values
-    (`NaN`) are
-    in the column with the number of transistors? What fraction are
-    missing?
+a. Use the `!head ../data/transistor_data.csv` command to look at
+the top of the csv. What are the headings for the columns?
+
+b. Load the csv into a pandas dataframe. How many missing values
+(`NaN`) are
+in the column with the number of transistors? What fraction are
+missing?
 
