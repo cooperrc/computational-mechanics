@@ -23,11 +23,11 @@
   - file: module_03/03_Get_Oscillations
   - file: module_03/04_Getting_to_the_root
   - file: projects/03_IVP-project
-#- file: module_04/README
-#  sections:
-#  - file: module_04/01_Linear-Algebra
-#  - file: module_04/02_Gauss_elimination
-#  - file: module_04/03_Linear-regression-algebra
+- file: module_04/README
+  sections:
+  - file: module_04/01_Linear-Algebra
+  - file: module_04/02_Gauss_elimination
+  - file: module_04/03_Linear-regression-algebra
 #- file: module_05/README
 #  sections:
 #  - file: module_05/01_Revisiting_derivatives
