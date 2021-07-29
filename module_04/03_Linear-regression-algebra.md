@@ -500,19 +500,7 @@ f. Plot the error in __testing-training__ error vs the order of the polynomial f
 
 ```
 
-:::{figure-md} markdown-fig
-<img src="../images/mesh.png" alt="fishy" class="bg-primary mb-1" width="600px">
-
-This is a caption in **Markdown**!
-:::
-
-+++
-
-:::{figure-md} prony
-<img src="./images/prony-series.png" style="width: 300px;"/> <img src="./images/stress_relax_wheat.png" style="width: 400px;"/> 
-
-This is a visoelastic Prony series data set.
-:::
+<img src="../images/prony-series.png" style="width: 300px;"/> <img src="../images/stress_relax_wheat.png" style="width: 400px;"/> 
 
 Viscoelastic Prony series model and stress-vs-time relaxation curve of wheat kernels [[3]](https://www.cerealsgrains.org/publications/plexus/cfw/pastissues/2013/Documents/CFW-58-3-0139.pdf). Stress relaxation curve of a wheat kernel from regressed equation data that illustrate where to locate relaxation times (vertical dotted lines) and stresses (horizontal black marks). $\sigma$ = stress; t = time.
 
