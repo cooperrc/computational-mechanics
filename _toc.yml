@@ -28,9 +28,11 @@
   - file: module_04/01_Linear-Algebra
   - file: module_04/02_Gauss_elimination
   - file: module_04/03_Linear-regression-algebra
+- file: how-to/README
+  sections:
+  - file: how-to/polyfit
 #- file: module_05/README
 #  sections:
 #  - file: module_05/01_Revisiting_derivatives
 #  - file: module_05/02_Keep_it_steady
 #  - file: module_05/03_Good_Vibrations
-#
