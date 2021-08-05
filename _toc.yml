@@ -28,9 +28,11 @@
   - file: module_04/01_Linear-Algebra
   - file: module_04/02_Gauss_elimination
   - file: module_04/03_Linear-regression-algebra
+  - file: projects/04_Linear_Algebra-project
 - file: how-to/README
   sections:
   - file: how-to/polyfit
+  - file: projects/extra-FEA_material
 #- file: module_05/README
 #  sections:
 #  - file: module_05/01_Revisiting_derivatives
