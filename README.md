@@ -1,4 +1,6 @@
 # Computational Mechanics
+[![Jupyter Book
+Badge](images/badge.svg)](https://cooperrc.github.io/computational-mechanics/README.html)
 
 Welcome to Computational Mechanics! 
 
