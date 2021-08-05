@@ -440,7 +440,7 @@ is what we see, since our the sum of the reaction forces is equal to the
 applied force.
 
 > __Note__: Run this in Jupyter to interact with the scale of
-> deformation. 
+> deformation.  
 
 ```{code-cell} ipython3
 from __future__ import print_function
