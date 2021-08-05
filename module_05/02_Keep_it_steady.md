@@ -40,7 +40,9 @@ You can start your discussion of these differential equations with the steady-st
 
 ### Temperature in a fin meant to remove heat to enviroment
 
-<img src="../images/thermal_fin.png" style="width: 500px;"/> 
+<!-- <img src="../images/thermal_fin.png" style="width: 500px;"/>  -->
+<img
+src="https://github.com/cooperrc/computational-mechanics/blob/master/images/thermal_fin.png?raw=true" style="width: 500px;"/> 
 
 Consider the heat fin shown above, a hot substrate is at temperature $T_{base}$ and you want to remove heat with a cylindrical fin that is connected to the substrate. You know the base of the fin is the same temperature as the substrate, $T(x=0)=T_{0}=T_{base}$, but you do not know the heat flux into the fin, $\frac{dT}{dx}(0)=??$. We also do not know the temperature at the end of the fin, $T(L)=??$. So you could use your first [shooting method](https://github.uconn.edu/rcc02007/CompMech03-IVPs/blob/master/notebooks/04_Getting_to_the_root.ipynb), but you also have a new approach. We use our new knowledge of [Linear Algebra](https://github.uconn.edu/rcc02007/CompMech04-LinearAlgebra) and [finite differences](./01_Revisiting_derivatives.ipynb) to create a linear system of equations. 
 
