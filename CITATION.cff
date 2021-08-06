@@ -1,0 +1,10 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Cooper
+    given-names: Ryan C.
+title: "Computational Mechanics"
+license: CC-BY 4.0, and all code is under BSD-3 clause
+repository-code: https://github.com/cooperrc/computational-mechanics
+version: 0.0.1
+date-released: 2021-08-01
