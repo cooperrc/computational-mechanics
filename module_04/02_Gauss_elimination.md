@@ -258,7 +258,7 @@ $\left[ \begin{array}{ccc|c}
 
 ```{code-cell} ipython3
 Ay= np.array([[10,2,1,1],[2,1,1,1],[1,2,10,1]],dtype=float)
-AP([Ay],['[Ay]'])
+print(Ay)
 ```
 
 Now, subtract $1/5*A[0,:]$ from $A[1]$. 
@@ -272,7 +272,7 @@ $\left[ \begin{array}{ccc|c}
 
 ```{code-cell} ipython3
 Ay[1,:]= Ay[1,:]-0.2*Ay[0,:]
-AP([Ay],['[Ay]'])
+print(Ay)
 ```
 
 Now, subtract $1/10*A[0,:]$ from $A[2,:]$. 
@@ -286,7 +286,7 @@ $\left[ \begin{array}{ccc|c}
 
 ```{code-cell} ipython3
 Ay[2,:]= Ay[2,:]-0.1*Ay[0,:]
-AP([Ay],['[Ay]'])
+print(Ay)
 ```
 
 Finally, you can substract $1.8/0.6*A[1,:]$ from $A[2,:]
@@ -300,7 +300,7 @@ $\left[ \begin{array}{ccc|c}
 
 ```{code-cell} ipython3
 Ay[2,:]= Ay[2,:]-1.8/0.6*Ay[1,:]
-AP([Ay],['[Ay]'])
+print(Ay)
 ```
 
 ## Back substitution
@@ -367,7 +367,8 @@ y=np.array([1,1,1])
 x, Aug = GaussNaive(A,y)
 
 print('x=  \t\tAug=')
-AP([x,Ay],['[x]',' [Ay]'])
+for i in range(len(x)):
+    print('{:.2f}\t\t'.format(x[i]) , Ay[i])
 ```
 
 ## Revisit Example with Mixing Tanks
@@ -435,14 +436,17 @@ x3,Aug3 = GaussNaive(A,b3)
 
 ```{code-cell} ipython3
 print('example 1')
-print('x=  \tAug=')
-AP([x,Ay],['[x]',' [Ay]'])
+print('x=  \t\tAug=')
+for i in range(len(x)):
+    print('{:.2f}\t\t'.format(x[i]) , Ay[i])
 print('\nexample 2')
-print('x=  \tAug=')
-AP([x,Ay],['[x]',' [Ay]'])
+print('x=  \t\tAug=')
+for i in range(len(x)):
+    print('{:.2f}\t\t'.format(x[i]) , Ay[i])
 print('\nexample 3')
-print('x=  \tAug=')
-AP([x,Ay],['[x]',' [Ay]'])
+print('x=  \t\tAug=')
+for i in range(len(x)):
+    print('{:.2f}\t\t'.format(x[i]) , Ay[i])
 ```
 
 ## Solving the same problem with different inputs  
