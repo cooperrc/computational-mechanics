@@ -240,7 +240,7 @@ Let's use experimental data from some [atomic force microscope nanoindentation o
 The experiment pushes an AFM tip into the center of a hole covered with
 a single layer of $MoS_2$, 0.6-nm thick. A diagram is shown below. 
 
-<img src="../images/afm_mos2.png" style="width: 300px;"/> 
+<img src="https://github.com/cooperrc/computational-mechanics/blob/master/images/afm_mos2.png?raw=true" style="width: 300px;"/> 
 
 As the center of a thin sheet of $MoS_2$ is pushed downards the tension increases, resulting in higher measured force. A semi-empirical form of this equation is as such
 
