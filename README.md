@@ -3,6 +3,9 @@
 [Jupyter-Book](https://jupyterbook.org) __Check it out -->__ [![Jupyter Book
 Badge](images/badge.svg)](https://cooperrc.github.io/computational-mechanics/README.html)
 
+Join us on the ME3255 Gitter chat:
+[![Gitter](https://badges.gitter.im/ME3255/logistics.svg)](https://gitter.im/ME3255/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 Welcome to Computational Mechanics! 
 
 This project is a collection of learning modules in engineering computations for

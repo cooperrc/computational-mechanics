@@ -2,7 +2,7 @@
 ## ME 3255 Fall 2021
 ### GitHub page: [github.com/cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 ### JupyterHub server: <https://compmech.uconn.edu/>
-### ME3255 - chat room: [![Gitter](https://badges.gitter.im/me3255-summer-2021/community.svg)](https://gitter.im/me3255-summer-2021/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+### ME3255 - chat room: [![Gitter](https://badges.gitter.im/ME3255/logistics.svg)](https://gitter.im/ME3255/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Course Description
 
@@ -64,7 +64,7 @@ __Teaching Assistants__:
 __Office Hours/Availability:__ Thur-Fri 12-1pm (EST)
 
 __Preferred Contact:__ Post questions and comments to
-[Gitter](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[Gitter](https://gitter.im/ME3255/logistics?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 __Lectures__: 
 - sec001: MWF 9:05-9:55am in BPB 130
@@ -95,7 +95,7 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   with myself [@cooperrc](https://github.com/cooperrc).
 
 - [Gitter - ME3255 chat
-  room](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+  room](https://gitter.im/ME3255/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
   you can sign up to join the classroom discussion once you create a
   GitHub account
 
@@ -146,8 +146,7 @@ Scientists_ 4th edition.
 
 | Item | Percent | Requirement |
 |---------|---|---------------------------|
-| Participation | 30 % | Complete the notebook exercises and discussion
-questions on Gitter|
+| Participation | 30 % | Complete the notebook exercises and discussion questions on Gitter|
 | Homework | 30 % | Complete the end-of-notebook problems|
 | Projects | 40 % | Complete the module project and submit to GitHub| 
 
@@ -206,18 +205,18 @@ track of your performance in the course, refer to My Grades in HuskyCT.
 If you resubmit an assignment with improvements, notify Prof. Cooper and your
 TA. 
 
-## Student Authentication and Verification
-
-The University of Connecticut is required to verify the identity of students who
-participate in online courses and to establish that students who register in an
-online course are the same students who participate in and complete the course
-activities and assessments and receive academic credit. Verification and
-authentication of student identity in this course will include:
-
-1. Secure access to the learning management system using your unique UConn NetID
-and password.
-
-2. Video recordings to describe submissions
+<!-- ## Student Authentication and Verification -->
+<!--  -->
+<!-- The University of Connecticut is required to verify the identity of students who -->
+<!-- participate in online courses and to establish that students who register in an -->
+<!-- online course are the same students who participate in and complete the course -->
+<!-- activities and assessments and receive academic credit. Verification and -->
+<!-- authentication of student identity in this course will include: -->
+<!--  -->
+<!-- 1. Secure access to the learning management system using your unique UConn NetID -->
+<!-- and password. -->
+<!--  -->
+<!-- 2. Video recordings to describe submissions -->
 
 ## Student Responsibilities and Resources 
 
