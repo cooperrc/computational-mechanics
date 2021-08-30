@@ -1,6 +1,9 @@
 # Computational Mechanics
+> __Note__: This Open Educational Resource was built with
+[Jupyter-Book](https://jupyterbook.org) __Check it out -->__ [![Jupyter Book
+Badge](images/badge.svg)](https://cooperrc.github.io/computational-mechanics/README.html)
 
-Welcome to Computational Mechanics.  
+Welcome to Computational Mechanics! 
 
 This project is a collection of learning modules in engineering computations for
 undergraduate students. These materials are a combination of work from [Prof.
@@ -25,35 +28,28 @@ computational methods to solve those problems.
 ### [CompMech01-Getting Started](module_01/README)
 
 - Getting comfortable with Python
-
 - Quantifying error in computational methods
 
 ### [CompMech02-Analyze-data](module_02/README)
 
 - Describing and plotting data
-
 - Some statistics
-
 - Monte Carlo modelling
 
 ### [CompMech03-Initial Value Problems](module_03/README)
 
 - Creating functions that are physical models
-
 - Solving ordinary differential equations
-
 - Solving nonlinear equations
 
 ### [CompMech04-Linear Algebra](module_04/README)
 
 - Define sets of equations as matrix algebra
-
 - Solve for multiple equations for multiple unknown variables
 
 ### [CompMech05-Boundary Value Problems](module_05/README)
 
 - Continue creating functions that are physical models
-
 - Solve 1D and 2D partial differential equations with finite difference
   approximations
 
@@ -66,6 +62,6 @@ is under BSD-3
 clause](https://github.uconn.edu/rcc02007/Computational_Mechanics/LICENSE). We are
 happy if you re-use the content in any way!
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![Join the chat at https://gitter.im/me3255-summer-2021/logistics](https://badges.gitter.im/me3255-summer-2021/logistics.svg)](https://gitter.im/me3255-summer-2021/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Join the chat at https://gitter.im/ME3255/logistics](https://badges.gitter.im/ME3255/logistics.svg)](https://gitter.im/ME3255/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
