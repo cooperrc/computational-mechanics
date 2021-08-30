@@ -12,13 +12,11 @@ kernelspec:
   name: python3
 ---
 
-# Extra Material: Direct stiffness methof for Finite Element analysis (FEA)
+# Extra Material: Direct stiffness method for Finite Element analysis (FEA)
 
 The direct stiffness approach looks at the stiffness of each individual element and adds them to the overall stiffness of the FEA structure. Starting with a single element, show below we have the following relation between forces applied and deformation
 
 ![Single link element with forces applied to both ends](../images/link_elem.png)
-
-+++
 
 $\mathbf{F}_{el} = \mathbf{K}_{el}\mathbf{u}$
 
@@ -43,8 +41,7 @@ $\mathbf{K}_{el}=\frac{EA}{l}\left[\begin{array}{cccc}
         \cos\theta\sin\theta & \sin^2\theta & -\cos\theta\sin\theta & -\sin^2\theta &\\
         -\cos^2\theta & -\cos\theta\sin\theta & \cos^2\theta & \cos\theta\sin\theta\\
         -\cos\theta\sin\theta & -\sin^2\theta & \cos\theta\sin\theta & \sin^2\theta &\\
-        \end{array}\right]$. 
-        
+        \end{array}\right]$.
 
 +++
 
@@ -63,7 +60,7 @@ $\mathbf{K}_{el}=70\frac{N}{mm}\left[\begin{array}{cccc}
         1/2 & 1/2 & -1/2 & -1/2 &\\
         -1/2 & -1/2 & 1/2 & 1/2\\
         -1/2 & -1/2 & 1/2 & 1/2 &\\
-        \end{array}\right]$. 
+        \end{array}\right]$.
 
 ```{code-cell} ipython3
 import numpy as np
@@ -84,7 +81,7 @@ F=K@u
 print('[F1x, F1y, F2x, F2y] = ',F,'N')
 ```
 
-So to stretch the 1-meter by $1~mm^2$ link from its initial configuration to the right by 2 mm, it takes a $\mathbf{F}=70\hat{i}+70\hat{j}$ force and a negative $\mathbf{F}$ reaction force. 
+So to stretch the 1-meter by $1~mm^2$ link from its initial configuration to the right by 2 mm, it takes a $\mathbf{F}=70\hat{i}+70\hat{j}$ force and a negative $\mathbf{F}$ reaction force.
 
 ```{code-cell} ipython3
 # scale factor
@@ -100,7 +97,7 @@ plt.quiver(x,y,F[0::2]*s,F[1::2]*s)
 plt.title('forces and deformation of single Al-bar\nscale factor = {}'.format(s))
 ```
 
-# Combining multiple elements
+## Combining multiple elements
 
 This method can be extended to multiple, connected bars. We just have to do some extra book-keeping. Let's consider the 3-bar element that we used in [02_Gauss_elimination](../notebooks/02_Gauss_elimination.ipynb).
 
@@ -153,7 +150,7 @@ $\mathbf{u}=\left[\begin{array}{c}
         u_{2x}\\
         u_{2y}\\
         u_{3x}\\
-        0\end{array}\right]$, 
+        0\end{array}\right]$,
 
 +++
 
@@ -189,8 +186,6 @@ $\mathbf{K}_{3}=\frac{EA}{l}\left[\begin{array}{cccc}
         0 & 0 &-\cos^2\theta_3 & -\cos\theta_3\sin\theta_3 & \cos^2\theta_3 & \cos\theta_3\sin\theta_3 \\
         0 & 0 &-\cos\theta_3\sin\theta_3 & -\sin^2\theta_3 & \cos\theta_3\sin\theta_3 & \sin^2\theta_3 \\
         \end{array}\right]$
-
-
 
 ```{code-cell} ipython3
 Ke1 = lambda a: np.array([[np.cos(a)**2,np.cos(a)*np.sin(a)],[np.cos(a)*np.sin(a),np.sin(a)**2]])
@@ -246,7 +241,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1,0.5));
 plt.title('original and deformed structure\nscale = {}x'.format(scale));
 ```
 
-# Project Matrix creation
+## Project Matrix creation
 
 In the project, we have 7 joints _(nodes)_ and 11 bars _(elements)_. That means we have 7 locations where $\sum\mathbf{F} = \mathbf{0}$ and 11 stiffness matrices $(\mathbf{K_1}...\mathbf{K_{11}})$. The result is 14 equations with 14 unknowns, but we have some constraints on the system. $u_{1x}=u_{1y}=0$ and $u_{7y}=0.$ Which leaves us with 11 unknowns. There are 14 applied forces $(F_{ix},~F_{iy})$ that make up the vector $\mathbf{F}.$
 
@@ -285,7 +280,7 @@ $\mathbf{u}=\left[\begin{array}{c}
 
 ## Node and element arrays
 
-In FEA, we typically store the node locations and their connections in two arrays called the node array: `nodes` and the element array: `elems`. The array `nodes` stores the node number and its x-y location. The array `elems` stores the node numbers that define each element. Our `nodes` and `elems` are printed below. 
+In FEA, we typically store the node locations and their connections in two arrays called the node array: `nodes` and the element array: `elems`. The array `nodes` stores the node number and its x-y location. The array `elems` stores the node numbers that define each element. Our `nodes` and `elems` are printed below.
 
 ```{code-cell} ipython3
 l=300 # mm
@@ -302,7 +297,7 @@ We can plot the mesh in different ways, here I have chosen to loop through each
 
 I create an array where each column is a loop around each triangle in the support structure for the x- and y-coords, `ix` and `iy`, respectively. 
 
-The vector `r` is the coordinates for the structure, so $\mathbf{r} = \mathbf{r}_0+\mathbf{u}$, where $\mathbf{r}_0$ is the location of each node without forces applied and $\mathbf{u}$ is the distance each node moves after a force is applied. 
+The vector `r` is the coordinates for the structure, so $\mathbf{r} = \mathbf{r}_0+\mathbf{u}$, where $\mathbf{r}_0$ is the location of each node without forces applied and $\mathbf{u}$ is the distance each node moves after a force is applied.
 
 ```{code-cell} ipython3
 ix = 2*np.block([[np.arange(0,5)],[np.arange(1,6)],[np.arange(2,7)],[np.arange(0,5)]])
@@ -354,7 +349,7 @@ def Kel(node1,node2):
     node1: is the 1st node number and coordinates from the nodes array
     node2: is the 2nd node number and coordinates from the nodes array
     outputs:
-    ----------
+    --------
     Ke1 : the diagonal matrix of the element stiffness
     Ke2 : the off-diagonal matrix of the element stiffness
     '''
@@ -389,10 +384,10 @@ for e in elems:
 ```
 
 ```{code-cell} ipython3
-pp.array_latex([K*1000],['[K]'])
+print(K*1000)
 ```
 
-# Save the inputs for the project
+## Save the inputs for the project
 
 Here, we save the arrays needed to work on the project as a Linear Algebra problem. We need the `nodes`, `elems`, and `K` arrays. So, we save them in the file `fea_arrays.npz`.
 
@@ -400,7 +395,7 @@ Here, we save the arrays needed to work on the project as a Linear Algebra probl
 np.savez('fea_arrays',nodes=nodes,elems=elems,K=K)
 ```
 
-# Solution for our FEA problem
+## Solution for our FEA problem
 
 In FEA, you have applied forces, in $\mathbf{F}$, and displacement in $\mathbf{u}.$ Typically, you have a mix of known and unknown forces and displacements. In our example, we have 14 degrees of freedom - 3 constraints for our displacements. So, we solve the problem in two steps
 
@@ -434,9 +429,18 @@ for i in range(len(F)):
     print('F_{}{}:{:.2f} N'.format(int(i/2)+1,xy[i%2],F[i]))
 ```
 
-# Postprocess FEA results
+## Postprocess FEA results
 
-The last step in FEA (and any applied linear algebra problem), is to post-process the results. I have chosen to show the deflections of each joint and the applied forces at each node. I imported the `interact` widget to animate the deformation of the structure. What you should see is that the sum of external forces $\sum F_x=0$ and $\sum F_y=0$. This is what we see, since our the sum of the reaction forces is equal to the applied force. 
+The last step in FEA (and any applied linear algebra problem), is to
+post-process the results. I have chosen to show the deflections of each
+joint and the applied forces at each node. I imported the `interact`
+widget to animate the deformation of the structure. What you should see
+is that the sum of external forces $\sum F_x=0$ and $\sum F_y=0$. This
+is what we see, since our the sum of the reaction forces is equal to the
+applied force.
+
+> __Note__: Run this in Jupyter to interact with the scale of
+> deformation.  
 
 ```{code-cell} ipython3
 from __future__ import print_function
@@ -455,18 +459,4 @@ def f(s):
     plt.title('Deformation scale = {:.1f}x'.format(s))
     plt.legend(bbox_to_anchor=(1,0.5))
 interact(f,s=(0,10,1));
-```
-
-```{code-cell} ipython3
-steel=np.loadtxt('../data/steel_price.csv',skiprows=1,delimiter=',')
-al = np.loadtxt('../data/al_price.csv',skiprows=1,delimiter=',')
-```
-
-```{code-cell} ipython3
-plt.plot(steel[:,0],steel[:,1])
-plt.plot(al[:,0],al[:,1])
-```
-
-```{code-cell} ipython3
-
 ```

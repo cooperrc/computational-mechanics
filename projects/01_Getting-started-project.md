@@ -65,12 +65,14 @@ ambient temperature is not constant i.e. T_a=f(t). We can use the weather to imp
 
     |time| Temp ($^o$F)|
     |---|---|
+    |6am|50|
+    |7am|51|
     |8am|55|
-    |9am|58|
-    |10am|60|
-    |11am|65|
-    |noon|66|
-    |1pm|67|
+    |9am|60|
+    |10am|65|
+    |11am|70|
+    |noon|75|
+    |1pm|80|
 
     a. Create a function that returns the current temperature based upon the time (0 hours=11am, 65$^{o}$F) 
     *Plot the function $T_a$ vs time. Does it look correct? Is there a better way to get $T_a(t)$?
