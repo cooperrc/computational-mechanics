@@ -26,7 +26,14 @@ computational methods. Once we can communicate our engineering problems to
 Python code (or any other computer language) we can use standardized
 computational methods to solve those problems. 
 
-## [View the Summer 2021 syllabus](./syllabus) $\leftarrow$ _click here_
+## [View the current syllabus](./syllabus) $\leftarrow$ _click here_
+
+The course schedule is kept up to date on the Google Calendar here:
+<iframe
+src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=Y19mZXA5MzV0NmUzZWVsdGN2c2NicGRkMWU3a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&mode=AGENDA"
+style="border:solid 1px #777" width="600" height="500" frameborder="0"
+scrolling="no"></iframe>
+
 
 ### [CompMech01-Getting Started](module_01/README)
 
