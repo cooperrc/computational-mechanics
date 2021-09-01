@@ -146,9 +146,13 @@ Scientists_ 4th edition.
 
 | Item | Percent | Requirement |
 |---------|---|---------------------------|
-| Participation | 30 % | Complete the notebook exercises and discussion questions on Gitter|
+| Participation | 30 % | Discussion questions on Gitter+class, self assessed|
 | Homework | 30 % | Complete the end-of-notebook problems|
 | Projects | 40 % | Complete the module project and submit to GitHub| 
+
+__Participation__: The participation grade will be self-assigned. At
+week 7 you will submit your current grade and modes of participation,
+then during finals week submit an updated final grade. 
 
 ## Academic Integrity: 
 - The instructors of this class have a zero-tolerance policy for academic misconduct, that
