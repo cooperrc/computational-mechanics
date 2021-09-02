@@ -1,5 +1,4 @@
-# Working in your ![fork
-# image](https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png) Fork on GitHub.com
+# Working in your ![fork image](./images/fork.png) Fork on GitHub.com
 
 This is a short document on keeping track of your work on GitHub. There
 five steps:
@@ -39,7 +38,6 @@ replacing `your-user-name` with your GitHub user name
 button](./images/fetch-upstream.png)
 
 ## 4. do your work then commit your changes
-## 5. push your changes to github.com
 After you have made changes e.g. you finished the first notebook's
 problems, you'll want to "commit" those changes to git. Then, push them
 to github.com
@@ -53,6 +51,8 @@ git pull origin master
 git add .
 git commit -m 'my latest work message'
 ```
+
+## 5. push your changes to github.com
 Then, to __push the changes to github.com__ type this command
 ```
 git push origin master
