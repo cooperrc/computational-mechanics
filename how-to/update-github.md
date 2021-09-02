@@ -1,4 +1,4 @@
-# Working in your ![fork image](./images/fork.png) Fork on GitHub.com
+# Working in your ![fork image](../images/fork.png) Fork on GitHub.com
 
 This is a short document on keeping track of your work on GitHub. There
 five steps:
@@ -10,8 +10,9 @@ repository
 4. do your work then commit your changes
 5. push your changes to github.com
 
-Steps 1 and 2 only have to be performed once. Then, just do steps 3, 4,
-and 5 to keep your work up-to-date.
+__Steps 1 and 2 only have to be performed once.__
+
+__Only do steps 3, 4, and 5 to keep your work up-to-date.__
 
 ## 1. fork the [computational-mechanics](https://github.com/cooperrc/computational-mechanics) repository
 1. go to https://github.com/cooperrc/computational-mechanics
@@ -34,15 +35,14 @@ When changes are made to the main code, you'll want to update your files
 in your fork. Do this in 2 steps:
 1. go to `https://github.com/your-user-name/computational-mechanics`
 replacing `your-user-name` with your GitHub user name
-2. Click the button "Fetch upstream" ![fetch upstream
-button](./images/fetch-upstream.png)
+2. Click the button "Fetch upstream" ![fetch upstream button](../images/fetch-upstream.png)
 
 ## 4. do your work then commit your changes
 After you have made changes e.g. you finished the first notebook's
 problems, you'll want to "commit" those changes to git. Then, push them
 to github.com
 
-1. Save any work with the ![save button](./images/save-icon.png)
+1. Save any work with the ![save button](../images/save-icon.png)
 3. On the main [compmech site](https://compmech.uconn.edu) Click "New" -> "Terminal"
 3. type these commands
 ```
