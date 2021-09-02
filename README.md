@@ -3,6 +3,8 @@
 [Jupyter-Book](https://jupyterbook.org) __Check it out -->__ [![Jupyter Book
 Badge](images/badge.svg)](https://cooperrc.github.io/computational-mechanics/README.html)
 
+### JupyterHub server: <https://compmech.uconn.edu/>
+
 Join us on the ME3255 Gitter chat:
 [![Gitter](https://badges.gitter.im/ME3255/logistics.svg)](https://gitter.im/ME3255/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 

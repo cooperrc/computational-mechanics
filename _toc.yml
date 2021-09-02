@@ -3,6 +3,7 @@
 #
 - file: README
 - file: syllabus
+- file: how-to/update-github
 - file: module_01/README
   sections:
   - file: module_01/01_Interacting_with_Python
@@ -37,5 +38,6 @@
   - file: projects/05-BVPs_project
 - file: how-to/README
   sections:
+  - file: how-to/update-github
   - file: how-to/polyfit
   - file: projects/extra-FEA_material
