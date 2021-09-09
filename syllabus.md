@@ -57,14 +57,18 @@ __Prerequisite:__ CE 2110 and MATH 2110 or 2130
 
 __Instructor__: Prof. Ryan C. Cooper __<ryan.c.cooper@uconn.edu>__
 
-__Teaching Assistants__:
-- sec001: Genevieve Kunkel
-- sec002: Mohammad Madani
-
-__Office Hours/Availability:__ Thur-Fri 12-1pm (EST)
+__Office Hours/Availability:__ Mon/Wed 11-12pm (EST) <https://uconn-cmr.webex.com/meet/rcc02007>
 
 __Preferred Contact:__ Post questions and comments to
 [Gitter](https://gitter.im/ME3255/logistics?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+
+__Teaching Assistants__:
+
+|section | TA | email| GitHub handle| office hours | Webex room |
+|---|---|---|---|---|---|
+| sec001 | Genevieve Kunkel | <genevieve.kunkel@uconn.edu>| @gmk19001| Thu 12:30-2:30pm |<https://uconn-cmr.webex.com/meet/gmk19001>|
+| sec002 | Mohammad Madani | <mohammad.madani@uconn.edu> | | Mon 1-3pm | |
+
 
 __Lectures__: 
 - sec001: MWF 9:05-9:55am in BPB 130

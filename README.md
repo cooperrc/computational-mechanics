@@ -8,6 +8,10 @@ Badge](images/badge.svg)](https://cooperrc.github.io/computational-mechanics/REA
 Join us on the ME3255 Gitter chat:
 [![Gitter](https://badges.gitter.im/ME3255/logistics.svg)](https://gitter.im/ME3255/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+### Join us live at [twitch.tv/cooperrc84](https://twitch.tv/cooperrc84)
+MWF - 9:05-9:55am
+TTh - 11:00-12:15pm
+
 Welcome to Computational Mechanics! 
 
 This project is a collection of learning modules in engineering computations for
