@@ -40,4 +40,5 @@
   sections:
   - file: how-to/update-github
   - file: how-to/polyfit
+  - file: how-to/for-loops
   - file: projects/extra-FEA_material
