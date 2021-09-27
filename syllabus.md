@@ -2,7 +2,8 @@
 ## ME 3255 Fall 2021
 ### GitHub page: [github.com/cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 ### JupyterHub server: <https://compmech.uconn.edu/>
-### ME3255 - chat room: [![Gitter](https://badges.gitter.im/ME3255/logistics.svg)](https://gitter.im/ME3255/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+### ME3255 - chat room:
+[![Gitter](https://badges.gitter.im/ME3255/community.svg)](https://gitter.im/ME3255/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Course Description
 
@@ -60,7 +61,14 @@ __Instructor__: Prof. Ryan C. Cooper __<ryan.c.cooper@uconn.edu>__
 __Office Hours/Availability:__ Mon/Wed 11-12pm (EST) <https://uconn-cmr.webex.com/meet/rcc02007>
 
 __Preferred Contact:__ Post questions and comments to
-[Gitter](https://gitter.im/ME3255/logistics?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[Gitter](https://gitter.im/ME3255):
+> Introduce yourself in the [logistics room](https://gitter.im/ME3255/logistics) and take a look at
+the community rooms to discuss:
+> -  logistics e.g. due dates, grades, introductions [ME3255/logistics](https://gitter.im/ME3255/logistics)
+> - concepts and exercises in the readings [ME3255/readings](https://gitter.im/ME3255/readings)
+> -  homework and project hands-on work [ME3255/work](https://gitter.im/ME3255/work)
+
+
 
 __Teaching Assistants__:
 
