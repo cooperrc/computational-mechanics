@@ -380,38 +380,6 @@ For the uniformly random case, there are approximately 500 parts out of 10,000 t
 
 For the normally distributed case, there are approximately 1500 parts out of 10,000 that will fail at 1.9 kN. 
 
-## Where does a normal distribution come from?
-
-"Everybody believes in the exponential law of errors: the experimenters, because they think it can be proved by mathematics; and the mathematicians, because they believe it has been established by observation" [5].
-
-In the previous example, we drew dimensions from uniformly random distributions and normally distributed random distributions. Why do we use the "normal" distribution to describe data with a mean and standard deviation? There are exact statistical methods to derive the normal distribution, but let's take a look at a Monte Carlo approach. 
-
-Let's say there are 10 different independent factors that could change the dimensions of the steel bar in question e.g. which tool was used, how old the blade is, the humidity, the temperature, and the list goes on. 
-
-Let's consider one dimension. 
-Each of these factors could change the dimensions of the part, let's use a uniform scale of -1/2-1/2.
-If the effect is 0, the dimension is exactly as specified. If the effect is -1/2, the dimension is much smaller. Conversely, if the effect is 1/2 the dimension is much larger. Now, we use a Monte Carlo model to generate 10 effects on 10,000 parts as shown in the next block.
-
-```{code-cell} ipython3
-factors = np.random.rand(10000,10)-1/2 # each row represents a part and each column is an effect (-1/2-1/2)
-```
-
-Now, we have created 10,000 parts with 10 uniformly random effects between -1/2-1/2. 
-
-We sum the effects and look at the final part distribution. The x-axis is labeled "A.U." for arbitrary units, we are just assuming an effect of -1/2-1/2 for each of the 10 factors.  
-
-```{code-cell} ipython3
-dims = np.sum(factors,axis=1)
-
-plt.hist(dims,30)
-plt.xlabel('effect A.U.')
-plt.ylabel('number of parts')
-```
-
-Now, depending upon which random numbers were generated, you should see what looks like a normal distribution. 
-
-Normal distributions come from the assumption that we have a large (or infinite) number of uncontrollable factors that can change our desired result. In our case, ideally each factor would have an effect of 0, because then it is exactly as specified, but the reality is that we can't control most factors. As engineers, we always have to consider the uncertainty in our models and measurements. 
-
 ## What you've learned:
 
 * How to generate "random" numbers in Python$^+$
@@ -419,7 +387,6 @@ Normal distributions come from the assumption that we have a large (or infinite)
 * How to calculate $\pi$ with Monte Carlo
 * How to model Brownian motion with Monte Carlo
 * How to propagate uncertainty in a model with Monte Carlo
-* How to generate a normal distribution using uniformly random numbers
 
 $^+$ Remember, the computer only generates pseudo-random numbers. For further information **and** truly random numbers  check [www.random.org](https://www.random.org/randomness/) 
 
@@ -470,7 +437,22 @@ maximum $x_{end~max}>0$. The ratio
 $\frac{x_{end~min}<0~and~x_{end~max}>0}{number~of~needles} =
 \frac{2}{\pi}$ _for large values of $number~of~needles$_.
 
-__2.__ 100 steel rods are going to be used to support a 1000 kg structure. The
+__2.__ Build a random walk data set with steps between $dx = dy =
+-1/2~to~1/2~m$. If 100 particles take 10 steps, calculate the number of
+particles that move further than 0.5 m. 
+
+_Bonus: Can you do the work without any `for`-loops? Change the size of
+`dx` and `dy` to account for multiple particles._
+
+```{code-cell} ipython3
+rng = default_rng()
+N_steps = 10
+dx = rng.random(N_steps) - 0.5
+dy = rng.random(N_steps) - 0.5
+
+```
+
+__3.__ 100 steel rods are going to be used to support a 1000 kg structure. The
 rods will buckle when the load in any rod exceeds the [critical buckling
 load](https://en.wikipedia.org/wiki/Euler%27s_critical_load)
 
@@ -513,16 +495,3 @@ def montecarlo_buckle(E,r_mean,r_std,L,N=100):
     return mean_buckle_load, std_buckle_load
 ```
 
-__3.__ Generate your own normal distribution using uniformly random numbers between -1/2 and 1/2. 
-
-__a.__ What is the effect of changing the number of factors?
-
-__b.__ What is the effect of changing the number of samples?
-
-*Hint: for a-b try plotting histograms of the results.*
-
-__c.__ How would you change the mean in your generated distribution?
-
-```{code-cell} ipython3
-
-```

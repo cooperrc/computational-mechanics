@@ -45,7 +45,6 @@ mechanics using Python, listed below each module are the learning objectives.
   * How to calculate $\pi$ with Monte Carlo
   * How to model Brownian motion with Monte Carlo
   * How to propagate uncertainty in a model with Monte Carlo
-  * How to generate a normal distribution using uniformly random numbers
 
   $^+$ Remember, the computer only generates pseudo-random numbers. For
   further information **and** truly random numbers  check
