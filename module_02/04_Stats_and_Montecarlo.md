@@ -72,7 +72,8 @@ What should the histogram of `x` look like if Python is generating truly random 
 
 
 ```{code-cell} ipython3
-x=np.random.rand(10000)
+rng = default_rng()
+x = rng.random(10000)
 plt.hist(x);
 ```
 
@@ -118,16 +119,6 @@ So if we know the fraction of random points that are within the unit circle, the
 (number of points in circle)/(total number of points)=$\pi/4$
 
 ```{code-cell} ipython3
-np.random.rand(10)
-```
-
-```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
-slideshow:
-  slide_type: fragment
----
 def montecarlopi(N):
     '''Create random x-y-coordinates to and use ratio of circle-to-square to 
     calculate the value of pi
@@ -142,8 +133,8 @@ def montecarlopi(N):
     '''
     
 
-    x=np.random.rand(N,1);
-    y=np.random.rand(N,1);
+    x = rng.random(N,1);
+    y = rng.random(N,1);
     R=np.sqrt(x**2+y**2); # compute radius
     num_in_circle=sum(R<1);
     total_num_pts =len(R);
@@ -152,12 +143,6 @@ def montecarlopi(N):
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
-slideshow:
-  slide_type: slide
----
 test_pi=np.zeros(10)
 for i in range(0,10):
     test_pi[i]=montecarlopi(1000);
@@ -171,7 +156,7 @@ print('actual pi is %f'%np.pi)
 
 1. Why is there a standard deviation for the value of $\pi$ calculated with a Monte Carlo method? Does it depend upon how many times you run the function i.e. the size of `test_pi`? or the number of random points `N`? Alter the script above to discover correlations
 
-2. How well does our function `montecarlopi` converge to the true value
+2. How well does your function `montecarlopi` converge to the true value
 of $\pi$ (you can use `np.pi` as a true value)? Plot the convergence as
 we did in [03-Numerical_error](../module_01/03-Numerical_error)
 
@@ -341,25 +326,25 @@ $\sigma_{UTS}=\frac{F_{fail}}{wh}$
 $F_{fail}=\sigma_{UTS}wh$
 
 ```{code-cell} ipython3
-N=10000;
-r=np.random.rand(N,1);
-wmean=1; # in mm
-wmin=wmean-wmean*0.1;
-wmax=wmean+wmean*0.1;
-hmean=2; # in mm
-hmin=hmean-hmean*0.1;
-hmax=hmean+hmean*0.1;
+N = 10000
+r = rng.random(N)
+wmean = 1 # in mm
+wmin = wmean-wmean*0.1
+wmax = wmean+wmean*0.1
+hmean = 2 # in mm
+hmin = hmean-hmean*0.1
+hmax = hmean+hmean*0.1
 
-wrand=wmin+(wmax-wmin)*r;
-hrand=hmin+(hmax-hmin)*r;
+wrand=wmin+(wmax-wmin)*r
+hrand=hmin+(hmax-hmin)*r
 
-uts=940; # in N/mm^2=MPa
+uts=940 # in N/mm^2=MPa
 
-Ffail=uts*wrand*hrand*1e-3; # force in kN
+Ffail=uts*wrand*hrand*1e-3 # force in kN
 plt.hist(Ffail,bins=20,)
 plt.xlabel('failure load (kN)')
 plt.ylabel('relative counts')
-plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)));
+plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)))
 ```
 
 Normally, the tolerance is not a maximum/minimum specification, but
@@ -369,22 +354,22 @@ the 68% confidence interval.
 So instead, you should generate normally distributed dimensions.
 
 ```{code-cell} ipython3
-N=10000;
-wmean=1; # in mm
-wstd=wmean*0.1; # standard deviation in mm
-hmean=2; # in mm
-hstd=hmean*0.1; # standard deviation in mm
+N=10000
+wmean=1 # in mm
+wstd=wmean*0.1 # standard deviation in mm
+hmean=2 # in mm
+hstd=hmean*0.1 # standard deviation in mm
 
 
-wrand=np.random.normal(wmean,wstd,size=N);
-hrand=np.random.normal(hmean,hstd,size=N);
-uts=940; # in N/mm^2=MPa
+wrand=rng.normal(loc = wmean, scale = wstd, size = N)
+hrand=np.random.normal(loc = hmean, scale = hstd, size = N)
+uts=940 # in N/mm^2=MPa
 
-Ffail=uts*wrand*hrand*1e-3; # force in kN
+Ffail=uts*wrand*hrand*1e-3 # force in kN
 plt.hist(Ffail,bins=20)
 #plt.xlabel('failure load (kN)')
 #plt.ylabel('relative counts')
-plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)));
+plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)))
 ```
 
 In this propagation of uncertainty, the final value of failure load seems to be independent of wheher the distribution is uniformly random or normally distributed. In both cases, the failure load is $\approx 1.9 \pm 0.25$ kN.
