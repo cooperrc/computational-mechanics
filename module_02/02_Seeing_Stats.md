@@ -218,6 +218,7 @@ Therefore, you need to be explicit about the division by $N-1$ when calling `np.
 For example, to compute the sample variance for your `abv` variable, you do:
 
 ```{code-cell} ipython3
+var_abv = np.var(abv, ddof = 1)
 ```
 
 Now, you can compute the standard deviation by taking the square root of `var_abv`:
@@ -243,7 +244,6 @@ You will.
 ```
 
 ```{code-cell} ipython3
-
 np.std(abv,ddof=1)
 ```
 
@@ -276,7 +276,7 @@ plt.boxplot(ibu, labels=['International bitterness unit']);
 
 What is going on here? Obviously, there is a _box_: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the _median_. 
 
-The bottom of the box is at the 25th _percentile_, while the top of the box is at the 75th percentile. In other words, the bottom 25% of the data falls below the box, and the top 25% of the data falls above the box. 
+The bottom of the box is at the 25th _percentile_, while the top of the box is at the 75th percentile. In other words, the bottom 25% of the data falls below the box, and the top 25% of the data falls above the box.
 
 +++
 
@@ -326,7 +326,7 @@ Any data values beyond the upper and lower extremes are shown with a marker (her
 
 ##### Exercise:
 
-Calculate the end-points of the top and bottom whiskers for both the `abv` and `ibu` variables, and compare the results with the whisker end-points you see in the plot. 
+Calculate the end-points of the top and bottom whiskers for both the `abv` and `ibu` variables, and compare the results with the whisker end-points you see in the plot.
 
 ```{code-cell} ipython3
 IQR = quartiles_ibu[2]-quartiles_ibu[0]
@@ -374,7 +374,7 @@ type(style_series)
 style_series.unique()
 ```
 
-Already in the first 10 elements you see that you have two beers of the style "American IPA," two beers of the style "American Pale Ale (APA)," but only one beer of the style "Oatmeal Stout." The question is: how many beers of each style are contained in the whole series? 
+Already in the first 10 elements you see that you have two beers of the style "American IPA," two beers of the style "American Pale Ale (APA)," but only one beer of the style "Oatmeal Stout." The question is: how many beers of each style are contained in the whole series?
 
 +++
 
@@ -395,7 +395,7 @@ len(style_counts)
 
 The `len()` function tells us that `style_counts` has 99 elements. That is, there are a total of 99 styles of beer in your data set. Wow, that's a lot!
 
-Notice that `value_counts()` returned the counts sorted in decreasing order: the most popular beer in your data set is "American IPA" with 424 entries in our data. The next-most popular beer is "American Pale Ale (APA)" with a lot fewer entries (245), and the counts decrease sharply after that. Naturally, you'd like to know how much more popular are the top-2 beers from the rest. Bar plot to the rescue! 
+Notice that `value_counts()` returned the counts sorted in decreasing order: the most popular beer in your data set is "American IPA" with 424 entries in our data. The next-most popular beer is "American Pale Ale (APA)" with a lot fewer entries (245), and the counts decrease sharply after that. Naturally, you'd like to know how much more popular are the top-2 beers from the rest. Bar plot to the rescue!
 
 +++
 
@@ -451,7 +451,7 @@ plt.ylabel('IBU');
 
 Hmm. That's a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there's a lot of vertical spread on those dots to the right of the plot. 
 
-An idea! What if the bitterness has something to do with _style_? 
+An idea! What if the bitterness has something to do with _style_?
 
 +++
 
@@ -525,7 +525,7 @@ style_means.plot.scatter(figsize=(8,8),
                          title='Beer ABV vs. IBU mean values by style');
 ```
 
-That's rad! Perhaps the bubbles are too small. You could multiply the `style_counts` by a factor of 5, or maybe 10? You should experiment. 
+That's rad! Perhaps the bubbles are too small. You could multiply the `style_counts` by a factor of 5, or maybe 10? You should experiment.
 
 +++
 
@@ -549,7 +549,7 @@ It looks like the most popular beers do follow a linear relationship between alc
 
 _Wait... one more thing!_ What if you add a text label next to the bigger bubbles, to identify the style? 
 
-OK, here you go a bit overboard, but you couldn't help it. You played around a lot to get this version of the plot. It uses `enumerate` to get pairs of indices and values from a list of style names; an `if` statement to select only the large-count styles; and the [`iloc[]`](http://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.iloc.html) slicing method of `pandas` to get a slice based on index position, and extract `abv` and `ibu` values to an $(x,y)$ coordinate for placing the annotation text. _Are you overkeen or what!_ 
+OK, here you go a bit overboard, but you couldn't help it. You played around a lot to get this version of the plot. It uses `enumerate` to get pairs of indices and values from a list of style names; an `if` statement to select only the large-count styles; and the [`iloc[]`](http://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.iloc.html) slicing method of `pandas` to get a slice based on index position, and extract `abv` and `ibu` values to an $(x,y)$ coordinate for placing the annotation text. _Are you overkeen or what!_
 
 ```{code-cell} ipython3
 ax = style_means.plot.scatter(figsize=(10,10), 
@@ -596,9 +596,10 @@ our dataset by removing rows that do not include the IBU measure.
     a. Use the command `beers_filled = beers.fillna(0)` to clean the `beers` dataframe
     
     b. Repeat the steps above to recreate the plot "Beer ABV vs. IBU mean values by style" 
-    scatter plot with `beers_filled`. What differences do you notice between the plots? 
+    scatter plot with `beers_filled`. What differences do you notice between the plots?
 
 ```{code-cell} ipython3
+
 ```
 
 2. Gordon Moore created an empirical prediction that the rate of
