@@ -74,8 +74,8 @@ __Teaching Assistants__:
 
 |section | TA | email| GitHub handle| office hours | Webex room |
 |---|---|---|---|---|---|
-| sec001 | Genevieve Kunkel | <genevieve.kunkel@uconn.edu>| @gmk19001| Thu 12:30-2:30pm |<https://uconn-cmr.webex.com/meet/gmk19001>|
-| sec002 | Mohammad Madani | <mohammad.madani@uconn.edu> | | Mon 1-3pm | |
+| sec001 | Genevieve Kunkel | <genevieve.kunkel@uconn.edu>| [@gmk19001](https://gitter.im/gmk19001)| Thu 12:30-2:30pm |<https://uconn-cmr.webex.com/meet/gmk19001>|
+| sec002 | Mohammad Madani | <mohammad.madani@uconn.edu> | [@mahan-fcb](https://gitter.im/mahan-fcb) | Mon 1-3pm | |
 
 
 __Lectures__: 
