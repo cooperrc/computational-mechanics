@@ -56,7 +56,7 @@ import numpy as np
 A=np.array([[-7,3,0],[7,-19,12],[0,4,-12]])
 b=np.array([-20,0,-8])
 
-np.linalg.solve(A,b)
+x = np.linalg.solve(A,b)
 for i in range(0,3):
     print('[{:5.1f} {:5.1f} {:5.1f}] {} [{:3.1f}] {} [{:5.1f}]'.format(*A[i],'*',x[i],'=',b[i]))
 ```
@@ -117,7 +117,7 @@ c_{3}\end{array}\right]=\left[\begin{array}{c}
 
 $\mathbf{Ax}=\mathbf{b}$
 
-Now, let's use some numpy linear algebra to solve for $c_2$. First, define $\mathbf{A}$ and $\mathbf{b}$ your known constants. 
+Now, let's use some numpy linear algebra to solve for $c_2$. First, define $\mathbf{A}$ and $\mathbf{b}$ your known constants.
 
 ```{code-cell} ipython3
 A=np.array([[-7,3,0],[7,-19,12],[0,4,-12]])
@@ -136,7 +136,7 @@ we just want to understand the inputs and outputs
 x = np.linalg.solve(A,b)
 ```
 
-In the next cell, you run this line of code. The inputs are the matrix $\mathbf{A}$ and vector $\mathbf{b}$, as defined above as `A` and `b`. The output is your unknown vector $\mathbf{x}=[c_1,~c_2,~c_3]$. If you plug in the values of `x` into your mass balance equations you will see that mass is conserved. 
+In the next cell, you run this line of code. The inputs are the matrix $\mathbf{A}$ and vector $\mathbf{b}$, as defined above as `A` and `b`. The output is your unknown vector $\mathbf{x}=[c_1,~c_2,~c_3]$. If you plug in the values of `x` into your mass balance equations you will see that mass is conserved.
 
 ```{code-cell} ipython3
 x = np.linalg.solve(A,b)
@@ -145,7 +145,7 @@ print('c1 = {:.2f} mg/m^3,\nc2 = {:.2f} mg/m^3,\nc3 = {:.2f} mg/mm^3'.format(*x)
 
 ## Exercise
 
-Show that $\mathbf{Ax} = \mathbf{b}$ in the previous mixing container example. Plug the values of `x` into the three equations and show that mass is conserved. 
+Show that $\mathbf{Ax} = \mathbf{b}$ in the previous mixing container example. Plug the values of `x` into the three equations and show that mass is conserved.
 
 ```{code-cell} ipython3
 
@@ -159,7 +159,7 @@ You use vectors to represent unknown variables or known outputs. In numpy, a vec
 y = np.array([1,2,3])
 ```
 
-If you ask for the `shape` of `y`, you get an output of `(3,)`, which means it is a one dimensional vector. 
+If you ask for the `shape` of `y`, you get an output of `(3,)`, which means it is a one dimensional vector.
 
 ```{code-cell} ipython3
 y=np.array([1,2,3])
@@ -347,8 +347,6 @@ x2 = np.linalg.solve(A2,y2)
 print('a={:.2f} m/s/s\nT1={:.1f} N\nT2={:.1f} N\nT3={:.1f} N'.format(*x2))
 ```
 
-
-
 ## Exercise
 
 1. Plug in the values that you solved into the original 4 equations. Show that your values for accelerations and tensions satisfy your initial equations. 
@@ -373,12 +371,40 @@ The specification of _independent equations_ is best illustrated using _dependen
 
 2. $2x+2y=6$
 
++++
 
-```{code-cell} ipython3
-A_sing = np.array([[1,1],[2,2]])
-y_sing = np.array([3,6])
-np.linalg.solve(A_sing,y_sing)
+```python
+>>> A_sing = np.array([[1,1],[2,2]])
+>>> y_sing = np.array([3,6])
+>>> np.linalg.solve(A_sing,y_sing)
+
+---------------------------------------------------------------------------
+LinAlgError                               Traceback (most recent call last)
+<ipython-input-9-b58617395425> in <module>
+      1 A_sing = np.array([[1,1],[2,2]])
+      2 y_sing = np.array([3,6])
+----> 3 np.linalg.solve(A_sing,y_sing)
+
+<__array_function__ internals> in solve(*args, **kwargs)
+
+~/.conda/envs/work/lib/python3.9/site-packages/numpy/linalg/linalg.py in solve(a, b)
+    392     signature = 'DD->D' if isComplexType(t) else 'dd->d'
+    393     extobj = get_linalg_error_extobj(_raise_linalgerror_singular)
+--> 394     r = gufunc(a, b, signature=signature, extobj=extobj)
+    395 
+    396     return wrap(r.astype(result_t, copy=False))
+
+~/.conda/envs/work/lib/python3.9/site-packages/numpy/linalg/linalg.py in _raise_linalgerror_singular(err, flag)
+     86 
+     87 def _raise_linalgerror_singular(err, flag):
+---> 88     raise LinAlgError("Singular matrix")
+     89 
+     90 def _raise_linalgerror_nonposdef(err, flag):
+
+LinAlgError: Singular matrix
 ```
+
++++
 
 ## Singular and ill-conditioned matrices
 
@@ -481,7 +507,7 @@ $10^{15-15} = 1$
 
 and if you look at the values you calculated when you changed $\delta$, the values youre within a range of $\approx 1$. 
 
-The __key idea__ here is that the condition of the matrix is directly related to the accuracy of your solutions. 
+The __key idea__ here is that the condition of the matrix is directly related to the accuracy of your solutions.
 
 ```{code-cell} ipython3
 print('{:e}'.format(np.linalg.cond(A_ill)))
@@ -582,8 +608,8 @@ m_{4}g \end{array} \right]$
 
 * $\dot{m}_1=0.1~kg/s$
 * $\dot{m}_2=0.15~kg/s$
-* $\dot{m}_3=0.17~kg/s$
-* $\dot{m}_4=0.15~kg/s$
+* $\dot{m}_3=0.12~kg/s$
+* $\dot{m}_4=0.1~kg/s$
 * $\dot{m}_5=0.02~kg/s$
 * $\dot{m}_6=0.05~kg/s$
 * $C_p=1000~\frac{J}{kg-K}$
@@ -624,7 +650,7 @@ d. $15 \times 15$ Hilbert matrix
 
 e. $20 \times 20$ Hilbert matrix
 
-If the accuracy of each matrix element is $\approx 10^{-16}$, what is the expected rounding error in the solution $\mathbf{Ax} = \mathbf{b}$, where $\mathbf{A}$ is the Hilbert matrix. 
+If the accuracy of each matrix element is $\approx 10^{-16}$, what is the expected rounding error in the solution $\mathbf{Ax} = \mathbf{b}$, where $\mathbf{A}$ is the Hilbert matrix.
 
 ```{code-cell} ipython3
 
