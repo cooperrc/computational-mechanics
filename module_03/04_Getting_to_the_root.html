@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -56,7 +58,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Initial Value Problems - Project" href="../projects/03_IVP-project.html" />
+    <link rel="next" title="Homework" href="HW_03.html" />
     <link rel="prev" title="Get with the oscillations" href="03_Get_Oscillations.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -100,6 +102,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -111,18 +118,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,8 +128,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -155,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
      02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/02_Seeing_Stats.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -175,18 +162,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
      04 - Statistics and Monte-Carlo Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html#problems">
-     Problems
+    <a class="reference internal" href="../module_02/HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,28 +191,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="02_Step_Future.html">
      Step to the future
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_Step_Future.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="03_Get_Oscillations.html">
      Get with the oscillations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_Get_Oscillations.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -239,13 +206,119 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#problems">
-     Problems
+    <a class="reference internal" href="HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -365,158 +438,146 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Roots of Nonlinear functions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#it-s-not-always-possible-to-analytically-solve-for-a-given-variable">
+   It’s not always possible to analytically solve for a given variable.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-to-the-root-of-a-problem">
+   Getting to the root of a problem
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#it-s-not-always-possible-to-analytically-solve-for-a-given-variable">
-     It’s not always possible to analytically solve for a given variable.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-to-the-root-of-a-problem">
-     Getting to the root of a problem
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#freefall-example">
-       Freefall example:
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#incremental-searching-a-smarter-brute-force-approach">
-     Incremental searching ( a smarter brute force approach)
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion">
-     Discussion
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-your-function">
-     Test your function
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#success-incsearch-works">
-     Success - incsearch works
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bisection-method">
-     Bisection method
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bisect-function">
-     Bisect Function
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Discussion
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#recursive-functions">
-     Recursive functions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#newton-raphson-open-method">
-     Newton-Raphson: Open method
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#newton-raphson-example">
-     Newton-Raphson example
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Discussion
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-newton-raphson-function">
-     Create a Newton-Raphson function
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compare-techniques">
-     Compare techniques
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Discussion
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#secant-methods">
-     Secant Methods
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modified-secant-method">
-     Modified Secant method
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shooting-method">
-     Shooting method
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#defining-your-problem-for-python">
-     Defining your problem for Python
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solving-the-engineering-problem">
-     Solving the engineering problem
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-you-ve-learned">
-     What you’ve learned
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freefall-example">
+     Freefall example:
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#incremental-searching-a-smarter-brute-force-approach">
+   Incremental searching ( a smarter brute force approach)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-your-function">
+   Test your function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#success-incsearch-works">
+   Success - incsearch works
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bisection-method">
+   Bisection method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bisect-function">
+   Bisect Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursive-functions">
+   Recursive functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-raphson-open-method">
+   Newton-Raphson: Open method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-raphson-example">
+   Newton-Raphson example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-newton-raphson-function">
+   Create a Newton-Raphson function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-techniques">
+   Compare techniques
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#secant-methods">
+   Secant Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modified-secant-method">
+   Modified Secant method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shooting-method">
+   Shooting method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-your-problem-for-python">
+   Defining your problem for Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solving-the-engineering-problem">
+   Solving the engineering problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-ve-learned">
+   What you’ve learned
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -1327,48 +1388,6 @@ the solve took  3  iterations
 </ol>
 </div>
 </div>
-<div class="section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p>One of the main benefits of a bracketing method is the stability of solutions. Open methods are not always stable. Here is an example. One way engineers and data scientists model the probability of failure is with a <a class="reference external" href="https://byuistats.github.io/M325_Hathaway/textbook/challengerLogisticReg.html">sigmoid function e.g. this Challenger O-ring case study</a></p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-    \sigma(T) = \frac{e^{a_0-a_1 T}}{1+e^{a_0-a_1 T}}
-\end{equation}\]</div>
-<p>The Challenger explosion was a terrible incident that occurred due to the failure of an O-ring. The post-mortem data analysis showed that at low temperatures the O-rings were brittle and more likely to fail. You can use the function <span class="math notranslate nohighlight">\(\sigma(T)\)</span> to determine the point at which there is a 50% chance of O-ring failure. Using the pass-fail data, the two constants are</p>
-<p><span class="math notranslate nohighlight">\(a_0 = 15.043\)</span></p>
-<p><span class="math notranslate nohighlight">\(a_1 = 0.232\)</span></p>
-<p>a. Plot the function <span class="math notranslate nohighlight">\(\sigma(T)\)</span> for <span class="math notranslate nohighlight">\(T=0-100^{o}F\)</span>. Where do you see the function cross 50% (0.5)?</p>
-<p>b. Create two functions <code class="docutils literal notranslate"><span class="pre">f_T</span></code> and <code class="docutils literal notranslate"><span class="pre">dfdT</span></code> where <code class="docutils literal notranslate"><span class="pre">f_T</span></code>=<span class="math notranslate nohighlight">\(f(T)=\sigma(T) - 0.5\)</span> and <code class="docutils literal notranslate"><span class="pre">dfdT</span></code>=<span class="math notranslate nohighlight">\(\frac{df}{dT}\)</span></p>
-<p>c. Use the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> and <code class="docutils literal notranslate"><span class="pre">newtraph</span></code> functions to find the root of f(T). When does Newton-Raphson fail to converge? Why does it fail? <em>Hint: if you’re stuck here, take a look at this <a class="reference external" href="https://youtu.be/zyXRo8Qjj0A">youtube video finding an interval of convergence for the Newton-Raphson method</a>. Look at the animation of how the method converges and diverges.</em></p>
-<ol>
-<li><p>In the examples shown above, you determined the initial velocity after the first bounce by specifying the beginning y(0) and end y(T) for an object subject to gravity and drag. Repeat this analysis for the time period just after the second bounce and just before the third bounce. The indices are given below for t[1430:2051] = 1.43-2.05 seconds.</p>
-<p>a. What is the velocity just after the second bounce?</p>
-<p>b. What is the coefficient of restitution for the second bounce? <em>Hint: use the ratio of the last velocity from above to the initial velocity calculated here.</em></p>
-</li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i0</span><span class="o">=</span><span class="mi">1430</span>
-<span class="n">ie</span><span class="o">=</span><span class="mi">2051</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i0</span><span class="p">],</span><span class="n">t</span><span class="p">[</span><span class="n">ie</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">ie</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">ie</span><span class="p">],</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4300000000009008 2.051000000004969
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f938bae0d30&gt;]
-</pre></div>
-</div>
-<img alt="../_images/04_Getting_to_the_root_56_2.png" src="../_images/04_Getting_to_the_root_56_2.png" />
-</div>
-</div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1396,7 +1415,7 @@ the solve took  3  iterations
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="03_Get_Oscillations.html" title="previous page">Get with the oscillations</a>
-    <a class='right-next' id="next-link" href="../projects/03_IVP-project.html" title="next page">Initial Value Problems - Project</a>
+    <a class='right-next' id="next-link" href="HW_03.html" title="next page">Homework</a>
 
         </div>
         

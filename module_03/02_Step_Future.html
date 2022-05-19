@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -100,6 +102,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -111,18 +118,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,8 +128,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -155,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
      02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/02_Seeing_Stats.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -175,18 +162,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
      04 - Statistics and Monte-Carlo Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html#problems">
-     Problems
+    <a class="reference internal" href="../module_02/HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -208,19 +190,9 @@
      Catch things in motion
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -229,23 +201,124 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_Get_Oscillations.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="04_Getting_to_the_root.html">
      Roots of Nonlinear functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_Getting_to_the_root.html#problems">
-     Problems
+    <a class="reference internal" href="HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -365,92 +438,80 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Step to the future
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-things-up-to-compute-velocity-and-position">
+   Set things up to compute velocity and position
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-through-time">
+   Step through time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#euler-s-method">
+   Euler’s method
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-things-up-to-compute-velocity-and-position">
-     Set things up to compute velocity and position
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-through-time">
-     Step through time
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#euler-s-method">
-     Euler’s method
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#euler-s-method-is-a-first-order-method-because-the-error-in-the-approximation-goes-is-proportional-to-the-first-power-of-the-time-increment-delta-t">
-       <strong>
-        Euler’s method is a first-order method
-       </strong>
-       because the error in the approximation goes is proportional to the first power of the time increment
-       <span class="math notranslate nohighlight">
-        \(\Delta t\)
-       </span>
-       .
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#initial-value-problems">
-     Initial-value problems
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solution-vs-experiment">
-     Numerical solution vs. experiment
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#air-resistance">
-     Air resistance
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#note">
-       Note:
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion">
-     Discussion
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-you-ve-learned">
-     What you’ve learned
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#euler-s-method-is-a-first-order-method-because-the-error-in-the-approximation-goes-is-proportional-to-the-first-power-of-the-time-increment-delta-t">
+     <strong>
+      Euler’s method is a first-order method
+     </strong>
+     because the error in the approximation goes is proportional to the first power of the time increment
+     <span class="math notranslate nohighlight">
+      \(\Delta t\)
+     </span>
+     .
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-value-problems">
+   Initial-value problems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-solution-vs-experiment">
+   Numerical solution vs. experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#air-resistance">
+   Air resistance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note">
+     Note:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-ve-learned">
+   What you’ve learned
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -984,103 +1045,6 @@ range of <span class="math notranslate nohighlight">\(56.0\)</span>–<span clas
 <li><p>Euler method. (2017, October 13). In Wikipedia, The Free Encyclopedia. Retrieved 01:21, November 10, 2017, from https://en.wikipedia.org/w/index.php?title=Euler_method&amp;oldid=805120184</p></li>
 <li><p><em>Computational Physics with Python</em>, lecture notes by Eric Ayars, California State University, Chico. Available online on the author’s youbsite: https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p>Integrate the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> equations for a tennis ball and a <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a> with the same initial conditions as above. Plot the resulting height vs time.</p></li>
-</ol>
-<p><em>Given:</em> y(0) = 1.6 m, v(0) = 0 m/s</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>ball</p></th>
-<th class="head"><p>diameter</p></th>
-<th class="head"><p>mass</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>tennis</p></td>
-<td><p><span class="math notranslate nohighlight">\(6.54\)</span>–<span class="math notranslate nohighlight">\(6.86 \rm{cm}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(56.0\)</span>–<span class="math notranslate nohighlight">\(59.4 \rm{g}\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>lacrosse</p></td>
-<td><p><span class="math notranslate nohighlight">\(6.27\)</span>–<span class="math notranslate nohighlight">\(6.47 \rm{cm}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(140\)</span>–<span class="math notranslate nohighlight">\(147 \rm{g}\)</span></p></td>
-</tr>
-</tbody>
-</table>
-<p>Is there a difference in the two solutions? At what times do the tennis ball and lacrosse balls reach the ground? Which was first?</p>
-<p><img alt="Projectile motion with drag" src="../_images/projectile.png" /></p>
-<p>The figure above shows the forces acting on a projectile object, like the <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a> from <a class="reference external" href="http://www.flippingphysics.com">Flipping Physics</a> that you analyzed in <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">lesson 01_Catch_Motion</span></a>. Consider the 2D motion of the <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a>, now the state vector has two extra variables,</p>
-<p>\begin{equation}
-\mathbf{y} = \begin{bmatrix}
-x \ v_x \
-y \ v_y
-\end{bmatrix},
-\end{equation}</p>
-<p>and its derivative is now,</p>
-<p>\begin{equation}
-\dot{\mathbf{y}} = \begin{bmatrix}
-v_x \ -c v_x^2 \
-v_y \ g - cv_y^2
-\end{bmatrix},
-\end{equation}</p>
-<p>where <span class="math notranslate nohighlight">\(c= \frac{1}{2} \pi R^2 \rho C_d\)</span>.</p>
-<ol>
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">projectile_drag</span></code> function that returns the derivative of <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, given <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> e.g.</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{\dot{y}} = projectile\_drag(\mathbf{y})\)</span></p>
-<p>Below is the start of a function definition, be sure to update the help file.</p>
-</li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">projectile_drag</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">C_d</span><span class="o">=</span><span class="mf">0.47</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mf">0.143</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="mf">0.0661</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
-<span class="sd">    for the fall of a projectile lacrosee ball, with drag, in SI units.</span>
-<span class="sd">    </span>
-<span class="sd">    Arguments</span>
-<span class="sd">    ----------    </span>
-<span class="sd">    state : array of two dependent variables [y v]^T</span>
-<span class="sd">    m : mass in kilograms default set to 0.143 kg (mass of lax ball source wiki)</span>
-<span class="sd">    C_d : drag coefficient for a sphere default set to 0.47 (no units)</span>
-<span class="sd">    R : radius of ball default in meters is 0.0661/2 m (tennis ball)</span>
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    derivs: array of four derivatives [?? ?? ?? ??]</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.22</span>   <span class="c1"># air density kg/m^3</span>
-    <span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-
-    <span class="k">return</span> <span class="n">derivs</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="simple">
-<li><p>Integrate your <code class="docutils literal notranslate"><span class="pre">projectile_drag</span></code> function using the Euler integration method. Use initial conditions from the saved data in lesson  <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01_Catch_Motion</span></a>, there is a numpy <code class="docutils literal notranslate"><span class="pre">npz</span></code> file in the data folder if you want to check your results from lesson 1. The initial conditions in the provided npz file are</p></li>
-</ol>
-<p>\begin{equation}
-\mathbf{y}(0) = \begin{bmatrix}
-x(0) \ v_x(0) \
-y(0) \ v_y(0)
-\end{bmatrix}
-= \begin{bmatrix}
-0.5610~m \ 2.6938~m/s \
--0.1858~m \ -0.0759~m/s
-\end{bmatrix},
-\end{equation}</p>
-<p>Compare your converged numerical integration to the data points in <span class="xref myst">projectile_coords.npz</span>. Is there a noticeable effect of drag on the lacrosse ball?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">npz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/projectile_coords.npz&#39;</span><span class="p">)</span>
-<span class="n">t3</span><span class="o">=</span><span class="n">npz</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span>
-<span class="n">x3</span><span class="o">=</span><span class="n">npz</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
-<span class="n">y3</span><span class="o">=</span><span class="n">npz</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 

@@ -1,0 +1,1407 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Regression Algebra &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_01/HW_01.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../module_02/README.html">
+   Computational Mechanics 02 - Analyze Data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_02/01_Cheers_Stats_Beers.html">
+     01 - Cheers!  Stats with Beers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_02/02_Seeing_Stats.html">
+     02 - Seeing stats in a new light
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_02/03_Linear_Regression_with_Real_Data.html">
+     03 - Linear regression with real data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_02/04_Stats_and_Montecarlo.html">
+     04 - Statistics and Monte-Carlo Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_02/HW_02.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/02_Analyze-data_project.html">
+     Project #02 - NYSE random walk predictor
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../module_03/README.html">
+   Computational Mechanics 03- Initial Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_03/01_Catch_Motion.html">
+     Catch things in motion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_03/02_Step_Future.html">
+     Step to the future
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_03/03_Get_Oscillations.html">
+     Get with the oscillations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_03/04_Getting_to_the_root.html">
+     Roots of Nonlinear functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_03/HW_03.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/03_IVP-project.html">
+     Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/module_04/notebooks/03_Linear-regression-algebra.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_04/notebooks/03_Linear-regression-algebra.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_04/notebooks/03_Linear-regression-algebra.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_04/notebooks/03_Linear-regression-algebra.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Linear Regression Algebra
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomials">
+     Polynomials
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reframe-the-least-square-problem">
+     Reframe the least-square problem
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-coefficient-of-determination">
+     General Coefficient of Determination
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discussion">
+       Discussion
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overfitting-warning">
+     Overfitting Warning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nanonindentation-data-engineering-model-vs-higher-order-fit">
+     Nanonindentation data engineering model vs higher-order fit
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#build-a-statistical-model-with-python-s-statsmodel">
+       Build a statistical model with Python’s Statsmodel
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#higher-order-fitting">
+     Higher order fitting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-testing-curve">
+     Training-testing curve
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Exercise
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#beyond-polynomials">
+       Beyond polynomials
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fitting-the-global-temperature-anomolies-again">
+     Fitting the Global Temperature Anomolies again
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-ve-learned">
+     What You’ve Learned
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="linear-regression-algebra">
+<h1>Linear Regression Algebra<a class="headerlink" href="#linear-regression-algebra" title="Permalink to this headline">¶</a></h1>
+<p>In the second Module <span class="xref myst">CompMech02-Analyze-Data</span>, you
+imported data from the <a class="reference external" href="https://www.ncdc.noaa.gov/cag/">NOAA</a> (National
+Oceanic and Atmospheric Administration) youbpage. Then, you did a
+piece-wise linear regression fit, but the lines youre disconnected. In
+this notebook, you will look at <strong>general linear regression</strong>, which is
+framing the our <strong>least-sum-of-squares error</strong> as a linear algebra
+problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="polynomials">
+<h2>Polynomials<a class="headerlink" href="#polynomials" title="Permalink to this headline">¶</a></h2>
+<p>In general, you may want to fit other polynomials besides degree-1
+(straight-lines). You used the <code class="docutils literal notranslate"><span class="pre">numpy.polyfit</span></code> to accomplish this task
+before
+<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">[1]</a>.</p>
+<p><span class="math notranslate nohighlight">\(y=a_{0}+a_{1}x+a_{2}x^{2}+\cdots+a_{m}x^{m}+e\)</span></p>
+<p>Now, the solution for <span class="math notranslate nohighlight">\(a_{0},~a_{1},...a_{m}\)</span> is the minimization of m+1-dependent linear equations.</p>
+<p>Consider the following data:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>x</p></th>
+<th class="head"><p>y</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.00</p></td>
+<td><p>21.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>2.00</p></td>
+<td><p>20.84</p></td>
+</tr>
+<tr class="row-even"><td><p>4.00</p></td>
+<td><p>23.19</p></td>
+</tr>
+<tr class="row-odd"><td><p>6.00</p></td>
+<td><p>22.69</p></td>
+</tr>
+<tr class="row-even"><td><p>8.00</p></td>
+<td><p>30.27</p></td>
+</tr>
+<tr class="row-odd"><td><p>10.00</p></td>
+<td><p>40.11</p></td>
+</tr>
+<tr class="row-even"><td><p>12.00</p></td>
+<td><p>43.31</p></td>
+</tr>
+<tr class="row-odd"><td><p>14.00</p></td>
+<td><p>54.79</p></td>
+</tr>
+<tr class="row-even"><td><p>16.00</p></td>
+<td><p>70.88</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.00</p></td>
+<td><p>89.48</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xy_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/xy_data.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">xy_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">y</span><span class="o">=</span><span class="n">xy_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">xy_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/xy_data.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">x</span><span class="o">=</span><span class="n">xy_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">];</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y</span><span class="o">=</span><span class="n">xy_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="nn">File ~/.conda/envs/work/lib/python3.9/site-packages/numpy/lib/npyio.py:1065,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, like)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1063</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os_fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1064</span> <span class="k">if</span> <span class="n">_is_string_like</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1065</span>     <span class="n">fh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1066</span>     <span class="n">fencoding</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">,</span> <span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1067</span>     <span class="n">fh</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
+
+<span class="nn">File ~/.conda/envs/work/lib/python3.9/site-packages/numpy/lib/_datasource.py:194,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">194</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
+
+<span class="nn">File ~/.conda/envs/work/lib/python3.9/site-packages/numpy/lib/_datasource.py:531,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">531</span>     <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> not found.&quot;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
+
+<span class="ne">OSError</span>: ../data/xy_data.csv not found.
+</pre></div>
+</div>
+</div>
+</div>
+<p>A general polynomial decription of our function, <span class="math notranslate nohighlight">\(f(\mathbf{x}),~and~\mathbf{y}\)</span> is that you have <span class="math notranslate nohighlight">\(m+1\)</span> unknown coefficients, where <span class="math notranslate nohighlight">\(m\)</span> is the degree of the polynomial, and <span class="math notranslate nohighlight">\(n\)</span> independent equations. In the example framed below, you are choosing a second-order polnomial fit.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{x}^0 a_0+\mathbf{x}^1 a_1+\mathbf{x}^2 a_2+\mathbf{e}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y}=\left[\mathbf{Z}\right]\mathbf{a}+\mathbf{e}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{a}=\left[\begin{array}{c}
+        a_{0}\\
+        a_{1}\\
+        a_{2}\end{array}\right]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y}=\left[\begin{array} 
+ 1y_{1}  \\
+ y_{2}  \\
+ y_{3}  \\
+ y_{4}  \\
+ y_{5}  \\
+ y_{6}  \\
+ y_{7}  \\
+ y_{8}  \\
+ y_{9}  \\
+ y_{10} \end{array}\right]\)</span>
+<span class="math notranslate nohighlight">\(~~~~[\mathbf{Z}]=\left[\begin{array} 
+11 &amp; x_{1} &amp; x_{1}^{2} \\
+1 &amp; x_{2} &amp; x_{2}^{2} \\
+1 &amp; x_{3} &amp; x_{3}^{2} \\
+1 &amp; x_{4} &amp; x_{4}^{2} \\
+1 &amp; x_{5} &amp; x_{5}^{2} \\
+1 &amp; x_{6} &amp; x_{6}^{2} \\
+1 &amp; x_{7} &amp; x_{7}^{2} \\
+1 &amp; x_{8} &amp; x_{8}^{2} \\
+1 &amp; x_{9} &amp; x_{9}^{2} \\
+1 &amp; x_{10} &amp; x_{10}^{2} \end{array}\right]\)</span></p>
+<p>The sum of squares residuals for this model is formed by solving for <span class="math notranslate nohighlight">\(\mathbf{e}\)</span>, then summing the square of the elements</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{e} = \mathbf{y}-\mathbf{Za}\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_{r}=\sum_{i=1}^{n}\left(y_{i}-\sum_{j=0}^{m}a_{j}z_{ji}\right)^2\)</span></p>
+<p>Minimizing this function, <span class="math notranslate nohighlight">\(S_r\)</span> results in the following set of linear equations,</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y}=[\mathbf{Z}]\mathbf{a}\)</span></p>
+<p>-&gt;<strong>A standard Linear Algebra Problem</strong></p>
+<p><em>the vector a is unknown, and Z is calculated based upon the assumed function</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">],[</span><span class="n">x</span><span class="p">],[</span><span class="n">x</span><span class="o">**</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">Z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  0.,   0.,   1.],
+       [  4.,   2.,   1.],
+       [ 16.,   4.,   1.],
+       [ 36.,   6.,   1.],
+       [ 64.,   8.,   1.],
+       [100.,  10.,   1.],
+       [144.,  12.,   1.],
+       [196.,  14.,   1.],
+       [256.,  16.,   1.],
+       [324.,  18.,   1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try to solve the problem using the built-in <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="go">---------------------------------------------------------------------------</span>
+<span class="go">LinAlgError                               Traceback (most recent call last)</span>
+<span class="go">&lt;ipython-input-4-7141fd6fdc3e&gt; in &lt;module&gt;</span>
+<span class="go">----&gt; 1 np.linalg.solve(Z,y)</span>
+
+<span class="go">&lt;__array_function__ internals&gt; in solve(*args, **kwargs)</span>
+
+<span class="go">~/.conda/envs/work/lib/python3.9/site-packages/numpy/linalg/linalg.py in solve(a, b)</span>
+<span class="go">    378     a, _ = _makearray(a)</span>
+<span class="go">    379     _assert_stacked_2d(a)</span>
+<span class="go">--&gt; 380     _assert_stacked_square(a)</span>
+<span class="go">    381     b, wrap = _makearray(b)</span>
+<span class="go">    382     t, result_t = _commonType(a, b)</span>
+
+<span class="go">~/.conda/envs/work/lib/python3.9/site-packages/numpy/linalg/linalg.py in _assert_stacked_square(*arrays)</span>
+<span class="go">    201         m, n = a.shape[-2:]</span>
+<span class="go">    202         if m != n:</span>
+<span class="go">--&gt; 203             raise LinAlgError(&#39;Last 2 dimensions of the array must be square&#39;)</span>
+<span class="go">    204 </span>
+<span class="go">    205 def _assert_finite(*arrays):</span>
+
+<span class="go">LinAlgError: Last 2 dimensions of the array must be square</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reframe-the-least-square-problem">
+<h2>Reframe the least-square problem<a class="headerlink" href="#reframe-the-least-square-problem" title="Permalink to this headline">¶</a></h2>
+<p>The solving routines that you have used (<code class="docutils literal notranslate"><span class="pre">linalg.solve</span></code> and <strong>Gauss elimination</strong>) all require a square matrix, so an <span class="math notranslate nohighlight">\(m\times m\)</span> matrix. For <span class="math notranslate nohighlight">\(m\)</span> unknowns, there should be <span class="math notranslate nohighlight">\(m\)</span> equations. Let’s revisit the least squares regression description</p>
+<p><span class="math notranslate nohighlight">\(~~\mathbf{y}~~~~~=~~[\mathbf{Z}]~~~~~~\mathbf{a}\)</span></p>
+<p><span class="math notranslate nohighlight">\([n\times 1]~ [n\times m][m\times 1]\)</span></p>
+<p>or for the second-order polynomial and 10 x- and y-points,</p>
+<p><span class="math notranslate nohighlight">\(~~\mathbf{y}~~~~~=~~[\mathbf{Z}]~~~~~~\mathbf{a}\)</span></p>
+<p><span class="math notranslate nohighlight">\([10\times 1]~ [10\times 3][3\times 1]\)</span></p>
+<p>One way to make any matrix square is to multiply the matrix by its transpose, <span class="math notranslate nohighlight">\(Z^T Z\)</span> is <span class="math notranslate nohighlight">\([3\times 10][10 \times 3]=[3 \times 3]\)</span></p>
+<p><span class="math notranslate nohighlight">\(~~~~~~~~~~~\mathbf{Z^Ty}~~~~~~~=~~~~~~~~[\mathbf{Z^T Z}]~~~~~~~~~~~\mathbf{a}\)</span></p>
+<p><span class="math notranslate nohighlight">\(|[3\times 10][10\times 1]|~ |[3\times 10][10\times 3]|[3\times 1]\)</span></p>
+<p>Our final least squares linear regression is as follows</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Z^Ty}=[\mathbf{Z^T Z}]\mathbf{a}\)</span></p>
+<p>which is a <span class="math notranslate nohighlight">\([3\times 1]=[3 \times 3][3 \times 1]\)</span>, set of equations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{code-cell} ipython3
+a = np.linalg.solve(Z.T@Z,Z.T@y)
+a
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_fcn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Z</span><span class="nd">@a</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;quadratic fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_Linear-regression-algebra_7_0.png" src="../../_images/03_Linear-regression-algebra_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>The quadratic curve plotted should be smooth, but matplotlib connected each (x,y)-location provided with straight lines. Plot the quadratic fit with 50 x-data points to make it smooth.</p>
+</div>
+<div class="section" id="general-coefficient-of-determination">
+<h2>General Coefficient of Determination<a class="headerlink" href="#general-coefficient-of-determination" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>coefficient of determination</strong> is a measure of how much the standard deviation is due to random error when the data is fit to a function. You make the assumption that the data has some underlying correlation in the form of a function <span class="math notranslate nohighlight">\(\mathbf{y}=f(\mathbf{x})\)</span>. So if you subtract the measured <span class="math notranslate nohighlight">\(\mathbf{y}-f(\mathbf{x})\)</span> the result should be random error associated with noise [4].</p>
+<p>The general coefficient of determination is defined as <span class="math notranslate nohighlight">\(r^2\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(r^{2}=\frac{S_{t}-S_{r}}{S_{t}}=1-\frac{S_{r}}{S_t}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is the correlation coefficient, <span class="math notranslate nohighlight">\(S_t\)</span> is the standard deviation of the measured <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, and <span class="math notranslate nohighlight">\(S_r\)</span> is the standard deviation of the <strong>residuals</strong>, <span class="math notranslate nohighlight">\(\mathbf{e} = \mathbf{y}-f(\mathbf{x}) = \mathbf{y}-\mathbf{Za}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">St</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">Sr</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">Z</span><span class="nd">@a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r2</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">Sr</span><span class="o">/</span><span class="n">St</span><span class="p">;</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r2</span><span class="p">);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the coefficient of determination for this fit is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the correlation coefficient this fit is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the coefficient of determination for this fit is 0.9111905603853598
+the correlation coefficient this fit is 0.954563020646285
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h3>
+<p>What is the highest possible coefficient of determination? If its maximized, is that a <em>good</em> thing?</p>
+</div>
+<div class="section" id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Compare the coefficient of determination for a straight line <em>(you have to do a fit)</em> to the quadratic fit <em>(done above)</em>. Which one is a better fit?</p>
+</div>
+</div>
+<div class="section" id="overfitting-warning">
+<h2>Overfitting Warning<a class="headerlink" href="#overfitting-warning" title="Permalink to this headline">¶</a></h2>
+<p><strong>Coefficient of determination reduction does not always mean a better fit</strong></p>
+<p>You will always increase the coefficient of determination and decrease the total sum of squares error by adding more terms to your function. This is called <strong>overfitting</strong> your data. It is especially evident in polynomial fits, because they can behave unpredictably with higher order terms.</p>
+</div>
+<div class="section" id="nanonindentation-data-engineering-model-vs-higher-order-fit">
+<h2>Nanonindentation data engineering model vs higher-order fit<a class="headerlink" href="#nanonindentation-data-engineering-model-vs-higher-order-fit" title="Permalink to this headline">¶</a></h2>
+<p>Now, use experimental data from some <a class="reference external" href="https://pdfs.semanticscholar.org/68c4/0c4eef562e2ac785fb7b4bcd6ee8229f2424.pdf">atomic force microscope nanoindentation of <span class="math notranslate nohighlight">\(MoS_2\)</span> [2]</a>. One of the nanoidentation experimental data files is in the data folder (<code class="docutils literal notranslate"><span class="pre">../data/mos2_afm.csv</span></code>).</p>
+<p>The experiment pushes an AFM tip into the center of a hole covered with
+a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0.6-nm thick. A diagram is shown below.</p>
+<img src="https://github.com/cooperrc/computational-mechanics/blob/master/images/afm_mos2.png?raw=true" style="width: 300px;"/> 
+<p>As the center of a thin sheet of <span class="math notranslate nohighlight">\(MoS_2\)</span> is pushed downwards the tension increases, resulting in higher measured force. An engineering equation for this increase in force is as such</p>
+<p><span class="math notranslate nohighlight">\(F = A\delta + B \delta^3\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the deflection of the sheet (z in the data), <span class="math notranslate nohighlight">\(A=\pi\sigma_0t\)</span>,  <span class="math notranslate nohighlight">\(B=1.09Et/r^2\)</span>, <span class="math notranslate nohighlight">\(\sigma_0\)</span> is the prestress in the sheet, <span class="math notranslate nohighlight">\(E\)</span> is the Young’s modulus, <span class="math notranslate nohighlight">\(t=0.6~nm\)</span> is the thickness, and <span class="math notranslate nohighlight">\(r=260~nm\)</span> is the radius of the sheet (they youre designed to be 250 nm, but there is some variation in microfabrication).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> head ../data/mos2_afm.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z (nm),F (nN)
+0,0
+-0.011669,0.9
+-0.0058346,0.45
+0.3075,-1.35
+0.29583,-0.45
+0.5725,1.35
+0.57833,0.9
+0.5607,2.26
+0.85666,1.8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="build-a-statistical-model-with-python-s-statsmodel">
+<h3>Build a statistical model with Python’s Statsmodel<a class="headerlink" href="#build-a-statistical-model-with-python-s-statsmodel" title="Permalink to this headline">¶</a></h3>
+<p>In the first Linear regression example in linear algebra, you built the <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> matrix and set up the least squares problem in the form</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Z}^T\mathbf{ZA} = \mathbf{Z}^T\mathbf{y}\)</span>.</p>
+<p>Now, try using the <a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html"><code class="docutils literal notranslate"><span class="pre">statsmodel.ols</span></code></a> ordinary least squares statistical model solution. You use <code class="docutils literal notranslate"><span class="pre">ols</span></code> in two steps</p>
+<ol class="simple">
+<li><p>build the model with the function and the measurements, <span class="math notranslate nohighlight">\(\mathbf{Z}~and~\mathbf{y}\)</span></p></li>
+<li><p>use the <code class="docutils literal notranslate"><span class="pre">fit</span></code> function to get statistical information about your best-fit model</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">mos2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/mos2_afm.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">mos2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># deflection data</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">mos2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># force data</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">d</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">**</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">F</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you have a variable, <code class="docutils literal notranslate"><span class="pre">model</span></code>, that contains the measured values of force and assumed function, <span class="math notranslate nohighlight">\(F=A_0 \delta^3 + A_1 \delta^1\)</span>. Save the statistical output in the variable <code class="docutils literal notranslate"><span class="pre">results</span></code>. The <code class="docutils literal notranslate"><span class="pre">statsmodel</span></code> fit contains <em>a lot</em> of information. For now, look at two of the outputs</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">results.params</span></code>: the coefficients <span class="math notranslate nohighlight">\(A_0~and~A_1\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">results.summary</span></code>: a statistical report on the best-fit model including</p>
+<ul class="simple">
+<li><p>standard error of coefficients, <strong>std error</strong></p></li>
+<li><p>coefficient of determination <strong>R-squared</strong></p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coeffictients are A0 = </span><span class="si">{}</span><span class="s1">, A1 = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">A</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Statsmodel summary of model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;afm data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">Z</span><span class="nd">@results</span><span class="o">.</span><span class="n">params</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;best fit curve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Best fit curve and AFM data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;deflection (nm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Force (nN)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>coeffictients are A0 = 0.0018921394737263877, A1 = 1.5811965217538113
+Statsmodel summary of model
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared (uncentered):</th>      <td>   0.999</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared (uncentered):</th> <td>   0.999</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>          <td>4.496e+05</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 17 Nov 2021</td> <th>  Prob (F-statistic):</th>           <td>  0.00</td>  
+</tr>
+<tr>
+  <th>Time:</th>                 <td>11:55:17</td>     <th>  Log-Likelihood:    </th>          <td> -1227.5</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   460</td>      <th>  AIC:               </th>          <td>   2459.</td> 
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   458</td>      <th>  BIC:               </th>          <td>   2467.</td> 
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>              <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>              <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+   <td></td>     <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>x1</th> <td>    0.0019</td> <td> 7.29e-06</td> <td>  259.384</td> <td> 0.000</td> <td>    0.002</td> <td>    0.002</td>
+</tr>
+<tr>
+  <th>x2</th> <td>    1.5812</td> <td>    0.013</td> <td>  117.560</td> <td> 0.000</td> <td>    1.555</td> <td>    1.608</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>137.172</td> <th>  Durbin-Watson:     </th> <td>   0.373</td> 
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td> 630.686</td> 
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-1.235</td>  <th>  Prob(JB):          </th> <td>1.12e-137</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 8.177</td>  <th>  Cond. No.          </th> <td>4.72e+03</td> 
+</tr>
+</table><br/><br/>Notes:<br/>[1] R² is computed without centering (uncentered) since the model does not contain a constant.<br/>[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[3] The condition number is large, 4.72e+03. This might indicate that there are<br/>strong multicollinearity or other numerical problems.</div><img alt="../../_images/03_Linear-regression-algebra_20_2.png" src="../../_images/03_Linear-regression-algebra_20_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>results<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Type:</span>            RegressionResultsWrapper
+<span class=" -Color -Color-Red">String form:</span>     &lt;statsmodels.regression.linear_model.RegressionResultsWrapper object at 0x7f9df1c66370&gt;
+<span class=" -Color -Color-Red">File:</span>            ~/.conda/envs/work/lib/python3.9/site-packages/statsmodels/regression/linear_model.py
+<span class=" -Color -Color-Red">Docstring:</span>      
+Results class for for an OLS model.
+
+Parameters
+----------
+model : RegressionModel
+    The regression model instance.
+params : ndarray
+    The estimated parameters.
+normalized_cov_params : ndarray
+    The normalized covariance parameters.
+scale : float
+    The estimated scale of the residuals.
+cov_type : str
+    The covariance estimator used in the results.
+cov_kwds : dict
+    Additional keywords used in the covariance specification.
+use_t : bool
+    Flag indicating to use the Student&#39;s t in inference.
+**kwargs
+    Additional keyword arguments used to initialize the results.
+
+See Also
+--------
+RegressionResults
+    Results store for WLS and GLW models.
+
+Notes
+-----
+Most of the methods and attributes are inherited from RegressionResults.
+The special methods that are only available for OLS are:
+
+- get_influence
+- outlier_test
+- el_test
+- conf_int_el
+<span class=" -Color -Color-Red">Class docstring:</span>
+Class which wraps a statsmodels estimation Results class and steps in to
+reattach metadata to results (if available)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Youngs modulus from fit = </span><span class="si">{:.0f}</span><span class="s1"> GPa&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mf">1.09</span><span class="o">/</span><span class="mf">0.61</span><span class="o">*</span><span class="mi">260</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Youngs modulus reported = 210 GPa&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Youngs modulus from fit = 192 GPa
+Youngs modulus reported = 210 GPa
+----------------
+the coefficient of determination for this fit is 0.967
+the correlation coefficient this fit is 0.983
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="higher-order-fitting">
+<h2>Higher order fitting<a class="headerlink" href="#higher-order-fitting" title="Permalink to this headline">¶</a></h2>
+<p>Since, you have lots of data you can use as large of a polynomial fit as you want too, so let’s also fit higher order polynomials and see if you can get a better function for force-vs-deflection, <span class="math notranslate nohighlight">\(F(\delta)\)</span>. First, you will separate the data into <strong>training</strong> and <strong>testing</strong> datasets [5].</p>
+<ul class="simple">
+<li><p>The <strong>training</strong> data set will be used to fit our model to our data</p></li>
+<li><p>The <strong>testing</strong> data will be left out of the fit to test how youll our model predicts data that was not included in a fit</p></li>
+<li><p>You will choose these points at random with an 70%-30% split <strong>train-test</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># randomize testing/training indices</span>
+<span class="n">i_rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">i_rand</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># choose the first half of data as training</span>
+<span class="n">train_per</span><span class="o">=</span><span class="mf">0.7</span>
+<span class="n">d_train</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="n">i_rand</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">train_per</span><span class="p">)]]</span>
+<span class="n">F_train</span><span class="o">=</span><span class="n">F</span><span class="p">[</span><span class="n">i_rand</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">train_per</span><span class="p">)]]</span>
+
+<span class="c1"># choose the second half of data as testing</span>
+<span class="n">d_test</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="n">i_rand</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">train_per</span><span class="p">):]]</span>
+<span class="n">F_test</span><span class="o">=</span><span class="n">F</span><span class="p">[</span><span class="n">i_rand</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">train_per</span><span class="p">):]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_train</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">**</span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2.94819764e+03, 2.05606921e+02, 1.43390000e+01, 1.00000000e+00],
+       [1.20931121e+03, 1.13507716e+02, 1.06540000e+01, 1.00000000e+00],
+       [4.82937995e+03, 2.85711409e+02, 1.69030000e+01, 1.00000000e+00],
+       ...,
+       [1.65686253e+02, 3.01664578e+01, 5.49240000e+00, 1.00000000e+00],
+       [1.37531924e+05, 2.66441792e+03, 5.16180000e+01, 1.00000000e+00],
+       [9.39295651e+04, 2.06633885e+03, 4.54570000e+01, 1.00000000e+00]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_N</span><span class="o">=</span><span class="mi">11</span>
+<span class="n">SSE_train</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">max_N</span><span class="p">)</span>
+<span class="n">SSE_test</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">max_N</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">max_N</span><span class="p">):</span>
+    <span class="n">Z_train</span> <span class="o">=</span> <span class="n">d_train</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">**</span><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">Z_test</span> <span class="o">=</span> <span class="n">d_test</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">**</span><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">F_train</span><span class="p">,</span> <span class="n">Z_train</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span><span class="mi">6</span> <span class="ow">or</span> <span class="n">i</span><span class="o">==</span><span class="mi">29</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_train</span><span class="p">,</span><span class="n">F_train</span><span class="o">-</span><span class="n">Z_train</span><span class="nd">@A</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;order </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">SSE_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">F_train</span><span class="o">-</span><span class="n">Z_train</span><span class="nd">@A</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">F_train</span><span class="p">)</span>
+    <span class="n">SSE_test</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">F_test</span><span class="o">-</span><span class="n">Z_test</span><span class="nd">@A</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">F_test</span><span class="p">)</span>
+    
+<span class="c1">#plt.plot(d,F)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Error in predicted vs measured values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;deflection (nm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;force error</span><span class="se">\n</span><span class="s1">y-Z@A(nN)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_Linear-regression-algebra_27_0.png" src="../../_images/03_Linear-regression-algebra_27_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">)</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">max_N</span><span class="p">),</span><span class="n">SSE_train</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;training error&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">max_N</span><span class="p">),</span><span class="n">SSE_test</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;testing error&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Reduction in error with higher order fits&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;polynomial order&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;total sum of square error&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_train</span><span class="p">,</span><span class="n">Z_train</span><span class="nd">@A</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;train order </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_test</span><span class="p">,</span><span class="n">Z_test</span><span class="nd">@A</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;test order </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;AFM data&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Force-offset for clarity-(nN)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;deflection (nm)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_Linear-regression-algebra_28_0.png" src="../../_images/03_Linear-regression-algebra_28_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="training-testing-curve">
+<h2>Training-testing curve<a class="headerlink" href="#training-testing-curve" title="Permalink to this headline">¶</a></h2>
+<p>Looking at the total error plot on the left, each time you increase the order of the polynomial, the error decreases between the model and the <strong>training</strong> data, but the <strong>testing</strong> data error starts to increase after the polynomial order continues to grow. <em>In general,</em> you should see this trade-off between higher-order models that predict the given points better, but fail to reproduce the data that was left out of the fitting procedure [5].</p>
+<p>In this case, you have a physical model <span class="math notranslate nohighlight">\((F(\delta)=A\delta+B\delta^3)\)</span>, so it would make sense to limit the fit to order 3 or less. Without a physical model, you have to balance the decreased error with the noise introduced. Often you will want to extrapolate the data to make a prediction at another point, such as what is the force when the deflection is 75 nm?</p>
+<p>Let’s take a look at what predictions orders 3, 5, and 7 have.</p>
+<p>You can extrapolate our predictions by creating an extrapolated <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> matrix.</p>
+<p><span class="math notranslate nohighlight">\([\mathbf{Z}]=[\mathbf{x}_{extrap}^0 ~ \mathbf{x}_{extrap}^1 ~ ... ~ \mathbf{x}_{extrap}^n]\)</span></p>
+<p>What you can see below is that the reduced error comes at a cost. Those higher order polynomial terms are unpredictable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_ext</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">Z_ext</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">d_ext</span><span class="o">**</span><span class="mi">0</span><span class="p">],[</span><span class="n">d_ext</span><span class="o">**</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">Z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">d</span><span class="o">**</span><span class="mi">0</span><span class="p">],[</span><span class="n">d</span><span class="o">**</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">max_N</span><span class="o">=</span><span class="mi">8</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">max_N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">Z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Z</span><span class="p">,</span><span class="n">d</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">Z_ext</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Z_ext</span><span class="p">,</span><span class="n">d_ext</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@Z</span><span class="p">,</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@F</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">3</span> <span class="ow">or</span> <span class="n">i</span><span class="o">==</span><span class="mi">5</span> <span class="ow">or</span> <span class="n">i</span><span class="o">==</span><span class="mi">7</span><span class="p">:</span><span class="c1"># or i==20: </span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_ext</span><span class="p">,</span><span class="n">Z_ext</span><span class="nd">@A</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;order </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;afm data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Extrapolated Force predictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;deflection (nm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;force (nN)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">900</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_Linear-regression-algebra_30_0.png" src="../../_images/03_Linear-regression-algebra_30_0.png" />
+</div>
+</div>
+<p>The extrapolated results are much less promising than the <strong>training</strong> and <strong>testing</strong> data predictions. It would be very odd for the force to start to decrease at 70 nm or 58 nm of deflection. All three polynomials seem to capture the testing and training data, but extrapolation should be done with the lower order polynomials.</p>
+<div class="section" id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">../data/xy_data.csv</span></code> data set to create polynomial fits from order 1-7. Divide the data into 70% <strong>training</strong> data and 30% <strong>testing</strong> data. Plot the total error in the <strong>training</strong> and <strong>testing</strong> predictions from your model and plot the order 7 polynomial fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xy_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/xy_data.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">xy_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">y</span><span class="o">=</span><span class="n">xy_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="beyond-polynomials">
+<h3>Beyond polynomials<a class="headerlink" href="#beyond-polynomials" title="Permalink to this headline">¶</a></h3>
+<p>Linear Regression is only limited by the ability to separate the parameters from the function to achieve</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y}=[\mathbf{Z}]\mathbf{a}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> can be any function of the independent variable(s).</p>
+<p><strong>Example</strong>:
+Let’s take some voltage-vs-time data that you know has two frequency components, <span class="math notranslate nohighlight">\(\sin(t)\)</span> and <span class="math notranslate nohighlight">\(\sin(3t)\)</span>. You want to know what amplitudes are associated with each signal.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{V}_{measured}=[\sin(t) \sin(3t)][amp_{1t},~amp_{3t}]^T\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sin_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/sin_data.csv&#39;</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">sin_data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:];</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">sin_data</span><span class="p">[</span><span class="mi">1</span><span class="p">,:];</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;voltage (V)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_Linear-regression-algebra_34_0.png" src="../../_images/03_Linear-regression-algebra_34_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)]])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">amps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@Z</span><span class="p">,</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@V</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Z</span><span class="nd">@amps</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Amplitudes of sin(t) and sin(3t) signals</span><span class="se">\n</span><span class="s1"> </span><span class="si">{:.3f}</span><span class="s1"> V and </span><span class="si">{:.3f}</span><span class="s1"> V&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">amps</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_Linear-regression-algebra_36_0.png" src="../../_images/03_Linear-regression-algebra_36_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fitting-the-global-temperature-anomolies-again">
+<h2>Fitting the Global Temperature Anomolies again<a class="headerlink" href="#fitting-the-global-temperature-anomolies-again" title="Permalink to this headline">¶</a></h2>
+<p>Now, you have the right tools to fit our Global temperature anomolies properly. Let’s create a function with three constants</p>
+<p><span class="math notranslate nohighlight">\(f(t)= A\cdot t+B+ C\cdot H(t-1970)(t)\)</span></p>
+<p>Where, <span class="math notranslate nohighlight">\(A\)</span> is the slope from time 1880-1970, B is the intercept (extrapolated temp anomoly at 0 A.D.), and C is the increase in slope after 1970, activated with a heaviside function, <span class="math notranslate nohighlight">\(H(t-1970)\)</span>. Our regression is still linear because each constant can be pulled out of our function to form <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Temp} = [t~~t^0~~(t-1970)\cdot H(t-1970)][A,~B,~C]^T\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;../data/land_global_temperature_anomaly-1880-2016.csv&#39;</span>
+
+<span class="n">temp_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">temp_data</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">Z</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">t</span><span class="p">],[</span><span class="n">t</span><span class="o">**</span><span class="mi">0</span><span class="p">],[(</span><span class="n">t</span><span class="o">-</span><span class="mi">1970</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">1970</span><span class="p">)]])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is every 10th row of Z&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">[::</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is every 10th row of Z
+---------------------------
+[[1880    1    0]
+ [1890    1    0]
+ [1900    1    0]
+ [1910    1    0]
+ [1920    1    0]
+ [1930    1    0]
+ [1940    1    0]
+ [1950    1    0]
+ [1960    1    0]
+ [1970    1    0]
+ [1980    1   10]
+ [1990    1   20]
+ [2000    1   30]
+ [2010    1   40]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@Z</span><span class="p">,</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@T</span><span class="p">)</span>
+<span class="c1">#print(Z)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;measured anomoly&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Z</span><span class="nd">@fit</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;piece-wise best-fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Piecewise fit to temperature anomoly&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_Linear-regression-algebra_39_0.png" src="../../_images/03_Linear-regression-algebra_39_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="what-you-ve-learned">
+<h2>What You’ve Learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>How to use the <em>general least squares regression</em> method for almost any function</p></li>
+<li><p>How to calculate the coefficient of determination and correlation coefficient for a general least squares regression, <span class="math notranslate nohighlight">\(r^2~ and~ r\)</span></p></li>
+<li><p>How to plot and read a <strong>training-testing</strong> plot</p></li>
+<li><p>How to divide data into <strong>training</strong> and <strong>testing</strong> data for analysis</p></li>
+<li><p>Why you need to avoid <strong>overfitting</strong></p></li>
+<li><p>How to construct general least squares regression using the dependent and independent data to form <span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{Za}\)</span>.</p></li>
+<li><p>How to construct a piecewise linear regression</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">Numpy polyfit documentation</a></p></li>
+<li><p><a class="reference external" href="https://pdfs.semanticscholar.org/68c4/0c4eef562e2ac785fb7b4bcd6ee8229f2424.pdf">Cooper <em>et. al</em> 2014. Nonlinear Elastic Constants of <span class="math notranslate nohighlight">\(MoS_2\)</span>. <em>Phys. Rev. B</em> 2013.</a></p></li>
+<li><p><a class="reference external" href="https://www.cerealsgrains.org/publications/plexus/cfw/pastissues/2013/Documents/CFW-58-3-0139.pdf">Figueroa <em>et al.</em> Stress Relaxation and Creep Recovery Tests Performed on Wheat Kernels Versus Doughs: Influence of Glutenins on Rheological and Quality Properties. </a></p></li>
+<li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> <strong>ch 14.</strong> McGraw Hill.</p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/overfitting-vs-underfitting-a-complete-example-d05dd7e19765">Koerson, William. Overfitting vs. Underfitting: A Complete Example</a></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>One suggestion that came up for the temperature anomoly plot was to use a quadratic, curbic, or higher order function when you first tried fitting piecewise lines to the data in <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech02-Analyze-data/blob/master/notebooks/03_Linear_Regression_with_Real_Data.ipynb">CompMech02-03_Linear_Regression_with_Real_Data.ipynb</a>. Let’s try fitting higher order polynomials to the temperature anomoly data. You can create the <strong>training-testing</strong> curve to see what order polynomial is capturing the most data without overfitting to noise in the measurements.</p></li>
+</ol>
+<p>a. Divide the data into 70% <strong>training</strong> and 30% <strong>testing</strong> data sets</p>
+<p>b. Create the <span class="math notranslate nohighlight">\(\mathbf{Z}_{train}~and~\mathbf{Z}_{test}\)</span>-matrices for the training and testing data for a first order fit</p>
+<p>c. Calculate the constants <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> using the <strong>training</strong> <span class="math notranslate nohighlight">\(\mathbf{Z}_{train}\)</span> data</p>
+<p>d. Sum the squared difference between the predicted anomoly and the measured anomoly.</p>
+<p>e. Repeat b-d for orders 2,3,4,…,10</p>
+<p>f. Plot the error in <strong>testing-training</strong> error vs the order of the polynomial fit</p>
+<p><img src="../images/prony-series.png" style="width: 300px;"/> <img src="../images/stress_relax_wheat.png" style="width: 400px;"/></p>
+<p>Viscoelastic Prony series model and stress-vs-time relaxation curve of wheat kernels <a class="reference external" href="https://www.cerealsgrains.org/publications/plexus/cfw/pastissues/2013/Documents/CFW-58-3-0139.pdf">[3]</a>. Stress relaxation curve of a wheat kernel from regressed equation data that illustrate where to locate relaxation times (vertical dotted lines) and stresses (horizontal black marks). <span class="math notranslate nohighlight">\(\sigma\)</span> = stress; t = time.</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Viscoelasticity">Viscoelasticity</a> is a property of materials that exhibit stiffness, but also tend to flow slowly. One example is <a class="reference external" href="https://en.wikipedia.org/wiki/Silly_Putty">Silly Putty</a>, when you throw a lump it bounces, but if you leave it on a table it <em>creeps</em>, slowly flowing downwards. In the stress-vs-time plot above, a wheat kernel was placed under constant strain and the stress was recorded. In a purely elastic material, the stress would be constant. In a purely viscous material, the stress would decay to 0 MPa.</p></li>
+</ol>
+<p>Here, you have a viscoelastic material, so there is some residual elastic stress as <span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>. The researchers used a 4-part <a class="reference external" href="https://en.wikipedia.org/wiki/Prony%27s_method">Prony series</a> to model viscoelasticity. The function they fit was</p>
+<p><span class="math notranslate nohighlight">\(\sigma(t) = a_1 e^{-t/1.78}+a_2 e^{-t/11}+a_3e^{-t/53}+a_4e^{-t/411}+a_5\)</span></p>
+<p>a. Load the data from the graph shown above in the file <code class="docutils literal notranslate"><span class="pre">../data/stress_relax.dat</span></code>.</p>
+<p>b. Create a <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-matrix to perform the least-squares regression for the given Prony series equation <span class="math notranslate nohighlight">\(\mathbf{y} = \mathbf{Za}\)</span>.</p>
+<p>c. Solve for the constants, <span class="math notranslate nohighlight">\(a_1,~a_2,~a_3,~a_4~,a_5\)</span></p>
+<p>d. Plot the best-fit function and the data from <code class="docutils literal notranslate"><span class="pre">../data/stress_relax.dat</span></code> <em>Use at least 50 points in time to get a smooth best-fit line.</em></p>
+<ol class="simple">
+<li><p>Load the ‘../data/primary-energy-consumption-by-region.csv’ that has the energy consumption of different regions of the world from 1965 until 2018 <a class="reference external" href="https://ourworldindata.org/energy">Our world in Data</a>.
+You are going to compare the energy consumption of the United States to all of Europe. Load the data into a pandas dataframe. <em>Note: you can get certain rows of the data frame by specifying what you’re looking for e.g.
+<code class="docutils literal notranslate"><span class="pre">EUR</span> <span class="pre">=</span> <span class="pre">dataframe[dataframe['Entity']=='Europe']</span></code> will give us all the rows from Europe’s energy consumption.</em></p></li>
+</ol>
+<p>a. Use a piecewise least-squares regression to find a function for the energy consumption as a function of year</p>
+<p>energy consumed = <span class="math notranslate nohighlight">\(f(t) = At+B+C(t-1970)H(t-1970)\)</span></p>
+<p>c. What is your prediction for US energy use in 2025? How about European energy use in 2025?</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_04/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

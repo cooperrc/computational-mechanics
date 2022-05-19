@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework &#8212; Computational Mechanics</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project #02 - NYSE random walk predictor" href="../projects/02_Analyze-data_project.html" />
+    <link rel="prev" title="04 - Statistics and Monte-Carlo Models" href="04_Stats_and_Montecarlo.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Computational Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus - Computational Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_01/README.html">
+   Computational Mechanics 01 - Getting Started
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
+     01 - Interacting with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
+     02 - Working with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/03_Numerical_error.html">
+     03 - Numerical Error
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/01_Getting-started-project.html">
+     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   Computational Mechanics 02 - Analyze Data
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Cheers_Stats_Beers.html">
+     01 - Cheers!  Stats with Beers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Seeing_Stats.html">
+     02 - Seeing stats in a new light
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html">
+     03 - Linear regression with real data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_Stats_and_Montecarlo.html">
+     04 - Statistics and Monte-Carlo Models
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
+     Project #02 - NYSE random walk predictor
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_03/README.html">
+   Computational Mechanics 03- Initial Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
+     Catch things in motion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/02_Step_Future.html">
+     Step to the future
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
+     Get with the oscillations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
+     Roots of Nonlinear functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_03/HW_03.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/03_IVP-project.html">
+     Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/module_02/HW_02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module_02/HW_02.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/HW_02.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/HW_02.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/HW_02.md&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-part-1">
+   Problems
+   <span class="xref myst">
+    Part 1
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-part-2">
+   Problems
+   <span class="xref myst">
+    Part 2
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-part-3">
+   Problems
+   <span class="xref myst">
+    Part 3
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-part-4">
+   Problems
+   <span class="xref myst">
+    Part 4
+   </span>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<div class="section" id="homework">
+<h1>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problems-part-1">
+<h2>Problems <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Gordon Moore created an empirical prediction that the rate of
+semiconductors on a computer chip would double every two years. This
+prediction was known as Moore’s law. Gordon Moore had originally only
+expected this empirical relation to hold from 1965 - 1975
+[<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>],
+but semiconductor manufacturers were able to keep up with Moore’s law
+until 2015.</p></li>
+</ol>
+<p>In the folder “../data” is a comma separated value (CSV) file,
+“transistor_data.csv” <a class="reference external" href="https://en.wikipedia.org/wiki/Transistor_count#Microprocessors">taken from wikipedia
+01/2020</a>.</p>
+<p>a. Use the <code class="docutils literal notranslate"><span class="pre">!head</span> <span class="pre">../data/transistor_data.csv</span></code> command to look at
+the top of the csv. What are the headings for the columns?</p>
+<p>b. Load the csv into a pandas dataframe. How many missing values
+(<code class="docutils literal notranslate"><span class="pre">NaN</span></code>) are
+in the column with the number of transistors? What fraction are
+missing?</p>
+</div>
+<div class="section" id="problems-part-2">
+<h2>Problems <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">Part 2</span></a><a class="headerlink" href="#problems-part-2" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Many beers do not report the IBU of the beer because it is very
+small. You may be accidentally removing whole categories of beer from
+our dataset by removing rows that do not include the IBU measure.</p>
+<p>a. Use the command <code class="docutils literal notranslate"><span class="pre">beers_filled</span> <span class="pre">=</span> <span class="pre">beers.fillna(0)</span></code> to clean the <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe</p>
+<p>b. Repeat the steps above to recreate the plot “Beer ABV vs. IBU mean values by style”
+scatter plot with <code class="docutils literal notranslate"><span class="pre">beers_filled</span></code>. What differences do you notice between the plots?</p>
+</li>
+</ol>
+<ol>
+<li><p>Gordon Moore created an empirical prediction that the rate of
+semiconductors on a computer chip would double every two years. This
+prediction was known as Moore’s law. Gordon Moore had originally only
+expected this empirical relation to hold from 1965 - 1975
+[<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>],
+but semiconductor manufacturers were able to keep up with Moore’s law
+until 2015.</p>
+<p>In the folder “../data” is a comma separated value (CSV) file, “transistor_data.csv” <a class="reference external" href="https://en.wikipedia.org/wiki/Transistor_count#Microprocessors">taken from wikipedia 01/2020</a>.
+Load the csv into a pandas dataframe, it has the following headings:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Processor</p></th>
+<th class="head"><p>MOS transistor count</p></th>
+<th class="head"><p>Date of Introduction</p></th>
+<th class="head"><p>Designer</p></th>
+<th class="head"><p>MOSprocess</p></th>
+<th class="head"><p>Area</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>a. In the years 2017, what was the average MOS transistor count?
+Make a boxplot of the transistor count in 2017 and find the first, second and third quartiles.</p>
+<p>b. Create a semilog y-axis scatter plot (i.e. <code class="docutils literal notranslate"><span class="pre">plt.semilogy</span></code>) for the
+“Date of Introduction” vs “MOS transistor count”.
+Color the data according to the “Designer”.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="problems-part-3">
+<h2>Problems <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html"><span class="doc std std-doc">Part 3</span></a><a class="headerlink" href="#problems-part-3" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>There is a csv file in ‘../data/primary-energy-consumption-by-region.csv’ that has the energy consumption of different regions of the world from 1965 until 2018 <a class="reference external" href="https://ourworldindata.org/energy">Our world in Data</a>.
+Compare the energy consumption of the United States to all of Europe. Load the data into a pandas dataframe. <em>Note: you can get certain rows of the data frame by specifying what you’re looking for e.g.
+<code class="docutils literal notranslate"><span class="pre">EUR</span> <span class="pre">=</span> <span class="pre">dataframe[dataframe['Entity']=='Europe']</span></code> will give us all the rows from Europe’s energy consumption.</em></p>
+<p>a. Plot the total energy consumption of the United States and Europe</p>
+<p>b. Use a linear least-squares regression to find a function for the energy consumption as a function of year</p>
+<p>energy consumed = <span class="math notranslate nohighlight">\(f(t) = At+B\)</span></p>
+<p>c. At what year would you change split the data and use two lines like you did in the
+land temperature anomoly? Split the data and perform two linear fits.</p>
+<p>d. What is your prediction for US energy use in 2025? How about European energy use in 2025?</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/primary-energy-consumption-by-region.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/primary-energy-consumption-by-region.csv&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>You plotted Gordon Moore’s empirical prediction that the rate of semiconductors on a computer chip would double every two years in <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">02_Seeing_Stats</span></a>. This prediction was known as Moore’s law. Gordon Moore had originally only expected this empirical relation to hold from 1965 - 1975 [<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>], but semiconductor manufacuturers were able to keep up with Moore’s law until 2015.</p></li>
+</ol>
+<p>Use a linear regression to find our own historical Moore’s Law.</p>
+<p>Use your code from <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">02_Seeing_Stats</span></a> to plot the semilog y-axis scatter plot
+(i.e. <code class="docutils literal notranslate"><span class="pre">plt.semilogy</span></code>) for the “Date of Introduction” vs “MOS transistor count”.
+Color the data according to the “Designer”.</p>
+<p>Create a linear regression for the data in the form of</p>
+<p><span class="math notranslate nohighlight">\(log(transistor~count)= f(date) = A\cdot date+B\)</span></p>
+<p>rearranging</p>
+<p><span class="math notranslate nohighlight">\(transistor~count= e^{f(date)} = e^B e^{A\cdot date}\)</span></p>
+<p>You can perform a least-squares linear regression using the following assignments</p>
+<p><span class="math notranslate nohighlight">\(x_i=\)</span> <code class="docutils literal notranslate"><span class="pre">dataframe['Date</span> <span class="pre">of</span> <span class="pre">Introduction'].values</span></code></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(y_i=\)</span> as <code class="docutils literal notranslate"><span class="pre">np.log(dataframe['MOS</span> <span class="pre">transistor</span> <span class="pre">count'].values)</span></code></p>
+<p>a. Plot your function on the semilog y-axis scatter plot</p>
+<p>b. What are the values of constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> for our Moore’s law fit? How does this compare to Gordon Moore’s prediction that MOS transistor count doubles every two years?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/transistor_data.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">xi</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date of Introduction&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">TC</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MOS transistor count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problems-part-4">
+<h2>Problems <a class="reference internal" href="04_Stats_and_Montecarlo.html"><span class="doc std std-doc">Part 4</span></a><a class="headerlink" href="#problems-part-4" title="Permalink to this headline">¶</a></h2>
+<p><strong>1.</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/Buffon">Buffon’s needle problem</a> is
+another way to estimate the value of <span class="math notranslate nohighlight">\(\pi\)</span> with random numbers. The goal
+in this Monte Carlo estimate of <span class="math notranslate nohighlight">\(\pi\)</span> is to create a ratio that is close
+to <a class="reference external" href="http://www.math.com/tables/constants/pi.htm">3.1415926…</a> <em>similar
+to the example with darts points lying inside/outside a unit circle
+inside a unit square.</em></p>
+<p><img alt="Buffon's needle for parallellines" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Buffon_needle.gif" /></p>
+<p>In this Monte Carlo estimation, you only need to know two values:</p>
+<ul class="simple">
+<li><p>the distance from line 0, <span class="math notranslate nohighlight">\(x = [0,~1]\)</span></p></li>
+<li><p>the orientation of the needle, <span class="math notranslate nohighlight">\(\theta = [0,~2\pi]\)</span></p></li>
+</ul>
+<p>The y-location does not affect the outcome of crosses line 0 or not
+crossing line 0.</p>
+<p><strong>a.</strong> Generate 100 random <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">theta</span></code> values <em>remember</em> <span class="math notranslate nohighlight">\(\theta =
+[0,~2\pi]\)</span></p>
+<p><strong>b.</strong> Calculate the x locations of the 100 needle ends e.g. <span class="math notranslate nohighlight">\(x_end = x
+\pm \cos\theta\)</span> _since length is unit 1.</p>
+<p><strong>c.</strong> Use
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.logical_and.html"><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code></a>
+to find the number of needles that have minimum <span class="math notranslate nohighlight">\(x_{end~min}&lt;0\)</span> and
+maximum <span class="math notranslate nohighlight">\(x_{end~max}&gt;0\)</span>. The ratio
+<span class="math notranslate nohighlight">\(\frac{x_{end~min}&lt;0~and~x_{end~max}&gt;0}{number~of~needles} =
+\frac{2}{\pi}\)</span> <em>for large values of <span class="math notranslate nohighlight">\(number~of~needles\)</span></em>.</p>
+<p><strong>2.</strong> Build a random walk data set with steps between <span class="math notranslate nohighlight">\(dx = dy =
+-1/2~to~1/2~m\)</span>. If 100 particles take 10 steps, calculate the number of
+particles that move further than 0.5 m.</p>
+<p><em>Bonus: Can you do the work without any <code class="docutils literal notranslate"><span class="pre">for</span></code>-loops? Change the size of
+<code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code> to account for multiple particles.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
+<span class="n">N_steps</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N_steps</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N_steps</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3.</strong> 100 steel rods are going to be used to support a 1000 kg structure. The
+rods will buckle when the load in any rod exceeds the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler%27s_critical_load">critical buckling
+load</a></p>
+<p><span class="math notranslate nohighlight">\(P_{cr}=\frac{\pi^3 Er^4}{16L^2}\)</span></p>
+<p>where E=200e9 Pa, r=0.01 m +/-0.001 m, and L is the
+length of the rods supporting the structure. Create a Monte
+Carlo model <code class="docutils literal notranslate"><span class="pre">montecarlo_buckle</span></code> that predicts
+the mean and standard deviation of the buckling load for 100
+samples with normally distributed dimensions r and L.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mean_buckle_load</span><span class="p">,</span><span class="n">std_buckle_load</span><span class="o">=</span>\
+<span class="n">montecarlo_buckle</span><span class="p">(</span><span class="n">E</span><span class="p">,</span><span class="n">r_mean</span><span class="p">,</span><span class="n">r_std</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>a.</strong> What is the mean_buckle_load and std_buckle_load for L=5 m?</p>
+<p><strong>b.</strong> What length, L, should the beams be so that only 2.5% will
+reach the critical buckling load?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">montecarlo_buckle</span><span class="p">(</span><span class="n">E</span><span class="p">,</span><span class="n">r_mean</span><span class="p">,</span><span class="n">r_std</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Generate N rods of length L with radii of r=r_mean+/-r_std</span>
+<span class="sd">    then calculate the mean and std of the buckling loads in for the</span>
+<span class="sd">    rod population holding a 1000-kg structure</span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    E: Young&#39;s modulus [note: keep units consistent]</span>
+<span class="sd">    r_mean: mean radius of the N rods holding the structure</span>
+<span class="sd">    r_std: standard deviation of the N rods holding the structure</span>
+<span class="sd">    L: length of the rods (or the height of the structure)</span>
+<span class="sd">    N: number of rods holding the structure, default is N=100 rods</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    mean_buckle_load: mean buckling load of N rods under 1000*9.81/N-Newton load</span>
+<span class="sd">    std_buckle_load: std dev buckling load of N rods under 1000*9.81/N-Newton load</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="k">return</span> <span class="n">mean_buckle_load</span><span class="p">,</span> <span class="n">std_buckle_load</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./module_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="04_Stats_and_Montecarlo.html" title="previous page">04 - Statistics and Monte-Carlo Models</a>
+    <a class='right-next' id="next-link" href="../projects/02_Analyze-data_project.html" title="next page">Project #02 - NYSE random walk predictor</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan C. Cooper<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

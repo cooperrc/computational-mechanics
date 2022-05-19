@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -100,6 +102,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -111,18 +118,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,8 +128,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -155,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
      02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/02_Seeing_Stats.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -175,18 +162,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
      04 - Statistics and Monte-Carlo Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html#problems">
-     Problems
+    <a class="reference internal" href="../module_02/HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,18 +191,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="02_Step_Future.html">
      Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_Step_Future.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -229,23 +201,124 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="04_Getting_to_the_root.html">
      Roots of Nonlinear functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_Getting_to_the_root.html#problems">
-     Problems
+    <a class="reference internal" href="HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -365,108 +438,96 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Get with the oscillations
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spring-mass-system">
+   Spring-mass system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-spring-mass-system-without-friction">
+   Simple spring-mass system, without friction.
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spring-mass-system">
-     Spring-mass system
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-spring-mass-system-without-friction">
-     Simple spring-mass system, without friction.
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#system-in-vector-form">
+     System in vector form
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#system-in-vector-form">
-       System in vector form
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise">
+       Exercise:
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#exercise">
-         Exercise:
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#euler-cromer-method">
-     Euler-Cromer method
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sketch-of-two-euler-steps-on-a-curved-function">
-       Sketch of two Euler steps on a curved function.
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-euler-cromer-method-is-first-order-accurate-just-like-euler-s-method-the-global-error-is-proportional-to-delta-t">
-       The Euler-Cromer method is first-order accurate, just like Euler’s method. The global error is proportional to
-       <span class="math notranslate nohighlight">
-        \(\Delta t\)
-       </span>
-       .
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#note">
-         Note:
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convergence">
-     Convergence
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modified-euler-s-method">
-     Modified Euler’s method
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-implicit-integration-approach">
-     An implicit integration approach
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-heun-s-method">
-     Using Heun’s method
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-use-implicit-methods">
-     Why use implicit methods?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion">
-     Discussion
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-you-ve-learned">
-     What you’ve learned
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
-    </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#euler-cromer-method">
+   Euler-Cromer method
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sketch-of-two-euler-steps-on-a-curved-function">
+     Sketch of two Euler steps on a curved function.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-euler-cromer-method-is-first-order-accurate-just-like-euler-s-method-the-global-error-is-proportional-to-delta-t">
+     The Euler-Cromer method is first-order accurate, just like Euler’s method. The global error is proportional to
+     <span class="math notranslate nohighlight">
+      \(\Delta t\)
+     </span>
+     .
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note">
+       Note:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence">
+   Convergence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modified-euler-s-method">
+   Modified Euler’s method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-implicit-integration-approach">
+   An implicit integration approach
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-heun-s-method">
+   Using Heun’s method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-use-implicit-methods">
+   Why use implicit methods?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-ve-learned">
+   What you’ve learned
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -1008,7 +1069,7 @@ e = x_N - x_0 \cos(\omega T)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f532c2632e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6a7dc62be0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/03_Get_Oscillations_48_1.png" src="../_images/03_Get_Oscillations_48_1.png" />
@@ -1190,49 +1251,6 @@ The time increment is 0.3141592653589793
 <li><p>Chapra, Steven, <em>Applied Numerical Methods with MATLAB for Engineers and Scientists</em> 4th edition. ch. 22.3 Improvements to Euler’s method</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p>Show that the implicit Heun’s method has the same second order convergence as the Modified Euler’s method. <em>Hint: you can use the same code from above to create the log-log plot to get the error between <span class="math notranslate nohighlight">\(2\cos(\omega t)\)</span> and the <code class="docutils literal notranslate"><span class="pre">heun_step</span></code> integration. Use the same initial conditions x(0) = 2 m and v(0)=0m/s and the same RHS function, <code class="docutils literal notranslate"><span class="pre">springmass</span></code>.</em></p></li>
-</ol>
-<img src="../images/damped-spring.png" style="width: 400px;"/><ol class="simple">
-<li><p>In the image above, you have a spring, mass, <em>and damper</em>. A damper is designed to slow down a moving object. These devices are typical in automobiles, mountain bikes, doors, any place where oscillations may not be desired, but motion is required. The new differential equation, if F(t)=0, that results from this addition is</p></li>
-</ol>
-<p><span class="math notranslate nohighlight">\(\ddot{x} = -\frac{b}{m}\dot{x} -\frac{k}{m}x\)</span></p>
-<p>or keeping our <em>natural frequency</em> above,</p>
-<p><span class="math notranslate nohighlight">\(\ddot{x} = -\zeta\omega\dot{x} -\omega^2x\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(\zeta\)</span> is a new constant called the <strong>damping ratio</strong> of a system. When <span class="math notranslate nohighlight">\(\zeta\gt 1\)</span>, there are no oscillations and when <span class="math notranslate nohighlight">\(0&lt;\zeta&lt;1\)</span> the system oscillates, but decays to v=0 m/s eventually.</p>
-<p>Create the system of equations that returns the right hand side (RHS) of the state equations, e.g. <span class="math notranslate nohighlight">\(\mathbf{\dot{y}} = f(\mathbf{y}) = RHS\)</span></p>
-<p>Use <span class="math notranslate nohighlight">\(\omega = 2\)</span> rad/s and <span class="math notranslate nohighlight">\(\zeta = 0.2\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">smd</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the spring-mass-damper</span>
-<span class="sd">    differential equation, without friction.</span>
-<span class="sd">    </span>
-<span class="sd">    Arguments</span>
-<span class="sd">    ---------   </span>
-<span class="sd">    state : array of two dependent variables [x, v]^T</span>
-<span class="sd">    </span>
-<span class="sd">    Returns </span>
-<span class="sd">    -------</span>
-<span class="sd">    derivs: array of two derivatives [v, zeta*w*v - w*w*x]^T</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1">## your work here ##</span>
-    
-    <span class="k">return</span> <span class="n">derivs</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="simple">
-<li><p>Use three methods to integrate your <code class="docutils literal notranslate"><span class="pre">smd</span></code> function for 3 time periods of oscillation ( <span class="math notranslate nohighlight">\(t=0...6\pi\)</span> ) and initial conditions x(0)=2 m and v(0)=0 m/s. Plot the three solutions on one graph with labels.</p></li>
-</ol>
-<p>a. Euler integration</p>
-<p>b. second order Runge Kutta method (modified Euler method)</p>
-<p>c. the implicit Heun’s method</p>
-<p>How many time steps does each method need to converge to the same results? <em>Remember that each method has a certain convergence rate</em></p>
 </div>
 
     <script type="text/x-thebe-config">

@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -100,6 +102,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -111,18 +118,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,8 +128,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -155,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="02_Seeing_Stats.html">
      02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_Seeing_Stats.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -175,18 +162,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="04_Stats_and_Montecarlo.html">
      04 - Statistics and Monte-Carlo Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_Stats_and_Montecarlo.html#problems">
-     Problems
+    <a class="reference internal" href="HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,18 +191,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/02_Step_Future.html">
      Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -229,23 +201,124 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
      Roots of Nonlinear functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html#problems">
-     Problems
+    <a class="reference internal" href="../module_03/HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -365,122 +438,110 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   01 - Cheers!  Stats with Beers
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-read-the-data-file">
+   Step 1: Read the data file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-explore-the-data">
+   Step 2: Explore the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-ready-stats-go">
+   Step 3: Ready, stats, go!
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-1-read-the-data-file">
-     Step 1: Read the data file
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maximum-and-minimum">
+     Maximum and minimum
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-2-explore-the-data">
-     Step 2: Explore the data
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-value">
+     Mean value
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variance-and-standard-deviation">
+     Variance and standard deviation
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-3-ready-stats-go">
-     Step 3: Ready, stats, go!
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-vs-population">
+     Sample vs. population
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-code">
+     Let’s code!
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#maximum-and-minimum">
-       Maximum and minimum
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mean-value">
-       Mean value
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#variance-and-standard-deviation">
-       Variance and standard deviation
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sample-vs-population">
-       Sample vs. population
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#let-s-code">
-       Let’s code!
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         Exercise:
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-4-distribution-plots">
-     Step 4: Distribution plots
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploratory-exercise">
-     Exploratory exercise:
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comparing-with-a-normal-distribution">
-       Comparing with a normal distribution
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository">
-         Standard deviation and coverage in a normal distribution. Modified figure based on original from Wikimedia Commons, the free media repository.
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion-point">
-     Discussion point
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-you-ve-learned">
-     What you’ve learned
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#recommended-viewing">
-       Recommended viewing
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Exercise:
       </a>
      </li>
     </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-distribution-plots">
+   Step 4: Distribution plots
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-exercise">
+   Exploratory exercise:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-with-a-normal-distribution">
+     Comparing with a normal distribution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository">
+       Standard deviation and coverage in a normal distribution. Modified figure based on original from Wikimedia Commons, the free media repository.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion-point">
+   Discussion point
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-ve-learned">
+   What you’ve learned
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-viewing">
+     Recommended viewing
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -991,9 +1052,7 @@ The maximum value for ibu is:  138.0
 <p>The <strong>mean</strong> value is one of the main measures to describe the central
 tendency of the data: an indication of where’s the “center” of the data.
 If you have a sample of <span class="math notranslate nohighlight">\(N\)</span> values, <span class="math notranslate nohighlight">\(x_i\)</span>, the mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>, is calculated by:</p>
-<p>\begin{equation*}
-\bar{x} = \frac{1}{N}\sum_{i} x_i
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{N}\sum_{i} x_i\)</span></p>
 <p>In words, that is the sum of the data values divided by the number of values, <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <p>You’ve already learned how to write a function to compute the mean in
 <a class="reference external" href="http://go.gwu.edu/engcomp1lesson5">Module 1 Lesson 5</a>, but you also
@@ -1065,13 +1124,9 @@ negative, you’ll just get zero! It doesn’t work.</p>
 suggest using absolute values. But this is just mathematically
 inconvenient. Another way to get rid of negative values is to take the
 squares. And that’s how you get to the expression for the <em>variance</em>: it is the average of the squares of the deviations from the mean. For a set of <span class="math notranslate nohighlight">\(N\)</span> values,</p>
-<p>\begin{equation*}
-\text{var} = \frac{1}{N}\sum_{i} (x_i - \bar{x})^2
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(\text{var} = \frac{1}{N}\sum_{i} (x_i - \bar{x})^2\)</span></p>
 <p>The variance itself is hard to interpret. The problem with it is that the units are strange (they are the square of the original units). The <strong>standard deviation</strong>, the square root of the variance, is more meaningful because it has the same units as the original variable. Often, the symbol <span class="math notranslate nohighlight">\(\sigma\)</span> is used for it:</p>
-<p>\begin{equation*}
-\sigma = \sqrt{\text{var}} = \sqrt{\frac{1}{N}\sum_{i} (x_i - \bar{x})^2}
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(\sigma = \sqrt{\text{var}} = \sqrt{\frac{1}{N}\sum_{i} (x_i - \bar{x})^2}\)</span></p>
 </div>
 <div class="section" id="sample-vs-population">
 <h3>Sample vs. population<a class="headerlink" href="#sample-vs-population" title="Permalink to this headline">¶</a></h3>
@@ -1081,9 +1136,7 @@ population, the formulas have to be adjusted: instead of dividing by <span class
 you divide by <span class="math notranslate nohighlight">\(N-1\)</span>. This is important, especially when you work with
 real data since usually you have samples of populations.</p>
 <p>The <strong>standard deviation</strong> of a sample is denoted by <span class="math notranslate nohighlight">\(s\)</span>, and the formula is:</p>
-<p>\begin{equation*}<br />
-s = \sqrt{\frac{1}{N-1}\sum_{i} (x_i - \bar{x})^2}
-\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(s = \sqrt{\frac{1}{N-1}\sum_{i} (x_i - \bar{x})^2}\)</span></p>
 <p>Why? This gets a little technical, but the reason is that if you have a
 <em>sample</em> of the population, you don’t know the <em>real</em> value of the mean,
 and <span class="math notranslate nohighlight">\(\bar{x}\)</span> is actually an <em>estimate</em> of the mean. That’s why you’ll
@@ -1587,25 +1640,6 @@ recommended three lectures:</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
-<ol>
-<li><p>Gordon Moore created an empirical prediction that the rate of
-semiconductors on a computer chip would double every two years. This
-prediction was known as Moore’s law. Gordon Moore had originally only
-expected this empirical relation to hold from 1965 - 1975
-[<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>],
-but semiconductor manufacturers were able to keep up with Moore’s law
-until 2015.</p>
-<p>In the folder “../data” is a comma separated value (CSV) file,
-“transistor_data.csv” <a class="reference external" href="https://en.wikipedia.org/wiki/Transistor_count#Microprocessors">taken from wikipedia
-01/2020</a>.</p>
-<p>a. Use the <code class="docutils literal notranslate"><span class="pre">!head</span> <span class="pre">../data/transistor_data.csv</span></code> command to look at
-the top of the csv. What are the headings for the columns?</p>
-<p>b. Load the csv into a pandas dataframe. How many</p>
-</li>
-</ol>
 </div>
 
     <script type="text/x-thebe-config">

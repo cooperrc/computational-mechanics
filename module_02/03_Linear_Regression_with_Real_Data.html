@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -100,6 +102,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -111,18 +118,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,8 +128,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -155,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_Cheers_Stats_Beers.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="02_Seeing_Stats.html">
      02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_Seeing_Stats.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -175,18 +162,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="04_Stats_and_Montecarlo.html">
      04 - Statistics and Monte-Carlo Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_Stats_and_Montecarlo.html#problems">
-     Problems
+    <a class="reference internal" href="HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,18 +191,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/02_Step_Future.html">
      Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -229,23 +201,124 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
      Roots of Nonlinear functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html#problems">
-     Problems
+    <a class="reference internal" href="../module_03/HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -365,100 +438,88 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   03 - Linear regression with real data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#earth-temperature-over-time">
+   Earth temperature over time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-read-a-data-file">
+   Step 1: Read a data file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-plot-the-data">
+   Step 2: Plot the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-least-squares-linear-regression">
+   Step 3: Least-squares linear regression
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#earth-temperature-over-time">
-     Earth temperature over time
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-best-fit">
+     What is the “best” fit?
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-1-read-a-data-file">
-     Step 1: Read a data file
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression">
+     Linear regression
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-2-plot-the-data">
-     Step 2: Plot the data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-3-least-squares-linear-regression">
-     Step 3: Least-squares linear regression
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-is-the-best-fit">
-       What is the “best” fit?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#linear-regression">
-       Linear regression
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#let-s-fit">
-       Let’s fit!
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-4-apply-regression-using-numpy">
-     Step 4: Apply regression using NumPy
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#split-regression">
-     “Split regression”
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion-exercise">
-     Discussion exercise
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#you-learned">
-     you learned:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-fit">
+     Let’s fit!
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-apply-regression-using-numpy">
+   Step 4: Apply regression using NumPy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-regression">
+   “Split regression”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion-exercise">
+   Discussion exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-learned">
+   you learned:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -501,6 +562,7 @@
             src="https://www.youtube.com/embed/gGOzHVUQCw0"
             frameborder="0"
             allowfullscreen
+            
         ></iframe>
         </div></div>
 </div>
@@ -1143,118 +1205,6 @@ Name: Year, dtype: int64
 <li><p><em>Numerical Methods in Engineering with Python 3</em> (2013). Jaan Kiusalaas. Cambridge University Press.</p></li>
 <li><p><em>Effective Computation in Physics: Field Guide to Research with Python</em> (2015). Anthony Scopatz &amp; Kathryn D. Huff. O’Reilly Media, Inc.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
-<ol>
-<li><p>There is a csv file in ‘../data/primary-energy-consumption-by-region.csv’ that has the energy consumption of different regions of the world from 1965 until 2018 <a class="reference external" href="https://ourworldindata.org/energy">Our world in Data</a>.
-We are going to compare the energy consumption of the United States to all of Europe. Load the data into a pandas dataframe. <em>Note: you can get certain rows of the data frame by specifying what you’re looking for e.g.
-<code class="docutils literal notranslate"><span class="pre">EUR</span> <span class="pre">=</span> <span class="pre">dataframe[dataframe['Entity']=='Europe']</span></code> will give us all the rows from Europe’s energy consumption.</em></p>
-<p>a. Plot the total energy consumption of the United States and Europe</p>
-<p>b. Use a linear least-squares regression to find a function for the energy consumption as a function of year</p>
-<p>energy consumed = <span class="math notranslate nohighlight">\(f(t) = At+B\)</span></p>
-<p>c. At what year would you change split the data and use two lines like you did in the
-land temperature anomoly? Split the data and perform two linear fits.</p>
-<p>d. What is your prediction for US energy use in 2025? How about European energy use in 2025?</p>
-</li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/primary-energy-consumption-by-region.csv&#39;</span><span class="p">)</span>
-<span class="n">CAN</span> <span class="o">=</span> <span class="n">energy</span><span class="p">[</span><span class="n">energy</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Canada&#39;</span><span class="p">]</span>
-<span class="n">USA</span> <span class="o">=</span> <span class="n">energy</span><span class="p">[</span><span class="n">energy</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;United States&#39;</span><span class="p">]</span>
-<span class="n">EUR</span> <span class="o">=</span> <span class="n">energy</span><span class="p">[</span><span class="n">energy</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Europe&#39;</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span><span class="s1">&#39;-s&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7b957be310&gt;]
-</pre></div>
-</div>
-<img alt="../_images/03_Linear_Regression_with_Real_Data_56_1.png" src="../_images/03_Linear_Regression_with_Real_Data_56_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">yUSA</span><span class="o">=</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">yEUR</span><span class="o">=</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-
-<span class="n">isplit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">1980</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="n">x1</span> <span class="p">,</span> <span class="n">yUSA1</span><span class="p">,</span> <span class="n">yEUR1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">isplit</span><span class="p">],</span> <span class="n">yUSA</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">isplit</span><span class="p">],</span> <span class="n">yEUR</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">isplit</span><span class="p">]</span>
-<span class="n">x2</span> <span class="p">,</span> <span class="n">yUSA2</span><span class="p">,</span> <span class="n">yEUR2</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">isplit</span><span class="p">:],</span> <span class="n">yUSA</span><span class="p">[</span><span class="n">isplit</span><span class="p">:],</span> <span class="n">yEUR</span><span class="p">[</span><span class="n">isplit</span><span class="p">:]</span>
-
-<span class="n">mUSA1</span><span class="p">,</span> <span class="n">bUSA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">yUSA1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">mUSA2</span><span class="p">,</span> <span class="n">bUSA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">yUSA2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">mEUR1</span><span class="p">,</span> <span class="n">bEUR1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">yEUR1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">mEUR2</span><span class="p">,</span> <span class="n">bEUR2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">yEUR2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span>
-         <span class="n">USA</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span>
-         <span class="s1">&#39;-o&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span>
-         <span class="n">EUR</span><span class="p">[</span><span class="s1">&#39;Primary Energy Consumption (terawatt-hours)&#39;</span><span class="p">],</span>
-         <span class="s1">&#39;-s&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">mUSA1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">bUSA1</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">mUSA2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="n">bUSA2</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">mEUR1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">bEUR1</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">mEUR2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="n">bEUR2</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Energy Consumption (TW-hrs)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Regression of Energy use in USA and EUR</span><span class="se">\n</span><span class="s1">Before/After 1980&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/03_Linear_Regression_with_Real_Data_57_0.png" src="../_images/03_Linear_Regression_with_Real_Data_57_0.png" />
-</div>
-</div>
-<ol class="simple">
-<li><p>You plotted Gordon Moore’s empirical prediction that the rate of semiconductors on a computer chip would double every two years in <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">02_Seeing_Stats</span></a>. This prediction was known as Moore’s law. Gordon Moore had originally only expected this empirical relation to hold from 1965 - 1975 [<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>], but semiconductor manufacuturers were able to keep up with Moore’s law until 2015.</p></li>
-</ol>
-<p>Use a linear regression to find our own historical Moore’s Law.</p>
-<p>Use your code from <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">02_Seeing_Stats</span></a> to plot the semilog y-axis scatter plot
-(i.e. <code class="docutils literal notranslate"><span class="pre">plt.semilogy</span></code>) for the “Date of Introduction” vs “MOS transistor count”.
-Color the data according to the “Designer”.</p>
-<p>Create a linear regression for the data in the form of</p>
-<p><span class="math notranslate nohighlight">\(log(transistor~count)= f(date) = A\cdot date+B\)</span></p>
-<p>rearranging</p>
-<p><span class="math notranslate nohighlight">\(transistor~count= e^{f(date)} = e^B e^{A\cdot date}\)</span></p>
-<p>You can perform a least-squares linear regression using the following assignments</p>
-<p><span class="math notranslate nohighlight">\(x_i=\)</span> <code class="docutils literal notranslate"><span class="pre">dataframe['Date</span> <span class="pre">of</span> <span class="pre">Introduction'].values</span></code></p>
-<p>and</p>
-<p><span class="math notranslate nohighlight">\(y_i=\)</span> as <code class="docutils literal notranslate"><span class="pre">np.log(dataframe['MOS</span> <span class="pre">transistor</span> <span class="pre">count'].values)</span></code></p>
-<p>a. Plot your function on the semilog y-axis scatter plot</p>
-<p>b. What are the values of constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> for our Moore’s law fit? How does this compare to Gordon Moore’s prediction that MOS transistor count doubles every two years?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/transistor_data.csv&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">xi</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date of Introduction&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">TC</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;MOS transistor count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-
-<span class="n">yi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">TC</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">yi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">TC</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;MOS transistor count&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">xi</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;linear regression&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MOS transistor count of all Designers</span><span class="se">\n</span><span class="s1">every two years </span><span class="se">\n</span><span class="s1">Transistor count was x</span><span class="si">{:.2f}</span><span class="s1"> higher&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="mi">2</span><span class="p">)))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;year introduced&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# of transistors&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/03_Linear_Regression_with_Real_Data_59_0.png" src="../_images/03_Linear_Regression_with_Real_Data_59_0.png" />
-</div>
 </div>
 </div>
 

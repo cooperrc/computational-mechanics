@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -56,7 +58,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project #02 - NYSE random walk predictor" href="../projects/02_Analyze-data_project.html" />
+    <link rel="next" title="Homework" href="HW_02.html" />
     <link rel="prev" title="03 - Linear regression with real data" href="03_Linear_Regression_with_Real_Data.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -100,6 +102,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -111,18 +118,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,8 +128,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -155,28 +152,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_Cheers_Stats_Beers.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="02_Seeing_Stats.html">
      02 - Seeing stats in a new light
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_Seeing_Stats.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html">
      03 - Linear regression with real data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -185,8 +167,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#problems">
-     Problems
+    <a class="reference internal" href="HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,18 +191,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/02_Step_Future.html">
      Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -229,23 +201,124 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
      Roots of Nonlinear functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html#problems">
-     Problems
+    <a class="reference internal" href="../module_03/HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -365,89 +438,72 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   04 - Statistics and Monte-Carlo Models
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-and-discussion">
+   Exercise and Discussion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-of-monte-carlo-models">
+   Examples of Monte Carlo models:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-1-calculate-pi-with-random-numbers">
+   Example 1: Calculate
+   <span class="math notranslate nohighlight">
+    \(\pi\)
+   </span>
+   with random numbers.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid">
+   Example 2: Simulate Brownian motion of particles in a fluid
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-and-discussion">
-     Exercise and Discussion
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-discussion">
+     Exercise (Discussion)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examples-of-monte-carlo-models">
-     Examples of Monte Carlo models:
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-your-brownian-motion">
+     Generate your Brownian motion
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-calculate-pi-with-random-numbers">
-     Example 1: Calculate
-     <span class="math notranslate nohighlight">
-      \(\pi\)
-     </span>
-     with random numbers.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     Exercises
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid">
-     Example 2: Simulate Brownian motion of particles in a fluid
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-discussion">
-       Exercise (Discussion)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#generate-your-brownian-motion">
-       Generate your Brownian motion
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise">
-       Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
      Exercise
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty">
-       Example 3: Determine uncertainty in failure load based on geometry uncertainty
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#where-does-a-normal-distribution-come-from">
-     Where does a normal distribution come from?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-you-ve-learned">
-     What you’ve learned:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty">
+     Example 3: Determine uncertainty in failure load based on geometry uncertainty
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-ve-learned">
+   What you’ve learned:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -485,10 +541,10 @@ library</a> as such</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.65340802, 0.60997417, 0.07520317, 0.7937438 , 0.91683441,
-       0.0343804 , 0.57278732, 0.1430021 , 0.86619649, 0.37093236,
-       0.79220599, 0.19276975, 0.17998312, 0.20417698, 0.53314041,
-       0.26874173, 0.49680414, 0.51684168, 0.22625464, 0.48418762])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.72676729, 0.06328867, 0.07765023, 0.52845623, 0.30726619,
+       0.04930316, 0.40811195, 0.08778394, 0.27295272, 0.97268319,
+       0.21173733, 0.51621643, 0.9747673 , 0.78298593, 0.46566101,
+       0.60825531, 0.22065343, 0.86283791, 0.22134978, 0.86466807])
 </pre></div>
 </div>
 </div>
@@ -521,9 +577,9 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([6., 3., 4., 3., 4.]),
- array([0.0343804 , 0.21087121, 0.38736201, 0.56385281, 0.74034361,
-        0.91683441]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([7., 3., 3., 3., 4.]),
+ array([0.04930316, 0.23439598, 0.41948881, 0.60458164, 0.78967447,
+        0.9747673 ]),
  &lt;BarContainer object of 5 artists&gt;)
 </pre></div>
 </div>
@@ -537,7 +593,8 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 <p>What should the histogram of <code class="docutils literal notranslate"><span class="pre">x</span></code> look like if Python is generating truly random numbers?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -579,19 +636,6 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 <p>(number of points in circle)/(total number of points)=<span class="math notranslate nohighlight">\(\pi/4\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.60559229, 0.75995497, 0.23694808, 0.17560873, 0.63906507,
-       0.28171509, 0.16350495, 0.28819045, 0.42988067, 0.90934803])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">montecarlopi</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Create random x-y-coordinates to and use ratio of circle-to-square to </span>
 <span class="sd">    calculate the value of pi</span>
@@ -606,8 +650,8 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 <span class="sd">    &#39;&#39;&#39;</span>
     
 
-    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
     <span class="n">R</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> <span class="c1"># compute radius</span>
     <span class="n">num_in_circle</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">R</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">);</span>
     <span class="n">total_num_pts</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
@@ -630,9 +674,30 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.170400
-standard deviation is 0.051075
-actual pi is 3.141593
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">test_pi</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">test_pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">montecarlopi</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value for pi = </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.mean(test_pi))
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;standard deviation is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.std(test_pi))
+
+<span class="nn">Input In [5],</span> in <span class="ni">montecarlopi</span><span class="nt">(N)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">montecarlopi</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="sd">&#39;&#39;&#39;Create random x-y-coordinates to and use ratio of circle-to-square to </span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd">     calculate the value of pi</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     i.e. Acircle/Asquare = pi/4</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="sd">     our_pi: the best prediction of pi using N points</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="sd">     &#39;&#39;&#39;</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">R</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> <span class="c1"># compute radius</span>
+
+<span class="nn">File _generator.pyx:286,</span> in <span class="ni">numpy.random._generator.Generator.random</span><span class="nt">()</span>
+
+<span class="ne">TypeError</span>: Cannot interpret &#39;1&#39; as a data type
 </pre></div>
 </div>
 </div>
@@ -642,7 +707,7 @@ actual pi is 3.141593
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Why is there a standard deviation for the value of <span class="math notranslate nohighlight">\(\pi\)</span> calculated with a Monte Carlo method? Does it depend upon how many times you run the function i.e. the size of <code class="docutils literal notranslate"><span class="pre">test_pi</span></code>? or the number of random points <code class="docutils literal notranslate"><span class="pre">N</span></code>? Alter the script above to discover correlations</p></li>
-<li><p>How well does our function <code class="docutils literal notranslate"><span class="pre">montecarlopi</span></code> converge to the true value
+<li><p>How well does your function <code class="docutils literal notranslate"><span class="pre">montecarlopi</span></code> converge to the true value
 of <span class="math notranslate nohighlight">\(\pi\)</span> (you can use <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> as a true value)? Plot the convergence as
 we did in <span class="xref myst">03-Numerical_error</span></p></li>
 </ol>
@@ -655,13 +720,6 @@ we did in <span class="xref myst">03-Numerical_error</span></p></li>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value for pi = </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.mean(test_pi))
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;standard deviation is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.std(test_pi))
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;actual pi is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.pi)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.145680
-standard deviation is 0.046197
-actual pi is 3.141593
 </pre></div>
 </div>
 </div>
@@ -679,13 +737,6 @@ actual pi is 3.141593
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value for pi = </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.mean(test_pi))
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;standard deviation is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.std(test_pi))
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;actual pi is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.pi)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.144520
-standard deviation is 0.014323
-actual pi is 3.141593
 </pre></div>
 </div>
 </div>
@@ -707,9 +758,6 @@ actual pi is 3.141593
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/04_Stats_and_Montecarlo_17_0.png" src="../_images/04_Stats_and_Montecarlo_17_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="example-2-simulate-brownian-motion-of-particles-in-a-fluid">
@@ -728,16 +776,6 @@ for more information in the physics and history of the phenomenon.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/5jBVYvHeG2c"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-        </div></div>
 </div>
 <p>In this example, your goal is to predict the location of 50 particles
 if they take 100 random steps from -0.5 to 0.5 <span class="math notranslate nohighlight">\(\mu m\)</span> in the x- and
@@ -803,12 +841,6 @@ to find the final position after each step is taken.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y-position (um)&#39;)
-</pre></div>
-</div>
-<img alt="../_images/04_Stats_and_Montecarlo_27_1.png" src="../_images/04_Stats_and_Montecarlo_27_1.png" />
-</div>
 </div>
 <p>A curious result, even though we prescribed random motion, the final
 location did not end up back at the origin, where it started. <strong>What if
@@ -834,12 +866,6 @@ steps each.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdfc9ff9f70&gt;]
-</pre></div>
-</div>
-<img alt="../_images/04_Stats_and_Montecarlo_29_1.png" src="../_images/04_Stats_and_Montecarlo_29_1.png" />
-</div>
 </div>
 </div>
 <div class="section" id="exercise">
@@ -860,30 +886,27 @@ deviation?</p>
 <p><span class="math notranslate nohighlight">\(F_{fail}=\sigma_{UTS}wh\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">10000</span><span class="p">;</span>
-<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wmean</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="c1"># in mm</span>
-<span class="n">wmin</span><span class="o">=</span><span class="n">wmean</span><span class="o">-</span><span class="n">wmean</span><span class="o">*</span><span class="mf">0.1</span><span class="p">;</span>
-<span class="n">wmax</span><span class="o">=</span><span class="n">wmean</span><span class="o">+</span><span class="n">wmean</span><span class="o">*</span><span class="mf">0.1</span><span class="p">;</span>
-<span class="n">hmean</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="c1"># in mm</span>
-<span class="n">hmin</span><span class="o">=</span><span class="n">hmean</span><span class="o">-</span><span class="n">hmean</span><span class="o">*</span><span class="mf">0.1</span><span class="p">;</span>
-<span class="n">hmax</span><span class="o">=</span><span class="n">hmean</span><span class="o">+</span><span class="n">hmean</span><span class="o">*</span><span class="mf">0.1</span><span class="p">;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">wmean</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># in mm</span>
+<span class="n">wmin</span> <span class="o">=</span> <span class="n">wmean</span><span class="o">-</span><span class="n">wmean</span><span class="o">*</span><span class="mf">0.1</span>
+<span class="n">wmax</span> <span class="o">=</span> <span class="n">wmean</span><span class="o">+</span><span class="n">wmean</span><span class="o">*</span><span class="mf">0.1</span>
+<span class="n">hmean</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># in mm</span>
+<span class="n">hmin</span> <span class="o">=</span> <span class="n">hmean</span><span class="o">-</span><span class="n">hmean</span><span class="o">*</span><span class="mf">0.1</span>
+<span class="n">hmax</span> <span class="o">=</span> <span class="n">hmean</span><span class="o">+</span><span class="n">hmean</span><span class="o">*</span><span class="mf">0.1</span>
 
-<span class="n">wrand</span><span class="o">=</span><span class="n">wmin</span><span class="o">+</span><span class="p">(</span><span class="n">wmax</span><span class="o">-</span><span class="n">wmin</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="p">;</span>
-<span class="n">hrand</span><span class="o">=</span><span class="n">hmin</span><span class="o">+</span><span class="p">(</span><span class="n">hmax</span><span class="o">-</span><span class="n">hmin</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="p">;</span>
+<span class="n">wrand</span><span class="o">=</span><span class="n">wmin</span><span class="o">+</span><span class="p">(</span><span class="n">wmax</span><span class="o">-</span><span class="n">wmin</span><span class="p">)</span><span class="o">*</span><span class="n">r</span>
+<span class="n">hrand</span><span class="o">=</span><span class="n">hmin</span><span class="o">+</span><span class="p">(</span><span class="n">hmax</span><span class="o">-</span><span class="n">hmin</span><span class="p">)</span><span class="o">*</span><span class="n">r</span>
 
-<span class="n">uts</span><span class="o">=</span><span class="mi">940</span><span class="p">;</span> <span class="c1"># in N/mm^2=MPa</span>
+<span class="n">uts</span><span class="o">=</span><span class="mi">940</span> <span class="c1"># in N/mm^2=MPa</span>
 
-<span class="n">Ffail</span><span class="o">=</span><span class="n">uts</span><span class="o">*</span><span class="n">wrand</span><span class="o">*</span><span class="n">hrand</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">;</span> <span class="c1"># force in kN</span>
+<span class="n">Ffail</span><span class="o">=</span><span class="n">uts</span><span class="o">*</span><span class="n">wrand</span><span class="o">*</span><span class="n">hrand</span><span class="o">*</span><span class="mf">1e-3</span> <span class="c1"># force in kN</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Ffail</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;failure load (kN)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;relative counts&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Failure load is </span><span class="si">{:.2f}</span><span class="s1">+/- </span><span class="si">{:.2f}</span><span class="s1"> kN&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Ffail</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Ffail</span><span class="p">)));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Failure load is </span><span class="si">{:.2f}</span><span class="s1">+/- </span><span class="si">{:.2f}</span><span class="s1"> kN&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Ffail</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Ffail</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/04_Stats_and_Montecarlo_35_0.png" src="../_images/04_Stats_and_Montecarlo_35_0.png" />
 </div>
 </div>
 <p>Normally, the tolerance is not a maximum/minimum specification, but
@@ -892,27 +915,24 @@ the 68% confidence interval.</p>
 <p>So instead, you should generate normally distributed dimensions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">10000</span><span class="p">;</span>
-<span class="n">wmean</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="c1"># in mm</span>
-<span class="n">wstd</span><span class="o">=</span><span class="n">wmean</span><span class="o">*</span><span class="mf">0.1</span><span class="p">;</span> <span class="c1"># standard deviation in mm</span>
-<span class="n">hmean</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="c1"># in mm</span>
-<span class="n">hstd</span><span class="o">=</span><span class="n">hmean</span><span class="o">*</span><span class="mf">0.1</span><span class="p">;</span> <span class="c1"># standard deviation in mm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">wmean</span><span class="o">=</span><span class="mi">1</span> <span class="c1"># in mm</span>
+<span class="n">wstd</span><span class="o">=</span><span class="n">wmean</span><span class="o">*</span><span class="mf">0.1</span> <span class="c1"># standard deviation in mm</span>
+<span class="n">hmean</span><span class="o">=</span><span class="mi">2</span> <span class="c1"># in mm</span>
+<span class="n">hstd</span><span class="o">=</span><span class="n">hmean</span><span class="o">*</span><span class="mf">0.1</span> <span class="c1"># standard deviation in mm</span>
 
 
-<span class="n">wrand</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">wmean</span><span class="p">,</span><span class="n">wstd</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">);</span>
-<span class="n">hrand</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">hmean</span><span class="p">,</span><span class="n">hstd</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">);</span>
-<span class="n">uts</span><span class="o">=</span><span class="mi">940</span><span class="p">;</span> <span class="c1"># in N/mm^2=MPa</span>
+<span class="n">wrand</span><span class="o">=</span><span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="n">wmean</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">wstd</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">hrand</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="n">hmean</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">hstd</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">uts</span><span class="o">=</span><span class="mi">940</span> <span class="c1"># in N/mm^2=MPa</span>
 
-<span class="n">Ffail</span><span class="o">=</span><span class="n">uts</span><span class="o">*</span><span class="n">wrand</span><span class="o">*</span><span class="n">hrand</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">;</span> <span class="c1"># force in kN</span>
+<span class="n">Ffail</span><span class="o">=</span><span class="n">uts</span><span class="o">*</span><span class="n">wrand</span><span class="o">*</span><span class="n">hrand</span><span class="o">*</span><span class="mf">1e-3</span> <span class="c1"># force in kN</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Ffail</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="c1">#plt.xlabel(&#39;failure load (kN)&#39;)</span>
 <span class="c1">#plt.ylabel(&#39;relative counts&#39;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Failure load is </span><span class="si">{:.2f}</span><span class="s1">+/- </span><span class="si">{:.2f}</span><span class="s1"> kN&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Ffail</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Ffail</span><span class="p">)));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Failure load is </span><span class="si">{:.2f}</span><span class="s1">+/- </span><span class="si">{:.2f}</span><span class="s1"> kN&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Ffail</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Ffail</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/04_Stats_and_Montecarlo_37_0.png" src="../_images/04_Stats_and_Montecarlo_37_0.png" />
 </div>
 </div>
 <p>In this propagation of uncertainty, the final value of failure load seems to be independent of wheher the distribution is uniformly random or normally distributed. In both cases, the failure load is <span class="math notranslate nohighlight">\(\approx 1.9 \pm 0.25\)</span> kN.</p>
@@ -920,43 +940,6 @@ the 68% confidence interval.</p>
 <p>For the uniformly random case, there are approximately 500 parts out of 10,000 that will fail at 1.9 kN.</p>
 <p>For the normally distributed case, there are approximately 1500 parts out of 10,000 that will fail at 1.9 kN.</p>
 </div>
-</div>
-<div class="section" id="where-does-a-normal-distribution-come-from">
-<h2>Where does a normal distribution come from?<a class="headerlink" href="#where-does-a-normal-distribution-come-from" title="Permalink to this headline">¶</a></h2>
-<p>“Everybody believes in the exponential law of errors: the experimenters, because they think it can be proved by mathematics; and the mathematicians, because they believe it has been established by observation” [5].</p>
-<p>In the previous example, we drew dimensions from uniformly random distributions and normally distributed random distributions. Why do we use the “normal” distribution to describe data with a mean and standard deviation? There are exact statistical methods to derive the normal distribution, but let’s take a look at a Monte Carlo approach.</p>
-<p>Let’s say there are 10 different independent factors that could change the dimensions of the steel bar in question e.g. which tool was used, how old the blade is, the humidity, the temperature, and the list goes on.</p>
-<p>Let’s consider one dimension.
-Each of these factors could change the dimensions of the part, let’s use a uniform scale of -1/2-1/2.
-If the effect is 0, the dimension is exactly as specified. If the effect is -1/2, the dimension is much smaller. Conversely, if the effect is 1/2 the dimension is much larger. Now, we use a Monte Carlo model to generate 10 effects on 10,000 parts as shown in the next block.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># each row represents a part and each column is an effect (-1/2-1/2)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now, we have created 10,000 parts with 10 uniformly random effects between -1/2-1/2.</p>
-<p>We sum the effects and look at the final part distribution. The x-axis is labeled “A.U.” for arbitrary units, we are just assuming an effect of -1/2-1/2 for each of the 10 factors.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dims</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;effect A.U.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;number of parts&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;number of parts&#39;)
-</pre></div>
-</div>
-<img alt="../_images/04_Stats_and_Montecarlo_41_1.png" src="../_images/04_Stats_and_Montecarlo_41_1.png" />
-</div>
-</div>
-<p>Now, depending upon which random numbers were generated, you should see what looks like a normal distribution.</p>
-<p>Normal distributions come from the assumption that we have a large (or infinite) number of uncontrollable factors that can change our desired result. In our case, ideally each factor would have an effect of 0, because then it is exactly as specified, but the reality is that we can’t control most factors. As engineers, we always have to consider the uncertainty in our models and measurements.</p>
 </div>
 <div class="section" id="what-you-ve-learned">
 <h2>What you’ve learned:<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
@@ -966,7 +949,6 @@ If the effect is 0, the dimension is exactly as specified. If the effect is -1/2
 <li><p>How to calculate <span class="math notranslate nohighlight">\(\pi\)</span> with Monte Carlo</p></li>
 <li><p>How to model Brownian motion with Monte Carlo</p></li>
 <li><p>How to propagate uncertainty in a model with Monte Carlo</p></li>
-<li><p>How to generate a normal distribution using uniformly random numbers</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(^+\)</span> Remember, the computer only generates pseudo-random numbers. For further information <strong>and</strong> truly random numbers  check <a class="reference external" href="https://www.random.org/randomness/">www.random.org</a></p>
 </div>
@@ -981,78 +963,6 @@ Dirk P. Kroese, Tim Brereton <em>et al.</em> Wiley Interdisciplinary Reviews: Co
 <li><p>Whittaker, E. T. and Robinson, G. “Normal Frequency Distribution.” Ch. 8 in The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed. New York: Dover, p. 179, 1967.</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
-<p><strong>1.</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/Buffon">Buffon’s needle problem</a> is
-another way to estimate the value of <span class="math notranslate nohighlight">\(\pi\)</span> with random numbers. The goal
-in this Monte Carlo estimate of <span class="math notranslate nohighlight">\(\pi\)</span> is to create a ratio that is close
-to <a class="reference external" href="http://www.math.com/tables/constants/pi.htm">3.1415926…</a> <em>similar
-to the example with darts points lying inside/outside a unit circle
-inside a unit square.</em></p>
-<p><img alt="Buffon's needle for parallellines" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Buffon_needle.gif" /></p>
-<p>In this Monte Carlo estimation, you only need to know two values:</p>
-<ul class="simple">
-<li><p>the distance from line 0, <span class="math notranslate nohighlight">\(x = [0,~1]\)</span></p></li>
-<li><p>the orientation of the needle, <span class="math notranslate nohighlight">\(\theta = [0,~2\pi]\)</span></p></li>
-</ul>
-<p>The y-location does not affect the outcome of crosses line 0 or not
-crossing line 0.</p>
-<p><strong>a.</strong> Generate 100 random <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">theta</span></code> values <em>remember</em> <span class="math notranslate nohighlight">\(\theta =
-[0,~2\pi]\)</span></p>
-<p><strong>b.</strong> Calculate the x locations of the 100 needle ends e.g. <span class="math notranslate nohighlight">\(x_end = x
-\pm \cos\theta\)</span> _since length is unit 1.</p>
-<p><strong>c.</strong> Use
-<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.logical_and.html"><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code></a>
-to find the number of needles that have minimum <span class="math notranslate nohighlight">\(x_{end~min}&lt;0\)</span> and
-maximum <span class="math notranslate nohighlight">\(x_{end~max}&gt;0\)</span>. The ratio
-<span class="math notranslate nohighlight">\(\frac{x_{end~min}&lt;0~and~x_{end~max}&gt;0}{number~of~needles} =
-\frac{2}{\pi}\)</span> <em>for large values of <span class="math notranslate nohighlight">\(number~of~needles\)</span></em>.</p>
-<p><strong>2.</strong> 100 steel rods are going to be used to support a 1000 kg structure. The
-rods will buckle when the load in any rod exceeds the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler%27s_critical_load">critical buckling
-load</a></p>
-<p><span class="math notranslate nohighlight">\(P_{cr}=\frac{\pi^3 Er^4}{16L^2}\)</span></p>
-<p>where E=200e9 Pa, r=0.01 m +/-0.001 m, and L is the
-length of the rods supporting the structure. Create a Monte
-Carlo model <code class="docutils literal notranslate"><span class="pre">montecarlo_buckle</span></code> that predicts
-the mean and standard deviation of the buckling load for 100
-samples with normally distributed dimensions r and L.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mean_buckle_load</span><span class="p">,</span><span class="n">std_buckle_load</span><span class="o">=</span>\
-<span class="n">montecarlo_buckle</span><span class="p">(</span><span class="n">E</span><span class="p">,</span><span class="n">r_mean</span><span class="p">,</span><span class="n">r_std</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>a.</strong> What is the mean_buckle_load and std_buckle_load for L=5 m?</p>
-<p><strong>b.</strong> What length, L, should the beams be so that only 2.5% will
-reach the critical buckling load?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">montecarlo_buckle</span><span class="p">(</span><span class="n">E</span><span class="p">,</span><span class="n">r_mean</span><span class="p">,</span><span class="n">r_std</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Generate N rods of length L with radii of r=r_mean+/-r_std</span>
-<span class="sd">    then calculate the mean and std of the buckling loads in for the</span>
-<span class="sd">    rod population holding a 1000-kg structure</span>
-<span class="sd">    Arguments</span>
-<span class="sd">    ---------</span>
-<span class="sd">    E: Young&#39;s modulus [note: keep units consistent]</span>
-<span class="sd">    r_mean: mean radius of the N rods holding the structure</span>
-<span class="sd">    r_std: standard deviation of the N rods holding the structure</span>
-<span class="sd">    L: length of the rods (or the height of the structure)</span>
-<span class="sd">    N: number of rods holding the structure, default is N=100 rods</span>
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    mean_buckle_load: mean buckling load of N rods under 1000*9.81/N-Newton load</span>
-<span class="sd">    std_buckle_load: std dev buckling load of N rods under 1000*9.81/N-Newton load</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="k">return</span> <span class="n">mean_buckle_load</span><span class="p">,</span> <span class="n">std_buckle_load</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>3.</strong> Generate your own normal distribution using uniformly random numbers between -1/2 and 1/2.</p>
-<p><strong>a.</strong> What is the effect of changing the number of factors?</p>
-<p><strong>b.</strong> What is the effect of changing the number of samples?</p>
-<p><em>Hint: for a-b try plotting histograms of the results.</em></p>
-<p><strong>c.</strong> How would you change the mean in your generated distribution?</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1081,7 +991,7 @@ reach the critical buckling load?</p>
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="03_Linear_Regression_with_Real_Data.html" title="previous page">03 - Linear regression with real data</a>
-    <a class='right-next' id="next-link" href="../projects/02_Analyze-data_project.html" title="next page">Project #02 - NYSE random walk predictor</a>
+    <a class='right-next' id="next-link" href="HW_02.html" title="next page">Homework</a>
 
         </div>
         

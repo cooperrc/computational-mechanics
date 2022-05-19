@@ -32,11 +32,11 @@ K
 [1;32m      4[0m [0mK[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/.conda/envs/work/lib/python3.9/site-packages/numpy/lib/npyio.py[0m in [0;36mload[0;34m(file, mmap_mode, allow_pickle, fix_imports, encoding)[0m
-[1;32m    415[0m             [0mown_fid[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    416[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 417[0;31m             [0mfid[0m [0;34m=[0m [0mstack[0m[0;34m.[0m[0menter_context[0m[0;34m([0m[0mopen[0m[0;34m([0m[0mos_fspath[0m[0;34m([0m[0mfile[0m[0;34m)[0m[0;34m,[0m [0;34m"rb"[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    418[0m             [0mown_fid[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    419[0m [0;34m[0m[0m
+[1;32m    414[0m             [0mown_fid[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    415[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 416[0;31m             [0mfid[0m [0;34m=[0m [0mstack[0m[0;34m.[0m[0menter_context[0m[0;34m([0m[0mopen[0m[0;34m([0m[0mos_fspath[0m[0;34m([0m[0mfile[0m[0;34m)[0m[0;34m,[0m [0;34m"rb"[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    417[0m             [0mown_fid[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    418[0m [0;34m[0m[0m
 
 [0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './fea_arrays.npz'
 FileNotFoundError: [Errno 2] No such file or directory: './fea_arrays.npz'

@@ -1,8 +1,9 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Summer 2021
+## ME 3255 Fall 2021
 ### GitHub page: [github.com/cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 ### JupyterHub server: <https://compmech.uconn.edu/>
-### ME3255 - chat room: [![Gitter](https://badges.gitter.im/me3255-summer-2021/community.svg)](https://gitter.im/me3255-summer-2021/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+### ME3255 - chat room:
+[![Gitter](https://badges.gitter.im/ME3255/community.svg)](https://gitter.im/ME3255/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Course Description
 
@@ -51,21 +52,35 @@ reading/understanding)
 ## Course Information
 __Course Title:__ ME3255 - Computational Mechanics
 
-__Format:__ Online
+__Format:__ Hybrid
 
 __Prerequisite:__ CE 2110 and MATH 2110 or 2130
 
 __Instructor__: Prof. Ryan C. Cooper __<ryan.c.cooper@uconn.edu>__
 
-__Office Hours/Availability:__ Mon-Thur 10-11am (EST)
+__Office Hours/Availability:__ Mon/Wed 11-12pm (EST) <https://uconn-cmr.webex.com/meet/rcc02007>
 
 __Preferred Contact:__ Post questions and comments to
-[Gitter](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[Gitter](https://gitter.im/ME3255):
+> Introduce yourself in the [logistics room](https://gitter.im/ME3255/logistics) and take a look at
+the community rooms to discuss:
+> -  logistics e.g. due dates, grades, introductions [ME3255/logistics](https://gitter.im/ME3255/logistics)
+> - concepts and exercises in the readings [ME3255/readings](https://gitter.im/ME3255/readings)
+> -  homework and project hands-on work [ME3255/work](https://gitter.im/ME3255/work)
 
-__Lectures__: I will post videos each week on
-[Gitter](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link). I expect you
-to respond to my question prompts and post your own questions. 
 
+
+__Teaching Assistants__:
+
+|section | TA | email| GitHub handle| office hours | Webex room |
+|---|---|---|---|---|---|
+| sec001 | Genevieve Kunkel | <genevieve.kunkel@uconn.edu>| [@gmk19001](https://gitter.im/gmk19001)| Thu 12:30-2:30pm |<https://uconn-cmr.webex.com/meet/gmk19001>|
+| sec002 | Mohammad Madani | <mohammad.madani@uconn.edu> | [@mahan-fcb](https://gitter.im/mahan-fcb) | Mon 1-3pm | |
+
+
+__Lectures__: 
+- sec001: MWF 9:05-9:55am in BPB 130
+- sec002: TTh 11:00-12:15pm in BOUS A106
 __Prerequisite:__ CE 3110, MATH 2410Q 
 
 __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org),
@@ -92,11 +107,15 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   with myself [@cooperrc](https://github.com/cooperrc).
 
 - [Gitter - ME3255 chat
-  room](https://gitter.im/me3255-summer-2021/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+  room](https://gitter.im/ME3255/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
   you can sign up to join the classroom discussion once you create a
   GitHub account
 
 ### Recommended _Free_ Resources:
+
+- [Barba, L.A., 2020. Engineers Code: reusable open learning modules for
+  engineering computations. Computing in Science & Engineering, 22(4),
+  pp.26-35. doi:10.1109/MCSE.2020.2976002 Preprint on arXiv::2001.00228](https://github.com/engineersCode/EngComp)
 
 - [Youtube: A hands-on Intro to Python for beginning programmers](https://youtu.be/rkx5_MRAV3A)
 
@@ -139,10 +158,13 @@ Scientists_ 4th edition.
 
 | Item | Percent | Requirement |
 |---------|---|---------------------------|
-| Participation | 30 % | Complete the notebook exercises and discussion
-questions on Gitter|
+| Participation | 30 % | Discussion questions on Gitter+class, self assessed|
 | Homework | 30 % | Complete the end-of-notebook problems|
 | Projects | 40 % | Complete the module project and submit to GitHub| 
+
+__Participation__: The participation grade will be self-assigned. At
+week 7 you will submit your current grade and modes of participation,
+then during finals week submit an updated final grade. 
 
 ## Academic Integrity: 
 - The instructors of this class have a zero-tolerance policy for academic misconduct, that
@@ -158,7 +180,7 @@ questions on Gitter|
 
 The course schedule is kept up to date on the Google Calendar here:
 <iframe
-src="https://calendar.google.com/calendar/embed?height=500&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=Y19pY2NxMHMwdHQ3aTVjNmYxZWIwb3JvbzBra0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23F4511E&amp;mode=AGENDA"
+src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=Y19mZXA5MzV0NmUzZWVsdGN2c2NicGRkMWU3a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&mode=AGENDA"
 style="border:solid 1px #777" width="600" height="500" frameborder="0"
 scrolling="no"></iframe>
 
@@ -182,33 +204,35 @@ scrolling="no"></iframe>
 ## Due Dates and Late Policy
 
 All course due dates are identified in the [ME 3255 Google
-Calendar]().
+Calendar](https://calendar.google.com/calendar/u/0?cid=Y19mZXA5MzV0NmUzZWVsdGN2c2NicGRkMWU3a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 Deadlines are based on Eastern Time; if you are in a different time zone, please
 adjust your submittal times accordingly. The instructor reserves the right to
 change dates accordingly as the semester progresses.  _All changes will be
 communicated via the calendar or another appropriate notification._
 
 __Late Policy:__ If you fall behind on work I expect to be notified when
-you plan to submit assignments. I ask that you be respectful of my time
-as an evaluator of your progress. 
+you plan to submit assignments. I ask that you be respectful of our time 
+as evaluators of your progress. 
 
 ## Feedback and Grades
 
-I will make every effort to provide feedback and grades within 48 hours. To keep
+We will make every effort to provide feedback and grades within 1 week. To keep
 track of your performance in the course, refer to My Grades in HuskyCT.
+If you resubmit an assignment with improvements, notify Prof. Cooper and your
+TA. 
 
-## Student Authentication and Verification
-
-The University of Connecticut is required to verify the identity of students who
-participate in online courses and to establish that students who register in an
-online course are the same students who participate in and complete the course
-activities and assessments and receive academic credit. Verification and
-authentication of student identity in this course will include:
-
-1. Secure access to the learning management system using your unique UConn NetID
-and password.
-
-2. Video recordings to describe submissions
+<!-- ## Student Authentication and Verification -->
+<!--  -->
+<!-- The University of Connecticut is required to verify the identity of students who -->
+<!-- participate in online courses and to establish that students who register in an -->
+<!-- online course are the same students who participate in and complete the course -->
+<!-- activities and assessments and receive academic credit. Verification and -->
+<!-- authentication of student identity in this course will include: -->
+<!--  -->
+<!-- 1. Secure access to the learning management system using your unique UConn NetID -->
+<!-- and password. -->
+<!--  -->
+<!-- 2. Video recordings to describe submissions -->
 
 ## Student Responsibilities and Resources 
 

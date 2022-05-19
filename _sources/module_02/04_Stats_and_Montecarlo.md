@@ -15,7 +15,7 @@ kernelspec:
 > __Content created under Creative Commons Attribution license CC-BY
 > 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper__
 
-+++ 
++++
 
 # 04 - Statistics and Monte-Carlo Models
 
@@ -47,7 +47,6 @@ The call to `rng.random(20)` created 20 uniformly random numbers between
 0 and 1 saved as the variable `x`. Next, you can plot the histogram of
 `x`.
 
-
 ```{code-cell} ipython3
 import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
@@ -60,7 +59,7 @@ plt.hist(x, bins = 5,
             edgecolor = 'w')
 ```
 
-The pyplot function `hist` displays a histogram of these randomly generated numbers. 
+The pyplot function `hist` displays a histogram of these randomly generated numbers.
 
 +++
 
@@ -70,9 +69,9 @@ Try generating more random numbers and plotting histograms of the results i.e. i
 
 What should the histogram of `x` look like if Python is generating truly random numbers?
 
-
 ```{code-cell} ipython3
-x=np.random.rand(10000)
+rng = default_rng()
+x = rng.random(10000)
 plt.hist(x);
 ```
 
@@ -118,16 +117,6 @@ So if we know the fraction of random points that are within the unit circle, the
 (number of points in circle)/(total number of points)=$\pi/4$
 
 ```{code-cell} ipython3
-np.random.rand(10)
-```
-
-```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
-slideshow:
-  slide_type: fragment
----
 def montecarlopi(N):
     '''Create random x-y-coordinates to and use ratio of circle-to-square to 
     calculate the value of pi
@@ -142,8 +131,8 @@ def montecarlopi(N):
     '''
     
 
-    x=np.random.rand(N,1);
-    y=np.random.rand(N,1);
+    x = rng.random(N,1);
+    y = rng.random(N,1);
     R=np.sqrt(x**2+y**2); # compute radius
     num_in_circle=sum(R<1);
     total_num_pts =len(R);
@@ -152,12 +141,6 @@ def montecarlopi(N):
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
-slideshow:
-  slide_type: slide
----
 test_pi=np.zeros(10)
 for i in range(0,10):
     test_pi[i]=montecarlopi(1000);
@@ -171,7 +154,7 @@ print('actual pi is %f'%np.pi)
 
 1. Why is there a standard deviation for the value of $\pi$ calculated with a Monte Carlo method? Does it depend upon how many times you run the function i.e. the size of `test_pi`? or the number of random points `N`? Alter the script above to discover correlations
 
-2. How well does our function `montecarlopi` converge to the true value
+2. How well does your function `montecarlopi` converge to the true value
 of $\pi$ (you can use `np.pi` as a true value)? Plot the convergence as
 we did in [03-Numerical_error](../module_01/03-Numerical_error)
 
@@ -226,9 +209,9 @@ a description of how large particles move and vibrate in fluids that
 have no buld motion. The atoms from the fluid bounce off the suspended
 particles to jiggle them randomly left and right. Take a look at [Up and
 Atom's video](https://www.youtube.com/channel/UCSIvk78tK2TiviLQn4fSHaw)
-for more information in the physics and history of the phenomenon. 
+for more information in the physics and history of the phenomenon.
 
-```{code-cell} ipyhon3
+```{code-cell} ipython3
 from IPython.display import YouTubeVideo
 YouTubeVideo('5jBVYvHeG2c')
 ```
@@ -257,7 +240,7 @@ $Delta x$ and $\Delta y$.
 the location at each step
 4. plot the results
 
-Here, you create the 100 random numbers and shift them by 0.5. 
+Here, you create the 100 random numbers and shift them by 0.5.
 
 ```{code-cell} ipython3
 rng = default_rng()
@@ -265,7 +248,8 @@ N_steps = 100
 dx = rng.random(N_steps) - 0.5
 dy = rng.random(N_steps) - 0.5
 ```
-Next, create the positions at each step. 
+
+Next, create the positions at each step.
 
 ```{code-cell} ipython3
 r = np.zeros((N_steps, 2))
@@ -273,7 +257,7 @@ r = np.zeros((N_steps, 2))
 
 Now, use
 [`np.cumsum`](https://numpy.org/doc/stable/reference/generated/numpy.cumsum.html)
-to find the final position after each step is taken. 
+to find the final position after each step is taken.
 
 ```{code-cell} ipython3
 r[:, 0] = np.cumsum(dx) # final rx position
@@ -281,7 +265,7 @@ r[:, 1] = np.cumsum(dy) # final ry position
 ```
 
 Finally, you can plot the path the particle took as it moved along its
-100 steps and its final location. 
+100 steps and its final location.
 
 ```{code-cell} ipython3
 plt.plot(r[:, 0 ], r[:, 1])
@@ -294,7 +278,7 @@ A curious result, even though we prescribed random motion, the final
 location did not end up back at the origin, where it started. __What if
 you looked at 50 particles?__ How many would end up back at the origin?
 Use a for-loop to calculate the position of 50 particles taking 100
-steps each. 
+steps each.
 
 ```{code-cell} ipython3
 num_particles = 50
@@ -330,6 +314,7 @@ Make a scaling equation to get uniformly random numbers between 10 and 20.
 _The scaling keeps the bin heights constant, but it changes the width and location of the bins in the histogram. Scaling to 10-20 shows a more extreme example._
 
 ```{code-cell} ipython3
+
 ```
 
 ### Example 3: Determine uncertainty in failure load based on geometry uncertainty
@@ -341,25 +326,25 @@ $\sigma_{UTS}=\frac{F_{fail}}{wh}$
 $F_{fail}=\sigma_{UTS}wh$
 
 ```{code-cell} ipython3
-N=10000;
-r=np.random.rand(N,1);
-wmean=1; # in mm
-wmin=wmean-wmean*0.1;
-wmax=wmean+wmean*0.1;
-hmean=2; # in mm
-hmin=hmean-hmean*0.1;
-hmax=hmean+hmean*0.1;
+N = 10000
+r = rng.random(N)
+wmean = 1 # in mm
+wmin = wmean-wmean*0.1
+wmax = wmean+wmean*0.1
+hmean = 2 # in mm
+hmin = hmean-hmean*0.1
+hmax = hmean+hmean*0.1
 
-wrand=wmin+(wmax-wmin)*r;
-hrand=hmin+(hmax-hmin)*r;
+wrand=wmin+(wmax-wmin)*r
+hrand=hmin+(hmax-hmin)*r
 
-uts=940; # in N/mm^2=MPa
+uts=940 # in N/mm^2=MPa
 
-Ffail=uts*wrand*hrand*1e-3; # force in kN
+Ffail=uts*wrand*hrand*1e-3 # force in kN
 plt.hist(Ffail,bins=20,)
 plt.xlabel('failure load (kN)')
 plt.ylabel('relative counts')
-plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)));
+plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)))
 ```
 
 Normally, the tolerance is not a maximum/minimum specification, but
@@ -369,22 +354,22 @@ the 68% confidence interval.
 So instead, you should generate normally distributed dimensions.
 
 ```{code-cell} ipython3
-N=10000;
-wmean=1; # in mm
-wstd=wmean*0.1; # standard deviation in mm
-hmean=2; # in mm
-hstd=hmean*0.1; # standard deviation in mm
+N=10000
+wmean=1 # in mm
+wstd=wmean*0.1 # standard deviation in mm
+hmean=2 # in mm
+hstd=hmean*0.1 # standard deviation in mm
 
 
-wrand=np.random.normal(wmean,wstd,size=N);
-hrand=np.random.normal(hmean,hstd,size=N);
-uts=940; # in N/mm^2=MPa
+wrand=rng.normal(loc = wmean, scale = wstd, size = N)
+hrand=np.random.normal(loc = hmean, scale = hstd, size = N)
+uts=940 # in N/mm^2=MPa
 
-Ffail=uts*wrand*hrand*1e-3; # force in kN
+Ffail=uts*wrand*hrand*1e-3 # force in kN
 plt.hist(Ffail,bins=20)
 #plt.xlabel('failure load (kN)')
 #plt.ylabel('relative counts')
-plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)));
+plt.title('Failure load is {:.2f}+/- {:.2f} kN'.format(np.mean(Ffail),np.std(Ffail)))
 ```
 
 In this propagation of uncertainty, the final value of failure load seems to be independent of wheher the distribution is uniformly random or normally distributed. In both cases, the failure load is $\approx 1.9 \pm 0.25$ kN.
@@ -395,38 +380,6 @@ For the uniformly random case, there are approximately 500 parts out of 10,000 t
 
 For the normally distributed case, there are approximately 1500 parts out of 10,000 that will fail at 1.9 kN. 
 
-## Where does a normal distribution come from?
-
-"Everybody believes in the exponential law of errors: the experimenters, because they think it can be proved by mathematics; and the mathematicians, because they believe it has been established by observation" [5].
-
-In the previous example, we drew dimensions from uniformly random distributions and normally distributed random distributions. Why do we use the "normal" distribution to describe data with a mean and standard deviation? There are exact statistical methods to derive the normal distribution, but let's take a look at a Monte Carlo approach. 
-
-Let's say there are 10 different independent factors that could change the dimensions of the steel bar in question e.g. which tool was used, how old the blade is, the humidity, the temperature, and the list goes on. 
-
-Let's consider one dimension. 
-Each of these factors could change the dimensions of the part, let's use a uniform scale of -1/2-1/2.
-If the effect is 0, the dimension is exactly as specified. If the effect is -1/2, the dimension is much smaller. Conversely, if the effect is 1/2 the dimension is much larger. Now, we use a Monte Carlo model to generate 10 effects on 10,000 parts as shown in the next block.
-
-```{code-cell} ipython3
-factors = np.random.rand(10000,10)-1/2 # each row represents a part and each column is an effect (-1/2-1/2)
-```
-
-Now, we have created 10,000 parts with 10 uniformly random effects between -1/2-1/2. 
-
-We sum the effects and look at the final part distribution. The x-axis is labeled "A.U." for arbitrary units, we are just assuming an effect of -1/2-1/2 for each of the 10 factors.  
-
-```{code-cell} ipython3
-dims = np.sum(factors,axis=1)
-
-plt.hist(dims,30)
-plt.xlabel('effect A.U.')
-plt.ylabel('number of parts')
-```
-
-Now, depending upon which random numbers were generated, you should see what looks like a normal distribution. 
-
-Normal distributions come from the assumption that we have a large (or infinite) number of uncontrollable factors that can change our desired result. In our case, ideally each factor would have an effect of 0, because then it is exactly as specified, but the reality is that we can't control most factors. As engineers, we always have to consider the uncertainty in our models and measurements. 
-
 ## What you've learned:
 
 * How to generate "random" numbers in Python$^+$
@@ -434,7 +387,6 @@ Normal distributions come from the assumption that we have a large (or infinite)
 * How to calculate $\pi$ with Monte Carlo
 * How to model Brownian motion with Monte Carlo
 * How to propagate uncertainty in a model with Monte Carlo
-* How to generate a normal distribution using uniformly random numbers
 
 $^+$ Remember, the computer only generates pseudo-random numbers. For further information **and** truly random numbers  check [www.random.org](https://www.random.org/randomness/) 
 
@@ -450,94 +402,3 @@ Dirk P. Kroese, Tim Brereton *et al.* Wiley Interdisciplinary Reviews: Computati
 4. Meurer A, _et al._ (2017) SymPy: symbolic computing in Python. PeerJ Computer Science 3:e103 https://doi.org/10.7717/peerj-cs.103
 
 5. Whittaker, E. T. and Robinson, G. "Normal Frequency Distribution." Ch. 8 in The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed. New York: Dover, p. 179, 1967.
-
-+++
-
-# Problems
-
-__1.__ [Buffon's needle problem](https://en.wikipedia.org/wiki/Buffon) is
-another way to estimate the value of $\pi$ with random numbers. The goal
-in this Monte Carlo estimate of $\pi$ is to create a ratio that is close
-to [3.1415926...](http://www.math.com/tables/constants/pi.htm) _similar
-to the example with darts points lying inside/outside a unit circle
-inside a unit square._ 
-
-![Buffon's needle for parallel
-lines](https://upload.wikimedia.org/wikipedia/commons/f/f6/Buffon_needle.gif)
-
-In this Monte Carlo estimation, you only need to know two values:
-- the distance from line 0, $x = [0,~1]$
-- the orientation of the needle, $\theta = [0,~2\pi]$
-
-The y-location does not affect the outcome of crosses line 0 or not
-crossing line 0. 
-
-__a.__ Generate 100 random `x` and `theta` values _remember_ $\theta =
-[0,~2\pi]$
-
-__b.__ Calculate the x locations of the 100 needle ends e.g. $x_end = x
-\pm \cos\theta$ _since length is unit 1. 
-
-__c.__ Use 
-[`np.logical_and`](https://numpy.org/doc/stable/reference/generated/numpy.logical_and.html)
-to find the number of needles that have minimum $x_{end~min}<0$ and
-maximum $x_{end~max}>0$. The ratio
-$\frac{x_{end~min}<0~and~x_{end~max}>0}{number~of~needles} =
-\frac{2}{\pi}$ _for large values of $number~of~needles$_.
-
-__2.__ 100 steel rods are going to be used to support a 1000 kg structure. The
-rods will buckle when the load in any rod exceeds the [critical buckling
-load](https://en.wikipedia.org/wiki/Euler%27s_critical_load)
-
-$P_{cr}=\frac{\pi^3 Er^4}{16L^2}$
-
-where E=200e9 Pa, r=0.01 m +/-0.001 m, and L is the 
-length of the rods supporting the structure. Create a Monte
-Carlo model `montecarlo_buckle` that predicts 
-the mean and standard deviation of the buckling load for 100
-samples with normally distributed dimensions r and L. 
-
-```python
-mean_buckle_load,std_buckle_load=\
-montecarlo_buckle(E,r_mean,r_std,L,N=100)
-```
-
-__a.__ What is the mean_buckle_load and std_buckle_load for L=5 m?
-
-__b.__ What length, L, should the beams be so that only 2.5% will 
-reach the critical buckling load?
-
-```{code-cell} ipython3
-def montecarlo_buckle(E,r_mean,r_std,L,N=100):
-    '''Generate N rods of length L with radii of r=r_mean+/-r_std
-    then calculate the mean and std of the buckling loads in for the
-    rod population holding a 1000-kg structure
-    Arguments
-    ---------
-    E: Young's modulus [note: keep units consistent]
-    r_mean: mean radius of the N rods holding the structure
-    r_std: standard deviation of the N rods holding the structure
-    L: length of the rods (or the height of the structure)
-    N: number of rods holding the structure, default is N=100 rods
-    Returns
-    -------
-    mean_buckle_load: mean buckling load of N rods under 1000*9.81/N-Newton load
-    std_buckle_load: std dev buckling load of N rods under 1000*9.81/N-Newton load
-    '''
-    
-    return mean_buckle_load, std_buckle_load
-```
-
-__3.__ Generate your own normal distribution using uniformly random numbers between -1/2 and 1/2. 
-
-__a.__ What is the effect of changing the number of factors?
-
-__b.__ What is the effect of changing the number of samples?
-
-*Hint: for a-b try plotting histograms of the results.*
-
-__c.__ How would you change the mean in your generated distribution?
-
-```{code-cell} ipython3
-
-```

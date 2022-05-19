@@ -1,4 +1,25 @@
 # Computational Mechanics
+> __Note__: This Open Educational Resource was built with
+[Jupyter-Book](https://jupyterbook.org) __Check it out -->__ [![Jupyter Book
+Badge](images/badge.svg)](https://cooperrc.github.io/computational-mechanics/README.html)
+
+Greetings!
+
+Thanks for joining us for UConn's Computational Mechanics course.
+This is a hands-on, portfolio-based course. The [course
+website](https://cooperrc.github.io/computational-mechanics) is built
+with an [open source
+license](https://creativecommons.org/licenses/by/4.0/) so after you fork
+the repository its __yours__! You can build your own website, notebooks,
+etc. and share them with anyone you meet. Just make sure you link back
+to this course website. 
+
+
+
+### JupyterHub server: <https://compmech.uconn.edu/>
+
+Join us on the Course GitHub
+[Discussions](https://github.com/cooperrc/computational-mechanics/discussions).
 
 Welcome to Computational Mechanics! 
 
@@ -10,50 +31,49 @@ Modules](https://github.com/engineersCode/EngComp) from Prof. Lorena A. Barba
 and doctoral student Natalia C. Clement at the George Washington University,
 Mechanical and Aerospace Engineering Department. 
 
-Each learning modules is made up of three or four lesson, written as a Jupyter
+Each learning module is made up of three or four lessons, written as Jupyter
 notebooks. We address an area of application or skills in computing in each
 notebook and each module has an overall objective. We use Python as the
 programming language.
 
-The overall goal of the course is learn to frame engineering problems as
+The overall goal of the course is to frame engineering problems as
 computational methods. Once we can communicate our engineering problems to
-Python code (or any other computer language) we can use standardized
+Python code (or any other computer language) we use standard
 computational methods to solve those problems. 
 
-## [View the Summer 2021 syllabus](./syllabus) $\leftarrow$ _click here_
+## [View the current syllabus](./syllabus) $\leftarrow$ _click here_
+
+The course schedule is kept up to date on the Google Calendar here:
+<iframe
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%233F51B5&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20zMmZmZjg5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+style="border:solid 1px #777" width="700" height="400" frameborder="0"
+scrolling="no"></iframe>
 
 ### [CompMech01-Getting Started](module_01/README)
 
 - Getting comfortable with Python
-
 - Quantifying error in computational methods
 
 ### [CompMech02-Analyze-data](module_02/README)
 
 - Describing and plotting data
-
 - Some statistics
-
 - Monte Carlo modelling
 
 ### [CompMech03-Initial Value Problems](module_03/README)
 
 - Creating functions that are physical models
-
 - Solving ordinary differential equations
-
 - Solving nonlinear equations
 
 ### [CompMech04-Linear Algebra](module_04/README)
 
 - Define sets of equations as matrix algebra
-
 - Solve for multiple equations for multiple unknown variables
 
 ### [CompMech05-Boundary Value Problems](module_05/README)
 
 - Continue creating functions that are physical models
-
 - Solve 1D and 2D partial differential equations with finite difference
   approximations
 
@@ -66,6 +86,5 @@ is under BSD-3
 clause](https://github.uconn.edu/rcc02007/Computational_Mechanics/LICENSE). We are
 happy if you re-use the content in any way!
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![Join the chat at https://gitter.im/me3255-summer-2021/logistics](https://badges.gitter.im/me3255-summer-2021/logistics.svg)](https://gitter.im/me3255-summer-2021/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)

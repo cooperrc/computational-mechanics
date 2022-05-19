@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -100,6 +102,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -111,18 +118,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -131,8 +128,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="../module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -154,19 +151,9 @@
      01 - Cheers!  Stats with Beers
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Cheers_Stats_Beers.html#problems">
-     Problems
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -175,18 +162,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="04_Stats_and_Montecarlo.html">
      04 - Statistics and Monte-Carlo Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_Stats_and_Montecarlo.html#problems">
-     Problems
+    <a class="reference internal" href="HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,18 +191,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/02_Step_Future.html">
      Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -229,23 +201,124 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
      Roots of Nonlinear functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html#problems">
-     Problems
+    <a class="reference internal" href="../module_03/HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -365,132 +438,120 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   02 - Seeing stats in a new light
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-the-data">
+   Read the data
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-the-data">
-     Read the data
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note">
+     Note:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantitative-vs-categorical-data">
+   Quantitative vs. categorical data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-quantitative-data">
+   Visualizing quantitative data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-quantitative-data-continued">
+     Exploring quantitative data (continued)
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#note">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise">
+       Exercise:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median-value">
+     Median value
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Exercise:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#box-plots">
+     Box plots
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Exercise:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-bit-of-history">
+       A bit of history:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
        Note:
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantitative-vs-categorical-data">
-     Quantitative vs. categorical data
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-categorical-data">
+   Visualizing categorical data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-multiple-data">
+   Visualizing multiple data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plots">
+     Scatter plots
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-quantitative-data">
-     Visualizing quantitative data
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bubble-chart">
+     Bubble chart
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exploring-quantitative-data-continued">
-       Exploring quantitative data (continued)
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discuss-with-your-neighbor">
+       Discuss with your neighbor:
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#exercise">
-         Exercise:
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise:
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#median-value">
-       Median value
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id2">
-         Exercise:
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#box-plots">
-       Box plots
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id3">
-         Exercise:
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#a-bit-of-history">
-         A bit of history:
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id4">
-         Note:
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-categorical-data">
-     Visualizing categorical data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-multiple-data">
-     Visualizing multiple data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#scatter-plots">
-       Scatter plots
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bubble-chart">
-       Bubble chart
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#discuss-with-your-neighbor">
-         Discuss with your neighbor:
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-you-ve-learned">
-     What you’ve learned
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
-    </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-ve-learned">
+   What you’ve learned
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -876,6 +937,13 @@ higher end.</p>
 \]</div>
 <p>Therefore, you need to be explicit about the division by <span class="math notranslate nohighlight">\(N-1\)</span> when calling <code class="docutils literal notranslate"><span class="pre">np.var()</span></code>. How do you do that? you explicitly set <code class="docutils literal notranslate"><span class="pre">ddof</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>For example, to compute the sample variance for your <code class="docutils literal notranslate"><span class="pre">abv</span></code> variable, you do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">ddof</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Now, you can compute the standard deviation by taking the square root of <code class="docutils literal notranslate"><span class="pre">var_abv</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -885,13 +953,7 @@ higher end.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">17</span><span class="n">beaeecaa78</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">std_abv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_abv</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">std_abv</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;var_abv&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.013541733716680264
 </pre></div>
 </div>
 </div>
@@ -921,6 +983,11 @@ You will.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.013541733716680264
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="median-value">
 <h3>Median value<a class="headerlink" href="#median-value" title="Permalink to this headline">¶</a></h3>
@@ -942,12 +1009,18 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_29_0.png" src="../_images/02_Seeing_Stats_29_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ibu</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;International bitterness unit&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_30_0.png" src="../_images/02_Seeing_Stats_30_0.png" />
 </div>
 </div>
 <p>What is going on here? Obviously, there is a <em>box</em>: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the <em>median</em>.</p>
@@ -970,6 +1043,13 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The first quartile for abv is 0.05
+The second quartile for abv is 0.0559999999999999
+The third quartile for abv is 0.067
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>ibu quartiles</strong></p>
 <p>You can also pass a list of percentiles to <code class="docutils literal notranslate"><span class="pre">np.percentile()</span></code> and calculate several of them in one go. For example, to compute the quartiles of <code class="docutils literal notranslate"><span class="pre">ibu</span></code>, you do:</p>
@@ -980,6 +1060,13 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The first quartile for ibu is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The second quartile for ibu is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The third quartile for ibu is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quartiles_ibu</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The first quartile for ibu is 21.0
+The second quartile for ibu is 35.0
+The third quartile for ibu is 64.0
 </pre></div>
 </div>
 </div>
@@ -1016,6 +1103,19 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ibu:
+----------------
+top whisker = 128.5 ibu
+bottom whisker = 4.0 ibu
+
+abv:
+----------------
+top whisker = 9.2% abv
+bottom whisker = 2.5% abv
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="a-bit-of-history">
@@ -1044,10 +1144,54 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_series</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;American Pale Lager&#39;, &#39;American Pale Ale (APA)&#39;, &#39;American IPA&#39;,
+       &#39;American Double / Imperial IPA&#39;, &#39;Oatmeal Stout&#39;,
+       &#39;American Porter&#39;, &#39;Saison / Farmhouse Ale&#39;, &#39;Belgian IPA&#39;,
+       &#39;Cider&#39;, &#39;Baltic Porter&#39;, &#39;Tripel&#39;, &#39;American Barleywine&#39;,
+       &#39;Winter Warmer&#39;, &#39;American Stout&#39;, &#39;Fruit / Vegetable Beer&#39;,
+       &#39;English Strong Ale&#39;, &#39;American Black Ale&#39;, &#39;Belgian Dark Ale&#39;,
+       &#39;American Blonde Ale&#39;, &#39;American Amber / Red Ale&#39;,
+       &#39;Berliner Weissbier&#39;, &#39;American Brown Ale&#39;,
+       &#39;American Pale Wheat Ale&#39;, &#39;Belgian Strong Dark Ale&#39;, &#39;Kölsch&#39;,
+       &#39;English Pale Ale&#39;, &#39;American Amber / Red Lager&#39;,
+       &#39;English Barleywine&#39;, &#39;Milk / Sweet Stout&#39;, &#39;German Pilsener&#39;,
+       &#39;Pumpkin Ale&#39;, &#39;Belgian Pale Ale&#39;, &#39;American Pilsner&#39;,
+       &#39;American Wild Ale&#39;, &#39;English Brown Ale&#39;, &#39;Altbier&#39;,
+       &#39;California Common / Steam Beer&#39;, &#39;Gose&#39;, &#39;Cream Ale&#39;,
+       &#39;Vienna Lager&#39;, &#39;Witbier&#39;, &#39;American Double / Imperial Stout&#39;,
+       &#39;Munich Helles Lager&#39;, &#39;Schwarzbier&#39;, &#39;Märzen / Oktoberfest&#39;,
+       &#39;Extra Special / Strong Bitter (ESB)&#39;, &#39;Rye Beer&#39;,
+       &#39;Euro Dark Lager&#39;, &#39;Hefeweizen&#39;, &#39;Foreign / Export Stout&#39;, &#39;Other&#39;,
+       &#39;English India Pale Ale (IPA)&#39;, &#39;Czech Pilsener&#39;,
+       &#39;American Strong Ale&#39;, &#39;Mead&#39;, &#39;Euro Pale Lager&#39;,
+       &#39;American White IPA&#39;, &#39;Dortmunder / Export Lager&#39;,
+       &#39;Irish Dry Stout&#39;, &#39;Scotch Ale / Wee Heavy&#39;, &#39;Munich Dunkel Lager&#39;,
+       &#39;Radler&#39;, &#39;Bock&#39;, &#39;English Dark Mild Ale&#39;, &#39;Irish Red Ale&#39;,
+       &#39;Rauchbier&#39;, &#39;Bière de Garde&#39;, &#39;Doppelbock&#39;, &#39;Dunkelweizen&#39;,
+       &#39;Belgian Strong Pale Ale&#39;, &#39;Dubbel&#39;, &#39;Quadrupel (Quad)&#39;,
+       &#39;Russian Imperial Stout&#39;, &#39;English Pale Mild Ale&#39;,
+       &#39;Maibock / Helles Bock&#39;, &#39;Herbed / Spiced Beer&#39;,
+       &#39;American Adjunct Lager&#39;, &#39;Scottish Ale&#39;, &#39;Smoked Beer&#39;,
+       &#39;Light Lager&#39;, &#39;Abbey Single Ale&#39;, &#39;Roggenbier&#39;, &#39;Kristalweizen&#39;,
+       &#39;American Dark Wheat Ale&#39;, &#39;English Stout&#39;, &#39;Old Ale&#39;,
+       &#39;American Double / Imperial Pilsner&#39;, &#39;Flanders Red Ale&#39;,
+       &#39;Keller Bier / Zwickel Bier&#39;, &#39;American India Pale Lager&#39;,
+       &#39;Shandy&#39;, &#39;Wheat Ale&#39;, &#39;American Malt Liquor&#39;, &#39;English Bitter&#39;,
+       &#39;Chile Beer&#39;, &#39;Grisette&#39;, &#39;Flanders Oud Bruin&#39;, &#39;Braggot&#39;,
+       &#39;Low Alcohol Beer&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -1061,6 +1205,61 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>American Double / Imperial Stout      9
+Herbed / Spiced Beer                  9
+Schwarzbier                           9
+Bière de Garde                        7
+Belgian Strong Pale Ale               7
+American Dark Wheat Ale               7
+Bock                                  7
+Doppelbock                            7
+American Wild Ale                     6
+English Dark Mild Ale                 6
+Foreign / Export Stout                6
+Dortmunder / Export Lager             6
+California Common / Steam Beer        6
+Baltic Porter                         6
+Belgian Strong Dark Ale               6
+Euro Dark Lager                       5
+Dubbel                                5
+Irish Dry Stout                       5
+Mead                                  5
+Maibock / Helles Bock                 5
+Munich Dunkel Lager                   4
+Dunkelweizen                          4
+Quadrupel (Quad)                      4
+English Strong Ale                    4
+Shandy                                3
+Chile Beer                            3
+Keller Bier / Zwickel Bier            3
+Radler                                3
+English Pale Mild Ale                 3
+American Barleywine                   3
+English Bitter                        3
+American India Pale Lager             3
+English Barleywine                    3
+Abbey Single Ale                      2
+Old Ale                               2
+English Stout                         2
+Rauchbier                             2
+Euro Pale Lager                       2
+American Double / Imperial Pilsner    2
+Roggenbier                            2
+Smoked Beer                           1
+Other                                 1
+Grisette                              1
+Flanders Oud Bruin                    1
+American Malt Liquor                  1
+Kristalweizen                         1
+Braggot                               1
+Low Alcohol Beer                      1
+Flanders Red Ale                      1
+Wheat Ale                             1
+Name: style, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1068,10 +1267,20 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">style_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99
 </pre></div>
 </div>
 </div>
@@ -1084,6 +1293,9 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">style_counts</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#008367&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_51_0.png" src="../_images/02_Seeing_Stats_51_0.png" />
 </div>
 </div>
 </div>
@@ -1110,11 +1322,21 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1405
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv</span> <span class="o">=</span> <span class="n">beers_clean</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1405
 </pre></div>
 </div>
 </div>
@@ -1130,6 +1352,9 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;IBU&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_59_0.png" src="../_images/02_Seeing_Stats_59_0.png" />
 </div>
 </div>
 <p>Hmm. That’s a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there’s a lot of vertical spread on those dots to the right of the plot.</p>
@@ -1162,10 +1387,20 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">style_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90
 </pre></div>
 </div>
 </div>
@@ -1190,6 +1425,94 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abv</th>
+      <th>ibu</th>
+    </tr>
+    <tr>
+      <th>style</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abbey Single Ale</th>
+      <td>0.049000</td>
+      <td>22.000000</td>
+    </tr>
+    <tr>
+      <th>Altbier</th>
+      <td>0.054625</td>
+      <td>34.125000</td>
+    </tr>
+    <tr>
+      <th>American Adjunct Lager</th>
+      <td>0.046545</td>
+      <td>11.000000</td>
+    </tr>
+    <tr>
+      <th>American Amber / Red Ale</th>
+      <td>0.057195</td>
+      <td>36.298701</td>
+    </tr>
+    <tr>
+      <th>American Amber / Red Lager</th>
+      <td>0.048063</td>
+      <td>23.250000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Tripel</th>
+      <td>0.089750</td>
+      <td>23.500000</td>
+    </tr>
+    <tr>
+      <th>Vienna Lager</th>
+      <td>0.050429</td>
+      <td>24.357143</td>
+    </tr>
+    <tr>
+      <th>Wheat Ale</th>
+      <td>0.060000</td>
+      <td>24.000000</td>
+    </tr>
+    <tr>
+      <th>Winter Warmer</th>
+      <td>0.069500</td>
+      <td>24.625000</td>
+    </tr>
+    <tr>
+      <th>Witbier</th>
+      <td>0.050417</td>
+      <td>16.208333</td>
+    </tr>
+  </tbody>
+</table>
+<p>90 rows × 2 columns</p>
+</div></div></div>
 </div>
 <p>Looking good! you have the information you need: the average <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> by style, and the counts by style. The only problem is that <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> is sorted by decreasing count value, while <code class="docutils literal notranslate"><span class="pre">style_means</span></code> is sorted alphabetically by style. Ugh.</p>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">style_means</span></code> is a dataframe that is now using the style string as a <em>label</em> for each row. Meanwhile, <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> is a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> series, and it also uses the style as label or index to each element.</p>
@@ -1207,6 +1530,21 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abbey Single Ale               2
+Altbier                        8
+American Adjunct Lager        11
+American Amber / Red Ale      77
+American Amber / Red Lager    16
+American Barleywine            2
+American Black Ale            20
+American Blonde Ale           61
+American Brown Ale            38
+American Dark Wheat Ale        5
+Name: style, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Above, you used Matplotlib to create a scatter plot using two NumPy arrays as the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> parameters. Like you saw previously with histograms, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> also has available some plotting methods (calling Matplotlib internally). Scatter plots made easy!</p>
 <div class="cell docutils container">
@@ -1216,6 +1554,9 @@ The Nth percentile is the value below which N% of the observations fall.</p>
                          <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Beer ABV vs. IBU mean values by style&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_76_0.png" src="../_images/02_Seeing_Stats_76_0.png" />
 </div>
 </div>
 <p>That’s rad! Perhaps the bubbles are too small. You could multiply the <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> by a factor of 5, or maybe 10? You should experiment.</p>
@@ -1237,6 +1578,9 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_80_0.png" src="../_images/02_Seeing_Stats_80_0.png" />
+</div>
 </div>
 <p>It looks like the most popular beers do follow a linear relationship between alcohol fraction and IBU. You learned a lot about beer without having a sip!</p>
 <p><em>Wait… one more thing!</em> What if you add a text label next to the bigger bubbles, to identify the style?</p>
@@ -1253,6 +1597,9 @@ The Nth percentile is the value below which N% of the observations fall.</p>
         <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="p">(</span><span class="n">style_means</span><span class="o">.</span><span class="n">abv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">style_means</span><span class="o">.</span><span class="n">ibu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_Seeing_Stats_83_0.png" src="../_images/02_Seeing_Stats_83_0.png" />
 </div>
 </div>
 </div>
@@ -1283,48 +1630,6 @@ The Nth percentile is the value below which N% of the observations fall.</p>
 <li><p>John W. Tukey: His life and professional contributions (2002). David R. Brillinger, <em>Ann. Statistics</em>. <a class="reference external" href="https://www.stat.berkeley.edu/~brill/Papers/life.pdf">PDF available</a></p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h1>
-<ol>
-<li><p>Many beers do not report the IBU of the beer because it is very
-small. You may be accidentally removing whole categories of beer from
-our dataset by removing rows that do not include the IBU measure.</p>
-<p>a. Use the command <code class="docutils literal notranslate"><span class="pre">beers_filled</span> <span class="pre">=</span> <span class="pre">beers.fillna(0)</span></code> to clean the <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe</p>
-<p>b. Repeat the steps above to recreate the plot “Beer ABV vs. IBU mean values by style”
-scatter plot with <code class="docutils literal notranslate"><span class="pre">beers_filled</span></code>. What differences do you notice between the plots?</p>
-</li>
-</ol>
-<ol>
-<li><p>Gordon Moore created an empirical prediction that the rate of
-semiconductors on a computer chip would double every two years. This
-prediction was known as Moore’s law. Gordon Moore had originally only
-expected this empirical relation to hold from 1965 - 1975
-[<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>],
-but semiconductor manufacturers were able to keep up with Moore’s law
-until 2015.</p>
-<p>In the folder “../data” is a comma separated value (CSV) file, “transistor_data.csv” <a class="reference external" href="https://en.wikipedia.org/wiki/Transistor_count#Microprocessors">taken from wikipedia 01/2020</a>.
-Load the csv into a pandas dataframe, it has the following headings:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Processor</p></th>
-<th class="head"><p>MOS transistor count</p></th>
-<th class="head"><p>Date of Introduction</p></th>
-<th class="head"><p>Designer</p></th>
-<th class="head"><p>MOSprocess</p></th>
-<th class="head"><p>Area</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<p>a. In the years 2017, what was the average MOS transistor count?
-Make a boxplot of the transistor count in 2017 and find the first, second and third quartiles.</p>
-<p>b. Create a semilog y-axis scatter plot (i.e. <code class="docutils literal notranslate"><span class="pre">plt.semilogy</span></code>) for the
-“Date of Introduction” vs “MOS transistor count”.
-Color the data according to the “Designer”.</p>
-</li>
-</ol>
 </div>
 
     <script type="text/x-thebe-config">

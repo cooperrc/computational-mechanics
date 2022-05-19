@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -99,6 +101,11 @@
    Syllabus - Computational Mechanics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="how-to/update-github.html">
+   Working in your  Fork on GitHub.com
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="module_01/README.html">
    Computational Mechanics 01 - Getting Started
@@ -110,18 +117,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_01/01_Interacting_with_Python.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="module_01/02_Working_with_Python.html">
      02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module_01/02_Working_with_Python.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -130,8 +127,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_01/03_Numerical_error.html#problems">
-     Problems
+    <a class="reference internal" href="module_01/HW_01.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -154,18 +151,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_02/01_Cheers_Stats_Beers.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="module_02/02_Seeing_Stats.html">
      02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module_02/02_Seeing_Stats.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -174,18 +161,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_02/03_Linear_Regression_with_Real_Data.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="module_02/04_Stats_and_Montecarlo.html">
      04 - Statistics and Monte-Carlo Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_02/04_Stats_and_Montecarlo.html#problems">
-     Problems
+    <a class="reference internal" href="module_02/HW_02.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
@@ -208,18 +190,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_03/01_Catch_Motion.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="module_03/02_Step_Future.html">
      Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module_03/02_Step_Future.html#problems">
-     Problems
     </a>
    </li>
    <li class="toctree-l2">
@@ -228,23 +200,124 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_03/03_Get_Oscillations.html#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="module_03/04_Getting_to_the_root.html">
      Roots of Nonlinear functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module_03/04_Getting_to_the_root.html#problems">
-     Problems
+    <a class="reference internal" href="module_03/HW_03.html">
+     Homework
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="projects/03_IVP-project.html">
      Initial Value Problems - Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="module_04/README.html">
+   Computational Mechanics 4 - Linear Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_04/01_Linear-Algebra.html">
+     Linear Algebra Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_04/02_Gauss_elimination.html">
+     Gauss Elimination
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_04/03_Linear-regression-algebra.html">
+     Linear Regression Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_04/HW_04.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/04_Linear_Algebra-project.html">
+     CompMech04-Linear Algebra Project
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="module_05/README.html">
+   Computational Mechanics 5 - Boundary Value Problems
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_05/01_Revisiting_derivatives.html">
+     Revisiting Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_05/02_Keep_it_steady.html">
+     Keep it Steady
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_05/03_Good_Vibrations.html">
+     Good Vibrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module_05/HW_05.html">
+     Homework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/05-BVPs_project.html">
+     Computational Mechanics Boundary Values - Project 05
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="how-to/README.html">
+   Quick How-to documents
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="how-to/update-github.html">
+     Working in your  Fork on GitHub.com
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="how-to/polyfit.html">
+     Creating a quadratic fit on random data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="how-to/for-loops.html">
+     How to use a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop?
+     <em>
+      in Python
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/extra-FEA_material.html">
+     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
     </a>
    </li>
   </ul>
@@ -339,9 +412,14 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#view-the-summer-2021-syllabus-leftarrow-click-here">
+  <a class="reference internal nav-link" href="#jupyterhub-server-https-compmech-uconn-edu">
+   JupyterHub server: https://compmech.uconn.edu/
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#view-the-current-syllabus-leftarrow-click-here">
    <span class="xref myst">
-    View the Summer 2021 syllabus
+    View the current syllabus
    </span>
    <span class="math notranslate nohighlight">
     \(\leftarrow\)
@@ -407,6 +485,23 @@
                 
   <div class="section" id="computational-mechanics">
 <h1>Computational Mechanics<a class="headerlink" href="#computational-mechanics" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p><strong>Note</strong>: This Open Educational Resource was built with
+<a class="reference external" href="https://jupyterbook.org">Jupyter-Book</a> <strong>Check it out –&gt;</strong> <a class="reference external" href="https://cooperrc.github.io/computational-mechanics/README.html"><img alt="Jupyter BookBadge" src="_images/badge.svg" /></a></p>
+</div></blockquote>
+<p>Greetings!</p>
+<p>Thanks for joining us for UConn’s Computational Mechanics course.
+This is a hands-on, portfolio-based course. The <a class="reference external" href="https://cooperrc.github.io/computational-mechanics">course
+website</a> is built
+with an <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">open source
+license</a> so after you fork
+the repository its <strong>yours</strong>! You can build your own website, notebooks,
+etc. and share them with anyone you meet. Just make sure you link back
+to this course website.</p>
+<div class="section" id="jupyterhub-server-https-compmech-uconn-edu">
+<h2>JupyterHub server: <a class="reference external" href="https://compmech.uconn.edu/">https://compmech.uconn.edu/</a><a class="headerlink" href="#jupyterhub-server-https-compmech-uconn-edu" title="Permalink to this headline">¶</a></h2>
+<p>Join us on the Course GitHub
+<a class="reference external" href="https://github.com/cooperrc/computational-mechanics/discussions">Discussions</a>.</p>
 <p>Welcome to Computational Mechanics!</p>
 <p>This project is a collection of learning modules in engineering computations for
 undergraduate students. These materials are a combination of work from <a class="reference external" href="https://ryan-c-cooper.uconn.edu">Prof.
@@ -415,16 +510,22 @@ Connecticut Mechanical Engineering Department and the <a class="reference extern
 Modules</a> from Prof. Lorena A. Barba
 and doctoral student Natalia C. Clement at the George Washington University,
 Mechanical and Aerospace Engineering Department.</p>
-<p>Each learning modules is made up of three or four lesson, written as a Jupyter
+<p>Each learning module is made up of three or four lessons, written as Jupyter
 notebooks. We address an area of application or skills in computing in each
 notebook and each module has an overall objective. We use Python as the
 programming language.</p>
-<p>The overall goal of the course is learn to frame engineering problems as
+<p>The overall goal of the course is to frame engineering problems as
 computational methods. Once we can communicate our engineering problems to
-Python code (or any other computer language) we can use standardized
+Python code (or any other computer language) we use standard
 computational methods to solve those problems.</p>
-<div class="section" id="view-the-summer-2021-syllabus-leftarrow-click-here">
-<h2><a class="reference internal" href="syllabus.html"><span class="doc std std-doc">View the Summer 2021 syllabus</span></a> <span class="math notranslate nohighlight">\(\leftarrow\)</span> <em>click here</em><a class="headerlink" href="#view-the-summer-2021-syllabus-leftarrow-click-here" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="view-the-current-syllabus-leftarrow-click-here">
+<h2><a class="reference internal" href="syllabus.html"><span class="doc std std-doc">View the current syllabus</span></a> <span class="math notranslate nohighlight">\(\leftarrow\)</span> <em>click here</em><a class="headerlink" href="#view-the-current-syllabus-leftarrow-click-here" title="Permalink to this headline">¶</a></h2>
+<p>The course schedule is kept up to date on the Google Calendar here:</p>
+<iframe
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%233F51B5&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20zMmZmZjg5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+style="border:solid 1px #777" width="700" height="400" frameborder="0"
+scrolling="no"></iframe>
 <div class="section" id="compmech01-getting-started">
 <h3><a class="reference internal" href="module_01/README.html"><span class="doc std std-doc">CompMech01-Getting Started</span></a><a class="headerlink" href="#compmech01-getting-started" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -449,14 +550,14 @@ computational methods to solve those problems.</p>
 </ul>
 </div>
 <div class="section" id="compmech04-linear-algebra">
-<h3><span class="xref myst">CompMech04-Linear Algebra</span><a class="headerlink" href="#compmech04-linear-algebra" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference internal" href="module_04/README.html"><span class="doc std std-doc">CompMech04-Linear Algebra</span></a><a class="headerlink" href="#compmech04-linear-algebra" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Define sets of equations as matrix algebra</p></li>
 <li><p>Solve for multiple equations for multiple unknown variables</p></li>
 </ul>
 </div>
 <div class="section" id="compmech05-boundary-value-problems">
-<h3><span class="xref myst">CompMech05-Boundary Value Problems</span><a class="headerlink" href="#compmech05-boundary-value-problems" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference internal" href="module_05/README.html"><span class="doc std std-doc">CompMech05-Boundary Value Problems</span></a><a class="headerlink" href="#compmech05-boundary-value-problems" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Continue creating functions that are physical models</p></li>
 <li><p>Solve 1D and 2D partial differential equations with finite difference
@@ -471,8 +572,7 @@ approximations</p></li>
 is under BSD-3
 clause</a>. We are
 happy if you re-use the content in any way!</p>
-<p><a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause"><img alt="License" src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg" /></a> <a class="reference external" href="https://gitter.im/me3255-summer-2021/logistics?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/me3255-summer-2021/logistics" src="https://badges.gitter.im/me3255-summer-2021/logistics.svg" /></a>
-<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/"><img alt="License: CC BY4.0" src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" /></a></p>
+<p><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/"><img alt="License: CC BY4.0" src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" /></a></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
