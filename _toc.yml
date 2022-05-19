@@ -1,7 +1,9 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: README
+format: jb-book
+root: README
+chapters:
 - file: syllabus
 - file: how-to/update-github
 - file: module_01/README
