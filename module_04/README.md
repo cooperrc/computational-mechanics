@@ -33,8 +33,6 @@ large systems of equations into manageable engineering solutions.
 
 * How to use the _general least squares regression_ method for almost any function
 * How to calculate the coefficient of determination and correlation coefficient for a general least squares regression, $r^2~ and~ r$
-* How to plot and read a __training-testing__ plot
-* How to divide data into __training__ and __testing__ data for analysis
 * Why we need to avoid __overfitting__
 * How to construct general least squares regression using the dependent and independent data to form $\mathbf{y}=\mathbf{Za}$. 
 * How to construct a piecewise linear regression 

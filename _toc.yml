@@ -9,6 +9,7 @@
   - file: module_01/01_Interacting_with_Python
   - file: module_01/02_Working_with_Python
   - file: module_01/03_Numerical_error
+  - file: module_01/HW_01
   - file: projects/01_Getting-started-project.md
 - file: module_02/README
   sections:
@@ -16,6 +17,7 @@
   - file: module_02/02_Seeing_Stats
   - file: module_02/03_Linear_Regression_with_Real_Data
   - file: module_02/04_Stats_and_Montecarlo
+  - file: module_02/HW_02
   - file: projects/02_Analyze-data_project
 - file: module_03/README
   sections:
@@ -23,12 +25,14 @@
   - file: module_03/02_Step_Future
   - file: module_03/03_Get_Oscillations
   - file: module_03/04_Getting_to_the_root
+  - file: module_03/HW_03
   - file: projects/03_IVP-project
 - file: module_04/README
   sections:
   - file: module_04/01_Linear-Algebra
   - file: module_04/02_Gauss_elimination
   - file: module_04/03_Linear-regression-algebra
+  - file: module_04/HW_04
   - file: projects/04_Linear_Algebra-project
 - file: module_05/README
   sections:

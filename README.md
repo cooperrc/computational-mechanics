@@ -3,14 +3,23 @@
 [Jupyter-Book](https://jupyterbook.org) __Check it out -->__ [![Jupyter Book
 Badge](images/badge.svg)](https://cooperrc.github.io/computational-mechanics/README.html)
 
+Greetings!
+
+Thanks for joining us for UConn's Computational Mechanics course.
+This is a hands-on, portfolio-based course. The [course
+website](https://cooperrc.github.io/computational-mechanics) is built
+with an [open source
+license](https://creativecommons.org/licenses/by/4.0/) so after you fork
+the repository its __yours__! You can build your own website, notebooks,
+etc. and share them with anyone you meet. Just make sure you link back
+to this course website. 
+
+
+
 ### JupyterHub server: <https://compmech.uconn.edu/>
 
-Join us on the ME3255 Gitter chat:
-[![Gitter](https://badges.gitter.im/ME3255/logistics.svg)](https://gitter.im/ME3255/logistics?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-### Join us live at [twitch.tv/cooperrc84](https://twitch.tv/cooperrc84)
-MWF - 9:05-9:55am
-TTh - 11:00-12:15pm
+Join us on the Course GitHub
+[Discussions](https://github.com/cooperrc/computational-mechanics/discussions).
 
 Welcome to Computational Mechanics! 
 
@@ -22,24 +31,23 @@ Modules](https://github.com/engineersCode/EngComp) from Prof. Lorena A. Barba
 and doctoral student Natalia C. Clement at the George Washington University,
 Mechanical and Aerospace Engineering Department. 
 
-Each learning modules is made up of three or four lesson, written as a Jupyter
+Each learning module is made up of three or four lessons, written as Jupyter
 notebooks. We address an area of application or skills in computing in each
 notebook and each module has an overall objective. We use Python as the
 programming language.
 
-The overall goal of the course is learn to frame engineering problems as
+The overall goal of the course is to frame engineering problems as
 computational methods. Once we can communicate our engineering problems to
-Python code (or any other computer language) we can use standardized
+Python code (or any other computer language) we use standard
 computational methods to solve those problems. 
 
 ## [View the current syllabus](./syllabus) $\leftarrow$ _click here_
 
 The course schedule is kept up to date on the Google Calendar here:
 <iframe
-src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=Y19mZXA5MzV0NmUzZWVsdGN2c2NicGRkMWU3a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&mode=AGENDA"
-style="border:solid 1px #777" width="600" height="500" frameborder="0"
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%233F51B5&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20zMmZmZjg5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+style="border:solid 1px #777" width="700" height="400" frameborder="0"
 scrolling="no"></iframe>
-
 
 ### [CompMech01-Getting Started](module_01/README)
 
