@@ -58,31 +58,3 @@ Assume ambient temperature is a constant 65$^{o}$F.
 
 ```{code-cell} ipython3
 ```
-
-
-4. Now that we have a working numerical model, we can look at the results if the
-ambient temperature is not constant i.e. T_a=f(t). We can use the weather to improve our estimate for time of death. Consider the following Temperature for the day in question. 
-
-    |time| Temp ($^o$F)|
-    |---|---|
-    |6am|50|
-    |7am|51|
-    |8am|55|
-    |9am|60|
-    |10am|65|
-    |11am|70|
-    |noon|75|
-    |1pm|80|
-
-    a. Create a function that returns the current temperature based upon the time (0 hours=11am, 65$^{o}$F) 
-    *Plot the function $T_a$ vs time. Does it look correct? Is there a better way to get $T_a(t)$?
-
-    b. Modify the Euler approximation solution to account for changes in temperature at each hour. 
-    Compare the new nonlinear Euler approximation to the linear analytical model. 
-    At what time was the corpse 98.6$^{o}$F? i.e. what was the time of death? 
-    
-    
-
-```{code-cell} ipython3
-
-```

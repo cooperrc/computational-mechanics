@@ -773,26 +773,3 @@ recommended three lectures:
 * [Describing Quantitative Data: Where is the center?](https://youtu.be/tQ5slNYRcC4)
 * [Describing Quantitative Data: What is the variability in the data?](https://youtu.be/hlFeEQF5tDc)
 * [Variability in the data, continued: examples, bell curve](https://youtu.be/qeG0uNI3DBQ)
-
-# Problems
-
-1. Gordon Moore created an empirical prediction that the rate of
-semiconductors on a computer chip would double every two years. This
-prediction was known as Moore's law. Gordon Moore had originally only
-expected this empirical relation to hold from 1965 - 1975
-[[1](https://en.wikipedia.org/wiki/Moore%27s_law),[2](https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress)],
-but semiconductor manufacturers were able to keep up with Moore's law
-until 2015. 
-
-In the folder "../data" is a comma separated value (CSV) file,
-"transistor_data.csv" [taken from wikipedia
-01/2020](https://en.wikipedia.org/wiki/Transistor_count#Microprocessors).
-
-a. Use the `!head ../data/transistor_data.csv` command to look at
-the top of the csv. What are the headings for the columns?
-
-b. Load the csv into a pandas dataframe. How many missing values
-(`NaN`) are
-in the column with the number of transistors? What fraction are
-missing?
-
