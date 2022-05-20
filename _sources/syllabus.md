@@ -1,10 +1,8 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Fall 2021
-### GitHub page: [github.com/cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
+## ME 3255 Summer 2022
+### GitHub page: [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 ### JupyterHub server: <https://compmech.uconn.edu/>
-### ME3255 - chat room:
-[![Gitter](https://badges.gitter.im/ME3255/community.svg)](https://gitter.im/ME3255/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+### ME3255 - Discussions: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
 ## Course Description
 
 This is a project-based introduction to computational mechanics. There are five
@@ -167,12 +165,13 @@ then during the final week submit an updated final grade.
   Conduct](http://www.community.uconn.edu/student_code.html "The Student Code for Academic
   Integrity"). Students will follow all University regulations concerning the final exam.
 
-## Course Schedule (which is subject to change based upon feedback and pace of course)
+## Course Schedule 
+> Subject to change based upon feedback and pace of course
 
 The course schedule is kept up to date on the Google Calendar here:
 <iframe
 src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%233F51B5&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20zMmZmZjg5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
-style="border:solid 1px #777" width="700" height="400" frameborder="0"
+style="border:solid 1px #777" width="600" height="400" frameborder="0"
 scrolling="no"></iframe>
 
 ## Grading Scale
@@ -195,10 +194,10 @@ scrolling="no"></iframe>
 ## Due Dates and Late Policy
 
 All course due dates are identified in the [ME 3255 Google
-Calendar](https://calendar.google.com/calendar/u/0?cid=Y19mZXA5MzV0NmUzZWVsdGN2c2NicGRkMWU3a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
+Calendar](https://cooperrc.github.io/computational-mechanics/syllabus.html#course-schedule)
 Deadlines are based on Eastern Time; if you are in a different time zone, please
 adjust your submittal times accordingly. The instructor reserves the right to
-change dates accordingly as the semester progresses.  _All changes will be
+change dates accordingly as the course progresses.  _All changes will be
 communicated via the calendar or another appropriate notification._
 
 __Late Policy:__ There are no late submission penalties. If you fall
