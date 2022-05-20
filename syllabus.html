@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syllabus - Computational Mechanics &#8212; Computational Mechanics</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,28 +41,32 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Working in your Fork on GitHub.com" href="how-to/update-github.html" />
     <link rel="prev" title="Computational Mechanics" href="README.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,27 +75,31 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/comp-mech-logo.svg" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/comp-mech-logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="README.html">
    Computational Mechanics
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Syllabus - Computational Mechanics
@@ -105,11 +110,16 @@
    Working in your  Fork on GitHub.com
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="module_01/README.html">
    Computational Mechanics 01 - Getting Started
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="module_01/01_Interacting_with_Python.html">
      01 - Interacting with Python
@@ -136,14 +146,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="module_02/README.html">
    Computational Mechanics 02 - Analyze Data
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="module_02/01_Cheers_Stats_Beers.html">
      01 - Cheers!  Stats with Beers
@@ -175,14 +188,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="module_03/README.html">
    Computational Mechanics 03- Initial Value Problems
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="module_03/01_Catch_Motion.html">
      Catch things in motion
@@ -214,14 +230,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="module_04/README.html">
    Computational Mechanics 4 - Linear Algebra
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="module_04/01_Linear-Algebra.html">
      Linear Algebra Introduction
@@ -248,14 +267,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="module_05/README.html">
    Computational Mechanics 5 - Boundary Value Problems
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="module_05/01_Revisiting_derivatives.html">
      Revisiting Derivatives
@@ -282,19 +304,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="how-to/README.html">
    Quick How-to documents
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="how-to/update-github.html">
-     Working in your  Fork on GitHub.com
-    </a>
-   </li>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="how-to/polyfit.html">
      Creating a quadratic fit on random data
@@ -320,11 +340,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -368,7 +387,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -390,26 +409,25 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#me-3255-fall-2021">
    ME 3255 Fall 2021
@@ -534,14 +552,153 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Syllabus - Computational Mechanics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#me-3255-fall-2021">
+   ME 3255 Fall 2021
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-page-github-com-cooperrc-computational-mechanics">
+     GitHub page: github.com/cooperrc/computational-mechanics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterhub-server-https-compmech-uconn-edu">
+     JupyterHub server: https://compmech.uconn.edu/
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#me3255-chat-room">
+     ME3255 - chat room:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-description">
+   Course Description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-objectives">
+   Course Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-expectations">
+   Course Expectations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-information">
+   Course Information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#required-resources">
+     Required Resources:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-free-resources">
+     Recommended
+     <em>
+      Free
+     </em>
+     Resources:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-paid-textbooks">
+     Recommended
+     <em>
+      paid
+     </em>
+     Textbooks:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-technical-skills">
+   Minimum Technical Skills:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading">
+   Grading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#academic-integrity">
+   Academic Integrity:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-schedule-which-is-subject-to-change-based-upon-feedback-and-pace-of-course">
+   Course Schedule (which is subject to change based upon feedback and pace of course)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading-scale">
+   Grading Scale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#due-dates-and-late-policy">
+   Due Dates and Late Policy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback-and-grades">
+   Feedback and Grades
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-responsibilities-and-resources">
+   Student Responsibilities and Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#students-with-disabilities">
+   Students with Disabilities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-technical-requirements-with-accessibility-and-privacy-information">
+   Software/Technical Requirements (with Accessibility and Privacy Information)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#help">
+   Help
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="syllabus-computational-mechanics">
@@ -563,9 +720,9 @@
 <h2>Course Description<a class="headerlink" href="#course-description" title="Permalink to this headline">¶</a></h2>
 <p>This is a project-based introduction to computational mechanics. There are five
 modules with exercises, homeworks, and final projects.  The overall goal of the
-course is learn to frame engineering problems as computational methods. Once we
+course is to frame engineering problems as computational methods. Once we
 can communicate our engineering problems to Python code (or any other computer
-language) we can use standardized computational methods to solve those problems.</p>
+language) we can use standard computational methods to solve those problems.</p>
 <p>We will work through five modules:</p>
 <ol class="simple">
 <li><p><a class="reference internal" href="module_01/README.html"><span class="doc std std-doc">CompMech01-Getting Started</span></a></p></li>
@@ -609,55 +766,23 @@ reading/understanding)</p></li>
 <div class="section" id="course-information">
 <h2>Course Information<a class="headerlink" href="#course-information" title="Permalink to this headline">¶</a></h2>
 <p><strong>Course Title:</strong> ME3255 - Computational Mechanics</p>
-<p><strong>Format:</strong> Hybrid</p>
+<p><strong>Format:</strong> Online</p>
 <p><strong>Prerequisite:</strong> CE 2110 and MATH 2110 or 2130</p>
 <p><strong>Instructor</strong>: Prof. Ryan C. Cooper <strong><a class="reference external" href="mailto:ryan&#46;c&#46;cooper&#37;&#52;&#48;uconn&#46;edu">mailto:ryan<span>&#46;</span>c<span>&#46;</span>cooper<span>&#64;</span>uconn<span>&#46;</span>edu</a></strong></p>
-<p><strong>Office Hours/Availability:</strong> Mon/Wed 11-12pm (EST) <a class="reference external" href="https://uconn-cmr.webex.com/meet/rcc02007">https://uconn-cmr.webex.com/meet/rcc02007</a></p>
+<p><strong>Office Hours/Availability:</strong> by appointment
+<a class="reference external" href="https://cooperrc.github.io">https://cooperrc.github.io</a></p>
 <p><strong>Preferred Contact:</strong> Post questions and comments to
-<a class="reference external" href="https://gitter.im/ME3255">Gitter</a>:</p>
-<blockquote>
-<div><p>Introduce yourself in the <a class="reference external" href="https://gitter.im/ME3255/logistics">logistics room</a> and take a look at
-the community rooms to discuss:</p>
-<ul class="simple">
-<li><p>logistics e.g. due dates, grades, introductions <a class="reference external" href="https://gitter.im/ME3255/logistics">ME3255/logistics</a></p></li>
-<li><p>concepts and exercises in the readings <a class="reference external" href="https://gitter.im/ME3255/readings">ME3255/readings</a></p></li>
-<li><p>homework and project hands-on work <a class="reference external" href="https://gitter.im/ME3255/work">ME3255/work</a></p></li>
-</ul>
-</div></blockquote>
-<p><strong>Teaching Assistants</strong>:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>section</p></th>
-<th class="head"><p>TA</p></th>
-<th class="head"><p>email</p></th>
-<th class="head"><p>GitHub handle</p></th>
-<th class="head"><p>office hours</p></th>
-<th class="head"><p>Webex room</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>sec001</p></td>
-<td><p>Genevieve Kunkel</p></td>
-<td><p><a class="reference external" href="mailto:genevieve&#46;kunkel&#37;&#52;&#48;uconn&#46;edu">mailto:genevieve<span>&#46;</span>kunkel<span>&#64;</span>uconn<span>&#46;</span>edu</a></p></td>
-<td><p><a class="reference external" href="https://gitter.im/gmk19001">&#64;gmk19001</a></p></td>
-<td><p>Thu 12:30-2:30pm</p></td>
-<td><p><a class="reference external" href="https://uconn-cmr.webex.com/meet/gmk19001">https://uconn-cmr.webex.com/meet/gmk19001</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>sec002</p></td>
-<td><p>Mohammad Madani</p></td>
-<td><p><a class="reference external" href="mailto:mohammad&#46;madani&#37;&#52;&#48;uconn&#46;edu">mailto:mohammad<span>&#46;</span>madani<span>&#64;</span>uconn<span>&#46;</span>edu</a></p></td>
-<td><p><a class="reference external" href="https://gitter.im/mahan-fcb">&#64;mahan-fcb</a></p></td>
-<td><p>Mon 1-3pm</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Lectures</strong>:</p>
-<ul class="simple">
-<li><p>sec001: MWF 9:05-9:55am in BPB 130</p></li>
-<li><p>sec002: TTh 11:00-12:15pm in BOUS A106
-<strong>Prerequisite:</strong> CE 3110, MATH 2410Q</p></li>
-</ul>
+<a class="reference external" href="https://github.com/cooperrc/computational-mechanics/discussions">Discussions</a>:</p>
+<!-- __Teaching Assistants__: -->
+<!--  -->
+<!-- |section | TA | email| GitHub handle| office hours | Webex room | -->
+<!-- |---|---|---|---|---|---| -->
+<!-- | sec001 | Genevieve Kunkel | <genevieve.kunkel@uconn.edu>| [@gmk19001](https://gitter.im/gmk19001)| Thu 12:30-2:30pm |<https://uconn-cmr.webex.com/meet/gmk19001>| -->
+<!-- | sec002 | Mohammad Madani | <mohammad.madani@uconn.edu> | [@mahan-fcb](https://gitter.im/mahan-fcb) | Mon 1-3pm | | -->
+<!-- __Lectures__:  -->
+<!-- - sec001: MWF 9:05-9:55am in BPB 130 -->
+<!-- - sec002: TTh 11:00-12:15pm in BOUS A106 -->
+<p><strong>Prerequisite:</strong> CE 3110, MATH 2410Q</p>
 <p><strong>Tools used:</strong> <a class="reference external" href="https://www.python.org">Python</a>, <a class="reference external" href="https://jupyter.org">Jupyter</a>,
 <a class="reference external" href="https://rogerdudler.github.io/git-guide/">git</a>, and
 <a class="reference external" href="https://github.com">GitHub</a></p>
@@ -678,10 +803,6 @@ code, create documentation, and save assignments</p></li>
 <li><p><a class="reference external" href="https://github.com">GitHub</a> If you prefer to
 keep your work private, you can create private repositories and share them
 with myself <a class="reference external" href="https://github.com/cooperrc">&#64;cooperrc</a>.</p></li>
-<li><p><a class="reference external" href="https://gitter.im/ME3255/community?utm_source=share-link&amp;utm_medium=link&amp;utm_campaign=share-link">Gitter - ME3255 chat
-room</a>
-you can sign up to join the classroom discussion once you create a
-GitHub account</p></li>
 </ul>
 </div>
 <div class="section" id="recommended-free-resources">
@@ -733,21 +854,21 @@ Scientists</em> 4th edition.</p></li>
 <tbody>
 <tr class="row-even"><td><p>Participation</p></td>
 <td><p>30 %</p></td>
-<td><p>Discussion questions on Gitter+class, self assessed</p></td>
+<td><p>Discussion questions on GitHub+, self assessed</p></td>
 </tr>
 <tr class="row-odd"><td><p>Homework</p></td>
 <td><p>30 %</p></td>
-<td><p>Complete the end-of-notebook problems</p></td>
+<td><p>Complete the module problem sets</p></td>
 </tr>
 <tr class="row-even"><td><p>Projects</p></td>
 <td><p>40 %</p></td>
-<td><p>Complete the module project and submit to GitHub</p></td>
+<td><p>Complete the module projects and submit to GitHub</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Participation</strong>: The participation grade will be self-assigned. At
-week 7 you will submit your current grade and modes of participation,
-then during finals week submit an updated final grade.</p>
+week 2 you will submit your current grade and modes of participation,
+then during the final week submit an updated final grade.</p>
 </div>
 <div class="section" id="academic-integrity">
 <h2>Academic Integrity:<a class="headerlink" href="#academic-integrity" title="Permalink to this headline">¶</a></h2>
@@ -765,8 +886,8 @@ Conduct</a>. Students will follow all University regulations concerning the fina
 <h2>Course Schedule (which is subject to change based upon feedback and pace of course)<a class="headerlink" href="#course-schedule-which-is-subject-to-change-based-upon-feedback-and-pace-of-course" title="Permalink to this headline">¶</a></h2>
 <p>The course schedule is kept up to date on the Google Calendar here:</p>
 <iframe
-src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=Y19mZXA5MzV0NmUzZWVsdGN2c2NicGRkMWU3a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&mode=AGENDA"
-style="border:solid 1px #777" width="600" height="500" frameborder="0"
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%233F51B5&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20zMmZmZjg5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+style="border:solid 1px #777" width="700" height="400" frameborder="0"
 scrolling="no"></iframe>
 </div>
 <div class="section" id="grading-scale">
@@ -838,16 +959,19 @@ Deadlines are based on Eastern Time; if you are in a different time zone, please
 adjust your submittal times accordingly. The instructor reserves the right to
 change dates accordingly as the semester progresses.  <em>All changes will be
 communicated via the calendar or another appropriate notification.</em></p>
-<p><strong>Late Policy:</strong> If you fall behind on work I expect to be notified when
-you plan to submit assignments. I ask that you be respectful of our time
-as evaluators of your progress.</p>
+<p><strong>Late Policy:</strong> There are no late submission penalties. If you fall
+behind on work <em>you must</em> contact me and tell me:</p>
+<ol class="simple">
+<li><p>When will you submit the assignment?</p></li>
+<li><p>What help do you need?</p></li>
+</ol>
 </div>
 <div class="section" id="feedback-and-grades">
 <h2>Feedback and Grades<a class="headerlink" href="#feedback-and-grades" title="Permalink to this headline">¶</a></h2>
-<p>We will make every effort to provide feedback and grades within 1 week. To keep
-track of your performance in the course, refer to My Grades in HuskyCT.
-If you resubmit an assignment with improvements, notify Prof. Cooper and your
-TA.</p>
+<p>We will make every effort to provide feedback and grades within 2 days.
+To keep track of your performance in the course, refer to grades in
+Google Classroom.  You can resubmit any assignment with improvements,
+notify Prof. Cooper when you have incorporated comments.</p>
 <!-- ## Student Authentication and Verification -->
 <!--  -->
 <!-- The University of Connecticut is required to verify the identity of students who -->
@@ -893,18 +1017,13 @@ on disability or pregnancy, please let me know immediately so that we can
 discuss options. Students who require accommodations should contact the Center
 for Students with Disabilities, Wilbur Cross Building Room 204, (860) 486-2020
 or <a class="reference external" href="http://csd.uconn.edu/">http://csd.uconn.edu/</a>.</p>
-<p>Blackboard measures and evaluates accessibility using two sets of standards: the
-WCAG 2.0 standards issued by the World Wide Web Consortium (W3C) and Section 508
-of the Rehabilitation Act issued in the United States federal government.”
-(Retrieved March 24, 2013 from <a class="reference external" href="http://www.blackboard.com/platforms/learn/resources/accessibility.aspx">Blackboard’s
-website</a>)</p>
 </div>
 <div class="section" id="software-technical-requirements-with-accessibility-and-privacy-information">
 <h2>Software/Technical Requirements (with Accessibility and Privacy Information)<a class="headerlink" href="#software-technical-requirements-with-accessibility-and-privacy-information" title="Permalink to this headline">¶</a></h2>
 <p>The software/technical requirements for this course include:</p>
 <ul class="simple">
 <li><p>Modern, up-to-date web browser e.g. <a class="reference external" href="https://www.google.com/chrome/">Chrome</a>, <a class="reference external" href="https://www.mozilla.org/en-US/">Firefox</a>, <a class="reference external" href="https://www.apple.com/safari/">Safari (Mac OS)</a>, or <a class="reference external" href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a></p></li>
-<li><p>HuskyCT/Blackboard (HuskyCT/ Blackboard Accessibility Statement, HuskyCT/Blackboard Privacy Policy)</p></li>
+<li><p>Google Classroom</p></li>
 <li><p>Adobe Acrobat Reader (Adobe Reader Accessibility Statement, Adobe Reader Privacy Policy)</p></li>
 <li><p>Google Apps (<a class="reference external" href="https://www.google.com/accessibility/">Google Apps Accessibility</a>, <a class="reference external" href="https://www.google.com/edu/trust/">Google for Education Privacy Policy</a></p></li>
 <li><p>Dedicated access to high-speed internet with a minimum speed of 1.5 Mbps (4 Mbps or higher is recommended).</p></li>
@@ -915,45 +1034,6 @@ website</a>)</p>
 <div class="section" id="help">
 <h2>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://ecampus.uconn.edu/help.html">Technical and Academic Help</a> provides a guide to technical and academic assistance.</p>
-<p>This course is completely facilitated online using the learning management
-platform, <a class="reference external" href="https://lms.uconn.edu">HuskyCT</a>. If you have difficulty accessing
-HuskyCT, you have access to the in person/live person
-support options available during regular business hours through the <a class="reference external" href="http://helpcenter.uconn.edu/">Help
-Center</a>.  You also have <a class="reference external" href="http://www.ecampus24x7.uconn.edu/">24x7 Course
-Support</a> including access to live chat,
-phone, and support documents.</p>
-<!-- |Date| Subject/Notebook|Module| -->
-<!-- |---| --------|---| -->
-<!-- |Tue (01-21) |Welcome!  | __NEW [Lecture01 - Introduction](https://github.uconn.edu/rcc02007/Computational_Mechanics/blob/master/docs/01_introduction.pdf)__| -->
-<!-- |Thu (01-23) |01_Interacting_with_Python  |Getting-Started| -->
-<!-- |Tue (01-28) |02_Working_with_Python |Getting-Started| -->
-<!-- |Thu (01-30) |03_Numerical_error  |Getting-Started| -->
-<!-- |Tue (02-04) |Module 1 Project  | Review and submit | -->
-<!-- |Thu (02-06) |meet MCHU 301-Review  |__Lecture__ | -->
-<!-- |Tue (02-11) |01_Cheers_Stats_Beers  |Analyze Data| -->
-<!-- |Thu (02-13) |02_Seeing_Stats  |Analyze Data| -->
-<!-- |Tue (02-18) |03_Linear_Regression_with_Real_Data  |Analyze Data| -->
-<!-- |Thu (02-20) |04_Stats_and_Montecarlo |Analyze Data| -->
-<!-- |Tue (02-25) |module 2 Project  |Review and submit| -->
-<!-- |Thu (02-27) |01_Catch_Motion |Initial Value Problems| -->
-<!-- |Tue (03-03) |02_Step_Future  |Initial Value Problems| -->
-<!-- |Thu (03-05) |03_Get_Oscillations  |Initial Value Problems| -->
-<!-- |Tue (03-10) |04_Shooting_solutions  |Initial Value Problems| -->
-<!-- |Thu (03-12) |Module 3 Project  |Review and submit| -->
-<!-- |Tue (03-17) |Spring Break!!  | R&R| -->
-<!-- |Thu (03-19) |Spring Break!!  | R&R| -->
-<!-- |Tue (03-24) |meet MCHU 301-Review  | __Lecture__ | -->
-<!-- |Thu (03-26) |01_Solving_equations  | Linear Algebra| -->
-<!-- |Tue (03-31) |02_Gauss_elimination  | Linear Algebra| -->
-<!-- |Thu (04-02) |03_Linear_regression_revisited  | Linear Algebra| -->
-<!-- |Tue (04-07) |Catch-up day  | Linear Algebra| -->
-<!-- |Thu (04-09) |Module 4 project  | Review and Submit| -->
-<!-- |Tue (04-14) |01_Finite_differences  |Boundary Value Problems| -->
-<!-- |Thu (04-16) |02_Solutions_in_1D |Boundary Value Problems| -->
-<!-- |Tue (04-21) |03_Solutions_in_2D |Boundary Value Problems| -->
-<!-- |Thu (04-23) |Catch-up day |Boundary Value Problems| -->
-<!-- |Tue (04-28) |Review course material  | __Lecture__ | -->
-<!-- |Thu (04-30) |Module 5 project  | Review and Submit | -->
 </div>
 </div>
 
@@ -979,36 +1059,42 @@ phone, and support documents.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="README.html" title="previous page">Computational Mechanics</a>
-    <a class='right-next' id="next-link" href="how-to/update-github.html" title="next page">Working in your  Fork on GitHub.com</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Computational Mechanics</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="how-to/update-github.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Working in your  Fork on GitHub.com</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Ryan C. Cooper<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By <a href = https://cooperrc.github.io> Ryan C. Cooper</a><br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>
