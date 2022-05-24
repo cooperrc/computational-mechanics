@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Computational Mechanics
-author: Ryan C. Cooper
+author: "<a href = https://cooperrc.github.io> Ryan C. Cooper</a>"
 logo: comp-mech-logo.svg
 
 # Force re-execution of notebooks on each build.
@@ -10,7 +10,18 @@ logo: comp-mech-logo.svg
 execute:
   execute_notebooks: force
 parse:
-  myst_extended_syntax: true
+  myst_enable_extensions: #true
+    - amsmath
+    - colon_fence
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+    - tasklist
+  myst_dmath_double_inline: true
 
 
 # Define the name of the latex output file for PDF builds
@@ -35,5 +46,6 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  favicon: spiderman-favicon.png
   use_issues_button: true
   use_repository_button: true
