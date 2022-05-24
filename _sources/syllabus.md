@@ -1,8 +1,10 @@
 # Syllabus - Computational Mechanics
 ## ME 3255 Summer 2022
-### GitHub page: [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
-### JupyterHub server: <https://compmech.uconn.edu/>
-### ME3255 - Discussions: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
+**GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
+- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTIwNjYxODY3Mzk1?cjc=xlnsqw4)
+  class code: **xlnsqw4**
+- **JupyterHub server**: <https://compmech.uconn.edu/>
+- **ME3255 - Discussions**: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
 ## Course Description
 
 This is a project-based introduction to computational mechanics. There are five
@@ -81,7 +83,7 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
 [git](https://rogerdudler.github.io/git-guide/), and
 [GitHub](https://github.com)
 
-### Required Resources:
+## Required Resources:
 
 - [Computational
   Mechanics](https://cooperrc.github.io/computational-mechanics/)
@@ -92,6 +94,8 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   and doctoral student Natalia C. Clement at the George Washington University,
   Mechanical and Aerospace Engineering Department.
 
+- [Google Classroom](https://classroom.google.com/c/NTIwNjYxODY3Mzk1?cjc=xlnsqw4)
+  class code: **xlnsqw4**
 - [JupyterHub server at compmech.uconn.edu](https://compmech.uconn.edu) is an
   interactive Jupyter notebook server. We will use it with Python to run our
   code, create documentation, and save assignments
