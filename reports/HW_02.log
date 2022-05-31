@@ -17,14 +17,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-energy = pd.read_csv('../data/primary-energy-consumption-by-region.csv')
+rng = default_rng()
+N_steps = 10
+dx = rng.random(N_steps) - 0.5
+dy = rng.random(N_steps) - 0.5
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [1][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m energy [38;5;241m=[39m [43mpd[49m[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124m../data/primary-energy-consumption-by-region.csv[39m[38;5;124m'[39m)
+Input [0;32mIn [4][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m rng [38;5;241m=[39m [43mdefault_rng[49m()
+[1;32m      2[0m N_steps [38;5;241m=[39m [38;5;241m10[39m
+[1;32m      3[0m dx [38;5;241m=[39m rng[38;5;241m.[39mrandom(N_steps) [38;5;241m-[39m [38;5;241m0.5[39m
 
-[0;31mNameError[0m: name 'pd' is not defined
-NameError: name 'pd' is not defined
+[0;31mNameError[0m: name 'default_rng' is not defined
+NameError: name 'default_rng' is not defined
 

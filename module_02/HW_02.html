@@ -555,6 +555,16 @@
 </div></blockquote>
 <div class="section" id="homework">
 <h1>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="problems-part-1">
 <h2>Problems <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
@@ -638,16 +648,6 @@ land temperature anomoly? Split the data and perform two linear fits.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/primary-energy-consumption-by-region.csv&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <ol class="simple">
 <li><p>You plotted Gordon Moore’s empirical prediction that the rate of semiconductors on a computer chip would double every two years in <a class="reference internal" href="02_Seeing_Stats.html"><span class="doc std std-doc">02_Seeing_Stats</span></a>. This prediction was known as Moore’s law. Gordon Moore had originally only expected this empirical relation to hold from 1965 - 1975 [<a class="reference external" href="https://en.wikipedia.org/wiki/Moore%27s_law">1</a>,<a class="reference external" href="https://spectrum.ieee.org/computing/hardware/gordon-moore-the-man-whose-name-means-progress">2</a>], but semiconductor manufacuturers were able to keep up with Moore’s law until 2015.</p></li>
@@ -714,6 +714,18 @@ particles that move further than 0.5 m.</p>
 <span class="n">N_steps</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">dx</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N_steps</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
 <span class="n">dy</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N_steps</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">N_steps</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N_steps</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+
+<span class="ne">NameError</span>: name &#39;default_rng&#39; is not defined
 </pre></div>
 </div>
 </div>

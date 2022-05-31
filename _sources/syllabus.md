@@ -1,6 +1,6 @@
 # Syllabus - Computational Mechanics
 ## ME 3255 Summer 2022
-**GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
+- **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 - Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTIwNjYxODY3Mzk1?cjc=xlnsqw4)
   class code: **xlnsqw4**
 - **JupyterHub server**: <https://compmech.uconn.edu/>
