@@ -615,14 +615,35 @@ of the two indices from 0 to 9 e.g. A_99[3,2]=6 and A_99[4,4]=16.</p>
 <p>c. Calculate the standard deviation of <code class="docutils literal notranslate"><span class="pre">A_99</span></code></p>
 </li>
 </ol>
-<ol>
-<li><p>Use the two arrays, X and Y, given below to create A_99 using numpy array math rather than a for-loop.</p>
-<p>a. time your script using <code class="docutils literal notranslate"><span class="pre">%%time</span></code></p>
-<p>b. Calculate the mean of <code class="docutils literal notranslate"><span class="pre">A_99</span></code></p>
-<p>c. Calculate the standard deviation of <code class="docutils literal notranslate"><span class="pre">A_99</span></code></p>
-<p>d. create a filled contour plot of X, Y, A_99 <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.contourf.html">contourf plot documentation</a></p>
-</li>
+<ol class="simple">
+<li><p>Use the two arrays, X and Y, given below to create A_99 using numpy array math rather than a for-loop.</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a. time your script using `%%time`    
+
+b. Calculate the mean of `A_99`
+
+c. Calculate the standard deviation of `A_99`
+    
+d. create a filled contour plot of X, Y, A_99 [contourf plot documentation](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.contourf.html)
+</pre></div>
+</div>
 <ol class="simple">
 <li><p>The following linear interpolation function has an error. It is supposed to return y(x) given the the two points <span class="math notranslate nohighlight">\(p_1=[x_1,~y_1]\)</span> and <span class="math notranslate nohighlight">\(p_2=[x_2,~y_2]\)</span>. Currently, it just returns and error.</p></li>
 </ol>
@@ -680,12 +701,6 @@ models assumes that the rate of change of the population p is proportional to th
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>years= [1900. 1950. 2000. 2020.]
-population = [1.578000e+09 2.526000e+09 6.127000e+09 7.795482e+09]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,14 +708,6 @@ population = [1.578000e+09 2.526000e+09 6.127000e+09 7.795482e+09]
 <span class="nb">print</span><span class="p">((</span><span class="n">pop</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">year</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;average growth of 1900 - 2020&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">pop</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">pop</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">year</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average population changes 1900-1950, 1950-2000, 2000-2020
-[18960000. 72020000. 83424100.]
-average growth of 1900 - 2020
-58134700.0
 </pre></div>
 </div>
 </div>
