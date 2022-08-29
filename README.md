@@ -46,7 +46,7 @@ computational methods to solve those problems.
 The course schedule is kept up to date on the Google Calendar here:
 
 <iframe
-src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=cnlhbi5jLmNvb3BlckB1Y29ubi5lZHU&src=Y19jbGFzc3Jvb203OTUzOWRiYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y19jbGFzc3Jvb201MTVlZTBmZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y29vcGVycmM4NEBnbWFpbC5jb20&src=YmVya2VsZXkuZWR1X2lla2dwaWdtMjMyamJobGRzZmIyYzJqODFjQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=bTNoZWs2OWRhZzczODF1bXQ4a2NqZDc1dTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%2300349d&color=%230047a8&color=%23202124&color=%230B8043&color=%23F6BF26&color=%23F09300"
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb201MTVlZTBmZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
 style="border:solid 1px #777" width="600" height="400" frameborder="0"
 scrolling="no"></iframe>
 
