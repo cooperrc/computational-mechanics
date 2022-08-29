@@ -1,10 +1,11 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Summer 2022
+## ME 3255 Fall 2022
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
-- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTIwNjYxODY3Mzk1?cjc=xlnsqw4)
-  class code: **xlnsqw4**
+- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTQ0NDYyNzExMDUx?cjc=mnx2evf)
+  class code: ****
 - **JupyterHub server**: <https://compmech.uconn.edu/>
 - **ME3255 - Discussions**: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
+
 ## Course Description
 
 This is a project-based introduction to computational mechanics. There are five
@@ -94,7 +95,7 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   and doctoral student Natalia C. Clement at the George Washington University,
   Mechanical and Aerospace Engineering Department.
 
-- [Google Classroom](https://classroom.google.com/c/NTIwNjYxODY3Mzk1?cjc=xlnsqw4)
+- [Google Classroom](https://classroom.google.com/c/NTQ0NDYyNzExMDUx?cjc=mnx2evf)
   class code: **xlnsqw4**
 - [JupyterHub server at compmech.uconn.edu](https://compmech.uconn.edu) is an
   interactive Jupyter notebook server. We will use it with Python to run our
@@ -173,8 +174,9 @@ then during the final week submit an updated final grade.
 > Subject to change based upon feedback and pace of course
 
 The course schedule is kept up to date on the Google Calendar here:
+
 <iframe
-src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%233F51B5&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20zMmZmZjg5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=cnlhbi5jLmNvb3BlckB1Y29ubi5lZHU&src=Y19jbGFzc3Jvb203OTUzOWRiYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y19jbGFzc3Jvb201MTVlZTBmZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y29vcGVycmM4NEBnbWFpbC5jb20&src=YmVya2VsZXkuZWR1X2lla2dwaWdtMjMyamJobGRzZmIyYzJqODFjQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=bTNoZWs2OWRhZzczODF1bXQ4a2NqZDc1dTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%2300349d&color=%230047a8&color=%23202124&color=%230B8043&color=%23F6BF26&color=%23F09300"
 style="border:solid 1px #777" width="600" height="400" frameborder="0"
 scrolling="no"></iframe>
 
