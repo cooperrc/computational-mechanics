@@ -25,7 +25,7 @@ Welcome to Computational Mechanics!
 
 This project is a collection of learning modules in engineering computations for
 undergraduate students. These materials are a combination of work from [Prof.
-Ryan C. Cooper](https://ryan-c-cooper.uconn.edu) at the University of
+Ryan C. Cooper](https://cooperrc.github.io) at the University of
 Connecticut Mechanical Engineering Department and the [Engineering Computations
 Modules](https://github.com/engineersCode/EngComp) from Prof. Lorena A. Barba
 and doctoral student Natalia C. Clement at the George Washington University,
@@ -44,8 +44,9 @@ computational methods to solve those problems.
 ## [View the current syllabus](./syllabus) $\leftarrow$ _click here_
 
 The course schedule is kept up to date on the Google Calendar here:
+
 <iframe
-src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%233F51B5&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20zMmZmZjg5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=cnlhbi5jLmNvb3BlckB1Y29ubi5lZHU&src=Y19jbGFzc3Jvb203OTUzOWRiYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y19jbGFzc3Jvb201MTVlZTBmZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y29vcGVycmM4NEBnbWFpbC5jb20&src=YmVya2VsZXkuZWR1X2lla2dwaWdtMjMyamJobGRzZmIyYzJqODFjQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=bTNoZWs2OWRhZzczODF1bXQ4a2NqZDc1dTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%2300349d&color=%230047a8&color=%23202124&color=%230B8043&color=%23F6BF26&color=%23F09300"
 style="border:solid 1px #777" width="600" height="400" frameborder="0"
 scrolling="no"></iframe>
 
