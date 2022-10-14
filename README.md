@@ -41,7 +41,7 @@ computational methods. Once we can communicate our engineering problems to
 Python code (or any other computer language) we use standard
 computational methods to solve those problems. 
 
-## [View the current syllabus](./syllabus) $\leftarrow$ _click here_
+## [View the current syllabus](./syllabus.md) $\leftarrow$ _click here_
 
 The course schedule is kept up to date on the Google Calendar here:
 
