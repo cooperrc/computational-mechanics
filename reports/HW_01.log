@@ -22,7 +22,7 @@ X, Y = np.meshgrid(np.arange(10), np.arange(10))
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 1>[0;34m()[0m
+Input [0;32mIn [2][0m, in [0;36m<cell line: 1>[0;34m()[0m
 [0;32m----> 1[0m X, Y [38;5;241m=[39m [43mnp[49m[38;5;241m.[39mmeshgrid(np[38;5;241m.[39marange([38;5;241m10[39m), np[38;5;241m.[39marange([38;5;241m10[39m))
 
 [0;31mNameError[0m: name 'np' is not defined
