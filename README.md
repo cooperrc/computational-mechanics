@@ -46,33 +46,33 @@ computational methods to solve those problems.
 The course schedule is kept up to date on the Google Calendar here:
 
 <iframe
-src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb201MTVlZTBmZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb202MWI3NmIxMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5"
 style="border:solid 1px #777" width="600" height="400" frameborder="0"
 scrolling="no"></iframe>
 
-### [CompMech01-Getting Started](module_01/README)
+### [CompMech01-Getting Started](module_01/README.md)
 
 - Getting comfortable with Python
 - Quantifying error in computational methods
 
-### [CompMech02-Analyze-data](module_02/README)
+### [CompMech02-Analyze-data](module_02/README.md)
 
 - Describing and plotting data
 - Some statistics
 - Monte Carlo modelling
 
-### [CompMech03-Initial Value Problems](module_03/README)
+### [CompMech03-Initial Value Problems](module_03/README.md)
 
 - Creating functions that are physical models
 - Solving ordinary differential equations
 - Solving nonlinear equations
 
-### [CompMech04-Linear Algebra](module_04/README)
+### [CompMech04-Linear Algebra](module_04/README.md)
 
 - Define sets of equations as matrix algebra
 - Solve for multiple equations for multiple unknown variables
 
-### [CompMech05-Boundary Value Problems](module_05/README)
+### [CompMech05-Boundary Value Problems](module_05/README.md)
 
 - Continue creating functions that are physical models
 - Solve 1D and 2D partial differential equations with finite difference

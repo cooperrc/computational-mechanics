@@ -1,7 +1,7 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Fall 2022
+## ME 3255 Winter 2022-23
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
-- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTQ0NDYyNzExMDUx?cjc=mnx2evf)
+- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTc2NDIzMTY2Njgz?cjc=jgcmvzk)
   class code: ****
 - **JupyterHub server**: <https://compmech.uconn.edu/>
 - **ME3255 - Discussions**: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
@@ -19,7 +19,7 @@ We will work through five modules:
 1. [CompMech02-Analyze-data](module_02/README)
 1. [CompMech03-Initial Value Problems](module_03/README)
 1. [CompMech04-Linear Algebra](module_04/README)
-1. [CompMech05-Boundary Value Problems](module_05/README)
+1. [CompMech05-Boundary Value Problems](module_05/README) **Bonus**
 
 ## Course Objectives
 
@@ -95,15 +95,19 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   and doctoral student Natalia C. Clement at the George Washington University,
   Mechanical and Aerospace Engineering Department.
 
-- [Google Classroom](https://classroom.google.com/c/NTQ0NDYyNzExMDUx?cjc=mnx2evf)
-  class code: **xlnsqw4**
+- [Google
+  Classroom](https://classroom.google.com/c/NTc2NDIzMTY2Njgz?cjc=jgcmvzk)
+  class code: **jgcmvzk**
 - [JupyterHub server at compmech.uconn.edu](https://compmech.uconn.edu) is an
   interactive Jupyter notebook server. We will use it with Python to run our
   code, create documentation, and save assignments
-
 - [GitHub](https://github.com) If you prefer to
   keep your work private, you can create private repositories and share them
   with myself [@cooperrc](https://github.com/cooperrc).
+
+### Course Livestreams
+
+#### [Prof. Cooper's YouTube Channel](https://www.youtube.com/channel/UC6oOZZrQwJpOkra-QSGy3GA)
 
 ### Recommended _Free_ Resources:
 
@@ -124,6 +128,8 @@ available](http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf)
 - _Think Python: How to Think Like a Computer Scientist_ (2012). Allen Downey.
 Green Tea Press.  [PDF
 available](http://greenteapress.com/thinkpython/thinkpython.pdf)
+
+- [SciPy Lecture Notes](https://scipy-lectures.org/)
 
 ### Recommended _paid_ Textbooks:
 
@@ -156,7 +162,7 @@ Scientists_ 4th edition.
 | Homework      | 30 %    | Complete the module problem sets                  |
 | Projects      | 40 %    | Complete the module projects and submit to GitHub |
 
-__Participation__: The participation grade will be self-assigned. At
+__Participation__: The participation grade will be self-assigned. During
 week 2 you will submit your current grade and modes of participation,
 then during the final week submit an updated final grade. 
 
@@ -176,7 +182,7 @@ then during the final week submit an updated final grade.
 The course schedule is kept up to date on the Google Calendar here:
 
 <iframe
-src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb201MTVlZTBmZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
+src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb202MWI3NmIxMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5"
 style="border:solid 1px #777" width="600" height="400" frameborder="0"
 scrolling="no"></iframe>
 
@@ -206,14 +212,20 @@ adjust your submittal times accordingly. The instructor reserves the right to
 change dates accordingly as the course progresses.  _All changes will be
 communicated via the calendar or another appropriate notification._
 
-__Late Policy:__ There are no late submission penalties. If you fall
-behind on work _you must_ contact me and tell me:
-1. When will you submit the assignment?
-2. What help do you need?
+<!-- __Late Policy:__ There are no late submission penalties. If you fall -->
+<!-- behind on work _you must_ contact me and tell me: -->
+<!-- 1. When will you submit the assignment? -->
+<!-- 2. What help do you need? -->
+
+__Late Policy__: This is a **fast-paced** 3-week course. You must submit
+_something_ for every due date. You can resubmit any assignment to get
+points back, but it you miss the submission date, its a 0. If you don't
+have any answers, write a question in each problem and I will give you
+feedback for you to resubmit the assignment. 
 
 ## Feedback and Grades
 
-We will make every effort to provide feedback and grades within 2 days.
+We will make every effort to provide feedback and grades within 24 hours.
 To keep track of your performance in the course, refer to grades in
 Google Classroom.  You can resubmit any assignment with improvements,
 notify Prof. Cooper when you have incorporated comments. 
