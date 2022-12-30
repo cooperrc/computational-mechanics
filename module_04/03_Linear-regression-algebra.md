@@ -177,7 +177,6 @@ Our final least squares linear regression is as follows
 $\mathbf{Z^Ty}=[\mathbf{Z^T Z}]\mathbf{a}$
 
 which is a $[3\times 1]=[3 \times 3][3 \times 1]$, set of equations. 
-```
 
 ```{code-cell} ipython3
 a = np.linalg.solve(Z.T@Z,Z.T@y)

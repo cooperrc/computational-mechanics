@@ -660,7 +660,7 @@ The __LU decomposition__ provides an efficient method to store matrices for use 
 
 The matrix $\mathbf{U}$ is the end result of the Gaussian elimination, but how can you create the matrix $\mathbf{L}$? You are using the [Doolittle Decomposition](https://en.wikipedia.org/wiki/LU_decomposition#Doolittle_algorithm), so each term on the diagonal is $1$ and each off-diagonal component is the factor that you multiplied in the Gaussian elimination steps. Consider the two masses connected by springs with forces applied, as discussed earlier. 
 
-<img src="../images/spring_mass.png" style="height: 200px;"/> 
+![Two masses connected by springs](../images/spring_mass.png)
 
 1. $-400x_1+300x_2 = 10$
 

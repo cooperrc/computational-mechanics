@@ -47,25 +47,19 @@ lesson](01_Catch_Motion), you did the opposite: with
 position data, get the velocity and acceleration, using _numerical
 derivatives_:
 
-\begin{equation}
-v(t_i) = \frac{dx}{dt} \approx \frac{x(t_i+\Delta t)-x(t_i)}{\Delta t}
-\end{equation}
+$v(t_i) = \frac{dx}{dt} \approx \frac{x(t_i+\Delta t)-x(t_i)}{\Delta t}$
 
-\begin{equation}
-a(t_i) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
-\end{equation}
+$a(t_i) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}$
 
 Almost every problem that deals with Newton's second law is a second-order differential equation. The acceleration is a function of position, velocity, and sometimes time _if there is a forcing function f(t)_. 
 
 The key to solving a second order differential equation is realizing that if you have the initial velocity, you can use the acceleration to find the velocity after a short interval of time. And if you have the initial position, you can use the known velocity to find the new position after a short interval of time. Let's rearrange the equation for acceleration above, by solving for the velocity at $t_i + \Delta t$:
 
-\begin{equation}
- v(t_i+\Delta t)   \approx  v(t_i) + a(t_i) \Delta t
-\end{equation}
+$v(t_i+\Delta t)   \approx  v(t_i) + a(t_i) \Delta t$
 
 Consider our first computational mechanics model of a freefalling object that is dropped.
 
-<img src="../images/freefall.png" style="width: 200px;"/> 
+![Object in free fall with free body diagram](../images/freefall.png)
 
 An object falling is subject to the force of 
 
