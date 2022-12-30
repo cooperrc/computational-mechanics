@@ -268,8 +268,19 @@ The first thing to get used to is that the equal sign in a variable
 assignment has a different meaning than it has in Algebra! Think of it
 as an arrow pointing from `name` to `value`.
 
+```python
+In[1]: planet = 'Pluto'
+In[2]: print(planet)
+Pluto
+In[3]: moon = 'Charon'
+In[4]: print(moon)
+Charon
+```
 
-<img src="../images/variables.png" style="width: 400px;"/> 
+| variable | value    |
+| ---      | ---      |
+| planet   | 'Pluto'  |
+| moon     | 'Charon' |
 
 You have many possibilities for variable names: they can be made up of
 upper and lowercase letters, underscores and digits… although digits
