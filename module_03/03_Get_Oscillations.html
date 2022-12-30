@@ -723,7 +723,8 @@ you’ll also re-use the <code class="docutils literal notranslate"><span class=
 <div class="section" id="spring-mass-system">
 <h2>Spring-mass system<a class="headerlink" href="#spring-mass-system" title="Permalink to this headline">¶</a></h2>
 <p>A prototypical mechanical system is a mass <span class="math notranslate nohighlight">\(m\)</span> attached to a spring, in the simplest case without friction. The elastic constant of the spring, <span class="math notranslate nohighlight">\(k\)</span>, determines the restoring force it will apply to the mass when displaced by a distance <span class="math notranslate nohighlight">\(x\)</span>. The system then oscillates back and forth around its position of equilibrium.</p>
-<img src="../images/spring-mass.png" style="width: 400px;"/></div>
+<p><img alt="Spring mass system where stiffness is k and mass is m" src="../_images/spring-mass.png" /></p>
+</div>
 <div class="section" id="simple-spring-mass-system-without-friction">
 <h2>Simple spring-mass system, without friction.<a class="headerlink" href="#simple-spring-mass-system-without-friction" title="Permalink to this headline">¶</a></h2>
 <p>Newton’s law applied to the friction-less spring-mass system is:</p>
@@ -894,7 +895,7 @@ x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t
 \end{equation}</p>
 <p>It uses the velocity value at the <em>beginning</em> of the time interval to step the solution to the future.</p>
 <p>A graphical explanation can help here. Remember that the derivative of a function corresponds to the slope of the tangent at a point. Euler’s method approximates the derivative using the slope at the initial point in an interval, and advances the numerical position with that initial velocity. The sketch below illustrates two consecutive Euler steps on a function with high curvature.</p>
-<img src="../images/two-euler-steps.png" style="width: 500px;"/> 
+<p><img alt="The slope in the 2-Euler steps is averaged between two values for thedifferential equations, at ti and ti+1" src="../_images/two-euler-steps.png" /></p>
 <div class="section" id="sketch-of-two-euler-steps-on-a-curved-function">
 <h3>Sketch of two Euler steps on a curved function.<a class="headerlink" href="#sketch-of-two-euler-steps-on-a-curved-function" title="Permalink to this headline">¶</a></h3>
 <p>Since Euler’s method makes a linear approximation to project the solution into the future, assuming the value of the derivative at the start of the interval, it’s not very good on oscillatory functions.</p>
@@ -1196,7 +1197,7 @@ e = x_N - x_0 \cos(\omega T)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1dde35fb80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f527decafa0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/03_Get_Oscillations_48_1.png" src="../_images/03_Get_Oscillations_48_1.png" />

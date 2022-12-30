@@ -373,7 +373,8 @@ for i in range(len(x)):
 
 ## Revisit Example with Mixing Tanks
 
-<img src="../images/mixing_tanks_var.png" style="height: 200px;"/> 
+![three mixing tanks are arranged to unifomrly mix two different
+concentrations](../images/mixing_tanks_var.png)
 
 In the diagram above you have three tanks of water that are mixing two concentrations of salt water with $c_1~mg/m^3$ entering tank 1 and $c_2~mg/m^3$ entering tank three. The outlet is located on the middle tank 2, but the concentration is unknown. In [01_Linear-Algebra](./01_Linear-Algebra.ipynb), you used a fixed value for $x_1=5~mg/m^3$ and $x_2=1~mg/m^3$. Let's examine three cases for
 
@@ -660,7 +661,7 @@ The __LU decomposition__ provides an efficient method to store matrices for use 
 
 The matrix $\mathbf{U}$ is the end result of the Gaussian elimination, but how can you create the matrix $\mathbf{L}$? You are using the [Doolittle Decomposition](https://en.wikipedia.org/wiki/LU_decomposition#Doolittle_algorithm), so each term on the diagonal is $1$ and each off-diagonal component is the factor that you multiplied in the Gaussian elimination steps. Consider the two masses connected by springs with forces applied, as discussed earlier. 
 
-<img src="../images/spring_mass.png" style="height: 200px;"/> 
+![Two masses connected by springs](../images/spring_mass.png)
 
 1. $-400x_1+300x_2 = 10$
 

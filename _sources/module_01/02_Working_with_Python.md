@@ -445,7 +445,8 @@ two-dimensional (matrices). Two of these 2D sub-arrays, in this
 case; each one has 3 rows and 4 columns. Study this sketch carefully,
 while comparing with how the array `a_3D` is printed out above. 
 
-<img src="../images/3d_array_sketch.png" style="width: 400px;"/> 
+![A 3D array with two 3x4 matrices extended along a third
+dimension](../images/3d_array_sketch.png)
 
 +++
 

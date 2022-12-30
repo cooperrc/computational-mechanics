@@ -809,11 +809,18 @@ before
 <p>Our final least squares linear regression is as follows</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Z^Ty}=[\mathbf{Z^T Z}]\mathbf{a}\)</span></p>
 <p>which is a <span class="math notranslate nohighlight">\([3\times 1]=[3 \times 3][3 \times 1]\)</span>, set of equations.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-```{code-cell} ipython3
-a = np.linalg.solve(Z.T@Z,Z.T@y)
-a
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@Z</span><span class="p">,</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="nd">@y</span><span class="p">)</span>
+<span class="n">a</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.2763447 , -1.36268939, 22.46690909])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -827,19 +834,7 @@ a
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x_fcn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Z</span><span class="nd">@a</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;quadratic fit&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;a&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/03_Linear-regression-algebra_7_1.png" src="../_images/03_Linear-regression-algebra_7_1.png" />
+<img alt="../_images/03_Linear-regression-algebra_8_0.png" src="../_images/03_Linear-regression-algebra_8_0.png" />
 </div>
 </div>
 </div>
@@ -871,6 +866,12 @@ a
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the coefficient of determination for this fit is 0.91119056038536
+the correlation coefficient this fit is 0.9545630206462851
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="discussion">
 <h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h3>
@@ -898,6 +899,20 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> head ../data/mos2_afm.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z (nm),F (nN)
+0,0
+-0.011669,0.9
+-0.0058346,0.45
+0.3075,-1.35
+0.29583,-0.45
+0.5725,1.35
+0.57833,0.9
+0.5607,2.26
+0.85666,1.8
 </pre></div>
 </div>
 </div>
@@ -953,6 +968,67 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>coeffictients are A0 = 0.0018921394737263875, A1 = 1.5811965217538142
+Statsmodel summary of model
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared (uncentered):</th>      <td>   0.999</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared (uncentered):</th> <td>   0.999</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>          <td>4.496e+05</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Fri, 30 Dec 2022</td> <th>  Prob (F-statistic):</th>           <td>  0.00</td>  
+</tr>
+<tr>
+  <th>Time:</th>                 <td>15:25:43</td>     <th>  Log-Likelihood:    </th>          <td> -1227.5</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   460</td>      <th>  AIC:               </th>          <td>   2459.</td> 
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   458</td>      <th>  BIC:               </th>          <td>   2467.</td> 
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>              <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>              <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+   <td></td>     <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>x1</th> <td>    0.0019</td> <td> 7.29e-06</td> <td>  259.384</td> <td> 0.000</td> <td>    0.002</td> <td>    0.002</td>
+</tr>
+<tr>
+  <th>x2</th> <td>    1.5812</td> <td>    0.013</td> <td>  117.560</td> <td> 0.000</td> <td>    1.555</td> <td>    1.608</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>137.172</td> <th>  Durbin-Watson:     </th> <td>   0.373</td> 
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td> 630.686</td> 
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-1.235</td>  <th>  Prob(JB):          </th> <td>1.12e-137</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 8.177</td>  <th>  Cond. No.          </th> <td>4.72e+03</td> 
+</tr>
+</table><br/><br/>Notes:<br/>[1] R² is computed without centering (uncentered) since the model does not contain a constant.<br/>[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[3] The condition number is large, 4.72e+03. This might indicate that there are<br/>strong multicollinearity or other numerical problems.</div><img alt="../_images/03_Linear-regression-algebra_21_2.png" src="../_images/03_Linear-regression-algebra_21_2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -965,6 +1041,12 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Youngs modulus from fit = </span><span class="si">{:.0f}</span><span class="s1"> GPa&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mf">1.09</span><span class="o">/</span><span class="mf">0.61</span><span class="o">*</span><span class="mi">260</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Youngs modulus reported = 210 GPa&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Youngs modulus from fit = 192 GPa
+Youngs modulus reported = 210 GPa
 </pre></div>
 </div>
 </div>
@@ -989,11 +1071,14 @@ Let’s take some voltage-vs-time data that you know has two frequency component
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear-regression-algebra_25_0.png" src="../_images/03_Linear-regression-algebra_25_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)]])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">amps</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span>
 </pre></div>
@@ -1007,6 +1092,9 @@ Let’s take some voltage-vs-time data that you know has two frequency component
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Amplitudes of sin(t) and sin(3t) signals</span><span class="se">\n</span><span class="s1"> </span><span class="si">{:.3f}</span><span class="s1"> V and </span><span class="si">{:.3f}</span><span class="s1"> V&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">amps</span><span class="p">));</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear-regression-algebra_27_0.png" src="../_images/03_Linear-regression-algebra_27_0.png" />
 </div>
 </div>
 </div>
@@ -1036,6 +1124,26 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is every 10th row of Z
+---------------------------
+[[1880    1    0]
+ [1890    1    0]
+ [1900    1    0]
+ [1910    1    0]
+ [1920    1    0]
+ [1930    1    0]
+ [1940    1    0]
+ [1950    1    0]
+ [1960    1    0]
+ [1970    1    0]
+ [1980    1   10]
+ [1990    1   20]
+ [2000    1   30]
+ [2010    1   40]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1048,6 +1156,9 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03_Linear-regression-algebra_30_0.png" src="../_images/03_Linear-regression-algebra_30_0.png" />
 </div>
 </div>
 </div>

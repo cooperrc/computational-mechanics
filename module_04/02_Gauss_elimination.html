@@ -1179,7 +1179,7 @@ z \end{array}\right]=
 </div>
 <div class="section" id="revisit-example-with-mixing-tanks">
 <h2>Revisit Example with Mixing Tanks<a class="headerlink" href="#revisit-example-with-mixing-tanks" title="Permalink to this headline">¶</a></h2>
-<img src="../images/mixing_tanks_var.png" style="height: 200px;"/> 
+<p><img alt="three mixing tanks are arranged to unifomrly mix two differentconcentrations" src="../_images/mixing_tanks_var.png" /></p>
 <p>In the diagram above you have three tanks of water that are mixing two concentrations of salt water with <span class="math notranslate nohighlight">\(c_1~mg/m^3\)</span> entering tank 1 and <span class="math notranslate nohighlight">\(c_2~mg/m^3\)</span> entering tank three. The outlet is located on the middle tank 2, but the concentration is unknown. In <a class="reference internal" href="01_Linear-Algebra.html"><span class="doc std std-doc">01_Linear-Algebra</span></a>, you used a fixed value for <span class="math notranslate nohighlight">\(x_1=5~mg/m^3\)</span> and <span class="math notranslate nohighlight">\(x_2=1~mg/m^3\)</span>. Let’s examine three cases for</p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(x_1=5~mg/m^3,~and~x_2=1~mg/m^3\)</span></p></li>
@@ -1412,8 +1412,8 @@ y_{3}\end{array}\right]\)</span></p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 142 µs, sys: 97 µs, total: 239 µs
-Wall time: 175 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 89 µs, sys: 71 µs, total: 160 µs
+Wall time: 249 µs
 </pre></div>
 </div>
 </div>
@@ -1432,8 +1432,8 @@ Wall time: 175 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 521 µs, sys: 0 ns, total: 521 µs
-Wall time: 309 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 178 µs, sys: 0 ns, total: 178 µs
+Wall time: 152 µs
 </pre></div>
 </div>
 </div>
@@ -1471,8 +1471,8 @@ Wall time: 309 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 47.1 ms, sys: 7.97 ms, total: 55.1 ms
-Wall time: 42.1 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 29.9 ms, sys: 3.42 ms, total: 33.3 ms
+Wall time: 32.2 ms
 </pre></div>
 </div>
 </div>
@@ -1490,8 +1490,8 @@ Wall time: 42.1 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 81.9 ms, sys: 936 µs, total: 82.8 ms
-Wall time: 78.4 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 77.1 ms, sys: 10.1 ms, total: 87.2 ms
+Wall time: 81 ms
 </pre></div>
 </div>
 </div>
@@ -1509,7 +1509,7 @@ Wall time: 78.4 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_332040/484586688.py:5: MatplotlibDeprecationWarning: Auto-removal of grids by pcolor() and pcolormesh() is deprecated since 3.5 and will be removed two minor releases later; please call grid(False) first.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2614232/484586688.py:5: MatplotlibDeprecationWarning: Auto-removal of grids by pcolor() and pcolormesh() is deprecated since 3.5 and will be removed two minor releases later; please call grid(False) first.
   cbar=plt.colorbar()
 </pre></div>
 </div>
@@ -1522,7 +1522,7 @@ Wall time: 78.4 ms
 <h2>Efficient storage of a matrix<a class="headerlink" href="#efficient-storage-of-a-matrix" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>LU decomposition</strong> provides an efficient method to store matrices for use repeated solutions. In the example with the mixing tank, if the flow rates between each tank are fixed, then the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> remains unchanged. The only variables are the salt concentrations entering tanks 1 and 3. By storing the matrix as its lower, <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>, and upper, <span class="math notranslate nohighlight">\(\mathbf{U}\)</span>, decomposed form, you save ~50% of the computational time to get the same answers.</p>
 <p>The matrix <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> is the end result of the Gaussian elimination, but how can you create the matrix <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>? You are using the <a class="reference external" href="https://en.wikipedia.org/wiki/LU_decomposition#Doolittle_algorithm">Doolittle Decomposition</a>, so each term on the diagonal is <span class="math notranslate nohighlight">\(1\)</span> and each off-diagonal component is the factor that you multiplied in the Gaussian elimination steps. Consider the two masses connected by springs with forces applied, as discussed earlier.</p>
-<img src="../images/spring_mass.png" style="height: 200px;"/> 
+<p><img alt="Two masses connected by springs" src="../_images/spring_mass.png" /></p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(-400x_1+300x_2 = 10\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(300x_1-450x_2 = 20\)</span></p></li>
@@ -1770,11 +1770,11 @@ x_{3} \end{array} \right]=
  [ nan  nan  nan  nan]]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_332040/1119853754.py:24: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2614232/1119853754.py:24: RuntimeWarning: divide by zero encountered in double_scalars
   factor = Aug[i,k]/Aug[k,k]
-/tmp/ipykernel_332040/1119853754.py:25: RuntimeWarning: invalid value encountered in multiply
+/tmp/ipykernel_2614232/1119853754.py:25: RuntimeWarning: invalid value encountered in multiply
   Aug[i,:] = Aug[i,:] - factor*Aug[k,:]
-/tmp/ipykernel_332040/1119853754.py:24: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_2614232/1119853754.py:24: RuntimeWarning: invalid value encountered in double_scalars
   factor = Aug[i,k]/Aug[k,k]
 </pre></div>
 </div>

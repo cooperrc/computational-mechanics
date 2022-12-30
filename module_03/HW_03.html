@@ -569,25 +569,23 @@
 <ol>
 <li><p>Instead of using <span class="math notranslate nohighlight">\(\frac{\Delta v}{\Delta t}\)</span>, you can use the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">numpy polyfit</a> to determine the acceleration of the ball.</p>
 <p>a. Use your coordinates from the saved .npz file you used above to load your projectile motion data</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>npz_coords = np.load(&#39;projectile_coords.npz&#39;)
-t = npz_coords[&#39;t&#39;]
-x = npz_coords[&#39;x&#39;]
-y = npz_coords[&#39;y&#39;]```
-
-b. Calculate $v_x$ and $v_y$ using a finite difference again, then do a first-order polyfit to $v_x-$ and $v_y-$ vs $t$. What is the acceleration now?
-
-c. Now, use a second-order polynomial fit for x- and y- vs t. What is acceleration now?
-
-d. Plot the polyfit lines for velocity and position (2 figures) with the finite difference velocity data points and positions. Which lines look like better e.g. which line fits the data?
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">npz_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;projectile_coords.npz&#39;</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">npz_coords</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">npz_coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">npz_coords</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>b. Calculate <span class="math notranslate nohighlight">\(v_x\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span> using a finite difference again, then do a first-order polyfit to <span class="math notranslate nohighlight">\(v_x-\)</span> and <span class="math notranslate nohighlight">\(v_y-\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>. What is the acceleration now?</p>
+<p>c. Now, use a second-order polynomial fit for x- and y- vs t. What is acceleration now?</p>
+<p>d. Plot the polyfit lines for velocity and position (2 figures) with the finite difference velocity data points and positions. Which lines look like better e.g. which line fits the data?</p>
 </li>
 </ol>
 <ol>
 <li><p>Not only can you measure acceleration of objects that you track, you can look at other physical constants like <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_restitution">coefficient of restitution</a>, <span class="math notranslate nohighlight">\(e\)</span> .</p>
 <p>During a collision with the ground, the coefficient of restitution is</p>
 <p><span class="math notranslate nohighlight">\(e = -\frac{v_{y}'}{v_{y}}\)</span> .</p>
-<p>Where <span class="math notranslate nohighlight">\(v_y'\)</span> is y-velocity perpendicular to the ground after impact and <span class="math notranslate nohighlight">\(v_y\)</span> is the y-velocity after impact.</p>
+<p>Where <span class="math notranslate nohighlight">\(v_y'\)</span> is y-velocity perpendicular to the ground after impact
+and <span class="math notranslate nohighlight">\(v_y\)</span> is the y-velocity before impact.</p>
 <p>a. Calculate <span class="math notranslate nohighlight">\(v_y\)</span> and plot as a function of time from the data <code class="docutils literal notranslate"><span class="pre">'../data/fallingtennisball02.txt'</span></code></p>
 <p>b. Find the locations when <span class="math notranslate nohighlight">\(v_y\)</span> changes rapidly i.e. the impact locations. Get the maximum and minimum velocities closest to the impact location. <em>Hint: this can be a little tricky. Try slicing the data to include one collision at a time before using  the <code class="docutils literal notranslate"><span class="pre">np.min</span></code> and <code class="docutils literal notranslate"><span class="pre">np.max</span></code> commands.</em></p>
 <p>c. Calculate the <span class="math notranslate nohighlight">\(e\)</span> for each of the three collisions</p>
@@ -639,7 +637,8 @@ v_y \\ g - cv_y^2
 <ol class="simple">
 <li><p>Show that the implicit Heun’s method has the same second order convergence as the Modified Euler’s method. <em>Hint: you can use the same code from above to create the log-log plot to get the error between <span class="math notranslate nohighlight">\(2\cos(\omega t)\)</span> and the <code class="docutils literal notranslate"><span class="pre">heun_step</span></code> integration. Use the same initial conditions x(0) = 2 m and v(0)=0m/s and the same RHS function, <code class="docutils literal notranslate"><span class="pre">springmass</span></code>.</em></p></li>
 </ol>
-<img src="../images/damped-spring.png" style="width: 400px;"/><ol class="simple">
+<p><img alt="A lumped mass connected to a spring anddamper" src="../_images/damped-spring.png" /></p>
+<ol class="simple">
 <li><p>In the image above, you have a spring, mass, <em>and damper</em>. A damper is designed to slow down a moving object. These devices are typical in automobiles, mountain bikes, doors, any place where oscillations may not be desired, but motion is required. The new differential equation, if F(t)=0, that results from this addition is</p></li>
 </ol>
 <p><span class="math notranslate nohighlight">\(\ddot{x} = -\frac{b}{m}\dot{x} -\frac{k}{m}x\)</span></p>
@@ -719,7 +718,7 @@ indices are given below for t[1430:2051] = 1.43-2.05 seconds.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4300000000009008 2.051000000004969
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff1ffa257f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2004232730&gt;]
 </pre></div>
 </div>
 <img alt="../_images/HW_03_19_2.png" src="../_images/HW_03_19_2.png" />

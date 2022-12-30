@@ -671,19 +671,13 @@ reaching a <em>terminal velocity</em> in freefall.</p>
 lesson</span></a>, you did the opposite: with
 position data, get the velocity and acceleration, using <em>numerical
 derivatives</em>:</p>
-<p>\begin{equation}
-v(t_i) = \frac{dx}{dt} \approx \frac{x(t_i+\Delta t)-x(t_i)}{\Delta t}
-\end{equation}</p>
-<p>\begin{equation}
-a(t_i) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(v(t_i) = \frac{dx}{dt} \approx \frac{x(t_i+\Delta t)-x(t_i)}{\Delta t}\)</span></p>
+<p><span class="math notranslate nohighlight">\(a(t_i) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}\)</span></p>
 <p>Almost every problem that deals with Newton’s second law is a second-order differential equation. The acceleration is a function of position, velocity, and sometimes time <em>if there is a forcing function f(t)</em>.</p>
 <p>The key to solving a second order differential equation is realizing that if you have the initial velocity, you can use the acceleration to find the velocity after a short interval of time. And if you have the initial position, you can use the known velocity to find the new position after a short interval of time. Let’s rearrange the equation for acceleration above, by solving for the velocity at <span class="math notranslate nohighlight">\(t_i + \Delta t\)</span>:</p>
-<p>\begin{equation}
-v(t_i+\Delta t)   \approx  v(t_i) + a(t_i) \Delta t
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(v(t_i+\Delta t)   \approx  v(t_i) + a(t_i) \Delta t\)</span></p>
 <p>Consider our first computational mechanics model of a freefalling object that is dropped.</p>
-<img src="../images/freefall.png" style="width: 200px;"/> 
+<p><img alt="Object in free fall with free body diagram" src="../_images/freefall.png" /></p>
 <p>An object falling is subject to the force of</p>
 <ul class="simple">
 <li><p>gravity (<span class="math notranslate nohighlight">\(F_g\)</span>=mg) and</p></li>
@@ -728,9 +722,7 @@ variables <code class="docutils literal notranslate"><span class="pre">x</span><
 <code class="docutils literal notranslate"><span class="pre">v[0]</span></code>. The rest of the values you will overwrite based upon our
 stepping solution.</p>
 <p>You are applying the equation for <span class="math notranslate nohighlight">\(v(t_i + \Delta t)\)</span> above, and a similar equation for position:</p>
-<p>\begin{equation}
-x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># define number of time steps</span>
@@ -800,9 +792,9 @@ columns, and plot number in a matrix of sub-plots.</p>
 <p>You first used Euler’s method in <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/notebooks/03_Numerical_error.ipynb">Module_01: 03_Numerical_error</a>. Here you will look at it with more depth.</p>
 <p>The eminent Swiss mathematician Leonhard Euler presented it in his book <em>“Institutionum calculi integralis,”</em> published around 1770 [3].</p>
 <p>You can understand why it works by writing out a Taylor expansion for <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
-<p>\begin{equation}
-x(t+\Delta t) = x(t) + \frac{d x}{dt}\Delta t + \frac{d^2 x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta t^3}{3!}+\cdots
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(x(t+\Delta t) = x(t) + \frac{d x}{dt}\Delta t + \frac{d^2
+x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta
+t^3}{3!}+\cdots\)</span></p>
 <p>With <span class="math notranslate nohighlight">\(v=dx/dt\)</span>, you can see that the first two terms on the right-hand side correspond to what you used in the code above. That means that Euler’s method makes an approximation by throwing away the terms <span class="math notranslate nohighlight">\(\frac{d^2 x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta t^3}{3!}+\cdots\)</span>. So the error made in <em>one step</em> of Euler’s method is proportional to <span class="math notranslate nohighlight">\(\Delta t^2\)</span>. Since you take <span class="math notranslate nohighlight">\(N=T/\Delta t\)</span> steps (for a final time instant <span class="math notranslate nohighlight">\(T\)</span>), you conclude that the error overall is proportional to <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
 <div class="section" id="euler-s-method-is-a-first-order-method-because-the-error-in-the-approximation-goes-is-proportional-to-the-first-power-of-the-time-increment-delta-t">
 <h3><strong>Euler’s method is a first-order method</strong> because the error in the approximation goes is proportional to the first power of the time increment <span class="math notranslate nohighlight">\(\Delta t\)</span>.<a class="headerlink" href="#euler-s-method-is-a-first-order-method-because-the-error-in-the-approximation-goes-is-proportional-to-the-first-power-of-the-time-increment-delta-t" title="Permalink to this headline">¶</a></h3>
@@ -815,31 +807,25 @@ x(t+\Delta t) = x(t) + \frac{d x}{dt}\Delta t + \frac{d^2 x}{dt^2}\frac{\Delta t
 <p>To get velocity and position from the acceleration data, you needed to know the <em>initial values</em> of the velocity and position. Then you could apply Euler’s method to <em>step in time</em> starting at <span class="math notranslate nohighlight">\(t_0\)</span>, with time increment <span class="math notranslate nohighlight">\(\Delta t\)</span>. This setting corresponds to the numerical solution of <em>initial-value problems</em>.
 (Follow here the presentation in [4], p.86.)</p>
 <p>Consider the differential equation corresponding to an object in free fall:</p>
-<p>\begin{equation}
-\ddot{y}=\frac{c}{m}v^2-g,
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(\ddot{y}=\frac{c}{m}v^2-g,\)</span></p>
 <p>where the dot above a variable represents the time derivative, and <span class="math notranslate nohighlight">\(g\)</span> is the acceleration of gravity. Introducing the velocity as intermediary variable, you can write:</p>
-<p>\begin{eqnarray}
-\dot{y} &amp;=&amp; v \nonumber\
+<p><span class="math notranslate nohighlight">\(\begin{array}
+~\dot{y} &amp;=&amp; v \nonumber\\
 \dot{v} &amp;=&amp; \frac{c}{m}v^2-g
-\end{eqnarray}</p>
+\end{array}\)</span></p>
 <p>The above is a system of two ordinary differential equations, with time as the independent variable. For its numerical solution, you need two initial conditions, and Euler’s method:</p>
-<p>\begin{eqnarray}
-y(t_0) = y_0, \qquad y_{i+1} &amp;=&amp; y_i + \dot{y} \Delta t \nonumber\
+<p><span class="math notranslate nohighlight">\(\begin{array}
+~y(t_0) = y_0, \qquad y_{i+1} &amp;=&amp; y_i + \dot{y} \Delta t \nonumber\\
 v(t_0) = v_0, \qquad v_{i+1} &amp;=&amp; v_i + \dot{v} \Delta t
-\end{eqnarray}</p>
+\end{array}\)</span></p>
 <p>It’s so neatly symmetrical that it’s just asking for a vectorized equation! Combine the two dependent variables into a vector of unknowns, <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>:</p>
-<p>\begin{equation}
-\mathbf{y} = \begin{bmatrix}
-y \ v
-\end{bmatrix},
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y} = \begin{bmatrix}
+y \\ v
+\end{bmatrix},\)</span></p>
 <p>and write the differential equation in vector form, as follows:</p>
-<p>\begin{equation}
-\dot{\mathbf{y}} = \begin{bmatrix}
-v \ \frac{c}{m}v^2-g
-\end{bmatrix}.
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(\dot{\mathbf{y}} = \begin{bmatrix}
+v \\ \frac{c}{m}v^2-g
+\end{bmatrix}.\)</span></p>
 <p>Equation (9) above represents the <em>state</em> of the system, at any given instant in time. A code design for the numerical solution that generalizes to other changing systems (or <em>dynamical systems</em>) is to write one function that computes the right-hand side of the differential equation (the derivatives of the state variables), and another function that takes a state and applies the numerical method for each time increment. The solution is then computed in one <code class="docutils literal notranslate"><span class="pre">for</span></code> statement that calls these functions.</p>
 <p>Study the code below: the function <code class="docutils literal notranslate"><span class="pre">freefall()</span></code> computes the right-hand side of the equation, and the function <code class="docutils literal notranslate"><span class="pre">eulerstep()</span></code> takes the state and applies Euler’s method to update it one time increment.</p>
 <div class="cell docutils container">
@@ -895,11 +881,9 @@ v \ \frac{c}{m}v^2-g
 <p>In <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">Lesson 1</span></a>, you had considered only the acceleration due to gravity. So before you get into the specifics of the effects on drag, leave c=0 so that you have a constant acceleration problem,</p>
 <p><span class="math notranslate nohighlight">\(\ddot{y} = -g\)</span></p>
 <p>and our vector form is</p>
-<p>\begin{equation}
-\dot{\mathbf{y}} = \begin{bmatrix}
-v \ -g
-\end{bmatrix}.
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(\dot{\mathbf{y}} = \begin{bmatrix}
+v \\ -g
+\end{bmatrix}.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;../data/fallingtennisball02.txt&#39;</span>
@@ -1005,22 +989,16 @@ number of time steps.</p>
 <p>In <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">Lesson 1</span></a> of this module, you computed the acceleration of gravity and got a value less than the theoretical <span class="math notranslate nohighlight">\(9.8 \rm{m/s}^2\)</span>, even when using high-resolution experimental data.</p>
 <p>You did not account for air resistance. When an object moves in a fluid, like air, it applies a force on the fluid, and consequently the fluid applies an equal and opposite force on the object (Newton’s third law).</p>
 <p>This force is the <em>drag</em> of the fuid, and it opposes the direction of travel. The drag force depends on the object’s geometry, and its velocity: for a sphere, its magnitude is given by:</p>
-<p>\begin{equation}
-F_d = \frac{1}{2} \pi R^2 \rho C_d v^2,
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(F_d = \frac{1}{2} \pi R^2 \rho C_d v^2,\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> is the radius of the sphere, <span class="math notranslate nohighlight">\(\rho\)</span> the density of the fluid, <span class="math notranslate nohighlight">\(C_d\)</span> the drag coefficient of a sphere, and <span class="math notranslate nohighlight">\(v\)</span> is the velocity.</p>
 <p>In the first module, you used the constant <span class="math notranslate nohighlight">\(c\)</span>, where <span class="math notranslate nohighlight">\(c= \frac{1}{2} \pi R^2 \rho C_d\)</span>.</p>
 <p>You can update our defintion for drag with this <em>higher fidelity</em> description of drag</p>
 <p>With <span class="math notranslate nohighlight">\(F_{\text{drag}} = m a_{\text{drag}}\)</span>:</p>
-<p>\begin{equation}
-a_{\text{drag}} = \frac{1}{2m} \pi R^2 \rho C_d v^2
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(a_{\text{drag}} = \frac{1}{2m} \pi R^2 \rho C_d v^2\)</span></p>
 <p>Finally, you can write our differential equation as:</p>
-<p>\begin{equation}
-\dot{\mathbf{y}} = \begin{bmatrix}
-v \ -g + a_{\text{drag}}
-\end{bmatrix}.
-\end{equation}</p>
+<p><span class="math notranslate nohighlight">\(\dot{\mathbf{y}} = \begin{bmatrix}
+v \\ -g + a_{\text{drag}}
+\end{bmatrix}.\)</span></p>
 <p>Let’s write a new function for this modified right-hand side of a falling tennis ball with air resistance.</p>
 <div class="section" id="note">
 <h3>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
