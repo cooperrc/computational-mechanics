@@ -112,9 +112,7 @@ stepping solution.
 
 You are applying the equation for $v(t_i + \Delta t)$ above, and a similar equation for position:
 
-\begin{equation}
- x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t
-\end{equation}
+$x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t$
 
 ```{code-cell} ipython3
 N = 100 # define number of time steps
@@ -173,9 +171,9 @@ The eminent Swiss mathematician Leonhard Euler presented it in his book _"Instit
 
 You can understand why it works by writing out a Taylor expansion for $x(t)$:
 
-\begin{equation}
-x(t+\Delta t) = x(t) + \frac{d x}{dt}\Delta t + \frac{d^2 x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta t^3}{3!}+\cdots
-\end{equation}
+$x(t+\Delta t) = x(t) + \frac{d x}{dt}\Delta t + \frac{d^2
+x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta
+t^3}{3!}+\cdots$
 
 With $v=dx/dt$, you can see that the first two terms on the right-hand side correspond to what you used in the code above. That means that Euler's method makes an approximation by throwing away the terms $\frac{d^2 x}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3 x}{dt^3}\frac{\Delta t^3}{3!}+\cdots$. So the error made in _one step_ of Euler's method is proportional to $\Delta t^2$. Since you take $N=T/\Delta t$ steps (for a final time instant $T$), you conclude that the error overall is proportional to $\Delta t$. 
 
@@ -194,39 +192,33 @@ To get velocity and position from the acceleration data, you needed to know the 
 
 Consider the differential equation corresponding to an object in free fall:
 
-\begin{equation}
-\ddot{y}=\frac{c}{m}v^2-g,
-\end{equation}
+$\ddot{y}=\frac{c}{m}v^2-g,$
 
 where the dot above a variable represents the time derivative, and $g$ is the acceleration of gravity. Introducing the velocity as intermediary variable, you can write:
 
-\begin{eqnarray}
-\dot{y} &=& v \nonumber\\
+$\begin{array}
+~\dot{y} &=& v \nonumber\\
 \dot{v} &=& \frac{c}{m}v^2-g
-\end{eqnarray}
+\end{array}$
 
 The above is a system of two ordinary differential equations, with time as the independent variable. For its numerical solution, you need two initial conditions, and Euler's method:
 
-\begin{eqnarray}
-y(t_0) = y_0, \qquad y_{i+1} &=& y_i + \dot{y} \Delta t \nonumber\\
+$\begin{array}
+~y(t_0) = y_0, \qquad y_{i+1} &=& y_i + \dot{y} \Delta t \nonumber\\
 v(t_0) = v_0, \qquad v_{i+1} &=& v_i + \dot{v} \Delta t
-\end{eqnarray}
+\end{array}$
 
 It's so neatly symmetrical that it's just asking for a vectorized equation! Combine the two dependent variables into a vector of unknowns, $\mathbf{y}$:
 
-\begin{equation}
-\mathbf{y} = \begin{bmatrix}
+$\mathbf{y} = \begin{bmatrix}
 y \\ v
-\end{bmatrix},
-\end{equation}
+\end{bmatrix},$
 
 and write the differential equation in vector form, as follows:
 
-\begin{equation}
-\dot{\mathbf{y}} = \begin{bmatrix}
+$\dot{\mathbf{y}} = \begin{bmatrix}
 v \\ \frac{c}{m}v^2-g
-\end{bmatrix}.
-\end{equation}
+\end{bmatrix}.$
 
 Equation (9) above represents the _state_ of the system, at any given instant in time. A code design for the numerical solution that generalizes to other changing systems (or _dynamical systems_) is to write one function that computes the right-hand side of the differential equation (the derivatives of the state variables), and another function that takes a state and applies the numerical method for each time increment. The solution is then computed in one `for` statement that calls these functions. 
 
@@ -284,11 +276,9 @@ $\ddot{y} = -g$
 
 and our vector form is 
 
-\begin{equation}
-\dot{\mathbf{y}} = \begin{bmatrix}
+$\dot{\mathbf{y}} = \begin{bmatrix}
 v \\ -g
-\end{bmatrix}.
-\end{equation}
+\end{bmatrix}.$
 
 ```{code-cell} ipython3
 filename = '../data/fallingtennisball02.txt'
@@ -369,9 +359,7 @@ You did not account for air resistance. When an object moves in a fluid, like ai
 
 This force is the *drag* of the fuid, and it opposes the direction of travel. The drag force depends on the object's geometry, and its velocity: for a sphere, its magnitude is given by:
 
-\begin{equation}
-    F_d = \frac{1}{2} \pi R^2 \rho C_d v^2,
-\end{equation}
+$F_d = \frac{1}{2} \pi R^2 \rho C_d v^2,$
 
 where $R$ is the radius of the sphere, $\rho$ the density of the fluid, $C_d$ the drag coefficient of a sphere, and $v$ is the velocity.
 
@@ -383,18 +371,14 @@ You can update our defintion for drag with this _higher fidelity_ description of
 
 With $F_{\text{drag}} = m a_{\text{drag}}$:
 
-\begin{equation}
-    a_{\text{drag}} = \frac{1}{2m} \pi R^2 \rho C_d v^2
-\end{equation}
+$a_{\text{drag}} = \frac{1}{2m} \pi R^2 \rho C_d v^2$
 
 Finally, you can write our differential equation as:
 
 
-\begin{equation}
-\dot{\mathbf{y}} = \begin{bmatrix}
+$\dot{\mathbf{y}} = \begin{bmatrix}
 v \\ -g + a_{\text{drag}}
-\end{bmatrix}.
-\end{equation}
+\end{bmatrix}.$
 
 Let's write a new function for this modified right-hand side of a falling tennis ball with air resistance.
 

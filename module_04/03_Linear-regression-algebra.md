@@ -337,7 +337,7 @@ plt.ylabel('voltage (V)');
 
 ```{code-cell} ipython3
 Z = np.block([[np.sin(t)],[np.sin(3*t)]]).T
-model = sm.OLS(y, Z)
+model = sm.OLS(V, Z)
 results = model.fit()
 amps = results.params
 ```

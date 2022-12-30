@@ -373,7 +373,8 @@ for i in range(len(x)):
 
 ## Revisit Example with Mixing Tanks
 
-<img src="../images/mixing_tanks_var.png" style="height: 200px;"/> 
+![three mixing tanks are arranged to unifomrly mix two different
+concentrations](../images/mixing_tanks_var.png)
 
 In the diagram above you have three tanks of water that are mixing two concentrations of salt water with $c_1~mg/m^3$ entering tank 1 and $c_2~mg/m^3$ entering tank three. The outlet is located on the middle tank 2, but the concentration is unknown. In [01_Linear-Algebra](./01_Linear-Algebra.ipynb), you used a fixed value for $x_1=5~mg/m^3$ and $x_2=1~mg/m^3$. Let's examine three cases for
 
