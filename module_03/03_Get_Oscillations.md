@@ -65,7 +65,7 @@ def eulerstep(state, rhs, dt):
 
 A prototypical mechanical system is a mass $m$ attached to a spring, in the simplest case without friction. The elastic constant of the spring, $k$, determines the restoring force it will apply to the mass when displaced by a distance $x$. The system then oscillates back and forth around its position of equilibrium.
 
-<img src="../images/spring-mass.png" style="width: 400px;"/> 
+![Spring mass system where stiffness is k and mass is m](../images/spring-mass.png)
 
 
 +++
@@ -228,7 +228,9 @@ It uses the velocity value at the _beginning_ of the time interval to step the s
 
 A graphical explanation can help here. Remember that the derivative of a function corresponds to the slope of the tangent at a point. Euler's method approximates the derivative using the slope at the initial point in an interval, and advances the numerical position with that initial velocity. The sketch below illustrates two consecutive Euler steps on a function with high curvature.
 
-<img src="../images/two-euler-steps.png" style="width: 500px;"/> 
+![The slope in the 2-Euler steps is averaged between two values for the
+differential equations, at ti and ti+1](../images/two-euler-steps.png)
+
 
 #### Sketch of two Euler steps on a curved function.
 

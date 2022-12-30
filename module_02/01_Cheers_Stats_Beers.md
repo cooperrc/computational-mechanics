@@ -608,7 +608,8 @@ $2\sigma$; and at a distance of $\pm3\sigma$ from the mean, you cover
 99.7% of the values. This fact is known as the $3$-$\sigma$ rule, or
 68-95-99.7 (empirical) rule.
 
-<img src="../images/std_bell_curve.png" style="width: 800px;"/> 
+![Normal distribution bell curve with 1st second and third standard
+deviations marking out 68\%, 95\%, and 99.7\% of the distribution.](../images/std_bell_curve.png)
 
 ####  Standard deviation and coverage in a normal distribution. Modified figure based on original from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Standard_deviation_diagram.svg), the free media repository.
 

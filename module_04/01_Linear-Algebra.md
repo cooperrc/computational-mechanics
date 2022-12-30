@@ -177,7 +177,8 @@ The first episode in the wonderful video series, [_"Essence of Linear Algebra"_]
 2. For computer scientists, a vector is an ordered list of numbers. It can represent a set of variables or features stored in order.
 3. For mathematicians, vectors are generic objects that behave a certain way when they are added or scaled:  $\mathbf{u}+\mathbf{v}$, $\alpha\mathbf{v}$.
 
-<img src="../images/whatsavector.png" style="width: 500px;"/> 
+![Two interpretations of a vector: in physics its a magnitude and
+direction and in computer science its an ordered list of numbers](../images/whatsavector.png)
 
 #### How you think of a vector depends on what you're doing
 

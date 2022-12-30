@@ -20,7 +20,7 @@ kernelspec:
 # 03 - Numerical Error
 ## Freefall Model Computational solution
 
-<img src="../images/freefall.png" style="width: 200px;"/> 
+![Object falling through the sky](../images/freefall.png)
 
 Here is your first computational mechanics model. 
 
@@ -328,7 +328,8 @@ print('First 27 digits of pi      = 3.141592653589793238462643383')
 
 In order to store the number in a computer you can only use so many bits, shown below is the [64-bit standard for floating point numbers](https://en.wikipedia.org/wiki/Double-precision_floating-point_format):
 
-<img src="../images/1236px-IEEE_754_Double_Floating_Point_Format.png" style="width: 400px;"/> 
+![IEEE 64-bit floating point number standard
+reference](../images/IEEE754_double.png)
 
 Where the sign is either + or -, the exponent is a power of two as in,
 $2^{exponent}$, and the fraction (or base) is the binary representation

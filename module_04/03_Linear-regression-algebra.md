@@ -177,7 +177,6 @@ Our final least squares linear regression is as follows
 $\mathbf{Z^Ty}=[\mathbf{Z^T Z}]\mathbf{a}$
 
 which is a $[3\times 1]=[3 \times 3][3 \times 1]$, set of equations. 
-```
 
 ```{code-cell} ipython3
 a = np.linalg.solve(Z.T@Z,Z.T@y)
@@ -338,7 +337,7 @@ plt.ylabel('voltage (V)');
 
 ```{code-cell} ipython3
 Z = np.block([[np.sin(t)],[np.sin(3*t)]]).T
-model = sm.OLS(y, Z)
+model = sm.OLS(V, Z)
 results = model.fit()
 amps = results.params
 ```
