@@ -1,8 +1,8 @@
 # Syllabus - Computational Mechanics
 ## ME 3255 Winter 2022-23
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
-- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTc2NDIzMTY2Njgz?cjc=jgcmvzk)
-  class code: ****
+- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NjExNTUzMzIyNTQ4?cjc=wjcgkfs)
+  class code: **wjcgkfs**
 - **JupyterHub server**: <https://compmech.uconn.edu/>
 - **ME3255 - Discussions**: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
 
@@ -63,7 +63,7 @@ __Office Hours/Availability:__ by appointment
 <https://cooperrc.github.io>
 
 __Preferred Contact:__ Post questions and comments to
-[Discussions](https://github.com/cooperrc/computational-mechanics/discussions):
+[Discussions](https://github.com/cooperrc/computational-mechanics/discussions)
 
 
 
@@ -95,9 +95,9 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   and doctoral student Natalia C. Clement at the George Washington University,
   Mechanical and Aerospace Engineering Department.
 
-- [Google
+- [Google Classroom](https://classroom.google.com/c/NjExNTUzMzIyNTQ4?cjc=wjcgkfs)
   Classroom](https://classroom.google.com/c/NTc2NDIzMTY2Njgz?cjc=jgcmvzk)
-  class code: **jgcmvzk**
+  class code: **wjcgkfs**
 - [JupyterHub server at compmech.uconn.edu](https://compmech.uconn.edu) is an
   interactive Jupyter notebook server. We will use it with Python to run our
   code, create documentation, and save assignments
@@ -105,7 +105,7 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   keep your work private, you can create private repositories and share them
   with myself [@cooperrc](https://github.com/cooperrc).
 
-### Course Livestreams
+### Course Videos
 
 #### [Prof. Cooper's YouTube Channel](https://www.youtube.com/channel/UC6oOZZrQwJpOkra-QSGy3GA)
 
@@ -180,10 +180,9 @@ then during the final week submit an updated final grade.
 > Subject to change based upon feedback and pace of course
 
 The course schedule is kept up to date on the Google Calendar here:
-
 <iframe
-src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb202MWI3NmIxMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5"
-style="border:solid 1px #777" width="600" height="400" frameborder="0"
+src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb200NDk5N2RmNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB"
+style="border:solid 1px #777" width="500" height="300" frameborder="0"
 scrolling="no"></iframe>
 
 ## Grading Scale
@@ -217,9 +216,9 @@ communicated via the calendar or another appropriate notification._
 <!-- 1. When will you submit the assignment? -->
 <!-- 2. What help do you need? -->
 
-__Late Policy__: This is a **fast-paced** 3-week course. You must submit
+__Late Policy__: This is a **fast-paced** 5-week course. You must submit
 _something_ for every due date. You can resubmit any assignment to get
-points back, but it you miss the submission date, its a 0. If you don't
+points back, but if you miss the submission date, its a 0. If you don't
 have any answers, write a question in each problem and I will give you
 feedback for you to resubmit the assignment. 
 
