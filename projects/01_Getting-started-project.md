@@ -27,7 +27,8 @@ $\frac{dT}{dt} = -K(T-T_a)$,
 
 where $T$ is the current temperature, $T_a$ is the ambient temperature, $t$ is the elapsed time in hours, and $K$ is an empirical constant. 
 
-Suppose the temperature of the corpse is 85$^o$F at 11:00 am. Then, 2 hours later the temperature is 74$^{o}$F. 
+Suppose the temperature of the corpse is 85$^o$F at 11:00 am. Then, 45
+min later the temperature is 80$^{o}$F. 
 
 Assume ambient temperature is a constant 65$^{o}$F.
 
