@@ -1,5 +1,5 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Winter 2022-23
+## ME 3255 Summer 2023
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 - Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NjExNTUzMzIyNTQ4?cjc=wjcgkfs)
   class code: **wjcgkfs**
