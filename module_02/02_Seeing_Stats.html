@@ -1,728 +1,525 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>02 - Seeing stats in a new light &#8212; Computational Mechanics</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_02/02_Seeing_Stats';</script>
     <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="03 - Linear regression with real data" href="03_Linear_Regression_with_Real_Data.html" />
     <link rel="prev" title="01 - Cheers! Stats with Beers" href="01_Cheers_Stats_Beers.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Computational Mechanics
-  </a>
- </li>
+    
+    
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/03_Numerical_error.html">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus - Computational Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../how-to/update-github.html">
-   Working in your  Fork on GitHub.com
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_01/README.html">
-   Computational Mechanics 01 - Getting Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
-     01 - Interacting with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
-     02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html">
-     03 - Numerical Error
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/HW_01.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/01_Getting-started-project.html">
-     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   Computational Mechanics 02 - Analyze Data
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Cheers_Stats_Beers.html">
-     01 - Cheers!  Stats with Beers
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html">
-     03 - Linear regression with real data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_Stats_and_Montecarlo.html">
-     04 - Statistics and Monte-Carlo Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="HW_02.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
-     Project #02 - NYSE random walk predictor
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_03/README.html">
-   Computational Mechanics 03- Initial Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
-     Catch things in motion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html">
-     Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
-     Get with the oscillations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
-     Roots of Nonlinear functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/HW_03.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/03_IVP-project.html">
-     Initial Value Problems - Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_04/README.html">
-   Computational Mechanics 4 - Linear Algebra
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
-     Linear Algebra Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
-     Gauss Elimination
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
-     Linear Regression Algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/HW_04.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
-     CompMech04-Linear Algebra Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_05/README.html">
-   Computational Mechanics 5 - Boundary Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
-     Revisiting Derivatives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
-     Keep it Steady
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
-     Good Vibrations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/HW_05.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/05-BVPs_project.html">
-     Computational Mechanics Boundary Values - Project 05
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../how-to/README.html">
-   Quick How-to documents
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/polyfit.html">
-     Creating a quadratic fit on random data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/for-loops.html">
-     How to use a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     loop?
-     <em>
-      in Python
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/extra-FEA_material.html">
-     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 02 - Analyze Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Stats_and_Montecarlo.html">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_03/README.html">Computational Mechanics 03- Initial Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_05/README.html">Computational Mechanics 5 - Boundary Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/module_02/02_Seeing_Stats.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/module_02/02_Seeing_Stats.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/02_Seeing_Stats.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/02_Seeing_Stats.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/02_Seeing_Stats.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/02_Seeing_Stats.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/02_Seeing_Stats.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/02_Seeing_Stats.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/module_02/02_Seeing_Stats.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/module_02/02_Seeing_Stats.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>02 - Seeing stats in a new light</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-the-data">
-   Read the data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note">
-     Note:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quantitative-vs-categorical-data">
-   Quantitative vs. categorical data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-quantitative-data">
-   Visualizing quantitative data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploring-quantitative-data-continued">
-     Exploring quantitative data (continued)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise">
-       Exercise:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#median-value">
-     Median value
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Exercise:
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#box-plots">
-     Box plots
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Exercise:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-bit-of-history">
-       A bit of history:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Note:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-categorical-data">
-   Visualizing categorical data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-multiple-data">
-   Visualizing multiple data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scatter-plots">
-     Scatter plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bubble-chart">
-     Bubble chart
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#discuss-with-your-neighbor">
-       Discuss with your neighbor:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-data">Read the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note:</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-vs-categorical-data">Quantitative vs. categorical data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-quantitative-data">Visualizing quantitative data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-quantitative-data-continued">Exploring quantitative data (continued)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-value">Median value</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">Box plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bit-of-history">A bit of history:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Note:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-categorical-data">Visualizing categorical data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-multiple-data">Visualizing multiple data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bubble-chart">Bubble chart</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discuss-with-your-neighbor">Discuss with your neighbor:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>02 - Seeing stats in a new light</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-the-data">
-   Read the data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note">
-     Note:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quantitative-vs-categorical-data">
-   Quantitative vs. categorical data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-quantitative-data">
-   Visualizing quantitative data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploring-quantitative-data-continued">
-     Exploring quantitative data (continued)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise">
-       Exercise:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#median-value">
-     Median value
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Exercise:
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#box-plots">
-     Box plots
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Exercise:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-bit-of-history">
-       A bit of history:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Note:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-categorical-data">
-   Visualizing categorical data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-multiple-data">
-   Visualizing multiple data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scatter-plots">
-     Scatter plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bubble-chart">
-     Bubble chart
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#discuss-with-your-neighbor">
-       Discuss with your neighbor:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="section" id="seeing-stats-in-a-new-light">
-<h1>02 - Seeing stats in a new light<a class="headerlink" href="#seeing-stats-in-a-new-light" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="seeing-stats-in-a-new-light">
+<h1>02 - Seeing stats in a new light<a class="headerlink" href="#seeing-stats-in-a-new-light" title="Permalink to this headline">#</a></h1>
 <p>Welcome to the second lesson in “Analyze Data,” Module 2 of your series
 in <em>Computational Mechanics</em>. In the previous lesson, <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">Cheers! Stats
 with Beers</span></a>, You did some exploratory
@@ -749,7 +546,7 @@ set for craft beers and begin!</p>
 </div>
 </div>
 <div class="section" id="read-the-data">
-<h2>Read the data<a class="headerlink" href="#read-the-data" title="Permalink to this headline">¶</a></h2>
+<h2>Read the data<a class="headerlink" href="#read-the-data" title="Permalink to this headline">#</a></h2>
 <p>Like in the previous lesson, you will load the data from a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file. You may have the file in your working directory if you downloaded it when working through the previous lesson. In that case, you could load it like this:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;beers.csv&quot;</span><span class="p">)</span>
 </pre></div>
@@ -764,7 +561,7 @@ set for craft beers and begin!</p>
 </div>
 </div>
 <div class="section" id="note">
-<h3>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
+<h3>Note:<a class="headerlink" href="#note" title="Permalink to this headline">#</a></h3>
 <p>If you don’t have the data file locally, download it by adding a code cell, and executing the following code in it:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
 <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://go.gwu.edu/engcomp2data1?accessType=DOWNLOAD&#39;</span>
@@ -967,7 +764,7 @@ space.</p>
 </div>
 </div>
 <div class="section" id="quantitative-vs-categorical-data">
-<h2>Quantitative vs. categorical data<a class="headerlink" href="#quantitative-vs-categorical-data" title="Permalink to this headline">¶</a></h2>
+<h2>Quantitative vs. categorical data<a class="headerlink" href="#quantitative-vs-categorical-data" title="Permalink to this headline">#</a></h2>
 <p>As you can see in the nice table that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> printed for the
 dataframe, you have several features for each beer: the label <code class="docutils literal notranslate"><span class="pre">abv</span></code>
 corresponds to the acohol-by-volume fraction, label <code class="docutils literal notranslate"><span class="pre">ibu</span></code> refers to the
@@ -1000,7 +797,7 @@ that group. For example, you could ask how many beers (in your set) are of
 the style “American IPA,” or ask how many beers you have in each style.</p>
 </div>
 <div class="section" id="visualizing-quantitative-data">
-<h2>Visualizing quantitative data<a class="headerlink" href="#visualizing-quantitative-data" title="Permalink to this headline">¶</a></h2>
+<h2>Visualizing quantitative data<a class="headerlink" href="#visualizing-quantitative-data" title="Permalink to this headline">#</a></h2>
 <p>In the previous lesson, you played around a bit with the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>
 columns of the dataframe <code class="docutils literal notranslate"><span class="pre">beers</span></code>. For each of these columns, you
 extracted it from the dataframe and saved it into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> series,
@@ -1042,7 +839,7 @@ you’ll learn about a new type of visualization: the <strong>box plot</strong>.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_15_0.png" src="../_images/02_Seeing_Stats_15_0.png" />
+<img alt="../_images/24f29816fe7956776aab245ac74a0b9814d24d6457ec626652c5916a42c181a4.png" src="../_images/24f29816fe7956776aab245ac74a0b9814d24d6457ec626652c5916a42c181a4.png" />
 </div>
 </div>
 <p>You can tell that the most frequent values of <code class="docutils literal notranslate"><span class="pre">abv</span></code> fall in the bin just
@@ -1066,15 +863,15 @@ higher end.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_18_0.png" src="../_images/02_Seeing_Stats_18_0.png" />
+<img alt="../_images/2b2dab10d00ac55d7d3931ac1e40f4c8aae932638be02afff08acc021a457688.png" src="../_images/2b2dab10d00ac55d7d3931ac1e40f4c8aae932638be02afff08acc021a457688.png" />
 </div>
 </div>
 <p>Which one do you like better? Well, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> histogram took fewer lines of code to create.  And it doesn’t look bad at all. But you do have more fine-grained control with Matplotlib. Which method you choose in a real situation will just depend on the situation and your preference.</p>
 <div class="section" id="exploring-quantitative-data-continued">
-<h3>Exploring quantitative data (continued)<a class="headerlink" href="#exploring-quantitative-data-continued" title="Permalink to this headline">¶</a></h3>
+<h3>Exploring quantitative data (continued)<a class="headerlink" href="#exploring-quantitative-data-continued" title="Permalink to this headline">#</a></h3>
 <p>In the <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">previous lesson</span></a>, you learned how to compute the mean of the data using <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code>. How easy is that? But then you wrote your own custom functions to compute variance or standard deviation. There are some standard numpy libraries that you can use instead.</p>
 <div class="section" id="exercise">
-<h4>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h4>
+<h4>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Go to the documentation of <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.var.html"><code class="docutils literal notranslate"><span class="pre">np.var()</span></code></a> and analyze if this function is computing the <em>sample variance</em>.
 <strong>Hint</strong>: Check what it says about the “data degrees of freedom.”</p></li>
@@ -1116,8 +913,8 @@ You will.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h2>Exercise:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2>Exercise:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
 <li><p>Read the documentation about the NumPy standard deviation function, compute the standard deviation for <code class="docutils literal notranslate"><span class="pre">abv</span></code> using this function, and check that you obtained the same value than if you take the square root of the variance computed with NumPy.</p></li>
 <li><p>Compute the variance and standard deviation for the variable <code class="docutils literal notranslate"><span class="pre">ibu</span></code>.</p></li>
 </ol>
@@ -1141,17 +938,17 @@ You will.</p>
 </div>
 </div>
 <div class="section" id="median-value">
-<h3>Median value<a class="headerlink" href="#median-value" title="Permalink to this headline">¶</a></h3>
+<h3>Median value<a class="headerlink" href="#median-value" title="Permalink to this headline">#</a></h3>
 <p>So far, you’ve learned to characterize quantitative data using the mean, variance and standard deviation.</p>
 <p>If you watched Prof. Sainani’s lecture <a class="reference external" href="https://youtu.be/tQ5slNYRcC4">Describing Quantitative Data: Where is the center?</a> (recommended in your previous lesson), you’ll recall that she also introduced the <strong>median</strong>: the middle value in the data, the value that separates your data set in half. (If there’s an even number of data values, you take the average between the two middle values.)</p>
 <p>As you may anticipate, NumPy has a built-in function that computes the median, helpfully named <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.median.html"><code class="docutils literal notranslate"><span class="pre">numpy.median()</span></code></a>.</p>
 <div class="section" id="id2">
-<h4>Exercise:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Exercise:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p>Using NumPy, compute the median for your variables <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>. Compare the median with the mean, and look at the histogram to locate where the values fall on the x-axis.</p>
 </div>
 </div>
 <div class="section" id="box-plots">
-<h3>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">¶</a></h3>
+<h3>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">#</a></h3>
 <p>Another handy way to visualize the distribution of quantitative data is using <strong>box plots</strong>. By “distribution” of the data, you mean some idea of the dataset’s “shape”: where is the center, what is the range, what is the variation in the data.
 Histograms are the most popular type of plots in exploratory data analysis. But check out box plots: they are easy to make with <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>:</p>
 <div class="cell docutils container">
@@ -1161,7 +958,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_29_0.png" src="../_images/02_Seeing_Stats_29_0.png" />
+<img alt="../_images/aebbae73b413b846cae6080fe4e66d3c7b88829e4bdc9c0457ff7c898d511f70.png" src="../_images/aebbae73b413b846cae6080fe4e66d3c7b88829e4bdc9c0457ff7c898d511f70.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1171,7 +968,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_30_0.png" src="../_images/02_Seeing_Stats_30_0.png" />
+<img alt="../_images/d0a545671e4a894d10023a7253b0dbc72889721f1e59a64e84b7e12e729e018d.png" src="../_images/d0a545671e4a894d10023a7253b0dbc72889721f1e59a64e84b7e12e729e018d.png" />
 </div>
 </div>
 <p>What is going on here? Obviously, there is a <em>box</em>: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the <em>median</em>.</p>
@@ -1230,7 +1027,7 @@ The third quartile for ibu is 64.0
 </ul>
 <p>Any data values beyond the upper and lower extremes are shown with a marker (here, small circles) and are an indication of outliers in the data.</p>
 <div class="section" id="id3">
-<h4>Exercise:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4>Exercise:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>Calculate the end-points of the top and bottom whiskers for both the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> variables, and compare the results with the whisker end-points you see in the plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1270,17 +1067,17 @@ bottom whisker = 2.5% abv
 </div>
 </div>
 <div class="section" id="a-bit-of-history">
-<h4>A bit of history:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this headline">¶</a></h4>
+<h4>A bit of history:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this headline">#</a></h4>
 <p>“Box-and-whiskers” plots were invented by John Tukey over 45 years ago. Tukey was a famous mathematician/statistician who is credited with coining the words <em>software</em> and <em>bit</em> [4]. He was active in the efforts to break the <em>Enigma</em> code during WWII, and worked at Bell Labs in the first surface-to-air guided missile (“Nike”). A classic 1947 work on early design of the electonic computer acknowledged Tukey: he designed the electronic circuit for computing addition. Tukey was also a long-time advisor for the US Census Bureau, and a consultant for the Educational Testing Service (ETS), among many other contributions [5].</p>
 </div>
 <div class="section" id="id4">
-<h4>Note:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4>Note:<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p>Box plots are also drawn horizontally. Often, several box plots are drawn side-by-side with the purpose of comparing distributions.</p>
 </div>
 </div>
 </div>
 <div class="section" id="visualizing-categorical-data">
-<h2>Visualizing categorical data<a class="headerlink" href="#visualizing-categorical-data" title="Permalink to this headline">¶</a></h2>
+<h2>Visualizing categorical data<a class="headerlink" href="#visualizing-categorical-data" title="Permalink to this headline">#</a></h2>
 <p>The typical method of visualizing categorical data is using <strong>bar plots</strong>. These show visually the frequency of appearance of items in each category, or the proportion of data in each category. Suppose you wanted to know how many beers of the same style are in your data set. Remember: the <em>style</em> of the beer is an example of <em>categorical data</em>. Let’s extract the column with the style information from the <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe, assign it to a variable named <code class="docutils literal notranslate"><span class="pre">style_series</span></code>, check the type of this variable, and view the first 10 elements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1358,55 +1155,55 @@ bottom whisker = 2.5% abv
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Schwarzbier                           9
-American Double / Imperial Stout      9
 Herbed / Spiced Beer                  9
-Doppelbock                            7
-Bière de Garde                        7
+American Double / Imperial Stout      9
 American Dark Wheat Ale               7
+Bière de Garde                        7
 Belgian Strong Pale Ale               7
 Bock                                  7
-English Dark Mild Ale                 6
-Foreign / Export Stout                6
-Belgian Strong Dark Ale               6
+Doppelbock                            7
 Dortmunder / Export Lager             6
+English Dark Mild Ale                 6
+Belgian Strong Dark Ale               6
+Foreign / Export Stout                6
+California Common / Steam Beer        6
 Baltic Porter                         6
 American Wild Ale                     6
-California Common / Steam Beer        6
+Maibock / Helles Bock                 5
 Irish Dry Stout                       5
 Dubbel                                5
 Mead                                  5
-Maibock / Helles Bock                 5
 Euro Dark Lager                       5
 Quadrupel (Quad)                      4
 Dunkelweizen                          4
 Munich Dunkel Lager                   4
 English Strong Ale                    4
-American India Pale Lager             3
-Keller Bier / Zwickel Bier            3
-Shandy                                3
-English Bitter                        3
-Chile Beer                            3
+English Pale Mild Ale                 3
 American Barleywine                   3
 English Barleywine                    3
-English Pale Mild Ale                 3
+Keller Bier / Zwickel Bier            3
+Chile Beer                            3
+English Bitter                        3
+Shandy                                3
 Radler                                3
-Euro Pale Lager                       2
+American India Pale Lager             3
 Roggenbier                            2
-English Stout                         2
-Old Ale                               2
-American Double / Imperial Pilsner    2
 Abbey Single Ale                      2
+Euro Pale Lager                       2
+Old Ale                               2
+English Stout                         2
+American Double / Imperial Pilsner    2
 Rauchbier                             2
-Smoked Beer                           1
-Braggot                               1
-Flanders Oud Bruin                    1
-Grisette                              1
-Other                                 1
-American Malt Liquor                  1
-Wheat Ale                             1
 Flanders Red Ale                      1
-Kristalweizen                         1
+Wheat Ale                             1
+Grisette                              1
 Low Alcohol Beer                      1
+Other                                 1
+Flanders Oud Bruin                    1
+Braggot                               1
+American Malt Liquor                  1
+Smoked Beer                           1
+Kristalweizen                         1
 Name: style, dtype: int64
 </pre></div>
 </div>
@@ -1446,16 +1243,16 @@ Name: style, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_51_0.png" src="../_images/02_Seeing_Stats_51_0.png" />
+<img alt="../_images/abb5ab69198ea7044f8e33105bdf91955937d944e682f68b7eb2a68758058eb8.png" src="../_images/abb5ab69198ea7044f8e33105bdf91955937d944e682f68b7eb2a68758058eb8.png" />
 </div>
 </div>
 </div>
 <div class="section" id="visualizing-multiple-data">
-<h2>Visualizing multiple data<a class="headerlink" href="#visualizing-multiple-data" title="Permalink to this headline">¶</a></h2>
+<h2>Visualizing multiple data<a class="headerlink" href="#visualizing-multiple-data" title="Permalink to this headline">#</a></h2>
 <p>These visualizations are really addictive! We’re now getting ambitious: what if you wanted to show more than one feature, together on the same plot? What if you wanted to get insights about the relationship between two features through a multi-variable plot?</p>
 <p>For example, you can explore the relationship between bitterness of beers and the alcohol-by-volume fraction.</p>
 <div class="section" id="scatter-plots">
-<h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h3>
+<h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">#</a></h3>
 <p>Maybe you can do this: imagine a plot that has the alcohol-by-volume on the absissa, and the IBU value on the ordinate. For each beer, you can place a dot on this plot with its <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values as <span class="math notranslate nohighlight">\((x, y)\)</span> coordinates. This is called a <strong>scatter plot</strong>.</p>
 <p>We run into a bit of a problem, though. The way you handled the beer data above, you extracted the column for <code class="docutils literal notranslate"><span class="pre">abv</span></code> into a series, dropped the null entries, and saved the values into a NumPy array. You then repeated this process for the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> column. Because a lot more <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values are missing, you ended up with two arrays of different length: 2348 entries for the <code class="docutils literal notranslate"><span class="pre">abv</span></code> series, and 1405 entries for the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> series. If you want to make a scatter plot with these two features, you’ll need series (or arrays) of the same length.</p>
 <p>Let’s instead clean the whole <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe (which will completely remove any row that has a null entry), and <em>then</em> extract the values of the two series into NumPy arrays.</p>
@@ -1505,14 +1302,14 @@ Name: style, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_59_0.png" src="../_images/02_Seeing_Stats_59_0.png" />
+<img alt="../_images/1c699c5029ee56aff57d64f1b7593d1d3ba7d0caa383544f8cb7ba855e619407.png" src="../_images/1c699c5029ee56aff57d64f1b7593d1d3ba7d0caa383544f8cb7ba855e619407.png" />
 </div>
 </div>
 <p>Hmm. That’s a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there’s a lot of vertical spread on those dots to the right of the plot.</p>
 <p>An idea! What if the bitterness has something to do with <em>style</em>?</p>
 </div>
 <div class="section" id="bubble-chart">
-<h3>Bubble chart<a class="headerlink" href="#bubble-chart" title="Permalink to this headline">¶</a></h3>
+<h3>Bubble chart<a class="headerlink" href="#bubble-chart" title="Permalink to this headline">#</a></h3>
 <p>What you imagined is that you could group together the beers by style, and then make a new scatter plot where each marker corresponds to a style. The beers within a style, though, have many values of alcohol fraction and bitterness: you have to come up with a “summary value” for each style. Well, why not the <em>mean</em>… you can calculate the average <code class="docutils literal notranslate"><span class="pre">abv</span></code> and the average <code class="docutils literal notranslate"><span class="pre">ibu</span></code> for all the beers in each style, use that pair as <span class="math notranslate nohighlight">\((x,y)\)</span> coordinate, and put a dot there representing the style.</p>
 <p>Better yet! We’ll make the size of the “dot” proportional to the popularity of the style in your data set! This is called a <strong>bubble chart</strong>.</p>
 <p>How to achieve this idea? you searched online for “mean of a column with pandas” and you landed in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html"><code class="docutils literal notranslate"><span class="pre">dataframe.mean()</span></code></a>. This could be helpful… But you don’t want the mean of a <em>whole</em> column—we want the mean of the column values grouped by <em>style</em>. Searching online again, you landed in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html"><code class="docutils literal notranslate"><span class="pre">dataframe.groupby()</span></code></a>. This is amazing: <code class="docutils literal notranslate"><span class="pre">pandas</span></code> can group a series for you!</p>
@@ -1558,7 +1355,7 @@ Name: style, dtype: int64
 </div>
 <p>The number of beers in each style appears on each row of <code class="docutils literal notranslate"><span class="pre">style_counts</span></code>, sorted in decreasing order of count. You have 90 different styles, and the most popular style is the “American IPA,” with 301 beers…</p>
 <div class="section" id="discuss-with-your-neighbor">
-<h4>Discuss with your neighbor:<a class="headerlink" href="#discuss-with-your-neighbor" title="Permalink to this headline">¶</a></h4>
+<h4>Discuss with your neighbor:<a class="headerlink" href="#discuss-with-your-neighbor" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>What happened? you used to have 99 styles and 424 counts in the “American IPA” style. Why is it different now?</p></li>
 </ul>
@@ -1627,7 +1424,7 @@ Name: style, dtype: int64
     </tr>
     <tr>
       <th>American Amber / Red Lager</th>
-      <td>0.048062</td>
+      <td>0.048063</td>
       <td>23.250000</td>
     </tr>
     <tr>
@@ -1707,7 +1504,7 @@ Name: style, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_76_0.png" src="../_images/02_Seeing_Stats_76_0.png" />
+<img alt="../_images/6f4ae7bf18ef7eab5d70499e2ed374dbb83151bd799368573e5a9da81a196b76.png" src="../_images/6f4ae7bf18ef7eab5d70499e2ed374dbb83151bd799368573e5a9da81a196b76.png" />
 </div>
 </div>
 <p>That’s rad! Perhaps the bubbles are too small. You could multiply the <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> by a factor of 5, or maybe 10? You should experiment.</p>
@@ -1730,7 +1527,7 @@ Name: style, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_80_0.png" src="../_images/02_Seeing_Stats_80_0.png" />
+<img alt="../_images/9ca2016d94044a70cd53894975471b645fe1df63b428e115f804610201168ac1.png" src="../_images/9ca2016d94044a70cd53894975471b645fe1df63b428e115f804610201168ac1.png" />
 </div>
 </div>
 <p>It looks like the most popular beers do follow a linear relationship between alcohol fraction and IBU. You learned a lot about beer without having a sip!</p>
@@ -1750,14 +1547,14 @@ Name: style, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Seeing_Stats_83_0.png" src="../_images/02_Seeing_Stats_83_0.png" />
+<img alt="../_images/ee836c6b10e8ec60307133a1ccc7ea3d82acbdc576997161f3bf7585cec7b625.png" src="../_images/ee836c6b10e8ec60307133a1ccc7ea3d82acbdc576997161f3bf7585cec7b625.png" />
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="what-you-ve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>You should always plot your data.</p></li>
 <li><p>The concepts of quantitative and categorical data.</p></li>
@@ -1772,8 +1569,8 @@ Name: style, dtype: int64
 </ul>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/nickhould/craft-beers-dataset">Craft beer datatset</a> by Jean-Nicholas Hould.</p></li>
 <li><p><a class="reference external" href="https://beerconnoisseur.com/articles/whats-meaning-ibu">What’s The Meaning Of IBU?</a> by Jim Dykstra for The Beer Connoisseur (2015).</p></li>
 <li><p>40 years of boxplots (2011). Hadley Wickham and Lisa Stryjewski, <em>Am. Statistician</em>. <a class="reference external" href="http://vita.had.co.nz/papers/boxplots.pdf">PDF available</a></p></li>
@@ -1795,7 +1592,7 @@ Name: style, dtype: int64
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./module_02"
         },
         predefinedOutput: true
@@ -1803,44 +1600,140 @@ Name: style, dtype: int64
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="01_Cheers_Stats_Beers.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">01 - Cheers!  Stats with Beers</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_Cheers_Stats_Beers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">01 - Cheers!  Stats with Beers</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="03_Linear_Regression_with_Real_Data.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="03_Linear_Regression_with_Real_Data.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">03 - Linear regression with real data</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href = https://cooperrc.github.io> Ryan C. Cooper</a><br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-data">Read the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-vs-categorical-data">Quantitative vs. categorical data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-quantitative-data">Visualizing quantitative data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-quantitative-data-continued">Exploring quantitative data (continued)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-value">Median value</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">Box plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bit-of-history">A bit of history:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Note:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-categorical-data">Visualizing categorical data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-multiple-data">Visualizing multiple data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bubble-chart">Bubble chart</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discuss-with-your-neighbor">Discuss with your neighbor:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

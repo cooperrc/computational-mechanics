@@ -46,9 +46,11 @@ computational methods to solve those problems.
 The course schedule is kept up to date on the Google Calendar here:
 
 <iframe
-src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb202MWI3NmIxMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5"
-style="border:solid 1px #777" width="600" height="400" frameborder="0"
+src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb200NDk5N2RmNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB"
+style="border:solid 1px #777" width="500" height="300" frameborder="0"
 scrolling="no"></iframe>
+
+
 
 ### [CompMech01-Getting Started](module_01/README.md)
 

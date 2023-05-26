@@ -1,607 +1,504 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keep it Steady &#8212; Computational Mechanics</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_05/02_Keep_it_steady';</script>
     <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Good Vibrations" href="03_Good_Vibrations.html" />
     <link rel="prev" title="Revisiting Derivatives" href="01_Revisiting_derivatives.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Computational Mechanics
-  </a>
- </li>
+    
+    
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/03_Numerical_error.html">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus - Computational Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../how-to/update-github.html">
-   Working in your  Fork on GitHub.com
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_01/README.html">
-   Computational Mechanics 01 - Getting Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
-     01 - Interacting with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
-     02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html">
-     03 - Numerical Error
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/HW_01.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/01_Getting-started-project.html">
-     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_02/README.html">
-   Computational Mechanics 02 - Analyze Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">
-     01 - Cheers!  Stats with Beers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
-     02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">
-     03 - Linear regression with real data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
-     04 - Statistics and Monte-Carlo Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/HW_02.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
-     Project #02 - NYSE random walk predictor
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_03/README.html">
-   Computational Mechanics 03- Initial Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
-     Catch things in motion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html">
-     Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
-     Get with the oscillations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
-     Roots of Nonlinear functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/HW_03.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/03_IVP-project.html">
-     Initial Value Problems - Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_04/README.html">
-   Computational Mechanics 4 - Linear Algebra
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
-     Linear Algebra Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
-     Gauss Elimination
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
-     Linear Regression Algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/HW_04.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
-     CompMech04-Linear Algebra Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   Computational Mechanics 5 - Boundary Value Problems
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Revisiting_derivatives.html">
-     Revisiting Derivatives
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Keep it Steady
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_Good_Vibrations.html">
-     Good Vibrations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="HW_05.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/05-BVPs_project.html">
-     Computational Mechanics Boundary Values - Project 05
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../how-to/README.html">
-   Quick How-to documents
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/polyfit.html">
-     Creating a quadratic fit on random data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/for-loops.html">
-     How to use a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     loop?
-     <em>
-      in Python
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/extra-FEA_material.html">
-     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_02/README.html">Computational Mechanics 02 - Analyze Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/02_Seeing_Stats.html">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_03/README.html">Computational Mechanics 03- Initial Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 5 - Boundary Value Problems</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/module_05/02_Keep_it_steady.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/module_05/02_Keep_it_steady.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_05/02_Keep_it_steady.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_05/02_Keep_it_steady.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_05/02_Keep_it_steady.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_05/02_Keep_it_steady.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_05/02_Keep_it_steady.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_05/02_Keep_it_steady.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/module_05/02_Keep_it_steady.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/module_05/02_Keep_it_steady.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Keep it Steady</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-in-engineering-equations">
-   Derivatives in Engineering equations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion">
-     Discussion
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#one-dimensional-steady-state-differential-equations">
-   One dimensional, steady-state differential equations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#temperature-in-a-fin-meant-to-remove-heat-to-enviroment">
-     Temperature in a fin meant to remove heat to enviroment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#observing-your-set-of-equations">
-     Observing your set of equations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#static-beam-deflections">
-   Static beam deflections
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Discussion
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What You’ve Learned
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-in-engineering-equations">Derivatives in Engineering equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-steady-state-differential-equations">One dimensional, steady-state differential equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-in-a-fin-meant-to-remove-heat-to-enviroment">Temperature in a fin meant to remove heat to enviroment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-your-set-of-equations">Observing your set of equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-beam-deflections">Static beam deflections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Discussion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What You’ve Learned</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Keep it Steady</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#derivatives-in-engineering-equations">
-   Derivatives in Engineering equations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion">
-     Discussion
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#one-dimensional-steady-state-differential-equations">
-   One dimensional, steady-state differential equations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#temperature-in-a-fin-meant-to-remove-heat-to-enviroment">
-     Temperature in a fin meant to remove heat to enviroment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#observing-your-set-of-equations">
-     Observing your set of equations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#static-beam-deflections">
-   Static beam deflections
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Discussion
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What You’ve Learned
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="section" id="keep-it-steady">
-<h1>Keep it Steady<a class="headerlink" href="#keep-it-steady" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="keep-it-steady">
+<h1>Keep it Steady<a class="headerlink" href="#keep-it-steady" title="Permalink to this headline">#</a></h1>
 <p><em>Solving steady-state one-dimensional differential equations with the finite difference approximations.</em></p>
 <div class="section" id="derivatives-in-engineering-equations">
-<h2>Derivatives in Engineering equations<a class="headerlink" href="#derivatives-in-engineering-equations" title="Permalink to this headline">¶</a></h2>
+<h2>Derivatives in Engineering equations<a class="headerlink" href="#derivatives-in-engineering-equations" title="Permalink to this headline">#</a></h2>
 <p>This Module is focused on solving engineering problems where the governing differential equations are across space and time. The general form of these differential equations are <a class="reference external" href="https://www.youtube.com/watch?v=ly4S0oi3Yz8">Partial Differential Equations (check out the 3Blue1Brown video)</a>. A partial differential equation (PDE) relates the derivatives in space and time. The main difference between <em>ordinary</em> and <em>partial</em> differential equations (ODEs and PDEs) is that ODEs only have one indendent variable e.g. all derivatives are <span class="math notranslate nohighlight">\(\frac{d^i}{dx^i}\)</span>. In PDEs, there are multiple derivatives, sometimes time and space. These equations come up in a number of engineering applications e.g.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Heat_equation">Conductive heat transfer</a> <span class="math notranslate nohighlight">\(q(x,y,t)+\rho C_{p}\frac{\partial T}{\partial t} = -\kappa \nabla^2T\)</span></p></li>
@@ -611,22 +508,21 @@
 <li><p>…</p></li>
 </ul>
 <div class="section" id="discussion">
-<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h3>
+<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h3>
 <p>What other PDE equations describe engineering problems?</p>
 </div>
 </div>
 <div class="section" id="one-dimensional-steady-state-differential-equations">
-<h2>One dimensional, steady-state differential equations<a class="headerlink" href="#one-dimensional-steady-state-differential-equations" title="Permalink to this headline">¶</a></h2>
+<h2>One dimensional, steady-state differential equations<a class="headerlink" href="#one-dimensional-steady-state-differential-equations" title="Permalink to this headline">#</a></h2>
 <p>You can start your discussion of these differential equations with the steady-state solutions along one axis. These analyses include static deflection and buckling of beams and steady-state temperature through a pipe or heat fin.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Steady-state Temperature: <span class="math notranslate nohighlight">\(-\kappa A \frac{d^2T}{dx^2}=Q(x)\)</span></p></li>
 <li><p>Static beam deflection: <span class="math notranslate nohighlight">\(EI \frac{\partial^4 w}{\partial x^4} = q(x)\)</span></p></li>
 </ol>
 <div class="section" id="temperature-in-a-fin-meant-to-remove-heat-to-enviroment">
-<h3>Temperature in a fin meant to remove heat to enviroment<a class="headerlink" href="#temperature-in-a-fin-meant-to-remove-heat-to-enviroment" title="Permalink to this headline">¶</a></h3>
+<h3>Temperature in a fin meant to remove heat to enviroment<a class="headerlink" href="#temperature-in-a-fin-meant-to-remove-heat-to-enviroment" title="Permalink to this headline">#</a></h3>
 <!-- <img src="../images/thermal_fin.png" style="width: 500px;"/>  -->
-<p><img
-src="https://github.com/cooperrc/computational-mechanics/blob/master/images/thermal_fin.png?raw=true" style="width: 500px;"/></p>
+<p><img alt="https://github.com/cooperrc/computational-mechanics/blob/master/images/thermal_fin.png?raw=true" src="https://github.com/cooperrc/computational-mechanics/blob/master/images/thermal_fin.png?raw=true" /></p>
 <p>Consider the heat fin shown above, a hot substrate is at temperature <span class="math notranslate nohighlight">\(T_{base}\)</span> and you want to remove heat with a cylindrical fin that is connected to the substrate. You know the base of the fin is the same temperature as the substrate, <span class="math notranslate nohighlight">\(T(x=0)=T_{0}=T_{base}\)</span>, but you do not know the heat flux into the fin, <span class="math notranslate nohighlight">\(\frac{dT}{dx}(0)=??\)</span>. We also do not know the temperature at the end of the fin, <span class="math notranslate nohighlight">\(T(L)=??\)</span>. So you could use your first <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech03-IVPs/blob/master/notebooks/04_Getting_to_the_root.ipynb">shooting method</a>, but you also have a new approach. We use our new knowledge of <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech04-LinearAlgebra">Linear Algebra</a> and <a class="reference internal" href="01_Revisiting_derivatives.html"><span class="doc std std-doc">finite differences</span></a> to create a linear system of equations.</p>
 <p>Here is what you do know:</p>
 <p><strong>Equations:</strong></p>
@@ -636,12 +532,12 @@ src="https://github.com/cooperrc/computational-mechanics/blob/master/images/ther
 <p><strong>Boundary Conditions:</strong></p>
 <p>The base of the fin is the same temperature as the base, <span class="math notranslate nohighlight">\(T(x=0) = T_{base}=T_{0}.\)</span></p>
 <p>The tip of the fin has the same convective heat transfer as the rest of the fin, so the energy conducted to the tip has to be removed through convection, <span class="math notranslate nohighlight">\(hA(T(L)-T_{\infty})=-\kappa A\frac{dT}{dx} \rightarrow h(T_{6}-T_{\infty})=-\kappa \frac{T_{7}-T_{5}}{\Delta x}.\)</span></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(T_{0} = T_{base}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T_7=\frac{-h\Delta x}{k}(T_{6}-T_{\infty})+T_5\)</span></p></li>
 </ol>
 <p>If you divide the fin into 6 equally spaced sections, you have 6 equations with 6 unknown temperatures based upon finite difference equations as such,</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(T_0-2T_1+T_2+\Delta x^2 h'(T_{\infty}-T_1) = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T_1-2T_2+T_3+\Delta x^2 h'(T_{\infty}-T_2) = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T_2-2T_3+T_3+\Delta x^2 h'(T_{\infty}-T_3) = 0\)</span></p></li>
@@ -752,7 +648,7 @@ finite difference solution at x (mm)=
 </div>
 </div>
 <div class="section" id="observing-your-set-of-equations">
-<h3>Observing your set of equations<a class="headerlink" href="#observing-your-set-of-equations" title="Permalink to this headline">¶</a></h3>
+<h3>Observing your set of equations<a class="headerlink" href="#observing-your-set-of-equations" title="Permalink to this headline">#</a></h3>
 <p>The equations and solution are shown above for the finite difference set of six coupled linear equations. You solved for the solutions of temperature at <span class="math notranslate nohighlight">\(x=[10,~20,~30,~40,~50,~60]~mm\)</span>. We didn’t include a solution for <span class="math notranslate nohighlight">\(x=0~mm\)</span> because it was included in your boundary conditions. If you specified the temperature at
 <span class="math notranslate nohighlight">\(x=60~mm\)</span>, then you would exclude that point as well.</p>
 <p>When you approximate a derivative as <span class="math notranslate nohighlight">\(\frac{df}{dx}\approx \frac{\Delta f}{\Delta x}\)</span>, what we’re doing is changing a differential equation into a set of coupled equations.</p>
@@ -774,19 +670,19 @@ finite difference solution at x (mm)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Keep_it_steady_6_0.png" src="../_images/02_Keep_it_steady_6_0.png" />
+<img alt="../_images/dd32fe3847f0857aa267eebadfa3a471790efc833fe37b1f0d7dce533bb4e938.png" src="../_images/dd32fe3847f0857aa267eebadfa3a471790efc833fe37b1f0d7dce533bb4e938.png" />
 </div>
 </div>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
 <p>Decrease <span class="math notranslate nohighlight">\(\Delta x\)</span> from <span class="math notranslate nohighlight">\(10~mm\)</span> to <span class="math notranslate nohighlight">\(5~mm\)</span>.</p>
 <p>a. Make a plot of the Temperature along the fin.</p>
 <p>b. Plot the heat flux through the fin <span class="math notranslate nohighlight">\(-\kappa \frac{dT}{dx}\)</span></p>
 </div>
 </div>
 <div class="section" id="static-beam-deflections">
-<h2>Static beam deflections<a class="headerlink" href="#static-beam-deflections" title="Permalink to this headline">¶</a></h2>
+<h2>Static beam deflections<a class="headerlink" href="#static-beam-deflections" title="Permalink to this headline">#</a></h2>
 <p>In the <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech04-LinearAlgebra">Module 04 project</a>, you solved a finite element analysis problem with stretching beams. A beam is very stiff in tension and compression, but it is usually much less stiff if bent. The <a class="reference external" href="https://en.wikipedia.org/wiki/Euler%E2%80%93Bernoulli_beam_theory">Euler-Bernoulli</a> beam theory relates the static deflection of a beam, <span class="math notranslate nohighlight">\(w(x)\)</span>, to the bending stiffness, <span class="math notranslate nohighlight">\(EI\)</span>,  and applied load, <span class="math notranslate nohighlight">\(q\)</span> as such</p>
 <p><span class="math notranslate nohighlight">\(EI \frac{d^4w}{dx^4} = q.\)</span></p>
 <p>If <span class="math notranslate nohighlight">\(q=q(x)=constant=q_0\)</span>, then the equation can be integrated <span class="math notranslate nohighlight">\(\times4\)</span> to create a polynomial of order 4</p>
@@ -810,7 +706,7 @@ finite difference solution at x (mm)=
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\frac{d^4w}{dx^4} \approx \frac{w(x_{i+2})−4w(x_{i+1})+6w(x_i)−4w(x_{i-1})+w(x_{i-2})}{h^4}=\frac{q}{EI}.\)</span></p></li>
 </ul>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(w_{-1} - 4w_0 +6w_1-4w_2+w_3 =\frac{q}{EI}h^4\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(w_{0} - 4w_1 +6w_2-4w_3+w_4 =\frac{q}{EI}h^4\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(w_{1} - 4w_2 +6w_3-4w_4+w_5 =\frac{q}{EI}h^4\)</span></p></li>
@@ -825,7 +721,7 @@ finite difference solution at x (mm)=
 <li><p><span class="math notranslate nohighlight">\(w''(L)=0=\frac{w_{5}-2w_{6}+w_{7}}{h^2} \rightarrow w_{7}=-w_{5}\)</span></p></li>
 </ul>
 <p><strong>Final linear equation set:</strong></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(5w_1-4w_2+w_3 =\frac{q}{EI}h^4\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(-4w_1 +6w_2-4w_3+w_4 =\frac{q}{EI}h^4\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(w_{1} - 4w_2 +6w_3-4w_4+w_5 =\frac{q}{EI}h^4\)</span></p></li>
@@ -916,23 +812,23 @@ at position (m)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3b289bd7c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f721b1524c0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/02_Keep_it_steady_11_1.png" src="../_images/02_Keep_it_steady_11_1.png" />
+<img alt="../_images/8c15f02665fa178d732074673507363de579a6429ccf8af33036425750d33401.png" src="../_images/8c15f02665fa178d732074673507363de579a6429ccf8af33036425750d33401.png" />
 </div>
 </div>
 <div class="section" id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Divide the simply-supported beam into 12 sections and plot the deflection as a function of distance along the beam with a uniform load.</p>
 </div>
 <div class="section" id="id2">
-<h3>Discussion<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Discussion<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>What is the convergence rate for this central difference method? <em>Hint: check the magnitude of round-off error for <a class="reference internal" href="01_Revisiting_derivatives.html"><span class="doc std std-doc">central difference methods</span></a>.</em></p>
 </div>
 </div>
-<div class="section" id="what-you-ve-learned">
-<h2>What You’ve Learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-youve-learned">
+<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The difference between a <em>PDE</em> and an <em>ODE</em></p></li>
 <li><p>How to approximate differential equations with boundary conditions</p></li>
@@ -955,7 +851,7 @@ at position (m)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./module_05"
         },
         predefinedOutput: true
@@ -963,44 +859,120 @@ at position (m)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="01_Revisiting_derivatives.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Revisiting Derivatives</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_Revisiting_derivatives.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Revisiting Derivatives</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="03_Good_Vibrations.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="03_Good_Vibrations.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Good Vibrations</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href = https://cooperrc.github.io> Ryan C. Cooper</a><br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-in-engineering-equations">Derivatives in Engineering equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-steady-state-differential-equations">One dimensional, steady-state differential equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-in-a-fin-meant-to-remove-heat-to-enviroment">Temperature in a fin meant to remove heat to enviroment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-your-set-of-equations">Observing your set of equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-beam-deflections">Static beam deflections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Discussion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What You’ve Learned</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

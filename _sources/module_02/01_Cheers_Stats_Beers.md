@@ -640,7 +640,7 @@ how the following piece of code works.
 
 *Hints:* 
 
-1. Check what the logical operation `np.logical_and(1<x, x<4)` returns.
+1. Check what the logical operation `np.logical_and(1<ibu_clean, ibu_clean<4)` returns.
 2. Check what happens if you sum booleans. For example, `True + True`, `True + False` and so on.
 
 ```{code-cell} ipython3

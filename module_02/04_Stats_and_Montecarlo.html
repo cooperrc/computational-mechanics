@@ -1,632 +1,505 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>04 - Statistics and Monte-Carlo Models &#8212; Computational Mechanics</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_02/04_Stats_and_Montecarlo';</script>
     <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework" href="HW_02.html" />
     <link rel="prev" title="03 - Linear regression with real data" href="03_Linear_Regression_with_Real_Data.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Computational Mechanics
-  </a>
- </li>
+    
+    
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/03_Numerical_error.html">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus - Computational Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../how-to/update-github.html">
-   Working in your  Fork on GitHub.com
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_01/README.html">
-   Computational Mechanics 01 - Getting Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
-     01 - Interacting with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
-     02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html">
-     03 - Numerical Error
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/HW_01.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/01_Getting-started-project.html">
-     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   Computational Mechanics 02 - Analyze Data
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Cheers_Stats_Beers.html">
-     01 - Cheers!  Stats with Beers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_Seeing_Stats.html">
-     02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_Linear_Regression_with_Real_Data.html">
-     03 - Linear regression with real data
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     04 - Statistics and Monte-Carlo Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="HW_02.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
-     Project #02 - NYSE random walk predictor
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_03/README.html">
-   Computational Mechanics 03- Initial Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
-     Catch things in motion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html">
-     Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
-     Get with the oscillations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
-     Roots of Nonlinear functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/HW_03.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/03_IVP-project.html">
-     Initial Value Problems - Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_04/README.html">
-   Computational Mechanics 4 - Linear Algebra
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
-     Linear Algebra Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
-     Gauss Elimination
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
-     Linear Regression Algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/HW_04.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
-     CompMech04-Linear Algebra Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_05/README.html">
-   Computational Mechanics 5 - Boundary Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
-     Revisiting Derivatives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
-     Keep it Steady
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
-     Good Vibrations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/HW_05.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/05-BVPs_project.html">
-     Computational Mechanics Boundary Values - Project 05
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../how-to/README.html">
-   Quick How-to documents
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/polyfit.html">
-     Creating a quadratic fit on random data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/for-loops.html">
-     How to use a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     loop?
-     <em>
-      in Python
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/extra-FEA_material.html">
-     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 02 - Analyze Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Seeing_Stats.html">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_03/README.html">Computational Mechanics 03- Initial Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_05/README.html">Computational Mechanics 5 - Boundary Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/module_02/04_Stats_and_Montecarlo.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/module_02/04_Stats_and_Montecarlo.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/04_Stats_and_Montecarlo.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/04_Stats_and_Montecarlo.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/04_Stats_and_Montecarlo.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/04_Stats_and_Montecarlo.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/04_Stats_and_Montecarlo.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/04_Stats_and_Montecarlo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/module_02/04_Stats_and_Montecarlo.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/module_02/04_Stats_and_Montecarlo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>04 - Statistics and Monte-Carlo Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-and-discussion">
-   Exercise and Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples-of-monte-carlo-models">
-   Examples of Monte Carlo models:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-1-calculate-pi-with-random-numbers">
-   Example 1: Calculate
-   <span class="math notranslate nohighlight">
-    \(\pi\)
-   </span>
-   with random numbers.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid">
-   Example 2: Simulate Brownian motion of particles in a fluid
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-discussion">
-     Exercise (Discussion)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generate-your-brownian-motion">
-     Generate your Brownian motion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty">
-     Example 3: Determine uncertainty in failure load based on geometry uncertainty
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-and-discussion">Exercise and Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-monte-carlo-models">Examples of Monte Carlo models:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-calculate-pi-with-random-numbers">Example 1: Calculate <span class="math notranslate nohighlight">\(\pi\)</span> with random numbers.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid">Example 2: Simulate Brownian motion of particles in a fluid</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-discussion">Exercise (Discussion)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-your-brownian-motion">Generate your Brownian motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty">Example 3: Determine uncertainty in failure load based on geometry uncertainty</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>04 - Statistics and Monte-Carlo Models</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-and-discussion">
-   Exercise and Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples-of-monte-carlo-models">
-   Examples of Monte Carlo models:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-1-calculate-pi-with-random-numbers">
-   Example 1: Calculate
-   <span class="math notranslate nohighlight">
-    \(\pi\)
-   </span>
-   with random numbers.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid">
-   Example 2: Simulate Brownian motion of particles in a fluid
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-discussion">
-     Exercise (Discussion)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generate-your-brownian-motion">
-     Generate your Brownian motion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty">
-     Example 3: Determine uncertainty in failure load based on geometry uncertainty
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <blockquote>
 <div><p><strong>Content created under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="section" id="statistics-and-monte-carlo-models">
-<h1>04 - Statistics and Monte-Carlo Models<a class="headerlink" href="#statistics-and-monte-carlo-models" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="statistics-and-monte-carlo-models">
+<h1>04 - Statistics and Monte-Carlo Models<a class="headerlink" href="#statistics-and-monte-carlo-models" title="Permalink to this headline">#</a></h1>
 <p>Monte Carlo models use random numbers to either understand statistics or generate a solution [1].
 The main element in a Monte Carlo model is the use of random numbers. Monte Carlo methods are very useful if you can easily execute a function lots of time or even in parallel.</p>
 <p>We can generate random numbers in many ways, but most programming languages have ‘pseudo’-random number generators.</p>
@@ -644,10 +517,10 @@ library</a> as such</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.83231044, 0.64530806, 0.16587029, 0.20204736, 0.18959219,
-       0.97284563, 0.40841072, 0.93791339, 0.47919124, 0.08784151,
-       0.14680655, 0.59104511, 0.08021563, 0.50053269, 0.32984016,
-       0.89251396, 0.04106796, 0.38900095, 0.51244649, 0.67049763])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.73805425, 0.3884016 , 0.31077445, 0.66820158, 0.78351251,
+       0.21156194, 0.45508995, 0.04222454, 0.62692494, 0.66419308,
+       0.13830162, 0.3697927 , 0.15031859, 0.36686799, 0.87483019,
+       0.17073933, 0.36048691, 0.68665431, 0.66077405, 0.16278131])
 </pre></div>
 </div>
 </div>
@@ -680,18 +553,18 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([7., 3., 4., 2., 4.]),
- array([0.04106796, 0.22742349, 0.41377903, 0.60013456, 0.7864901 ,
-        0.97284563]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([5., 5., 2., 5., 3.]),
+ array([0.04222454, 0.20874567, 0.3752668 , 0.54178793, 0.70830906,
+        0.87483019]),
  &lt;BarContainer object of 5 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/04_Stats_and_Montecarlo_5_1.png" src="../_images/04_Stats_and_Montecarlo_5_1.png" />
+<img alt="../_images/1d616b45a78f1b47861127a7acc9bab20d7dfeb3365a43ff99b738b6c7d76a96.png" src="../_images/1d616b45a78f1b47861127a7acc9bab20d7dfeb3365a43ff99b738b6c7d76a96.png" />
 </div>
 </div>
 <p>The pyplot function <code class="docutils literal notranslate"><span class="pre">hist</span></code> displays a histogram of these randomly generated numbers.</p>
 <div class="section" id="exercise-and-discussion">
-<h2>Exercise and Discussion<a class="headerlink" href="#exercise-and-discussion" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise and Discussion<a class="headerlink" href="#exercise-and-discussion" title="Permalink to this headline">#</a></h2>
 <p>Try generating more random numbers and plotting histograms of the results i.e. increase <code class="docutils literal notranslate"><span class="pre">10</span></code> to larger values.</p>
 <p>What should the histogram of <code class="docutils literal notranslate"><span class="pre">x</span></code> look like if Python is generating truly random numbers?</p>
 <div class="cell docutils container">
@@ -703,12 +576,12 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Stats_and_Montecarlo_8_0.png" src="../_images/04_Stats_and_Montecarlo_8_0.png" />
+<img alt="../_images/54d08ffa2fb6c4397ec4c576741620017adfd7ec4260896239d3315462cf6d97.png" src="../_images/54d08ffa2fb6c4397ec4c576741620017adfd7ec4260896239d3315462cf6d97.png" />
 </div>
 </div>
 </div>
 <div class="section" id="examples-of-monte-carlo-models">
-<h2>Examples of Monte Carlo models:<a class="headerlink" href="#examples-of-monte-carlo-models" title="Permalink to this headline">¶</a></h2>
+<h2>Examples of Monte Carlo models:<a class="headerlink" href="#examples-of-monte-carlo-models" title="Permalink to this headline">#</a></h2>
 <p>Monte Carlo models have a wide array of applications. We are going to use Monte Carlo models in later modules to explore how uncertainty in measurements can be incorporated into computational models. The three main applications for Monte Carlo models are used in three main classes: optimization, numerical integration, and generating population distributions [1].</p>
 <p>Here is a brief list of Monte Carlo model use cases in real-world applications:</p>
 <ul class="simple">
@@ -722,14 +595,14 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_methods_in_finance">Financial modeling</a></p></li>
 </ul>
 <p>We will explore Monte Carlo modeling through the use of three examples:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Calculate the value of <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
 <li><p>Simulate Brownian motion of particles in fluids</p></li>
 <li><p>Propagate uncertainty in manufacturing into uncertainty in failure load</p></li>
 </ol>
 </div>
 <div class="section" id="example-1-calculate-pi-with-random-numbers">
-<h2>Example 1: Calculate <span class="math notranslate nohighlight">\(\pi\)</span> with random numbers.<a class="headerlink" href="#example-1-calculate-pi-with-random-numbers" title="Permalink to this headline">¶</a></h2>
+<h2>Example 1: Calculate <span class="math notranslate nohighlight">\(\pi\)</span> with random numbers.<a class="headerlink" href="#example-1-calculate-pi-with-random-numbers" title="Permalink to this headline">#</a></h2>
 <p>Assuming we can actually generate random numbers (a topic of philosophical and heated debates) we can populate a unit square with random points and determine the ratio of points inside and outside of a circle.</p>
 <p><img alt="Unit circle and unit square" src="../_images/MonteCarloPi.gif" /></p>
 <p><img alt="1/4 Unit circle and 1/4 unit square" src="../_images/MonteCarloPi_rand.gif" /></p>
@@ -779,26 +652,21 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">787</span><span class="n">c1af85d30</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">test_pi</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">test_pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">montecarlopi</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value for pi = </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.mean(test_pi))
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;standard deviation is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.std(test_pi))
 
-<span class="nn">Input In [5],</span> in <span class="ni">montecarlopi</span><span class="nt">(N)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">montecarlopi</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="sd">&#39;&#39;&#39;Create random x-y-coordinates to and use ratio of circle-to-square to </span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd">     calculate the value of pi</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     i.e. Acircle/Asquare = pi/4</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="sd">     our_pi: the best prediction of pi using N points</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="sd">     &#39;&#39;&#39;</span>
+<span class="nn">&lt;ipython-input-5-3ccd4c06f448&gt;</span> in <span class="ni">montecarlopi</span><span class="nt">(N)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+<span class="g g-Whitespace">     </span><span class="mi">14</span> 
 <span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 <span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 <span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">R</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> <span class="c1"># compute radius</span>
 
-<span class="nn">File _generator.pyx:286,</span> in <span class="ni">numpy.random._generator.Generator.random</span><span class="nt">()</span>
+<span class="nn">_generator.pyx</span> in <span class="ni">numpy.random._generator.Generator.random</span><span class="nt">()</span>
 
 <span class="ne">TypeError</span>: Cannot interpret &#39;1&#39; as a data type
 </pre></div>
@@ -807,8 +675,8 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
 <li><p>Why is there a standard deviation for the value of <span class="math notranslate nohighlight">\(\pi\)</span> calculated with a Monte Carlo method? Does it depend upon how many times you run the function i.e. the size of <code class="docutils literal notranslate"><span class="pre">test_pi</span></code>? or the number of random points <code class="docutils literal notranslate"><span class="pre">N</span></code>? Alter the script above to discover correlations</p></li>
 <li><p>How well does your function <code class="docutils literal notranslate"><span class="pre">montecarlopi</span></code> converge to the true value
 of <span class="math notranslate nohighlight">\(\pi\)</span> (you can use <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> as a true value)? Plot the convergence as
@@ -864,7 +732,7 @@ we did in <span class="xref myst">03-Numerical_error</span></p></li>
 </div>
 </div>
 <div class="section" id="example-2-simulate-brownian-motion-of-particles-in-a-fluid">
-<h2>Example 2: Simulate Brownian motion of particles in a fluid<a class="headerlink" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid" title="Permalink to this headline">¶</a></h2>
+<h2>Example 2: Simulate Brownian motion of particles in a fluid<a class="headerlink" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://www.britannica.com/science/Brownian-motion">Brownian motion</a>
 was first documented by Robert Brown, a Scottish botanist in 1827. It is
 a description of how large particles move and vibrate in fluids that
@@ -884,18 +752,18 @@ for more information in the physics and history of the phenomenon.</p>
 if they take 100 random steps from -0.5 to 0.5 <span class="math notranslate nohighlight">\(\mu m\)</span> in the x- and
 y-directions.</p>
 <div class="section" id="exercise-discussion">
-<h3>Exercise (Discussion)<a class="headerlink" href="#exercise-discussion" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise (Discussion)<a class="headerlink" href="#exercise-discussion" title="Permalink to this headline">#</a></h3>
 <p>If the steps are uniformly random and can be positive or negative, where
 do you <em>expect</em> the particle to be after 100 steps? Will it be back to
 where it started? or will it migrate to somewhere new?</p>
 </div>
 <div class="section" id="generate-your-brownian-motion">
-<h3>Generate your Brownian motion<a class="headerlink" href="#generate-your-brownian-motion" title="Permalink to this headline">¶</a></h3>
+<h3>Generate your Brownian motion<a class="headerlink" href="#generate-your-brownian-motion" title="Permalink to this headline">#</a></h3>
 <p>Here, we are simplifying the physics of the Brownian motion (ignoring
 the details in the transfer of momentum from small to large particles)
 and just assuming each step in the x- and y-directions are  -0.5 to 0.5
 <span class="math notranslate nohighlight">\(\mu m\)</span>. Here is the Monte Carlo process:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>generate 2 sets of 100 random numbers between -0.5 to 0.5 for
 <span class="math notranslate nohighlight">\(Delta x\)</span> and <span class="math notranslate nohighlight">\(\Delta y\)</span>.</p></li>
 <li><p>create an array with 100 locations, the first is at the origin (0, 0)</p></li>
@@ -972,18 +840,18 @@ steps each.</p>
 </div>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
 <p>Calculate the average location of the particles. What is the standard
 deviation?</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Compare the scaled histogram to the original histogram. What is similar? What is different?</p>
 <p>Make a scaling equation to get uniformly random numbers between 10 and 20.</p>
 <p><em>The scaling keeps the bin heights constant, but it changes the width and location of the bins in the histogram. Scaling to 10-20 shows a more extreme example.</em></p>
 <div class="section" id="example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty">
-<h3>Example 3: Determine uncertainty in failure load based on geometry uncertainty<a class="headerlink" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty" title="Permalink to this headline">¶</a></h3>
+<h3>Example 3: Determine uncertainty in failure load based on geometry uncertainty<a class="headerlink" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty" title="Permalink to this headline">#</a></h3>
 <p>In this example, we know that a steel bar will break under 940 MPa tensile stress. The bar is 1 mm by 2 mm with a tolerance of 10 %. What is the range of tensile loads that can be safely applied to the beam?</p>
 <p><span class="math notranslate nohighlight">\(\sigma_{UTS}=\frac{F_{fail}}{wh}\)</span></p>
 <p><span class="math notranslate nohighlight">\(F_{fail}=\sigma_{UTS}wh\)</span></p>
@@ -1044,8 +912,8 @@ the 68% confidence interval.</p>
 <p>For the normally distributed case, there are approximately 1500 parts out of 10,000 that will fail at 1.9 kN.</p>
 </div>
 </div>
-<div class="section" id="what-you-ve-learned">
-<h2>What you’ve learned:<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-youve-learned">
+<h2>What you’ve learned:<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>How to generate “random” numbers in Python<span class="math notranslate nohighlight">\(^+\)</span></p></li>
 <li><p>The definition of a Monte Carlo model</p></li>
@@ -1056,13 +924,13 @@ the 68% confidence interval.</p>
 <p><span class="math notranslate nohighlight">\(^+\)</span> Remember, the computer only generates pseudo-random numbers. For further information <strong>and</strong> truly random numbers  check <a class="reference external" href="https://www.random.org/randomness/">www.random.org</a></p>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/full/10.1002/wics.1314">Why the Monte Carlo method is so important today
 Dirk P. Kroese, Tim Brereton <em>et al.</em> Wiley Interdisciplinary Reviews: Computational Statistics, 6, 6, 11 2014</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_integration">Wikipedia: Monte Carlo integration</a></p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/hep-ph/0006269">Weinzierl, S. (2000). “Introduction to Monte Carlo methods”</a></p></li>
-<li><p>Meurer A, <em>et al.</em> (2017) SymPy: symbolic computing in Python. PeerJ Computer Science 3:e103 https://doi.org/10.7717/peerj-cs.103</p></li>
+<li><p>Meurer A, <em>et al.</em> (2017) SymPy: symbolic computing in Python. PeerJ Computer Science 3:e103 <a class="reference external" href="https://doi.org/10.7717/peerj-cs.103">https://doi.org/10.7717/peerj-cs.103</a></p></li>
 <li><p>Whittaker, E. T. and Robinson, G. “Normal Frequency Distribution.” Ch. 8 in The Calculus of Observations: A Treatise on Numerical Mathematics, 4th ed. New York: Dover, p. 179, 1967.</p></li>
 </ol>
 </div>
@@ -1080,7 +948,7 @@ Dirk P. Kroese, Tim Brereton <em>et al.</em> Wiley Interdisciplinary Reviews: Co
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./module_02"
         },
         predefinedOutput: true
@@ -1088,44 +956,120 @@ Dirk P. Kroese, Tim Brereton <em>et al.</em> Wiley Interdisciplinary Reviews: Co
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="03_Linear_Regression_with_Real_Data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">03 - Linear regression with real data</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_Linear_Regression_with_Real_Data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">03 - Linear regression with real data</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="HW_02.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="HW_02.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Homework</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href = https://cooperrc.github.io> Ryan C. Cooper</a><br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-and-discussion">Exercise and Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-monte-carlo-models">Examples of Monte Carlo models:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-calculate-pi-with-random-numbers">Example 1: Calculate <span class="math notranslate nohighlight">\(\pi\)</span> with random numbers.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-simulate-brownian-motion-of-particles-in-a-fluid">Example 2: Simulate Brownian motion of particles in a fluid</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-discussion">Exercise (Discussion)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-your-brownian-motion">Generate your Brownian motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-determine-uncertainty-in-failure-load-based-on-geometry-uncertainty">Example 3: Determine uncertainty in failure load based on geometry uncertainty</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,776 +1,530 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>03 - Numerical Error &#8212; Computational Mechanics</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_01/03_Numerical_error';</script>
     <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework" href="HW_01.html" />
     <link rel="prev" title="02 - Working with Python" href="02_Working_with_Python.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Computational Mechanics
-  </a>
- </li>
+    
+    
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 01 - Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Working_with_Python.html">02 - Working with Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus - Computational Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../how-to/update-github.html">
-   Working in your  Fork on GitHub.com
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   Computational Mechanics 01 - Getting Started
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Interacting_with_Python.html">
-     01 - Interacting with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_Working_with_Python.html">
-     02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     03 - Numerical Error
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="HW_01.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/01_Getting-started-project.html">
-     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_02/README.html">
-   Computational Mechanics 02 - Analyze Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">
-     01 - Cheers!  Stats with Beers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
-     02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">
-     03 - Linear regression with real data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
-     04 - Statistics and Monte-Carlo Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/HW_02.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
-     Project #02 - NYSE random walk predictor
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_03/README.html">
-   Computational Mechanics 03- Initial Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
-     Catch things in motion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html">
-     Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
-     Get with the oscillations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
-     Roots of Nonlinear functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/HW_03.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/03_IVP-project.html">
-     Initial Value Problems - Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_04/README.html">
-   Computational Mechanics 4 - Linear Algebra
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
-     Linear Algebra Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
-     Gauss Elimination
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
-     Linear Regression Algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/HW_04.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
-     CompMech04-Linear Algebra Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_05/README.html">
-   Computational Mechanics 5 - Boundary Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
-     Revisiting Derivatives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
-     Keep it Steady
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
-     Good Vibrations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/HW_05.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/05-BVPs_project.html">
-     Computational Mechanics Boundary Values - Project 05
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../how-to/README.html">
-   Quick How-to documents
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/polyfit.html">
-     Creating a quadratic fit on random data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/for-loops.html">
-     How to use a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     loop?
-     <em>
-      in Python
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/extra-FEA_material.html">
-     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_02/README.html">Computational Mechanics 02 - Analyze Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/02_Seeing_Stats.html">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_03/README.html">Computational Mechanics 03- Initial Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_05/README.html">Computational Mechanics 5 - Boundary Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/module_01/03_Numerical_error.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/module_01/03_Numerical_error.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_01/03_Numerical_error.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_01/03_Numerical_error.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_01/03_Numerical_error.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_01/03_Numerical_error.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_01/03_Numerical_error.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_01/03_Numerical_error.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/module_01/03_Numerical_error.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/module_01/03_Numerical_error.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>03 - Numerical Error</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freefall-model-computational-solution">
-   Freefall Model Computational solution
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-constants-and-analytical-solution-meters-kilogram-sec">
-     Define constants and analytical solution (meters-kilogram-sec)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analytical-vs-computational-solution">
-   Analytical vs Computational Solution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#define-numerical-method">
-   Define numerical method
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finite-difference-approximation">
-     Finite difference approximation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compare-solutions-plotting">
-   Compare solutions (plotting)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#errors-in-numerical-modeling">
-   Errors in Numerical Modeling
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#truncation">
-   1 - Truncation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#roundoff">
-   2 - Roundoff
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#truncation-error">
-   1- Truncation error
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#freefall-is-example-of-truncation-error">
-     Freefall is example of “truncation error”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#truncation-error-results-from-approximating-exact-mathematical-procedure">
-       Truncation error results from approximating exact mathematical procedure
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#truncation-error-as-a-taylor-series">
-     Truncation error as a Taylor series
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   2- Roundoff
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#just-storing-a-number-in-a-computer-requires-rounding">
-     Just storing a number in a computer requires rounding
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-epsilon">
-     Machine epsilon
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freefall-model-revisited">
-   Freefall Model (revisited)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#freefall-example">
-     Freefall example
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computer-model-error-truncation-roundoff">
-   Computer model error =  truncation + roundoff
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convergence-of-a-numerical-model">
-     Convergence of a numerical model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-model-computational-solution">Freefall Model Computational solution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-constants-and-analytical-solution-meters-kilogram-sec">Define constants and analytical solution (meters-kilogram-sec)</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-vs-computational-solution">Analytical vs Computational Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-numerical-method">Define numerical method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-approximation">Finite difference approximation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-solutions-plotting">Compare solutions (plotting)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-in-numerical-modeling">Errors in Numerical Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation">1 - Truncation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roundoff">2 - Roundoff</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation-error">1- Truncation error</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-is-example-of-truncation-error">Freefall is example of “truncation error”</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation-error-results-from-approximating-exact-mathematical-procedure">Truncation error results from approximating exact mathematical procedure</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation-error-as-a-taylor-series">Truncation error as a Taylor series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2- Roundoff</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#just-storing-a-number-in-a-computer-requires-rounding">Just storing a number in a computer requires rounding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-epsilon">Machine epsilon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-model-revisited">Freefall Model (revisited)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-example">Freefall example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-model-error-truncation-roundoff">Computer model error =  truncation + roundoff</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-of-a-numerical-model">Convergence of a numerical model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>03 - Numerical Error</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freefall-model-computational-solution">
-   Freefall Model Computational solution
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-constants-and-analytical-solution-meters-kilogram-sec">
-     Define constants and analytical solution (meters-kilogram-sec)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analytical-vs-computational-solution">
-   Analytical vs Computational Solution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#define-numerical-method">
-   Define numerical method
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finite-difference-approximation">
-     Finite difference approximation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compare-solutions-plotting">
-   Compare solutions (plotting)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#errors-in-numerical-modeling">
-   Errors in Numerical Modeling
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#truncation">
-   1 - Truncation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#roundoff">
-   2 - Roundoff
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#truncation-error">
-   1- Truncation error
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#freefall-is-example-of-truncation-error">
-     Freefall is example of “truncation error”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#truncation-error-results-from-approximating-exact-mathematical-procedure">
-       Truncation error results from approximating exact mathematical procedure
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#truncation-error-as-a-taylor-series">
-     Truncation error as a Taylor series
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   2- Roundoff
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#just-storing-a-number-in-a-computer-requires-rounding">
-     Just storing a number in a computer requires rounding
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-epsilon">
-     Machine epsilon
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freefall-model-revisited">
-   Freefall Model (revisited)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#freefall-example">
-     Freefall example
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computer-model-error-truncation-roundoff">
-   Computer model error =  truncation + roundoff
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convergence-of-a-numerical-model">
-     Convergence of a numerical model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="section" id="numerical-error">
-<h1>03 - Numerical Error<a class="headerlink" href="#numerical-error" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="numerical-error">
+<h1>03 - Numerical Error<a class="headerlink" href="#numerical-error" title="Permalink to this headline">#</a></h1>
 <div class="section" id="freefall-model-computational-solution">
-<h2>Freefall Model Computational solution<a class="headerlink" href="#freefall-model-computational-solution" title="Permalink to this headline">¶</a></h2>
+<h2>Freefall Model Computational solution<a class="headerlink" href="#freefall-model-computational-solution" title="Permalink to this headline">#</a></h2>
 <p><img alt="Object falling through the sky" src="../_images/freefall.png" /></p>
 <p>Here is your first computational mechanics model.</p>
 <p>An object falling is subject to the force of</p>
@@ -781,7 +535,7 @@
 <p>Acceleration of the object:</p>
 <p><span class="math notranslate nohighlight">\(\sum F=ma=F_g-F_d=mg - cv^2 = m\frac{dv}{dt}\)</span></p>
 <div class="section" id="define-constants-and-analytical-solution-meters-kilogram-sec">
-<h3>Define constants and analytical solution (meters-kilogram-sec)<a class="headerlink" href="#define-constants-and-analytical-solution-meters-kilogram-sec" title="Permalink to this headline">¶</a></h3>
+<h3>Define constants and analytical solution (meters-kilogram-sec)<a class="headerlink" href="#define-constants-and-analytical-solution-meters-kilogram-sec" title="Permalink to this headline">#</a></h3>
 <p>Define parameters as the acceleration due to gravity, g, drag
 coefficient, c, and mass of the object, m. Once you have defined these
 parameters, You have a single variable whose derivative <span class="math notranslate nohighlight">\(\frac{dv}{dt}\)</span>
@@ -806,7 +560,7 @@ f(v,~parameters)\)</span>.</p>
 </div>
 </div>
 <div class="section" id="exercise">
-<h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>Calculate the terminal velocity for the given parameters, g=9.81 m/s<span class="math notranslate nohighlight">\(^2\)</span>, c=0.25 kg/m, m=60 kg.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -879,7 +633,7 @@ at time 12.00 s, speed is 47.77 m/s
 </div>
 </div>
 <div class="section" id="analytical-vs-computational-solution">
-<h2>Analytical vs Computational Solution<a class="headerlink" href="#analytical-vs-computational-solution" title="Permalink to this headline">¶</a></h2>
+<h2>Analytical vs Computational Solution<a class="headerlink" href="#analytical-vs-computational-solution" title="Permalink to this headline">#</a></h2>
 <p>The analytical solution above gives us an exact function for <span class="math notranslate nohighlight">\(v(t)\)</span>. We can input any time, <code class="docutils literal notranslate"><span class="pre">t</span></code>, and calculate the speed, <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
 <p>In many engineering problems, you cannot find or may not need an exact
 mathematical formula for our design process. It is always helpful to
@@ -888,9 +642,9 @@ will tell us if our computational solution is correct. Next, you will
 develop the <strong>Euler approximation</strong> to solve the same problem.</p>
 </div>
 <div class="section" id="define-numerical-method">
-<h2>Define numerical method<a class="headerlink" href="#define-numerical-method" title="Permalink to this headline">¶</a></h2>
+<h2>Define numerical method<a class="headerlink" href="#define-numerical-method" title="Permalink to this headline">#</a></h2>
 <div class="section" id="finite-difference-approximation">
-<h3>Finite difference approximation<a class="headerlink" href="#finite-difference-approximation" title="Permalink to this headline">¶</a></h3>
+<h3>Finite difference approximation<a class="headerlink" href="#finite-difference-approximation" title="Permalink to this headline">#</a></h3>
 <p>Computational models do not solve for functions e.g. v(t), but rather
 functions at given points in time (or space). In the given freefall
 example, you can approximate the derivative of speed, <span class="math notranslate nohighlight">\(\frac{dv}{dt}\)</span>, as
@@ -969,9 +723,9 @@ time from 0 to 12 seconds</p>
 </div>
 </div>
 <div class="section" id="compare-solutions-plotting">
-<h2>Compare solutions (plotting)<a class="headerlink" href="#compare-solutions-plotting" title="Permalink to this headline">¶</a></h2>
+<h2>Compare solutions (plotting)<a class="headerlink" href="#compare-solutions-plotting" title="Permalink to this headline">#</a></h2>
 <p>We can compare solutions in a figure in a number of ways:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>plot the values, e.g. <span class="math notranslate nohighlight">\(v_{analytical}\)</span> and <span class="math notranslate nohighlight">\(v_{numerical}\)</span></p></li>
 <li><p>plot the difference between the values (the absolute error) e.g. <span class="math notranslate nohighlight">\(v_{numerical}-v_{analytical}\)</span></p></li>
 <li><p>plot the ratio of the values e.g. <span class="math notranslate nohighlight">\(\frac{v_{numerical}}{v_{analytical}}\)</span> (useful in finding bugs, unit analysis, etc.)</p></li>
@@ -1003,42 +757,42 @@ time from 0 to 12 seconds</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;velocity (m/s)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/03_Numerical_error_19_1.png" src="../_images/03_Numerical_error_19_1.png" />
+<img alt="../_images/82b77d1b57755c9081fe2b94d1867732d24d210e01001d0f994a8b4248c4799d.png" src="../_images/82b77d1b57755c9081fe2b94d1867732d24d210e01001d0f994a8b4248c4799d.png" />
 </div>
 </div>
 <p><strong>Note:</strong> In the above plot, the numerical solution is given at discrete points connected by lines, while the analytical solution is drawn as a line. This is a helpful convention. We plot discrete data such as numerical solutions or measured data as points and lines while analytical solutions are drawn as lines.</p>
 </div>
 <div class="section" id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Play with the values of <code class="docutils literal notranslate"><span class="pre">t</span></code> (defined above as <code class="docutils literal notranslate"><span class="pre">t=np.linspace(0,12,7)</span></code>).</p>
 <p>If you increase the number of time steps from 0 to 12 seconds what happens to v_analytical? to v_numerical?</p>
 <p>What happens when you decrease the number of time steps?</p>
 </div>
 <div class="section" id="errors-in-numerical-modeling">
-<h2>Errors in Numerical Modeling<a class="headerlink" href="#errors-in-numerical-modeling" title="Permalink to this headline">¶</a></h2>
+<h2>Errors in Numerical Modeling<a class="headerlink" href="#errors-in-numerical-modeling" title="Permalink to this headline">#</a></h2>
 </div>
 <div class="section" id="truncation">
-<h2>1 - Truncation<a class="headerlink" href="#truncation" title="Permalink to this headline">¶</a></h2>
+<h2>1 - Truncation<a class="headerlink" href="#truncation" title="Permalink to this headline">#</a></h2>
 </div>
 <div class="section" id="roundoff">
-<h2>2 - Roundoff<a class="headerlink" href="#roundoff" title="Permalink to this headline">¶</a></h2>
+<h2>2 - Roundoff<a class="headerlink" href="#roundoff" title="Permalink to this headline">#</a></h2>
 </div>
 <div class="section" id="truncation-error">
-<h2>1- Truncation error<a class="headerlink" href="#truncation-error" title="Permalink to this headline">¶</a></h2>
+<h2>1- Truncation error<a class="headerlink" href="#truncation-error" title="Permalink to this headline">#</a></h2>
 <div class="section" id="freefall-is-example-of-truncation-error">
-<h3>Freefall is example of “truncation error”<a class="headerlink" href="#freefall-is-example-of-truncation-error" title="Permalink to this headline">¶</a></h3>
+<h3>Freefall is example of “truncation error”<a class="headerlink" href="#freefall-is-example-of-truncation-error" title="Permalink to this headline">#</a></h3>
 <div class="section" id="truncation-error-results-from-approximating-exact-mathematical-procedure">
-<h4>Truncation error results from approximating exact mathematical procedure<a class="headerlink" href="#truncation-error-results-from-approximating-exact-mathematical-procedure" title="Permalink to this headline">¶</a></h4>
+<h4>Truncation error results from approximating exact mathematical procedure<a class="headerlink" href="#truncation-error-results-from-approximating-exact-mathematical-procedure" title="Permalink to this headline">#</a></h4>
 <p>We approximated the derivative as <span class="math notranslate nohighlight">\(\frac{d v}{d t}\approx\frac{\Delta v}{\Delta t}\)</span></p>
 <p>Can reduce error in two ways</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Decrease step size -&gt; <span class="math notranslate nohighlight">\(\Delta t\)</span>=<code class="docutils literal notranslate"><span class="pre">delta_time</span></code></p></li>
 <li><p>Increase the accuracy of the approximation</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="truncation-error-as-a-taylor-series">
-<h3>Truncation error as a Taylor series<a class="headerlink" href="#truncation-error-as-a-taylor-series" title="Permalink to this headline">¶</a></h3>
+<h3>Truncation error as a Taylor series<a class="headerlink" href="#truncation-error-as-a-taylor-series" title="Permalink to this headline">#</a></h3>
 <p>The freefall problem solution used a first-order Taylor series approximation</p>
 <p>Taylor series:
 <span class="math notranslate nohighlight">\(f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^{2}+\frac{f'''(a)}{3!}(x-a)^{3}+...\)</span></p>
@@ -1074,19 +828,19 @@ an <span class="math notranslate nohighlight">\(n^{th}\)</span>-order polynomial
 </div>
 </div>
 <div class="section" id="id2">
-<h2>2- Roundoff<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>2- Roundoff<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="section" id="just-storing-a-number-in-a-computer-requires-rounding">
-<h3>Just storing a number in a computer requires rounding<a class="headerlink" href="#just-storing-a-number-in-a-computer-requires-rounding" title="Permalink to this headline">¶</a></h3>
+<h3>Just storing a number in a computer requires rounding<a class="headerlink" href="#just-storing-a-number-in-a-computer-requires-rounding" title="Permalink to this headline">#</a></h3>
 <p>In our analytical solution, <span class="math notranslate nohighlight">\(v(t) =
 v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span>, you can solve
 for velocity, <span class="math notranslate nohighlight">\(v\)</span> at any given time, <span class="math notranslate nohighlight">\(t\)</span> by hand to avoid roundoff
 error, but this is typically more trouble than its worth. Roundoff error
 comes in two forms:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>digital representation of a number is rarely exact</p></li>
 <li><p>arithmetic (+,-,/,*) causes roundoff error</p></li>
 </ol>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>digital representation of <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
 </ol>
 <p><a class="reference external" href="https://www.piday.org/million/">Consider the number <span class="math notranslate nohighlight">\(\pi\)</span></a>. How many digits can a floating point number in a computer accurately represent?</p>
@@ -1119,7 +873,7 @@ point number representation to highlight that any number you store in a
 computer is an approximation of the real number you are trying to save.
 With 64-bit floating point numbers, these approximations are
 <strong>extremely</strong> good.</p>
-<ol class="simple">
+<ol class="arabic simple" start="2">
 <li><p>Floating point arithmetic</p></li>
 </ol>
 <p>Each time you use an operation, e.g. <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">/</span> <span class="pre">*</span></code> you lose some precision as well.</p>
@@ -1152,7 +906,7 @@ First 26 digits of pi   = 3.14159265358979323846264338
 </div>
 </div>
 <p>In the previous block of code, you see <span class="math notranslate nohighlight">\(\pi\)</span> printed for 3 cases:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>the 64-bit representation of <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
 <li><p>the value of <span class="math notranslate nohighlight">\(\pi\)</span> after it has gone through 20 math operations (<span class="math notranslate nohighlight">\(\times (0..10)10^{-16}\)</span>, then <span class="math notranslate nohighlight">\(\times 1/(0..10)10^{16}\)</span>)</p></li>
 <li><p>the actual value of <span class="math notranslate nohighlight">\(\pi\)</span> for the first 26 digits</p></li>
@@ -1185,7 +939,7 @@ maximum relative error = 2.22044604925031308085e-16
 </div>
 </div>
 <div class="section" id="machine-epsilon">
-<h3>Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Permalink to this headline">¶</a></h3>
+<h3>Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Permalink to this headline">#</a></h3>
 <p>The smallest number that can be added to 1 and change the value in a computer is called “machine epsilon”, <span class="math notranslate nohighlight">\(eps\)</span>. If your numerical results are supposed to return 0, but instead return <span class="math notranslate nohighlight">\(2eps\)</span>, have a drink and move on. You won’t get any closer to your result.</p>
 <p>In the following example, you will add <span class="math notranslate nohighlight">\(eps/2\)</span> 1,000<span class="math notranslate nohighlight">\(\times\)</span> to the
 variable s, set to 1. The result should be <span class="math notranslate nohighlight">\(s=1+500\cdot eps\)</span>, but
@@ -1216,15 +970,15 @@ will get a different result depending upon how we do the addition.</p>
 </div>
 </div>
 <div class="section" id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
 <li><p>Try adding <span class="math notranslate nohighlight">\(2eps\)</span> to 1 and determine the result of the previous exercise.</p></li>
 <li><p>What is machine epsilon for a 32-bit floating point number?</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="freefall-model-revisited">
-<h2>Freefall Model (revisited)<a class="headerlink" href="#freefall-model-revisited" title="Permalink to this headline">¶</a></h2>
+<h2>Freefall Model (revisited)<a class="headerlink" href="#freefall-model-revisited" title="Permalink to this headline">#</a></h2>
 <p>In the following example, you judge the <strong>convergence</strong> of our solution with the new knowledge of truncation error and roundoff error.</p>
 <p><strong>The definition for convergence in mathematics is the limit of a sequence exists.</strong></p>
 <p>In the case of the Euler approximation, the sequence is smaller timesteps, <span class="math notranslate nohighlight">\(\Delta t\)</span>, should converge to the analytical solution.</p>
@@ -1232,7 +986,7 @@ will get a different result depending upon how we do the addition.</p>
 function defined as <code class="docutils literal notranslate"><span class="pre">freefall</span></code></p>
 <p>m=60 kg, c=0.25 kg/m</p>
 <div class="section" id="freefall-example">
-<h3>Freefall example<a class="headerlink" href="#freefall-example" title="Permalink to this headline">¶</a></h3>
+<h3>Freefall example<a class="headerlink" href="#freefall-example" title="Permalink to this headline">#</a></h3>
 <p>Estimated the function with a <span class="math notranslate nohighlight">\(1^{st}\)</span>-order approximation, so</p>
 <p><span class="math notranslate nohighlight">\(v(t_{i+1})=v(t_{i})+v'(t_{i})(t_{i+1}-t_{i})+R_{1}\)</span></p>
 <p><span class="math notranslate nohighlight">\(v'(t_{i})=\frac{v(t_{i+1})-v(t_{i})}{t_{i+1}-t_{i}}-\frac{R_{1}}{t_{i+1}-t_{i}}\)</span></p>
@@ -1242,9 +996,9 @@ function defined as <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="section" id="computer-model-error-truncation-roundoff">
-<h2>Computer model error =  truncation + roundoff<a class="headerlink" href="#computer-model-error-truncation-roundoff" title="Permalink to this headline">¶</a></h2>
+<h2>Computer model error =  truncation + roundoff<a class="headerlink" href="#computer-model-error-truncation-roundoff" title="Permalink to this headline">#</a></h2>
 <p>In the function <code class="docutils literal notranslate"><span class="pre">freefall(N)</span></code>, the speed of a 60-kg object is predicted in two ways:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The analytical 64-bit representation,
 <span class="math notranslate nohighlight">\(v(t)=v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span></p></li>
 <li><p>The numerical 32-bit<span class="math notranslate nohighlight">\(^{+}\)</span> Euler approximation for <code class="docutils literal notranslate"><span class="pre">N</span></code>-steps from 0 to 2 seconds</p></li>
@@ -1327,17 +1081,17 @@ Here, consider the speed from 0 to 2 seconds, so <code class="docutils literal n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 71 µs, sys: 46 µs, total: 117 µs
-Wall time: 114 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 82 µs, sys: 60 µs, total: 142 µs
+Wall time: 140 µs
 </pre></div>
 </div>
 </div>
 </div>
 <p>The block of code above assigned three variables from the function <code class="docutils literal notranslate"><span class="pre">freefall</span></code>.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">v_analytical</span></code> = <span class="math notranslate nohighlight">\(v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">v_numerical</span></code> = Euler step integration of  <span class="math notranslate nohighlight">\(\frac{dv}{dt}= g - \frac{c}{m}v^2\)</span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> = timesteps from 0..2 with <code class="docutils literal notranslate"><span class="pre">n</span></code> values, here t=np.array([0,2])</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> = timesteps from 0…2 with <code class="docutils literal notranslate"><span class="pre">n</span></code> values, here t=np.array([0,2])</p></li>
 </ol>
 <p>All three variables have the same length, so you can plot them and visually compare <code class="docutils literal notranslate"><span class="pre">v_analytical</span></code> and <code class="docutils literal notranslate"><span class="pre">v_numerical</span></code>. This is the comparison method (1) from above.</p>
 <div class="cell docutils container">
@@ -1360,18 +1114,18 @@ Wall time: 114 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcdce46e8b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f36b0ae4fa0&gt;
 </pre></div>
 </div>
-<img alt="../_images/03_Numerical_error_44_1.png" src="../_images/03_Numerical_error_44_1.png" />
+<img alt="../_images/dcf7d8ccdf45e62ff453be8eaa75d4156fd8c8a87b780340f5140090e9e945d6.png" src="../_images/dcf7d8ccdf45e62ff453be8eaa75d4156fd8c8a87b780340f5140090e9e945d6.png" />
 </div>
 </div>
 <div class="section" id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Try adjusting <code class="docutils literal notranslate"><span class="pre">n</span></code> in the code above to watch the solution converge. You should notice the Euler approximation becomes almost indistinguishable from the analytical solution as <code class="docutils literal notranslate"><span class="pre">n</span></code> increases.</p>
 </div>
 <div class="section" id="convergence-of-a-numerical-model">
-<h3>Convergence of a numerical model<a class="headerlink" href="#convergence-of-a-numerical-model" title="Permalink to this headline">¶</a></h3>
+<h3>Convergence of a numerical model<a class="headerlink" href="#convergence-of-a-numerical-model" title="Permalink to this headline">#</a></h3>
 <p>You should see that the more time steps you use, the closer the Euler
 approximation resembles the analytical solution. This is true only to a
 point, due to <strong>roundoff error</strong>. In the <code class="docutils literal notranslate"><span class="pre">freefall</span></code> function, the
@@ -1407,7 +1161,7 @@ numerical result is saved as a 32-bit floating point array. The best analytical 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Truncation and roundoff error \naccumulation in log-log plot&#39;)
 </pre></div>
 </div>
-<img alt="../_images/03_Numerical_error_48_1.png" src="../_images/03_Numerical_error_48_1.png" />
+<img alt="../_images/e18a830f214e509bcafa4903b2232d38b0269bcf2aa57af525d51bdde93d4a09.png" src="../_images/e18a830f214e509bcafa4903b2232d38b0269bcf2aa57af525d51bdde93d4a09.png" />
 </div>
 </div>
 <p>In the above plot “Truncation and roundoff error accumulation in log-log
@@ -1417,8 +1171,8 @@ precise we can store a number using a 32-bit floating point number.</p>
 <p>In any computational solution, there will be some point of similar diminishing in terms of accuracy (error) and computational time (in this case, number of timesteps). If you were to attempt a solution for N=1 billion, the solution could take <span class="math notranslate nohighlight">\(\approx\)</span>(1 billion)(200 <span class="math notranslate nohighlight">\(\mu s\)</span>[cpu time for N=5])<span class="math notranslate nohighlight">\(\approx\)</span> 55 hours, but would not increase the accuracy of the solution.</p>
 </div>
 </div>
-<div class="section" id="what-you-ve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Numerical integration with the Euler approximation</p></li>
 <li><p>The source of truncation errors</p></li>
@@ -1443,7 +1197,7 @@ precise we can store a number using a 32-bit floating point number.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./module_01"
         },
         predefinedOutput: true
@@ -1451,44 +1205,143 @@ precise we can store a number using a 32-bit floating point number.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="02_Working_with_Python.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">02 - Working with Python</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_Working_with_Python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">02 - Working with Python</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="HW_01.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="HW_01.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Homework</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href = https://cooperrc.github.io> Ryan C. Cooper</a><br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-model-computational-solution">Freefall Model Computational solution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-constants-and-analytical-solution-meters-kilogram-sec">Define constants and analytical solution (meters-kilogram-sec)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-vs-computational-solution">Analytical vs Computational Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-numerical-method">Define numerical method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-approximation">Finite difference approximation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-solutions-plotting">Compare solutions (plotting)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-in-numerical-modeling">Errors in Numerical Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation">1 - Truncation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roundoff">2 - Roundoff</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation-error">1- Truncation error</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-is-example-of-truncation-error">Freefall is example of “truncation error”</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation-error-results-from-approximating-exact-mathematical-procedure">Truncation error results from approximating exact mathematical procedure</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truncation-error-as-a-taylor-series">Truncation error as a Taylor series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2- Roundoff</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#just-storing-a-number-in-a-computer-requires-rounding">Just storing a number in a computer requires rounding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-epsilon">Machine epsilon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-model-revisited">Freefall Model (revisited)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-example">Freefall example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-model-error-truncation-roundoff">Computer model error =  truncation + roundoff</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-of-a-numerical-model">Convergence of a numerical model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

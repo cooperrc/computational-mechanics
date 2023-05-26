@@ -1,779 +1,535 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>02 - Working with Python &#8212; Computational Mechanics</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_01/02_Working_with_Python';</script>
     <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="03 - Numerical Error" href="03_Numerical_error.html" />
     <link rel="prev" title="01 - Interacting with Python" href="01_Interacting_with_Python.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Computational Mechanics
-  </a>
- </li>
+    
+    
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 01 - Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">02 - Working with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Numerical_error.html">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus - Computational Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../how-to/update-github.html">
-   Working in your  Fork on GitHub.com
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   Computational Mechanics 01 - Getting Started
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Interacting_with_Python.html">
-     01 - Interacting with Python
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_Numerical_error.html">
-     03 - Numerical Error
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="HW_01.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/01_Getting-started-project.html">
-     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_02/README.html">
-   Computational Mechanics 02 - Analyze Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">
-     01 - Cheers!  Stats with Beers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
-     02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">
-     03 - Linear regression with real data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
-     04 - Statistics and Monte-Carlo Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/HW_02.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
-     Project #02 - NYSE random walk predictor
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_03/README.html">
-   Computational Mechanics 03- Initial Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/01_Catch_Motion.html">
-     Catch things in motion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/02_Step_Future.html">
-     Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/03_Get_Oscillations.html">
-     Get with the oscillations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/04_Getting_to_the_root.html">
-     Roots of Nonlinear functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_03/HW_03.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/03_IVP-project.html">
-     Initial Value Problems - Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_04/README.html">
-   Computational Mechanics 4 - Linear Algebra
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
-     Linear Algebra Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
-     Gauss Elimination
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
-     Linear Regression Algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/HW_04.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
-     CompMech04-Linear Algebra Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_05/README.html">
-   Computational Mechanics 5 - Boundary Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
-     Revisiting Derivatives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
-     Keep it Steady
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
-     Good Vibrations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/HW_05.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/05-BVPs_project.html">
-     Computational Mechanics Boundary Values - Project 05
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../how-to/README.html">
-   Quick How-to documents
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/polyfit.html">
-     Creating a quadratic fit on random data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/for-loops.html">
-     How to use a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     loop?
-     <em>
-      in Python
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/extra-FEA_material.html">
-     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_02/README.html">Computational Mechanics 02 - Analyze Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/02_Seeing_Stats.html">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_03/README.html">Computational Mechanics 03- Initial Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_05/README.html">Computational Mechanics 5 - Boundary Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/module_01/02_Working_with_Python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/module_01/02_Working_with_Python.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_01/02_Working_with_Python.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_01/02_Working_with_Python.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_01/02_Working_with_Python.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_01/02_Working_with_Python.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_01/02_Working_with_Python.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_01/02_Working_with_Python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/module_01/02_Working_with_Python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/module_01/02_Working_with_Python.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>02 - Working with Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#good-coding-habits">
-   Good coding habits
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-folders-and-files">
-     naming folders and files
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stanford-file-naming-best-practices">
-   Stanford file naming best practices
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commenting-your-code">
-   Commenting your code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-variable-names-that-describe-the-variable">
-   Choose variable names that describe the variable
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#play-with-numpy-arrays">
-   Play with NumPy Arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-libraries">
-   Importing libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-arrays">
-   Creating arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#array-operations">
-   Array operations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multidimensional-arrays">
-   Multidimensional arrays
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-arrays">
-     2D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     3D arrays
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercises">
-       Exercises:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Exercises:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Exercises:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-fast-and-clean">
-   NumPy == Fast and Clean!
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#element-wise-sum-of-a-python-list">
-     Element-wise sum of a Python list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#element-wise-sum-of-numpy-arrays">
-     Element-wise sum of NumPy arrays
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise">
-       Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-to-plot">
-   Time to Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-plotting">
-   Introduction to plotting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-default-plotting-parameters">
-   Set up default plotting parameters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercise:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-coding-habits">Good coding habits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-folders-and-files">naming folders and files</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stanford-file-naming-best-practices">Stanford file naming best practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commenting-your-code">Commenting your code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-variable-names-that-describe-the-variable">Choose variable names that describe the variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#play-with-numpy-arrays">Play with NumPy Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries">Importing libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays">Creating arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-arrays">Multidimensional arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">2D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3D arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercises:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercises:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-fast-and-clean">NumPy == Fast and Clean!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-sum-of-a-python-list">Element-wise sum of a Python list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-sum-of-numpy-arrays">Element-wise sum of NumPy arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-plot">Time to Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-plotting">Introduction to plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-default-plotting-parameters">Set up default plotting parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>02 - Working with Python</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#good-coding-habits">
-   Good coding habits
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-folders-and-files">
-     naming folders and files
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stanford-file-naming-best-practices">
-   Stanford file naming best practices
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commenting-your-code">
-   Commenting your code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-variable-names-that-describe-the-variable">
-   Choose variable names that describe the variable
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#play-with-numpy-arrays">
-   Play with NumPy Arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-libraries">
-   Importing libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-arrays">
-   Creating arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#array-operations">
-   Array operations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multidimensional-arrays">
-   Multidimensional arrays
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-arrays">
-     2D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     3D arrays
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercises">
-       Exercises:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Exercises:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Exercises:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-fast-and-clean">
-   NumPy == Fast and Clean!
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#element-wise-sum-of-a-python-list">
-     Element-wise sum of a Python list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#element-wise-sum-of-numpy-arrays">
-     Element-wise sum of NumPy arrays
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise">
-       Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-to-plot">
-   Time to Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-plotting">
-   Introduction to plotting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-default-plotting-parameters">
-   Set up default plotting parameters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercise:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="section" id="working-with-python">
-<h1>02 - Working with Python<a class="headerlink" href="#working-with-python" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="working-with-python">
+<h1>02 - Working with Python<a class="headerlink" href="#working-with-python" title="Permalink to this headline">#</a></h1>
 <div class="section" id="good-coding-habits">
-<h2>Good coding habits<a class="headerlink" href="#good-coding-habits" title="Permalink to this headline">¶</a></h2>
+<h2>Good coding habits<a class="headerlink" href="#good-coding-habits" title="Permalink to this headline">#</a></h2>
 <div class="section" id="naming-folders-and-files">
-<h3>naming folders and files<a class="headerlink" href="#naming-folders-and-files" title="Permalink to this headline">¶</a></h3>
+<h3>naming folders and files<a class="headerlink" href="#naming-folders-and-files" title="Permalink to this headline">#</a></h3>
 </div>
 </div>
 <div class="section" id="stanford-file-naming-best-practices">
-<h2><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Stanford file naming best practices</a><a class="headerlink" href="#stanford-file-naming-best-practices" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Stanford file naming best practices</a><a class="headerlink" href="#stanford-file-naming-best-practices" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
 <li><p>Include information to distinguish file name e.g. project name, objective of function, name/initials, type of data, conditions, version of file,</p></li>
 <li><p>if using dates, use YYYYMMDD, so the computer organizes by year, then month, then day</p></li>
 <li><p>avoid special characters e.g. !, #, $, …</p></li>
@@ -781,7 +537,7 @@
 </ol>
 </div>
 <div class="section" id="commenting-your-code">
-<h2>Commenting your code<a class="headerlink" href="#commenting-your-code" title="Permalink to this headline">¶</a></h2>
+<h2>Commenting your code<a class="headerlink" href="#commenting-your-code" title="Permalink to this headline">#</a></h2>
 <p>Its important to comment your code</p>
 <ul class="simple">
 <li><p>what are variable’s units,</p></li>
@@ -814,7 +570,7 @@
 </div>
 </div>
 <div class="section" id="choose-variable-names-that-describe-the-variable">
-<h2>Choose variable names that describe the variable<a class="headerlink" href="#choose-variable-names-that-describe-the-variable" title="Permalink to this headline">¶</a></h2>
+<h2>Choose variable names that describe the variable<a class="headerlink" href="#choose-variable-names-that-describe-the-variable" title="Permalink to this headline">#</a></h2>
 <p>You might not have recognized that <code class="docutils literal notranslate"><span class="pre">code(i)</span></code> is meant to calculate the <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial of a number</a>,</p>
 <p><span class="math notranslate nohighlight">\(N!= N*(N-1)*(N-2)*(N-3)*...3*2*1\)</span>.</p>
 <p>For example,</p>
@@ -902,7 +658,7 @@ and even assign default values.</p>
 </pre></div>
 </div>
 <p>The next 4 lines define a help documentation that can be accessed with in a couple ways:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">?factorial_function</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">factorial_function?</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">help(factorial_function)</span></code></p></li>
@@ -929,7 +685,7 @@ this case, its <span class="math notranslate nohighlight">\(1*1*2*3*...*(N-1)*N\
 step in the <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop, we will mulitply the <code class="docutils literal notranslate"><span class="pre">factorial_output</span></code> by the
 <code class="docutils literal notranslate"><span class="pre">factor</span></code>. So when you calculate <span class="math notranslate nohighlight">\(4!\)</span>, the loop updates
 <code class="docutils literal notranslate"><span class="pre">factorial_output</span></code> 4 times:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>i=1: factorial_output = <span class="math notranslate nohighlight">\(1*1=1\)</span></p></li>
 <li><p>i=2: factorial_output = <span class="math notranslate nohighlight">\(1*1*2=2\)</span></p></li>
 <li><p>i=3: factorial_output = <span class="math notranslate nohighlight">\(1*1*2*3=6\)</span></p></li>
@@ -947,13 +703,13 @@ you could return all three as such,</p>
 </div>
 </div>
 <div class="section" id="play-with-numpy-arrays">
-<h2>Play with NumPy Arrays<a class="headerlink" href="#play-with-numpy-arrays" title="Permalink to this headline">¶</a></h2>
+<h2>Play with NumPy Arrays<a class="headerlink" href="#play-with-numpy-arrays" title="Permalink to this headline">#</a></h2>
 <p>In engineering applications, most computing situations benefit from using <em>arrays</em>: they are sequences of data all of the <em>same type</em>. They behave a lot like lists, except for the constraint in the type of their elements. There is a huge efficiency advantage when you know that all elements of a sequence are of the same type—so equivalent methods for arrays execute a lot faster than those for lists.</p>
 <p>The Python language is expanded for special applications, like scientific computing, with <strong>libraries</strong>. The most important library in science and engineering is <strong>NumPy</strong>, providing the <em>n-dimensional array</em> data structure (a.k.a, <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>) and a wealth of functions, operations and algorithms for efficient linear-algebra computations.</p>
 <p>In this lesson, you’ll start playing with NumPy arrays and discover their power. You’ll also meet another widely loved library: <strong>Matplotlib</strong>, for creating two-dimensional plots of data.</p>
 </div>
 <div class="section" id="importing-libraries">
-<h2>Importing libraries<a class="headerlink" href="#importing-libraries" title="Permalink to this headline">¶</a></h2>
+<h2>Importing libraries<a class="headerlink" href="#importing-libraries" title="Permalink to this headline">#</a></h2>
 <p>First, a word on importing libraries to expand your running Python
 session. Because libraries are large collections of code and are for
 special purposes, they are not loaded automatically when you launch
@@ -981,7 +737,7 @@ linear-algebra goodness, you enter:</p>
 </div>
 </div>
 <div class="section" id="creating-arrays">
-<h2>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h2>
+<h2>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">#</a></h2>
 <p>To create a NumPy array from an existing list of (homogeneous) numbers,
 you call <strong><code class="docutils literal notranslate"><span class="pre">np.array()</span></code></strong>, like this:</p>
 <div class="cell docutils container">
@@ -1142,7 +898,7 @@ for <code class="docutils literal notranslate"><span class="pre">step</span></co
 </div>
 </div>
 <div class="section" id="array-operations">
-<h2>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">¶</a></h2>
+<h2>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">#</a></h2>
 <p>Let’s assign some arrays to variable names and perform some operations with them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1219,7 +975,7 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2602757/2664324349.py:1: RuntimeWarning: invalid value encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-23-390fe18392c0&gt;:1: RuntimeWarning: invalid value encountered in true_divide
   x_array / y_array
 </pre></div>
 </div>
@@ -1231,9 +987,9 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 <div class="section" id="multidimensional-arrays">
-<h2>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Permalink to this headline">¶</a></h2>
+<h2>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Permalink to this headline">#</a></h2>
 <div class="section" id="d-arrays">
-<h3>2D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this headline">¶</a></h3>
+<h3>2D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this headline">#</a></h3>
 <p>NumPy can create arrays of N dimensions.  For example, a 2D array is like a matrix, and is created from a nested list as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1316,7 +1072,7 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h3>3D arrays<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>3D arrays<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Let’s create a 3D array by reshaping a 1D array. You can use
 <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/np.reshape.html"><code class="docutils literal notranslate"><span class="pre">np.reshape()</span></code></a>,
 where you pass the array we want to reshape and the shape we want to
@@ -1415,9 +1171,9 @@ using arrays: you cannot do this with lists.</p>
 </div>
 </div>
 <div class="section" id="exercises">
-<h4>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h4>
+<h4>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h4>
 <p>From the X array:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Grab the 2nd element in the 1st column.</p></li>
 <li><p>Grab the 2nd element in the 2nd column.</p></li>
 </ol>
@@ -1454,9 +1210,9 @@ dimension (the first column).</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h4>Exercises:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Exercises:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p>From the X array:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Grab the 2nd column.</p></li>
 <li><p>Grab the 2nd row.</p></li>
 </ol>
@@ -1528,9 +1284,9 @@ dimension (the first column).</p>
 </div>
 </div>
 <div class="section" id="id3">
-<h4>Exercises:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4>Exercises:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>From the array named <code class="docutils literal notranslate"><span class="pre">a_3D</span></code>:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Grab the two middle elements (17, 18) from the second matrix.</p></li>
 <li><p>Grab the last row from both matrices.</p></li>
 <li><p>Grab the elements of the 1st matrix that exclude the first row and the first column.</p></li>
@@ -1540,7 +1296,7 @@ dimension (the first column).</p>
 </div>
 </div>
 <div class="section" id="numpy-fast-and-clean">
-<h2>NumPy == Fast and Clean!<a class="headerlink" href="#numpy-fast-and-clean" title="Permalink to this headline">¶</a></h2>
+<h2>NumPy == Fast and Clean!<a class="headerlink" href="#numpy-fast-and-clean" title="Permalink to this headline">#</a></h2>
 <p>When you are working with numbers, arrays are a better option because
 the NumPy library has built-in functions that are optimized, and
 therefore faster than vanilla Python. Especially if we have big arrays.
@@ -1552,7 +1308,7 @@ arrays, you just use the addtion <code class="docutils literal notranslate"><spa
 <p>Below, you will add two lists and two arrays (with random elements) and
 you’ll compare the time it takes to compute each addition.</p>
 <div class="section" id="element-wise-sum-of-a-python-list">
-<h3>Element-wise sum of a Python list<a class="headerlink" href="#element-wise-sum-of-a-python-list" title="Permalink to this headline">¶</a></h3>
+<h3>Element-wise sum of a Python list<a class="headerlink" href="#element-wise-sum-of-a-python-list" title="Permalink to this headline">#</a></h3>
 <p>Using the Python library
 <a class="reference external" href="https://docs.python.org/3/library/random.html"><code class="docutils literal notranslate"><span class="pre">random</span></code></a>, you will
 generate two lists with 100 pseudo-random elements in the range [0,100),
@@ -1582,8 +1338,8 @@ with no numbers repeated.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[19, 99, 45, 60, 42, 38, 33, 76, 63, 51]
-[88, 61, 1, 58, 60, 96, 39, 95, 18, 80]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[71, 36, 34, 24, 17, 9, 2, 57, 51, 75]
+[85, 36, 95, 48, 88, 41, 15, 27, 44, 98]
 </pre></div>
 </div>
 </div>
@@ -1603,8 +1359,8 @@ takes to execute all the code in that cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 9 µs, sys: 8 µs, total: 17 µs
-Wall time: 17.6 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 8 µs, sys: 7 µs, total: 15 µs
+Wall time: 16.7 µs
 </pre></div>
 </div>
 </div>
@@ -1616,14 +1372,14 @@ Wall time: 17.6 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[107, 160, 46, 118, 102, 134, 72, 171, 81, 131]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[156, 72, 129, 72, 105, 50, 17, 84, 95, 173]
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="element-wise-sum-of-numpy-arrays">
-<h3>Element-wise sum of NumPy arrays<a class="headerlink" href="#element-wise-sum-of-numpy-arrays" title="Permalink to this headline">¶</a></h3>
+<h3>Element-wise sum of NumPy arrays<a class="headerlink" href="#element-wise-sum-of-numpy-arrays" title="Permalink to this headline">#</a></h3>
 <p>In this case, you generate arrays with random integers using the NumPy
 function
 <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/np.random.randint.html"><code class="docutils literal notranslate"><span class="pre">np.random.randint()</span></code></a>.
@@ -1650,8 +1406,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[74 81 89 14 37 33 39 80 92 52]
-[45 71 13 36 10  2 67 43 45 35]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45 70 50 31 88  4 79 68 95 67]
+[76 32 38 65 39 29 88  8  8 10]
 </pre></div>
 </div>
 </div>
@@ -1665,8 +1421,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 17 µs, sys: 15 µs, total: 32 µs
-Wall time: 40.3 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7 µs, sys: 5 µs, total: 12 µs
+Wall time: 13.8 µs
 </pre></div>
 </div>
 </div>
@@ -1674,8 +1430,8 @@ Wall time: 40.3 µs
 <p>Notice that in the case of arrays, the code not only is more readable (just one line of code), but it is also faster than with lists. This time advantage will be larger with bigger arrays/lists.</p>
 <p>(Your timing results may vary to the ones you show in this notebook, because you will be computing in a different machine.)</p>
 <div class="section" id="exercise">
-<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h4>
-<ol class="simple">
+<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h4>
+<ol class="arabic simple">
 <li><p>Try the comparison between lists and arrays, using bigger arrays; for example, of size 10,000.</p></li>
 <li><p>Repeat the analysis, but now computing the operation that raises each element of an array/list to the power two. Use arrays of 10,000 elements.</p></li>
 </ol>
@@ -1683,7 +1439,7 @@ Wall time: 40.3 µs
 </div>
 </div>
 <div class="section" id="time-to-plot">
-<h2>Time to Plot<a class="headerlink" href="#time-to-plot" title="Permalink to this headline">¶</a></h2>
+<h2>Time to Plot<a class="headerlink" href="#time-to-plot" title="Permalink to this headline">#</a></h2>
 <p>You will love the Python library <strong>Matplotlib</strong>! You’ll learn here about its module <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, which makes line plots.</p>
 <p>We need some data to plot. Let’s define a NumPy array, compute derived data using its square, cube and square root (element-wise), and plot these values with the original array in the x-axis.</p>
 <div class="cell docutils container">
@@ -1712,7 +1468,7 @@ Wall time: 40.3 µs
 </div>
 </div>
 <div class="section" id="introduction-to-plotting">
-<h2>Introduction to plotting<a class="headerlink" href="#introduction-to-plotting" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction to plotting<a class="headerlink" href="#introduction-to-plotting" title="Permalink to this headline">#</a></h2>
 <p>To plot the resulting arrays as a function of the orginal one (<code class="docutils literal notranslate"><span class="pre">xarray</span></code>)
 in the x-axis, you need to import the module <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> from <strong>Matplotlib</strong>.</p>
 <div class="cell docutils container">
@@ -1724,7 +1480,7 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="section" id="set-up-default-plotting-parameters">
-<h2>Set up default plotting parameters<a class="headerlink" href="#set-up-default-plotting-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Set up default plotting parameters<a class="headerlink" href="#set-up-default-plotting-parameters" title="Permalink to this headline">#</a></h2>
 <p>The default Matplotlib fonts and linewidths are a little small. Pixels are free, so the next two lines increase the fontsize and linewidth</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1750,10 +1506,10 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa50d7781f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0509d2c940&gt;
 </pre></div>
 </div>
-<img alt="../_images/02_Working_with_Python_104_1.png" src="../_images/02_Working_with_Python_104_1.png" />
+<img alt="../_images/e6268f3194240cfe946be8cb6c1e64a86022b5f18ba2c49f3432be8e1ab2d182.png" src="../_images/e6268f3194240cfe946be8cb6c1e64a86022b5f18ba2c49f3432be8e1ab2d182.png" />
 </div>
 </div>
 <p>To illustrate other features, you will plot the same data, but varying the colors instead of the line style. We’ll also use LaTeX syntax to write formulas in the labels. If you want to know more about LaTeX syntax, there is a <a class="reference external" href="https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">quick guide to LaTeX</a> available online.</p>
@@ -1772,7 +1528,7 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_Working_with_Python_106_0.png" src="../_images/02_Working_with_Python_106_0.png" />
+<img alt="../_images/297b37bb4a86aef648edc29f8d588380327f9c2e23519bae91df81f6413932d5.png" src="../_images/297b37bb4a86aef648edc29f8d588380327f9c2e23519bae91df81f6413932d5.png" />
 </div>
 </div>
 <p>That’s very nice! By now, you are probably imagining all the great stuff
@@ -1781,12 +1537,12 @@ you can do with Jupyter notebooks, Python and its scientific libraries
 but you will keep learning about the power of <strong>Matplotlib</strong> in the next lesson.</p>
 <p>If you are curious, you can explore all the beautiful plots you can make by browsing the <a class="reference external" href="http://matplotlib.org/gallery.html">Matplotlib gallery</a>.</p>
 <div class="section" id="id4">
-<h3>Exercise:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise:<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Pick two different operations to apply to the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and plot them the resulting data in the same plot.</p>
 </div>
 </div>
-<div class="section" id="what-you-ve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Good coding habits and file naming</p></li>
 <li><p>How to define a function and return outputs</p></li>
@@ -1799,8 +1555,8 @@ but you will keep learning about the power of <strong>Matplotlib</strong> in the
 </ul>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Best practices for file naming</a>. Stanford Libraries</p></li>
 <li><p><em>Effective Computation in Physics: Field Guide to Research with Python</em> (2015). Anthony Scopatz &amp; Kathryn D. Huff. O’Reilly Media, Inc.</p></li>
 <li><p><em>Numerical Python: A Practical Techniques Approach for Industry</em>. (2015). Robert Johansson. Appress.</p></li>
@@ -1821,7 +1577,7 @@ but you will keep learning about the power of <strong>Matplotlib</strong> in the
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./module_01"
         },
         predefinedOutput: true
@@ -1829,44 +1585,141 @@ but you will keep learning about the power of <strong>Matplotlib</strong> in the
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="01_Interacting_with_Python.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">01 - Interacting with Python</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_Interacting_with_Python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">01 - Interacting with Python</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="03_Numerical_error.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="03_Numerical_error.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">03 - Numerical Error</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href = https://cooperrc.github.io> Ryan C. Cooper</a><br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-coding-habits">Good coding habits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-folders-and-files">naming folders and files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stanford-file-naming-best-practices">Stanford file naming best practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commenting-your-code">Commenting your code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-variable-names-that-describe-the-variable">Choose variable names that describe the variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#play-with-numpy-arrays">Play with NumPy Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries">Importing libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays">Creating arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-arrays">Multidimensional arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">2D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3D arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercises:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercises:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-fast-and-clean">NumPy == Fast and Clean!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-sum-of-a-python-list">Element-wise sum of a Python list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-sum-of-numpy-arrays">Element-wise sum of NumPy arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-plot">Time to Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-plotting">Introduction to plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-default-plotting-parameters">Set up default plotting parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

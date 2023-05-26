@@ -1,782 +1,521 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roots of Nonlinear functions &#8212; Computational Mechanics</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_03/04_Getting_to_the_root';</script>
     <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework" href="HW_03.html" />
     <link rel="prev" title="Get with the oscillations" href="03_Get_Oscillations.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/comp-mech-logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Mechanics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Computational Mechanics
-  </a>
- </li>
+    
+    
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/03_Numerical_error.html">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_01/HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus - Computational Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../how-to/update-github.html">
-   Working in your  Fork on GitHub.com
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_01/README.html">
-   Computational Mechanics 01 - Getting Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/01_Interacting_with_Python.html">
-     01 - Interacting with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/02_Working_with_Python.html">
-     02 - Working with Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/03_Numerical_error.html">
-     03 - Numerical Error
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_01/HW_01.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/01_Getting-started-project.html">
-     Computational Mechanics Project #01 - Heat Transfer in Forensic Science
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_02/README.html">
-   Computational Mechanics 02 - Analyze Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">
-     01 - Cheers!  Stats with Beers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/02_Seeing_Stats.html">
-     02 - Seeing stats in a new light
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">
-     03 - Linear regression with real data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">
-     04 - Statistics and Monte-Carlo Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_02/HW_02.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/02_Analyze-data_project.html">
-     Project #02 - NYSE random walk predictor
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   Computational Mechanics 03- Initial Value Problems
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_Catch_Motion.html">
-     Catch things in motion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_Step_Future.html">
-     Step to the future
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_Get_Oscillations.html">
-     Get with the oscillations
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Roots of Nonlinear functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="HW_03.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/03_IVP-project.html">
-     Initial Value Problems - Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_04/README.html">
-   Computational Mechanics 4 - Linear Algebra
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/01_Linear-Algebra.html">
-     Linear Algebra Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/02_Gauss_elimination.html">
-     Gauss Elimination
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">
-     Linear Regression Algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_04/HW_04.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/04_Linear_Algebra-project.html">
-     CompMech04-Linear Algebra Project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module_05/README.html">
-   Computational Mechanics 5 - Boundary Value Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">
-     Revisiting Derivatives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/02_Keep_it_steady.html">
-     Keep it Steady
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/03_Good_Vibrations.html">
-     Good Vibrations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../module_05/HW_05.html">
-     Homework
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/05-BVPs_project.html">
-     Computational Mechanics Boundary Values - Project 05
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../how-to/README.html">
-   Quick How-to documents
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/polyfit.html">
-     Creating a quadratic fit on random data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../how-to/for-loops.html">
-     How to use a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     loop?
-     <em>
-      in Python
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/extra-FEA_material.html">
-     Extra Material: Direct stiffness method for Finite Element analysis (FEA)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_02/README.html">Computational Mechanics 02 - Analyze Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/02_Seeing_Stats.html">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_02/HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 03- Initial Value Problems</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_05/README.html">Computational Mechanics 5 - Boundary Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/module_03/04_Getting_to_the_root.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/module_03/04_Getting_to_the_root.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/cooperrc/computational-mechanics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_03/04_Getting_to_the_root.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_03/04_Getting_to_the_root.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_03/04_Getting_to_the_root.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_03/04_Getting_to_the_root.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https://github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_03/04_Getting_to_the_root.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_03/04_Getting_to_the_root.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/module_03/04_Getting_to_the_root.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/module_03/04_Getting_to_the_root.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Roots of Nonlinear functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#it-s-not-always-possible-to-analytically-solve-for-a-given-variable">
-   It’s not always possible to analytically solve for a given variable.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-to-the-root-of-a-problem">
-   Getting to the root of a problem
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#freefall-example">
-     Freefall example:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#incremental-searching-a-smarter-brute-force-approach">
-   Incremental searching ( a smarter brute force approach)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discussion">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-your-function">
-   Test your function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#success-incsearch-works">
-   Success - incsearch works
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bisection-method">
-   Bisection method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bisect-function">
-   Bisect Function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recursive-functions">
-   Recursive functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#newton-raphson-open-method">
-   Newton-Raphson: Open method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#newton-raphson-example">
-   Newton-Raphson example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-newton-raphson-function">
-   Create a Newton-Raphson function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compare-techniques">
-   Compare techniques
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#secant-methods">
-   Secant Methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modified-secant-method">
-   Modified Secant method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shooting-method">
-   Shooting method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-your-problem-for-python">
-   Defining your problem for Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solving-the-engineering-problem">
-   Solving the engineering problem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#its-not-always-possible-to-analytically-solve-for-a-given-variable">It’s not always possible to analytically solve for a given variable.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-the-root-of-a-problem">Getting to the root of a problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-example">Freefall example:</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-searching-a-smarter-brute-force-approach">Incremental searching ( a smarter brute force approach)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-function">Test your function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#success-incsearch-works">Success - incsearch works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-method">Bisection method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisect-function">Bisect Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions">Recursive functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-raphson-open-method">Newton-Raphson: Open method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-raphson-example">Newton-Raphson example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-newton-raphson-function">Create a Newton-Raphson function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-techniques">Compare techniques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secant-methods">Secant Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-secant-method">Modified Secant method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shooting-method">Shooting method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-your-problem-for-python">Defining your problem for Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-engineering-problem">Solving the engineering problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Roots of Nonlinear functions</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#it-s-not-always-possible-to-analytically-solve-for-a-given-variable">
-   It’s not always possible to analytically solve for a given variable.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-to-the-root-of-a-problem">
-   Getting to the root of a problem
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#freefall-example">
-     Freefall example:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#incremental-searching-a-smarter-brute-force-approach">
-   Incremental searching ( a smarter brute force approach)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discussion">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-your-function">
-   Test your function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#success-incsearch-works">
-   Success - incsearch works
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bisection-method">
-   Bisection method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bisect-function">
-   Bisect Function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recursive-functions">
-   Recursive functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#newton-raphson-open-method">
-   Newton-Raphson: Open method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#newton-raphson-example">
-   Newton-Raphson example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-newton-raphson-function">
-   Create a Newton-Raphson function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compare-techniques">
-   Compare techniques
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Discussion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#secant-methods">
-   Secant Methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modified-secant-method">
-   Modified Secant method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shooting-method">
-   Shooting method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-your-problem-for-python">
-   Defining your problem for Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solving-the-engineering-problem">
-   Solving the engineering problem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-ve-learned">
-   What you’ve learned
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="section" id="roots-of-nonlinear-functions">
-<h1>Roots of Nonlinear functions<a class="headerlink" href="#roots-of-nonlinear-functions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="it-s-not-always-possible-to-analytically-solve-for-a-given-variable">
-<h2>It’s not always possible to analytically solve for a given variable.<a class="headerlink" href="#it-s-not-always-possible-to-analytically-solve-for-a-given-variable" title="Permalink to this headline">¶</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="roots-of-nonlinear-functions">
+<h1>Roots of Nonlinear functions<a class="headerlink" href="#roots-of-nonlinear-functions" title="Permalink to this headline">#</a></h1>
+<div class="section" id="its-not-always-possible-to-analytically-solve-for-a-given-variable">
+<h2>It’s not always possible to analytically solve for a given variable.<a class="headerlink" href="#its-not-always-possible-to-analytically-solve-for-a-given-variable" title="Permalink to this headline">#</a></h2>
 <p>In the last <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">Module 03</span></a>, you created an <em>implicit</em> Heun’s method that created the following problem: How can you solve for a value of <span class="math notranslate nohighlight">\(y\)</span>, a dependent variable, when the function is a function of <span class="math notranslate nohighlight">\(y\)</span>, in an equation format it becomes</p>
 <p><span class="math notranslate nohighlight">\(y=f(y,parameters)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(parameters\)</span> are known inputs to the equation, but the variable <span class="math notranslate nohighlight">\(y\)</span> is not separable from the function <span class="math notranslate nohighlight">\(f\)</span>. You can rewrite the problem as</p>
@@ -786,10 +525,10 @@
 <p>where <span class="math notranslate nohighlight">\(g(y,parameters)\)</span> in the previous equation was <span class="math notranslate nohighlight">\(g(y)=y\)</span>.</p>
 </div>
 <div class="section" id="getting-to-the-root-of-a-problem">
-<h2>Getting to the root of a problem<a class="headerlink" href="#getting-to-the-root-of-a-problem" title="Permalink to this headline">¶</a></h2>
+<h2>Getting to the root of a problem<a class="headerlink" href="#getting-to-the-root-of-a-problem" title="Permalink to this headline">#</a></h2>
 <p>This is a very common problem in engineering designs. You may have mathematical models for designs, but you can’t explicitly solve for the variables you can control or see [1].</p>
 <div class="section" id="freefall-example">
-<h3>Freefall example:<a class="headerlink" href="#freefall-example" title="Permalink to this headline">¶</a></h3>
+<h3>Freefall example:<a class="headerlink" href="#freefall-example" title="Permalink to this headline">#</a></h3>
 <p>Consider an observation of an object, with a known shape, so its drag coefficient c=0.25 kg/m. If the object reaches a velocity of 36 m/s after 4 seconds of freefalling, what is its mass?</p>
 <p><span class="math notranslate nohighlight">\(v(t)=\sqrt{\frac{gm}{c_{d}}}\tanh(\sqrt{\frac{gc_{d}}{m}}t)\)</span></p>
 <p>We can plug in the known parameters, <span class="math notranslate nohighlight">\(t=4~s\)</span>, <span class="math notranslate nohighlight">\(v=36~m/s\)</span>, <span class="math notranslate nohighlight">\(c_d=0.25\)</span> kg/s, and <span class="math notranslate nohighlight">\(g=9.81~m/s^2\)</span>, but you cannot separate <span class="math notranslate nohighlight">\(m\)</span> from the <span class="math notranslate nohighlight">\(\tanh\)</span> and <span class="math notranslate nohighlight">\(\sqrt{}\)</span>.</p>
@@ -847,7 +586,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Getting_to_the_root_3_0.png" src="../_images/04_Getting_to_the_root_3_0.png" />
+<img alt="../_images/6496a750f60955128f23adad357fb21a9050f57a7dbaa90cf72ab640d4839d3e.png" src="../_images/6496a750f60955128f23adad357fb21a9050f57a7dbaa90cf72ab640d4839d3e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -864,7 +603,7 @@
 </div>
 <p>The Brute force method is plot f_m vs m and with smaller and smaller steps until f_m ~ 0, but you can do much better.</p>
 <p>We will look at two classes of methods, most numerical solutions use a combination of these two types of solvers:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Bracketing methods</p></li>
 <li><p>Open methods</p></li>
 </ol>
@@ -873,7 +612,7 @@
 </div>
 </div>
 <div class="section" id="incremental-searching-a-smarter-brute-force-approach">
-<h2>Incremental searching ( a smarter brute force approach)<a class="headerlink" href="#incremental-searching-a-smarter-brute-force-approach" title="Permalink to this headline">¶</a></h2>
+<h2>Incremental searching ( a smarter brute force approach)<a class="headerlink" href="#incremental-searching-a-smarter-brute-force-approach" title="Permalink to this headline">#</a></h2>
 <p>If you consider a range of possible masses, e.g. 50 kg - 200 kg, then you can evaluate your function <span class="math notranslate nohighlight">\(f(m)\)</span> at evenly-spaced intervals and look for x-axis crossings. If the value of <span class="math notranslate nohighlight">\(f(m_{i})\)</span> is positive, and the value of <span class="math notranslate nohighlight">\(f(m_{i+1})\)</span> is negative, then the correct mass is somewhere between <span class="math notranslate nohighlight">\(m_i\)</span> and <span class="math notranslate nohighlight">\(m_{i+1}\)</span>.</p>
 <p>Take a look at the implementation you have below of the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function.</p>
 <p>There are a few key lines to look at:</p>
@@ -890,7 +629,7 @@
 <p>On these three lines, you are looking for sign-changes in the array <code class="docutils literal notranslate"><span class="pre">f</span></code>. First, you get just the sign of each array value with <code class="docutils literal notranslate"><span class="pre">np.sign</span></code>. Then, you look at the changes in sign with the difference between f[i] and f[i-1] for i=1…len(f). Finally, you get the indices sign changes by looking for nonzero elements in <code class="docutils literal notranslate"><span class="pre">delta_sign_f</span></code>.</p>
 </div>
 <div class="section" id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h2>
 <p>Why can’t you just consider cases where <code class="docutils literal notranslate"><span class="pre">delta_sign_f&gt;0</span></code>? Why do you care about all nonzero sign changes?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -930,7 +669,7 @@
 </div>
 </div>
 <div class="section" id="test-your-function">
-<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this headline">¶</a></h2>
+<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this headline">#</a></h2>
 <p>To test your <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function on a known function, let’s try finding all the times that <span class="math notranslate nohighlight">\(sin(x)\)</span> crosses the x-axis from <span class="math notranslate nohighlight">\(x=-1...7\)</span>. Our function should return values at <span class="math notranslate nohighlight">\(x=0,~x=\pi/2,~x=\pi.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -952,12 +691,12 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of brackets:  3
 </pre></div>
 </div>
-<img alt="../_images/04_Getting_to_the_root_9_1.png" src="../_images/04_Getting_to_the_root_9_1.png" />
+<img alt="../_images/657dde4303f2b1270b99f9b746e5e4b017008ed00c9fc28365469197e74f64a5.png" src="../_images/657dde4303f2b1270b99f9b746e5e4b017008ed00c9fc28365469197e74f64a5.png" />
 </div>
 </div>
 </div>
 <div class="section" id="success-incsearch-works">
-<h2>Success - incsearch works<a class="headerlink" href="#success-incsearch-works" title="Permalink to this headline">¶</a></h2>
+<h2>Success - incsearch works<a class="headerlink" href="#success-incsearch-works" title="Permalink to this headline">#</a></h2>
 <p>You should see that <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> returns intervals in the correct locations near x=0, x=<span class="math notranslate nohighlight">\(\pi/2\)</span> and x=<span class="math notranslate nohighlight">\(\pi.\)</span> Now, let’s apply it to the freefall problem and discover what mass is necessary to reach 36 m/s at t=4 sec of freefall.</p>
 <p>Depending upon what <code class="docutils literal notranslate"><span class="pre">ns</span></code> you choose, you should see that a mass of 142-143 kg will reach 36 m/s in 4 seconds of freefall.</p>
 <div class="cell docutils container">
@@ -980,14 +719,14 @@ Lower bound on mass = 142.42 kg
 </div>
 </div>
 <div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function to find the number of times <span class="math notranslate nohighlight">\(cos(x)=0\)</span> in the interval <span class="math notranslate nohighlight">\(x=0...8\)</span>.</p>
 <p>Plot x-vs-cos(x)</p>
 <p>and</p>
 <p>plot the values of <code class="docutils literal notranslate"><span class="pre">xb</span></code> and <code class="docutils literal notranslate"><span class="pre">np.cos(xb)</span></code> as <span class="math notranslate nohighlight">\(\circ\)</span>-markers (<code class="docutils literal notranslate"><span class="pre">'o'</span></code>)</p>
 </div>
 <div class="section" id="bisection-method">
-<h2>Bisection method<a class="headerlink" href="#bisection-method" title="Permalink to this headline">¶</a></h2>
+<h2>Bisection method<a class="headerlink" href="#bisection-method" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function will always return a set of upper and lower bounds on the zeros of a function, but if you want to increase the accuracy of your solutions, you have to calculate <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>a lot</strong>. The error in the solution is always</p>
 <p><span class="math notranslate nohighlight">\(error = \frac{x_{max}-x_{min}}{ns}\)</span></p>
 <p>We can reduce the number of times you have to evaluate the function with more insight.</p>
@@ -1015,11 +754,11 @@ Lower bound on mass = 142.42 kg
 <p>Now, you have reduced your region of interest to just 125-200 kg.</p>
 </div>
 <div class="section" id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Divide the region 125-200 kg into two, and repeat the above step. Is the solution in the upper (163-200 kg)? or lower (125-163 kg) region? What are the values of f_m(m)?</p>
 </div>
 <div class="section" id="bisect-function">
-<h2>Bisect Function<a class="headerlink" href="#bisect-function" title="Permalink to this headline">¶</a></h2>
+<h2>Bisect Function<a class="headerlink" href="#bisect-function" title="Permalink to this headline">#</a></h2>
 <p>We can automate this process with a <code class="docutils literal notranslate"><span class="pre">bisect</span></code> function. Its a much better root locator because you can reduce the error without evaluating the function a lot of times [1, 2].</p>
 <p><em>Note the use of the function <code class="docutils literal notranslate"><span class="pre">break</span></code>:</em></p>
 <p>We can use an <code class="docutils literal notranslate"><span class="pre">if</span></code>-statement to check a condition and <code class="docutils literal notranslate"><span class="pre">break</span></code> the loop if that condition is met. These break statements are often used in <code class="docutils literal notranslate"><span class="pre">while</span></code>-loops so that you can have some stopping criteria. In your case, you use the specified error, <code class="docutils literal notranslate"><span class="pre">es</span></code>, as a stopping criteria. If your relative error,</p>
@@ -1027,7 +766,7 @@ Lower bound on mass = 142.42 kg
 <p>is less than your specified error, the loop is broken and the number of iterations halts at that point.</p>
 </div>
 <div class="section" id="id2">
-<h2>Discussion<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Discussion<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>What is another stopping criteria that you could use?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1093,7 +832,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="section" id="recursive-functions">
-<h2>Recursive functions<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Recursive functions<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the next two open root solvers (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code> and <code class="docutils literal notranslate"><span class="pre">modsecant</span></code>) make use of a recursive function.</p>
 <p>Definition:</p>
 <p><strong>recursive: for a definition of recursive, see recursive.</strong></p>
@@ -1102,7 +841,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 <p>but once the upper or lower bound is updated, the value of <span class="math notranslate nohighlight">\(x_r\)</span> is updated as well. This is why the first step in the loop is to temporarily save <span class="math notranslate nohighlight">\(x_r\)</span> as <code class="docutils literal notranslate"><span class="pre">xrold</span></code>. With the <code class="docutils literal notranslate"><span class="pre">xrold</span></code> variable, you can track the progress of your solution.</p>
 </div>
 <div class="section" id="newton-raphson-open-method">
-<h2>Newton-Raphson: Open method<a class="headerlink" href="#newton-raphson-open-method" title="Permalink to this headline">¶</a></h2>
+<h2>Newton-Raphson: Open method<a class="headerlink" href="#newton-raphson-open-method" title="Permalink to this headline">#</a></h2>
 <p>Bracketing methods are great, but they are burdened by slow convergence rates. In the bisection method, you reduce your error by 50% with each region of interest selection, but this is rather slow.</p>
 <p>One of the fastest root-finding methods is the <strong>Newton-Raphson</strong> method, it is an <strong>open method</strong> so it does not require an upper- and lower-bound [1,2].</p>
 <p>The <strong>Newton-Raphson</strong> works by creating a Taylor series expansion around your initial guess of the function,</p>
@@ -1115,7 +854,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 <p><span class="math notranslate nohighlight">\(\Delta x = -f(x) \left({\frac{df}{dx}}\right)^{-1}.\)</span></p>
 </div>
 <div class="section" id="newton-raphson-example">
-<h2>Newton-Raphson example<a class="headerlink" href="#newton-raphson-example" title="Permalink to this headline">¶</a></h2>
+<h2>Newton-Raphson example<a class="headerlink" href="#newton-raphson-example" title="Permalink to this headline">#</a></h2>
 <p>Let’s use the <strong>Newton-Raphson</strong> method to solve an engineering problem. Consider a spherical tank of water that can be filled to a height, <span class="math notranslate nohighlight">\(h\)</span>, and has radius, <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <p>The volume of water, <span class="math notranslate nohighlight">\(V\)</span>, in the tank is</p>
 <p><span class="math notranslate nohighlight">\(V= \pi h^2\frac{3R-h}{3}.\)</span></p>
@@ -1154,11 +893,11 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="section" id="id3">
-<h2>Discussion<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Discussion<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Try changing the value of <code class="docutils literal notranslate"><span class="pre">xguess</span></code>. Is there any way to choose the best <code class="docutils literal notranslate"><span class="pre">xguess</span></code> value? Are there any <code class="docutils literal notranslate"><span class="pre">xguess</span></code> values that return an Python error? Why?</p>
 </div>
 <div class="section" id="create-a-newton-raphson-function">
-<h2>Create a Newton-Raphson function<a class="headerlink" href="#create-a-newton-raphson-function" title="Permalink to this headline">¶</a></h2>
+<h2>Create a Newton-Raphson function<a class="headerlink" href="#create-a-newton-raphson-function" title="Permalink to this headline">#</a></h2>
 <p>In the same way that you created bracketing method functions, you can create the Newton-Raphson method function to update your <code class="docutils literal notranslate"><span class="pre">xguess</span></code> until a desired tolerance is achieved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1209,7 +948,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="section" id="compare-techniques">
-<h2>Compare techniques<a class="headerlink" href="#compare-techniques" title="Permalink to this headline">¶</a></h2>
+<h2>Compare techniques<a class="headerlink" href="#compare-techniques" title="Permalink to this headline">#</a></h2>
 <p>Let’s compare the relative error in finding the height, <span class="math notranslate nohighlight">\(h\)</span>, in the previous example as a function of the number of iterations in the bisection (<code class="docutils literal notranslate"><span class="pre">bisect</span></code>) method and the Newton-Raphson (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code>).</p>
 <p>What you should see is that as you increase the number of iterations, the relative error decreases. You can compare the rate that the error decreases, <span class="math notranslate nohighlight">\(\frac{\Delta error}{\# iterations},\)</span> for your two root locators.</p>
 <p>We are going to set the maximum iterations, <code class="docutils literal notranslate"><span class="pre">maxit=n[i]</span></code>, to the desired value in the loop, but you want as low of an error as possible. You set your specified error to <code class="docutils literal notranslate"><span class="pre">es=0</span></code>.</p>
@@ -1237,23 +976,23 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Getting_to_the_root_29_0.png" src="../_images/04_Getting_to_the_root_29_0.png" />
+<img alt="../_images/11ebe671405d139b160e1d73833fca6faf43bd0d1eba76fb0099bb5410fcfcd2.png" src="../_images/11ebe671405d139b160e1d73833fca6faf43bd0d1eba76fb0099bb5410fcfcd2.png" />
 </div>
 </div>
 </div>
 <div class="section" id="id4">
-<h2>Discussion<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Discussion<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>There is a drastic difference between the <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the <code class="docutils literal notranslate"><span class="pre">newtraph</span></code> function. How many iterations are necessary for the bisection method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %? How many iterations are necessary for the Newton-Raphson method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %?</p>
 <p>Are there any benefits to the bisection method? When would the Newton-Raphson method not work? or not be appropriate?</p>
 </div>
 <div class="section" id="secant-methods">
-<h2>Secant Methods<a class="headerlink" href="#secant-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Secant Methods<a class="headerlink" href="#secant-methods" title="Permalink to this headline">#</a></h2>
 <p>The key to the Newton-Raphson method is its evaluation of the derivative of the function, but you can’t always evaluate the derivative. Many numerical functions, such as the solution to differential equations that you worked on in notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a>, <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a>, and <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">03</span></a> do not have analytical derivatives. Instead, you will approximate the derivative with a modified secant method.</p>
 <p>Approximation of derivative:</p>
 <p><span class="math notranslate nohighlight">\(f'(x) \approx \frac{f(x+\delta x)-f(x)}{\delta x}\)</span></p>
 </div>
 <div class="section" id="modified-secant-method">
-<h2>Modified Secant method<a class="headerlink" href="#modified-secant-method" title="Permalink to this headline">¶</a></h2>
+<h2>Modified Secant method<a class="headerlink" href="#modified-secant-method" title="Permalink to this headline">#</a></h2>
 <p>Change the x evaluations to a perturbation <span class="math notranslate nohighlight">\(\delta\)</span> [1,2].</p>
 <p><span class="math notranslate nohighlight">\(x_{i+1}=x_{i}-\frac{f(x_{i})(\delta x_{i})}{f(x_{i}+\delta x_{i})-f(x_{i})}\)</span></p>
 <div class="cell docutils container">
@@ -1323,15 +1062,15 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Getting_to_the_root_32_0.png" src="../_images/04_Getting_to_the_root_32_0.png" />
+<img alt="../_images/c00dddaa92e02cfd4f495635eceb633d1e3d3c931c89172d781b57440d08bc21.png" src="../_images/c00dddaa92e02cfd4f495635eceb633d1e3d3c931c89172d781b57440d08bc21.png" />
 </div>
 </div>
 <p>The modified secant can converge as quick as the Newton-Raphson method, but there is no universal <span class="math notranslate nohighlight">\(\delta x\)</span> that works well for every problem. Typically, it is set as a small number and then varied based upon the conergence rate for the problem.</p>
 </div>
 <div class="section" id="shooting-method">
-<h2>Shooting method<a class="headerlink" href="#shooting-method" title="Permalink to this headline">¶</a></h2>
+<h2>Shooting method<a class="headerlink" href="#shooting-method" title="Permalink to this headline">#</a></h2>
 <p>Now, you have multiple solving methods to revisit your <strong>Initial Value Problems</strong>. In notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a> and <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a> you measured the displacement of a ball as a function of time. You <em>assumed</em> the initial velocity was 0 in the case of the dropped object, or you approximated the velocity based upon the first two measured displacements and a finite difference approximation.</p>
-<p>Consider the case of the tennis ball that was dropped in the <span class="xref myst">‘data/fallingtennisball02.txt file’</span>. After it strikes the ground, you don’t really <em>know</em> the velocity. What you <em>do know</em> is that the position was <span class="math notranslate nohighlight">\(\approx 0\)</span> at t=0.58 s and it was <span class="math notranslate nohighlight">\(\approx 0\)</span> m at t=1.43 s. Solving your differential equation without an initial velocity is known as a “shooting” method.</p>
+<p>Consider the case of the tennis ball that was dropped in the <a class="reference download internal" download="" href="../_downloads/5b4a86ec241f74f5750a58ac24e044a7/fallingtennisball02.txt"><span class="xref download myst">‘data/fallingtennisball02.txt file’</span></a>. After it strikes the ground, you don’t really <em>know</em> the velocity. What you <em>do know</em> is that the position was <span class="math notranslate nohighlight">\(\approx 0\)</span> at t=0.58 s and it was <span class="math notranslate nohighlight">\(\approx 0\)</span> m at t=1.43 s. Solving your differential equation without an initial velocity is known as a “shooting” method.</p>
 <p><img alt="The shooting method imagined as a catapult aiming at a target" src="../_images/shooting.png" /></p>
 <p>Solving this type of problem where the <strong>boundaries</strong> are known is referred to as a <em>Boundary value problem</em>. Typically, boudary value problems happen over a distance, rather than points in time, but you will come back to those in the fifth module on boundary value problems.</p>
 <p>For now, let’s reframe your engineering problem into a root-finding problem. You have a length of time of interest:</p>
@@ -1361,7 +1100,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 at time t=1.42 s, y=-0.0110 m
 </pre></div>
 </div>
-<img alt="../_images/04_Getting_to_the_root_35_1.png" src="../_images/04_Getting_to_the_root_35_1.png" />
+<img alt="../_images/6e19be25afac03adbd78a6229e663d407cf1d2e85ae073d7d5a158bfdb1bebe0.png" src="../_images/6e19be25afac03adbd78a6229e663d407cf1d2e85ae073d7d5a158bfdb1bebe0.png" />
 </div>
 </div>
 <p>Now, let’s look at the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> function you created that described the motion of the tennis ball. Remember, this function returns the derivative of the state. So if you input</p>
@@ -1422,7 +1161,7 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </div>
 <div class="section" id="defining-your-problem-for-python">
-<h2>Defining your problem for Python<a class="headerlink" href="#defining-your-problem-for-python" title="Permalink to this headline">¶</a></h2>
+<h2>Defining your problem for Python<a class="headerlink" href="#defining-your-problem-for-python" title="Permalink to this headline">#</a></h2>
 <p>Now, you can finally ask your engineering question in a Python way.</p>
 <p>We need a function, <span class="math notranslate nohighlight">\(f(v_0)\)</span>, such that when you input the correct velocity for the initial condition, <span class="math notranslate nohighlight">\(f(v_0^{correct})=0\)</span></p>
 <p>So you define a new function with <code class="docutils literal notranslate"><span class="pre">def</span></code></p>
@@ -1468,7 +1207,7 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </div>
 <p>Take a look at the pieces of this function:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Create an array of time <code class="docutils literal notranslate"><span class="pre">t_sol</span></code></p></li>
 <li><p>Set initial conditions to <code class="docutils literal notranslate"><span class="pre">y0</span></code> and <code class="docutils literal notranslate"><span class="pre">v0</span></code> &lt;- <strong>here <code class="docutils literal notranslate"><span class="pre">v0</span></code> is your unknown value</strong></p></li>
 <li><p>Use Runge-Kutta second order to integrate the function for <code class="docutils literal notranslate"><span class="pre">t_sol[0]</span></code> to <code class="docutils literal notranslate"><span class="pre">t_sol[-1]</span></code></p></li>
@@ -1504,16 +1243,16 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Getting_to_the_root_44_0.png" src="../_images/04_Getting_to_the_root_44_0.png" />
+<img alt="../_images/19de1e55069cf45768ff0dfab79f03dd594865be88844e8a890cd68dc63ec9ea.png" src="../_images/19de1e55069cf45768ff0dfab79f03dd594865be88844e8a890cd68dc63ec9ea.png" />
 </div>
 </div>
 </div>
 <div class="section" id="id5">
-<h2>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Enter your best guess for <code class="docutils literal notranslate"><span class="pre">v0</span></code>. What is the error between the measured <code class="docutils literal notranslate"><span class="pre">yT</span></code> and your predicted y(T)? <em>Hint: use your function, <code class="docutils literal notranslate"><span class="pre">f_v</span></code>, and plot the results.</em></p>
 </div>
 <div class="section" id="solving-the-engineering-problem">
-<h2>Solving the engineering problem<a class="headerlink" href="#solving-the-engineering-problem" title="Permalink to this headline">¶</a></h2>
+<h2>Solving the engineering problem<a class="headerlink" href="#solving-the-engineering-problem" title="Permalink to this headline">#</a></h2>
 <p>Now, you have all the components you need for this “shooting” problem. You can’t evaluate a derivative easily and the bisection method is too slow. Therefore, you will use the <code class="docutils literal notranslate"><span class="pre">mod_secant</span></code> function to find the correct initial velocity.</p>
 <p>Below is the solution. <em>Just one line of code!</em></p>
 <div class="cell docutils container">
@@ -1533,7 +1272,7 @@ the solve took  3  iterations
 </div>
 </div>
 <div class="section" id="id6">
-<h2>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Change the value of the <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">x0</span></code>. Does it change the final result? Does it change the time it took to arrive at the solution or the number of iterations?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1543,8 +1282,8 @@ the solve took  3  iterations
 </div>
 </div>
 </div>
-<div class="section" id="what-you-ve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-you-ve-learned" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>How to find the 0 of a function, aka root-finding</p></li>
 <li><p>The difference between a bracketing and an open methods for finding roots</p></li>
@@ -1558,10 +1297,10 @@ the solve took  3  iterations
 </ul>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
 <li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> McGraw Hill.</p></li>
-<li><p><em>Computational Physics with Python</em>, lecture notes by Eric Ayars, California State University, Chico. Available online on the author’s website: https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf</p></li>
+<li><p><em>Computational Physics with Python</em>, lecture notes by Eric Ayars, California State University, Chico. Available online on the author’s website: <a class="reference external" href="https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf">https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf</a></p></li>
 </ol>
 </div>
 </div>
@@ -1578,7 +1317,7 @@ the solve took  3  iterations
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./module_03"
         },
         predefinedOutput: true
@@ -1586,44 +1325,134 @@ the solve took  3  iterations
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="03_Get_Oscillations.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Get with the oscillations</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_Get_Oscillations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Get with the oscillations</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="HW_03.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="HW_03.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Homework</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href = https://cooperrc.github.io> Ryan C. Cooper</a><br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#its-not-always-possible-to-analytically-solve-for-a-given-variable">It’s not always possible to analytically solve for a given variable.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-the-root-of-a-problem">Getting to the root of a problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freefall-example">Freefall example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-searching-a-smarter-brute-force-approach">Incremental searching ( a smarter brute force approach)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-function">Test your function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#success-incsearch-works">Success - incsearch works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-method">Bisection method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisect-function">Bisect Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions">Recursive functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-raphson-open-method">Newton-Raphson: Open method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-raphson-example">Newton-Raphson example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-newton-raphson-function">Create a Newton-Raphson function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-techniques">Compare techniques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secant-methods">Secant Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-secant-method">Modified Secant method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shooting-method">Shooting method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-your-problem-for-python">Defining your problem for Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-engineering-problem">Solving the engineering problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
