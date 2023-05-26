@@ -1342,12 +1342,12 @@ Requirement already satisfied: numpy in /usr/lib/python3.11/site-packages (from 
 Requirement already satisfied: matplotlib in /usr/lib/python3.11/site-packages (from animate_arrays) (3.7.1)
 Requirement already satisfied: jupyter in /home/ryan/.local/lib/python3.11/site-packages (from animate_arrays) (1.0.0)
 Requirement already satisfied: ffmpeg in /home/ryan/.local/lib/python3.11/site-packages (from animate_arrays) (1.4)
-Requirement already satisfied: notebook in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (6.5.4)
-Requirement already satisfied: qtconsole in /home/ryan/.local/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (5.4.3)
-Requirement already satisfied: jupyter-console in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (6.6.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nbconvert in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (7.4.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: notebook in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (6.5.4)
+Requirement already satisfied: qtconsole in /home/ryan/.local/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (5.4.3)
+Requirement already satisfied: jupyter-console in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (6.6.3)
+Requirement already satisfied: nbconvert in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (7.4.0)
 Requirement already satisfied: ipykernel in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (6.23.1)
 Requirement already satisfied: ipywidgets in /usr/lib/python3.11/site-packages (from jupyter-&gt;animate_arrays) (8.0.6)
 Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/lib/python3.11/site-packages (from matplotlib-&gt;animate_arrays) (1.0.7)
@@ -1361,7 +1361,9 @@ Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/lib/python3.11/si
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3.11/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;animate_arrays) (1.16.0)
-Requirement already satisfied: comm&gt;=0.1.1 in /usr/lib/python3.11/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (0.1.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: comm&gt;=0.1.1 in /usr/lib/python3.11/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (0.1.3)
 Requirement already satisfied: debugpy&gt;=1.6.5 in /usr/lib/python3.11/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (1.6.7)
 Requirement already satisfied: ipython&gt;=7.23.1 in /usr/lib/python3.11/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (8.13.2)
 Requirement already satisfied: jupyter-client&gt;=6.1.12 in /usr/lib/python3.11/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (8.2.0)
@@ -1376,11 +1378,11 @@ Requirement already satisfied: traitlets&gt;=5.4.0 in /usr/lib/python3.11/site-p
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: widgetsnbextension~=4.0.7 in /usr/lib/python3.11/site-packages (from ipywidgets-&gt;jupyter-&gt;animate_arrays) (4.0.7)
 Requirement already satisfied: jupyterlab-widgets~=3.0.7 in /home/ryan/.local/lib/python3.11/site-packages (from ipywidgets-&gt;jupyter-&gt;animate_arrays) (3.0.7)
+Requirement already satisfied: prompt-toolkit&gt;=3.0.30 in /usr/lib/python3.11/site-packages (from jupyter-console-&gt;jupyter-&gt;animate_arrays) (3.0.38)
+Requirement already satisfied: pygments in /usr/lib/python3.11/site-packages (from jupyter-console-&gt;jupyter-&gt;animate_arrays) (2.15.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: prompt-toolkit&gt;=3.0.30 in /usr/lib/python3.11/site-packages (from jupyter-console-&gt;jupyter-&gt;animate_arrays) (3.0.38)
-Requirement already satisfied: pygments in /usr/lib/python3.11/site-packages (from jupyter-console-&gt;jupyter-&gt;animate_arrays) (2.15.1)
-Requirement already satisfied: beautifulsoup4 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (4.12.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: beautifulsoup4 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (4.12.2)
 Requirement already satisfied: bleach in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (6.0.0)
 Requirement already satisfied: defusedxml in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (0.7.1)
 Requirement already satisfied: jinja2&gt;=3.0 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (3.1.2)
@@ -1388,28 +1390,26 @@ Requirement already satisfied: jupyterlab-pygments in /usr/lib/python3.11/site-p
 Requirement already satisfied: markupsafe&gt;=2.0 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (2.1.2)
 Requirement already satisfied: mistune&lt;3,&gt;=2.0.3 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (2.0.5)
 Requirement already satisfied: nbclient&gt;=0.5.0 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (0.7.4)
-Requirement already satisfied: nbformat&gt;=5.1 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (5.8.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (1.5.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nbformat&gt;=5.1 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (5.8.0)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (1.5.0)
 Requirement already satisfied: tinycss2 in /usr/lib/python3.11/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (1.2.1)
 Requirement already satisfied: argon2-cffi in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (21.3.0)
 Requirement already satisfied: ipython-genutils in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (0.2.0)
 Requirement already satisfied: Send2Trash&gt;=1.8.0 in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (1.8.0)
-Requirement already satisfied: terminado&gt;=0.8.3 in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (0.17.1)
-Requirement already satisfied: prometheus-client in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (0.16.0)
-Requirement already satisfied: nbclassic&gt;=0.4.7 in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (1.0.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qtpy&gt;=2.0.1 in /usr/lib/python3.11/site-packages (from qtconsole-&gt;jupyter-&gt;animate_arrays) (2.3.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: terminado&gt;=0.8.3 in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (0.17.1)
+Requirement already satisfied: prometheus-client in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (0.16.0)
+Requirement already satisfied: nbclassic&gt;=0.4.7 in /usr/lib/python3.11/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (1.0.0)
+Requirement already satisfied: qtpy&gt;=2.0.1 in /usr/lib/python3.11/site-packages (from qtconsole-&gt;jupyter-&gt;animate_arrays) (2.3.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: backcall in /usr/lib/python3.11/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.2.0)
 Requirement already satisfied: decorator in /usr/lib/python3.11/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (5.1.1)
 Requirement already satisfied: jedi&gt;=0.16 in /usr/lib/python3.11/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.18.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pickleshare in /usr/lib/python3.11/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.7.5)
+Requirement already satisfied: pickleshare in /usr/lib/python3.11/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.7.5)
 Requirement already satisfied: stack-data in /usr/lib/python3.11/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.6.2)
 Requirement already satisfied: pexpect&gt;4.3 in /usr/lib/python3.11/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (4.8.0)
 </pre></div>
@@ -1449,9 +1449,7 @@ Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: anyio&gt;=3.1.0 in /usr/lib/python3.11/site-packages (from jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (3.6.2)
 Requirement already satisfied: jupyter-events&gt;=0.4.0 in /usr/lib/python3.11/site-packages (from jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.6.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: websocket-client in /usr/lib/python3.11/site-packages (from jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.5.2)
+Requirement already satisfied: websocket-client in /usr/lib/python3.11/site-packages (from jupyter-server&gt;=1.8-&gt;nbclassic&gt;=0.4.7-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.5.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cffi&gt;=1.0.1 in /usr/lib/python3.11/site-packages (from argon2-cffi-bindings-&gt;argon2-cffi-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.15.1)
