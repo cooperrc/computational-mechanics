@@ -45,11 +45,7 @@ computational methods to solve those problems.
 
 The course schedule is kept up to date on the Google Calendar here:
 
-<iframe
-src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb200NDk5N2RmNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB"
-style="border:solid 1px #777" width="500" height="300" frameborder="0"
-scrolling="no"></iframe>
-
+https://cooperrc.github.io/computational-mechanics/syllabus.html#course-schedule
 
 
 ### [CompMech01-Getting Started](module_01/README.md)
