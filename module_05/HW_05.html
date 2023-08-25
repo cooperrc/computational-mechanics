@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Homework &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Computational Mechanics Boundary Values - Project 05" href="../projects/05-BVPs_project.html" />
     <link rel="prev" title="Good Vibrations" href="03_Good_Vibrations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -481,8 +483,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="homework">
-<h1>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="homework">
+<h1>Homework<a class="headerlink" href="#homework" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -492,8 +494,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="problems-part-1">
-<h2>Problems <a class="reference internal" href="01_Revisiting_derivatives.html"><span class="doc std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Permalink to this headline">#</a></h2>
+<section id="problems-part-1">
+<h2>Problems <a class="reference internal" href="01_Revisiting_derivatives.html"><span class="doc std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Consider the shape of a simply supported beam with a distributed load function,</p></li>
 </ol>
@@ -534,9 +536,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="problems-part-2">
-<h2>Problems <a class="reference internal" href="02_Keep_it_steady.html"><span class="doc std std-doc">Part 2</span></a><a class="headerlink" href="#problems-part-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="problems-part-2">
+<h2>Problems <a class="reference internal" href="02_Keep_it_steady.html"><span class="doc std std-doc">Part 2</span></a><a class="headerlink" href="#problems-part-2" title="Permalink to this heading">#</a></h2>
 <p><img alt="Thermal fin connected to a constant temperature heat sink" src="../_images/thermal_connect.png" /></p>
 <ol class="arabic simple">
 <li><p>Consider the thermal fin shown above connected to a heat sink with constant temperature. <span class="math notranslate nohighlight">\(h'=\frac{2h}{\kappa R}\)</span> is the modified convective heat transfer for the fin. And your boundary conditions give us values for <span class="math notranslate nohighlight">\(T_{0}~and~T_{7}.\)</span> You can plug in constants for forced air convection, <span class="math notranslate nohighlight">\(h=100~W/m^2K\)</span>, aluminum fin, <span class="math notranslate nohighlight">\(\kappa=200~W/mK\)</span>, and 60-mm-long and 1-mm-radius fin, the air is room temperature, <span class="math notranslate nohighlight">\(T_{\infty}=20^oC\)</span>, the base is <span class="math notranslate nohighlight">\(T_{base}=T_{0}=100^oC\)</span>, and the sink is <span class="math notranslate nohighlight">\(T_{sink}=25^oC\)</span>. Use the following finite difference equation to solve for the temperature along the fin and the heat flux through the fin given,</p></li>
@@ -563,9 +565,9 @@ document.write(`
 <p>a. Solve for the four integration constants using the boundary conditions shown in the <strong>Static Beam deflections</strong> section. <span class="math notranslate nohighlight">\(w(x)=\frac{q_0x^4}{24}+\frac{Ax^3}{6}+\frac{Bx^2}{2}+Cx+D\)</span></p>
 <p>b. Create a finite difference approximation with 10, 20, 30, and 40 segments.</p>
 <p>c. Plot the error between the maximum predicted numerical deflection (b) and the analytical deflection (a). What is the convergence rate of the finite difference approximation?</p>
-</div>
-<div class="section" id="problems-part-3">
-<h2>Problems <a class="reference internal" href="03_Good_Vibrations.html"><span class="doc std std-doc">Part 3</span></a><a class="headerlink" href="#problems-part-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="problems-part-3">
+<h2>Problems <a class="reference internal" href="03_Good_Vibrations.html"><span class="doc std std-doc">Part 3</span></a><a class="headerlink" href="#problems-part-3" title="Permalink to this heading">#</a></h2>
 <p><img alt="Two masses connected to 3 springs" src="../_images/spring_mass.png" /></p>
 <p><em>Two masses connected to 3 springs</em></p>
 <ol class="arabic simple">
@@ -580,8 +582,8 @@ document.write(`
 <p>a. Calculate the first and second natural frequencies using 6, 30, 45, and 60 nodes. Plot the mode shapes to demonstrate convergence.</p>
 <p>b. Use 60 nodes to create an animation using the following initial condition, <span class="math notranslate nohighlight">\(y(x,0)=0\)</span> and <span class="math notranslate nohighlight">\(\dot{y}(L/2,0)=2~m/s.\)</span> e.g. <code class="docutils literal notranslate"><span class="pre">dy[30,0]=2</span></code>.</p>
 <p>c. Use 60 nodes to create an audio display using the following initial condition, <span class="math notranslate nohighlight">\(y(x,0)=0\)</span> and <span class="math notranslate nohighlight">\(\dot{y}(L/2,0)=2~m/s.\)</span> e.g. <code class="docutils literal notranslate"><span class="pre">dy[30,0]=2</span></code>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

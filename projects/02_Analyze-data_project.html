@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Project #02 - NYSE random walk predictor &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Computational Mechanics 03- Initial Value Problems" href="../module_03/README.html" />
     <link rel="prev" title="Homework" href="../module_02/HW_02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -495,8 +497,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="project-02-nyse-random-walk-predictor">
-<h1>Project #02 - NYSE random walk predictor<a class="headerlink" href="#project-02-nyse-random-walk-predictor" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="project-02-nyse-random-walk-predictor">
+<h1>Project #02 - NYSE random walk predictor<a class="headerlink" href="#project-02-nyse-random-walk-predictor" title="Permalink to this heading">#</a></h1>
 <p>In the <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html"><span class="doc std std-doc">Stats and Monte Carlo</span></a> module, you created a Brownian motion model to predict the motion of particles in a fluid. The Monte Carlo model took steps in the x- and y-directions with random magnitudes.</p>
 <p>This <a class="reference external" href="https://en.wikipedia.org/wiki/Random_walk_hypothesis">random walk</a> can be used to predict stock prices. Let’s take a look at some data from the New York Stock Exchange <a class="reference external" href="https://www.kaggle.com/dgawlik/nyse">NYSE</a> from 2010 through 2017.</p>
 <blockquote>
@@ -513,8 +515,8 @@ create a predictive model.</p>
 <li><p>Create random variables</p></li>
 <li><p>Generate random walk for <a class="reference external" href="https://en.wikipedia.org/wiki/Alphabet_Inc.">[GOOGL]</a> stock opening price</p></li>
 </ol>
-<div class="section" id="explore-data">
-<h2>1. Explore data<a class="headerlink" href="#explore-data" title="Permalink to this headline">#</a></h2>
+<section id="explore-data">
+<h2>1. Explore data<a class="headerlink" href="#explore-data" title="Permalink to this heading">#</a></h2>
 <p>Here, I load the data into a Pandas dataframe to see what headings and values are available. I see two columns that I want to analyze</p>
 <ul class="simple">
 <li><p>‘date’</p></li>
@@ -529,148 +531,66 @@ create a predictive model.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[2], line 2
+      1 data = pd.read_csv(&#39;../data/nyse-data.csv&#39;)
+----&gt; 2 data[&#39;date&#39;] = pd.to_datetime(data[&#39;date&#39;])
+      3 data
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1046, in to_datetime(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)
+   1044             result = arg.tz_localize(&quot;utc&quot;)
+   1045 elif isinstance(arg, ABCSeries):
+-&gt; 1046     cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+   1047     if not cache_array.empty:
+   1048         result = arg.map(cache_array)
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>date</th>
-      <th>symbol</th>
-      <th>open</th>
-      <th>close</th>
-      <th>low</th>
-      <th>high</th>
-      <th>volume</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2016-01-05</td>
-      <td>WLTW</td>
-      <td>123.430000</td>
-      <td>125.839996</td>
-      <td>122.309998</td>
-      <td>126.250000</td>
-      <td>2163600.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016-01-06</td>
-      <td>WLTW</td>
-      <td>125.239998</td>
-      <td>119.980003</td>
-      <td>119.940002</td>
-      <td>125.540001</td>
-      <td>2386400.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2016-01-07</td>
-      <td>WLTW</td>
-      <td>116.379997</td>
-      <td>114.949997</td>
-      <td>114.930000</td>
-      <td>119.739998</td>
-      <td>2489500.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2016-01-08</td>
-      <td>WLTW</td>
-      <td>115.480003</td>
-      <td>116.620003</td>
-      <td>113.500000</td>
-      <td>117.440002</td>
-      <td>2006300.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016-01-11</td>
-      <td>WLTW</td>
-      <td>117.010002</td>
-      <td>114.970001</td>
-      <td>114.089996</td>
-      <td>117.330002</td>
-      <td>1408600.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>851259</th>
-      <td>2016-12-30</td>
-      <td>ZBH</td>
-      <td>103.309998</td>
-      <td>103.199997</td>
-      <td>102.849998</td>
-      <td>103.930000</td>
-      <td>973800.0</td>
-    </tr>
-    <tr>
-      <th>851260</th>
-      <td>2016-12-30</td>
-      <td>ZION</td>
-      <td>43.070000</td>
-      <td>43.040001</td>
-      <td>42.689999</td>
-      <td>43.310001</td>
-      <td>1938100.0</td>
-    </tr>
-    <tr>
-      <th>851261</th>
-      <td>2016-12-30</td>
-      <td>ZTS</td>
-      <td>53.639999</td>
-      <td>53.529999</td>
-      <td>53.270000</td>
-      <td>53.740002</td>
-      <td>1701200.0</td>
-    </tr>
-    <tr>
-      <th>851262</th>
-      <td>2016-12-30</td>
-      <td>AIV</td>
-      <td>44.730000</td>
-      <td>45.450001</td>
-      <td>44.410000</td>
-      <td>45.590000</td>
-      <td>1380900.0</td>
-    </tr>
-    <tr>
-      <th>851263</th>
-      <td>2016-12-30</td>
-      <td>FTV</td>
-      <td>54.200001</td>
-      <td>53.630001</td>
-      <td>53.389999</td>
-      <td>54.480000</td>
-      <td>705100.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>851264 rows × 7 columns</p>
-</div></div></div>
+File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:250, in _maybe_cache(arg, format, cache, convert_listlike)
+    248 unique_dates = unique(arg)
+    249 if len(unique_dates) &lt; len(arg):
+--&gt; 250     cache_dates = convert_listlike(unique_dates, format)
+    251     # GH#45319
+    252     try:
+
+File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:453, in _convert_listlike_datetimes(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)
+    451 # `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.
+    452 if format is not None and format != &quot;mixed&quot;:
+--&gt; 453     return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+    455 result, tz_parsed = objects_to_datetime64ns(
+    456     arg,
+    457     dayfirst=dayfirst,
+   (...)
+    461     allow_object=True,
+    462 )
+    464 if tz_parsed is not None:
+    465     # We can take a shortcut since the datetime64 numpy array
+    466     # is in UTC
+
+File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:484, in _array_strptime_with_fallback(arg, name, utc, fmt, exact, errors)
+    473 def _array_strptime_with_fallback(
+    474     arg,
+    475     name,
+   (...)
+    479     errors: str,
+    480 ) -&gt; Index:
+    481     &quot;&quot;&quot;
+    482     Call array_strptime, with fallback behavior depending on &#39;errors&#39;.
+    483     &quot;&quot;&quot;
+--&gt; 484     result, timezones = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+    485     if any(tz is not None for tz in timezones):
+    486         return _return_parsed_timezone_results(result, timezones, utc, name)
+
+File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/_libs/tslibs/strptime.pyx:530, in pandas._libs.tslibs.strptime.array_strptime()
+
+File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/_libs/tslibs/strptime.pyx:351, in pandas._libs.tslibs.strptime.array_strptime()
+
+ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%m-%d %H:%M:%S&quot;, at position 251. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format=&#39;ISO8601&#39;` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format=&#39;mixed&#39;`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+</pre></div>
+</div>
+</div>
 </div>
 <p>I only want the <code class="docutils literal notranslate"><span class="pre">symbol</span> <span class="pre">==</span> <span class="pre">GOOGL</span></code> data, so I use a Pandas call. I also want to remove the big drop in price after Mar, 2014, so I specify the date &lt; 2014-03-01.</p>
 <div class="cell docutils container">
@@ -688,13 +608,10 @@ create a predictive model.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/ff084261840814160af5e695e7e876a8ca5b680a2cb580eb8e5bead6189eb4aa.png" src="../_images/ff084261840814160af5e695e7e876a8ca5b680a2cb580eb8e5bead6189eb4aa.png" />
 </div>
-</div>
-</div>
-<div class="section" id="data-analysis">
-<h2>2. Data analysis<a class="headerlink" href="#data-analysis" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="data-analysis">
+<h2>2. Data analysis<a class="headerlink" href="#data-analysis" title="Permalink to this heading">#</a></h2>
 <p>The GOOGL stock nearly doubled in price from 2010 through 2014. Day-to-day, the price fluctuates randomly. Here, I look at the fluctuations in price using <a class="reference external" href="https://numpy.org/doc/1.20/reference/generated/numpy.diff.html"><code class="docutils literal notranslate"><span class="pre">np.diff</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -704,9 +621,6 @@ create a predictive model.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;change in opening price (\$/day)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/e09a7e23f7a7372308cebd737c5c2e12c773b474abb3f7c3470e39e05e0c821b.png" src="../_images/e09a7e23f7a7372308cebd737c5c2e12c773b474abb3f7c3470e39e05e0c821b.png" />
 </div>
 </div>
 <p>Looking at the price day-to-day, it would appear to be an average change of $0/day. Next, I explore the statistical results of the change in opening price</p>
@@ -735,16 +649,13 @@ create a predictive model.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/cb66849bc648152d0a483830247dd83a398f11aa3504834129e321ee2ff6ce7b.png" src="../_images/cb66849bc648152d0a483830247dd83a398f11aa3504834129e321ee2ff6ce7b.png" />
-</div>
 </div>
 <p>From this statistical result, it looks like the price changes followed a normal distribution with an average change of <span class="math notranslate nohighlight">\(\$0.57\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\$9.84\)</span>.</p>
-</div>
-<div class="section" id="create-random-variables">
-<h2>3. Create random variables<a class="headerlink" href="#create-random-variables" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="create-random-variables">
+<h2>3. Create random variables<a class="headerlink" href="#create-random-variables" title="Permalink to this heading">#</a></h2>
 <p>Now, I know the distribution shape and characteristics to simulate the random walk price changes for the GOOGL prices each day. Here, I generate random variables with the following array structure:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Date</p></th>
 <th class="head"><p>model 1</p></th>
@@ -796,13 +707,10 @@ create a predictive model.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/c63dc3ce7f13006f308b2a20f02c578b7c59c6d48d221e58f6f6540e510a1924.png" src="../_images/c63dc3ce7f13006f308b2a20f02c578b7c59c6d48d221e58f6f6540e510a1924.png" />
 </div>
-</div>
-</div>
-<div class="section" id="generate-random-walk-predictions">
-<h2>4. Generate random walk predictions<a class="headerlink" href="#generate-random-walk-predictions" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="generate-random-walk-predictions">
+<h2>4. Generate random walk predictions<a class="headerlink" href="#generate-random-walk-predictions" title="Permalink to this heading">#</a></h2>
 <p>Above, I show tha the simulated data follows the requested normal distribution. Now, I can cumulatively sum these steps to predict the stock prices each day. I use the  <a class="reference external" href="https://numpy.org/doc/1.20/reference/generated/numpy.cumsum.html"><code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code></a> argument, <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">0</span></code> to sum along the columns i.e. each row becomes the sum of previous rows.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
@@ -825,9 +733,6 @@ create a predictive model.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;opening price (\$)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/c376442c1899cfaa4a36fa19fb565e938649ed4e526aa4d10d1247402f6f530c.png" src="../_images/c376442c1899cfaa4a36fa19fb565e938649ed4e526aa4d10d1247402f6f530c.png" />
 </div>
 </div>
 <p>As you would expect, there are a wide variety of predictions for the price of GOOGL stocks using random numbers. Next, I try to get some insight into the average changes in the random walk model. I use the <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> and <code class="docutils literal notranslate"><span class="pre">np.std</span></code> across the columns of the <code class="docutils literal notranslate"><span class="pre">price_model</span></code> prediction data, using <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code> now.</p>
@@ -854,17 +759,14 @@ create a predictive model.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/02835420f14eaec54fae0b3efac44af4c491dee8da7a752a297f9f2cd6ce9048.png" src="../_images/02835420f14eaec54fae0b3efac44af4c491dee8da7a752a297f9f2cd6ce9048.png" />
 </div>
-</div>
-</div>
-<div class="section" id="wrapping-up">
-<h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="wrapping-up">
+<h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
 <p>In this analysis, I went through data exploration, analysis, and Monte Carlo model prediction. The average random walk should resemble a straight line. There are further insights you can get by analyzing the random walk data, but for now it looks like we can accurately predict the growth of GOOGL stock over four years. <strong>What are some caveats to this method? If we continue to predict prices into 2015, what would happen compared to the real data?</strong></p>
-</div>
-<div class="section" id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
 <p>Now, you can try your hand at predicting stock prices on your own stock. Choose your own stock symbol and go through the same 4 steps I detailed above:</p>
 <ol class="arabic simple">
 <li><p>Explore data and select <em>your own</em> stock of interest</p></li>
@@ -929,8 +831,8 @@ create a predictive model.</p>
 ‘WLTW’, ‘WM’, ‘WMB’, ‘WMT’, ‘WRK’, ‘WU’, ‘WY’, ‘WYN’, ‘WYNN’,
 ‘XEC’, ‘XEL’, ‘XL’, ‘XLNX’, ‘XOM’, ‘XRAY’, ‘XRX’, ‘XYL’, ‘YHOO’,
 ‘YUM’, ‘ZBH’, ‘ZION’, ‘ZTS’</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

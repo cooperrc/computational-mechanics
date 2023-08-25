@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>CompMech04-Linear Algebra Project &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Computational Mechanics 5 - Boundary Value Problems" href="../module_05/README.html" />
     <link rel="prev" title="Homework" href="../module_04/HW_04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -485,10 +487,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="compmech04-linear-algebra-project">
-<h1>CompMech04-Linear Algebra Project<a class="headerlink" href="#compmech04-linear-algebra-project" title="Permalink to this headline">#</a></h1>
-<div class="section" id="practical-linear-algebra-for-finite-element-analysis">
-<h2>Practical Linear Algebra for Finite Element Analysis<a class="headerlink" href="#practical-linear-algebra-for-finite-element-analysis" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="compmech04-linear-algebra-project">
+<h1>CompMech04-Linear Algebra Project<a class="headerlink" href="#compmech04-linear-algebra-project" title="Permalink to this heading">#</a></h1>
+<section id="practical-linear-algebra-for-finite-element-analysis">
+<h2>Practical Linear Algebra for Finite Element Analysis<a class="headerlink" href="#practical-linear-algebra-for-finite-element-analysis" title="Permalink to this heading">#</a></h2>
 <p>In this project we will perform a linear-elastic finite element analysis (FEA) on a support structure made of 11 beams that are riveted in 7 locations to create a truss as shown in the image below.</p>
 <p><img alt="Mesh image of truss" src="../_images/mesh.png" /></p>
 <p>The triangular truss shown above can be modeled using a <a class="reference external" href="https://en.wikipedia.org/wiki/Direct_stiffness_method">direct stiffness method [1]</a>, that is detailed in the <a class="reference internal" href="extra-FEA_material.html"><span class="doc std std-doc">extra-FEA_material</span></a> notebook. The end result of converting this structure to a FE model. Is that each joint, labeled <span class="math notranslate nohighlight">\(n~1-7\)</span>, short for <em>node 1-7</em> can move in the x- and y-directions, but causes a force modeled with Hooke’s law. Each beam labeled <span class="math notranslate nohighlight">\(el~1-11\)</span>, short for <em>element 1-11</em>, contributes to the stiffness of the structure. We have 14 equations where the sum of the components of forces = 0, represented by the equation</p>
@@ -582,8 +584,8 @@ document.write(`
 <p>ii. node 1 displacement in the y-direction is 0 = <code class="docutils literal notranslate"><span class="pre">u[1]</span></code></p>
 <p>iii. node 7 displacement in the y-direction is 0 = <code class="docutils literal notranslate"><span class="pre">u[13]</span></code></p>
 <p>We can satisfy these constraints by leaving out the first, second, and last rows and columns from our linear algebra description.</p>
-<div class="section" id="calculate-the-condition-of-k-and-the-condition-of-k-2-13-2-13">
-<h3>1. Calculate the condition of <code class="docutils literal notranslate"><span class="pre">K</span></code> and the condition of <code class="docutils literal notranslate"><span class="pre">K[2:13,2:13]</span></code>.<a class="headerlink" href="#calculate-the-condition-of-k-and-the-condition-of-k-2-13-2-13" title="Permalink to this headline">#</a></h3>
+<section id="calculate-the-condition-of-k-and-the-condition-of-k-2-13-2-13">
+<h3>1. Calculate the condition of <code class="docutils literal notranslate"><span class="pre">K</span></code> and the condition of <code class="docutils literal notranslate"><span class="pre">K[2:13,2:13]</span></code>.<a class="headerlink" href="#calculate-the-condition-of-k-and-the-condition-of-k-2-13-2-13" title="Permalink to this heading">#</a></h3>
 <p>a. What error would you expect when you solve for <code class="docutils literal notranslate"><span class="pre">u</span></code> in <code class="docutils literal notranslate"><span class="pre">K*u</span> <span class="pre">=</span> <span class="pre">F</span></code>?</p>
 <p>b. Why is the condition of <code class="docutils literal notranslate"><span class="pre">K</span></code> so large? <strong>The problem is underconstrained. It describes stiffness of structure, but not the BC’s. So, we end up with sumF=0 and -sumF=0</strong></p>
 <p>c. What error would you expect when you solve for <code class="docutils literal notranslate"><span class="pre">u[2:13]</span></code> in <code class="docutils literal notranslate"><span class="pre">K[2:13,2:13]*u=F[2:13]</span></code></p>
@@ -598,17 +600,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1030997761060928e+17
-52.23542514351007
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4577532625238035e+17
+52.23542514351006
 expected error in x=solve(K,b) is 1
 expected error in x=solve(K[2:13,2:13],b) is 1e-14
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="apply-a-300-n-downward-force-to-the-central-top-node-n-4">
-<h3>2. Apply a 300-N downward force to the central top node (n 4)<a class="headerlink" href="#apply-a-300-n-downward-force-to-the-central-top-node-n-4" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="apply-a-300-n-downward-force-to-the-central-top-node-n-4">
+<h3>2. Apply a 300-N downward force to the central top node (n 4)<a class="headerlink" href="#apply-a-300-n-downward-force-to-the-central-top-node-n-4" title="Permalink to this heading">#</a></h3>
 <p>a. Create the LU matrix for K[2:13,2:13]</p>
 <p>b. Use cross-sectional area of <span class="math notranslate nohighlight">\(0.1~mm^2\)</span> and steel and almuminum moduli, <span class="math notranslate nohighlight">\(E=200~GPa~and~E=70~GPa,\)</span> respectively. Solve the forward and backward substitution methods for</p>
 <ul class="simple">
@@ -625,22 +627,22 @@ Including background information and the source code for this plot
 below.</p>
 </div></blockquote>
 <p><img alt="Deformed structure with loads applied" src="../_images/deformed_truss.png" /></p>
-</div>
-<div class="section" id="determine-cross-sectional-area">
-<h3>3. Determine cross-sectional area<a class="headerlink" href="#determine-cross-sectional-area" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="determine-cross-sectional-area">
+<h3>3. Determine cross-sectional area<a class="headerlink" href="#determine-cross-sectional-area" title="Permalink to this heading">#</a></h3>
 <p>a. Using aluminum, what is the minimum cross-sectional area to keep total y-deflections <span class="math notranslate nohighlight">\(&lt;0.2~mm\)</span>?</p>
 <p>b. Using steel, what is the minimum cross-sectional area to keep total y-deflections <span class="math notranslate nohighlight">\(&lt;0.2~mm\)</span>?</p>
 <p>c. What are the weights of the aluminum and steel trusses with the
 chosen cross-sectional areas?</p>
-</div>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Direct_stiffness_method">https://en.wikipedia.org/wiki/Direct_stiffness_method</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

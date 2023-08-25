@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Linear Algebra Introduction &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Gauss Elimination" href="02_Gauss_elimination.html" />
     <link rel="prev" title="Computational Mechanics 4 - Linear Algebra" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -502,8 +504,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="linear-algebra-introduction">
-<h1>Linear Algebra Introduction<a class="headerlink" href="#linear-algebra-introduction" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-introduction">
+<h1>Linear Algebra Introduction<a class="headerlink" href="#linear-algebra-introduction" title="Permalink to this heading">#</a></h1>
 <p>Linear algebra is a representation of linear equations. You can separate the known constants from unknown variables to represent your system of equations. Take the following example, there are three unknowns and three equations</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(5x_{1}+3x_{2} =1\)</span></p></li>
@@ -525,8 +527,8 @@ x_{3}\end{array}\right]=\left[\begin{array}{c}
 3\end{array}\right]\)</span></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Ax}=\mathbf{b}\)</span></p>
 <p>The <strong>matrix</strong>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> contains all of the constants that are multiplied by your unknown variables <span class="math notranslate nohighlight">\(x_1,~x_2,~and~x_3.\)</span> The <strong>vector</strong>, <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> contains all of the known constants that are not multiplied by your unknown variables <span class="math notranslate nohighlight">\(x_1,~x_2,~and~x_3.\)</span> Finally, the <strong>vector</strong>, <span class="math notranslate nohighlight">\(\mathbf{x}=[x_1,~x_2,~x_3]\)</span> contains your unknown values.</p>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <p>Solve for <span class="math notranslate nohighlight">\(x_1,~x_2,~and~x_3.\)</span> How did you approach the problem? Did you use Linear algebra?</p>
 <p>Highlight for answers: <font color="white">x1 = 20, x2 = -33, x3 = 16</font></p>
 <div class="cell docutils container">
@@ -564,9 +566,9 @@ x_{3}\end{array}\right]=\left[\begin{array}{c}
 <p><span class="math notranslate nohighlight">\(\frac{1}{12} 12 x = \frac{1}{12} 6\)</span></p>
 <p><span class="math notranslate nohighlight">\(x=2\)</span></p>
 <p>In this notebook, you will look at how to frame your problems as linear algebra problems and work on how to get <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}\)</span> or <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> in the next two notebooks.</p>
-</div>
-<div class="section" id="example-with-mixing-tanks">
-<h2>Example with Mixing Tanks<a class="headerlink" href="#example-with-mixing-tanks" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="example-with-mixing-tanks">
+<h2>Example with Mixing Tanks<a class="headerlink" href="#example-with-mixing-tanks" title="Permalink to this heading">#</a></h2>
 <p><img alt="Mixing tank volume flow rates" src="../_images/mixing_tanks.png" /></p>
 <p>In the diagram above you have three tanks of water that are mixing two concentrations of salt water with <span class="math notranslate nohighlight">\(5~mg/m^3\)</span> entering tank 1 and <span class="math notranslate nohighlight">\(1~mg/m^3\)</span> entering tank three. The outlet is located on the middle tank 2, but the concentration is unknown.</p>
 <p>The volume flow rates of water are shown on each arrow to denote flow in/out of each tank. You want to know what the final concentration at the outlet is <span class="math notranslate nohighlight">\(c_2\)</span>, but in order to know that you need the concentrations of <span class="math notranslate nohighlight">\(c_1~and~c_3\)</span>. The mass flow of the salt is the concentration <span class="math notranslate nohighlight">\(\times\)</span> volume flow rate. The total mass flow in - mass flow out in each container is 0. You have three mass balance equations</p>
@@ -637,13 +639,13 @@ c3 = 1.03 mg/mm^3
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Show that <span class="math notranslate nohighlight">\(\mathbf{Ax} = \mathbf{b}\)</span> in the previous mixing container example. Plug the values of <code class="docutils literal notranslate"><span class="pre">x</span></code> into the three equations and show that mass is conserved.</p>
-</div>
-<div class="section" id="vectors">
-<h2>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="vectors">
+<h2>Vectors<a class="headerlink" href="#vectors" title="Permalink to this heading">#</a></h2>
 <p>You use vectors to represent unknown variables or known outputs. In numpy, a vector only has one dimension.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
@@ -663,8 +665,8 @@ c3 = 1.03 mg/mm^3
 </div>
 </div>
 </div>
-<div class="section" id="whats-a-vector">
-<h3>What’s a vector?<a class="headerlink" href="#whats-a-vector" title="Permalink to this headline">#</a></h3>
+<section id="whats-a-vector">
+<h3>What’s a vector?<a class="headerlink" href="#whats-a-vector" title="Permalink to this heading">#</a></h3>
 <p>Vectors are everywhere: physics, engineering, mathematics, computer science, video games, and more. Each field’s interpretation of what a vector <em>is</em> may be different, but  vectors live a similar life in every space.</p>
 <p>The first episode in the wonderful video series, <a class="reference external" href="http://3b1b.co/eola"><em>“Essence of Linear Algebra”</em></a> tells you of three different ideas about vectors [1]:</p>
 <ol class="arabic simple">
@@ -673,8 +675,8 @@ c3 = 1.03 mg/mm^3
 <li><p>For mathematicians, vectors are generic objects that behave a certain way when they are added or scaled:  <span class="math notranslate nohighlight">\(\mathbf{u}+\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\(\alpha\mathbf{v}\)</span>.</p></li>
 </ol>
 <p><img alt="Two interpretations of a vector: in physics its a magnitude anddirection and in computer science its an ordered list of numbers" src="../_images/whatsavector.png" /></p>
-<div class="section" id="how-you-think-of-a-vector-depends-on-what-youre-doing">
-<h4>How you think of a vector depends on what you’re doing<a class="headerlink" href="#how-you-think-of-a-vector-depends-on-what-youre-doing" title="Permalink to this headline">#</a></h4>
+<section id="how-you-think-of-a-vector-depends-on-what-youre-doing">
+<h4>How you think of a vector depends on what you’re doing<a class="headerlink" href="#how-you-think-of-a-vector-depends-on-what-youre-doing" title="Permalink to this heading">#</a></h4>
 <p>In physics, vectors are almost always two- or three-dimensional
 (although in some fancy branches of physics they do go to higher
 dimensions). Vectors help physicists describe things like motion and
@@ -686,11 +688,11 @@ vectors are often multi-dimensional, that is, they have many components.
 They contain a set of ordered variables in a data model, like for
 example: the age, youight, daily hours of sleep, youekly hours of
 exercise, and blood pressure of an individual (five dimensions).</p>
-</div>
-</div>
-</div>
-<div class="section" id="adding-and-subtracting-scaled-vectors">
-<h2>Adding and subtracting scaled vectors<a class="headerlink" href="#adding-and-subtracting-scaled-vectors" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="adding-and-subtracting-scaled-vectors">
+<h2>Adding and subtracting scaled vectors<a class="headerlink" href="#adding-and-subtracting-scaled-vectors" title="Permalink to this heading">#</a></h2>
 <p>In your first linear algebra problem, you had the vector, <span class="math notranslate nohighlight">\(\mathbf{x}=[c_1,~c_2,~c_3]\)</span> and solved for <span class="math notranslate nohighlight">\(\mathbf{x}=[3.86,~2.33,~1.44]~mg/m^3\)</span>. You separated the flow rates out of the equation, but you could also have pulled out the flow rates in three vectors:</p>
 <p><span class="math notranslate nohighlight">\(y=Ax=\left[\begin{array}{c} -20 \\ 0 \\-8\end{array}\right] =
 \left[\begin{array}{c} -7 \\ 7 \\0\end{array}\right] c_{1}+
@@ -736,9 +738,9 @@ flow in at 3: 8.0 g/s
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="representation-of-a-problem-with-matrices-and-vectors">
-<h2>Representation of a problem with Matrices and Vectors<a class="headerlink" href="#representation-of-a-problem-with-matrices-and-vectors" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="representation-of-a-problem-with-matrices-and-vectors">
+<h2>Representation of a problem with Matrices and Vectors<a class="headerlink" href="#representation-of-a-problem-with-matrices-and-vectors" title="Permalink to this heading">#</a></h2>
 <p>There are two main types of problems that are solved with linear algebra. Let’s use the following variables to describe your problems.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{y}:\)</span> a set of known outputs, <span class="math notranslate nohighlight">\(y_{1},~y_{2},~...y_{N}\)</span></p></li>
@@ -759,9 +761,9 @@ A_{M1} &amp; A_{M2} &amp;...&amp; A_{MN}\end{array} \right]\)</span></p></li>
 problems come up in a number of engineering and science applications.
 You will cover the application of eigenvalues in the last module when
 you look at boundary value problems. You will restrict your initial applications of linear algebra to linear systems.</p>
-</div>
-<div class="section" id="another-linear-system-solution">
-<h2>1. Another linear system solution<a class="headerlink" href="#another-linear-system-solution" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="another-linear-system-solution">
+<h2>1. Another linear system solution<a class="headerlink" href="#another-linear-system-solution" title="Permalink to this heading">#</a></h2>
 <p><img alt="Example of Applying Newton's second law to obtain a linear system" src="../_images/mass-pulley.png" /></p>
 <p>In the above diagram, there are 4 masses, connected by 4 cords. Our goal is to create a system of equations that are solveable with Linear Algebra. You start with Newton’s second law to determine 4 equations of motion</p>
 <ol class="arabic simple">
@@ -855,16 +857,16 @@ T3=13.8 N
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id2">
+<h2>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Plug in the values that you solved into the original 4 equations. Show that your values for accelerations and tensions satisfy your initial equations.</p></li>
 <li><p>Create a new vector <code class="docutils literal notranslate"><span class="pre">y3</span></code> where the coefficient of friction is <span class="math notranslate nohighlight">\(\mu=0.5\)</span> what is the new acceleration? Do the tensions increase or decrease when tension increases?</p></li>
 </ol>
-</div>
-<div class="section" id="pause-and-ponder">
-<h2>Pause and ponder<a class="headerlink" href="#pause-and-ponder" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="pause-and-ponder">
+<h2>Pause and ponder<a class="headerlink" href="#pause-and-ponder" title="Permalink to this heading">#</a></h2>
 <p>In this example, the unknown vector, <span class="math notranslate nohighlight">\(\mathbf{x}=[a,~T_1,~T_2,~T_3],\)</span> is a combination of acceleration and forces. This definition of a vector is less intuitive than a physics-based magnitude and direction, but it is <strong>extremely</strong> useful in solving engineering and physics problems. Here are a few <strong>key ideas</strong> from these two linear system exercises:</p>
 <ul class="simple">
 <li><p>In order to solve for <span class="math notranslate nohighlight">\(n\)</span> unknowns, you need <span class="math notranslate nohighlight">\(n\)</span> independent equations</p></li>
@@ -906,9 +908,9 @@ T3=13.8 N
 <span class="go">LinAlgError: Singular matrix</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="singular-and-ill-conditioned-matrices">
-<h2>Singular and ill-conditioned matrices<a class="headerlink" href="#singular-and-ill-conditioned-matrices" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="singular-and-ill-conditioned-matrices">
+<h2>Singular and ill-conditioned matrices<a class="headerlink" href="#singular-and-ill-conditioned-matrices" title="Permalink to this heading">#</a></h2>
 <p>You receive the <code class="docutils literal notranslate"><span class="pre">LinAlgError:</span> <span class="pre">Singular</span> <span class="pre">matrix</span></code> because equation (2) is 2 <span class="math notranslate nohighlight">\(\times\)</span> (equation 1). A <strong>singular matrix</strong> represents a system of equations where multiple solutions exist.</p>
 <p>For example, if x=1 and y=2, then</p>
 <ol class="arabic simple">
@@ -940,11 +942,11 @@ T3=13.8 N
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d= 2e-16
-x = -1.0, y = 4.0
+x = 0.0, y = 3.0
 d= 5e-16
 x = -1.0, y = 4.0
 d= 1e-15
-x = -0.6, y = 3.6
+x = -0.4, y = 3.4
 </pre></div>
 </div>
 </div>
@@ -958,7 +960,7 @@ x = -0.6, y = 3.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.877244e+15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.045100e+15
 1.000000e+00
 </pre></div>
 </div>
@@ -966,9 +968,9 @@ x = -0.6, y = 3.6
 </div>
 <p>This problem is now <strong>ill-conditioned</strong>. For small changes (as small as the roundoff error in your floating point calculations) you can get different values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y.\)</span> An <strong>ill-conditioned</strong> matrix (system of equations) is <em>almost</em> worse than the singular matrix because you still get a result, but you wouldn’t know the result is so sensitive to your representation of floating point numbers unless you checked the sensitivity of your results.</p>
 <p>Luckily, <strong>ill-conditioned</strong> matrices come up often enough that there is a standard way to recognize the <strong>condition</strong> of a matrix. The <strong>condition</strong> of a matrix is the ratio of the measure of its “magnitude” compared to the “magnitude” of its inverse. Here “<em>magnitude</em>” is in quotes, because a matrix does not have a single magnitude and direction, instead you call the measure of a matrix a <strong>norm</strong>.</p>
-</div>
-<div class="section" id="matrix-norms">
-<h2>Matrix norms<a class="headerlink" href="#matrix-norms" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="matrix-norms">
+<h2>Matrix norms<a class="headerlink" href="#matrix-norms" title="Permalink to this heading">#</a></h2>
 <p>The Euclidean norm of a vector is measure of the magnitude (in 3D this would be: <span class="math notranslate nohighlight">\(|x|=\sqrt{x_{1}^{2}+x_{2}^{2}+x_{3}^{2}}\)</span>) in general the equation is:</p>
 <p><span class="math notranslate nohighlight">\(||x||_{e}=\sqrt{\sum_{i=1}^{n}x_{i}^{2}}\)</span></p>
 <p>For a matrix, A, the same norm is called the Frobenius norm:</p>
@@ -978,11 +980,11 @@ x = -0.6, y = 3.6
 <p>so the p=1, 1-norm is</p>
 <p><span class="math notranslate nohighlight">\(||A||_{1}=\sqrt{\sum_{i=1}^{n}\sum_{i=1}^{m}A_{i,j}^{1}}=\sum_{i=1}^{n}\sum_{i=1}^{m}|A_{i,j}|\)</span></p>
 <p><span class="math notranslate nohighlight">\(||A||_{\infty}=\sqrt{\sum_{i=1}^{n}\sum_{i=1}^{m}A_{i,j}^{\infty}}=\max_{1\le i \le n}\sum_{j=1}^{m}|A_{i,j}|\)</span></p>
-</div>
-<div class="section" id="condition-of-a-matrix">
-<h2>Condition of a matrix<a class="headerlink" href="#condition-of-a-matrix" title="Permalink to this headline">#</a></h2>
-<div class="section" id="just-checked-in-to-see-what-condition-my-condition-was-in">
-<h3><em>just checked in to see what condition my condition was in</em><a class="headerlink" href="#just-checked-in-to-see-what-condition-my-condition-was-in" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="condition-of-a-matrix">
+<h2>Condition of a matrix<a class="headerlink" href="#condition-of-a-matrix" title="Permalink to this heading">#</a></h2>
+<section id="just-checked-in-to-see-what-condition-my-condition-was-in">
+<h3><em>just checked in to see what condition my condition was in</em><a class="headerlink" href="#just-checked-in-to-see-what-condition-my-condition-was-in" title="Permalink to this heading">#</a></h3>
 <p>The matrix condition is the product of</p>
 <p><span class="math notranslate nohighlight">\(Cond(A) = ||A||\cdot||A^{-1}||\)</span></p>
 <p>So each norm will have a different condition number, but the limit is <span class="math notranslate nohighlight">\(Cond(A)\ge 1\)</span></p>
@@ -1009,14 +1011,14 @@ x = -0.6, y = 3.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.877244e+15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.045100e+15
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>One of the most youll-known ill-conditioned matrices is the <a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert_matrix">Hilbert Matrix</a>. It is created by placing smaller and smaller fractions in each successive row and column of a matrix.</p>
 <p><span class="math notranslate nohighlight">\(H_{ij} = \frac{1}{i+j-1}\)</span></p>
 <p><span class="math notranslate nohighlight">\(H = \left[\begin{array}{cccc} 
@@ -1057,19 +1059,19 @@ x = -0.6, y = 3.6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.          0.          0.        ]
- [ 0.54930661  1.          0.        ]
- [-0.5629512  -0.45861917  1.        ]]
-[[-1.00442848e-11 -5.12043047e-11 -1.50118321e-10]
- [ 0.00000000e+00  3.30756256e-13  1.83182636e-12]
- [ 0.00000000e+00  0.00000000e+00 -4.78089790e-15]]
+ [ 0.54933688  1.          0.        ]
+ [-0.56294207 -0.45765178  1.        ]]
+[[-1.00444829e-11 -5.12050345e-11 -1.50120007e-10]
+ [ 0.00000000e+00  3.31182285e-13  1.83361576e-12]
+ [ 0.00000000e+00  0.00000000e+00 -5.09585397e-15]]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to solve a linear algebra problem with <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code></p></li>
 <li><p>Creating a linear system of equations</p></li>
@@ -1079,16 +1081,16 @@ x = -0.6, y = 3.6
 <li><p>Calculate the <strong>condition</strong> of a matrix</p></li>
 <li><p>Estimate the error in the solution based upon the condition of a matrix</p></li>
 </ul>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> <strong>ch 8.</strong> McGraw Hill.</p></li>
 <li><p>Kiusalaas, Jaan <em>Numerical Methods in Engineering with Python 3.</em> <strong>ch 2.</strong> Cambridge University Press.</p></li>
 <li><p><a class="reference external" href="http://3b1b.co/eola"><em>“Essence of Linear Algebra”</em></a> 3 Blue 1 Brown Linear algebra series.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

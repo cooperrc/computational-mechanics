@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Computational Mechanics Boundary Values - Project 05 &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Quick How-to documents" href="../how-to/README.html" />
     <link rel="prev" title="Homework" href="../module_05/HW_05.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -469,11 +471,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="computational-mechanics-boundary-values-project-05">
-<h1>Computational Mechanics Boundary Values - Project 05<a class="headerlink" href="#computational-mechanics-boundary-values-project-05" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="computational-mechanics-boundary-values-project-05">
+<h1>Computational Mechanics Boundary Values - Project 05<a class="headerlink" href="#computational-mechanics-boundary-values-project-05" title="Permalink to this heading">#</a></h1>
 <p><img alt="6-string guitar diagram" src="../_images/guitar.png" /></p>
 <p>In this final project, you will consider all six strings of a guitar and the deflection of the neck of the guitar. Here are the inputs for each of the strings, all L=0.64 m:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>string</p></th>
 <th class="head"><p>density (g/m)</p></th>
@@ -549,7 +551,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">guitar_modes</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">L</span> <span class="o">=</span> <span class="mf">0.64</span><span class="p">,</span><span class="n">T</span> <span class="o">=</span> <span class="mf">71.81</span><span class="p">,</span><span class="n">mu</span> <span class="o">=</span> <span class="mf">1.14e-3</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;General Finite Difference Wave Equation</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;General Finite Difference Wave Equation</span>
 <span class="sd">    in a guitar string</span>
 <span class="sd">    of the form T/mu*d^2y/dx^2=d^2y/dt^2</span>
 <span class="sd">    Arguments:</span>
@@ -570,7 +572,7 @@ document.write(`
 </div>
 <p>b. Use the number of nodes necessary for convergence to calculate the first 3 modes of vibration for the other 5 strings on the guitar. Display the first three natural frequencies for all six strings.</p>
 <p>In this final project, you will consider all six strings of a guitar and the deflection of the neck of the guitar. Here are the inputs for each of the strings, all L=0.64 m:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>string</p></th>
 <th class="head"><p>density (g/m)</p></th>
@@ -642,8 +644,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ryan/.conda/envs/work3-9/lib/python3.9/site-packages/IPython/lib/display.py:174: RuntimeWarning: invalid value encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/IPython/lib/display.py:187: RuntimeWarning: invalid value encountered in divide
   scaled = data / normalization_factor * 32767
+/opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/IPython/lib/display.py:188: RuntimeWarning: invalid value encountered in cast
+  return scaled.astype(&quot;&lt;h&quot;).tobytes(), nchan
 </pre></div>
 </div>
 <div class="output text_html">
@@ -653,7 +657,7 @@ document.write(`
                 </audio>
               </div></div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

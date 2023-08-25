@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>01 - Cheers! Stats with Beers &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="02 - Seeing stats in a new light" href="02_Seeing_Stats.html" />
     <link rel="prev" title="Computational Mechanics 02 - Analyze Data" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -511,8 +513,8 @@ document.write(`
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="tex2jax_ignore mathjax_ignore section" id="cheers-stats-with-beers">
-<h1>01 - Cheers!  Stats with Beers<a class="headerlink" href="#cheers-stats-with-beers" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="cheers-stats-with-beers">
+<h1>01 - Cheers!  Stats with Beers<a class="headerlink" href="#cheers-stats-with-beers" title="Permalink to this heading">#</a></h1>
 <p>Welcome to the second module in <em>Computational Mechanics</em>, your series in computational thinking for undergraduate engineering students. This module explores practical data and statistical analysis with Python.</p>
 <p>This first lesson explores how you can answer questions using data combined with practical methods from statistics.</p>
 <p>You’ll need data. Here is a great data set of
@@ -545,8 +547,8 @@ columns that you need—which you’ll convert to <code class="docutils literal 
 </div>
 </div>
 </div>
-<div class="section" id="step-1-read-the-data-file">
-<h2>Step 1: Read the data file<a class="headerlink" href="#step-1-read-the-data-file" title="Permalink to this headline">#</a></h2>
+<section id="step-1-read-the-data-file">
+<h2>Step 1: Read the data file<a class="headerlink" href="#step-1-read-the-data-file" title="Permalink to this heading">#</a></h2>
 <p>Below, you’ll take a peek into the data file, <code class="docutils literal notranslate"><span class="pre">beers.csv,</span></code> using the
 system command <code class="docutils literal notranslate"><span class="pre">head</span></code> (which you can use with a bang (<code class="docutils literal notranslate"><span class="pre">!</span></code>), thanks to IPython).</p>
 <p>But first, you will download the data using a Python library for opening
@@ -554,7 +556,7 @@ a URL on the Internet. You created a short URL for the data file in the public r
 <p>The cell below should download the data in your current working directory. The next cell shows you the first few lines of the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head <span class="s2">&quot;../data/beers.csv&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span><span class="s2">&quot;../data/beers.csv&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -768,9 +770,9 @@ new variable—rememeber that you can use the function <code class="docutils lit
 <li><p><code class="docutils literal notranslate"><span class="pre">brewery_id</span></code>: Unique identifier of the brewery.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ounces</span></code>: Ounces of beer in the can.</p></li>
 </ul>
-</div>
-<div class="section" id="step-2-explore-the-data">
-<h2>Step 2: Explore the data<a class="headerlink" href="#step-2-explore-the-data" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="step-2-explore-the-data">
+<h2>Step 2: Explore the data<a class="headerlink" href="#step-2-explore-the-data" title="Permalink to this heading">#</a></h2>
 <p>In the field of statistics, <a class="reference external" href="https://en.wikipedia.org/wiki/Exploratory_data_analysis">Exploratory Data Analysis</a> (EDA) has the goal of summarizing the main features of your data, and seeing what the data can tell us without formal modeling or hypothesis-testing. [2]</p>
 <p>Let’s start by extracting the columns with the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values,
 and converting them to numpy arrays. One of the advantages of data
@@ -927,9 +929,9 @@ an array, check how many values you lost.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <p>Write a Python function that calculates the percentage of missing values for a certain data series. Use the function to calculate the percentage of missing values for the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> data sets.</p>
 <p>For the original series, before cleaning, remember that you can access the values with <code class="docutils literal notranslate"><span class="pre">series.values</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">abv_series.values</span></code>).</p>
 <blockquote>
@@ -939,16 +941,16 @@ of the values. This is important, because it will affect your analysis.
 When you do descriptive statistics, you will ignore these missing
 values, and having 42% missing will very likely cause bias.</p>
 </div></blockquote>
-</div>
-<div class="section" id="step-3-ready-stats-go">
-<h2>Step 3: Ready, stats, go!<a class="headerlink" href="#step-3-ready-stats-go" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="step-3-ready-stats-go">
+<h2>Step 3: Ready, stats, go!<a class="headerlink" href="#step-3-ready-stats-go" title="Permalink to this heading">#</a></h2>
 <p>Now, that you have numpy arrays with clean data, let’s see how you can
 process them to get some useful information.</p>
 <p>Focusing on the numerical variables <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>, you’ll walk through
 some “descriptive statistics,” below. In other words, you aim to generate
 statistics that summarize the data concisely.</p>
-<div class="section" id="maximum-and-minimum">
-<h3>Maximum and minimum<a class="headerlink" href="#maximum-and-minimum" title="Permalink to this headline">#</a></h3>
+<section id="maximum-and-minimum">
+<h3>Maximum and minimum<a class="headerlink" href="#maximum-and-minimum" title="Permalink to this heading">#</a></h3>
 <p>The maximum and minimum values of a dataset are helpful as they tell us
 the <em>range</em> of your sample: the range gives some indication of the <em>variability</em> in the data.
 You can obtain them for your <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> arrays with the <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">max()</span></code> functions from numpy.</p>
@@ -998,9 +1000,9 @@ The maximum value for ibu is:  138.0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="mean-value">
-<h3>Mean value<a class="headerlink" href="#mean-value" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="mean-value">
+<h3>Mean value<a class="headerlink" href="#mean-value" title="Permalink to this heading">#</a></h3>
 <p>The <strong>mean</strong> value is one of the main measures to describe the central
 tendency of the data: an indication of where’s the “center” of the data.
 If you have a sample of <span class="math notranslate nohighlight">\(N\)</span> values, <span class="math notranslate nohighlight">\(x_i\)</span>, the mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>, is calculated by:</p>
@@ -1051,9 +1053,9 @@ digits, specify it this way:</p>
 </div>
 <p>Inside the curly brackets—the placeholders for the values you want to print—the <code class="docutils literal notranslate"><span class="pre">f</span></code> is for <code class="docutils literal notranslate"><span class="pre">float</span></code> and the <code class="docutils literal notranslate"><span class="pre">.4</span></code> is for four digits after the decimal dot. The colon here marks the beginning of the format specification (as there are options that can be passed before). There are so many tricks to Python’s string formatter that you’ll usually look up just what you need.
 Another useful resource for string formatting is the <a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/">Python String Format Cookbook</a>. Check it out!</p>
-</div>
-<div class="section" id="variance-and-standard-deviation">
-<h3>Variance and standard deviation<a class="headerlink" href="#variance-and-standard-deviation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="variance-and-standard-deviation">
+<h3>Variance and standard deviation<a class="headerlink" href="#variance-and-standard-deviation" title="Permalink to this heading">#</a></h3>
 <p>While the mean indicates where’s the center of your data, the
 <strong>variance</strong> and <strong>standard deviation</strong> describe the <em>spread</em> or
 variability of the data. You already mentioned that the <em>range</em>
@@ -1079,9 +1081,9 @@ squares. And that’s how you get to the expression for the <em>variance</em>: i
 <p><span class="math notranslate nohighlight">\(\text{var} = \frac{1}{N}\sum_{i} (x_i - \bar{x})^2\)</span></p>
 <p>The variance itself is hard to interpret. The problem with it is that the units are strange (they are the square of the original units). The <strong>standard deviation</strong>, the square root of the variance, is more meaningful because it has the same units as the original variable. Often, the symbol <span class="math notranslate nohighlight">\(\sigma\)</span> is used for it:</p>
 <p><span class="math notranslate nohighlight">\(\sigma = \sqrt{\text{var}} = \sqrt{\frac{1}{N}\sum_{i} (x_i - \bar{x})^2}\)</span></p>
-</div>
-<div class="section" id="sample-vs-population">
-<h3>Sample vs. population<a class="headerlink" href="#sample-vs-population" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="sample-vs-population">
+<h3>Sample vs. population<a class="headerlink" href="#sample-vs-population" title="Permalink to this heading">#</a></h3>
 <p>The above definitions are used when <span class="math notranslate nohighlight">\(N\)</span> (the number of values)
 represents the entire population. But if you have a <em>sample</em> of that
 population, the formulas have to be adjusted: instead of dividing by <span class="math notranslate nohighlight">\(N\)</span>
@@ -1106,9 +1108,9 @@ people from the sample: you’ll be able to calculate the age of that
 freedom left because that 100th person’s age is fixed.</p>
 <p>Below is a graphical distinction between the <em>sample</em> and the <em>population</em> from <a class="reference external" href="https://twitter.com/allison_horst">&#64;allison_horst on twitter</a></p>
 <p><img alt="Sample vs Population from &#64;allison_horst" src="https://pbs.twimg.com/media/EOM8s3fVUAAglHu?format=jpg&amp;name=small" /></p>
-</div>
-<div class="section" id="lets-code">
-<h3>Let’s code!<a class="headerlink" href="#lets-code" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="lets-code">
+<h3>Let’s code!<a class="headerlink" href="#lets-code" title="Permalink to this heading">#</a></h3>
 <p>Now that you have the math sorted out, you can program functions to
 compute the variance and the standard deviation. In your case, you are
 working with samples of the population of craft beers, so you need to use
@@ -1116,7 +1118,7 @@ the formulas with <span class="math notranslate nohighlight">\(N-1\)</span> in t
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_var</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Calculates the variance of an array that contains values of a sample of a </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculates the variance of an array that contains values of a sample of a </span>
 <span class="sd">    population. </span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
@@ -1145,13 +1147,13 @@ the formulas with <span class="math notranslate nohighlight">\(N-1\)</span> in t
 </div>
 <p>Notice that you used <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> in your function: do you think you can make this function even more Pythonic?</p>
 <p><em>Hint:</em> Yes!, you totally can.</p>
-<div class="section" id="id1">
-<h4>Exercise:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<section id="id1">
+<h4>Exercise:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <p>Re-write the function <code class="docutils literal notranslate"><span class="pre">sample_var()</span></code> using <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code> to replace the <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop. Name the function <code class="docutils literal notranslate"><span class="pre">var_pythonic</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">var_pythonic</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Calculates the variance of an array that contains values of a sample of a </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculates the variance of an array that contains values of a sample of a </span>
 <span class="sd">    population. </span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
@@ -1174,7 +1176,7 @@ one line of Python, to make your code more readable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_std</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Computes the standard deviation of an array that contains values</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Computes the standard deviation of an array that contains values</span>
 <span class="sd">    of a sample of a population.</span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
@@ -1221,11 +1223,11 @@ around the mean value, while the <code class="docutils literal notranslate"><spa
 their mean. How could you check these descriptions of the data? A good way of doing so is using graphics: various types of plots can tell us things about the data.</p>
 <p>You’ll learn about <em>histograms</em> in this lesson, and in the following
 lesson you’ll explore <em>box plots</em>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="step-4-distribution-plots">
-<h2>Step 4: Distribution plots<a class="headerlink" href="#step-4-distribution-plots" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="step-4-distribution-plots">
+<h2>Step 4: Distribution plots<a class="headerlink" href="#step-4-distribution-plots" title="Permalink to this heading">#</a></h2>
 <p>Every time that you work with data, visualizing it is very useful.
 Visualizations give us a better idea of how your data behaves. One way of
 visualizing data is with a frequency-distribution plot known as
@@ -1262,7 +1264,7 @@ You’ll show you here an example using the <code class="docutils literal notran
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/35aa80bbaa368e7096bafd40bc9848a83dc79ea7db3a45bd955920e33a8215bf.png" src="../_images/35aa80bbaa368e7096bafd40bc9848a83dc79ea7db3a45bd955920e33a8215bf.png" />
+<img alt="../_images/1bf24ddbabab17a99120fa373bd07408fcb45fd89427623c86e6183371293c57.png" src="../_images/1bf24ddbabab17a99120fa373bd07408fcb45fd89427623c86e6183371293c57.png" />
 </div>
 </div>
 <p>Now, you have a line plot, but if you see this plot without any
@@ -1320,7 +1322,7 @@ does a nice job presenting readable plots. Set the style using:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bc9de4d40013f04d18fd0603ee73932620fa6d46e1a61d17629ca269b7e72fcc.png" src="../_images/bc9de4d40013f04d18fd0603ee73932620fa6d46e1a61d17629ca269b7e72fcc.png" />
+<img alt="../_images/f94b2fbe17d3b94eab4f5f8068b63cbdaf71b93c812f846aaf60752eb5610f17.png" src="../_images/f94b2fbe17d3b94eab4f5f8068b63cbdaf71b93c812f846aaf60752eb5610f17.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1338,7 +1340,7 @@ does a nice job presenting readable plots. Set the style using:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/55f9548b2da367b0364c6b2b24fbf78f789e1eeb57151566d4566b7b2f48a086.png" src="../_images/55f9548b2da367b0364c6b2b24fbf78f789e1eeb57151566d4566b7b2f48a086.png" />
+<img alt="../_images/9f7e75ba80fd3545ccaddb187369d2ab9a1243a9aa1cfff4ab9196384b301865.png" src="../_images/9f7e75ba80fd3545ccaddb187369d2ab9a1243a9aa1cfff4ab9196384b301865.png" />
 </div>
 </div>
 <p>In the previous two plots set the colors in two ways:</p>
@@ -1351,9 +1353,9 @@ one of</p>
 <li><p>A RGB or RGBA (red, green, blue, alpha) tuple of float values in [0, 1] (e.g., (0.1, 0.2, 0.5) or (0.1, 0.2, 0.5, 0.3));</p></li>
 </ol>
 <p>Check out the other formatting options use can use in <a class="reference external" href="https://matplotlib.org/3.1.1/tutorials/colors/colors.html">Matplotlib colors</a> and <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.hist.html?highlight=hist#matplotlib.pyplot.hist">Matplotlib hist command</a></p>
-</div>
-<div class="section" id="exploratory-exercise">
-<h2>Exploratory exercise:<a class="headerlink" href="#exploratory-exercise" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exploratory-exercise">
+<h2>Exploratory exercise:<a class="headerlink" href="#exploratory-exercise" title="Permalink to this heading">#</a></h2>
 <p>Play around with the plots, change the values of the bins, colors, etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1372,11 +1374,11 @@ one of</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8eb649a3812bdbb867f40440204cd0cdacd57fd8d961fd194615e3d66cc13138.png" src="../_images/8eb649a3812bdbb867f40440204cd0cdacd57fd8d961fd194615e3d66cc13138.png" />
+<img alt="../_images/bb3beb909f0e14b7208deb6b4f863ad961524697ac3177f43e2a3ce9262ba23a.png" src="../_images/bb3beb909f0e14b7208deb6b4f863ad961524697ac3177f43e2a3ce9262ba23a.png" />
 </div>
 </div>
-<div class="section" id="comparing-with-a-normal-distribution">
-<h3>Comparing with a normal distribution<a class="headerlink" href="#comparing-with-a-normal-distribution" title="Permalink to this headline">#</a></h3>
+<section id="comparing-with-a-normal-distribution">
+<h3>Comparing with a normal distribution<a class="headerlink" href="#comparing-with-a-normal-distribution" title="Permalink to this heading">#</a></h3>
 <p>A <strong>normal</strong> (or Gaussian) distribution is a special type of
 distrubution that behaves as shown in the figure: 68% of the values are
 within one standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> from the mean; 95% lie within
@@ -1384,17 +1386,17 @@ within one standard deviation <span class="math notranslate nohighlight">\(\sigm
 99.7% of the values. This fact is known as the <span class="math notranslate nohighlight">\(3\)</span>-<span class="math notranslate nohighlight">\(\sigma\)</span> rule, or
 68-95-99.7 (empirical) rule.</p>
 <p><img alt="Normal distribution bell curve with 1st second and third standarddeviations marking out 68%, 95%, and 99.7% of the distribution." src="../_images/std_bell_curve.png" /></p>
-<div class="section" id="standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository">
-<h4>Standard deviation and coverage in a normal distribution. Modified figure based on original from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Standard_deviation_diagram.svg">Wikimedia Commons</a>, the free media repository.<a class="headerlink" href="#standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository" title="Permalink to this headline">#</a></h4>
+<section id="standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository">
+<h4>Standard deviation and coverage in a normal distribution. Modified figure based on original from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Standard_deviation_diagram.svg">Wikimedia Commons</a>, the free media repository.<a class="headerlink" href="#standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository" title="Permalink to this heading">#</a></h4>
 <p>Notice that your histograms don’t follow the shape of a normal
 distribution, known as <em>Bell Curve</em>. Our histograms are not centered in
 the mean value, and they are not symetric with respect to it. They are
 what is call <strong>skewed</strong> to the right (yes, to the <em>right</em>). A right (or positive) skewed distribution  looks like it’s been pushed to the left: the right tail is longer and most of the values are concentrated on the left of the figure. Imagine that “right-skewed” means that a force from the right pushes on the curve.</p>
-</div>
-</div>
-</div>
-<div class="section" id="discussion-point">
-<h2>Discussion point<a class="headerlink" href="#discussion-point" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="discussion-point">
+<h2>Discussion point<a class="headerlink" href="#discussion-point" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How do you think that skewness will affect the percentages of coverage by standard deviation compared to the Bell Curve?</p></li>
 </ul>
@@ -1404,9 +1406,9 @@ You can’t assume the mean and mode are the same value</em></p>
 <li><p>Can you calculate those percentages?</p></li>
 </ul>
 <p>_with logical operators! <code class="docutils literal notranslate"><span class="pre">x[x&lt;mean_x]/len(x)*100</span></code></p>
-</div>
-<div class="section" id="id2">
-<h2>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id2">
+<h2>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>You can calculate skewness and standard deviation in a few lines of
 Python. But before doing that, you want you to explain in your own words
 how the following piece of code works.</p>
@@ -1465,7 +1467,7 @@ abv 3sigma
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">std_percentages</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_mean</span><span class="p">,</span> <span class="n">x_std</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Computes the percentage of coverage at 1std, 2std and 3std from the</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Computes the percentage of coverage at 1std, 2std and 3std from the</span>
 <span class="sd">    mean value of a certain variable x.</span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
@@ -1554,9 +1556,9 @@ The percentage of coverage at 3 std of the ibu_mean is : 99.72 %
 </div>
 </div>
 <p>Notice that in both cases the percentages are not that far from the values for normal distribution (68%, 95%, 99.7%), especially for <span class="math notranslate nohighlight">\(2\sigma\)</span> and <span class="math notranslate nohighlight">\(3\sigma\)</span>. So usually you can use these values as a rule of thumb.</p>
-</div>
-<div class="section" id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Read data from a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
 <li><p>The concepts of Data Frame and Series in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
@@ -1569,9 +1571,9 @@ The percentage of coverage at 3 std of the ibu_mean is : 99.72 %
 <li><p>Plot frequency distribution diagrams (histograms).</p></li>
 <li><p>Normal distribution and 3-sigma rule.</p></li>
 </ul>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/nickhould/craft-beers-dataset">Craft beer datatset</a> by Jean-Nicholas Hould.</p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Exploratory_data_analysis">Exploratory Data Analysis</a>, Wikipedia article.</p></li>
@@ -1579,8 +1581,8 @@ The percentage of coverage at 3 std of the ibu_mean is : 99.72 %
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/dsintro.html">Intro to data Structures</a>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> documentation.</p></li>
 <li><p><em>Think Stats: Probability and Statistics for Programmers</em> version 1.6.0 (2011). Allen Downey. Green Tea Press.  <a class="reference external" href="http://greenteapress.com/thinkstats/thinkstats.pdf">PDF available</a></p></li>
 </ol>
-<div class="section" id="recommended-viewing">
-<h3>Recommended viewing<a class="headerlink" href="#recommended-viewing" title="Permalink to this headline">#</a></h3>
+<section id="recommended-viewing">
+<h3>Recommended viewing<a class="headerlink" href="#recommended-viewing" title="Permalink to this heading">#</a></h3>
 <p>From <a class="reference external" href="https://lagunita.stanford.edu/courses/Medicine/MedStats-SP/SelfPaced/about">“Statistics in
 Medicine,”</a>,
 a free course in Stanford Online by Prof. Kristin Sainani, highly
@@ -1590,9 +1592,9 @@ recommended three lectures:</p>
 <li><p><a class="reference external" href="https://youtu.be/hlFeEQF5tDc">Describing Quantitative Data: What is the variability in the data?</a></p></li>
 <li><p><a class="reference external" href="https://youtu.be/qeG0uNI3DBQ">Variability in the data, continued: examples, bell curve</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

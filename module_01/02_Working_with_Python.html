@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>02 - Working with Python &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="03 - Numerical Error" href="03_Numerical_error.html" />
     <link rel="prev" title="01 - Interacting with Python" href="01_Interacting_with_Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -519,25 +521,25 @@ document.write(`
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="tex2jax_ignore mathjax_ignore section" id="working-with-python">
-<h1>02 - Working with Python<a class="headerlink" href="#working-with-python" title="Permalink to this headline">#</a></h1>
-<div class="section" id="good-coding-habits">
-<h2>Good coding habits<a class="headerlink" href="#good-coding-habits" title="Permalink to this headline">#</a></h2>
-<div class="section" id="naming-folders-and-files">
-<h3>naming folders and files<a class="headerlink" href="#naming-folders-and-files" title="Permalink to this headline">#</a></h3>
-</div>
-</div>
-<div class="section" id="stanford-file-naming-best-practices">
-<h2><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Stanford file naming best practices</a><a class="headerlink" href="#stanford-file-naming-best-practices" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-python">
+<h1>02 - Working with Python<a class="headerlink" href="#working-with-python" title="Permalink to this heading">#</a></h1>
+<section id="good-coding-habits">
+<h2>Good coding habits<a class="headerlink" href="#good-coding-habits" title="Permalink to this heading">#</a></h2>
+<section id="naming-folders-and-files">
+<h3>naming folders and files<a class="headerlink" href="#naming-folders-and-files" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="stanford-file-naming-best-practices">
+<h2><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Stanford file naming best practices</a><a class="headerlink" href="#stanford-file-naming-best-practices" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Include information to distinguish file name e.g. project name, objective of function, name/initials, type of data, conditions, version of file,</p></li>
 <li><p>if using dates, use YYYYMMDD, so the computer organizes by year, then month, then day</p></li>
 <li><p>avoid special characters e.g. !, #, $, …</p></li>
 <li><p>avoid using spaces if not necessary, some programs consider a space as a break in code use dashes <code class="docutils literal notranslate"><span class="pre">-</span></code> or underscores <code class="docutils literal notranslate"><span class="pre">_</span></code> or CamelCase</p></li>
 </ol>
-</div>
-<div class="section" id="commenting-your-code">
-<h2>Commenting your code<a class="headerlink" href="#commenting-your-code" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="commenting-your-code">
+<h2>Commenting your code<a class="headerlink" href="#commenting-your-code" title="Permalink to this heading">#</a></h2>
 <p>Its important to comment your code</p>
 <ul class="simple">
 <li><p>what are variable’s units,</p></li>
@@ -547,7 +549,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Example of bad variable names and bad function name&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Example of bad variable names and bad function name&#39;&#39;&#39;</span>
     <span class="n">m</span><span class="o">=</span><span class="mi">1</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">m</span><span class="o">*=</span><span class="n">j</span><span class="p">;</span>
@@ -568,9 +570,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="choose-variable-names-that-describe-the-variable">
-<h2>Choose variable names that describe the variable<a class="headerlink" href="#choose-variable-names-that-describe-the-variable" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="choose-variable-names-that-describe-the-variable">
+<h2>Choose variable names that describe the variable<a class="headerlink" href="#choose-variable-names-that-describe-the-variable" title="Permalink to this heading">#</a></h2>
 <p>You might not have recognized that <code class="docutils literal notranslate"><span class="pre">code(i)</span></code> is meant to calculate the <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial of a number</a>,</p>
 <p><span class="math notranslate nohighlight">\(N!= N*(N-1)*(N-2)*(N-3)*...3*2*1\)</span>.</p>
 <p>For example,</p>
@@ -590,7 +592,7 @@ and on the values that are <em>passed</em> into it as <em>arguments</em>. Functi
 might or might not <em>return</em> values in their last operation.</p>
 <p>The syntax for defining custom Python functions is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg_1</span><span class="p">,</span> <span class="n">arg_2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    docstring: description of the function</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="o">&lt;</span><span class="n">body</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span><span class="o">&gt;</span>
@@ -608,7 +610,7 @@ display the information of a function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial_function</span><span class="p">(</span><span class="n">input_value</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Good variable names and better help documentation</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Good variable names and better help documentation</span>
 <span class="sd">     </span>
 <span class="sd">    factorial_function(input_number): calculates the factorial of the input_number</span>
 <span class="sd">    where the factorial is defined as N*(N-1)*(N-2)*...*3*2*1</span>
@@ -651,7 +653,7 @@ display the information of a function.</p>
 named <code class="docutils literal notranslate"><span class="pre">factorial_function</span></code>. The inputs to the line are given inside the
 parantheses, <code class="docutils literal notranslate"><span class="pre">(input_value)</span></code>. You can define as many inputs as we want
 and even assign default values.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="sd">&#39;&#39;&#39;Good variable names and better help documentation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Good variable names and better help documentation</span>
 <span class="sd">     </span>
 <span class="sd">    factorial_function(input_number): calculates the factorial of the input_number</span>
 <span class="sd">    where the factorial is defined as N*(N-1)*(N-2)*...*3*2*1&#39;&#39;&#39;</span>
@@ -701,15 +703,15 @@ you could return all three as such,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">return</span> <span class="n">value_1</span><span class="p">,</span><span class="n">value_2</span><span class="p">,</span><span class="n">value_3</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="play-with-numpy-arrays">
-<h2>Play with NumPy Arrays<a class="headerlink" href="#play-with-numpy-arrays" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="play-with-numpy-arrays">
+<h2>Play with NumPy Arrays<a class="headerlink" href="#play-with-numpy-arrays" title="Permalink to this heading">#</a></h2>
 <p>In engineering applications, most computing situations benefit from using <em>arrays</em>: they are sequences of data all of the <em>same type</em>. They behave a lot like lists, except for the constraint in the type of their elements. There is a huge efficiency advantage when you know that all elements of a sequence are of the same type—so equivalent methods for arrays execute a lot faster than those for lists.</p>
 <p>The Python language is expanded for special applications, like scientific computing, with <strong>libraries</strong>. The most important library in science and engineering is <strong>NumPy</strong>, providing the <em>n-dimensional array</em> data structure (a.k.a, <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>) and a wealth of functions, operations and algorithms for efficient linear-algebra computations.</p>
 <p>In this lesson, you’ll start playing with NumPy arrays and discover their power. You’ll also meet another widely loved library: <strong>Matplotlib</strong>, for creating two-dimensional plots of data.</p>
-</div>
-<div class="section" id="importing-libraries">
-<h2>Importing libraries<a class="headerlink" href="#importing-libraries" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="importing-libraries">
+<h2>Importing libraries<a class="headerlink" href="#importing-libraries" title="Permalink to this heading">#</a></h2>
 <p>First, a word on importing libraries to expand your running Python
 session. Because libraries are large collections of code and are for
 special purposes, they are not loaded automatically when you launch
@@ -735,9 +737,9 @@ linear-algebra goodness, you enter:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-arrays">
-<h2>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="creating-arrays">
+<h2>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this heading">#</a></h2>
 <p>To create a NumPy array from an existing list of (homogeneous) numbers,
 you call <strong><code class="docutils literal notranslate"><span class="pre">np.array()</span></code></strong>, like this:</p>
 <div class="cell docutils container">
@@ -896,9 +898,9 @@ for <code class="docutils literal notranslate"><span class="pre">step</span></co
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="array-operations">
-<h2>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="array-operations">
+<h2>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this heading">#</a></h2>
 <p>Let’s assign some arrays to variable names and perform some operations with them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -975,7 +977,7 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-23-390fe18392c0&gt;:1: RuntimeWarning: invalid value encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1973/2664324349.py:1: RuntimeWarning: invalid value encountered in divide
   x_array / y_array
 </pre></div>
 </div>
@@ -985,11 +987,11 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="multidimensional-arrays">
-<h2>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Permalink to this headline">#</a></h2>
-<div class="section" id="d-arrays">
-<h3>2D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="multidimensional-arrays">
+<h2>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Permalink to this heading">#</a></h2>
+<section id="d-arrays">
+<h3>2D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this heading">#</a></h3>
 <p>NumPy can create arrays of N dimensions.  For example, a 2D array is like a matrix, and is created from a nested list as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1070,9 +1072,9 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>3D arrays<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id1">
+<h3>3D arrays<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Let’s create a 3D array by reshaping a 1D array. You can use
 <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/np.reshape.html"><code class="docutils literal notranslate"><span class="pre">np.reshape()</span></code></a>,
 where you pass the array we want to reshape and the shape we want to
@@ -1170,8 +1172,8 @@ using arrays: you cannot do this with lists.</p>
 </div>
 </div>
 </div>
-<div class="section" id="exercises">
-<h4>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h4>
+<section id="exercises">
+<h4>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h4>
 <p>From the X array:</p>
 <ol class="arabic simple">
 <li><p>Grab the 2nd element in the 1st column.</p></li>
@@ -1208,9 +1210,9 @@ dimension (the first column).</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h4>Exercises:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id2">
+<h4>Exercises:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <p>From the X array:</p>
 <ol class="arabic simple">
 <li><p>Grab the 2nd column.</p></li>
@@ -1282,9 +1284,9 @@ dimension (the first column).</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id3">
-<h4>Exercises:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id3">
+<h4>Exercises:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
 <p>From the array named <code class="docutils literal notranslate"><span class="pre">a_3D</span></code>:</p>
 <ol class="arabic simple">
 <li><p>Grab the two middle elements (17, 18) from the second matrix.</p></li>
@@ -1292,11 +1294,11 @@ dimension (the first column).</p>
 <li><p>Grab the elements of the 1st matrix that exclude the first row and the first column.</p></li>
 <li><p>Grab the elements of the 2nd matrix that exclude the last row and the last column.</p></li>
 </ol>
-</div>
-</div>
-</div>
-<div class="section" id="numpy-fast-and-clean">
-<h2>NumPy == Fast and Clean!<a class="headerlink" href="#numpy-fast-and-clean" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="numpy-fast-and-clean">
+<h2>NumPy == Fast and Clean!<a class="headerlink" href="#numpy-fast-and-clean" title="Permalink to this heading">#</a></h2>
 <p>When you are working with numbers, arrays are a better option because
 the NumPy library has built-in functions that are optimized, and
 therefore faster than vanilla Python. Especially if we have big arrays.
@@ -1307,8 +1309,8 @@ you need to do it with a <code class="docutils literal notranslate"><span class=
 arrays, you just use the addtion <code class="docutils literal notranslate"><span class="pre">'+'</span></code> symbol!</p>
 <p>Below, you will add two lists and two arrays (with random elements) and
 you’ll compare the time it takes to compute each addition.</p>
-<div class="section" id="element-wise-sum-of-a-python-list">
-<h3>Element-wise sum of a Python list<a class="headerlink" href="#element-wise-sum-of-a-python-list" title="Permalink to this headline">#</a></h3>
+<section id="element-wise-sum-of-a-python-list">
+<h3>Element-wise sum of a Python list<a class="headerlink" href="#element-wise-sum-of-a-python-list" title="Permalink to this heading">#</a></h3>
 <p>Using the Python library
 <a class="reference external" href="https://docs.python.org/3/library/random.html"><code class="docutils literal notranslate"><span class="pre">random</span></code></a>, you will
 generate two lists with 100 pseudo-random elements in the range [0,100),
@@ -1338,8 +1340,8 @@ with no numbers repeated.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[71, 36, 34, 24, 17, 9, 2, 57, 51, 75]
-[85, 36, 95, 48, 88, 41, 15, 27, 44, 98]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45, 2, 14, 13, 65, 64, 74, 6, 86, 32]
+[30, 13, 28, 60, 78, 47, 54, 90, 70, 93]
 </pre></div>
 </div>
 </div>
@@ -1359,8 +1361,8 @@ takes to execute all the code in that cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 8 µs, sys: 7 µs, total: 15 µs
-Wall time: 16.7 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 26 µs, sys: 4 µs, total: 30 µs
+Wall time: 33.9 µs
 </pre></div>
 </div>
 </div>
@@ -1372,14 +1374,14 @@ Wall time: 16.7 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[156, 72, 129, 72, 105, 50, 17, 84, 95, 173]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[75, 15, 42, 73, 143, 111, 128, 96, 156, 125]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="element-wise-sum-of-numpy-arrays">
-<h3>Element-wise sum of NumPy arrays<a class="headerlink" href="#element-wise-sum-of-numpy-arrays" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="element-wise-sum-of-numpy-arrays">
+<h3>Element-wise sum of NumPy arrays<a class="headerlink" href="#element-wise-sum-of-numpy-arrays" title="Permalink to this heading">#</a></h3>
 <p>In this case, you generate arrays with random integers using the NumPy
 function
 <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/np.random.randint.html"><code class="docutils literal notranslate"><span class="pre">np.random.randint()</span></code></a>.
@@ -1406,8 +1408,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45 70 50 31 88  4 79 68 95 67]
-[76 32 38 65 39 29 88  8  8 10]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[56 76  0 23 25 32 48 29 36 75]
+[44 78 51 71 58 81  2  9 70 41]
 </pre></div>
 </div>
 </div>
@@ -1421,25 +1423,25 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7 µs, sys: 5 µs, total: 12 µs
-Wall time: 13.8 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 10 µs, sys: 2 µs, total: 12 µs
+Wall time: 14.1 µs
 </pre></div>
 </div>
 </div>
 </div>
 <p>Notice that in the case of arrays, the code not only is more readable (just one line of code), but it is also faster than with lists. This time advantage will be larger with bigger arrays/lists.</p>
 <p>(Your timing results may vary to the ones you show in this notebook, because you will be computing in a different machine.)</p>
-<div class="section" id="exercise">
-<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h4>
+<section id="exercise">
+<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Try the comparison between lists and arrays, using bigger arrays; for example, of size 10,000.</p></li>
 <li><p>Repeat the analysis, but now computing the operation that raises each element of an array/list to the power two. Use arrays of 10,000 elements.</p></li>
 </ol>
-</div>
-</div>
-</div>
-<div class="section" id="time-to-plot">
-<h2>Time to Plot<a class="headerlink" href="#time-to-plot" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="time-to-plot">
+<h2>Time to Plot<a class="headerlink" href="#time-to-plot" title="Permalink to this heading">#</a></h2>
 <p>You will love the Python library <strong>Matplotlib</strong>! You’ll learn here about its module <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, which makes line plots.</p>
 <p>We need some data to plot. Let’s define a NumPy array, compute derived data using its square, cube and square root (element-wise), and plot these values with the original array in the x-axis.</p>
 <div class="cell docutils container">
@@ -1466,9 +1468,9 @@ Wall time: 13.8 µs
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="introduction-to-plotting">
-<h2>Introduction to plotting<a class="headerlink" href="#introduction-to-plotting" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="introduction-to-plotting">
+<h2>Introduction to plotting<a class="headerlink" href="#introduction-to-plotting" title="Permalink to this heading">#</a></h2>
 <p>To plot the resulting arrays as a function of the orginal one (<code class="docutils literal notranslate"><span class="pre">xarray</span></code>)
 in the x-axis, you need to import the module <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> from <strong>Matplotlib</strong>.</p>
 <div class="cell docutils container">
@@ -1478,9 +1480,9 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="set-up-default-plotting-parameters">
-<h2>Set up default plotting parameters<a class="headerlink" href="#set-up-default-plotting-parameters" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="set-up-default-plotting-parameters">
+<h2>Set up default plotting parameters<a class="headerlink" href="#set-up-default-plotting-parameters" title="Permalink to this heading">#</a></h2>
 <p>The default Matplotlib fonts and linewidths are a little small. Pixels are free, so the next two lines increase the fontsize and linewidth</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1506,10 +1508,10 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0509d2c940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8ea0848ca0&gt;
 </pre></div>
 </div>
-<img alt="../_images/e6268f3194240cfe946be8cb6c1e64a86022b5f18ba2c49f3432be8e1ab2d182.png" src="../_images/e6268f3194240cfe946be8cb6c1e64a86022b5f18ba2c49f3432be8e1ab2d182.png" />
+<img alt="../_images/d000b978722346f57b9d23425a3faed038397d40cbdfd3ff40b0bb108d5928fe.png" src="../_images/d000b978722346f57b9d23425a3faed038397d40cbdfd3ff40b0bb108d5928fe.png" />
 </div>
 </div>
 <p>To illustrate other features, you will plot the same data, but varying the colors instead of the line style. We’ll also use LaTeX syntax to write formulas in the labels. If you want to know more about LaTeX syntax, there is a <a class="reference external" href="https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">quick guide to LaTeX</a> available online.</p>
@@ -1528,7 +1530,7 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/297b37bb4a86aef648edc29f8d588380327f9c2e23519bae91df81f6413932d5.png" src="../_images/297b37bb4a86aef648edc29f8d588380327f9c2e23519bae91df81f6413932d5.png" />
+<img alt="../_images/0443691bfe2b053b2f55af959717de0098f3075e38fbe582ad90f852cb578108.png" src="../_images/0443691bfe2b053b2f55af959717de0098f3075e38fbe582ad90f852cb578108.png" />
 </div>
 </div>
 <p>That’s very nice! By now, you are probably imagining all the great stuff
@@ -1536,13 +1538,13 @@ you can do with Jupyter notebooks, Python and its scientific libraries
 <strong>NumPy</strong> and <strong>Matplotlib</strong>. We just saw an introduction to plotting
 but you will keep learning about the power of <strong>Matplotlib</strong> in the next lesson.</p>
 <p>If you are curious, you can explore all the beautiful plots you can make by browsing the <a class="reference external" href="http://matplotlib.org/gallery.html">Matplotlib gallery</a>.</p>
-<div class="section" id="id4">
-<h3>Exercise:<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<section id="id4">
+<h3>Exercise:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Pick two different operations to apply to the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and plot them the resulting data in the same plot.</p>
-</div>
-</div>
-<div class="section" id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Good coding habits and file naming</p></li>
 <li><p>How to define a function and return outputs</p></li>
@@ -1553,17 +1555,17 @@ but you will keep learning about the power of <strong>Matplotlib</strong> in the
 <li><p>Performance comparison: lists vs NumPy arrays</p></li>
 <li><p>Basic plotting with <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Best practices for file naming</a>. Stanford Libraries</p></li>
 <li><p><em>Effective Computation in Physics: Field Guide to Research with Python</em> (2015). Anthony Scopatz &amp; Kathryn D. Huff. O’Reilly Media, Inc.</p></li>
 <li><p><em>Numerical Python: A Practical Techniques Approach for Industry</em>. (2015). Robert Johansson. Appress.</p></li>
 <li><p><a class="reference external" href="https://github.com/barbagroup/jupyter-tutorial">“The world of Jupyter”—a tutorial</a>. Lorena A. Barba - 2016</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Linear Regression Algebra &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Homework" href="HW_04.html" />
     <link rel="prev" title="Gauss Elimination" href="02_Gauss_elimination.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -495,8 +497,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="linear-regression-algebra">
-<h1>Linear Regression Algebra<a class="headerlink" href="#linear-regression-algebra" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-regression-algebra">
+<h1>Linear Regression Algebra<a class="headerlink" href="#linear-regression-algebra" title="Permalink to this heading">#</a></h1>
 <p>In the second Module <a class="reference internal" href="../module_02/README.html"><span class="doc std std-doc">CompMech02-Analyze-Data</span></a>, you
 imported data from the <a class="reference external" href="https://www.ncdc.noaa.gov/cag/">NOAA</a> (National
 Oceanic and Atmospheric Administration) youbpage. Then, you did a
@@ -514,8 +516,8 @@ problem.</p>
 </div>
 </div>
 </div>
-<div class="section" id="polynomials">
-<h2>Polynomials<a class="headerlink" href="#polynomials" title="Permalink to this headline">#</a></h2>
+<section id="polynomials">
+<h2>Polynomials<a class="headerlink" href="#polynomials" title="Permalink to this heading">#</a></h2>
 <p>In general, you may want to fit other polynomials besides degree-1
 (straight-lines). You used the <code class="docutils literal notranslate"><span class="pre">numpy.polyfit</span></code> to accomplish this task
 before
@@ -523,7 +525,7 @@ before
 <p><span class="math notranslate nohighlight">\(y=a_{0}+a_{1}x+a_{2}x^{2}+\cdots+a_{m}x^{m}+e\)</span></p>
 <p>Now, the solution for <span class="math notranslate nohighlight">\(a_{0},~a_{1},...a_{m}\)</span> is the minimization of m+1-dependent linear equations.</p>
 <p>Consider the following data:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>x</p></th>
 <th class="head"><p>y</p></th>
@@ -577,7 +579,7 @@ before
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b55a44b0aba451f8097473fcbceded6a3641b5450595cc92d9f1089ec27fde07.png" src="../_images/b55a44b0aba451f8097473fcbceded6a3641b5450595cc92d9f1089ec27fde07.png" />
+<img alt="../_images/d749fcaddbbf1ae5410908f12d877220220f9d9023177fe5d514977b0c54db38.png" src="../_images/d749fcaddbbf1ae5410908f12d877220220f9d9023177fe5d514977b0c54db38.png" />
 </div>
 </div>
 <p>A general polynomial decription of our function, <span class="math notranslate nohighlight">\(f(\mathbf{x}),~and~\mathbf{y}\)</span> is that you have <span class="math notranslate nohighlight">\(m+1\)</span> unknown coefficients, where <span class="math notranslate nohighlight">\(m\)</span> is the degree of the polynomial, and <span class="math notranslate nohighlight">\(n\)</span> independent equations. In the example framed below, you are choosing a second-order polnomial fit.</p>
@@ -666,9 +668,9 @@ before
 <span class="go">LinAlgError: Last 2 dimensions of the array must be square</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="reframe-the-least-square-problem">
-<h2>Reframe the least-square problem<a class="headerlink" href="#reframe-the-least-square-problem" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="reframe-the-least-square-problem">
+<h2>Reframe the least-square problem<a class="headerlink" href="#reframe-the-least-square-problem" title="Permalink to this heading">#</a></h2>
 <p>The solving routines that you have used (<code class="docutils literal notranslate"><span class="pre">linalg.solve</span></code> and <strong>Gauss elimination</strong>) all require a square matrix, so an <span class="math notranslate nohighlight">\(m\times m\)</span> matrix. For <span class="math notranslate nohighlight">\(m\)</span> unknowns, there should be <span class="math notranslate nohighlight">\(m\)</span> equations. Let’s revisit the least squares regression description</p>
 <p><span class="math notranslate nohighlight">\(~~\mathbf{y}~~~~~=~~[\mathbf{Z}]~~~~~~\mathbf{a}\)</span></p>
 <p><span class="math notranslate nohighlight">\([n\times 1]~ [n\times m][m\times 1]\)</span></p>
@@ -706,16 +708,16 @@ before
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e887692059db453bba195a01328ec2c7c007c8c1bbcf822180427874de7c2189.png" src="../_images/e887692059db453bba195a01328ec2c7c007c8c1bbcf822180427874de7c2189.png" />
+<img alt="../_images/c8cef8d153781fdc671d7fbdffdfc4ce9c8ec86540ee799bc14222f89d707dc1.png" src="../_images/c8cef8d153781fdc671d7fbdffdfc4ce9c8ec86540ee799bc14222f89d707dc1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <p>The quadratic curve plotted should be smooth, but matplotlib connected each (x,y)-location provided with straight lines. Plot the quadratic fit with 50 x-data points to make it smooth.</p>
-</div>
-<div class="section" id="general-coefficient-of-determination">
-<h2>General Coefficient of Determination<a class="headerlink" href="#general-coefficient-of-determination" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="general-coefficient-of-determination">
+<h2>General Coefficient of Determination<a class="headerlink" href="#general-coefficient-of-determination" title="Permalink to this heading">#</a></h2>
 <p>The <strong>coefficient of determination</strong> is a measure of how much the standard deviation is due to random error when the data is fit to a function. You make the assumption that the data has some underlying correlation in the form of a function <span class="math notranslate nohighlight">\(\mathbf{y}=f(\mathbf{x})\)</span>. So if you subtract the measured <span class="math notranslate nohighlight">\(\mathbf{y}-f(\mathbf{x})\)</span> the result should be random error associated with noise [4].</p>
 <p>The general coefficient of determination is defined as <span class="math notranslate nohighlight">\(r^2\)</span>,</p>
 <p><span class="math notranslate nohighlight">\(r^{2}=\frac{S_{t}-S_{r}}{S_{t}}=1-\frac{S_{r}}{S_t}\)</span></p>
@@ -739,28 +741,28 @@ before
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the coefficient of determination for this fit is 0.91119056038536
-the correlation coefficient this fit is 0.9545630206462851
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the coefficient of determination for this fit is 0.9111905603853598
+the correlation coefficient this fit is 0.954563020646285
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="discussion">
-<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h3>
+<section id="discussion">
+<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h3>
 <p>What is the highest possible coefficient of determination? If its maximized, is that a <em>good</em> thing?</p>
-</div>
-<div class="section" id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Compare the coefficient of determination for a straight line <em>(you have to do a fit)</em> to the quadratic fit <em>(done above)</em>. Which one is a better fit?</p>
-</div>
-</div>
-<div class="section" id="overfitting-warning">
-<h2>Overfitting Warning<a class="headerlink" href="#overfitting-warning" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="overfitting-warning">
+<h2>Overfitting Warning<a class="headerlink" href="#overfitting-warning" title="Permalink to this heading">#</a></h2>
 <p><strong>Coefficient of determination reduction does not always mean a better fit</strong></p>
 <p>You will always increase the coefficient of determination and decrease the total sum of squares error by adding more terms to your function. This is called <strong>overfitting</strong> your data. It is especially evident in polynomial fits, because they can behave unpredictably with higher order terms.</p>
-</div>
-<div class="section" id="nanonindentation-data-engineering-model-vs-higher-order-fit">
-<h2>Nanonindentation data engineering model vs higher-order fit<a class="headerlink" href="#nanonindentation-data-engineering-model-vs-higher-order-fit" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="nanonindentation-data-engineering-model-vs-higher-order-fit">
+<h2>Nanonindentation data engineering model vs higher-order fit<a class="headerlink" href="#nanonindentation-data-engineering-model-vs-higher-order-fit" title="Permalink to this heading">#</a></h2>
 <p>Now, use experimental data from some <a class="reference external" href="https://pdfs.semanticscholar.org/68c4/0c4eef562e2ac785fb7b4bcd6ee8229f2424.pdf">atomic force microscope nanoindentation of <span class="math notranslate nohighlight">\(MoS_2\)</span> [2]</a>. One of the nanoidentation experimental data files is in the data folder (<code class="docutils literal notranslate"><span class="pre">../data/mos2_afm.csv</span></code>).</p>
 <p>The experiment pushes an AFM tip into the center of a hole covered with
 a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0.6-nm thick. A diagram is shown below.</p>
@@ -770,7 +772,7 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 <p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the deflection of the sheet (z in the data), <span class="math notranslate nohighlight">\(A=\pi\sigma_0t\)</span>,  <span class="math notranslate nohighlight">\(B=1.09Et/r^2\)</span>, <span class="math notranslate nohighlight">\(\sigma_0\)</span> is the prestress in the sheet, <span class="math notranslate nohighlight">\(E\)</span> is the Young’s modulus, <span class="math notranslate nohighlight">\(t=0.6~nm\)</span> is the thickness, and <span class="math notranslate nohighlight">\(r=260~nm\)</span> is the radius of the sheet (they youre designed to be 250 nm, but there is some variation in microfabrication).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> head ../data/mos2_afm.csv
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span>../data/mos2_afm.csv
 </pre></div>
 </div>
 </div>
@@ -789,8 +791,8 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 </div>
 </div>
 </div>
-<div class="section" id="build-a-statistical-model-with-pythons-statsmodel">
-<h3>Build a statistical model with Python’s Statsmodel<a class="headerlink" href="#build-a-statistical-model-with-pythons-statsmodel" title="Permalink to this headline">#</a></h3>
+<section id="build-a-statistical-model-with-pythons-statsmodel">
+<h3>Build a statistical model with Python’s Statsmodel<a class="headerlink" href="#build-a-statistical-model-with-pythons-statsmodel" title="Permalink to this heading">#</a></h3>
 <p>In the first Linear regression example in linear algebra, you built the <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> matrix and set up the least squares problem in the form</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Z}^T\mathbf{ZA} = \mathbf{Z}^T\mathbf{y}\)</span>.</p>
 <p>Now, try using the <a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html"><code class="docutils literal notranslate"><span class="pre">statsmodel.ols</span></code></a> ordinary least squares statistical model solution. You use <code class="docutils literal notranslate"><span class="pre">ols</span></code> in two steps</p>
@@ -809,6 +811,18 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 <span class="n">y</span> <span class="o">=</span> <span class="n">F</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">mos2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/mos2_afm.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d</span> <span class="o">=</span> <span class="n">mos2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># deflection data</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
 </pre></div>
 </div>
 </div>
@@ -840,67 +854,6 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>coeffictients are A0 = 0.0018921394737263875, A1 = 1.5811965217538142
-Statsmodel summary of model
-</pre></div>
-</div>
-<div class="output text_html"><table class="simpletable">
-<caption>OLS Regression Results</caption>
-<tr>
-  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared (uncentered):</th>      <td>   0.999</td> 
-</tr>
-<tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared (uncentered):</th> <td>   0.999</td> 
-</tr>
-<tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>          <td>4.496e+05</td>
-</tr>
-<tr>
-  <th>Date:</th>             <td>Fri, 26 May 2023</td> <th>  Prob (F-statistic):</th>           <td>  0.00</td>  
-</tr>
-<tr>
-  <th>Time:</th>                 <td>08:03:08</td>     <th>  Log-Likelihood:    </th>          <td> -1227.5</td> 
-</tr>
-<tr>
-  <th>No. Observations:</th>      <td>   460</td>      <th>  AIC:               </th>          <td>   2459.</td> 
-</tr>
-<tr>
-  <th>Df Residuals:</th>          <td>   458</td>      <th>  BIC:               </th>          <td>   2467.</td> 
-</tr>
-<tr>
-  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>              <td> </td>    
-</tr>
-<tr>
-  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>              <td> </td>    
-</tr>
-</table>
-<table class="simpletable">
-<tr>
-   <td></td>     <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>x1</th> <td>    0.0019</td> <td> 7.29e-06</td> <td>  259.384</td> <td> 0.000</td> <td>    0.002</td> <td>    0.002</td>
-</tr>
-<tr>
-  <th>x2</th> <td>    1.5812</td> <td>    0.013</td> <td>  117.560</td> <td> 0.000</td> <td>    1.555</td> <td>    1.608</td>
-</tr>
-</table>
-<table class="simpletable">
-<tr>
-  <th>Omnibus:</th>       <td>137.172</td> <th>  Durbin-Watson:     </th> <td>   0.373</td> 
-</tr>
-<tr>
-  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td> 630.686</td> 
-</tr>
-<tr>
-  <th>Skew:</th>          <td>-1.235</td>  <th>  Prob(JB):          </th> <td>1.12e-137</td>
-</tr>
-<tr>
-  <th>Kurtosis:</th>      <td> 8.177</td>  <th>  Cond. No.          </th> <td>4.72e+03</td> 
-</tr>
-</table><br/><br/>Notes:<br/>[1] R² is computed without centering (uncentered) since the model does not contain a constant.<br/>[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[3] The condition number is large, 4.72e+03. This might indicate that there are<br/>strong multicollinearity or other numerical problems.</div><img alt="../_images/e1cafb327b350d146be63c8a3f78ac082bbd6ba4ea36c4be3979c647ca048bd5.png" src="../_images/e1cafb327b350d146be63c8a3f78ac082bbd6ba4ea36c4be3979c647ca048bd5.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -916,16 +869,10 @@ Statsmodel summary of model
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Youngs modulus from fit = 192 GPa
-Youngs modulus reported = 210 GPa
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="beyond-polynomials">
-<h3>Beyond polynomials<a class="headerlink" href="#beyond-polynomials" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="beyond-polynomials">
+<h3>Beyond polynomials<a class="headerlink" href="#beyond-polynomials" title="Permalink to this heading">#</a></h3>
 <p>Linear Regression is only limited by the ability to separate the parameters from the function to achieve</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{y}=[\mathbf{Z}]\mathbf{a}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> can be any function of the independent variable(s).</p>
@@ -942,9 +889,6 @@ Let’s take some voltage-vs-time data that you know has two frequency component
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;voltage (V)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/8c4f655ded12ea413d33aca1c450255df842271bbe28d0c932390a61fd163e4b.png" src="../_images/8c4f655ded12ea413d33aca1c450255df842271bbe28d0c932390a61fd163e4b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -965,14 +909,11 @@ Let’s take some voltage-vs-time data that you know has two frequency component
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/5db885188d761887ae8d29b123c6818397e727db13be709aa9107a97ef619f9a.png" src="../_images/5db885188d761887ae8d29b123c6818397e727db13be709aa9107a97ef619f9a.png" />
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="fitting-the-global-temperature-anomolies-again">
-<h2>Fitting the Global Temperature Anomolies again<a class="headerlink" href="#fitting-the-global-temperature-anomolies-again" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="fitting-the-global-temperature-anomolies-again">
+<h2>Fitting the Global Temperature Anomolies again<a class="headerlink" href="#fitting-the-global-temperature-anomolies-again" title="Permalink to this heading">#</a></h2>
 <p>Now, you have the right tools to fit our Global temperature anomolies properly. Let’s create a function with three constants</p>
 <p><span class="math notranslate nohighlight">\(f(t)= A\cdot t+B+ C\cdot H(t-1970)(t)\)</span></p>
 <p>Where, <span class="math notranslate nohighlight">\(A\)</span> is the slope from time 1880-1970, B is the intercept
@@ -996,26 +937,6 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is every 10th row of Z
----------------------------
-[[1880    1    0]
- [1890    1    0]
- [1900    1    0]
- [1910    1    0]
- [1920    1    0]
- [1930    1    0]
- [1940    1    0]
- [1950    1    0]
- [1960    1    0]
- [1970    1    0]
- [1980    1   10]
- [1990    1   20]
- [2000    1   30]
- [2010    1   40]]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1029,13 +950,10 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/6648aa66db399e775817cbf9626f1b0fa85d7692519d0d4b6eb1f6ec3a960e44.png" src="../_images/6648aa66db399e775817cbf9626f1b0fa85d7692519d0d4b6eb1f6ec3a960e44.png" />
 </div>
-</div>
-</div>
-<div class="section" id="what-youve-learned">
-<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="what-youve-learned">
+<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to use the <em>general least squares regression</em> method for almost any function</p></li>
 <li><p>How to calculate the coefficient of determination and correlation coefficient for a general least squares regression, <span class="math notranslate nohighlight">\(r^2~ and~ r\)</span></p></li>
@@ -1043,9 +961,9 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 <li><p>How to construct general least squares regression using the dependent and independent data to form <span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{Za}\)</span>.</p></li>
 <li><p>How to construct a piecewise linear regression</p></li>
 </ul>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">Numpy polyfit documentation</a></p></li>
 <li><p><a class="reference external" href="https://pdfs.semanticscholar.org/68c4/0c4eef562e2ac785fb7b4bcd6ee8229f2424.pdf">Cooper <em>et. al</em> 2014. Nonlinear Elastic Constants of <span class="math notranslate nohighlight">\(MoS_2\)</span>. <em>Phys. Rev. B</em> 2013.</a></p></li>
@@ -1053,8 +971,8 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 <li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> <strong>ch 14.</strong> McGraw Hill.</p></li>
 <li><p><a class="reference external" href="https://towardsdatascience.com/overfitting-vs-underfitting-a-complete-example-d05dd7e19765">Koerson, William. Overfitting vs. Underfitting: A Complete Example</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

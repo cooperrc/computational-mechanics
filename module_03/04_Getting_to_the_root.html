@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Roots of Nonlinear functions &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Homework" href="HW_03.html" />
     <link rel="prev" title="Get with the oscillations" href="03_Get_Oscillations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -512,10 +514,10 @@ document.write(`
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="tex2jax_ignore mathjax_ignore section" id="roots-of-nonlinear-functions">
-<h1>Roots of Nonlinear functions<a class="headerlink" href="#roots-of-nonlinear-functions" title="Permalink to this headline">#</a></h1>
-<div class="section" id="its-not-always-possible-to-analytically-solve-for-a-given-variable">
-<h2>It’s not always possible to analytically solve for a given variable.<a class="headerlink" href="#its-not-always-possible-to-analytically-solve-for-a-given-variable" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="roots-of-nonlinear-functions">
+<h1>Roots of Nonlinear functions<a class="headerlink" href="#roots-of-nonlinear-functions" title="Permalink to this heading">#</a></h1>
+<section id="its-not-always-possible-to-analytically-solve-for-a-given-variable">
+<h2>It’s not always possible to analytically solve for a given variable.<a class="headerlink" href="#its-not-always-possible-to-analytically-solve-for-a-given-variable" title="Permalink to this heading">#</a></h2>
 <p>In the last <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">Module 03</span></a>, you created an <em>implicit</em> Heun’s method that created the following problem: How can you solve for a value of <span class="math notranslate nohighlight">\(y\)</span>, a dependent variable, when the function is a function of <span class="math notranslate nohighlight">\(y\)</span>, in an equation format it becomes</p>
 <p><span class="math notranslate nohighlight">\(y=f(y,parameters)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(parameters\)</span> are known inputs to the equation, but the variable <span class="math notranslate nohighlight">\(y\)</span> is not separable from the function <span class="math notranslate nohighlight">\(f\)</span>. You can rewrite the problem as</p>
@@ -523,12 +525,12 @@ document.write(`
 <p>Many times, you may have a deeper problem such as wanting to know when two functions are equal to each other:</p>
 <p><span class="math notranslate nohighlight">\(0 = g(y,parameters) -f(y,parameters)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(g(y,parameters)\)</span> in the previous equation was <span class="math notranslate nohighlight">\(g(y)=y\)</span>.</p>
-</div>
-<div class="section" id="getting-to-the-root-of-a-problem">
-<h2>Getting to the root of a problem<a class="headerlink" href="#getting-to-the-root-of-a-problem" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="getting-to-the-root-of-a-problem">
+<h2>Getting to the root of a problem<a class="headerlink" href="#getting-to-the-root-of-a-problem" title="Permalink to this heading">#</a></h2>
 <p>This is a very common problem in engineering designs. You may have mathematical models for designs, but you can’t explicitly solve for the variables you can control or see [1].</p>
-<div class="section" id="freefall-example">
-<h3>Freefall example:<a class="headerlink" href="#freefall-example" title="Permalink to this headline">#</a></h3>
+<section id="freefall-example">
+<h3>Freefall example:<a class="headerlink" href="#freefall-example" title="Permalink to this heading">#</a></h3>
 <p>Consider an observation of an object, with a known shape, so its drag coefficient c=0.25 kg/m. If the object reaches a velocity of 36 m/s after 4 seconds of freefalling, what is its mass?</p>
 <p><span class="math notranslate nohighlight">\(v(t)=\sqrt{\frac{gm}{c_{d}}}\tanh(\sqrt{\frac{gc_{d}}{m}}t)\)</span></p>
 <p>We can plug in the known parameters, <span class="math notranslate nohighlight">\(t=4~s\)</span>, <span class="math notranslate nohighlight">\(v=36~m/s\)</span>, <span class="math notranslate nohighlight">\(c_d=0.25\)</span> kg/s, and <span class="math notranslate nohighlight">\(g=9.81~m/s^2\)</span>, but you cannot separate <span class="math notranslate nohighlight">\(m\)</span> from the <span class="math notranslate nohighlight">\(\tanh\)</span> and <span class="math notranslate nohighlight">\(\sqrt{}\)</span>.</p>
@@ -558,7 +560,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">=</span><span class="mf">9.81</span> <span class="c1"># acceleration due to gravity</span>
 
 <span class="k">def</span> <span class="nf">f_m</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">v</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">c_d</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,):</span>
-    <span class="sd">&#39;&#39;&#39; define a function f(m) that returns </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; define a function f(m) that returns </span>
 <span class="sd">    v(t)-sqrt(mg/cd)*tanh(sqrt(gcd/m)*t)</span>
 <span class="sd">    </span>
 <span class="sd">    arguments:</span>
@@ -586,7 +588,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6496a750f60955128f23adad357fb21a9050f57a7dbaa90cf72ab640d4839d3e.png" src="../_images/6496a750f60955128f23adad357fb21a9050f57a7dbaa90cf72ab640d4839d3e.png" />
+<img alt="../_images/bf83903bba1704c95f4cf754e89bdb39223f4f93326111752f972b3fa352e40c.png" src="../_images/bf83903bba1704c95f4cf754e89bdb39223f4f93326111752f972b3fa352e40c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -609,10 +611,10 @@ document.write(`
 </ol>
 <p>In <strong>Bracketing</strong> methods, you choose an upper and lower bound and find the best solution in that range.</p>
 <p>In <strong>Open</strong> methods, you choose an initial guess, then you have a function that brings us closer to the solution with every iteration.</p>
-</div>
-</div>
-<div class="section" id="incremental-searching-a-smarter-brute-force-approach">
-<h2>Incremental searching ( a smarter brute force approach)<a class="headerlink" href="#incremental-searching-a-smarter-brute-force-approach" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="incremental-searching-a-smarter-brute-force-approach">
+<h2>Incremental searching ( a smarter brute force approach)<a class="headerlink" href="#incremental-searching-a-smarter-brute-force-approach" title="Permalink to this heading">#</a></h2>
 <p>If you consider a range of possible masses, e.g. 50 kg - 200 kg, then you can evaluate your function <span class="math notranslate nohighlight">\(f(m)\)</span> at evenly-spaced intervals and look for x-axis crossings. If the value of <span class="math notranslate nohighlight">\(f(m_{i})\)</span> is positive, and the value of <span class="math notranslate nohighlight">\(f(m_{i+1})\)</span> is negative, then the correct mass is somewhere between <span class="math notranslate nohighlight">\(m_i\)</span> and <span class="math notranslate nohighlight">\(m_{i+1}\)</span>.</p>
 <p>Take a look at the implementation you have below of the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function.</p>
 <p>There are a few key lines to look at:</p>
@@ -627,14 +629,14 @@ document.write(`
 </pre></div>
 </div>
 <p>On these three lines, you are looking for sign-changes in the array <code class="docutils literal notranslate"><span class="pre">f</span></code>. First, you get just the sign of each array value with <code class="docutils literal notranslate"><span class="pre">np.sign</span></code>. Then, you look at the changes in sign with the difference between f[i] and f[i-1] for i=1…len(f). Finally, you get the indices sign changes by looking for nonzero elements in <code class="docutils literal notranslate"><span class="pre">delta_sign_f</span></code>.</p>
-</div>
-<div class="section" id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
 <p>Why can’t you just consider cases where <code class="docutils literal notranslate"><span class="pre">delta_sign_f&gt;0</span></code>? Why do you care about all nonzero sign changes?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incsearch</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ns</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;incsearch: incremental search root locator</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;incsearch: incremental search root locator</span>
 <span class="sd">    xb = incsearch(func,xmin,xmax,ns):</span>
 <span class="sd">      finds brackets of x that contain sign changes</span>
 <span class="sd">      of a function on an interval</span>
@@ -667,9 +669,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="test-your-function">
-<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="test-your-function">
+<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this heading">#</a></h2>
 <p>To test your <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function on a known function, let’s try finding all the times that <span class="math notranslate nohighlight">\(sin(x)\)</span> crosses the x-axis from <span class="math notranslate nohighlight">\(x=-1...7\)</span>. Our function should return values at <span class="math notranslate nohighlight">\(x=0,~x=\pi/2,~x=\pi.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -691,12 +693,12 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of brackets:  3
 </pre></div>
 </div>
-<img alt="../_images/657dde4303f2b1270b99f9b746e5e4b017008ed00c9fc28365469197e74f64a5.png" src="../_images/657dde4303f2b1270b99f9b746e5e4b017008ed00c9fc28365469197e74f64a5.png" />
+<img alt="../_images/5db6a1d3d0cd0358173731d5350c91b1caf4007dad0a5bfa64e8ebfc75406252.png" src="../_images/5db6a1d3d0cd0358173731d5350c91b1caf4007dad0a5bfa64e8ebfc75406252.png" />
 </div>
 </div>
-</div>
-<div class="section" id="success-incsearch-works">
-<h2>Success - incsearch works<a class="headerlink" href="#success-incsearch-works" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="success-incsearch-works">
+<h2>Success - incsearch works<a class="headerlink" href="#success-incsearch-works" title="Permalink to this heading">#</a></h2>
 <p>You should see that <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> returns intervals in the correct locations near x=0, x=<span class="math notranslate nohighlight">\(\pi/2\)</span> and x=<span class="math notranslate nohighlight">\(\pi.\)</span> Now, let’s apply it to the freefall problem and discover what mass is necessary to reach 36 m/s at t=4 sec of freefall.</p>
 <p>Depending upon what <code class="docutils literal notranslate"><span class="pre">ns</span></code> you choose, you should see that a mass of 142-143 kg will reach 36 m/s in 4 seconds of freefall.</p>
 <div class="cell docutils container">
@@ -717,16 +719,16 @@ Lower bound on mass = 142.42 kg
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function to find the number of times <span class="math notranslate nohighlight">\(cos(x)=0\)</span> in the interval <span class="math notranslate nohighlight">\(x=0...8\)</span>.</p>
 <p>Plot x-vs-cos(x)</p>
 <p>and</p>
 <p>plot the values of <code class="docutils literal notranslate"><span class="pre">xb</span></code> and <code class="docutils literal notranslate"><span class="pre">np.cos(xb)</span></code> as <span class="math notranslate nohighlight">\(\circ\)</span>-markers (<code class="docutils literal notranslate"><span class="pre">'o'</span></code>)</p>
-</div>
-<div class="section" id="bisection-method">
-<h2>Bisection method<a class="headerlink" href="#bisection-method" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bisection-method">
+<h2>Bisection method<a class="headerlink" href="#bisection-method" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function will always return a set of upper and lower bounds on the zeros of a function, but if you want to increase the accuracy of your solutions, you have to calculate <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>a lot</strong>. The error in the solution is always</p>
 <p><span class="math notranslate nohighlight">\(error = \frac{x_{max}-x_{min}}{ns}\)</span></p>
 <p>We can reduce the number of times you have to evaluate the function with more insight.</p>
@@ -752,26 +754,26 @@ Lower bound on mass = 142.42 kg
 </div>
 </div>
 <p>Now, you have reduced your region of interest to just 125-200 kg.</p>
-</div>
-<div class="section" id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Divide the region 125-200 kg into two, and repeat the above step. Is the solution in the upper (163-200 kg)? or lower (125-163 kg) region? What are the values of f_m(m)?</p>
-</div>
-<div class="section" id="bisect-function">
-<h2>Bisect Function<a class="headerlink" href="#bisect-function" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bisect-function">
+<h2>Bisect Function<a class="headerlink" href="#bisect-function" title="Permalink to this heading">#</a></h2>
 <p>We can automate this process with a <code class="docutils literal notranslate"><span class="pre">bisect</span></code> function. Its a much better root locator because you can reduce the error without evaluating the function a lot of times [1, 2].</p>
 <p><em>Note the use of the function <code class="docutils literal notranslate"><span class="pre">break</span></code>:</em></p>
 <p>We can use an <code class="docutils literal notranslate"><span class="pre">if</span></code>-statement to check a condition and <code class="docutils literal notranslate"><span class="pre">break</span></code> the loop if that condition is met. These break statements are often used in <code class="docutils literal notranslate"><span class="pre">while</span></code>-loops so that you can have some stopping criteria. In your case, you use the specified error, <code class="docutils literal notranslate"><span class="pre">es</span></code>, as a stopping criteria. If your relative error,</p>
 <p><span class="math notranslate nohighlight">\(e_{relative} = \frac{|x_{new}-x_{old}|}{x_{new}}\)</span></p>
 <p>is less than your specified error, the loop is broken and the number of iterations halts at that point.</p>
-</div>
-<div class="section" id="id2">
-<h2>Discussion<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id2">
+<h2>Discussion<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>What is another stopping criteria that you could use?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bisect</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">xl</span><span class="p">,</span><span class="n">xu</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;bisect: root location zeroes</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;bisect: root location zeroes</span>
 <span class="sd">    root,fx,ea,iter=bisect(func,xl,xu,es,maxit,p1,p2,...):</span>
 <span class="sd">    uses bisection method to find the root of func</span>
 <span class="sd">    arguments:</span>
@@ -830,18 +832,18 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="recursive-functions">
-<h2>Recursive functions<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="recursive-functions">
+<h2>Recursive functions<a class="headerlink" href="#recursive-functions" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the next two open root solvers (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code> and <code class="docutils literal notranslate"><span class="pre">modsecant</span></code>) make use of a recursive function.</p>
 <p>Definition:</p>
 <p><strong>recursive: for a definition of recursive, see recursive.</strong></p>
 <p>Recursive functions work by updating an initial assignment each time the function is called. In the bisection method, the initial solution is assumed to be halfway between the upper and lower bound</p>
 <p><span class="math notranslate nohighlight">\(x_{r} = \frac{x_u+x_l}{2},\)</span></p>
 <p>but once the upper or lower bound is updated, the value of <span class="math notranslate nohighlight">\(x_r\)</span> is updated as well. This is why the first step in the loop is to temporarily save <span class="math notranslate nohighlight">\(x_r\)</span> as <code class="docutils literal notranslate"><span class="pre">xrold</span></code>. With the <code class="docutils literal notranslate"><span class="pre">xrold</span></code> variable, you can track the progress of your solution.</p>
-</div>
-<div class="section" id="newton-raphson-open-method">
-<h2>Newton-Raphson: Open method<a class="headerlink" href="#newton-raphson-open-method" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="newton-raphson-open-method">
+<h2>Newton-Raphson: Open method<a class="headerlink" href="#newton-raphson-open-method" title="Permalink to this heading">#</a></h2>
 <p>Bracketing methods are great, but they are burdened by slow convergence rates. In the bisection method, you reduce your error by 50% with each region of interest selection, but this is rather slow.</p>
 <p>One of the fastest root-finding methods is the <strong>Newton-Raphson</strong> method, it is an <strong>open method</strong> so it does not require an upper- and lower-bound [1,2].</p>
 <p>The <strong>Newton-Raphson</strong> works by creating a Taylor series expansion around your initial guess of the function,</p>
@@ -852,9 +854,9 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 <p><span class="math notranslate nohighlight">\(x_{solution} = x_{0}+ \Delta x\)</span></p>
 <p>where</p>
 <p><span class="math notranslate nohighlight">\(\Delta x = -f(x) \left({\frac{df}{dx}}\right)^{-1}.\)</span></p>
-</div>
-<div class="section" id="newton-raphson-example">
-<h2>Newton-Raphson example<a class="headerlink" href="#newton-raphson-example" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="newton-raphson-example">
+<h2>Newton-Raphson example<a class="headerlink" href="#newton-raphson-example" title="Permalink to this heading">#</a></h2>
 <p>Let’s use the <strong>Newton-Raphson</strong> method to solve an engineering problem. Consider a spherical tank of water that can be filled to a height, <span class="math notranslate nohighlight">\(h\)</span>, and has radius, <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <p>The volume of water, <span class="math notranslate nohighlight">\(V\)</span>, in the tank is</p>
 <p><span class="math notranslate nohighlight">\(V= \pi h^2\frac{3R-h}{3}.\)</span></p>
@@ -891,18 +893,18 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>Discussion<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id3">
+<h2>Discussion<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Try changing the value of <code class="docutils literal notranslate"><span class="pre">xguess</span></code>. Is there any way to choose the best <code class="docutils literal notranslate"><span class="pre">xguess</span></code> value? Are there any <code class="docutils literal notranslate"><span class="pre">xguess</span></code> values that return an Python error? Why?</p>
-</div>
-<div class="section" id="create-a-newton-raphson-function">
-<h2>Create a Newton-Raphson function<a class="headerlink" href="#create-a-newton-raphson-function" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="create-a-newton-raphson-function">
+<h2>Create a Newton-Raphson function<a class="headerlink" href="#create-a-newton-raphson-function" title="Permalink to this heading">#</a></h2>
 <p>In the same way that you created bracketing method functions, you can create the Newton-Raphson method function to update your <code class="docutils literal notranslate"><span class="pre">xguess</span></code> until a desired tolerance is achieved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">newtraph</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">dfunc</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;newtraph: Newton-Raphson root location zeroes</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;newtraph: Newton-Raphson root location zeroes</span>
 <span class="sd">    root,[ea,iter]=newtraph(func,dfunc,x0,es,maxit,p1,p2,...):</span>
 <span class="sd">    uses Newton-Raphson method to find the root of func</span>
 <span class="sd">    arguments:</span>
@@ -946,9 +948,9 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="compare-techniques">
-<h2>Compare techniques<a class="headerlink" href="#compare-techniques" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="compare-techniques">
+<h2>Compare techniques<a class="headerlink" href="#compare-techniques" title="Permalink to this heading">#</a></h2>
 <p>Let’s compare the relative error in finding the height, <span class="math notranslate nohighlight">\(h\)</span>, in the previous example as a function of the number of iterations in the bisection (<code class="docutils literal notranslate"><span class="pre">bisect</span></code>) method and the Newton-Raphson (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code>).</p>
 <p>What you should see is that as you increase the number of iterations, the relative error decreases. You can compare the rate that the error decreases, <span class="math notranslate nohighlight">\(\frac{\Delta error}{\# iterations},\)</span> for your two root locators.</p>
 <p>We are going to set the maximum iterations, <code class="docutils literal notranslate"><span class="pre">maxit=n[i]</span></code>, to the desired value in the loop, but you want as low of an error as possible. You set your specified error to <code class="docutils literal notranslate"><span class="pre">es=0</span></code>.</p>
@@ -976,29 +978,29 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11ebe671405d139b160e1d73833fca6faf43bd0d1eba76fb0099bb5410fcfcd2.png" src="../_images/11ebe671405d139b160e1d73833fca6faf43bd0d1eba76fb0099bb5410fcfcd2.png" />
+<img alt="../_images/b565fa3cb149a5d40c1b6ff2249efb92a2a9169f952d5bfcd50060994c4d7d46.png" src="../_images/b565fa3cb149a5d40c1b6ff2249efb92a2a9169f952d5bfcd50060994c4d7d46.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>Discussion<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id4">
+<h2>Discussion<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>There is a drastic difference between the <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the <code class="docutils literal notranslate"><span class="pre">newtraph</span></code> function. How many iterations are necessary for the bisection method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %? How many iterations are necessary for the Newton-Raphson method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %?</p>
 <p>Are there any benefits to the bisection method? When would the Newton-Raphson method not work? or not be appropriate?</p>
-</div>
-<div class="section" id="secant-methods">
-<h2>Secant Methods<a class="headerlink" href="#secant-methods" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="secant-methods">
+<h2>Secant Methods<a class="headerlink" href="#secant-methods" title="Permalink to this heading">#</a></h2>
 <p>The key to the Newton-Raphson method is its evaluation of the derivative of the function, but you can’t always evaluate the derivative. Many numerical functions, such as the solution to differential equations that you worked on in notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a>, <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a>, and <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">03</span></a> do not have analytical derivatives. Instead, you will approximate the derivative with a modified secant method.</p>
 <p>Approximation of derivative:</p>
 <p><span class="math notranslate nohighlight">\(f'(x) \approx \frac{f(x+\delta x)-f(x)}{\delta x}\)</span></p>
-</div>
-<div class="section" id="modified-secant-method">
-<h2>Modified Secant method<a class="headerlink" href="#modified-secant-method" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="modified-secant-method">
+<h2>Modified Secant method<a class="headerlink" href="#modified-secant-method" title="Permalink to this heading">#</a></h2>
 <p>Change the x evaluations to a perturbation <span class="math notranslate nohighlight">\(\delta\)</span> [1,2].</p>
 <p><span class="math notranslate nohighlight">\(x_{i+1}=x_{i}-\frac{f(x_{i})(\delta x_{i})}{f(x_{i}+\delta x_{i})-f(x_{i})}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mod_secant</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">dx</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;mod_secant: Modified secant root location zeroes</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;mod_secant: Modified secant root location zeroes</span>
 <span class="sd">    root,[fx,ea,iter]=mod_secant(func,dfunc,xr,es,maxit,p1,p2,...):</span>
 <span class="sd">    uses modified secant method to find the root of func</span>
 <span class="sd">    arguments:</span>
@@ -1062,13 +1064,13 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c00dddaa92e02cfd4f495635eceb633d1e3d3c931c89172d781b57440d08bc21.png" src="../_images/c00dddaa92e02cfd4f495635eceb633d1e3d3c931c89172d781b57440d08bc21.png" />
+<img alt="../_images/e9eb00a88be0217b6ad528bfe92c1e60586d5c3555b58963238bb5cd99d0cc49.png" src="../_images/e9eb00a88be0217b6ad528bfe92c1e60586d5c3555b58963238bb5cd99d0cc49.png" />
 </div>
 </div>
 <p>The modified secant can converge as quick as the Newton-Raphson method, but there is no universal <span class="math notranslate nohighlight">\(\delta x\)</span> that works well for every problem. Typically, it is set as a small number and then varied based upon the conergence rate for the problem.</p>
-</div>
-<div class="section" id="shooting-method">
-<h2>Shooting method<a class="headerlink" href="#shooting-method" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="shooting-method">
+<h2>Shooting method<a class="headerlink" href="#shooting-method" title="Permalink to this heading">#</a></h2>
 <p>Now, you have multiple solving methods to revisit your <strong>Initial Value Problems</strong>. In notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a> and <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a> you measured the displacement of a ball as a function of time. You <em>assumed</em> the initial velocity was 0 in the case of the dropped object, or you approximated the velocity based upon the first two measured displacements and a finite difference approximation.</p>
 <p>Consider the case of the tennis ball that was dropped in the <a class="reference download internal" download="" href="../_downloads/5b4a86ec241f74f5750a58ac24e044a7/fallingtennisball02.txt"><span class="xref download myst">‘data/fallingtennisball02.txt file’</span></a>. After it strikes the ground, you don’t really <em>know</em> the velocity. What you <em>do know</em> is that the position was <span class="math notranslate nohighlight">\(\approx 0\)</span> at t=0.58 s and it was <span class="math notranslate nohighlight">\(\approx 0\)</span> m at t=1.43 s. Solving your differential equation without an initial velocity is known as a “shooting” method.</p>
 <p><img alt="The shooting method imagined as a catapult aiming at a target" src="../_images/shooting.png" /></p>
@@ -1100,7 +1102,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 at time t=1.42 s, y=-0.0110 m
 </pre></div>
 </div>
-<img alt="../_images/6e19be25afac03adbd78a6229e663d407cf1d2e85ae073d7d5a158bfdb1bebe0.png" src="../_images/6e19be25afac03adbd78a6229e663d407cf1d2e85ae073d7d5a158bfdb1bebe0.png" />
+<img alt="../_images/3e73095b8cacfe8d099257a924b91594b1a6daf7b8805dfc553a3a9c30fc405a.png" src="../_images/3e73095b8cacfe8d099257a924b91594b1a6daf7b8805dfc553a3a9c30fc405a.png" />
 </div>
 </div>
 <p>Now, let’s look at the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> function you created that described the motion of the tennis ball. Remember, this function returns the derivative of the state. So if you input</p>
@@ -1110,7 +1112,7 @@ at time t=1.42 s, y=-0.0110 m
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fall_drag</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">C_d</span><span class="o">=</span><span class="mf">0.47</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mf">0.0577</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="mf">0.0661</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
 <span class="sd">    for the fall of a ball, with drag, in SI units.</span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
@@ -1139,7 +1141,7 @@ at time t=1.42 s, y=-0.0110 m
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk2_step</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Update a state to the next time increment using modified Euler&#39;s method.</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Update a state to the next time increment using modified Euler&#39;s method.</span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
 <span class="sd">    ---------</span>
@@ -1159,16 +1161,16 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="defining-your-problem-for-python">
-<h2>Defining your problem for Python<a class="headerlink" href="#defining-your-problem-for-python" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="defining-your-problem-for-python">
+<h2>Defining your problem for Python<a class="headerlink" href="#defining-your-problem-for-python" title="Permalink to this heading">#</a></h2>
 <p>Now, you can finally ask your engineering question in a Python way.</p>
 <p>We need a function, <span class="math notranslate nohighlight">\(f(v_0)\)</span>, such that when you input the correct velocity for the initial condition, <span class="math notranslate nohighlight">\(f(v_0^{correct})=0\)</span></p>
 <p>So you define a new function with <code class="docutils literal notranslate"><span class="pre">def</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_v</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="n">y0</span><span class="o">=</span><span class="n">ybounce</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">yT</span><span class="o">=</span><span class="n">ybounce</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="n">tbounce</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tbounce</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span><span class="n">N</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; define a function f(v) that returns </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; define a function f(v) that returns </span>
 <span class="sd">    ymeasured(T)-ypredicted(T)</span>
 <span class="sd">    here, the time span is based upon the tbounce variable defined above from </span>
 <span class="sd">    the first bounce to the second bounce</span>
@@ -1243,16 +1245,16 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19de1e55069cf45768ff0dfab79f03dd594865be88844e8a890cd68dc63ec9ea.png" src="../_images/19de1e55069cf45768ff0dfab79f03dd594865be88844e8a890cd68dc63ec9ea.png" />
+<img alt="../_images/f4d9b9af30dc209e208f9649f17558036972e25a7d9d3e94a56beab8b78281a1.png" src="../_images/f4d9b9af30dc209e208f9649f17558036972e25a7d9d3e94a56beab8b78281a1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id5">
-<h2>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id5">
+<h2>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>Enter your best guess for <code class="docutils literal notranslate"><span class="pre">v0</span></code>. What is the error between the measured <code class="docutils literal notranslate"><span class="pre">yT</span></code> and your predicted y(T)? <em>Hint: use your function, <code class="docutils literal notranslate"><span class="pre">f_v</span></code>, and plot the results.</em></p>
-</div>
-<div class="section" id="solving-the-engineering-problem">
-<h2>Solving the engineering problem<a class="headerlink" href="#solving-the-engineering-problem" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="solving-the-engineering-problem">
+<h2>Solving the engineering problem<a class="headerlink" href="#solving-the-engineering-problem" title="Permalink to this heading">#</a></h2>
 <p>Now, you have all the components you need for this “shooting” problem. You can’t evaluate a derivative easily and the bisection method is too slow. Therefore, you will use the <code class="docutils literal notranslate"><span class="pre">mod_secant</span></code> function to find the correct initial velocity.</p>
 <p>Below is the solution. <em>Just one line of code!</em></p>
 <div class="cell docutils container">
@@ -1270,9 +1272,9 @@ the solve took  3  iterations
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
-<h2>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id6">
+<h2>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>Change the value of the <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">x0</span></code>. Does it change the final result? Does it change the time it took to arrive at the solution or the number of iterations?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1281,9 +1283,9 @@ the solve took  3  iterations
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to find the 0 of a function, aka root-finding</p></li>
 <li><p>The difference between a bracketing and an open methods for finding roots</p></li>
@@ -1295,15 +1297,15 @@ the solve took  3  iterations
 <li><p>Solve an initial value problem with missing initial conditions (the shooting method)</p></li>
 <li><p><em>Bonus: In the Problems you’ll consider stability of bracketing and open methods.</em></p></li>
 </ul>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> McGraw Hill.</p></li>
 <li><p><em>Computational Physics with Python</em>, lecture notes by Eric Ayars, California State University, Chico. Available online on the author’s website: <a class="reference external" href="https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf">https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>How to use SymPy to solve equations &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -260,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/how-to/symbolic.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/how-to/symbolic.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/how-to/symbolic.ipynb&branch=master" target="_blank"
+      <li><a href="https://compmech.uconn.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/how-to/symbolic.md&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -492,19 +494,18 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">79e3</span><span class="n">c5d7b421</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="how-to-use-sympy-to-solve-equations">
-<h1>How to use <a class="reference external" href="https://www.sympy.org">SymPy</a> to solve equations<a class="headerlink" href="#how-to-use-sympy-to-solve-equations" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="how-to-use-sympy-to-solve-equations">
+<h1>How to use <a class="reference external" href="https://www.sympy.org">SymPy</a> to solve equations<a class="headerlink" href="#how-to-use-sympy-to-solve-equations" title="Permalink to this heading">#</a></h1>
 <p>It can be difficult to create algebra and calculus solutions with symbolic math. For example if you want have an analytical equation to compare to a numerical equation. <a class="reference external" href="https://www.sympy.org">SymPy</a> is a <em>symbolic Python</em> library that allows you to create variables, rearrange equations, and do math operations (derivatives, integrals, Taylor series, etc.).</p>
 <p>In this notebook you will:</p>
 <p>Consider the freefall kinematic equation, <span class="math notranslate nohighlight">\(x(t) = x_0 +v_0 t +\frac{a}{2}t^2\)</span>, then</p>
@@ -514,8 +515,8 @@ document.write(`
 <li><p>take a derivative of the function</p></li>
 <li><p><a class="reference external" href="https://docs.sympy.org/latest/tutorial/basic_operations.html#lambdify"><code class="docutils literal notranslate"><span class="pre">lambdify</span></code></a> the output and plot the maximum height vs initial speed of a baseball thrown upwards from 1 m</p></li>
 </ol>
-<div class="section" id="define-variables-with-sympy">
-<h2>1. define variables with <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#define-variables-with-sympy" title="Permalink to this headline">#</a></h2>
+<section id="define-variables-with-sympy">
+<h2>1. define variables with <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#define-variables-with-sympy" title="Permalink to this heading">#</a></h2>
 <p>First, define some variables that you can use to define equations. Here, you create 4 variables:</p>
 <ol class="arabic simple">
 <li><p>time, <span class="math notranslate nohighlight">\(t\)</span></p></li>
@@ -532,9 +533,9 @@ document.write(`
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> of these variables are <code class="docutils literal notranslate"><span class="pre">sympy.core.symbol.Symbol</span></code>. This means SymPy will consider <code class="docutils literal notranslate"><span class="pre">t,</span> <span class="pre">a,</span> <span class="pre">v_0,</span></code> and <code class="docutils literal notranslate"><span class="pre">x_0</span></code> as symbolic objects, not floating point or integers.</p>
-</div>
-<div class="section" id="create-an-equation">
-<h2>2. create an equation<a class="headerlink" href="#create-an-equation" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="create-an-equation">
+<h2>2. create an equation<a class="headerlink" href="#create-an-equation" title="Permalink to this heading">#</a></h2>
 <p>Now, you can use these variables to define the kinematic equation for a free falling object:</p>
 <p><span class="math notranslate nohighlight">\(x(t) = x_0 + v_0 t + \frac{a}{2}t^2\)</span></p>
 <div class="cell docutils container">
@@ -550,9 +551,9 @@ document.write(`
 <div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\displaystyle</span> <span class="k">\frac</span><span class="nb">{</span>a t<span class="nb">^{</span>2<span class="nb">}}{</span>2<span class="nb">}</span> + t v<span class="nb">_{</span>0<span class="nb">}</span> + x<span class="nb">_{</span>0<span class="nb">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="take-a-derivative-of-the-function-and-fin-the-point-when-v-t-0">
-<h2>3. take a derivative of the function and fin the point when <span class="math notranslate nohighlight">\(v(t) = 0\)</span><a class="headerlink" href="#take-a-derivative-of-the-function-and-fin-the-point-when-v-t-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="take-a-derivative-of-the-function-and-fin-the-point-when-v-t-0">
+<h2>3. take a derivative of the function and fin the point when <span class="math notranslate nohighlight">\(v(t) = 0\)</span><a class="headerlink" href="#take-a-derivative-of-the-function-and-fin-the-point-when-v-t-0" title="Permalink to this heading">#</a></h2>
 <p>So far, you have defined the position, <span class="math notranslate nohighlight">\(x(t)\)</span>, as <code class="docutils literal notranslate"><span class="pre">x</span></code>. Now, you can take a derivative to get the velocity, <span class="math notranslate nohighlight">\(v(t) = \frac{dx}{dt}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,9 +598,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="lambdify-the-output-and-plot-the-array">
-<h2>4. <a class="reference external" href="https://docs.sympy.org/latest/tutorial/basic_operations.html#lambdify"><code class="docutils literal notranslate"><span class="pre">lambdify</span></code></a> the output and plot the array<a class="headerlink" href="#lambdify-the-output-and-plot-the-array" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="lambdify-the-output-and-plot-the-array">
+<h2>4. <a class="reference external" href="https://docs.sympy.org/latest/tutorial/basic_operations.html#lambdify"><code class="docutils literal notranslate"><span class="pre">lambdify</span></code></a> the output and plot the array<a class="headerlink" href="#lambdify-the-output-and-plot-the-array" title="Permalink to this heading">#</a></h2>
 <p>You now have symbolic functions that describe freefall motion:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: <span class="math notranslate nohighlight">\(x(t)\)</span> the height of the object</p></li>
@@ -656,8 +657,8 @@ Start with <code class="docutils literal notranslate"><span class="pre">x</span>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

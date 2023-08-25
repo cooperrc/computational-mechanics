@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>03 - Linear regression with real data &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="04 - Statistics and Monte-Carlo Models" href="04_Stats_and_Montecarlo.html" />
     <link rel="prev" title="02 - Seeing stats in a new light" href="02_Seeing_Stats.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -502,10 +504,10 @@ document.write(`
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
-<div class="tex2jax_ignore mathjax_ignore section" id="linear-regression-with-real-data">
-<h1>03 - Linear regression with real data<a class="headerlink" href="#linear-regression-with-real-data" title="Permalink to this headline">#</a></h1>
-<div class="section" id="earth-temperature-over-time">
-<h2>Earth temperature over time<a class="headerlink" href="#earth-temperature-over-time" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-regression-with-real-data">
+<h1>03 - Linear regression with real data<a class="headerlink" href="#linear-regression-with-real-data" title="Permalink to this heading">#</a></h1>
+<section id="earth-temperature-over-time">
+<h2>Earth temperature over time<a class="headerlink" href="#earth-temperature-over-time" title="Permalink to this heading">#</a></h2>
 <p>In this lesson, you will analyze real data of Earth temperature over time.</p>
 <p>Is global temperature rising? How much? This is a question of burning importance in today’s world!</p>
 <p>Data about global temperatures are available from several sources: NASA, the National Climatic Data Center (NCDC) and the University of East Anglia in the UK. Check out the <a class="reference external" href="https://www2.ucar.edu/climate/faq/how-much-has-global-temperature-risen-last-100-years">University Corporation for Atmospheric Research</a> (UCAR) for an in-depth discussion.</p>
@@ -534,9 +536,9 @@ document.write(`
 <p>The first step in analyzing unknown data is to generate some simple plots using <strong>Matplotlib</strong>. You are going to look at the temperature-anomaly history, contained in a file, and make our first plot to explore this data.</p>
 <p>We are going to smooth the data and then you’ll fit a line to it to find a trend, plotting along the way to see how it all looks.</p>
 <p>Let’s get started!</p>
-</div>
-<div class="section" id="step-1-read-a-data-file">
-<h2>Step 1: Read a data file<a class="headerlink" href="#step-1-read-a-data-file" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="step-1-read-a-data-file">
+<h2>Step 1: Read a data file<a class="headerlink" href="#step-1-read-a-data-file" title="Permalink to this heading">#</a></h2>
 <p>We took the data from the <a class="reference external" href="https://www.ncdc.noaa.gov/cag/">NOAA</a> (National Oceanic and Atmospheric Administration) webpage. Feel free to play around with the webpage and analyze data on your own, but for now, let’s make sure you’re working with the same dataset.</p>
 <p>We have a file named <code class="docutils literal notranslate"><span class="pre">land_global_temperature_anomaly-1880-2016.csv</span></code> in our <code class="docutils literal notranslate"><span class="pre">data</span></code> folder. This file contains the year on the first column, and averages of land temperature anomaly listed sequentially on the second column, from the year 1880 to 2016. You will load the file, then make an initial plot to see what it looks like.</p>
 <p>Start by importing NumPy and pandas</p>
@@ -558,9 +560,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <p>Inspect the data by printing <code class="docutils literal notranslate"><span class="pre">temp_data</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -652,9 +654,9 @@ document.write(`
 <p>137 rows × 2 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="step-2-plot-the-data">
-<h2>Step 2: Plot the data<a class="headerlink" href="#step-2-plot-the-data" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="step-2-plot-the-data">
+<h2>Step 2: Plot the data<a class="headerlink" href="#step-2-plot-the-data" title="Permalink to this heading">#</a></h2>
 <p>Let’s first load the <strong>Matplotlib</strong> module called <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, for making 2D plots. Remember that to get the plots inside the notebook, you use a special “magic” command, <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -681,12 +683,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e16f1bcd6983163d599c835bdd83ebce9bdddb6c442aa652576352f9bb5ab724.png" src="../_images/e16f1bcd6983163d599c835bdd83ebce9bdddb6c442aa652576352f9bb5ab724.png" />
+<img alt="../_images/e63b6d8fd2bf819d198786e4155d07a0d1f476a55ab7f3b70ae9979b71947a24.png" src="../_images/e63b6d8fd2bf819d198786e4155d07a0d1f476a55ab7f3b70ae9979b71947a24.png" />
 </div>
 </div>
-</div>
-<div class="section" id="step-3-least-squares-linear-regression">
-<h2>Step 3: Least-squares linear regression<a class="headerlink" href="#step-3-least-squares-linear-regression" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="step-3-least-squares-linear-regression">
+<h2>Step 3: Least-squares linear regression<a class="headerlink" href="#step-3-least-squares-linear-regression" title="Permalink to this heading">#</a></h2>
 <p>In order to have an idea of the general behavior of our data, you can find a smooth curve that (approximately) fits the points. You generally look for a curve that’s simple (e.g., a polynomial), and does not reproduce the noise that’s always present in experimental data.</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be the function that you’ll fit to the <span class="math notranslate nohighlight">\(n+1\)</span> data points: <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, <span class="math notranslate nohighlight">\(i = 0, 1, ... ,n\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -698,8 +700,8 @@ document.write(`
 <li><p>Choosing the form of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p></li>
 <li><p>Computing the parameters that will give us the “best fit” to the data.</p></li>
 </ol>
-<div class="section" id="what-is-the-best-fit">
-<h3>What is the “best” fit?<a class="headerlink" href="#what-is-the-best-fit" title="Permalink to this headline">#</a></h3>
+<section id="what-is-the-best-fit">
+<h3>What is the “best” fit?<a class="headerlink" href="#what-is-the-best-fit" title="Permalink to this heading">#</a></h3>
 <p>When the noise in the data is limited to the <span class="math notranslate nohighlight">\(y\)</span>-coordinate, it’s common to use a <strong>least-squares fit</strong> [2], which minimizes the function</p>
 <div class="math notranslate nohighlight">
 \[
@@ -723,9 +725,9 @@ document.write(`
 \end{equation*}~~~~~~(3)
 \]</div>
 <p>which results in equations (2) being linear. In the case that the fitting function is polynomial, you have have <span class="math notranslate nohighlight">\(f_0(x) = 1, \; f_1(x) = x, \; f_2(x) = x^2\)</span>, and so on.</p>
-</div>
-<div class="section" id="linear-regression">
-<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="linear-regression">
+<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h3>
 <p>When you talk about linear regression you mean “fitting a function to the data.” In this case,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -822,19 +824,19 @@ document.write(`
     a_1 = \frac{ \sum_{i=0}^{n} y_{i} (x_i - \bar{x})}{\sum_{i=0}^{n} x_i (x_i - \bar{x})} \quad , \quad a_0  = \bar{y} - a_1\bar{x}
 \end{align}~~~~~~(16)
 \]</div>
-</div>
-<div class="section" id="lets-fit">
-<h3>Let’s fit!<a class="headerlink" href="#lets-fit" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="lets-fit">
+<h3>Let’s fit!<a class="headerlink" href="#lets-fit" title="Permalink to this heading">#</a></h3>
 <p>Let’s now fit a straight line through the temperature-anomaly data, to see the trend over time. We’ll use least-squares linear regression to find the slope and intercept of a line</p>
 <p><span class="math notranslate nohighlight">\(y = a_1x+a_0\)</span></p>
 <p>that fits our data.</p>
 <p>In our case, the <code class="docutils literal notranslate"><span class="pre">x</span></code>-data corresponds to <code class="docutils literal notranslate"><span class="pre">Year</span></code>, and the <code class="docutils literal notranslate"><span class="pre">y</span></code>-data is <code class="docutils literal notranslate"><span class="pre">Value</span></code>. To calculate our coefficients with the formula above, you need the mean values of our data. Since you’ll need to compute the mean for both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <p>It is good coding practice to <em>avoid repeating</em> ourselves: you want to write code that is reusable, not only because it leads to less typing but also because it reduces errors. If you find yourself doing the same calculation multiple times, it’s better to encapsulate it into a <em>function</em>.</p>
 <p>Remember the <em>key concept</em> from <a class="reference internal" href="../module_01/02_Working_with_Python.html"><span class="doc std std-doc">02_Working_with_Python</span></a>: A function is a compact collection of code that executes some action on its arguments.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Calculate the mean of the <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">temp_anomaly</span></code> arrays using the NumPy built-in function, <code class="docutils literal notranslate"><span class="pre">np.mean</span></code>.</p>
 <p>Assign the means to <code class="docutils literal notranslate"><span class="pre">mean_x</span></code> and <code class="docutils literal notranslate"><span class="pre">mean_y</span></code>.</p>
 <div class="cell docutils container">
@@ -906,11 +908,11 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Write a function that computes the coefficients, call the function to compute them and compare the result with the values you obtained before. As a hint, you give you the structure that you should follow:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coefficients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x_mean</span><span class="p">,</span> <span class="n">y_mean</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Write docstrings here</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -923,7 +925,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coefficients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x_mean</span><span class="p">,</span> <span class="n">y_mean</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Write docstrings here</span>
 <span class="sd">    Arguments</span>
 <span class="sd">    ---------</span>
@@ -980,13 +982,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7ae8e735ebaf6c12ca20249510ab1ffda3aefcbaaf04458a7d286e40dd0413a5.png" src="../_images/7ae8e735ebaf6c12ca20249510ab1ffda3aefcbaaf04458a7d286e40dd0413a5.png" />
+<img alt="../_images/fec9b8d31ad0d81eee8bd22015b602505cddfcf2bf18b8e9fb43913e2c196efd.png" src="../_images/fec9b8d31ad0d81eee8bd22015b602505cddfcf2bf18b8e9fb43913e2c196efd.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="step-4-apply-regression-using-numpy">
-<h2>Step 4: Apply regression using NumPy<a class="headerlink" href="#step-4-apply-regression-using-numpy" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="step-4-apply-regression-using-numpy">
+<h2>Step 4: Apply regression using NumPy<a class="headerlink" href="#step-4-apply-regression-using-numpy" title="Permalink to this heading">#</a></h2>
 <p>Above, you coded linear regression from scratch. But, guess what: you didn’t have to because NumPy has built-in functions that do what you need!</p>
 <p>Yes! Python and NumPy are here to help! With <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">polyfit()</span></code></a>, you get the slope and <span class="math notranslate nohighlight">\(y\)</span>-intercept of the line that best fits the data. With <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.poly1d.html"><code class="docutils literal notranslate"><span class="pre">poly1d()</span></code></a>, you can build the linear function from its slope and <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
 <p>Check it out:</p>
@@ -1042,9 +1044,9 @@ document.write(`
 </pre></div>
 </div>
 <p>In the line of code given above, you create the same assignment for <code class="docutils literal notranslate"><span class="pre">f_linear(x)</span></code>. One benefit of writing this out yourself is that you can see how each input is used directly.</p>
-</div>
-<div class="section" id="id3">
-<h2>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id3">
+<h2>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function to assign <code class="docutils literal notranslate"><span class="pre">f_linear</span></code> to our 1D polynomial instead of the <code class="docutils literal notranslate"><span class="pre">np.poly1d</span></code> assignment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1067,12 +1069,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b3b24cb10e326a73b72c26035d8250847d01825ddb2782d9a8686cfd7c7235ed.png" src="../_images/b3b24cb10e326a73b72c26035d8250847d01825ddb2782d9a8686cfd7c7235ed.png" />
+<img alt="../_images/fec9b8d31ad0d81eee8bd22015b602505cddfcf2bf18b8e9fb43913e2c196efd.png" src="../_images/fec9b8d31ad0d81eee8bd22015b602505cddfcf2bf18b8e9fb43913e2c196efd.png" />
 </div>
 </div>
-</div>
-<div class="section" id="split-regression">
-<h2>“Split regression”<a class="headerlink" href="#split-regression" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="split-regression">
+<h2>“Split regression”<a class="headerlink" href="#split-regression" title="Permalink to this heading">#</a></h2>
 <p>If you look at the plot above, you might notice that around 1970 the temperature starts increasing faster that the previous trend. So maybe one single straight line does not give us a good-enough fit.</p>
 <p>What if you break the data in two (before and after 1970) and do a linear regression in each segment?</p>
 <p>To do that, you first need to find the position in our <code class="docutils literal notranslate"><span class="pre">year</span></code> array where the year 1970 is located. Thankfully, NumPy has a function called  <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html"><code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code></a> that can help us. You pass a condition and <code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code> tells us where in the array the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
@@ -1137,12 +1139,12 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/61b9deafbd2f39b44cd6ee068788499de9bf7ffeecf11d953bc30009f6080581.png" src="../_images/61b9deafbd2f39b44cd6ee068788499de9bf7ffeecf11d953bc30009f6080581.png" />
+<img alt="../_images/22ab6064fcb22144993d3292292b66ad0398ac9cc3238f1b881b5f714953b66f.png" src="../_images/22ab6064fcb22144993d3292292b66ad0398ac9cc3238f1b881b5f714953b66f.png" />
 </div>
 </div>
-</div>
-<div class="section" id="discussion-exercise">
-<h2>Discussion exercise<a class="headerlink" href="#discussion-exercise" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="discussion-exercise">
+<h2>Discussion exercise<a class="headerlink" href="#discussion-exercise" title="Permalink to this heading">#</a></h2>
 <p>We have two different curves for two different parts of our data set. A little problem with this and is that the end point of our first regression doesn’t match the starting point of the second regression. You did this for the purpose of learning, but it is not rigorously correct.</p>
 <p>How would you fix this issue?</p>
 <p>What would your new function, <span class="math notranslate nohighlight">\(f(x)\)</span>, look like?</p>
@@ -1151,9 +1153,9 @@ Name: Year, dtype: int64
 <li><p>Force the line to remain continuous so the slope changes. This would lead to a piecewise linear fit, with zig-zagging lines</p></li>
 <li><p>Use a higher order polynomial like a quadratic curve, this would like a parabola curving upwards.</p></li>
 </ol>
-</div>
-<div class="section" id="you-learned">
-<h2>you learned:<a class="headerlink" href="#you-learned" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="you-learned">
+<h2>you learned:<a class="headerlink" href="#you-learned" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Making our plots more beautiful</p></li>
 <li><p>Defining and calling custom Python functions</p></li>
@@ -1161,16 +1163,16 @@ Name: Year, dtype: int64
 <li><p>NumPy built-ins for linear regression</p></li>
 <li><p>The Earth is warming up!!!</p></li>
 </ul>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://barbagroup.github.io/essential_skills_RRC/"><em>Essential skills for reproducible research computing</em></a> (2017). Lorena A. Barba,  Natalia C. Clementi, Gilbert Forsyth.</p></li>
 <li><p><em>Numerical Methods in Engineering with Python 3</em> (2013). Jaan Kiusalaas. Cambridge University Press.</p></li>
 <li><p><em>Effective Computation in Physics: Field Guide to Research with Python</em> (2015). Anthony Scopatz &amp; Kathryn D. Huff. O’Reilly Media, Inc.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Extra Material: Direct stiffness method for Finite Element analysis (FEA) &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="How to use a for loop? in Python" href="../how-to/for-loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -484,8 +486,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="extra-material-direct-stiffness-method-for-finite-element-analysis-fea">
-<h1>Extra Material: Direct stiffness method for Finite Element analysis (FEA)<a class="headerlink" href="#extra-material-direct-stiffness-method-for-finite-element-analysis-fea" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="extra-material-direct-stiffness-method-for-finite-element-analysis-fea">
+<h1>Extra Material: Direct stiffness method for Finite Element analysis (FEA)<a class="headerlink" href="#extra-material-direct-stiffness-method-for-finite-element-analysis-fea" title="Permalink to this heading">#</a></h1>
 <p>The direct stiffness approach looks at the stiffness of each individual element and adds them to the overall stiffness of the FEA structure. Starting with a single element, show below we have the following relation between forces applied and deformation</p>
 <p><img alt="Single link element with forces applied to both ends" src="../_images/link_elem.png" /></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{F}_{el} = \mathbf{K}_{el}\mathbf{u}\)</span></p>
@@ -574,11 +576,11 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;forces and deformation of single Al-bar\nscale factor = 10&#39;)
 </pre></div>
 </div>
-<img alt="../_images/bc5ed17bb4c485de92da211a31eebeef55fd5424f8262e6a87a7ace12086154c.png" src="../_images/bc5ed17bb4c485de92da211a31eebeef55fd5424f8262e6a87a7ace12086154c.png" />
+<img alt="../_images/8efa0167e8e0ca47cdcc8fec8d28ada235d445a12b6d9ded9b80bebbd70fa1fb.png" src="../_images/8efa0167e8e0ca47cdcc8fec8d28ada235d445a12b6d9ded9b80bebbd70fa1fb.png" />
 </div>
 </div>
-<div class="section" id="combining-multiple-elements">
-<h2>Combining multiple elements<a class="headerlink" href="#combining-multiple-elements" title="Permalink to this headline">#</a></h2>
+<section id="combining-multiple-elements">
+<h2>Combining multiple elements<a class="headerlink" href="#combining-multiple-elements" title="Permalink to this heading">#</a></h2>
 <p>This method can be extended to multiple, connected bars. We just have to do some extra book-keeping. Let’s consider the 3-bar element that we used in <span class="xref myst">02_Gauss_elimination</span>.</p>
 <p><img alt="Triangular truss" src="../_images/truss.png" /></p>
 <p>We have 3 elements and 3 nodes, so there are 6 degrees of freedom, with 3 constraints. Let’s use 1-m aluminum bars with <span class="math notranslate nohighlight">\(A=1~mm^2\)</span>, but set <span class="math notranslate nohighlight">\(\alpha=\beta=60^{o}\)</span>.</p>
@@ -719,7 +721,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.529210992451759
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.529210992451761
 </pre></div>
 </div>
 </div>
@@ -747,12 +749,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/80c48feb7e471f27605a91beaa35207890a0584586321ba44584ae341dbf7188.png" src="../_images/80c48feb7e471f27605a91beaa35207890a0584586321ba44584ae341dbf7188.png" />
+<img alt="../_images/df3e5b2e9c2b6765386538fed97d9ea7a8ac9be248c24278c9ef1d05da620750.png" src="../_images/df3e5b2e9c2b6765386538fed97d9ea7a8ac9be248c24278c9ef1d05da620750.png" />
 </div>
 </div>
-</div>
-<div class="section" id="project-matrix-creation">
-<h2>Project Matrix creation<a class="headerlink" href="#project-matrix-creation" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="project-matrix-creation">
+<h2>Project Matrix creation<a class="headerlink" href="#project-matrix-creation" title="Permalink to this heading">#</a></h2>
 <p>In the project, we have 7 joints <em>(nodes)</em> and 11 bars <em>(elements)</em>. That means we have 7 locations where <span class="math notranslate nohighlight">\(\sum\mathbf{F} = \mathbf{0}\)</span> and 11 stiffness matrices <span class="math notranslate nohighlight">\((\mathbf{K_1}...\mathbf{K_{11}})\)</span>. The result is 14 equations with 14 unknowns, but we have some constraints on the system. <span class="math notranslate nohighlight">\(u_{1x}=u_{1y}=0\)</span> and <span class="math notranslate nohighlight">\(u_{7y}=0.\)</span> Which leaves us with 11 unknowns. There are 14 applied forces <span class="math notranslate nohighlight">\((F_{ix},~F_{iy})\)</span> that make up the vector <span class="math notranslate nohighlight">\(\mathbf{F}.\)</span></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{u}=\left[\begin{array}{c}
         u_{1x}\\
@@ -784,9 +786,9 @@ document.write(`
         u_{6y}\\
         u_{7x}\\
         0\\\end{array}\right]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{F} = \mathbf{K_1 u}+...+\mathbf{K_{11} u}\)</span></p>
-</div>
-<div class="section" id="node-and-element-arrays">
-<h2>Node and element arrays<a class="headerlink" href="#node-and-element-arrays" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="node-and-element-arrays">
+<h2>Node and element arrays<a class="headerlink" href="#node-and-element-arrays" title="Permalink to this heading">#</a></h2>
 <p>In FEA, we typically store the node locations and their connections in two arrays called the node array: <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and the element array: <code class="docutils literal notranslate"><span class="pre">elems</span></code>. The array <code class="docutils literal notranslate"><span class="pre">nodes</span></code> stores the node number and its x-y location. The array <code class="docutils literal notranslate"><span class="pre">elems</span></code> stores the node numbers that define each element. Our <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">elems</span></code> are printed below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,17 +880,17 @@ element array
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b4394692f45dbdf544f149a94b8203bbc1bf3dfd4f6fb00d69a4675a135db1f0.png" src="../_images/b4394692f45dbdf544f149a94b8203bbc1bf3dfd4f6fb00d69a4675a135db1f0.png" />
+<img alt="../_images/95463009c38e0b15835aeda42f923563225887a336b538a7f3292642b85fcfea.png" src="../_images/95463009c38e0b15835aeda42f923563225887a336b538a7f3292642b85fcfea.png" />
 </div>
 </div>
-</div>
-<div class="section" id="assemble-the-stiffness-matrix">
-<h2>Assemble the stiffness matrix<a class="headerlink" href="#assemble-the-stiffness-matrix" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="assemble-the-stiffness-matrix">
+<h2>Assemble the stiffness matrix<a class="headerlink" href="#assemble-the-stiffness-matrix" title="Permalink to this heading">#</a></h2>
 <p>Creating the matrix to represent <span class="math notranslate nohighlight">\(\mathbf{K} = \mathbf{K}_1+...\mathbf{K}_{11}\)</span> is called <strong>assembling the stiffness matrix</strong>. We loop through each element and add the individual stiffness matrices, the same way we did for the 3-element truss above. First, we define our <span class="math notranslate nohighlight">\(\mathbf{K_{el}}\)</span> function, <code class="docutils literal notranslate"><span class="pre">Kel(node1,node2)</span></code>. The nodes define the initial length and the angle of the beam element. We can multipy the stiffness matrix by <span class="math notranslate nohighlight">\(EA\)</span> to get the actual N/m stiffness term. In our case, each beam is the same material and cross section, so we can factor out <span class="math notranslate nohighlight">\(EA\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Kel</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Kel(node1,node2) returns the diagonal and off-diagonal element stiffness matrices based upon</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Kel(node1,node2) returns the diagonal and off-diagonal element stiffness matrices based upon</span>
 <span class="sd">    initial angle of a beam element and its length the full element stiffness is</span>
 <span class="sd">    K_el = np.block([[Ke1,Ke2],[Ke2,Ke1]])</span>
 <span class="sd">    </span>
@@ -989,9 +991,9 @@ element array
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="save-the-inputs-for-the-project">
-<h2>Save the inputs for the project<a class="headerlink" href="#save-the-inputs-for-the-project" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="save-the-inputs-for-the-project">
+<h2>Save the inputs for the project<a class="headerlink" href="#save-the-inputs-for-the-project" title="Permalink to this heading">#</a></h2>
 <p>Here, we save the arrays needed to work on the project as a Linear Algebra problem. We need the <code class="docutils literal notranslate"><span class="pre">nodes</span></code>, <code class="docutils literal notranslate"><span class="pre">elems</span></code>, and <code class="docutils literal notranslate"><span class="pre">K</span></code> arrays. So, we save them in the file <code class="docutils literal notranslate"><span class="pre">fea_arrays.npz</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1000,9 +1002,9 @@ element array
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="solution-for-our-fea-problem">
-<h2>Solution for our FEA problem<a class="headerlink" href="#solution-for-our-fea-problem" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="solution-for-our-fea-problem">
+<h2>Solution for our FEA problem<a class="headerlink" href="#solution-for-our-fea-problem" title="Permalink to this heading">#</a></h2>
 <p>In FEA, you have applied forces, in <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, and displacement in <span class="math notranslate nohighlight">\(\mathbf{u}.\)</span> Typically, you have a mix of known and unknown forces and displacements. In our example, we have 14 degrees of freedom - 3 constraints for our displacements. So, we solve the problem in two steps</p>
 <ol class="arabic simple">
 <li><p>solve for the free nodes <code class="docutils literal notranslate"><span class="pre">uf</span></code> <span class="math notranslate nohighlight">\(\rightarrow \mathbf{K}[2:13,2:13] \mathbf{u}[2:13] = \mathbf{F} [2:13]\)</span></p></li>
@@ -1028,9 +1030,9 @@ element array
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   0.    0.    0.    0.    0. -100.    0.    0.    0.    0.    0.]
-[ 1.42108547e-14 -1.77635684e-15 -2.84217094e-14  3.55271368e-14
- -2.25574756e-14 -1.00000000e+02  0.00000000e+00  3.19744231e-14
-  2.84217094e-14 -7.10542736e-15  0.00000000e+00]
+[ 0.00000000e+00 -5.32907052e-15  0.00000000e+00  2.84217094e-14
+  2.14661921e-14 -1.00000000e+02  0.00000000e+00 -1.42108547e-14
+  0.00000000e+00 -2.84217094e-14  2.84217094e-14]
 </pre></div>
 </div>
 </div>
@@ -1071,12 +1073,12 @@ F_1x:-0.00 N
 F_1y:50.00 N
 F_2x:0.00 N
 F_2y:-0.00 N
-F_3x:-0.00 N
+F_3x:0.00 N
 F_3y:0.00 N
-F_4x:-0.00 N
+F_4x:0.00 N
 F_4y:-100.00 N
 F_5x:0.00 N
-F_5y:0.00 N
+F_5y:-0.00 N
 F_6x:0.00 N
 F_6y:-0.00 N
 F_7x:0.00 N
@@ -1085,9 +1087,9 @@ F_7y:50.00 N
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="postprocess-fea-results">
-<h2>Postprocess FEA results<a class="headerlink" href="#postprocess-fea-results" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="postprocess-fea-results">
+<h2>Postprocess FEA results<a class="headerlink" href="#postprocess-fea-results" title="Permalink to this heading">#</a></h2>
 <p>The last step in FEA (and any applied linear algebra problem), is to
 post-process the results. I have chosen to show the deflections of each
 joint and the applied forces at each node. I imported the <code class="docutils literal notranslate"><span class="pre">interact</span></code>
@@ -1123,11 +1125,10 @@ deformation.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">8</span><span class="n">f9f9e592704</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;
@@ -1135,8 +1136,8 @@ deformation.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

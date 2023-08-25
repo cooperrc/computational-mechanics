@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Homework &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Computational Mechanics Project #01 - Heat Transfer in Forensic Science" href="../projects/01_Getting-started-project.html" />
     <link rel="prev" title="03 - Numerical Error" href="03_Numerical_error.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -500,10 +502,10 @@ document.write(`
 </div>
 </details>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="homework">
-<h1>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">#</a></h1>
-<div class="section" id="problems-part-1">
-<h2>Problems <a class="reference internal" href="01_Interacting_with_Python.html"><span class="doc std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="homework">
+<h1>Homework<a class="headerlink" href="#homework" title="Permalink to this heading">#</a></h1>
+<section id="problems-part-1">
+<h2>Problems <a class="reference internal" href="01_Interacting_with_Python.html"><span class="doc std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Calculate some properties of a rectangular box that is 12.5”<span class="math notranslate nohighlight">\(\times\)</span>11”<span class="math notranslate nohighlight">\(\times\)</span>14” and weighs 31 lbs</p>
 <p>a. What is the volume of the box?</p>
@@ -554,7 +556,7 @@ you would print out “computational mechanics”.</p>
 <p>Here are the first 20 outputs your program should print,</p>
 </li>
 </ol>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>index</p></th>
 <th class="head"><p>printed output</p></th>
@@ -623,9 +625,9 @@ you would print out “computational mechanics”.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="problems-part-2">
-<h2>Problems <a class="reference internal" href="02_Working_with_Python.html"><span class="doc std std-doc">Part 2</span></a><a class="headerlink" href="#problems-part-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="problems-part-2">
+<h2>Problems <a class="reference internal" href="02_Working_with_Python.html"><span class="doc std std-doc">Part 2</span></a><a class="headerlink" href="#problems-part-2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Create a function called <code class="docutils literal notranslate"><span class="pre">sincos(x)</span></code> that returns two arrays, <code class="docutils literal notranslate"><span class="pre">sinx</span></code> and <code class="docutils literal notranslate"><span class="pre">cosx</span></code> that return the sine and cosine of the input array, <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 <p>a. Document your function with a help file in <code class="docutils literal notranslate"><span class="pre">'''help'''</span></code></p>
@@ -663,7 +665,7 @@ d. create a filled contour plot of X, Y, A_99 [contourf plot documentation](http
 <li><p>The following linear interpolation function has an error. It is supposed to return y(x) given the the two points <span class="math notranslate nohighlight">\(p_1=[x_1,~y_1]\)</span> and <span class="math notranslate nohighlight">\(p_2=[x_2,~y_2]\)</span>. Currently, it just returns and error.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linInterp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;linear interplation function</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;linear interplation function</span>
 <span class="sd">    return y(x) given the two endpoints </span>
 <span class="sd">    p1=np.array([x1,y1])</span>
 <span class="sd">    and</span>
@@ -673,9 +675,9 @@ d. create a filled contour plot of X, Y, A_99 [contourf plot documentation](http
     <span class="k">return</span> <span class="n">p1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">slope</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="problems-part-3">
-<h2>Problems <a class="reference internal" href="03_Numerical_error.html"><span class="doc std std-doc">Part 3</span></a><a class="headerlink" href="#problems-part-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="problems-part-3">
+<h2>Problems <a class="reference internal" href="03_Numerical_error.html"><span class="doc std std-doc">Part 3</span></a><a class="headerlink" href="#problems-part-3" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>The growth of populations of organisms has many engineering and scientific applications. One of the simplest
 models assumes that the rate of change of the population p is proportional to the existing population at any time t:</p></li>
@@ -683,7 +685,7 @@ models assumes that the rate of change of the population p is proportional to th
 <p><span class="math notranslate nohighlight">\(\frac{dp}{dt} = k_g p\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(t\)</span> is time in years, and <span class="math notranslate nohighlight">\(k_g\)</span> is growth rate in [1/years].</p>
 <p>The world population has been increasing dramatically, let’s make a prediction based upon the <a class="reference external" href="https://worldpopulationhistory.org/map/2020/mercator/1/0/25/">following data</a> saved in <a class="reference download internal" download="" href="../_downloads/a73eb1e00dfa3c3ea08a26799443b97f/world_population_1900-2020.csv"><span class="xref download myst">world_population_1900-2020.csv</span></a>:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>year</p></th>
 <th class="head"><p>world population</p></th>
@@ -755,7 +757,7 @@ average growth of 1900 - 2020
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 <span class="k">def</span> <span class="nf">exptaylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Taylor series expansion about x=0 for the function e^x</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Taylor series expansion about x=0 for the function e^x</span>
 <span class="sd">    the full expansion follows the function</span>
 <span class="sd">    e^x = 1+ x + x**2/2! + x**3/3! + x**4/4! + x**5/5! +...&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">:</span>
@@ -771,8 +773,8 @@ average growth of 1900 - 2020
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

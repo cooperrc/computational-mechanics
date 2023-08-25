@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Initial Value Problems - Project &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Computational Mechanics 4 - Linear Algebra" href="../module_04/README.html" />
     <link rel="prev" title="Homework" href="../module_03/HW_03.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -479,8 +481,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="initial-value-problems-project">
-<h1>Initial Value Problems - Project<a class="headerlink" href="#initial-value-problems-project" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="initial-value-problems-project">
+<h1>Initial Value Problems - Project<a class="headerlink" href="#initial-value-problems-project" title="Permalink to this heading">#</a></h1>
 <p><img alt="Initial condition of firework with FBD and sum of momentum" src="../_images/firework.png" /></p>
 <p>You are going to end this module with a <strong>bang</strong> by looking at the
 flight path of a firework. Shown above is the initial condition of a
@@ -556,7 +558,7 @@ and the Tsiolkovsky analytical value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simplerocket</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">dmdt</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">250</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
 <span class="sd">    for the acceleration of a rocket, without drag or gravity, in SI units.</span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
@@ -598,7 +600,7 @@ and the Tsiolkovsky analytical value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rocket</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">dmdt</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mf">0.18e-3</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
 <span class="sd">    for the acceleration of a rocket, with drag, in SI units.</span>
 <span class="sd">    </span>
 <span class="sd">    Arguments</span>
@@ -634,7 +636,7 @@ the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_dm</span><span class="p">(</span><span class="n">dmdt</span><span class="p">,</span> <span class="n">m0</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">0.18e-3</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">250</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; define a function f_dm(dmdt) that returns </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; define a function f_dm(dmdt) that returns </span>
 <span class="sd">    height_desired-height_predicted[-1]</span>
 <span class="sd">    here, the time span is based upon the value of dmdt</span>
 <span class="sd">    </span>
@@ -659,7 +661,7 @@ the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mod_secant</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">dx</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">es</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">maxit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;mod_secant: Modified secant root location zeroes</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;mod_secant: Modified secant root location zeroes</span>
 <span class="sd">    root,[fx,ea,iter]=mod_secant(func,dfunc,xr,es,maxit,p1,p2,...):</span>
 <span class="sd">    uses modified secant method to find the root of func</span>
 <span class="sd">    arguments:</span>
@@ -694,16 +696,16 @@ the function.</p>
 </div>
 </div>
 </div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Math 24 <em>Rocket Motion</em>. <a class="reference external" href="https://www.math24.net/rocket-motion/%5C">https://www.math24.net/rocket-motion/\</a></p></li>
 <li><p>Kasdin and Paley. <em>Engineering Dynamics</em>. <a class="reference external" href="https://www.jstor.org/stable/j.ctvcm4ggj.9">ch 6-Linear Momentum of a Multiparticle System pp234-235</a> Princeton University Press</p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Specific_impulse">https://en.wikipedia.org/wiki/Specific_impulse</a></p></li>
 <li><p><a class="reference external" href="https://www.apogeerockets.com/Rocket_Motors/Estes_Motors/13mm_Motors/Estes_13mm_1_4A3-3T">https://www.apogeerockets.com/Rocket_Motors/Estes_Motors/13mm_Motors/Estes_13mm_1_4A3-3T</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

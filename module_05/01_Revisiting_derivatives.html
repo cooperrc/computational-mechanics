@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Revisiting Derivatives &#8212; Computational Mechanics</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Keep it Steady" href="02_Keep_it_steady.html" />
     <link rel="prev" title="Computational Mechanics 5 - Boundary Value Problems" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -494,15 +496,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="revisiting-derivatives">
-<h1>Revisiting Derivatives<a class="headerlink" href="#revisiting-derivatives" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="revisiting-derivatives">
+<h1>Revisiting Derivatives<a class="headerlink" href="#revisiting-derivatives" title="Permalink to this heading">#</a></h1>
 <p>Your review for derivatives is that the exact derivative is as follows,:</p>
 <p><span class="math notranslate nohighlight">\(\frac{df}{dx}=\lim_{\Delta x\rightarrow0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(f=f(x)\)</span>. In your lessons on initial value problems, you approximated this derivative by removing the <span class="math notranslate nohighlight">\(\lim_{\Delta t \rightarrow 0}.\)</span> When you describe derivatives over space, you use the same approximation, but in this notebook you will try a few other alternatives. The following approximation is called a forward difference derivative,</p>
 <p><span class="math notranslate nohighlight">\(\frac{\Delta f}{\Delta x}\approx\frac{f(x+\Delta x)-f(x)}{\Delta x},\)</span></p>
 <p>because you approximate <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> using the current <span class="math notranslate nohighlight">\(f(x)\)</span> and the forward step, <span class="math notranslate nohighlight">\(f(x+\Delta x)\)</span> as the derivative.</p>
-<div class="section" id="taylor-series-expansion">
-<h2>Taylor Series Expansion<a class="headerlink" href="#taylor-series-expansion" title="Permalink to this headline">#</a></h2>
+<section id="taylor-series-expansion">
+<h2>Taylor Series Expansion<a class="headerlink" href="#taylor-series-expansion" title="Permalink to this heading">#</a></h2>
 <p>The approximation of the <strong>truncation error</strong> in the function near <span class="math notranslate nohighlight">\(x_{i}\)</span> is given as:</p>
 <p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^2+...\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(f'=\frac{df}{dx}\)</span> and <span class="math notranslate nohighlight">\(x_{i+1} = x_{i}+h.\)</span></p>
@@ -510,8 +512,8 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(f'(x_{i})=\frac{f(x_{i+1})-f(x_{i})}{h}-\frac{f''(x_{i})}{2!}h+...\)</span></p>
 <p>The <strong>truncation error</strong> error is on the order of the timestep, <span class="math notranslate nohighlight">\(h\)</span>. This is commonly represented in big-O notation as  <span class="math notranslate nohighlight">\(error\approx O(h)\)</span></p>
 <p><span class="math notranslate nohighlight">\(f'(x_{i})=\frac{f(x_{i+1})-f(x_{i})}{h}+O(h)\)</span></p>
-<div class="section" id="higher-order-derivatives">
-<h3>Higher order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Permalink to this headline">#</a></h3>
+<section id="higher-order-derivatives">
+<h3>Higher order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Permalink to this heading">#</a></h3>
 <p>You have already solved first-order numerical derivatives problems in <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/project/01_Getting-started-project.ipynb">Project_01</a> and <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech03-IVPs">CompMech03-IVPs</a>. Now, you will look at higher order derivatives. Let’s start with <span class="math notranslate nohighlight">\(\frac{d^2f}{dx^2}=f''(x)\)</span>. We need more information.</p>
 <p>First, take the function near <span class="math notranslate nohighlight">\(x_{i}\)</span> within 1 step, <span class="math notranslate nohighlight">\(h\)</span>, given as:</p>
 <p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^2+...\)</span></p>
@@ -520,10 +522,10 @@ document.write(`
 <p>solving for <span class="math notranslate nohighlight">\(f''(x_{i})\)</span> by subtracting <span class="math notranslate nohighlight">\(f(x_{i+2})-2f(x_{i+1})\)</span> to eliminate <span class="math notranslate nohighlight">\(f'(x_{i})\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(f''(x_{i})=\frac{f(x_{i+2})-2f(x_{i+1})-3f(x_{i})}{h^2}+O(h)\)</span></p>
 <p>Here you have the numerical second derivative of a function, <span class="math notranslate nohighlight">\(f(x)\)</span>, with <strong>truncation error</strong> of <span class="math notranslate nohighlight">\(\approx O(h)\)</span></p>
-</div>
-</div>
-<div class="section" id="using-your-numerical-derivatives">
-<h2>Using your numerical derivatives<a class="headerlink" href="#using-your-numerical-derivatives" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="using-your-numerical-derivatives">
+<h2>Using your numerical derivatives<a class="headerlink" href="#using-your-numerical-derivatives" title="Permalink to this heading">#</a></h2>
 <p>Consider the example of taking the derivative of <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> with only 10 data points per period. Let’s assume there is no random error in the signal. First, you can plot the values you expect since you know the derivatives of <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -555,7 +557,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/76db233fbf5ac180556a3747cb0cfe884fe13ca117e56c1fd0b8e68a5631d702.png" src="../_images/76db233fbf5ac180556a3747cb0cfe884fe13ca117e56c1fd0b8e68a5631d702.png" />
+<img alt="../_images/4935f40546a6fe819429108424414c8d41ac6984cc6c8a8e1fe82ad34dcc371b.png" src="../_images/4935f40546a6fe819429108424414c8d41ac6984cc6c8a8e1fe82ad34dcc371b.png" />
 </div>
 </div>
 <p>Next, you use your definitions for first and second derivatives to get the approximate derivatives, <span class="math notranslate nohighlight">\(f'(x)~and~f''(x)\)</span>. You are using a forward difference method so for <span class="math notranslate nohighlight">\(f'(x)\)</span> you truncate the values by 1 and for <span class="math notranslate nohighlight">\(f''(x)\)</span>, you truncate the values by 2.</p>
@@ -572,11 +574,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e28bcb400525e85a16d76c38fdaa7106b16d4e91c3db43df9464d59d5d9cc354.png" src="../_images/e28bcb400525e85a16d76c38fdaa7106b16d4e91c3db43df9464d59d5d9cc354.png" />
+<img alt="../_images/f5c1ceea5cbbaa31c12312f0e2c162718d25e28a6e88230e1a39cd94253cb4f0.png" src="../_images/f5c1ceea5cbbaa31c12312f0e2c162718d25e28a6e88230e1a39cd94253cb4f0.png" />
 </div>
 </div>
-<div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <p>What is the maximum error between the numerical <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> and the actual <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -587,23 +589,23 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1cc77c96ddf8b4a9b270fe992172fca9a66fdcc813219b8493f85924a4c414ec.png" src="../_images/1cc77c96ddf8b4a9b270fe992172fca9a66fdcc813219b8493f85924a4c414ec.png" />
+<img alt="../_images/4cc96079a7062acbf1ef6b17933b5a87bcd911add03438ed8ce1dfe204f549cf.png" src="../_images/4cc96079a7062acbf1ef6b17933b5a87bcd911add03438ed8ce1dfe204f549cf.png" />
 </div>
 </div>
 <p>Your stepsize is <span class="math notranslate nohighlight">\(h=\pi/5\approx 0.6\)</span>. Looking at the graphs, it looks like you are shifting your function to the left by using this forward difference method. That is because you are using a forward difference method, the derivative is going to be averaged between step <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i+1\)</span>. The result is that you shift the function by <span class="math notranslate nohighlight">\(h/2\)</span> for each derivative.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Another first-order, <span class="math notranslate nohighlight">\(error\approx O(h)\)</span>, derivative is the backward difference derivative, where</p>
 <p><span class="math notranslate nohighlight">\(f'(x_{i})=\frac{f(x_{i})-f(x_{i-1})}{h}+O(h)\)</span></p>
 <p><span class="math notranslate nohighlight">\(f''(x_{i})=\frac{f(x_{i})-2f(x_{i-1})+f(x_{i-2})}{h^2}+O(h)\)</span></p>
 <p>Plot the first and second derivatives of <span class="math notranslate nohighlight">\(\sin(x)\)</span> using the same x-locations as you did above.</p>
-</div>
-<div class="section" id="central-difference">
-<h2>Central Difference<a class="headerlink" href="#central-difference" title="Permalink to this headline">#</a></h2>
-<div class="section" id="increase-accuracy-with-more-points">
-<h3>Increase accuracy with more points<a class="headerlink" href="#increase-accuracy-with-more-points" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="central-difference">
+<h2>Central Difference<a class="headerlink" href="#central-difference" title="Permalink to this heading">#</a></h2>
+<section id="increase-accuracy-with-more-points">
+<h3>Increase accuracy with more points<a class="headerlink" href="#increase-accuracy-with-more-points" title="Permalink to this heading">#</a></h3>
 <p>Both the forward and backward difference methods have the same <span class="math notranslate nohighlight">\(error\approx O(h)\)</span>, <em>but you can do better.</em> Let’s rewrite Taylor series of the function, <span class="math notranslate nohighlight">\(f(x)\)</span>,  near <span class="math notranslate nohighlight">\(x_{i}\)</span> is given as:</p>
 <p>forward:</p>
 <p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^2-\frac{f'''(x_{i})}{3!}h^3+...\)</span></p>
@@ -640,17 +642,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9eefd343fcbee02ff64c5c519cf96c86995507bb6e5b0ac7656cff1f938a2984.png" src="../_images/9eefd343fcbee02ff64c5c519cf96c86995507bb6e5b0ac7656cff1f938a2984.png" />
+<img alt="../_images/a35d9c991727800745c978d5bea44389acb0a138b1130adb333f872b69223175.png" src="../_images/a35d9c991727800745c978d5bea44389acb0a138b1130adb333f872b69223175.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Plot the analytical, forward difference, and central difference results for the second derivative of <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>Higher order derivatives<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="id3">
+<h2>Higher order derivatives<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>You use the following chart for commonly found derivatives and the corresponding Forward, Backward, and Central difference approximations. In practice, you should use <strong>central difference</strong> approximations because they reduce the truncation error from <span class="math notranslate nohighlight">\(O(h)\rightarrow O(h^2)\)</span> without using more data points to calculate the derivative.</p>
 <p><strong>Table of derivatives and the corresponding forward, backward, and central difference method equations.</strong></p>
 <!DOCTYPE html>
@@ -717,9 +719,9 @@ document.write(`
 </table>
 </body>
 </html>
-</div>
-<div class="section" id="what-youve-learned">
-<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="what-youve-learned">
+<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to approximate error in approximate derivatives</p></li>
 <li><p>How to approximate derivatives using forward difference methods</p></li>
@@ -727,8 +729,8 @@ document.write(`
 <li><p>How to approximate derivatives using central difference methods</p></li>
 <li><p>How to approximate higher order derivatives with forward, backward, and central differences</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
