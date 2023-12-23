@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
   
   
 </a></div>
@@ -429,20 +441,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -639,7 +653,7 @@ columns, and plot number in a matrix of sub-plots.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/db6a0d7bd8e9e4c14460593d440bf8861d0757b52faaf9d3b6fe9379c662832b.png" src="../_images/db6a0d7bd8e9e4c14460593d440bf8861d0757b52faaf9d3b6fe9379c662832b.png" />
+<img alt="../_images/3c088d207617520d9c2002ea326ad1373ef08aab70ee30b377bf59c645a430cf.png" src="../_images/3c088d207617520d9c2002ea326ad1373ef08aab70ee30b377bf59c645a430cf.png" />
 </div>
 </div>
 </section>
@@ -820,7 +834,7 @@ number of time steps.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/af06e12f97ca35bdee2f78237c32a49e5559f6e0053bec63a1c37312d652062f.png" src="../_images/af06e12f97ca35bdee2f78237c32a49e5559f6e0053bec63a1c37312d652062f.png" />
+<img alt="../_images/406c3426f6c5054750da03fa719a9ae0b81829a71bbe359375289da03410eb82.png" src="../_images/406c3426f6c5054750da03fa719a9ae0b81829a71bbe359375289da03410eb82.png" />
 </div>
 </div>
 <p>The two lines look very close… but let’s plot the difference to get understand the <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/notebooks/03_Numerical_error.ipynb">error</a>.</p>
@@ -835,7 +849,7 @@ number of time steps.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d83b0c684ebbddb48daeae89ac43d4d315afe7f193a6eeb6a37e0bedc326d61f.png" src="../_images/d83b0c684ebbddb48daeae89ac43d4d315afe7f193a6eeb6a37e0bedc326d61f.png" />
+<img alt="../_images/6989b183ff296eecd5e53514b6eae0684ffedeed455f6c7e829208dd81c3707f.png" src="../_images/6989b183ff296eecd5e53514b6eae0684ffedeed455f6c7e829208dd81c3707f.png" />
 </div>
 </div>
 </section>
@@ -946,7 +960,7 @@ range of <span class="math notranslate nohighlight">\(56.0\)</span>–<span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2948839e428c0a767aa43ecbe9eca3d8cc3397c334c31b974ae109b3da8ede99.png" src="../_images/2948839e428c0a767aa43ecbe9eca3d8cc3397c334c31b974ae109b3da8ede99.png" />
+<img alt="../_images/74d6896840ad99920760577f715f330b8b79269bd1b078eb7035024e9b364a64.png" src="../_images/74d6896840ad99920760577f715f330b8b79269bd1b078eb7035024e9b364a64.png" />
 </div>
 </div>
 <p>All the lines look very close… but let’s plot the differences with the experimental data in both cases, to get an idea of the error.</p>
@@ -963,7 +977,7 @@ range of <span class="math notranslate nohighlight">\(56.0\)</span>–<span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c0d3d68d5dd8e90e5af9a5003d8e14a775fe2eff69483dbd31c5f9d01e250351.png" src="../_images/c0d3d68d5dd8e90e5af9a5003d8e14a775fe2eff69483dbd31c5f9d01e250351.png" />
+<img alt="../_images/f9252d677db33921de389a426f064ec740f52250ca5af801179c194b72dd651f.png" src="../_images/f9252d677db33921de389a426f064ec740f52250ca5af801179c194b72dd651f.png" />
 </div>
 </div>
 </section>
@@ -1022,11 +1036,10 @@ range of <span class="math notranslate nohighlight">\(56.0\)</span>–<span clas
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="01_Catch_Motion.html"
@@ -1046,10 +1059,7 @@ range of <span class="math notranslate nohighlight">\(56.0\)</span>–<span clas
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1102,6 +1112,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1128,8 +1139,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

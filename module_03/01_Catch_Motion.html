@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
   
   
 </a></div>
@@ -429,20 +441,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -723,8 +737,8 @@ mouse-click captures.</p>
 <p>Looking ahead, what you’ll do is repeat the process of capturing mouse clicks on the image, but clicking on the ball positions. Then, you will want to have the vertical positions converted to physical length (in meters), from the pixel numbers on the image.</p>
 <p>You can get the scaling from pixels to meters via the distance between two white lines on the metered panel, which you know is <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span>.</p>
 <p>Let’s get the average vertical distance between two while lines, which you can calculate as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06b22ffa-e938-456d-b744-834b778a263f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-06b22ffa-e938-456d-b744-834b778a263f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a93f32ef-74fa-45b5-9b65-213a36066512">
+<span class="eqno">(1)<a class="headerlink" href="#equation-a93f32ef-74fa-45b5-9b65-213a36066512" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \overline{\Delta y} = \sum_{i=0}^N \frac{y_{i+1}-y_i}{N-1}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -779,8 +793,8 @@ but <em>not</em> the photograph. <em>Sigh</em>.</p>
 </div>
 </div>
 <p>Scale the vertical displacements of the falling ball as explained above (to get distance in meters), then use the known time between flashes of the strobe light, <span class="math notranslate nohighlight">\(1/16.8\rm{s}\)</span>, to compute estimates of the velocity and acceleration of the ball at every captured instant, using:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f47a6158-4239-4942-b8a3-16e01091c546">
-<span class="eqno">(2)<a class="headerlink" href="#equation-f47a6158-4239-4942-b8a3-16e01091c546" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8752b984-ad96-4437-a623-12ac6781c626">
+<span class="eqno">(2)<a class="headerlink" href="#equation-8752b984-ad96-4437-a623-12ac6781c626" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -1029,13 +1043,13 @@ save your variables <code class="docutils literal notranslate"><span class="pre"
 <section id="numerical-derivatives">
 <h2>Numerical derivatives<a class="headerlink" href="#numerical-derivatives" title="Permalink to this heading">#</a></h2>
 <p>You just computed the average velocity between two captured ball positions using <em>numerical derivative</em>. The velocity is the <em>derivative</em> of position with respect to time, and you can approximate its instantaneous value with the average velocity between two close instants in time:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-516ed0a9-4d9a-4b1a-be2a-6e856b8f185a">
-<span class="eqno">(3)<a class="headerlink" href="#equation-516ed0a9-4d9a-4b1a-be2a-6e856b8f185a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-759a9c4f-c38b-4074-9c51-e85904a8a07f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-759a9c4f-c38b-4074-9c51-e85904a8a07f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v(t) = \frac{dy}{dt} \approx \frac{y(t_i+\Delta t)-y(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>And acceleration is the <em>derivative</em> of velocity with respect to time; you can approximate it with the average acceleration within a time interval:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-278c18c8-1aca-4468-b08a-cb1a332f8879">
-<span class="eqno">(4)<a class="headerlink" href="#equation-278c18c8-1aca-4468-b08a-cb1a332f8879" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7ccec9c6-e47f-4455-8a9a-636fc36c60ce">
+<span class="eqno">(4)<a class="headerlink" href="#equation-7ccec9c6-e47f-4455-8a9a-636fc36c60ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a(t) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>As you can imagine, the quality of the approximation depends on the size of the time interval: as <span class="math notranslate nohighlight">\(\Delta t\)</span> gets smaller, the error also gets smaller.</p>
@@ -1163,11 +1177,10 @@ then compute displacements, velocity, and acceleration with that slice.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="README.html"
@@ -1187,10 +1200,7 @@ then compute displacements, velocity, and acceleration with that slice.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1258,6 +1268,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1284,8 +1295,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

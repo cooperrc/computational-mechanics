@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
   
   
 </a></div>
@@ -429,20 +441,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -841,7 +855,7 @@ you’ll learn about a new type of visualization: the <strong>box plot</strong>.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2eaa5ea404aa36ddcf88d222974be6c748f577b2ad2c729b403c656d00a8488.png" src="../_images/a2eaa5ea404aa36ddcf88d222974be6c748f577b2ad2c729b403c656d00a8488.png" />
+<img alt="../_images/1deba1a18a797aaad0397ab1b730bb3065607d75e3379b391b0b83753f51e957.png" src="../_images/1deba1a18a797aaad0397ab1b730bb3065607d75e3379b391b0b83753f51e957.png" />
 </div>
 </div>
 <p>You can tell that the most frequent values of <code class="docutils literal notranslate"><span class="pre">abv</span></code> fall in the bin just
@@ -865,7 +879,7 @@ higher end.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a5955b4069425e31ce49bd832a45290b8841f9e93928a787a9a418a2750ca535.png" src="../_images/a5955b4069425e31ce49bd832a45290b8841f9e93928a787a9a418a2750ca535.png" />
+<img alt="../_images/6a8fb88dc8d7e2036813631efbf605637d5c12a67d982f90ac518e4334a0828d.png" src="../_images/6a8fb88dc8d7e2036813631efbf605637d5c12a67d982f90ac518e4334a0828d.png" />
 </div>
 </div>
 <p>Which one do you like better? Well, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> histogram took fewer lines of code to create.  And it doesn’t look bad at all. But you do have more fine-grained control with Matplotlib. Which method you choose in a real situation will just depend on the situation and your preference.</p>
@@ -960,7 +974,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/010befe093b32ece2bad00e6a543fb2a62d4fc4a8ff3c87b61284cd0076d87ac.png" src="../_images/010befe093b32ece2bad00e6a543fb2a62d4fc4a8ff3c87b61284cd0076d87ac.png" />
+<img alt="../_images/250346abd12ec86442e411de8ff3e5e6b30b966fe85785e1d07c92207886b97c.png" src="../_images/250346abd12ec86442e411de8ff3e5e6b30b966fe85785e1d07c92207886b97c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -970,7 +984,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4491ab8ed2ac20ebb7f12ba8598054f351de292eccba2a9ef88f419e85820ec2.png" src="../_images/4491ab8ed2ac20ebb7f12ba8598054f351de292eccba2a9ef88f419e85820ec2.png" />
+<img alt="../_images/012b243a137c140b52a7f14041975c1a5337d2e85ada0eb283b48aa678984aa3.png" src="../_images/012b243a137c140b52a7f14041975c1a5337d2e85ada0eb283b48aa678984aa3.png" />
 </div>
 </div>
 <p>What is going on here? Obviously, there is a <em>box</em>: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the <em>median</em>.</p>
@@ -1158,54 +1172,54 @@ bottom whisker = 2.5% abv
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>style
 Schwarzbier                           9
-Herbed / Spiced Beer                  9
 American Double / Imperial Stout      9
+Herbed / Spiced Beer                  9
+Doppelbock                            7
+Bière de Garde                        7
 American Dark Wheat Ale               7
 Belgian Strong Pale Ale               7
 Bock                                  7
-Doppelbock                            7
-Bière de Garde                        7
+English Dark Mild Ale                 6
+Foreign / Export Stout                6
 Belgian Strong Dark Ale               6
+Dortmunder / Export Lager             6
+Baltic Porter                         6
 American Wild Ale                     6
 California Common / Steam Beer        6
-English Dark Mild Ale                 6
-Baltic Porter                         6
-Foreign / Export Stout                6
-Dortmunder / Export Lager             6
+Irish Dry Stout                       5
 Dubbel                                5
 Mead                                  5
-Irish Dry Stout                       5
 Maibock / Helles Bock                 5
 Euro Dark Lager                       5
-English Strong Ale                    4
 Quadrupel (Quad)                      4
 Dunkelweizen                          4
 Munich Dunkel Lager                   4
-Keller Bier / Zwickel Bier            3
+English Strong Ale                    4
 American India Pale Lager             3
+Keller Bier / Zwickel Bier            3
 Shandy                                3
+English Bitter                        3
 Chile Beer                            3
+American Barleywine                   3
 English Barleywine                    3
 English Pale Mild Ale                 3
-English Bitter                        3
 Radler                                3
-American Barleywine                   3
+Euro Pale Lager                       2
+Roggenbier                            2
 English Stout                         2
 Old Ale                               2
-Rauchbier                             2
 American Double / Imperial Pilsner    2
 Abbey Single Ale                      2
-Roggenbier                            2
-Euro Pale Lager                       2
+Rauchbier                             2
 Smoked Beer                           1
-Kristalweizen                         1
+Braggot                               1
+Flanders Oud Bruin                    1
+Grisette                              1
 Other                                 1
 American Malt Liquor                  1
 Wheat Ale                             1
-Grisette                              1
 Flanders Red Ale                      1
-Flanders Oud Bruin                    1
-Braggot                               1
+Kristalweizen                         1
 Low Alcohol Beer                      1
 Name: count, dtype: int64
 </pre></div>
@@ -1246,7 +1260,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a41dac58fe2e0a3802ba6d38566a7933b658537ba58b3edf4d280d7f77b854c3.png" src="../_images/a41dac58fe2e0a3802ba6d38566a7933b658537ba58b3edf4d280d7f77b854c3.png" />
+<img alt="../_images/9838c34f1c92cb01f48e04d05c1e3f7dd0b81a32a293a61f69f87c51cd3714e0.png" src="../_images/9838c34f1c92cb01f48e04d05c1e3f7dd0b81a32a293a61f69f87c51cd3714e0.png" />
 </div>
 </div>
 </section>
@@ -1305,7 +1319,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/557a741658307db353eea080ac9de0ff90cb2445b4857f5f442ce991fa54ae93.png" src="../_images/557a741658307db353eea080ac9de0ff90cb2445b4857f5f442ce991fa54ae93.png" />
+<img alt="../_images/051665ea6cff0fce2792c46a355902c79e32bdaf27516715360db9ad5c8f39b1.png" src="../_images/051665ea6cff0fce2792c46a355902c79e32bdaf27516715360db9ad5c8f39b1.png" />
 </div>
 </div>
 <p>Hmm. That’s a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there’s a lot of vertical spread on those dots to the right of the plot.</p>
@@ -1508,7 +1522,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dd90bdf72766dc2ae6439039b5be0885973d836c75895e8e35849c232ee91bd1.png" src="../_images/dd90bdf72766dc2ae6439039b5be0885973d836c75895e8e35849c232ee91bd1.png" />
+<img alt="../_images/5bcbd3b202886dea2b2d84511ea7c0b6197487126016249127d5b0726794b561.png" src="../_images/5bcbd3b202886dea2b2d84511ea7c0b6197487126016249127d5b0726794b561.png" />
 </div>
 </div>
 <p>That’s rad! Perhaps the bubbles are too small. You could multiply the <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> by a factor of 5, or maybe 10? You should experiment.</p>
@@ -1531,7 +1545,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25cca2791cb1a029d3f1c696195ef7b02468cb3fe92b00fa62cd32425cf72ede.png" src="../_images/25cca2791cb1a029d3f1c696195ef7b02468cb3fe92b00fa62cd32425cf72ede.png" />
+<img alt="../_images/87562aa066858d18263026a278ae30bf469e7ea0bfd0872390e58916f31222af.png" src="../_images/87562aa066858d18263026a278ae30bf469e7ea0bfd0872390e58916f31222af.png" />
 </div>
 </div>
 <p>It looks like the most popular beers do follow a linear relationship between alcohol fraction and IBU. You learned a lot about beer without having a sip!</p>
@@ -1551,7 +1565,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c1dab180cfd8fb50f6e6c32212e7abd2edf49e489afdbcf9bcb091ca70decb84.png" src="../_images/c1dab180cfd8fb50f6e6c32212e7abd2edf49e489afdbcf9bcb091ca70decb84.png" />
+<img alt="../_images/6cdda1e3db2a38fc2a85f9c366b0f7b752f65ac1238dd9e0de1bf34421e71083.png" src="../_images/6cdda1e3db2a38fc2a85f9c366b0f7b752f65ac1238dd9e0de1bf34421e71083.png" />
 </div>
 </div>
 </section>
@@ -1609,11 +1623,10 @@ Name: count, dtype: int64
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="01_Cheers_Stats_Beers.html"
@@ -1633,10 +1646,7 @@ Name: count, dtype: int64
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1708,6 +1718,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1734,8 +1745,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

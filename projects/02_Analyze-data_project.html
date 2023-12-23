@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
   
   
 </a></div>
@@ -429,20 +441,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -538,51 +552,51 @@ Cell In[2], line 2
 ----&gt; 2 data[&#39;date&#39;] = pd.to_datetime(data[&#39;date&#39;])
       3 data
 
-File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1046, in to_datetime(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)
-   1044             result = arg.tz_localize(&quot;utc&quot;)
-   1045 elif isinstance(arg, ABCSeries):
--&gt; 1046     cache_array = _maybe_cache(arg, format, cache, convert_listlike)
-   1047     if not cache_array.empty:
-   1048         result = arg.map(cache_array)
+File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1108, in to_datetime(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)
+   1106             result = arg.tz_localize(&quot;utc&quot;)
+   1107 elif isinstance(arg, ABCSeries):
+-&gt; 1108     cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+   1109     if not cache_array.empty:
+   1110         result = arg.map(cache_array)
 
-File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:250, in _maybe_cache(arg, format, cache, convert_listlike)
-    248 unique_dates = unique(arg)
-    249 if len(unique_dates) &lt; len(arg):
---&gt; 250     cache_dates = convert_listlike(unique_dates, format)
-    251     # GH#45319
-    252     try:
+File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:254, in _maybe_cache(arg, format, cache, convert_listlike)
+    252 unique_dates = unique(arg)
+    253 if len(unique_dates) &lt; len(arg):
+--&gt; 254     cache_dates = convert_listlike(unique_dates, format)
+    255     # GH#45319
+    256     try:
 
-File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:453, in _convert_listlike_datetimes(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)
-    451 # `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.
-    452 if format is not None and format != &quot;mixed&quot;:
---&gt; 453     return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
-    455 result, tz_parsed = objects_to_datetime64ns(
-    456     arg,
-    457     dayfirst=dayfirst,
+File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:488, in _convert_listlike_datetimes(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)
+    486 # `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.
+    487 if format is not None and format != &quot;mixed&quot;:
+--&gt; 488     return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+    490 result, tz_parsed = objects_to_datetime64ns(
+    491     arg,
+    492     dayfirst=dayfirst,
    (...)
-    461     allow_object=True,
-    462 )
-    464 if tz_parsed is not None:
-    465     # We can take a shortcut since the datetime64 numpy array
-    466     # is in UTC
+    496     allow_object=True,
+    497 )
+    499 if tz_parsed is not None:
+    500     # We can take a shortcut since the datetime64 numpy array
+    501     # is in UTC
 
-File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:484, in _array_strptime_with_fallback(arg, name, utc, fmt, exact, errors)
-    473 def _array_strptime_with_fallback(
-    474     arg,
-    475     name,
+File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:519, in _array_strptime_with_fallback(arg, name, utc, fmt, exact, errors)
+    508 def _array_strptime_with_fallback(
+    509     arg,
+    510     name,
    (...)
-    479     errors: str,
-    480 ) -&gt; Index:
-    481     &quot;&quot;&quot;
-    482     Call array_strptime, with fallback behavior depending on &#39;errors&#39;.
-    483     &quot;&quot;&quot;
---&gt; 484     result, timezones = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
-    485     if any(tz is not None for tz in timezones):
-    486         return _return_parsed_timezone_results(result, timezones, utc, name)
+    514     errors: str,
+    515 ) -&gt; Index:
+    516     &quot;&quot;&quot;
+    517     Call array_strptime, with fallback behavior depending on &#39;errors&#39;.
+    518     &quot;&quot;&quot;
+--&gt; 519     result, timezones = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+    520     if any(tz is not None for tz in timezones):
+    521         return _return_parsed_timezone_results(result, timezones, utc, name)
 
-File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/_libs/tslibs/strptime.pyx:530, in pandas._libs.tslibs.strptime.array_strptime()
+File strptime.pyx:534, in pandas._libs.tslibs.strptime.array_strptime()
 
-File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/pandas/_libs/tslibs/strptime.pyx:351, in pandas._libs.tslibs.strptime.array_strptime()
+File strptime.pyx:355, in pandas._libs.tslibs.strptime.array_strptime()
 
 ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%m-%d %H:%M:%S&quot;, at position 251. You might want to try:
     - passing `format` if your strings have a consistent format;
@@ -859,11 +873,10 @@ ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../module_02/HW_02.html"
@@ -883,10 +896,7 @@ ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -928,6 +938,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -954,8 +965,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

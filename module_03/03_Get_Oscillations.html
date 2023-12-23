@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
   
   
 </a></div>
@@ -429,20 +441,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -563,13 +577,13 @@ you’ll also re-use the <code class="docutils literal notranslate"><span class=
 <section id="simple-spring-mass-system-without-friction">
 <h2>Simple spring-mass system, without friction.<a class="headerlink" href="#simple-spring-mass-system-without-friction" title="Permalink to this heading">#</a></h2>
 <p>Newton’s law applied to the friction-less spring-mass system is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2be300ee-9912-44b4-aed0-e4a8ccdd507d">
-<span class="eqno">(5)<a class="headerlink" href="#equation-2be300ee-9912-44b4-aed0-e4a8ccdd507d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f4142db4-5775-45ff-970b-5c4ccd85f6ad">
+<span class="eqno">(5)<a class="headerlink" href="#equation-f4142db4-5775-45ff-970b-5c4ccd85f6ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -k x = m \ddot{x}
 \end{equation}\]</div>
 <p>Introducing the parameter <span class="math notranslate nohighlight">\(\omega = \sqrt{k/m}\)</span>, the equation of motion is rewriten as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79e1075a-255b-4d5f-b8b8-980e3d5ade77">
-<span class="eqno">(6)<a class="headerlink" href="#equation-79e1075a-255b-4d5f-b8b8-980e3d5ade77" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2e79d1ca-2f0d-4862-9ff9-d1827fdb3c6e">
+<span class="eqno">(6)<a class="headerlink" href="#equation-2e79d1ca-2f0d-4862-9ff9-d1827fdb3c6e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ddot{x} + \omega^2 x = 0
 \end{equation}\]</div>
 <p>where a dot above a dependent variable denotes the time derivative. This is a second-order differential equation for the position <span class="math notranslate nohighlight">\(x\)</span>, having a known analytical solution that represents <em>simple harmonic motion</em>:</p>
@@ -578,21 +592,21 @@ you’ll also re-use the <code class="docutils literal notranslate"><span class=
 <section id="system-in-vector-form">
 <h3>System in vector form<a class="headerlink" href="#system-in-vector-form" title="Permalink to this heading">#</a></h3>
 <p>It’s useful to write a second-order differential equation as a set of two first-order equations: in this case, for position and velocity, respectively:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba153a4b-99be-452f-8589-889c2b7d3e7f">
-<span class="eqno">(7)<a class="headerlink" href="#equation-ba153a4b-99be-452f-8589-889c2b7d3e7f" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-cd0358f8-9533-49e9-bfd3-37b85946a8f9">
+<span class="eqno">(7)<a class="headerlink" href="#equation-cd0358f8-9533-49e9-bfd3-37b85946a8f9" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \dot{x} &amp;=&amp; v \nonumber\\
 \dot{v} &amp;=&amp; -\omega^2 x
 \end{eqnarray}\]</div>
 <p>Like you did in <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">Lesson 2</span></a> of this module, you write the state of the system as a two-dimensional vector,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ae387ab-3e7d-47ec-b0bd-7267b4dd0150">
-<span class="eqno">(8)<a class="headerlink" href="#equation-1ae387ab-3e7d-47ec-b0bd-7267b4dd0150" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-81ae0083-8e05-4b08-a922-36239bd070ce">
+<span class="eqno">(8)<a class="headerlink" href="#equation-81ae0083-8e05-4b08-a922-36239bd070ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbf{x} = \begin{bmatrix}
 x \\ v
 \end{bmatrix},
 \end{equation}\]</div>
 <p>and the differential equation in vector form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89c79220-6b00-4180-b4ce-de5cbbdd43fe">
-<span class="eqno">(9)<a class="headerlink" href="#equation-89c79220-6b00-4180-b4ce-de5cbbdd43fe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2523f4d0-f796-4c32-92d4-4a74e9c3fabe">
+<span class="eqno">(9)<a class="headerlink" href="#equation-2523f4d0-f796-4c32-92d4-4a74e9c3fabe" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dot{\mathbf{x}} = \begin{bmatrix}
 v \\ -\omega^2 x
 \end{bmatrix}.
@@ -710,7 +724,7 @@ v \\ -\omega^2 x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/999f3990e97241433d23c8e3fbd51d30e649b8d7f1c153bde0d11de6b166af13.png" src="../_images/999f3990e97241433d23c8e3fbd51d30e649b8d7f1c153bde0d11de6b166af13.png" />
+<img alt="../_images/fa734d862395298dad6fd63c728382366971dc122b1ab10bbaff37f53b347654.png" src="../_images/fa734d862395298dad6fd63c728382366971dc122b1ab10bbaff37f53b347654.png" />
 </div>
 </div>
 <p>Yikes! The numerical solution exhibits a marked growth in amplitude over time, which certainly is not what the physical system displays. <em>What is wrong with Euler’s method?</em></p>
@@ -730,8 +744,8 @@ longer simulations.</p>
 <section id="euler-cromer-method">
 <h2>Euler-Cromer method<a class="headerlink" href="#euler-cromer-method" title="Permalink to this heading">#</a></h2>
 <p>The thing is, Euler’s method has a fundamental problem with oscillatory systems. Look again at the approximation made by Euler’s method to get the position at the next time interval:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-688c1cec-798e-4d06-b795-a46799d00002">
-<span class="eqno">(10)<a class="headerlink" href="#equation-688c1cec-798e-4d06-b795-a46799d00002" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0adf4046-8d68-4695-9c2c-0d2bd791bcae">
+<span class="eqno">(10)<a class="headerlink" href="#equation-0adf4046-8d68-4695-9c2c-0d2bd791bcae" title="Permalink to this equation">#</a></span>\[\begin{equation}
  x(t_i+\Delta t)   \approx  x(t_i) + v(t_i) \Delta t
 \end{equation}\]</div>
 <p>It uses the velocity value at the <em>beginning</em> of the time interval to step the solution to the future.</p>
@@ -742,14 +756,14 @@ longer simulations.</p>
 <p>Since Euler’s method makes a linear approximation to project the solution into the future, assuming the value of the derivative at the start of the interval, it’s not very good on oscillatory functions.</p>
 <p>A clever idea that improves on Euler’s method is to use the updated value of the derivatives for the <em>second</em> equation.</p>
 <p>Pure Euler’s method applies:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5101390-4597-4bfc-b9f2-b43e08f9ff50">
-<span class="eqno">(11)<a class="headerlink" href="#equation-b5101390-4597-4bfc-b9f2-b43e08f9ff50" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-50f23acd-b94e-4d57-986c-95878053eb4e">
+<span class="eqno">(11)<a class="headerlink" href="#equation-50f23acd-b94e-4d57-986c-95878053eb4e" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 x(t_0) = x_0, \qquad x_{i+1} &amp;=&amp; x_i + v_i \Delta t \nonumber\\
 v(t_0) = v_0, \qquad v_{i+1} &amp;=&amp; v_i - {\omega}^2 x_i \Delta t
 \end{eqnarray}\]</div>
 <p>What if in the equation for <span class="math notranslate nohighlight">\(v\)</span> you used the value <span class="math notranslate nohighlight">\(x_{i+1}\)</span> that was just computed? Like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f3da5da-6f81-4bf8-b867-ab66b92950bf">
-<span class="eqno">(12)<a class="headerlink" href="#equation-8f3da5da-6f81-4bf8-b867-ab66b92950bf" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-d83e3f88-7621-4d4e-bd11-02e348a73a68">
+<span class="eqno">(12)<a class="headerlink" href="#equation-d83e3f88-7621-4d4e-bd11-02e348a73a68" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 x(t_0) = x_0, \qquad x_{i+1} &amp;=&amp; x_i + v_i \Delta t \nonumber\\
 v(t_0) = v_0, \qquad v_{i+1} &amp;=&amp; v_i - {\omega}^2 x_{i+1} \Delta t
 \end{eqnarray}\]</div>
@@ -844,7 +858,7 @@ you’ll need to pick carefully the range of time to plot.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e0a82eadbb4a25b8e66e108327dffec8428d6166242cf62336173f5dd693022f.png" src="../_images/e0a82eadbb4a25b8e66e108327dffec8428d6166242cf62336173f5dd693022f.png" />
+<img alt="../_images/031f11dde92e59b62db7472fdeb9f6e27cfedead6d8229535e7a999544f24abd.png" src="../_images/031f11dde92e59b62db7472fdeb9f6e27cfedead6d8229535e7a999544f24abd.png" />
 </div>
 </div>
 <p>The plot shows that Euler-Cromer does not have the problem of growing
@@ -865,7 +879,7 @@ amplitudes. You should be happy with it in that sense.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e385893943d9a3f304ac33ffa6525a14a93f4dfb92799b283eca667c06ac38e.png" src="../_images/2e385893943d9a3f304ac33ffa6525a14a93f4dfb92799b283eca667c06ac38e.png" />
+<img alt="../_images/932e2b463607ba7c6880ae512909ae01a943f916da918317e6d12b739aff9270.png" src="../_images/932e2b463607ba7c6880ae512909ae01a943f916da918317e6d12b739aff9270.png" />
 </div>
 </div>
 <p>Looking at the last few oscillations in a very long run shows a slight phase difference, even with a very small time increment. So although the Euler-Cromer method fixes a big problem with Euler’s method, it still has some error. It’s still a first-order method!</p>
@@ -884,8 +898,8 @@ amplitudes. You should be happy with it in that sense.</p>
 <p>Both Euler’s method and the Cromer variant are <em>first-order accurate</em>: the error goes as the first power of <span class="math notranslate nohighlight">\(\Delta t\)</span>. In <a class="reference external" href="http://go.gwu.edu/engcomp3lesson2">Lesson 2</a> of this module, you showed this using a Taylor series. Let’s now confirm it numerically.</p>
 <p>Because simple harmonic motion has a known analytical function that solves the differential equation, you can directly compute a measure of the error made by the numerical solution.</p>
 <p>Suppose you ran a numerical solution in the interval from <span class="math notranslate nohighlight">\(t_0\)</span> to <span class="math notranslate nohighlight">\(T=N/\Delta t\)</span>. You could then compute the error, as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-64bb6c4d-84f7-4b12-849c-c0d53d40544b">
-<span class="eqno">(13)<a class="headerlink" href="#equation-64bb6c4d-84f7-4b12-849c-c0d53d40544b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1c034d4a-a59d-4dc9-800c-b9b13e2384fa">
+<span class="eqno">(13)<a class="headerlink" href="#equation-1c034d4a-a59d-4dc9-800c-b9b13e2384fa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e = x_N - x_0 \cos(\omega T)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_N\)</span> represents the numerical solution at the <span class="math notranslate nohighlight">\(N\)</span>-th time step.</p>
@@ -962,7 +976,7 @@ e = x_N - x_0 \cos(\omega T)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/85d90439905b849103f5c6ac5f5092c6a7785f4ce3b49dea6502f258f93c4670.png" src="../_images/85d90439905b849103f5c6ac5f5092c6a7785f4ce3b49dea6502f258f93c4670.png" />
+<img alt="../_images/2e34261a9e0ee50f4a1502a811b069a15bf84cd3e52641b15ac3bfde190785c6.png" src="../_images/2e34261a9e0ee50f4a1502a811b069a15bf84cd3e52641b15ac3bfde190785c6.png" />
 </div>
 </div>
 <p>What do you see in the plot of the error as a function of <span class="math notranslate nohighlight">\(\Delta t\)</span>? It looks like a straight line, with a slope close to 1. On a log-log convergence plot, a slope of 1 indicates that you have a first-order method: the error scales as <span class="math notranslate nohighlight">\({\mathcal O}(\Delta t)\)</span>—using the “big-O” notation. It means that the error is proportional to the time increment: <span class="math notranslate nohighlight">\( error \propto \Delta t.\)</span></p>
@@ -971,13 +985,13 @@ e = x_N - x_0 \cos(\omega T)
 <h2>Modified Euler’s method<a class="headerlink" href="#modified-eulers-method" title="Permalink to this heading">#</a></h2>
 <p>Another improvement on Euler’s method is achieved by stepping the numerical solution to the midpoint of a time interval, computing the derivatives there, and then going back and updating the system state using the midpoint derivatives. This is called <em>modified Euler’s method</em>.</p>
 <p>If you write the vector form of the differential equation as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-956a1f3a-acd1-4783-b7ae-7df8b34a3872">
-<span class="eqno">(14)<a class="headerlink" href="#equation-956a1f3a-acd1-4783-b7ae-7df8b34a3872" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8ad0def4-8a51-451b-80b3-e63db4c1299b">
+<span class="eqno">(14)<a class="headerlink" href="#equation-8ad0def4-8a51-451b-80b3-e63db4c1299b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dot{\mathbf{x}} = f(\mathbf{x}),
 \end{equation}\]</div>
 <p>then modified Euler’s method is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0d5fd37-e37b-461d-a967-ca0edcce95b5">
-<span class="eqno">(15)<a class="headerlink" href="#equation-b0d5fd37-e37b-461d-a967-ca0edcce95b5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-814e9825-0394-4d4e-b083-83c4475aa242">
+<span class="eqno">(15)<a class="headerlink" href="#equation-814e9825-0394-4d4e-b083-83c4475aa242" title="Permalink to this equation">#</a></span>\[\begin{align}
 \mathbf{x}_{n+1/2}   &amp; = \mathbf{x}_n + \frac{\Delta t}{2} f(\mathbf{x}_n) \\
 \mathbf{x}_{n+1} &amp; = \mathbf{x}_n + \Delta t \,\, f(\mathbf{x}_{n+1/2}).
 \end{align}\]</div>
@@ -1043,10 +1057,10 @@ e = x_N - x_0 \cos(\omega T)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff1502ed0d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcc58812b20&gt;]
 </pre></div>
 </div>
-<img alt="../_images/97a63592228d4d1f4bf7b6da980fb793a29ffbb3f9085b65c009c7832ff018cd.png" src="../_images/97a63592228d4d1f4bf7b6da980fb793a29ffbb3f9085b65c009c7832ff018cd.png" />
+<img alt="../_images/ac229980735ea7606ce5bd880cac49c151f645969bc03750c35e3d0d7ea5d027.png" src="../_images/ac229980735ea7606ce5bd880cac49c151f645969bc03750c35e3d0d7ea5d027.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1076,7 +1090,7 @@ e = x_N - x_0 \cos(\omega T)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a024da934aeb5b5ab348e3fe673a84411c62f81d822f15a7978f85d5b3b9a238.png" src="../_images/a024da934aeb5b5ab348e3fe673a84411c62f81d822f15a7978f85d5b3b9a238.png" />
+<img alt="../_images/722b21dfebae818dd05f5f1f6d922426aaddaf3255f3535815e9f9cb3472cad3.png" src="../_images/722b21dfebae818dd05f5f1f6d922426aaddaf3255f3535815e9f9cb3472cad3.png" />
 </div>
 </div>
 <p>The convergence plot, in this case, does look close to a slope-2 line. Modified Euler’s method is second-order accurate:
@@ -1195,7 +1209,7 @@ The time increment is 0.3141592653589793
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/507f879491547776f5a6354e190dd61627b4179658a46f9e0d2f4384969d0702.png" src="../_images/507f879491547776f5a6354e190dd61627b4179658a46f9e0d2f4384969d0702.png" />
+<img alt="../_images/1423a28740bb0158f67eb5d626870c9fbc459d9da0b09b4bd2a5a3be9c249c1e.png" src="../_images/1423a28740bb0158f67eb5d626870c9fbc459d9da0b09b4bd2a5a3be9c249c1e.png" />
 </div>
 </div>
 </section>
@@ -1252,11 +1266,10 @@ The time increment is 0.3141592653589793
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="02_Step_Future.html"
@@ -1276,10 +1289,7 @@ The time increment is 0.3141592653589793
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1339,6 +1349,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1365,8 +1376,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

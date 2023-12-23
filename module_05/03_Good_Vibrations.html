@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
   
   
 </a></div>
@@ -429,20 +441,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -815,7 +829,7 @@ x_2\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6eda31c647b36f2e6921736bb7b5c28841661bad46e5a37bfe5d297c6a3f2944.png" src="../_images/6eda31c647b36f2e6921736bb7b5c28841661bad46e5a37bfe5d297c6a3f2944.png" />
+<img alt="../_images/66f29851562b083a6d82c5c7734ce16fee88a7e9babffc7bb3e07635acd7d0bd.png" src="../_images/66f29851562b083a6d82c5c7734ce16fee88a7e9babffc7bb3e07635acd7d0bd.png" />
 </div>
 </div>
 </section>
@@ -859,7 +873,7 @@ x_2\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f28c809e7c8ebd7dfeab185662679ac57c9acfcff92ce5b65ed03cb0257d4dd1.png" src="../_images/f28c809e7c8ebd7dfeab185662679ac57c9acfcff92ce5b65ed03cb0257d4dd1.png" />
+<img alt="../_images/86cecf1602d19e4fefcf7f4c08b22e5802d37cdb3c6578baee52dbc20fc7ddc6.png" src="../_images/86cecf1602d19e4fefcf7f4c08b22e5802d37cdb3c6578baee52dbc20fc7ddc6.png" />
 </div>
 </div>
 </section>
@@ -1055,7 +1069,7 @@ shortest time period =2.103 ms
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Initial state 1&#39;)
 </pre></div>
 </div>
-<img alt="../_images/4ea84f9f01f2b0eaf65ce97b50fc8b2c0ec2a390f6abbf148b6f8ae9d04975c3.png" src="../_images/4ea84f9f01f2b0eaf65ce97b50fc8b2c0ec2a390f6abbf148b6f8ae9d04975c3.png" />
+<img alt="../_images/608fd11a76f5b0b5d15dd7c01bbdb90b5d942ea4f2d5802331c34643d55030ef.png" src="../_images/608fd11a76f5b0b5d15dd7c01bbdb90b5d942ea4f2d5802331c34643d55030ef.png" />
 </div>
 </div>
 <ol class="arabic simple" start="2">
@@ -1073,7 +1087,7 @@ shortest time period =2.103 ms
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Initial state 2&#39;)
 </pre></div>
 </div>
-<img alt="../_images/8e98fd850d6c404cb2b2996030553ef3ad706537ffc51bcc1166a8331eab0024.png" src="../_images/8e98fd850d6c404cb2b2996030553ef3ad706537ffc51bcc1166a8331eab0024.png" />
+<img alt="../_images/51b52bb65c30178b506a9b067cd2bfc7f46b2f406e9f48d9c581a4310c453d2b.png" src="../_images/51b52bb65c30178b506a9b067cd2bfc7f46b2f406e9f48d9c581a4310c453d2b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1158,7 +1172,7 @@ shortest time period =2.103 ms
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Plotting rows of y(x,t)\neach line is one point along x-axis&#39;)
 </pre></div>
 </div>
-<img alt="../_images/eb23b43c97d143a9d5de970963d7f6f979a555c9248e46dc51eac09978029927.png" src="../_images/eb23b43c97d143a9d5de970963d7f6f979a555c9248e46dc51eac09978029927.png" />
+<img alt="../_images/6a71ef1e655055196bf93030263149a2fd0cd6dfdf2ced9464b4621132030966.png" src="../_images/6a71ef1e655055196bf93030263149a2fd0cd6dfdf2ced9464b4621132030966.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1176,7 +1190,7 @@ shortest time period =2.103 ms
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Plotting columns of y(x,t)\neach line is one point in time&#39;)
 </pre></div>
 </div>
-<img alt="../_images/0b4d6bf048e18d4e5a83bf7180de81956453733e077cccc258d678b97f4a57b3.png" src="../_images/0b4d6bf048e18d4e5a83bf7180de81956453733e077cccc258d678b97f4a57b3.png" />
+<img alt="../_images/dddc29114aa5cb605468d1ae1a33cb6d8964572909e9936ef0e0e4a801b35c8d.png" src="../_images/dddc29114aa5cb605468d1ae1a33cb6d8964572909e9936ef0e0e4a801b35c8d.png" />
 </div>
 </div>
 <section id="fancy-3d-plot-to-see-the-whole-y-x-t-stretched-out-over-the-time-and-space-axes">
@@ -1202,7 +1216,7 @@ shortest time period =2.103 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0abad4c34ad12a101f2b6528b575cc9da8190d27fcee84555d6fa6878fdd175f.png" src="../_images/0abad4c34ad12a101f2b6528b575cc9da8190d27fcee84555d6fa6878fdd175f.png" />
+<img alt="../_images/466cf8e4df46e6a395e326869e2bd8067ae3468175d6771d2bf4cc0ae161cdc7.png" src="../_images/466cf8e4df46e6a395e326869e2bd8067ae3468175d6771d2bf4cc0ae161cdc7.png" />
 </div>
 </div>
 </section>
@@ -1311,7 +1325,7 @@ shortest time period =0.235 ms
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Plotting half the rows of y(x,t)\neach line is one point along x-axis&#39;)
 </pre></div>
 </div>
-<img alt="../_images/2e3e3ede3d558715a8cb05aac1239f87a978ccf8d1c57583a7498959136000cc.png" src="../_images/2e3e3ede3d558715a8cb05aac1239f87a978ccf8d1c57583a7498959136000cc.png" />
+<img alt="../_images/0ea9fb2c5e966e39e2211df665860c2432e662977fa906f05cd90be362a0e889.png" src="../_images/0ea9fb2c5e966e39e2211df665860c2432e662977fa906f05cd90be362a0e889.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1329,7 +1343,7 @@ shortest time period =0.235 ms
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Plotting columns of y(x,t)\neach line is one point in time&#39;)
 </pre></div>
 </div>
-<img alt="../_images/294e03a67c6ccba0edfbafcea27d5dc327552fed4d677215a9efcc999ecfaa41.png" src="../_images/294e03a67c6ccba0edfbafcea27d5dc327552fed4d677215a9efcc999ecfaa41.png" />
+<img alt="../_images/fc4898bf5b552904c1b73e1601d7eeb49b92bf20ba3c4e083cc6c467a48daf94.png" src="../_images/fc4898bf5b552904c1b73e1601d7eeb49b92bf20ba3c4e083cc6c467a48daf94.png" />
 </div>
 </div>
 </section>
@@ -1374,7 +1388,7 @@ shortest time period =0.235 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cb12756374d3a1515603663f4172ca3fedbcc73b1f99ce51891d72bad5942313.png" src="../_images/cb12756374d3a1515603663f4172ca3fedbcc73b1f99ce51891d72bad5942313.png" />
+<img alt="../_images/e009d33d0f3f7a73a2731358f8253ff1db0fbb94192069d8bb4704109d1da006.png" src="../_images/e009d33d0f3f7a73a2731358f8253ff1db0fbb94192069d8bb4704109d1da006.png" />
 </div>
 </div>
 <ol class="arabic simple" start="2">
@@ -1442,17 +1456,17 @@ shortest time period =0.235 ms
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">HTML</span><span class="p">(</span><span class="n">anim</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">())</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/matplotlib/animation.py:1284,</span> in <span class="ni">Animation.to_html5_video</span><span class="nt">(self, embed_limit)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1281</span> <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">&quot;temp.m4v&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1282</span> <span class="c1"># We create a writer manually so that we can get the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1283</span> <span class="c1"># appropriate size for the tag</span>
-<span class="ne">-&gt; </span><span class="mi">1284</span> <span class="n">Writer</span> <span class="o">=</span> <span class="n">writers</span><span class="p">[</span><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.writer&#39;</span><span class="p">]]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1285</span> <span class="n">writer</span> <span class="o">=</span> <span class="n">Writer</span><span class="p">(</span><span class="n">codec</span><span class="o">=</span><span class="s1">&#39;h264&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1286</span>                 <span class="n">bitrate</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.bitrate&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1287</span>                 <span class="n">fps</span><span class="o">=</span><span class="mf">1000.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interval</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1288</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/animation.py:1285,</span> in <span class="ni">Animation.to_html5_video</span><span class="nt">(self, embed_limit)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1282</span> <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">&quot;temp.m4v&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1283</span> <span class="c1"># We create a writer manually so that we can get the</span>
+<span class="g g-Whitespace">   </span><span class="mi">1284</span> <span class="c1"># appropriate size for the tag</span>
+<span class="ne">-&gt; </span><span class="mi">1285</span> <span class="n">Writer</span> <span class="o">=</span> <span class="n">writers</span><span class="p">[</span><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.writer&#39;</span><span class="p">]]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1286</span> <span class="n">writer</span> <span class="o">=</span> <span class="n">Writer</span><span class="p">(</span><span class="n">codec</span><span class="o">=</span><span class="s1">&#39;h264&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1287</span>                 <span class="n">bitrate</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.bitrate&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1288</span>                 <span class="n">fps</span><span class="o">=</span><span class="mf">1000.</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interval</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1289</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/site-packages/matplotlib/animation.py:148,</span> in <span class="ni">MovieWriterRegistry.__getitem__</span><span class="nt">(self, name)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/animation.py:148,</span> in <span class="ni">MovieWriterRegistry.__getitem__</span><span class="nt">(self, name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_available</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_registered</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 <span class="ne">--&gt; </span><span class="mi">148</span> <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Requested MovieWriter (</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">) not available&quot;</span><span class="p">)</span>
@@ -1564,11 +1578,10 @@ shortest time period =0.235 ms
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="02_Keep_it_steady.html"
@@ -1588,10 +1601,7 @@ shortest time period =0.235 ms
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1671,6 +1681,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1697,8 +1708,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

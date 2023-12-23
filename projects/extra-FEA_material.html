@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -131,9 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../README.html">
+  
   
   
   
@@ -143,8 +155,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
   
   
 </a></div>
@@ -428,20 +440,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -576,7 +590,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;forces and deformation of single Al-bar\nscale factor = 10&#39;)
 </pre></div>
 </div>
-<img alt="../_images/8efa0167e8e0ca47cdcc8fec8d28ada235d445a12b6d9ded9b80bebbd70fa1fb.png" src="../_images/8efa0167e8e0ca47cdcc8fec8d28ada235d445a12b6d9ded9b80bebbd70fa1fb.png" />
+<img alt="../_images/dc18ed3afaa15c5d0d6fd07093adb336aeafe6130b300aaab119a5e6ce35f376.png" src="../_images/dc18ed3afaa15c5d0d6fd07093adb336aeafe6130b300aaab119a5e6ce35f376.png" />
 </div>
 </div>
 <section id="combining-multiple-elements">
@@ -721,7 +735,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.529210992451761
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.52921099245176
 </pre></div>
 </div>
 </div>
@@ -749,7 +763,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/df3e5b2e9c2b6765386538fed97d9ea7a8ac9be248c24278c9ef1d05da620750.png" src="../_images/df3e5b2e9c2b6765386538fed97d9ea7a8ac9be248c24278c9ef1d05da620750.png" />
+<img alt="../_images/86cb374824acc5e6f557c1e7c21dd6842840249fc34ca2e2db7bbef7eeac5e22.png" src="../_images/86cb374824acc5e6f557c1e7c21dd6842840249fc34ca2e2db7bbef7eeac5e22.png" />
 </div>
 </div>
 </section>
@@ -880,7 +894,7 @@ element array
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/95463009c38e0b15835aeda42f923563225887a336b538a7f3292642b85fcfea.png" src="../_images/95463009c38e0b15835aeda42f923563225887a336b538a7f3292642b85fcfea.png" />
+<img alt="../_images/4ebf4a1876c177e027321fe640bf0ac1412cc92989b25617da77c8116dc1bc9d.png" src="../_images/4ebf4a1876c177e027321fe640bf0ac1412cc92989b25617da77c8116dc1bc9d.png" />
 </div>
 </div>
 </section>
@@ -1030,9 +1044,9 @@ element array
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   0.    0.    0.    0.    0. -100.    0.    0.    0.    0.    0.]
-[ 0.00000000e+00 -5.32907052e-15  0.00000000e+00  2.84217094e-14
-  2.14661921e-14 -1.00000000e+02  0.00000000e+00 -1.42108547e-14
-  0.00000000e+00 -2.84217094e-14  2.84217094e-14]
+[ 1.42108547e-14 -1.77635684e-15 -2.84217094e-14  3.55271368e-14
+ -2.25574756e-14 -1.00000000e+02  0.00000000e+00  3.19744231e-14
+  2.84217094e-14 -7.10542736e-15  0.00000000e+00]
 </pre></div>
 </div>
 </div>
@@ -1073,12 +1087,12 @@ F_1x:-0.00 N
 F_1y:50.00 N
 F_2x:0.00 N
 F_2y:-0.00 N
-F_3x:0.00 N
+F_3x:-0.00 N
 F_3y:0.00 N
-F_4x:0.00 N
+F_4x:-0.00 N
 F_4y:-100.00 N
 F_5x:0.00 N
-F_5y:-0.00 N
+F_5y:0.00 N
 F_6x:0.00 N
 F_6y:-0.00 N
 F_7x:0.00 N
@@ -1164,11 +1178,10 @@ deformation.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../how-to/for-loops.html"
@@ -1179,10 +1192,7 @@ deformation.</p>
         <p class="prev-next-title">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1225,6 +1235,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1251,8 +1262,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
