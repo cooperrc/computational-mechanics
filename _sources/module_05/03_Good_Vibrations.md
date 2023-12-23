@@ -798,8 +798,18 @@ Below you have the fruits of your toils, you can watch the wave travelling from 
 __Guitar string equation:__ $\mu\frac{\partial^2 y}{\partial t^2}=T\frac{\partial ^2 y}{\partial x^2}$
 
 ```{code-cell} ipython3
-HTML(anim.to_html5_video())
+anim.save(filename='./guitar_string.gif', 
+          writer="pillow", 
+                   fps=48)
+# HTML(anim.to_html5_video()) 
+# use this `HTML` to view inside your Jupyter notebook
 ```
+
+![Animation of String from t=0-91.4 ms every 0.24 ms](./guitar_string.gif)
+
+Animation of String from t=0-91.4 ms every 0.24 ms originally stretched
+to a triangle shape. 
+
 
 ## Listen to your data
 

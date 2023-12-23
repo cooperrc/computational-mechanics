@@ -648,14 +648,12 @@ you would print out “computational mechanics”.</p>
 <p>b. Use your function to plot sin(x) and cos(x) for x=<span class="math notranslate nohighlight">\(0..2\pi\)</span></p>
 </li>
 </ol>
-<ol class="arabic" start="2">
+<ol class="arabic simple" start="2">
 <li><p>Use a for-loop to create a variable called <code class="docutils literal notranslate"><span class="pre">A_99</span></code>, where every element is the product
-of the two indices from 0 to 9 e.g. A_99[3,2]=6 and A_99[4,4]=16.</p>
-<p>a. time your script using <code class="docutils literal notranslate"><span class="pre">%%time</span></code></p>
-<p>b. Calculate the mean of <code class="docutils literal notranslate"><span class="pre">A_99</span></code></p>
-<p>c. Calculate the standard deviation of <code class="docutils literal notranslate"><span class="pre">A_99</span></code></p>
-</li>
+of the two indices from 0 to 9 e.g. A_99[3,2]=6 and A_99[4,4]=16.</p></li>
 </ol>
+<p>a. Calculate the mean and standard deviation of <code class="docutils literal notranslate"><span class="pre">A_99</span></code></p>
+<p>b. time your script that creates <code class="docutils literal notranslate"><span class="pre">A_99</span></code> takes its mean and standard deviation using <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code></p>
 <ol class="arabic simple" start="3">
 <li><p>Use the two arrays, X and Y, given below to create A_99 using numpy array math rather than a for-loop.</p></li>
 </ol>
@@ -666,15 +664,9 @@ of the two indices from 0 to 9 e.g. A_99[3,2]=6 and A_99[4,4]=16.</p>
 </div>
 </div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a. time your script using `%%time`    
-
-b. Calculate the mean of `A_99`
-
-c. Calculate the standard deviation of `A_99`
-    
-d. create a filled contour plot of X, Y, A_99 [contourf plot documentation](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.contourf.html)
-</pre></div>
-</div>
+<p>b. Calculate the mean and standard deviation of <code class="docutils literal notranslate"><span class="pre">A_99</span></code></p>
+<p>c. time your script that creates <code class="docutils literal notranslate"><span class="pre">A_99</span></code> takes its mean and standard deviation using <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code></p>
+<p>d. create a filled contour plot of X, Y, A_99 <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.contourf.html">contourf plot documentation</a></p>
 <ol class="arabic simple" start="4">
 <li><p>The following linear interpolation function has an error. It is supposed to return y(x) given the the two points <span class="math notranslate nohighlight">\(p_1=[x_1,~y_1]\)</span> and <span class="math notranslate nohighlight">\(p_2=[x_2,~y_2]\)</span>. Currently, it just returns and error.</p></li>
 </ol>
@@ -757,13 +749,13 @@ average growth of 1900 - 2020
 </div>
 </div>
 </div>
-<p><strong>d.</strong> As the number of time steps increases, the Euler approximation approaches the analytical solution, not the measured data. The best-case scenario is that the Euler solution is the same as the analytical solution.</p>
+<p><strong>d.</strong> What happens to the numerical model as the number of timesteps increases? Does it look more like the analytical curve, <span class="math notranslate nohighlight">\(e^k(t-1900)\)</span>, or the measured population data, <code class="docutils literal notranslate"><span class="pre">pop</span></code>?</p>
 <ol class="arabic" start="2">
 <li><p>In the freefall example you used smaller time steps to decrease the <strong>truncation error</strong> in our Euler approximation. Another way to decrease approximation error is to continue expanding the Taylor series. Consider the function f(x)</p>
 <p><span class="math notranslate nohighlight">\(f(x)=e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+...\)</span></p>
 <p>We can approximate <span class="math notranslate nohighlight">\(e^x\)</span> as <span class="math notranslate nohighlight">\(1+x\)</span> (first order), <span class="math notranslate nohighlight">\(1+x+x^2/2\)</span> (second order), and so on each higher order results in smaller error.</p>
 <p>a. Use the given <code class="docutils literal notranslate"><span class="pre">exptaylor</span></code> function to approximate the value of exp(1) with a second-order Taylor series expansion. What is the relative error compared to <code class="docutils literal notranslate"><span class="pre">np.exp(1)</span></code>?</p>
-<p>b. Time the solution for a second-order Taylor series and a tenth-order Taylor series. How long would a 100,000-order series take (approximate this, you don’t have to run it)</p>
+<p>b. Time the solution for a second-order Taylor series and a tenth-order Taylor series using <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>. How long would a 100,000-order series take (approximate this, <strong>DON’T RUN</strong> <code class="docutils literal notranslate"><span class="pre">exptaylor(1,</span> <span class="pre">1000000)</span></code> )</p>
 <p>c. Plot the relative error as a function of the Taylor series expansion order from first order upwards. (Hint: use method (4) in the comparison methods from the “Truncation and roundoff error accumulation in log-log plot” figure)</p>
 </li>
 </ol>

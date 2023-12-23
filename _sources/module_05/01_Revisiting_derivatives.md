@@ -241,7 +241,7 @@ __Table of derivatives and the corresponding forward, backward, and central diff
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\frac{d^2f}{dx^2}\)</span></td>
-<td><span class="math inline">\(\frac{f(x_{i+2})-2f(x_{i+1})-3f(x_{i})}{h^2}\)</span></td>
+<td><span class="math inline">\(\frac{f(x_{i+2})-2f(x_{i+1})+f(x_{i})}{h^2}\)</span></td>
 <td><span class="math inline">\(\frac{f(x_{i})-2f(x_{i-1})+f(x_{i-2})}{h^2}\)</span></td>
 <td><span class="math inline">\(\frac{f(x_{i+1})-2f(x_{i})+f(x_{i-1})}{h^2}\)</span></td>
 </tr>
