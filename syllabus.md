@@ -1,8 +1,8 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Fall 2023
+## ME 3255 Winter 2023
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
-- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NTIzNzEyMzE5NTc2?cjc=qgd6u57)
-  class code: **qgd6u57**
+- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NjQ2NjA0MDM2NzY2?cjc=xpc7ifh)
+  class code: **xpc7ifh**
 - **JupyterHub server**: <https://compmech.uconn.edu/>
 - **ME3255 - Discussions**: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
 
@@ -162,7 +162,7 @@ Scientists_ 4th edition.
 | Projects      | 40 %    | Complete the module projects and submit to GitHub |
 
 __Participation__: The participation grade will be self-assigned. During
-week 7 you will submit your current grade and modes of participation,
+week 2 you will submit your current grade and modes of participation,
 then during the final week submit an updated final grade. 
 
 ## Academic Integrity: 
@@ -181,7 +181,7 @@ then during the final week submit an updated final grade.
 The course schedule is kept up to date on the Google Calendar here:
 
 <iframe
-src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb204OTFhNWQxMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161"
+src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20yYzQ5Y2Y3NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB"
 style="border:solid 1px #777" width="500" height="300" frameborder="0"
 scrolling="no"></iframe>
 
@@ -224,12 +224,11 @@ feedback for you to resubmit the assignment.
 
 ## Feedback and Grades
 
-We will make every effort to provide feedback and grades within 5
-business days5 business days5 business days5 business days5 business
-days.
-To keep track of your performance in the course, refer to grades in
-Google Classroom.  You can resubmit any assignment with improvements,
-notify Prof. Cooper when you have incorporated comments. 
+We will make every effort to provide feedback and grades within 2
+business days.  To keep track of your performance in the course, refer
+to grades in Google Classroom.  You can resubmit any assignment with
+improvements. Add a private comment to your submission when you have
+incorporated comments. 
 
 <!-- ## Student Authentication and Verification -->
 <!--  -->
