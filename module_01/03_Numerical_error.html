@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>03 - Numerical Error &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_01/03_Numerical_error';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework" href="HW_01.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -531,16 +539,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="numerical-error">
-<h1>03 - Numerical Error<a class="headerlink" href="#numerical-error" title="Permalink to this heading">#</a></h1>
+<h1>03 - Numerical Error<a class="headerlink" href="#numerical-error" title="Link to this heading">#</a></h1>
 <section id="freefall-model-computational-solution">
-<h2>Freefall Model Computational solution<a class="headerlink" href="#freefall-model-computational-solution" title="Permalink to this heading">#</a></h2>
+<h2>Freefall Model Computational solution<a class="headerlink" href="#freefall-model-computational-solution" title="Link to this heading">#</a></h2>
 <p><img alt="Object falling through the sky" src="../_images/freefall.png" /></p>
 <p>Here is your first computational mechanics model.</p>
 <p>An object falling is subject to the force of</p>
@@ -551,7 +559,7 @@ document.write(`
 <p>Acceleration of the object:</p>
 <p><span class="math notranslate nohighlight">\(\sum F=ma=F_g-F_d=mg - cv^2 = m\frac{dv}{dt}\)</span></p>
 <section id="define-constants-and-analytical-solution-meters-kilogram-sec">
-<h3>Define constants and analytical solution (meters-kilogram-sec)<a class="headerlink" href="#define-constants-and-analytical-solution-meters-kilogram-sec" title="Permalink to this heading">#</a></h3>
+<h3>Define constants and analytical solution (meters-kilogram-sec)<a class="headerlink" href="#define-constants-and-analytical-solution-meters-kilogram-sec" title="Link to this heading">#</a></h3>
 <p>Define parameters as the acceleration due to gravity, g, drag
 coefficient, c, and mass of the object, m. Once you have defined these
 parameters, You have a single variable whose derivative <span class="math notranslate nohighlight">\(\frac{dv}{dt}\)</span>
@@ -576,7 +584,7 @@ f(v,~parameters)\)</span>.</p>
 </section>
 </section>
 <section id="exercise">
-<h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Calculate the terminal velocity for the given parameters, g=9.81 m/s<span class="math notranslate nohighlight">\(^2\)</span>, c=0.25 kg/m, m=60 kg.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -649,7 +657,7 @@ at time 12.00 s, speed is 47.77 m/s
 </div>
 </section>
 <section id="analytical-vs-computational-solution">
-<h2>Analytical vs Computational Solution<a class="headerlink" href="#analytical-vs-computational-solution" title="Permalink to this heading">#</a></h2>
+<h2>Analytical vs Computational Solution<a class="headerlink" href="#analytical-vs-computational-solution" title="Link to this heading">#</a></h2>
 <p>The analytical solution above gives us an exact function for <span class="math notranslate nohighlight">\(v(t)\)</span>. We can input any time, <code class="docutils literal notranslate"><span class="pre">t</span></code>, and calculate the speed, <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
 <p>In many engineering problems, you cannot find or may not need an exact
 mathematical formula for our design process. It is always helpful to
@@ -658,9 +666,9 @@ will tell us if our computational solution is correct. Next, you will
 develop the <strong>Euler approximation</strong> to solve the same problem.</p>
 </section>
 <section id="define-numerical-method">
-<h2>Define numerical method<a class="headerlink" href="#define-numerical-method" title="Permalink to this heading">#</a></h2>
+<h2>Define numerical method<a class="headerlink" href="#define-numerical-method" title="Link to this heading">#</a></h2>
 <section id="finite-difference-approximation">
-<h3>Finite difference approximation<a class="headerlink" href="#finite-difference-approximation" title="Permalink to this heading">#</a></h3>
+<h3>Finite difference approximation<a class="headerlink" href="#finite-difference-approximation" title="Link to this heading">#</a></h3>
 <p>Computational models do not solve for functions e.g. v(t), but rather
 functions at given points in time (or space). In the given freefall
 example, you can approximate the derivative of speed, <span class="math notranslate nohighlight">\(\frac{dv}{dt}\)</span>, as
@@ -739,7 +747,7 @@ time from 0 to 12 seconds</p>
 </section>
 </section>
 <section id="compare-solutions-plotting">
-<h2>Compare solutions (plotting)<a class="headerlink" href="#compare-solutions-plotting" title="Permalink to this heading">#</a></h2>
+<h2>Compare solutions (plotting)<a class="headerlink" href="#compare-solutions-plotting" title="Link to this heading">#</a></h2>
 <p>We can compare solutions in a figure in a number of ways:</p>
 <ol class="arabic simple">
 <li><p>plot the values, e.g. <span class="math notranslate nohighlight">\(v_{analytical}\)</span> and <span class="math notranslate nohighlight">\(v_{numerical}\)</span></p></li>
@@ -773,32 +781,32 @@ time from 0 to 12 seconds</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;velocity (m/s)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/0ab222fda13c23e0307d71a19e19ce94fd1108011421a23476b48fe5b0849350.png" src="../_images/0ab222fda13c23e0307d71a19e19ce94fd1108011421a23476b48fe5b0849350.png" />
+<img alt="../_images/150d4a6c9db42eb89c04aa591213b3c6d020507d60e7c0438c9822df3b881e57.png" src="../_images/150d4a6c9db42eb89c04aa591213b3c6d020507d60e7c0438c9822df3b881e57.png" />
 </div>
 </div>
 <p><strong>Note:</strong> In the above plot, the numerical solution is given at discrete points connected by lines, while the analytical solution is drawn as a line. This is a helpful convention. We plot discrete data such as numerical solutions or measured data as points and lines while analytical solutions are drawn as lines.</p>
 </section>
 <section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Play with the values of <code class="docutils literal notranslate"><span class="pre">t</span></code> (defined above as <code class="docutils literal notranslate"><span class="pre">t=np.linspace(0,12,7)</span></code>).</p>
 <p>If you increase the number of time steps from 0 to 12 seconds what happens to v_analytical? to v_numerical?</p>
 <p>What happens when you decrease the number of time steps?</p>
 </section>
 <section id="errors-in-numerical-modeling">
-<h2>Errors in Numerical Modeling<a class="headerlink" href="#errors-in-numerical-modeling" title="Permalink to this heading">#</a></h2>
+<h2>Errors in Numerical Modeling<a class="headerlink" href="#errors-in-numerical-modeling" title="Link to this heading">#</a></h2>
 </section>
 <section id="truncation">
-<h2>1 - Truncation<a class="headerlink" href="#truncation" title="Permalink to this heading">#</a></h2>
+<h2>1 - Truncation<a class="headerlink" href="#truncation" title="Link to this heading">#</a></h2>
 </section>
 <section id="roundoff">
-<h2>2 - Roundoff<a class="headerlink" href="#roundoff" title="Permalink to this heading">#</a></h2>
+<h2>2 - Roundoff<a class="headerlink" href="#roundoff" title="Link to this heading">#</a></h2>
 </section>
 <section id="truncation-error">
-<h2>1- Truncation error<a class="headerlink" href="#truncation-error" title="Permalink to this heading">#</a></h2>
+<h2>1- Truncation error<a class="headerlink" href="#truncation-error" title="Link to this heading">#</a></h2>
 <section id="freefall-is-example-of-truncation-error">
-<h3>Freefall is example of “truncation error”<a class="headerlink" href="#freefall-is-example-of-truncation-error" title="Permalink to this heading">#</a></h3>
+<h3>Freefall is example of “truncation error”<a class="headerlink" href="#freefall-is-example-of-truncation-error" title="Link to this heading">#</a></h3>
 <section id="truncation-error-results-from-approximating-exact-mathematical-procedure">
-<h4>Truncation error results from approximating exact mathematical procedure<a class="headerlink" href="#truncation-error-results-from-approximating-exact-mathematical-procedure" title="Permalink to this heading">#</a></h4>
+<h4>Truncation error results from approximating exact mathematical procedure<a class="headerlink" href="#truncation-error-results-from-approximating-exact-mathematical-procedure" title="Link to this heading">#</a></h4>
 <p>We approximated the derivative as <span class="math notranslate nohighlight">\(\frac{d v}{d t}\approx\frac{\Delta v}{\Delta t}\)</span></p>
 <p>Can reduce error in two ways</p>
 <ol class="arabic simple">
@@ -808,7 +816,7 @@ time from 0 to 12 seconds</p>
 </section>
 </section>
 <section id="truncation-error-as-a-taylor-series">
-<h3>Truncation error as a Taylor series<a class="headerlink" href="#truncation-error-as-a-taylor-series" title="Permalink to this heading">#</a></h3>
+<h3>Truncation error as a Taylor series<a class="headerlink" href="#truncation-error-as-a-taylor-series" title="Link to this heading">#</a></h3>
 <p>The freefall problem solution used a first-order Taylor series approximation</p>
 <p>Taylor series:
 <span class="math notranslate nohighlight">\(f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^{2}+\frac{f'''(a)}{3!}(x-a)^{3}+...\)</span></p>
@@ -844,9 +852,9 @@ an <span class="math notranslate nohighlight">\(n^{th}\)</span>-order polynomial
 </section>
 </section>
 <section id="id2">
-<h2>2- Roundoff<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>2- Roundoff<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="just-storing-a-number-in-a-computer-requires-rounding">
-<h3>Just storing a number in a computer requires rounding<a class="headerlink" href="#just-storing-a-number-in-a-computer-requires-rounding" title="Permalink to this heading">#</a></h3>
+<h3>Just storing a number in a computer requires rounding<a class="headerlink" href="#just-storing-a-number-in-a-computer-requires-rounding" title="Link to this heading">#</a></h3>
 <p>In our analytical solution, <span class="math notranslate nohighlight">\(v(t) =
 v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}\)</span>, you can solve
 for velocity, <span class="math notranslate nohighlight">\(v\)</span> at any given time, <span class="math notranslate nohighlight">\(t\)</span> by hand to avoid roundoff
@@ -919,9 +927,9 @@ floating point arithmetic errors we accumulate some error.</p>
 First 26 digits of pi   = 3.14159265358979323846264338
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1930/1366774004.py:6: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1931/1366774004.py:6: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39; 0 operations 64 bit pi = %1.26f\n&#39;%double) # 64-bit
-/tmp/ipykernel_1930/1366774004.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_1931/1366774004.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39;20 operations 64 bit pi = %1.26f\n&#39;%double_operated) # 64-bit after 1000 additions and 1 subtraction
 </pre></div>
 </div>
@@ -961,7 +969,7 @@ maximum relative error = 2.22044604925031308085e-16
 </div>
 </section>
 <section id="machine-epsilon">
-<h3>Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Permalink to this heading">#</a></h3>
+<h3>Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Link to this heading">#</a></h3>
 <p>The smallest number that can be added to 1 and change the value in a computer is called “machine epsilon”, <span class="math notranslate nohighlight">\(eps\)</span>. If your numerical results are supposed to return 0, but instead return <span class="math notranslate nohighlight">\(2eps\)</span>, have a drink and move on. You won’t get any closer to your result.</p>
 <p>In the following example, you will add <span class="math notranslate nohighlight">\(eps/2\)</span> 1,000<span class="math notranslate nohighlight">\(\times\)</span> to the
 variable s, set to 1. The result should be <span class="math notranslate nohighlight">\(s=1+500\cdot eps\)</span>, but
@@ -992,7 +1000,7 @@ will get a different result depending upon how we do the addition.</p>
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Try adding <span class="math notranslate nohighlight">\(2eps\)</span> to 1 and determine the result of the previous exercise.</p></li>
 <li><p>What is machine epsilon for a 32-bit floating point number?</p></li>
@@ -1000,7 +1008,7 @@ will get a different result depending upon how we do the addition.</p>
 </section>
 </section>
 <section id="freefall-model-revisited">
-<h2>Freefall Model (revisited)<a class="headerlink" href="#freefall-model-revisited" title="Permalink to this heading">#</a></h2>
+<h2>Freefall Model (revisited)<a class="headerlink" href="#freefall-model-revisited" title="Link to this heading">#</a></h2>
 <p>In the following example, you judge the <strong>convergence</strong> of our solution with the new knowledge of truncation error and roundoff error.</p>
 <p><strong>The definition for convergence in mathematics is the limit of a sequence exists.</strong></p>
 <p>In the case of the Euler approximation, the sequence is smaller timesteps, <span class="math notranslate nohighlight">\(\Delta t\)</span>, should converge to the analytical solution.</p>
@@ -1008,7 +1016,7 @@ will get a different result depending upon how we do the addition.</p>
 function defined as <code class="docutils literal notranslate"><span class="pre">freefall</span></code></p>
 <p>m=60 kg, c=0.25 kg/m</p>
 <section id="freefall-example">
-<h3>Freefall example<a class="headerlink" href="#freefall-example" title="Permalink to this heading">#</a></h3>
+<h3>Freefall example<a class="headerlink" href="#freefall-example" title="Link to this heading">#</a></h3>
 <p>Estimated the function with a <span class="math notranslate nohighlight">\(1^{st}\)</span>-order approximation, so</p>
 <p><span class="math notranslate nohighlight">\(v(t_{i+1})=v(t_{i})+v'(t_{i})(t_{i+1}-t_{i})+R_{1}\)</span></p>
 <p><span class="math notranslate nohighlight">\(v'(t_{i})=\frac{v(t_{i+1})-v(t_{i})}{t_{i+1}-t_{i}}-\frac{R_{1}}{t_{i+1}-t_{i}}\)</span></p>
@@ -1018,7 +1026,7 @@ function defined as <code class="docutils literal notranslate"><span class="pre"
 </section>
 </section>
 <section id="computer-model-error-truncation-roundoff">
-<h2>Computer model error =  truncation + roundoff<a class="headerlink" href="#computer-model-error-truncation-roundoff" title="Permalink to this heading">#</a></h2>
+<h2>Computer model error =  truncation + roundoff<a class="headerlink" href="#computer-model-error-truncation-roundoff" title="Link to this heading">#</a></h2>
 <p>In the function <code class="docutils literal notranslate"><span class="pre">freefall(N)</span></code>, the speed of a 60-kg object is predicted in two ways:</p>
 <ol class="arabic simple">
 <li><p>The analytical 64-bit representation,
@@ -1103,8 +1111,8 @@ Here, consider the speed from 0 to 2 seconds, so <code class="docutils literal n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 69 µs, sys: 41 µs, total: 110 µs
-Wall time: 104 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 166 µs, sys: 0 ns, total: 166 µs
+Wall time: 155 µs
 </pre></div>
 </div>
 </div>
@@ -1136,18 +1144,18 @@ Wall time: 104 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7facec286850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3314848bb0&gt;
 </pre></div>
 </div>
-<img alt="../_images/f822966097aecd3542d86ff24e929b6a10d2ede8c13e629c77909263f68580e4.png" src="../_images/f822966097aecd3542d86ff24e929b6a10d2ede8c13e629c77909263f68580e4.png" />
+<img alt="../_images/4886d536bd7658080b33fd9bdfd81f645017f46e81ccaf17c20594b46dfa29a3.png" src="../_images/4886d536bd7658080b33fd9bdfd81f645017f46e81ccaf17c20594b46dfa29a3.png" />
 </div>
 </div>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Try adjusting <code class="docutils literal notranslate"><span class="pre">n</span></code> in the code above to watch the solution converge. You should notice the Euler approximation becomes almost indistinguishable from the analytical solution as <code class="docutils literal notranslate"><span class="pre">n</span></code> increases.</p>
 </section>
 <section id="convergence-of-a-numerical-model">
-<h3>Convergence of a numerical model<a class="headerlink" href="#convergence-of-a-numerical-model" title="Permalink to this heading">#</a></h3>
+<h3>Convergence of a numerical model<a class="headerlink" href="#convergence-of-a-numerical-model" title="Link to this heading">#</a></h3>
 <p>You should see that the more time steps you use, the closer the Euler
 approximation resembles the analytical solution. This is true only to a
 point, due to <strong>roundoff error</strong>. In the <code class="docutils literal notranslate"><span class="pre">freefall</span></code> function, the
@@ -1183,7 +1191,7 @@ numerical result is saved as a 32-bit floating point array. The best analytical 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Truncation and roundoff error \naccumulation in log-log plot&#39;)
 </pre></div>
 </div>
-<img alt="../_images/0dfa964631dd96f8e43cab44797ac1deda52a223cc5bf693d8942f6a03a53e58.png" src="../_images/0dfa964631dd96f8e43cab44797ac1deda52a223cc5bf693d8942f6a03a53e58.png" />
+<img alt="../_images/e6ca1adf10c40bdd1bf2a32b44a52e569164478f62a197b3982f845fb61e10d1.png" src="../_images/e6ca1adf10c40bdd1bf2a32b44a52e569164478f62a197b3982f845fb61e10d1.png" />
 </div>
 </div>
 <p>In the above plot “Truncation and roundoff error accumulation in log-log
@@ -1194,7 +1202,7 @@ precise we can store a number using a 32-bit floating point number.</p>
 </section>
 </section>
 <section id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Numerical integration with the Euler approximation</p></li>
 <li><p>The source of truncation errors</p></li>
@@ -1263,6 +1271,7 @@ precise we can store a number using a 32-bit floating point number.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1333,7 +1342,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1357,8 +1366,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

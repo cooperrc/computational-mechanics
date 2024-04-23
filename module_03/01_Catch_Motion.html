@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Catch things in motion &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_03/01_Catch_Motion';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Step to the future" href="02_Step_Future.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -524,19 +532,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="catch-things-in-motion">
-<h1>Catch things in motion<a class="headerlink" href="#catch-things-in-motion" title="Permalink to this heading">#</a></h1>
+<h1>Catch things in motion<a class="headerlink" href="#catch-things-in-motion" title="Link to this heading">#</a></h1>
 <p>This module of the <em>Computational Mechanics</em> course is our launching pad to investigate <em>change</em>, <em>motion</em>, and <em>dynamics</em>, using computational thinking, Python, and Jupyter.</p>
 <p>The foundation of physics and engineering is the subject of <strong>mechanics</strong>: how things move around, when pushed around. Or pulled… in the beginning of the history of mechanics, Galileo and Newton sought to understand how and why objects fall under the pull of gravity.</p>
 <p>This first lesson will explore motion by analyzing images and video, to learn about velocity and acceleration.</p>
 <section id="acceleration-of-a-falling-ball">
-<h2>Acceleration of a falling ball<a class="headerlink" href="#acceleration-of-a-falling-ball" title="Permalink to this heading">#</a></h2>
+<h2>Acceleration of a falling ball<a class="headerlink" href="#acceleration-of-a-falling-ball" title="Link to this heading">#</a></h2>
 <p>Let’s start at the beginning. Suppose you want to use video capture of a falling ball to <em>compute</em> the acceleration of gravity. Could you do it? With Python, of course you can!</p>
 <p>Here is a neat video you found online, produced over at MIT several years ago [1]. It shows a ball being dropped in front of a metered panel, while lit by a stroboscopic light. Watch the video!</p>
 <div class="cell docutils container">
@@ -585,7 +593,7 @@ document.write(`
 </div>
 </div>
 <section id="read-the-video">
-<h3>Read the video<a class="headerlink" href="#read-the-video" title="Permalink to this heading">#</a></h3>
+<h3>Read the video<a class="headerlink" href="#read-the-video" title="Link to this heading">#</a></h3>
 <p>With the <code class="docutils literal notranslate"><span class="pre">get_reader()</span></code> method of <code class="docutils literal notranslate"><span class="pre">imageio</span></code>, you can read a video from its source into a <em>Reader</em> object. You don’t need to worry too much about the technicalities here—you’ll walk you through it all—but check the type, the length (for a video, that’s number of frames), and notice you can get info, like the frames-per-second, using <code class="docutils literal notranslate"><span class="pre">get_meta_data()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,7 +618,7 @@ document.write(`
 </div>
 </div>
 <section id="note">
-<h4>Note:<a class="headerlink" href="#note" title="Permalink to this heading">#</a></h4>
+<h4>Note:<a class="headerlink" href="#note" title="Link to this heading">#</a></h4>
 <p>You may get this error after calling <code class="docutils literal notranslate"><span class="pre">get_reader()</span></code> if you’re not running in the class Jupyter server:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NeedDownloadError</span><span class="p">:</span> <span class="n">Need</span> <span class="n">ffmpeg</span> <span class="n">exe</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">obtain</span> <span class="n">it</span> <span class="k">with</span> <span class="n">either</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">install</span> <span class="n">using</span> <span class="n">conda</span><span class="p">:</span> <span class="n">conda</span> <span class="n">install</span> <span class="n">ffmpeg</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
@@ -623,7 +631,7 @@ document.write(`
 </section>
 </section>
 <section id="show-a-video-frame-in-an-interactive-figure">
-<h3>Show a video frame in an interactive figure<a class="headerlink" href="#show-a-video-frame-in-an-interactive-figure" title="Permalink to this heading">#</a></h3>
+<h3>Show a video frame in an interactive figure<a class="headerlink" href="#show-a-video-frame-in-an-interactive-figure" title="Link to this heading">#</a></h3>
 <p>With <code class="docutils literal notranslate"><span class="pre">imageio</span></code>, you can grab one frame of the video, and then use <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> to show it as an image. But you want to interact with the image, somehow.</p>
 <p>So far in this course, you have used the command <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> to get our plots rendered <em>inline</em> in a Jupyter notebook. There is an alternative command that gives you some interactivity on the figures: <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code>. Execute this now, and you’ll see what it does below, when you show the image in a new figure.</p>
 <p>Let’s also set some font parameters for our plots in this notebook.</p>
@@ -655,7 +663,7 @@ document.write(`
 to show the image in a figure. Show frame 1100, it gives a good view of
 the long-exposure image of the falling ball.</p>
 <section id="explore">
-<h4>Explore:<a class="headerlink" href="#explore" title="Permalink to this heading">#</a></h4>
+<h4>Explore:<a class="headerlink" href="#explore" title="Link to this heading">#</a></h4>
 <p>Check out the neat interactive options that you get with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code>. Then go back and change the frame number above, and show it below. Notice that you can see the <span class="math notranslate nohighlight">\((x,y)\)</span> coordinates of your cursor tip while you hover on the image with the mouse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -667,7 +675,7 @@ the long-exposure image of the falling ball.</p>
 </section>
 </section>
 <section id="capture-mouse-clicks-on-the-frame">
-<h3>Capture mouse clicks on the frame<a class="headerlink" href="#capture-mouse-clicks-on-the-frame" title="Permalink to this heading">#</a></h3>
+<h3>Capture mouse clicks on the frame<a class="headerlink" href="#capture-mouse-clicks-on-the-frame" title="Link to this heading">#</a></h3>
 <p>Okay! Here is where things get really interesting. Matplotlib has the ability to create <a class="reference external" href="https://matplotlib.org/devdocs/users/event_handling.html?highlight=mpl_connect">event connections</a>, that is, connect the figure canvas to user-interface events on it, like mouse clicks.</p>
 <p>To use this ability, you write a function with the events you want to capture, and then connect this function to the Matplotlib “event manager” using <a class="reference external" href="https://matplotlib.org/devdocs/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.mpl_connect"><code class="docutils literal notranslate"><span class="pre">mpl_connect()</span></code></a>. In this case, you connect the <code class="docutils literal notranslate"><span class="pre">'button_press_event'</span></code> to the function named <code class="docutils literal notranslate"><span class="pre">onclick()</span></code>, which captures the <span class="math notranslate nohighlight">\((x,y)\)</span> coordinates of the mouse click on the figure. Magic!</p>
 <div class="cell docutils container">
@@ -695,7 +703,7 @@ the long-exposure image of the falling ball.</p>
 </section>
 </section>
 <section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Click with your mouse on the endpoints of the white lines of the metered panel (click on the edge of the panel to get approximately equal <span class="math notranslate nohighlight">\(x\)</span> coordinates), then print the contents of the <code class="docutils literal notranslate"><span class="pre">coords</span></code> list below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,8 +745,8 @@ mouse-click captures.</p>
 <p>Looking ahead, what you’ll do is repeat the process of capturing mouse clicks on the image, but clicking on the ball positions. Then, you will want to have the vertical positions converted to physical length (in meters), from the pixel numbers on the image.</p>
 <p>You can get the scaling from pixels to meters via the distance between two white lines on the metered panel, which you know is <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span>.</p>
 <p>Let’s get the average vertical distance between two while lines, which you can calculate as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d1e1bbd-fc0a-4511-947b-0bb3092f4f07">
-<span class="eqno">(1)<a class="headerlink" href="#equation-2d1e1bbd-fc0a-4511-947b-0bb3092f4f07" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-58628c21-4714-4b97-9840-f376e97c52a2">
+<span class="eqno">(1)<a class="headerlink" href="#equation-58628c21-4714-4b97-9840-f376e97c52a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \overline{\Delta y} = \sum_{i=0}^N \frac{y_{i+1}-y_i}{N-1}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -751,12 +759,12 @@ mouse-click captures.</p>
 </div>
 </section>
 <section id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Why did you slice the <code class="docutils literal notranslate"><span class="pre">y_lines</span></code> array like that? If you can’t explain it, write out the first few terms of the sum above and think!</p></li>
 </ul>
 <section id="compute-the-acceleration-of-gravity">
-<h3>Compute the acceleration of gravity<a class="headerlink" href="#compute-the-acceleration-of-gravity" title="Permalink to this heading">#</a></h3>
+<h3>Compute the acceleration of gravity<a class="headerlink" href="#compute-the-acceleration-of-gravity" title="Link to this heading">#</a></h3>
 <p>You’re making good progress! You’ll repeat the process of showing the image on an interactive figure, and capturing the mouse clicks on the figure canvas: but this time, you’ll click on the ball positions.</p>
 <p>Using the vertical displacements of the ball, <span class="math notranslate nohighlight">\(\Delta y_i\)</span>, and the known time between two flashes of the strobe light, <span class="math notranslate nohighlight">\(1/16.8\rm{s}\)</span>, you can get the velocity and acceleration of the ball! But first, to convert the vertical displacements to meters, you’ll multiply by <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span> and divide by <code class="docutils literal notranslate"><span class="pre">gap_lines.mean()</span></code>.</p>
 <p>Before clicking on the ball positions, you may want to inspect the
@@ -783,7 +791,7 @@ but <em>not</em> the photograph. <em>Sigh</em>.</p>
 </section>
 </section>
 <section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Click on the locations of the <em>ghost</em> ball locations in the image above to populate <code class="docutils literal notranslate"><span class="pre">coords</span></code> with x-y-coordinates for the ball’s location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -793,8 +801,8 @@ but <em>not</em> the photograph. <em>Sigh</em>.</p>
 </div>
 </div>
 <p>Scale the vertical displacements of the falling ball as explained above (to get distance in meters), then use the known time between flashes of the strobe light, <span class="math notranslate nohighlight">\(1/16.8\rm{s}\)</span>, to compute estimates of the velocity and acceleration of the ball at every captured instant, using:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa00c1c3-1b25-477d-b3a1-c988da929ce0">
-<span class="eqno">(2)<a class="headerlink" href="#equation-aa00c1c3-1b25-477d-b3a1-c988da929ce0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1db2e76c-670e-4a24-ae2e-23d8721d6fbc">
+<span class="eqno">(2)<a class="headerlink" href="#equation-1db2e76c-670e-4a24-ae2e-23d8721d6fbc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -831,7 +839,7 @@ v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 <p>Yikes! That’s some wide variation on the acceleration estimates. Our average measurement for the acceleration of gravity is not great, but it’s not far off. The actual value you are hoping to find is <span class="math notranslate nohighlight">\(9.81\rm{m/s}^2\)</span>.</p>
 </section>
 <section id="projectile-motion">
-<h2>Projectile motion<a class="headerlink" href="#projectile-motion" title="Permalink to this heading">#</a></h2>
+<h2>Projectile motion<a class="headerlink" href="#projectile-motion" title="Link to this heading">#</a></h2>
 <p>Now, you’ll study projectile motion, using a video of a ball “fired” horizontally, like a projectile. Here’s a neat video you found online, produced by the folks over at <a class="reference external" href="http://www.flippingphysics.com">Flipping Physics</a> [2].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -852,7 +860,7 @@ v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 </div>
 </div>
 <section id="capture-mouse-clicks-on-many-frames-with-a-widget">
-<h3>Capture mouse clicks on many frames with a widget<a class="headerlink" href="#capture-mouse-clicks-on-many-frames-with-a-widget" title="Permalink to this heading">#</a></h3>
+<h3>Capture mouse clicks on many frames with a widget<a class="headerlink" href="#capture-mouse-clicks-on-many-frames-with-a-widget" title="Link to this heading">#</a></h3>
 <p>Capture the coordinates of mouse clicks on a <em>sequence</em> of images, so
 that you may have the positions of the moving ball caught on video. We
 know how to capture the coordinates of mouse clicks, so the next
@@ -908,7 +916,7 @@ click on the ball position each time.</p>
 </section>
 </section>
 <section id="id2">
-<h2>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Grab the coordinates of the 0, 10, 20, 30, 40, …, 100-cm vertical positions so you can create a vertical conversion from pixels to centimeters with <code class="docutils literal notranslate"><span class="pre">gap_lines2</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1019,7 +1027,7 @@ you plot the ball positions that you captured.</p>
 </div>
 </section>
 <section id="saving-your-hard-work">
-<h2>Saving your hard work<a class="headerlink" href="#saving-your-hard-work" title="Permalink to this heading">#</a></h2>
+<h2>Saving your hard work<a class="headerlink" href="#saving-your-hard-work" title="Link to this heading">#</a></h2>
 <p>You have put a lot of effort into processing these images so far. Let’s
 save your variables <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, and <code class="docutils literal notranslate"><span class="pre">y</span></code> so you can load it back later.</p>
 <p>Use the command <code class="docutils literal notranslate"><span class="pre">np.savez(file_name,</span> <span class="pre">array1,array2,...)</span></code> to save your arrays for use later.</p>
@@ -1034,27 +1042,27 @@ save your variables <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="id3">
-<h2>Discussion<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What did you get for the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> accelerations? What did your colleagues get?</p></li>
 <li><p>Do the results make sense to you? Why or why not?</p></li>
 </ul>
 </section>
 <section id="numerical-derivatives">
-<h2>Numerical derivatives<a class="headerlink" href="#numerical-derivatives" title="Permalink to this heading">#</a></h2>
+<h2>Numerical derivatives<a class="headerlink" href="#numerical-derivatives" title="Link to this heading">#</a></h2>
 <p>You just computed the average velocity between two captured ball positions using <em>numerical derivative</em>. The velocity is the <em>derivative</em> of position with respect to time, and you can approximate its instantaneous value with the average velocity between two close instants in time:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf1e5d9f-0ecd-462f-91dc-0e254e1e9dd0">
-<span class="eqno">(3)<a class="headerlink" href="#equation-cf1e5d9f-0ecd-462f-91dc-0e254e1e9dd0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d255c8de-e3fc-4b51-8b2b-7599ca3faef8">
+<span class="eqno">(3)<a class="headerlink" href="#equation-d255c8de-e3fc-4b51-8b2b-7599ca3faef8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v(t) = \frac{dy}{dt} \approx \frac{y(t_i+\Delta t)-y(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>And acceleration is the <em>derivative</em> of velocity with respect to time; you can approximate it with the average acceleration within a time interval:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91b22c64-e12f-4019-bbc1-23d5626d523b">
-<span class="eqno">(4)<a class="headerlink" href="#equation-91b22c64-e12f-4019-bbc1-23d5626d523b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e62a1c7b-ead7-420b-b422-2a39d29f8bba">
+<span class="eqno">(4)<a class="headerlink" href="#equation-e62a1c7b-ead7-420b-b422-2a39d29f8bba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a(t) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>As you can imagine, the quality of the approximation depends on the size of the time interval: as <span class="math notranslate nohighlight">\(\Delta t\)</span> gets smaller, the error also gets smaller.</p>
 <section id="using-high-resolution-data">
-<h3>Using high-resolution data<a class="headerlink" href="#using-high-resolution-data" title="Permalink to this heading">#</a></h3>
+<h3>Using high-resolution data<a class="headerlink" href="#using-high-resolution-data" title="Link to this heading">#</a></h3>
 <p>Suppose you had some high-resolution experimental data of a falling ball. Might you be able to compute the acceleration of gravity, and get a value closer to the actual acceleration of <span class="math notranslate nohighlight">\(9.8\rm{m/s}^2\)</span>?</p>
 <p>You’re in luck! Physics professor Anders Malthe-Sørenssen of Norway has some high-resolution data on the youbsite to accompany his book [3]. We contacted him by email to ask for permission to use the data set of a falling tennis ball, and he graciously agreed. <em>Thank you!</em> His data was recorded with a motion detector on the ball, measuring the <span class="math notranslate nohighlight">\(y\)</span> coordinate at tiny time intervals of <span class="math notranslate nohighlight">\(\Delta t = 0.001\rm{s}\)</span>. Pretty fancy.</p>
 <div class="cell docutils container">
@@ -1122,14 +1130,14 @@ then compute displacements, velocity, and acceleration with that slice.</p>
 </section>
 </section>
 <section id="id4">
-<h2>Discussion<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What do you see in the plot of acceleration computed from the high-resolution data?</p></li>
 <li><p>Can you explain it? What do you think is causing this?</p></li>
 </ul>
 </section>
 <section id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Work with images and videos in Python using <code class="docutils literal notranslate"><span class="pre">imageio</span></code>.</p></li>
 <li><p>Get interactive figures using the <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code> command.</p></li>
@@ -1143,7 +1151,7 @@ then compute displacements, velocity, and acceleration with that slice.</p>
 </ul>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Strobe of a Falling Ball (2008), MIT Department of Physics Technical Services Group, video under CC-BY-NC, available online on <a class="reference external" href="http://techtv.mit.edu/collections/physicsdemos/videos/831-strobe-of-a-falling-ball">MIT TechTV</a>.</p></li>
 <li><p>The Classic Bullet Projectile Motion Experiment with X &amp; Y Axis Scales (2004), video by <a class="reference external" href="http://www.flippingphysics.com/bullet-with-scales.html">Flipping Physics</a>, Jon Thomas-Palmer. Used with permission.</p></li>
@@ -1209,6 +1217,7 @@ then compute displacements, velocity, and acceleration with that slice.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1271,7 +1280,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1295,8 +1304,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

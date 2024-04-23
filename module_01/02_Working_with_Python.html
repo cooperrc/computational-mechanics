@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>02 - Working with Python &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_01/02_Working_with_Python';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="03 - Numerical Error" href="03_Numerical_error.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -529,22 +537,22 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="working-with-python">
-<h1>02 - Working with Python<a class="headerlink" href="#working-with-python" title="Permalink to this heading">#</a></h1>
+<h1>02 - Working with Python<a class="headerlink" href="#working-with-python" title="Link to this heading">#</a></h1>
 <section id="good-coding-habits">
-<h2>Good coding habits<a class="headerlink" href="#good-coding-habits" title="Permalink to this heading">#</a></h2>
+<h2>Good coding habits<a class="headerlink" href="#good-coding-habits" title="Link to this heading">#</a></h2>
 <section id="naming-folders-and-files">
-<h3>naming folders and files<a class="headerlink" href="#naming-folders-and-files" title="Permalink to this heading">#</a></h3>
+<h3>naming folders and files<a class="headerlink" href="#naming-folders-and-files" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <section id="stanford-file-naming-best-practices">
-<h2><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Stanford file naming best practices</a><a class="headerlink" href="#stanford-file-naming-best-practices" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Stanford file naming best practices</a><a class="headerlink" href="#stanford-file-naming-best-practices" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Include information to distinguish file name e.g. project name, objective of function, name/initials, type of data, conditions, version of file,</p></li>
 <li><p>if using dates, use YYYYMMDD, so the computer organizes by year, then month, then day</p></li>
@@ -553,7 +561,7 @@ document.write(`
 </ol>
 </section>
 <section id="commenting-your-code">
-<h2>Commenting your code<a class="headerlink" href="#commenting-your-code" title="Permalink to this heading">#</a></h2>
+<h2>Commenting your code<a class="headerlink" href="#commenting-your-code" title="Link to this heading">#</a></h2>
 <p>Its important to comment your code</p>
 <ul class="simple">
 <li><p>what are variable’s units,</p></li>
@@ -586,7 +594,7 @@ document.write(`
 </div>
 </section>
 <section id="choose-variable-names-that-describe-the-variable">
-<h2>Choose variable names that describe the variable<a class="headerlink" href="#choose-variable-names-that-describe-the-variable" title="Permalink to this heading">#</a></h2>
+<h2>Choose variable names that describe the variable<a class="headerlink" href="#choose-variable-names-that-describe-the-variable" title="Link to this heading">#</a></h2>
 <p>You might not have recognized that <code class="docutils literal notranslate"><span class="pre">code(i)</span></code> is meant to calculate the <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial of a number</a>,</p>
 <p><span class="math notranslate nohighlight">\(N!= N*(N-1)*(N-2)*(N-3)*...3*2*1\)</span>.</p>
 <p>For example,</p>
@@ -719,13 +727,13 @@ you could return all three as such,</p>
 </div>
 </section>
 <section id="play-with-numpy-arrays">
-<h2>Play with NumPy Arrays<a class="headerlink" href="#play-with-numpy-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Play with NumPy Arrays<a class="headerlink" href="#play-with-numpy-arrays" title="Link to this heading">#</a></h2>
 <p>In engineering applications, most computing situations benefit from using <em>arrays</em>: they are sequences of data all of the <em>same type</em>. They behave a lot like lists, except for the constraint in the type of their elements. There is a huge efficiency advantage when you know that all elements of a sequence are of the same type—so equivalent methods for arrays execute a lot faster than those for lists.</p>
 <p>The Python language is expanded for special applications, like scientific computing, with <strong>libraries</strong>. The most important library in science and engineering is <strong>NumPy</strong>, providing the <em>n-dimensional array</em> data structure (a.k.a, <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>) and a wealth of functions, operations and algorithms for efficient linear-algebra computations.</p>
 <p>In this lesson, you’ll start playing with NumPy arrays and discover their power. You’ll also meet another widely loved library: <strong>Matplotlib</strong>, for creating two-dimensional plots of data.</p>
 </section>
 <section id="importing-libraries">
-<h2>Importing libraries<a class="headerlink" href="#importing-libraries" title="Permalink to this heading">#</a></h2>
+<h2>Importing libraries<a class="headerlink" href="#importing-libraries" title="Link to this heading">#</a></h2>
 <p>First, a word on importing libraries to expand your running Python
 session. Because libraries are large collections of code and are for
 special purposes, they are not loaded automatically when you launch
@@ -753,7 +761,7 @@ linear-algebra goodness, you enter:</p>
 </div>
 </section>
 <section id="creating-arrays">
-<h2>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Creating arrays<a class="headerlink" href="#creating-arrays" title="Link to this heading">#</a></h2>
 <p>To create a NumPy array from an existing list of (homogeneous) numbers,
 you call <strong><code class="docutils literal notranslate"><span class="pre">np.array()</span></code></strong>, like this:</p>
 <div class="cell docutils container">
@@ -914,7 +922,7 @@ for <code class="docutils literal notranslate"><span class="pre">step</span></co
 </div>
 </section>
 <section id="array-operations">
-<h2>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this heading">#</a></h2>
+<h2>Array operations<a class="headerlink" href="#array-operations" title="Link to this heading">#</a></h2>
 <p>Let’s assign some arrays to variable names and perform some operations with them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1003,9 +1011,9 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </section>
 <section id="multidimensional-arrays">
-<h2>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Link to this heading">#</a></h2>
 <section id="d-arrays">
-<h3>2D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this heading">#</a></h3>
+<h3>2D arrays<a class="headerlink" href="#d-arrays" title="Link to this heading">#</a></h3>
 <p>NumPy can create arrays of N dimensions.  For example, a 2D array is like a matrix, and is created from a nested list as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1088,7 +1096,7 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </section>
 <section id="id1">
-<h3>3D arrays<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>3D arrays<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Let’s create a 3D array by reshaping a 1D array. You can use
 <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/np.reshape.html"><code class="docutils literal notranslate"><span class="pre">np.reshape()</span></code></a>,
 where you pass the array we want to reshape and the shape we want to
@@ -1187,7 +1195,7 @@ using arrays: you cannot do this with lists.</p>
 </div>
 </div>
 <section id="exercises">
-<h4>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h4>
+<h4>Exercises:<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h4>
 <p>From the X array:</p>
 <ol class="arabic simple">
 <li><p>Grab the 2nd element in the 1st column.</p></li>
@@ -1226,7 +1234,7 @@ dimension (the first column).</p>
 </div>
 </section>
 <section id="id2">
-<h4>Exercises:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4>Exercises:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>From the X array:</p>
 <ol class="arabic simple">
 <li><p>Grab the 2nd column.</p></li>
@@ -1300,7 +1308,7 @@ dimension (the first column).</p>
 </div>
 </section>
 <section id="id3">
-<h4>Exercises:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4>Exercises:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>From the array named <code class="docutils literal notranslate"><span class="pre">a_3D</span></code>:</p>
 <ol class="arabic simple">
 <li><p>Grab the two middle elements (17, 18) from the second matrix.</p></li>
@@ -1312,7 +1320,7 @@ dimension (the first column).</p>
 </section>
 </section>
 <section id="numpy-fast-and-clean">
-<h2>NumPy == Fast and Clean!<a class="headerlink" href="#numpy-fast-and-clean" title="Permalink to this heading">#</a></h2>
+<h2>NumPy == Fast and Clean!<a class="headerlink" href="#numpy-fast-and-clean" title="Link to this heading">#</a></h2>
 <p>When you are working with numbers, arrays are a better option because
 the NumPy library has built-in functions that are optimized, and
 therefore faster than vanilla Python. Especially if we have big arrays.
@@ -1324,7 +1332,7 @@ arrays, you just use the addtion <code class="docutils literal notranslate"><spa
 <p>Below, you will add two lists and two arrays (with random elements) and
 you’ll compare the time it takes to compute each addition.</p>
 <section id="element-wise-sum-of-a-python-list">
-<h3>Element-wise sum of a Python list<a class="headerlink" href="#element-wise-sum-of-a-python-list" title="Permalink to this heading">#</a></h3>
+<h3>Element-wise sum of a Python list<a class="headerlink" href="#element-wise-sum-of-a-python-list" title="Link to this heading">#</a></h3>
 <p>Using the Python library
 <a class="reference external" href="https://docs.python.org/3/library/random.html"><code class="docutils literal notranslate"><span class="pre">random</span></code></a>, you will
 generate two lists with 100 pseudo-random elements in the range [0,100),
@@ -1354,8 +1362,8 @@ with no numbers repeated.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[65, 95, 40, 63, 59, 70, 26, 89, 88, 61]
-[53, 72, 64, 24, 93, 32, 83, 70, 88, 75]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[28, 69, 74, 93, 62, 7, 36, 92, 76, 43]
+[4, 61, 24, 47, 57, 59, 8, 86, 22, 56]
 </pre></div>
 </div>
 </div>
@@ -1375,7 +1383,7 @@ takes to execute all the code in that cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13 µs, sys: 6 µs, total: 19 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11 µs, sys: 8 µs, total: 19 µs
 Wall time: 21.7 µs
 </pre></div>
 </div>
@@ -1388,14 +1396,14 @@ Wall time: 21.7 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[118, 167, 104, 87, 152, 102, 109, 159, 176, 136]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[32, 130, 98, 140, 119, 66, 44, 178, 98, 99]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="element-wise-sum-of-numpy-arrays">
-<h3>Element-wise sum of NumPy arrays<a class="headerlink" href="#element-wise-sum-of-numpy-arrays" title="Permalink to this heading">#</a></h3>
+<h3>Element-wise sum of NumPy arrays<a class="headerlink" href="#element-wise-sum-of-numpy-arrays" title="Link to this heading">#</a></h3>
 <p>In this case, you generate arrays with random integers using the NumPy
 function
 <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/np.random.randint.html"><code class="docutils literal notranslate"><span class="pre">np.random.randint()</span></code></a>.
@@ -1422,8 +1430,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[41 91  5 66  3 50 80 26 47 85]
-[51  8 64 20 52 29 21 85 29 81]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[33 50 53 89 13 74 41 74 95 42]
+[31 32 59 10 98 16  9 67  1  6]
 </pre></div>
 </div>
 </div>
@@ -1437,8 +1445,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7 µs, sys: 3 µs, total: 10 µs
-Wall time: 13.4 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 6 µs, sys: 5 µs, total: 11 µs
+Wall time: 12.9 µs
 </pre></div>
 </div>
 </div>
@@ -1446,7 +1454,7 @@ Wall time: 13.4 µs
 <p>Notice that in the case of arrays, the code not only is more readable (just one line of code), but it is also faster than with lists. This time advantage will be larger with bigger arrays/lists.</p>
 <p>(Your timing results may vary to the ones you show in this notebook, because you will be computing in a different machine.)</p>
 <section id="exercise">
-<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
+<h4>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Try the comparison between lists and arrays, using bigger arrays; for example, of size 10,000.</p></li>
 <li><p>Repeat the analysis, but now computing the operation that raises each element of an array/list to the power two. Use arrays of 10,000 elements.</p></li>
@@ -1455,7 +1463,7 @@ Wall time: 13.4 µs
 </section>
 </section>
 <section id="time-to-plot">
-<h2>Time to Plot<a class="headerlink" href="#time-to-plot" title="Permalink to this heading">#</a></h2>
+<h2>Time to Plot<a class="headerlink" href="#time-to-plot" title="Link to this heading">#</a></h2>
 <p>You will love the Python library <strong>Matplotlib</strong>! You’ll learn here about its module <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, which makes line plots.</p>
 <p>We need some data to plot. Let’s define a NumPy array, compute derived data using its square, cube and square root (element-wise), and plot these values with the original array in the x-axis.</p>
 <div class="cell docutils container">
@@ -1484,7 +1492,7 @@ Wall time: 13.4 µs
 </div>
 </section>
 <section id="introduction-to-plotting">
-<h2>Introduction to plotting<a class="headerlink" href="#introduction-to-plotting" title="Permalink to this heading">#</a></h2>
+<h2>Introduction to plotting<a class="headerlink" href="#introduction-to-plotting" title="Link to this heading">#</a></h2>
 <p>To plot the resulting arrays as a function of the orginal one (<code class="docutils literal notranslate"><span class="pre">xarray</span></code>)
 in the x-axis, you need to import the module <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> from <strong>Matplotlib</strong>.</p>
 <div class="cell docutils container">
@@ -1496,7 +1504,7 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </section>
 <section id="set-up-default-plotting-parameters">
-<h2>Set up default plotting parameters<a class="headerlink" href="#set-up-default-plotting-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Set up default plotting parameters<a class="headerlink" href="#set-up-default-plotting-parameters" title="Link to this heading">#</a></h2>
 <p>The default Matplotlib fonts and linewidths are a little small. Pixels are free, so the next two lines increase the fontsize and linewidth</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1522,10 +1530,10 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe05ccb2c40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f696feba910&gt;
 </pre></div>
 </div>
-<img alt="../_images/b82c27eb424d732cd9c4f9f995b33f959662f34332a27e5beeb00dd5d0ad33fc.png" src="../_images/b82c27eb424d732cd9c4f9f995b33f959662f34332a27e5beeb00dd5d0ad33fc.png" />
+<img alt="../_images/81759b3a77c1d267dc07c97e4f544a3734b2f6456a1c80b25ca38178a22ada9a.png" src="../_images/81759b3a77c1d267dc07c97e4f544a3734b2f6456a1c80b25ca38178a22ada9a.png" />
 </div>
 </div>
 <p>To illustrate other features, you will plot the same data, but varying the colors instead of the line style. We’ll also use LaTeX syntax to write formulas in the labels. If you want to know more about LaTeX syntax, there is a <a class="reference external" href="https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">quick guide to LaTeX</a> available online.</p>
@@ -1544,7 +1552,7 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/daa4e5c23c3c01ffabdab5c28ef24710e797ae69a8b5cd41117218a7f123b79f.png" src="../_images/daa4e5c23c3c01ffabdab5c28ef24710e797ae69a8b5cd41117218a7f123b79f.png" />
+<img alt="../_images/e022f3bdc65d63ee6d142db4ca44c03cb256a469e295d98baaa2419ac11f787a.png" src="../_images/e022f3bdc65d63ee6d142db4ca44c03cb256a469e295d98baaa2419ac11f787a.png" />
 </div>
 </div>
 <p>That’s very nice! By now, you are probably imagining all the great stuff
@@ -1553,12 +1561,12 @@ you can do with Jupyter notebooks, Python and its scientific libraries
 but you will keep learning about the power of <strong>Matplotlib</strong> in the next lesson.</p>
 <p>If you are curious, you can explore all the beautiful plots you can make by browsing the <a class="reference external" href="http://matplotlib.org/gallery.html">Matplotlib gallery</a>.</p>
 <section id="id4">
-<h3>Exercise:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Pick two different operations to apply to the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and plot them the resulting data in the same plot.</p>
 </section>
 </section>
 <section id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Good coding habits and file naming</p></li>
 <li><p>How to define a function and return outputs</p></li>
@@ -1571,7 +1579,7 @@ but you will keep learning about the power of <strong>Matplotlib</strong> in the
 </ul>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming">Best practices for file naming</a>. Stanford Libraries</p></li>
 <li><p><em>Effective Computation in Physics: Field Guide to Research with Python</em> (2015). Anthony Scopatz &amp; Kathryn D. Huff. O’Reilly Media, Inc.</p></li>
@@ -1637,6 +1645,7 @@ but you will keep learning about the power of <strong>Matplotlib</strong> in the
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1705,7 +1714,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1729,8 +1738,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Gauss Elimination &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_04/02_Gauss_elimination';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Linear Regression Algebra" href="03_Linear-regression-algebra.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -526,13 +534,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="gauss-elimination">
-<h1>Gauss Elimination<a class="headerlink" href="#gauss-elimination" title="Permalink to this heading">#</a></h1>
+<h1>Gauss Elimination<a class="headerlink" href="#gauss-elimination" title="Link to this heading">#</a></h1>
 <section id="uncovering-the-solution-of-linear-algebra-equations">
-<h2>Uncovering the solution of linear algebra equations<a class="headerlink" href="#uncovering-the-solution-of-linear-algebra-equations" title="Permalink to this heading">#</a></h2>
-<p>In the previous notebook, <a class="reference internal" href="01_Linear-Algebra.html"><span class="doc std std-doc">01_Linear-Algebra</span></a>, you turned sets of equations into linear algebra problems in the form</p>
+<h2>Uncovering the solution of linear algebra equations<a class="headerlink" href="#uncovering-the-solution-of-linear-algebra-equations" title="Link to this heading">#</a></h2>
+<p>In the previous notebook, <a class="reference internal" href="#./01_Linear-Algebra.ipynb"><span class="xref myst">01_Linear-Algebra</span></a>, you turned sets of equations into linear algebra problems in the form</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Ax} = \mathbf{b}\)</span></p>
 <p>Our equations youre composed of three groups of variables and the dimensions of unknown vector = degrees of freedom of the system.</p>
 <ul class="simple">
@@ -542,7 +550,7 @@ document.write(`
 </ul>
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
 <p>Consider a problem with 2 DOF:</p>
 <p><span class="math notranslate nohighlight">\(x+3y=1\)</span></p>
 <p><span class="math notranslate nohighlight">\(2x+y=1\)</span></p>
@@ -580,7 +588,7 @@ y \end{array}\right]=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/624c550b94aac5ba53f48d4067a7e963519e705e0ed5d2ba1da4452bbf3d23a2.png" src="../_images/624c550b94aac5ba53f48d4067a7e963519e705e0ed5d2ba1da4452bbf3d23a2.png" />
+<img alt="../_images/9c37cbed2fcc611e9a774c58be583fafe13bb488c6161b3e794467211a74e535.png" src="../_images/9c37cbed2fcc611e9a774c58be583fafe13bb488c6161b3e794467211a74e535.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -600,12 +608,12 @@ y \end{array}\right]=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f242b6a2edaf1ec4af69b67806c0e02410d950e9c32a45c9daf0281cd955b36.png" src="../_images/9f242b6a2edaf1ec4af69b67806c0e02410d950e9c32a45c9daf0281cd955b36.png" />
+<img alt="../_images/25cf69c094a1b50c956ad482cc67756d5d048a1573db89edf0648db4660c9260.png" src="../_images/25cf69c094a1b50c956ad482cc67756d5d048a1573db89edf0648db4660c9260.png" />
 </div>
 </div>
 </section>
 <section id="graphical-interpretation-of-ill-conditioned">
-<h2>Graphical interpretation of Ill-conditioned<a class="headerlink" href="#graphical-interpretation-of-ill-conditioned" title="Permalink to this heading">#</a></h2>
+<h2>Graphical interpretation of Ill-conditioned<a class="headerlink" href="#graphical-interpretation-of-ill-conditioned" title="Link to this heading">#</a></h2>
 <p>In this form, you can see what ill-conditioning looks like in terms of intersecting lines</p>
 <p>The specification of <em>independent equations</em> is best illustrated using <em>dependent</em> equations:</p>
 <ol class="arabic simple">
@@ -637,16 +645,16 @@ y \end{array}\right]=
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.  4.]
 </pre></div>
 </div>
-<img alt="../_images/669d5c03a325bd63e15f4386582afa1922510f42e2808b2bb29f0b2078df6980.png" src="../_images/669d5c03a325bd63e15f4386582afa1922510f42e2808b2bb29f0b2078df6980.png" />
+<img alt="../_images/27bececa2120ff817e6788c8b904f2d4c1a64fb22150c56201df99fa41b52b98.png" src="../_images/27bececa2120ff817e6788c8b904f2d4c1a64fb22150c56201df99fa41b52b98.png" />
 </div>
 </div>
 </section>
 <section id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
 <p>The intersection between the equations lines 1 and 2 seems to occur everywhere. Why is there still a <strong>single</strong> solution?</p>
 </section>
 <section id="degrees-of-freedom">
-<h2>3 Degrees of Freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this heading">#</a></h2>
+<h2>3 Degrees of Freedom<a class="headerlink" href="#degrees-of-freedom" title="Link to this heading">#</a></h2>
 <p>For a <span class="math notranslate nohighlight">\(3\times3\)</span> matrix, the solution is the intersection of the 3 planes.</p>
 <p><span class="math notranslate nohighlight">\(10x+2y+z=1\)</span></p>
 <p><span class="math notranslate nohighlight">\(2x+y+z=1\)</span></p>
@@ -688,12 +696,12 @@ z \end{array}\right]=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/befb11cff2414e5969878eef6c103569cc261db52a63c802c16c9857f58d37d3.png" src="../_images/befb11cff2414e5969878eef6c103569cc261db52a63c802c16c9857f58d37d3.png" />
+<img alt="../_images/02ee8735944ea7943ba3e48695d3a30c14eda9bff0d41c5069398452196b9ab5.png" src="../_images/02ee8735944ea7943ba3e48695d3a30c14eda9bff0d41c5069398452196b9ab5.png" />
 </div>
 </div>
 </section>
 <section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Create a set of 3 equations and 3 unknowns where two of the equations are multiples of each other <em>e.g. equation 2 = 2*(equation 1).</em> Plot the resulting 3D planes using the same code you used above, <em>it is copied here:</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -718,12 +726,12 @@ z \end{array}\right]=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b33cc19aee753c731040df23461b6face8b25b74a951dade06264abdb874b9ae.png" src="../_images/b33cc19aee753c731040df23461b6face8b25b74a951dade06264abdb874b9ae.png" />
+<img alt="../_images/fdf7d8a3b7fca101d246848cd9018f0cb1e2961141c8aaadb09607dff215e856.png" src="../_images/fdf7d8a3b7fca101d246848cd9018f0cb1e2961141c8aaadb09607dff215e856.png" />
 </div>
 </div>
 </section>
 <section id="n-3-degrees-of-freedoms">
-<h2>N&gt;3 Degrees of Freedoms<a class="headerlink" href="#n-3-degrees-of-freedoms" title="Permalink to this heading">#</a></h2>
+<h2>N&gt;3 Degrees of Freedoms<a class="headerlink" href="#n-3-degrees-of-freedoms" title="Link to this heading">#</a></h2>
 <p>After 3 DOF problems, the solutions are described as <em>hyperplane</em> intersections. Which are even harder to visualize. It helps to develop rules for 2 DOF and 3 DOF problems that you can generalize into higher dimensions. Consider these two versions of a system of equations</p>
 <p><strong>1:</strong></p>
 <p><span class="math notranslate nohighlight">\(10x_{1}+2x_{2}+x_{3}=1\)</span></p>
@@ -758,7 +766,7 @@ z \end{array}\right]=
 </ol>
 </section>
 <section id="solving-equations-1-and-2a-1">
-<h2>Solving equations (1) and (2a-1)<a class="headerlink" href="#solving-equations-1-and-2a-1" title="Permalink to this heading">#</a></h2>
+<h2>Solving equations (1) and (2a-1)<a class="headerlink" href="#solving-equations-1-and-2a-1" title="Link to this heading">#</a></h2>
 <p>Now, I can solve the second equation</p>
 <p><span class="math notranslate nohighlight">\(x_2 = -0.122~m\)</span></p>
 <p>and substitute <span class="math notranslate nohighlight">\(x_2\)</span> into equation (1)</p>
@@ -766,10 +774,10 @@ z \end{array}\right]=
 <p><span class="math notranslate nohighlight">\(x_1 = -0.11665~m\)</span></p>
 </section>
 <section id="id1">
-<h2>Gauss elimination<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Gauss elimination<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The process you used for the previous spring-mass example, is called <strong>Gauss elimination</strong>. You combine the set of equations in a clever way such that the final equation has one variable, then you use a <strong>backward-substitution</strong> method to solve for each of the unknown variables. Let’s consider the 3D case next,</p>
 <section id="solving-sets-of-equations-systematically">
-<h3>Solving sets of equations systematically<a class="headerlink" href="#solving-sets-of-equations-systematically" title="Permalink to this heading">#</a></h3>
+<h3>Solving sets of equations systematically<a class="headerlink" href="#solving-sets-of-equations-systematically" title="Link to this heading">#</a></h3>
 <p>You take the <span class="math notranslate nohighlight">\(3\times3\)</span> matrix and the length 3 vector and combine all of the known constants as such,</p>
 <p><span class="math notranslate nohighlight">\(\left[ \begin{array}{ccc|c}
    &amp; A &amp; &amp; y \\
@@ -861,7 +869,7 @@ z \end{array}\right]=
 </section>
 </section>
 <section id="back-substitution">
-<h2>Back substitution<a class="headerlink" href="#back-substitution" title="Permalink to this heading">#</a></h2>
+<h2>Back substitution<a class="headerlink" href="#back-substitution" title="Link to this heading">#</a></h2>
 <p>You have three equations and three unknowns. You can solve for <span class="math notranslate nohighlight">\(x_3\)</span> in equation (3) easily. Then, you can solve for <span class="math notranslate nohighlight">\(x_2\)</span> in equation (2) using equation (3)’s solution for <span class="math notranslate nohighlight">\(x_3\)</span>. Finally, you can solve for <span class="math notranslate nohighlight">\(x_1\)</span> using equation (1) and the solutions for <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>.</p>
 <p>(3), <span class="math notranslate nohighlight">\(7.5x_{3}=-1.5\)</span></p>
 <ul class="simple">
@@ -877,7 +885,7 @@ z \end{array}\right]=
 </ul>
 </section>
 <section id="automate-gauss-elimination">
-<h2>Automate Gauss Elimination<a class="headerlink" href="#automate-gauss-elimination" title="Permalink to this heading">#</a></h2>
+<h2>Automate Gauss Elimination<a class="headerlink" href="#automate-gauss-elimination" title="Link to this heading">#</a></h2>
 <p>You can automate Gauss elimination with a function whose input is A and y:</p>
 <p><code class="docutils literal notranslate"><span class="pre">x=GaussNaive(A,y)</span></code></p>
 <div class="cell docutils container">
@@ -945,15 +953,15 @@ z \end{array}\right]=
 </div>
 </section>
 <section id="revisit-example-with-mixing-tanks">
-<h2>Revisit Example with Mixing Tanks<a class="headerlink" href="#revisit-example-with-mixing-tanks" title="Permalink to this heading">#</a></h2>
+<h2>Revisit Example with Mixing Tanks<a class="headerlink" href="#revisit-example-with-mixing-tanks" title="Link to this heading">#</a></h2>
 <p><img alt="three mixing tanks are arranged to unifomrly mix two differentconcentrations" src="../_images/mixing_tanks_var.png" /></p>
-<p>In the diagram above you have three tanks of water that are mixing two concentrations of salt water with <span class="math notranslate nohighlight">\(c_1~mg/m^3\)</span> entering tank 1 and <span class="math notranslate nohighlight">\(c_2~mg/m^3\)</span> entering tank three. The outlet is located on the middle tank 2, but the concentration is unknown. In <a class="reference internal" href="01_Linear-Algebra.html"><span class="doc std std-doc">01_Linear-Algebra</span></a>, you used a fixed value for <span class="math notranslate nohighlight">\(x_1=5~mg/m^3\)</span> and <span class="math notranslate nohighlight">\(x_2=1~mg/m^3\)</span>. Let’s examine three cases for</p>
+<p>In the diagram above you have three tanks of water that are mixing two concentrations of salt water with <span class="math notranslate nohighlight">\(c_1~mg/m^3\)</span> entering tank 1 and <span class="math notranslate nohighlight">\(c_2~mg/m^3\)</span> entering tank three. The outlet is located on the middle tank 2, but the concentration is unknown. In <a class="reference internal" href="#./01_Linear-Algebra.ipynb"><span class="xref myst">01_Linear-Algebra</span></a>, you used a fixed value for <span class="math notranslate nohighlight">\(x_1=5~mg/m^3\)</span> and <span class="math notranslate nohighlight">\(x_2=1~mg/m^3\)</span>. Let’s examine three cases for</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(x_1=5~mg/m^3,~and~x_2=1~mg/m^3\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x_1=50~mg/m^3,~and~x_2=10~mg/m^3\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x_1=1~mg/m^3,~and~x_2=5~mg/m^3\)</span></p></li>
 </ol>
-<p>Following the same procedure as <a class="reference internal" href="01_Linear-Algebra.html"><span class="doc std std-doc">01_Linear-Algebra</span></a>, you can create the system of equations in the following forms for (1-3):</p>
+<p>Following the same procedure as <a class="reference internal" href="#./01_Linear-Algebra.ipynb"><span class="xref myst">01_Linear-Algebra</span></a>, you can create the system of equations in the following forms for (1-3):</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\left[ \begin{array}{ccc}
 -7 &amp; 3 &amp; 0 \\
@@ -1045,9 +1053,9 @@ x=  		Aug=
 </div>
 </section>
 <section id="solving-the-same-problem-with-different-inputs">
-<h2>Solving the same problem with different inputs<a class="headerlink" href="#solving-the-same-problem-with-different-inputs" title="Permalink to this heading">#</a></h2>
+<h2>Solving the same problem with different inputs<a class="headerlink" href="#solving-the-same-problem-with-different-inputs" title="Link to this heading">#</a></h2>
 <section id="lu-decomposition">
-<h3>LU decomposition<a class="headerlink" href="#lu-decomposition" title="Permalink to this heading">#</a></h3>
+<h3>LU decomposition<a class="headerlink" href="#lu-decomposition" title="Link to this heading">#</a></h3>
 <p>Look at the form of <code class="docutils literal notranslate"><span class="pre">Aug</span></code> in solutions 1-3. The only difference is in the last column, the <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>. Is there a way that you can save our work from example 1 and apply it to examples 2-3? The trouble is that <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> goes through the same changes that our augmented form of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> goes through so you need to keep track some how.</p>
 <p>This process is called <strong>LU decomposition</strong>, where the <strong>L</strong> refers to <strong>lower triangular matrix</strong> and the <strong>U</strong> refers to <strong>upper triangular matrix</strong>. You frame the problem in this way</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{A} = \mathbf{LU}\)</span></p>
@@ -1089,7 +1097,7 @@ L_{31} &amp; L_{32} &amp; 1 \end{array} \right]
 </div>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>-symbol to confirm LU = A.</p>
 <p><code class="docutils literal notranslate"><span class="pre">L&#64;U</span></code></p>
 <p>Now, you can rewrite our problem <span class="math notranslate nohighlight">\(\mathbf{Ax} = \mathbf{b}\)</span> as <span class="math notranslate nohighlight">\(\mathbf{LUx} = \mathbf{b}\)</span>. This may not see helpful at first, but take a look at the new system of equations that you can solve</p>
@@ -1179,8 +1187,8 @@ y_{3}\end{array}\right]\)</span></p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 58 µs, sys: 54 µs, total: 112 µs
-Wall time: 96.3 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 119 µs, sys: 108 µs, total: 227 µs
+Wall time: 192 µs
 </pre></div>
 </div>
 </div>
@@ -1199,15 +1207,15 @@ Wall time: 96.3 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 158 µs, sys: 145 µs, total: 303 µs
-Wall time: 258 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 327 µs, sys: 0 ns, total: 327 µs
+Wall time: 278 µs
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="comparing-gauss-elimination-to-lu-solution-method">
-<h3>Comparing Gauss elimination to LU solution method<a class="headerlink" href="#comparing-gauss-elimination-to-lu-solution-method" title="Permalink to this heading">#</a></h3>
+<h3>Comparing Gauss elimination to LU solution method<a class="headerlink" href="#comparing-gauss-elimination-to-lu-solution-method" title="Link to this heading">#</a></h3>
 <p>In the last two comparisons, it is not always immediately obvious that the LU-decomposition solution is faster. So, let’s increase the odds. Let’s create a surface plot of the mass flow of salt coming out of the mixing tanks <span class="math notranslate nohighlight">\((c_2*12~m^3/s)\)</span> as a function of concentrations flowing into tanks 1 and 3</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\dot{m}_{out} = f(x_1,~x_2)\)</span></p></li>
@@ -1238,8 +1246,8 @@ Wall time: 258 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 38.4 ms, sys: 11.9 ms, total: 50.3 ms
-Wall time: 44 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 39.6 ms, sys: 0 ns, total: 39.6 ms
+Wall time: 39.2 ms
 </pre></div>
 </div>
 </div>
@@ -1257,8 +1265,8 @@ Wall time: 44 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 69.5 ms, sys: 939 µs, total: 70.5 ms
-Wall time: 69.5 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 66.3 ms, sys: 0 ns, total: 66.3 ms
+Wall time: 65.7 ms
 </pre></div>
 </div>
 </div>
@@ -1276,13 +1284,13 @@ Wall time: 69.5 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/96adb48f4ddfbaf0be1c33dae5f165d79a667ab205ba6c0f14fa77e93e2c3f25.png" src="../_images/96adb48f4ddfbaf0be1c33dae5f165d79a667ab205ba6c0f14fa77e93e2c3f25.png" />
+<img alt="../_images/78baf0f2fe041a9b5aaafc4ab9cb4290ab81d62c7595ef93d72a269cf16d1acb.png" src="../_images/78baf0f2fe041a9b5aaafc4ab9cb4290ab81d62c7595ef93d72a269cf16d1acb.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="efficient-storage-of-a-matrix">
-<h2>Efficient storage of a matrix<a class="headerlink" href="#efficient-storage-of-a-matrix" title="Permalink to this heading">#</a></h2>
+<h2>Efficient storage of a matrix<a class="headerlink" href="#efficient-storage-of-a-matrix" title="Link to this heading">#</a></h2>
 <p>The <strong>LU decomposition</strong> provides an efficient method to store matrices for use repeated solutions. In the example with the mixing tank, if the flow rates between each tank are fixed, then the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> remains unchanged. The only variables are the salt concentrations entering tanks 1 and 3. By storing the matrix as its lower, <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>, and upper, <span class="math notranslate nohighlight">\(\mathbf{U}\)</span>, decomposed form, you save ~50% of the computational time to get the same answers.</p>
 <p>The matrix <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> is the end result of the Gaussian elimination, but how can you create the matrix <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>? You are using the <a class="reference external" href="https://en.wikipedia.org/wiki/LU_decomposition#Doolittle_algorithm">Doolittle Decomposition</a>, so each term on the diagonal is <span class="math notranslate nohighlight">\(1\)</span> and each off-diagonal component is the factor that you multiplied in the Gaussian elimination steps. Consider the two masses connected by springs with forces applied, as discussed earlier.</p>
 <p><img alt="Two masses connected by springs" src="../_images/spring_mass.png" /></p>
@@ -1314,7 +1322,7 @@ x_{2} \end{array}\right]=
 1 &amp; 0 \\
 -3/4 &amp; 1  \end{array} \right]\)</span></p>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Confirm that</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{LU}=\mathbf{A}=\left[ \begin{array}{cc}
 1 &amp; 0 \\
@@ -1328,7 +1336,7 @@ x_{2} \end{array}\right]=
 </section>
 </section>
 <section id="create-lu-decomposition-function">
-<h2>Create LU decomposition function<a class="headerlink" href="#create-lu-decomposition-function" title="Permalink to this heading">#</a></h2>
+<h2>Create LU decomposition function<a class="headerlink" href="#create-lu-decomposition-function" title="Link to this heading">#</a></h2>
 <p>Extending this to larger matrices, involves storing the <em>factor</em> for each step in the Gaussian elimination process in each row, column of the lower triangular <span class="math notranslate nohighlight">\(\mathbf{L}-\)</span> matrix. Take a look at the defined <code class="docutils literal notranslate"><span class="pre">LUNaive</span></code> function below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1365,7 +1373,7 @@ x_{2} \end{array}\right]=
 </div>
 </div>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">LUNaive</span></code> function to create <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> matrices from the following three matrices. Confirm that <span class="math notranslate nohighlight">\(\mathbf{LU}=\mathbf{A}\)</span> in each case.</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{A} =
@@ -1386,7 +1394,7 @@ x_{2} \end{array}\right]=
 </ol>
 </section>
 <section id="problem-diagonal-element-is-zero">
-<h3>Problem (Diagonal element is zero)<a class="headerlink" href="#problem-diagonal-element-is-zero" title="Permalink to this heading">#</a></h3>
+<h3>Problem (Diagonal element is zero)<a class="headerlink" href="#problem-diagonal-element-is-zero" title="Link to this heading">#</a></h3>
 <p>All of the functions defined in this notebook are <code class="docutils literal notranslate"><span class="pre">Naive</span></code> (<code class="docutils literal notranslate"><span class="pre">GaussNaive</span></code> and <code class="docutils literal notranslate"><span class="pre">LUNaive</span></code>). They are called naive because if an element along the diagonal is 0, they will return <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and if it is <span class="math notranslate nohighlight">\(\lll 1\)</span> it will introduce large errors, because you use the diagonal to calculate each <span class="math notranslate nohighlight">\(factor =\frac{A_{ij}}{A_{ii}}\)</span>.</p>
 <p>If a diagonal element is 0 or very small either:</p>
 <ol class="arabic simple">
@@ -1533,11 +1541,11 @@ x_{3} \end{array} \right]=
  [ nan  nan  nan  nan]]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2241/1119853754.py:24: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2234/1119853754.py:24: RuntimeWarning: divide by zero encountered in scalar divide
   factor = Aug[i,k]/Aug[k,k]
-/tmp/ipykernel_2241/1119853754.py:25: RuntimeWarning: invalid value encountered in multiply
+/tmp/ipykernel_2234/1119853754.py:25: RuntimeWarning: invalid value encountered in multiply
   Aug[i,:] = Aug[i,:] - factor*Aug[k,:]
-/tmp/ipykernel_2241/1119853754.py:24: RuntimeWarning: invalid value encountered in scalar divide
+/tmp/ipykernel_2234/1119853754.py:24: RuntimeWarning: invalid value encountered in scalar divide
   factor = Aug[i,k]/Aug[k,k]
 </pre></div>
 </div>
@@ -1546,11 +1554,11 @@ x_{3} \end{array} \right]=
 </section>
 </section>
 <section id="id5">
-<h2>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>Swap row 1 with either row 2 or row 3. What is the solution for <code class="docutils literal notranslate"><span class="pre">x_b</span></code> now? Show that if you plug in the solution for <span class="math notranslate nohighlight">\([x_1,~x_2,~x_3]\)</span> into the unpivoted <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> that the result is <span class="math notranslate nohighlight">\([8,~-3,~5]\)</span>.</p>
 </section>
 <section id="existing-linear-algebra-functions-in-python">
-<h2>Existing <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html">linear algebra functions in Python</a><a class="headerlink" href="#existing-linear-algebra-functions-in-python" title="Permalink to this heading">#</a></h2>
+<h2>Existing <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html">linear algebra functions in Python</a><a class="headerlink" href="#existing-linear-algebra-functions-in-python" title="Link to this heading">#</a></h2>
 <p>It is cumbersome to review each matrix that you want to solve for possible divide-by-zero errors and warnings. The function <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code> uses partial pivoting during the solution so that you do not get errors.</p>
 <p>You can also use the existing <code class="docutils literal notranslate"><span class="pre">scipy.linalg.lu</span></code> function that performs partial pivoting to store our matrices in an efficient manner. <a class="reference external" href="http://scipy.github.io/devdocs/tutorial/linalg.html">Scipy.linalg</a> contains all of the same functions that numpy.linalg contains, plus some extra useful functions, such as our <strong>LU decomposition</strong> function of interest, <code class="docutils literal notranslate"><span class="pre">lu</span></code>.</p>
 <p>Because <code class="docutils literal notranslate"><span class="pre">scipy.linalg.lu</span></code> introduces pivoting, you have an extra matrix that is output, <code class="docutils literal notranslate"><span class="pre">P</span></code>. The <code class="docutils literal notranslate"><span class="pre">P</span></code>-matrix keeps track of pivoting during the creation of <code class="docutils literal notranslate"><span class="pre">L</span></code> and <code class="docutils literal notranslate"><span class="pre">U</span></code>. The result is that</p>
@@ -1620,7 +1628,7 @@ U=
 </div>
 </section>
 <section id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Graph 2D and 3D linear algebra problems to identify a solution (intersections of lines and planes)</p></li>
 <li><p>How to solve a linear algebra problem using <strong>Gaussian elimination</strong> (<code class="docutils literal notranslate"><span class="pre">GaussNaive</span></code>)</p></li>
@@ -1633,7 +1641,7 @@ U=
 </ul>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> <strong>ch 8.</strong> McGraw Hill.</p></li>
 <li><p>Kiusalaas, Jaan <em>Numerical Methods in Engineering with Python 3.</em> <strong>ch 2.</strong> Cambridge University Press.</p></li>
@@ -1699,6 +1707,7 @@ U=
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1763,7 +1772,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1787,8 +1796,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

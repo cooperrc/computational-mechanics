@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Revisiting Derivatives &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_05/01_Revisiting_derivatives';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Keep it Steady" href="02_Keep_it_steady.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -508,17 +516,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="revisiting-derivatives">
-<h1>Revisiting Derivatives<a class="headerlink" href="#revisiting-derivatives" title="Permalink to this heading">#</a></h1>
+<h1>Revisiting Derivatives<a class="headerlink" href="#revisiting-derivatives" title="Link to this heading">#</a></h1>
 <p>Your review for derivatives is that the exact derivative is as follows,:</p>
 <p><span class="math notranslate nohighlight">\(\frac{df}{dx}=\lim_{\Delta x\rightarrow0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(f=f(x)\)</span>. In your lessons on initial value problems, you approximated this derivative by removing the <span class="math notranslate nohighlight">\(\lim_{\Delta t \rightarrow 0}.\)</span> When you describe derivatives over space, you use the same approximation, but in this notebook you will try a few other alternatives. The following approximation is called a forward difference derivative,</p>
 <p><span class="math notranslate nohighlight">\(\frac{\Delta f}{\Delta x}\approx\frac{f(x+\Delta x)-f(x)}{\Delta x},\)</span></p>
 <p>because you approximate <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> using the current <span class="math notranslate nohighlight">\(f(x)\)</span> and the forward step, <span class="math notranslate nohighlight">\(f(x+\Delta x)\)</span> as the derivative.</p>
 <section id="taylor-series-expansion">
-<h2>Taylor Series Expansion<a class="headerlink" href="#taylor-series-expansion" title="Permalink to this heading">#</a></h2>
+<h2>Taylor Series Expansion<a class="headerlink" href="#taylor-series-expansion" title="Link to this heading">#</a></h2>
 <p>The approximation of the <strong>truncation error</strong> in the function near <span class="math notranslate nohighlight">\(x_{i}\)</span> is given as:</p>
 <p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^2+...\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(f'=\frac{df}{dx}\)</span> and <span class="math notranslate nohighlight">\(x_{i+1} = x_{i}+h.\)</span></p>
@@ -527,7 +535,7 @@ document.write(`
 <p>The <strong>truncation error</strong> error is on the order of the timestep, <span class="math notranslate nohighlight">\(h\)</span>. This is commonly represented in big-O notation as  <span class="math notranslate nohighlight">\(error\approx O(h)\)</span></p>
 <p><span class="math notranslate nohighlight">\(f'(x_{i})=\frac{f(x_{i+1})-f(x_{i})}{h}+O(h)\)</span></p>
 <section id="higher-order-derivatives">
-<h3>Higher order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Permalink to this heading">#</a></h3>
+<h3>Higher order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Link to this heading">#</a></h3>
 <p>You have already solved first-order numerical derivatives problems in <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/project/01_Getting-started-project.ipynb">Project_01</a> and <a class="reference external" href="https://github.uconn.edu/rcc02007/CompMech03-IVPs">CompMech03-IVPs</a>. Now, you will look at higher order derivatives. Let’s start with <span class="math notranslate nohighlight">\(\frac{d^2f}{dx^2}=f''(x)\)</span>. We need more information.</p>
 <p>First, take the function near <span class="math notranslate nohighlight">\(x_{i}\)</span> within 1 step, <span class="math notranslate nohighlight">\(h\)</span>, given as:</p>
 <p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^2+...\)</span></p>
@@ -539,7 +547,7 @@ document.write(`
 </section>
 </section>
 <section id="using-your-numerical-derivatives">
-<h2>Using your numerical derivatives<a class="headerlink" href="#using-your-numerical-derivatives" title="Permalink to this heading">#</a></h2>
+<h2>Using your numerical derivatives<a class="headerlink" href="#using-your-numerical-derivatives" title="Link to this heading">#</a></h2>
 <p>Consider the example of taking the derivative of <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> with only 10 data points per period. Let’s assume there is no random error in the signal. First, you can plot the values you expect since you know the derivatives of <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,7 +579,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc0f83ce3005f19d1c7d7f1741b0262433e8ccd3ec46ad45a5d64023800f7d1f.png" src="../_images/dc0f83ce3005f19d1c7d7f1741b0262433e8ccd3ec46ad45a5d64023800f7d1f.png" />
+<img alt="../_images/abe33d30ef1673651f2263657d627f2e934b1de0e65555e729e5d78ca0eb253c.png" src="../_images/abe33d30ef1673651f2263657d627f2e934b1de0e65555e729e5d78ca0eb253c.png" />
 </div>
 </div>
 <p>Next, you use your definitions for first and second derivatives to get the approximate derivatives, <span class="math notranslate nohighlight">\(f'(x)~and~f''(x)\)</span>. You are using a forward difference method so for <span class="math notranslate nohighlight">\(f'(x)\)</span> you truncate the values by 1 and for <span class="math notranslate nohighlight">\(f''(x)\)</span>, you truncate the values by 2.</p>
@@ -588,11 +596,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3f86ebf1f2bb23044a9ec0da5b21897b2619dbea5e1549416ee9a6eca5b634e.png" src="../_images/c3f86ebf1f2bb23044a9ec0da5b21897b2619dbea5e1549416ee9a6eca5b634e.png" />
+<img alt="../_images/8e726666ff2aefd9dae5c0d4477957a97c42ac1e7802374777e5b622a06cfd35.png" src="../_images/8e726666ff2aefd9dae5c0d4477957a97c42ac1e7802374777e5b622a06cfd35.png" />
 </div>
 </div>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>What is the maximum error between the numerical <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> and the actual <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,23 +611,23 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d3f75640be3154fe5367eb7b56ba6d255a74d43bf1ac533912a7a1f3eade281e.png" src="../_images/d3f75640be3154fe5367eb7b56ba6d255a74d43bf1ac533912a7a1f3eade281e.png" />
+<img alt="../_images/dde8dae07d03aa64e4212b4986f50891d83ccf51d30e0c7e80fbe9be6e93c52a.png" src="../_images/dde8dae07d03aa64e4212b4986f50891d83ccf51d30e0c7e80fbe9be6e93c52a.png" />
 </div>
 </div>
 <p>Your stepsize is <span class="math notranslate nohighlight">\(h=\pi/5\approx 0.6\)</span>. Looking at the graphs, it looks like you are shifting your function to the left by using this forward difference method. That is because you are using a forward difference method, the derivative is going to be averaged between step <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i+1\)</span>. The result is that you shift the function by <span class="math notranslate nohighlight">\(h/2\)</span> for each derivative.</p>
 </section>
 </section>
 <section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Another first-order, <span class="math notranslate nohighlight">\(error\approx O(h)\)</span>, derivative is the backward difference derivative, where</p>
 <p><span class="math notranslate nohighlight">\(f'(x_{i})=\frac{f(x_{i})-f(x_{i-1})}{h}+O(h)\)</span></p>
 <p><span class="math notranslate nohighlight">\(f''(x_{i})=\frac{f(x_{i})-2f(x_{i-1})+f(x_{i-2})}{h^2}+O(h)\)</span></p>
 <p>Plot the first and second derivatives of <span class="math notranslate nohighlight">\(\sin(x)\)</span> using the same x-locations as you did above.</p>
 </section>
 <section id="central-difference">
-<h2>Central Difference<a class="headerlink" href="#central-difference" title="Permalink to this heading">#</a></h2>
+<h2>Central Difference<a class="headerlink" href="#central-difference" title="Link to this heading">#</a></h2>
 <section id="increase-accuracy-with-more-points">
-<h3>Increase accuracy with more points<a class="headerlink" href="#increase-accuracy-with-more-points" title="Permalink to this heading">#</a></h3>
+<h3>Increase accuracy with more points<a class="headerlink" href="#increase-accuracy-with-more-points" title="Link to this heading">#</a></h3>
 <p>Both the forward and backward difference methods have the same <span class="math notranslate nohighlight">\(error\approx O(h)\)</span>, <em>but you can do better.</em> Let’s rewrite Taylor series of the function, <span class="math notranslate nohighlight">\(f(x)\)</span>,  near <span class="math notranslate nohighlight">\(x_{i}\)</span> is given as:</p>
 <p>forward:</p>
 <p><span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_{i})+f'(x_{i})h+\frac{f''(x_{i})}{2!}h^2-\frac{f'''(x_{i})}{3!}h^3+...\)</span></p>
@@ -656,17 +664,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/248c6f6ebd1032c0120362c426195b181a5885cea9d1fc9592d6174d677017da.png" src="../_images/248c6f6ebd1032c0120362c426195b181a5885cea9d1fc9592d6174d677017da.png" />
+<img alt="../_images/2bf027755ccc154af3941abf7ffee7ad5a2c45320ed629d2000b5f40d29d94b1.png" src="../_images/2bf027755ccc154af3941abf7ffee7ad5a2c45320ed629d2000b5f40d29d94b1.png" />
 </div>
 </div>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Plot the analytical, forward difference, and central difference results for the second derivative of <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p>
 </section>
 </section>
 <section id="id3">
-<h2>Higher order derivatives<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Higher order derivatives<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>You use the following chart for commonly found derivatives and the corresponding Forward, Backward, and Central difference approximations. In practice, you should use <strong>central difference</strong> approximations because they reduce the truncation error from <span class="math notranslate nohighlight">\(O(h)\rightarrow O(h^2)\)</span> without using more data points to calculate the derivative.</p>
 <p><strong>Table of derivatives and the corresponding forward, backward, and central difference method equations.</strong></p>
 <!DOCTYPE html>
@@ -735,7 +743,7 @@ document.write(`
 </html>
 </section>
 <section id="what-youve-learned">
-<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to approximate error in approximate derivatives</p></li>
 <li><p>How to approximate derivatives using forward difference methods</p></li>
@@ -803,6 +811,7 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -849,7 +858,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -873,8 +882,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

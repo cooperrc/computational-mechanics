@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Linear Regression Algebra &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_04/03_Linear-regression-algebra';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework" href="HW_04.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -509,10 +517,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linear-regression-algebra">
-<h1>Linear Regression Algebra<a class="headerlink" href="#linear-regression-algebra" title="Permalink to this heading">#</a></h1>
+<h1>Linear Regression Algebra<a class="headerlink" href="#linear-regression-algebra" title="Link to this heading">#</a></h1>
 <p>In the second Module <a class="reference internal" href="../module_02/README.html"><span class="doc std std-doc">CompMech02-Analyze-Data</span></a>, you
 imported data from the <a class="reference external" href="https://www.ncdc.noaa.gov/cag/">NOAA</a> (National
 Oceanic and Atmospheric Administration) youbpage. Then, you did a
@@ -531,7 +539,7 @@ problem.</p>
 </div>
 </div>
 <section id="polynomials">
-<h2>Polynomials<a class="headerlink" href="#polynomials" title="Permalink to this heading">#</a></h2>
+<h2>Polynomials<a class="headerlink" href="#polynomials" title="Link to this heading">#</a></h2>
 <p>In general, you may want to fit other polynomials besides degree-1
 (straight-lines). You used the <code class="docutils literal notranslate"><span class="pre">numpy.polyfit</span></code> to accomplish this task
 before
@@ -593,7 +601,7 @@ before
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../_images/0f36ca6123a41651378d089e6d79713297b04bd15bcce3e6fce3be46780eb4c7.png" src="../_images/0f36ca6123a41651378d089e6d79713297b04bd15bcce3e6fce3be46780eb4c7.png" />
+<img alt="../_images/0e7a16e35a15e0ef21022c927e73b04ba11958748effb034b74ba1c9cd6785e3.png" src="../_images/0e7a16e35a15e0ef21022c927e73b04ba11958748effb034b74ba1c9cd6785e3.png" />
 </div>
 </div>
 <p>A general polynomial decription of our function, <span class="math notranslate nohighlight">\(f(\mathbf{x}),~and~\mathbf{y}\)</span> is that you have <span class="math notranslate nohighlight">\(m+1\)</span> unknown coefficients, where <span class="math notranslate nohighlight">\(m\)</span> is the degree of the polynomial, and <span class="math notranslate nohighlight">\(n\)</span> independent equations. In the example framed below, you are choosing a second-order polnomial fit.</p>
@@ -684,7 +692,7 @@ before
 </div>
 </section>
 <section id="reframe-the-least-square-problem">
-<h2>Reframe the least-square problem<a class="headerlink" href="#reframe-the-least-square-problem" title="Permalink to this heading">#</a></h2>
+<h2>Reframe the least-square problem<a class="headerlink" href="#reframe-the-least-square-problem" title="Link to this heading">#</a></h2>
 <p>The solving routines that you have used (<code class="docutils literal notranslate"><span class="pre">linalg.solve</span></code> and <strong>Gauss elimination</strong>) all require a square matrix, so an <span class="math notranslate nohighlight">\(m\times m\)</span> matrix. For <span class="math notranslate nohighlight">\(m\)</span> unknowns, there should be <span class="math notranslate nohighlight">\(m\)</span> equations. Let’s revisit the least squares regression description</p>
 <p><span class="math notranslate nohighlight">\(~~\mathbf{y}~~~~~=~~[\mathbf{Z}]~~~~~~\mathbf{a}\)</span></p>
 <p><span class="math notranslate nohighlight">\([n\times 1]~ [n\times m][m\times 1]\)</span></p>
@@ -722,16 +730,16 @@ before
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d01954c95eeceea024072be67ab862767cc5456444fa619dcc798c4668ba912.png" src="../_images/3d01954c95eeceea024072be67ab862767cc5456444fa619dcc798c4668ba912.png" />
+<img alt="../_images/b0fae04a9f986d891d065eb6dc83c4a74c19237e49717a2ac6297cef91da8e8b.png" src="../_images/b0fae04a9f986d891d065eb6dc83c4a74c19237e49717a2ac6297cef91da8e8b.png" />
 </div>
 </div>
 </section>
 <section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>The quadratic curve plotted should be smooth, but matplotlib connected each (x,y)-location provided with straight lines. Plot the quadratic fit with 50 x-data points to make it smooth.</p>
 </section>
 <section id="general-coefficient-of-determination">
-<h2>General Coefficient of Determination<a class="headerlink" href="#general-coefficient-of-determination" title="Permalink to this heading">#</a></h2>
+<h2>General Coefficient of Determination<a class="headerlink" href="#general-coefficient-of-determination" title="Link to this heading">#</a></h2>
 <p>The <strong>coefficient of determination</strong> is a measure of how much the standard deviation is due to random error when the data is fit to a function. You make the assumption that the data has some underlying correlation in the form of a function <span class="math notranslate nohighlight">\(\mathbf{y}=f(\mathbf{x})\)</span>. So if you subtract the measured <span class="math notranslate nohighlight">\(\mathbf{y}-f(\mathbf{x})\)</span> the result should be random error associated with noise [4].</p>
 <p>The general coefficient of determination is defined as <span class="math notranslate nohighlight">\(r^2\)</span>,</p>
 <p><span class="math notranslate nohighlight">\(r^{2}=\frac{S_{t}-S_{r}}{S_{t}}=1-\frac{S_{r}}{S_t}\)</span></p>
@@ -762,21 +770,21 @@ the correlation coefficient this fit is 0.9545630206462851
 </div>
 </div>
 <section id="discussion">
-<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h3>
+<h3>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h3>
 <p>What is the highest possible coefficient of determination? If its maximized, is that a <em>good</em> thing?</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Compare the coefficient of determination for a straight line <em>(you have to do a fit)</em> to the quadratic fit <em>(done above)</em>. Which one is a better fit?</p>
 </section>
 </section>
 <section id="overfitting-warning">
-<h2>Overfitting Warning<a class="headerlink" href="#overfitting-warning" title="Permalink to this heading">#</a></h2>
+<h2>Overfitting Warning<a class="headerlink" href="#overfitting-warning" title="Link to this heading">#</a></h2>
 <p><strong>Coefficient of determination reduction does not always mean a better fit</strong></p>
 <p>You will always increase the coefficient of determination and decrease the total sum of squares error by adding more terms to your function. This is called <strong>overfitting</strong> your data. It is especially evident in polynomial fits, because they can behave unpredictably with higher order terms.</p>
 </section>
 <section id="nanonindentation-data-engineering-model-vs-higher-order-fit">
-<h2>Nanonindentation data engineering model vs higher-order fit<a class="headerlink" href="#nanonindentation-data-engineering-model-vs-higher-order-fit" title="Permalink to this heading">#</a></h2>
+<h2>Nanonindentation data engineering model vs higher-order fit<a class="headerlink" href="#nanonindentation-data-engineering-model-vs-higher-order-fit" title="Link to this heading">#</a></h2>
 <p>Now, use experimental data from some <a class="reference external" href="https://pdfs.semanticscholar.org/68c4/0c4eef562e2ac785fb7b4bcd6ee8229f2424.pdf">atomic force microscope nanoindentation of <span class="math notranslate nohighlight">\(MoS_2\)</span> [2]</a>. One of the nanoidentation experimental data files is in the data folder (<code class="docutils literal notranslate"><span class="pre">../data/mos2_afm.csv</span></code>).</p>
 <p>The experiment pushes an AFM tip into the center of a hole covered with
 a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0.6-nm thick. A diagram is shown below.</p>
@@ -806,7 +814,7 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 </div>
 </div>
 <section id="build-a-statistical-model-with-pythons-statsmodel">
-<h3>Build a statistical model with Python’s Statsmodel<a class="headerlink" href="#build-a-statistical-model-with-pythons-statsmodel" title="Permalink to this heading">#</a></h3>
+<h3>Build a statistical model with Python’s Statsmodel<a class="headerlink" href="#build-a-statistical-model-with-pythons-statsmodel" title="Link to this heading">#</a></h3>
 <p>In the first Linear regression example in linear algebra, you built the <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> matrix and set up the least squares problem in the form</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Z}^T\mathbf{ZA} = \mathbf{Z}^T\mathbf{y}\)</span>.</p>
 <p>Now, try using the <a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html"><code class="docutils literal notranslate"><span class="pre">statsmodel.ols</span></code></a> ordinary least squares statistical model solution. You use <code class="docutils literal notranslate"><span class="pre">ols</span></code> in two steps</p>
@@ -886,7 +894,7 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 </div>
 </section>
 <section id="beyond-polynomials">
-<h3>Beyond polynomials<a class="headerlink" href="#beyond-polynomials" title="Permalink to this heading">#</a></h3>
+<h3>Beyond polynomials<a class="headerlink" href="#beyond-polynomials" title="Link to this heading">#</a></h3>
 <p>Linear Regression is only limited by the ability to separate the parameters from the function to achieve</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{y}=[\mathbf{Z}]\mathbf{a}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> can be any function of the independent variable(s).</p>
@@ -927,7 +935,7 @@ Let’s take some voltage-vs-time data that you know has two frequency component
 </section>
 </section>
 <section id="fitting-the-global-temperature-anomolies-again">
-<h2>Fitting the Global Temperature Anomolies again<a class="headerlink" href="#fitting-the-global-temperature-anomolies-again" title="Permalink to this heading">#</a></h2>
+<h2>Fitting the Global Temperature Anomolies again<a class="headerlink" href="#fitting-the-global-temperature-anomolies-again" title="Link to this heading">#</a></h2>
 <p>Now, you have the right tools to fit our Global temperature anomolies properly. Let’s create a function with three constants</p>
 <p><span class="math notranslate nohighlight">\(f(t)= A\cdot t+B+ C\cdot H(t-1970)(t)\)</span></p>
 <p>Where, <span class="math notranslate nohighlight">\(A\)</span> is the slope from time 1880-1970, B is the intercept
@@ -967,7 +975,7 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 </div>
 </section>
 <section id="what-youve-learned">
-<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What You’ve Learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to use the <em>general least squares regression</em> method for almost any function</p></li>
 <li><p>How to calculate the coefficient of determination and correlation coefficient for a general least squares regression, <span class="math notranslate nohighlight">\(r^2~ and~ r\)</span></p></li>
@@ -977,7 +985,7 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 </ul>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">Numpy polyfit documentation</a></p></li>
 <li><p><a class="reference external" href="https://pdfs.semanticscholar.org/68c4/0c4eef562e2ac785fb7b4bcd6ee8229f2424.pdf">Cooper <em>et. al</em> 2014. Nonlinear Elastic Constants of <span class="math notranslate nohighlight">\(MoS_2\)</span>. <em>Phys. Rev. B</em> 2013.</a></p></li>
@@ -1045,6 +1053,7 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1092,7 +1101,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1116,8 +1125,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

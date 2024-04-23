@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Roots of Nonlinear functions &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_03/04_Getting_to_the_root';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework" href="HW_03.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -522,17 +530,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="roots-of-nonlinear-functions">
-<h1>Roots of Nonlinear functions<a class="headerlink" href="#roots-of-nonlinear-functions" title="Permalink to this heading">#</a></h1>
+<h1>Roots of Nonlinear functions<a class="headerlink" href="#roots-of-nonlinear-functions" title="Link to this heading">#</a></h1>
 <section id="its-not-always-possible-to-analytically-solve-for-a-given-variable">
-<h2>It’s not always possible to analytically solve for a given variable.<a class="headerlink" href="#its-not-always-possible-to-analytically-solve-for-a-given-variable" title="Permalink to this heading">#</a></h2>
-<p>In the last <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">Module 03</span></a>, you created an <em>implicit</em> Heun’s method that created the following problem: How can you solve for a value of <span class="math notranslate nohighlight">\(y\)</span>, a dependent variable, when the function is a function of <span class="math notranslate nohighlight">\(y\)</span>, in an equation format it becomes</p>
+<h2>It’s not always possible to analytically solve for a given variable.<a class="headerlink" href="#its-not-always-possible-to-analytically-solve-for-a-given-variable" title="Link to this heading">#</a></h2>
+<p>In the last <a class="reference internal" href="#./03_Get_Oscillations.ipynb"><span class="xref myst">Module 03</span></a>, you created an <em>implicit</em> Heun’s method that created the following problem: How can you solve for a value of <span class="math notranslate nohighlight">\(y\)</span>, a dependent variable, when the function is a function of <span class="math notranslate nohighlight">\(y\)</span>, in an equation format it becomes</p>
 <p><span class="math notranslate nohighlight">\(y=f(y,parameters)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(parameters\)</span> are known inputs to the equation, but the variable <span class="math notranslate nohighlight">\(y\)</span> is not separable from the function <span class="math notranslate nohighlight">\(f\)</span>. You can rewrite the problem as</p>
 <p><span class="math notranslate nohighlight">\(0=y-f(y,parameters).\)</span></p>
@@ -541,10 +549,10 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(g(y,parameters)\)</span> in the previous equation was <span class="math notranslate nohighlight">\(g(y)=y\)</span>.</p>
 </section>
 <section id="getting-to-the-root-of-a-problem">
-<h2>Getting to the root of a problem<a class="headerlink" href="#getting-to-the-root-of-a-problem" title="Permalink to this heading">#</a></h2>
+<h2>Getting to the root of a problem<a class="headerlink" href="#getting-to-the-root-of-a-problem" title="Link to this heading">#</a></h2>
 <p>This is a very common problem in engineering designs. You may have mathematical models for designs, but you can’t explicitly solve for the variables you can control or see [1].</p>
 <section id="freefall-example">
-<h3>Freefall example:<a class="headerlink" href="#freefall-example" title="Permalink to this heading">#</a></h3>
+<h3>Freefall example:<a class="headerlink" href="#freefall-example" title="Link to this heading">#</a></h3>
 <p>Consider an observation of an object, with a known shape, so its drag coefficient c=0.25 kg/m. If the object reaches a velocity of 36 m/s after 4 seconds of freefalling, what is its mass?</p>
 <p><span class="math notranslate nohighlight">\(v(t)=\sqrt{\frac{gm}{c_{d}}}\tanh(\sqrt{\frac{gc_{d}}{m}}t)\)</span></p>
 <p>We can plug in the known parameters, <span class="math notranslate nohighlight">\(t=4~s\)</span>, <span class="math notranslate nohighlight">\(v=36~m/s\)</span>, <span class="math notranslate nohighlight">\(c_d=0.25\)</span> kg/s, and <span class="math notranslate nohighlight">\(g=9.81~m/s^2\)</span>, but you cannot separate <span class="math notranslate nohighlight">\(m\)</span> from the <span class="math notranslate nohighlight">\(\tanh\)</span> and <span class="math notranslate nohighlight">\(\sqrt{}\)</span>.</p>
@@ -602,7 +610,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0a8943f55c2d7514749c9a1e5b2d33dea911d6b209729d756b976548cdb44563.png" src="../_images/0a8943f55c2d7514749c9a1e5b2d33dea911d6b209729d756b976548cdb44563.png" />
+<img alt="../_images/79a49374ad3a1279a63fb1a1df04a67841a0a853740a04d2f57cc86e0392b68f.png" src="../_images/79a49374ad3a1279a63fb1a1df04a67841a0a853740a04d2f57cc86e0392b68f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -628,7 +636,7 @@ document.write(`
 </section>
 </section>
 <section id="incremental-searching-a-smarter-brute-force-approach">
-<h2>Incremental searching ( a smarter brute force approach)<a class="headerlink" href="#incremental-searching-a-smarter-brute-force-approach" title="Permalink to this heading">#</a></h2>
+<h2>Incremental searching ( a smarter brute force approach)<a class="headerlink" href="#incremental-searching-a-smarter-brute-force-approach" title="Link to this heading">#</a></h2>
 <p>If you consider a range of possible masses, e.g. 50 kg - 200 kg, then you can evaluate your function <span class="math notranslate nohighlight">\(f(m)\)</span> at evenly-spaced intervals and look for x-axis crossings. If the value of <span class="math notranslate nohighlight">\(f(m_{i})\)</span> is positive, and the value of <span class="math notranslate nohighlight">\(f(m_{i+1})\)</span> is negative, then the correct mass is somewhere between <span class="math notranslate nohighlight">\(m_i\)</span> and <span class="math notranslate nohighlight">\(m_{i+1}\)</span>.</p>
 <p>Take a look at the implementation you have below of the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function.</p>
 <p>There are a few key lines to look at:</p>
@@ -645,7 +653,7 @@ document.write(`
 <p>On these three lines, you are looking for sign-changes in the array <code class="docutils literal notranslate"><span class="pre">f</span></code>. First, you get just the sign of each array value with <code class="docutils literal notranslate"><span class="pre">np.sign</span></code>. Then, you look at the changes in sign with the difference between f[i] and f[i-1] for i=1…len(f). Finally, you get the indices sign changes by looking for nonzero elements in <code class="docutils literal notranslate"><span class="pre">delta_sign_f</span></code>.</p>
 </section>
 <section id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
 <p>Why can’t you just consider cases where <code class="docutils literal notranslate"><span class="pre">delta_sign_f&gt;0</span></code>? Why do you care about all nonzero sign changes?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -685,7 +693,7 @@ document.write(`
 </div>
 </section>
 <section id="test-your-function">
-<h2>Test your function<a class="headerlink" href="#test-your-function" title="Permalink to this heading">#</a></h2>
+<h2>Test your function<a class="headerlink" href="#test-your-function" title="Link to this heading">#</a></h2>
 <p>To test your <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function on a known function, let’s try finding all the times that <span class="math notranslate nohighlight">\(sin(x)\)</span> crosses the x-axis from <span class="math notranslate nohighlight">\(x=-1...7\)</span>. Our function should return values at <span class="math notranslate nohighlight">\(x=0,~x=\pi/2,~x=\pi.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -707,12 +715,12 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of brackets:  3
 </pre></div>
 </div>
-<img alt="../_images/5602ddbbf71b800e4b63b175298a0f4dfe0ad352982c40df2ad984d1d70f129f.png" src="../_images/5602ddbbf71b800e4b63b175298a0f4dfe0ad352982c40df2ad984d1d70f129f.png" />
+<img alt="../_images/ee6ef805950ded9350d004c6afe9fb0f5a6090556c4c6d2c34a4032ab49d8e01.png" src="../_images/ee6ef805950ded9350d004c6afe9fb0f5a6090556c4c6d2c34a4032ab49d8e01.png" />
 </div>
 </div>
 </section>
 <section id="success-incsearch-works">
-<h2>Success - incsearch works<a class="headerlink" href="#success-incsearch-works" title="Permalink to this heading">#</a></h2>
+<h2>Success - incsearch works<a class="headerlink" href="#success-incsearch-works" title="Link to this heading">#</a></h2>
 <p>You should see that <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> returns intervals in the correct locations near x=0, x=<span class="math notranslate nohighlight">\(\pi/2\)</span> and x=<span class="math notranslate nohighlight">\(\pi.\)</span> Now, let’s apply it to the freefall problem and discover what mass is necessary to reach 36 m/s at t=4 sec of freefall.</p>
 <p>Depending upon what <code class="docutils literal notranslate"><span class="pre">ns</span></code> you choose, you should see that a mass of 142-143 kg will reach 36 m/s in 4 seconds of freefall.</p>
 <div class="cell docutils container">
@@ -735,14 +743,14 @@ Lower bound on mass = 142.42 kg
 </div>
 </section>
 <section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function to find the number of times <span class="math notranslate nohighlight">\(cos(x)=0\)</span> in the interval <span class="math notranslate nohighlight">\(x=0...8\)</span>.</p>
 <p>Plot x-vs-cos(x)</p>
 <p>and</p>
 <p>plot the values of <code class="docutils literal notranslate"><span class="pre">xb</span></code> and <code class="docutils literal notranslate"><span class="pre">np.cos(xb)</span></code> as <span class="math notranslate nohighlight">\(\circ\)</span>-markers (<code class="docutils literal notranslate"><span class="pre">'o'</span></code>)</p>
 </section>
 <section id="bisection-method">
-<h2>Bisection method<a class="headerlink" href="#bisection-method" title="Permalink to this heading">#</a></h2>
+<h2>Bisection method<a class="headerlink" href="#bisection-method" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> function will always return a set of upper and lower bounds on the zeros of a function, but if you want to increase the accuracy of your solutions, you have to calculate <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>a lot</strong>. The error in the solution is always</p>
 <p><span class="math notranslate nohighlight">\(error = \frac{x_{max}-x_{min}}{ns}\)</span></p>
 <p>We can reduce the number of times you have to evaluate the function with more insight.</p>
@@ -770,11 +778,11 @@ Lower bound on mass = 142.42 kg
 <p>Now, you have reduced your region of interest to just 125-200 kg.</p>
 </section>
 <section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Divide the region 125-200 kg into two, and repeat the above step. Is the solution in the upper (163-200 kg)? or lower (125-163 kg) region? What are the values of f_m(m)?</p>
 </section>
 <section id="bisect-function">
-<h2>Bisect Function<a class="headerlink" href="#bisect-function" title="Permalink to this heading">#</a></h2>
+<h2>Bisect Function<a class="headerlink" href="#bisect-function" title="Link to this heading">#</a></h2>
 <p>We can automate this process with a <code class="docutils literal notranslate"><span class="pre">bisect</span></code> function. Its a much better root locator because you can reduce the error without evaluating the function a lot of times [1, 2].</p>
 <p><em>Note the use of the function <code class="docutils literal notranslate"><span class="pre">break</span></code>:</em></p>
 <p>We can use an <code class="docutils literal notranslate"><span class="pre">if</span></code>-statement to check a condition and <code class="docutils literal notranslate"><span class="pre">break</span></code> the loop if that condition is met. These break statements are often used in <code class="docutils literal notranslate"><span class="pre">while</span></code>-loops so that you can have some stopping criteria. In your case, you use the specified error, <code class="docutils literal notranslate"><span class="pre">es</span></code>, as a stopping criteria. If your relative error,</p>
@@ -782,7 +790,7 @@ Lower bound on mass = 142.42 kg
 <p>is less than your specified error, the loop is broken and the number of iterations halts at that point.</p>
 </section>
 <section id="id2">
-<h2>Discussion<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>What is another stopping criteria that you could use?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -848,7 +856,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </section>
 <section id="recursive-functions">
-<h2>Recursive functions<a class="headerlink" href="#recursive-functions" title="Permalink to this heading">#</a></h2>
+<h2>Recursive functions<a class="headerlink" href="#recursive-functions" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the next two open root solvers (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code> and <code class="docutils literal notranslate"><span class="pre">modsecant</span></code>) make use of a recursive function.</p>
 <p>Definition:</p>
 <p><strong>recursive: for a definition of recursive, see recursive.</strong></p>
@@ -857,7 +865,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 <p>but once the upper or lower bound is updated, the value of <span class="math notranslate nohighlight">\(x_r\)</span> is updated as well. This is why the first step in the loop is to temporarily save <span class="math notranslate nohighlight">\(x_r\)</span> as <code class="docutils literal notranslate"><span class="pre">xrold</span></code>. With the <code class="docutils literal notranslate"><span class="pre">xrold</span></code> variable, you can track the progress of your solution.</p>
 </section>
 <section id="newton-raphson-open-method">
-<h2>Newton-Raphson: Open method<a class="headerlink" href="#newton-raphson-open-method" title="Permalink to this heading">#</a></h2>
+<h2>Newton-Raphson: Open method<a class="headerlink" href="#newton-raphson-open-method" title="Link to this heading">#</a></h2>
 <p>Bracketing methods are great, but they are burdened by slow convergence rates. In the bisection method, you reduce your error by 50% with each region of interest selection, but this is rather slow.</p>
 <p>One of the fastest root-finding methods is the <strong>Newton-Raphson</strong> method, it is an <strong>open method</strong> so it does not require an upper- and lower-bound [1,2].</p>
 <p>The <strong>Newton-Raphson</strong> works by creating a Taylor series expansion around your initial guess of the function,</p>
@@ -870,7 +878,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 <p><span class="math notranslate nohighlight">\(\Delta x = -f(x) \left({\frac{df}{dx}}\right)^{-1}.\)</span></p>
 </section>
 <section id="newton-raphson-example">
-<h2>Newton-Raphson example<a class="headerlink" href="#newton-raphson-example" title="Permalink to this heading">#</a></h2>
+<h2>Newton-Raphson example<a class="headerlink" href="#newton-raphson-example" title="Link to this heading">#</a></h2>
 <p>Let’s use the <strong>Newton-Raphson</strong> method to solve an engineering problem. Consider a spherical tank of water that can be filled to a height, <span class="math notranslate nohighlight">\(h\)</span>, and has radius, <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <p>The volume of water, <span class="math notranslate nohighlight">\(V\)</span>, in the tank is</p>
 <p><span class="math notranslate nohighlight">\(V= \pi h^2\frac{3R-h}{3}.\)</span></p>
@@ -909,11 +917,11 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </section>
 <section id="id3">
-<h2>Discussion<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>Try changing the value of <code class="docutils literal notranslate"><span class="pre">xguess</span></code>. Is there any way to choose the best <code class="docutils literal notranslate"><span class="pre">xguess</span></code> value? Are there any <code class="docutils literal notranslate"><span class="pre">xguess</span></code> values that return an Python error? Why?</p>
 </section>
 <section id="create-a-newton-raphson-function">
-<h2>Create a Newton-Raphson function<a class="headerlink" href="#create-a-newton-raphson-function" title="Permalink to this heading">#</a></h2>
+<h2>Create a Newton-Raphson function<a class="headerlink" href="#create-a-newton-raphson-function" title="Link to this heading">#</a></h2>
 <p>In the same way that you created bracketing method functions, you can create the Newton-Raphson method function to update your <code class="docutils literal notranslate"><span class="pre">xguess</span></code> until a desired tolerance is achieved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -964,7 +972,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </section>
 <section id="compare-techniques">
-<h2>Compare techniques<a class="headerlink" href="#compare-techniques" title="Permalink to this heading">#</a></h2>
+<h2>Compare techniques<a class="headerlink" href="#compare-techniques" title="Link to this heading">#</a></h2>
 <p>Let’s compare the relative error in finding the height, <span class="math notranslate nohighlight">\(h\)</span>, in the previous example as a function of the number of iterations in the bisection (<code class="docutils literal notranslate"><span class="pre">bisect</span></code>) method and the Newton-Raphson (<code class="docutils literal notranslate"><span class="pre">newtraph</span></code>).</p>
 <p>What you should see is that as you increase the number of iterations, the relative error decreases. You can compare the rate that the error decreases, <span class="math notranslate nohighlight">\(\frac{\Delta error}{\# iterations},\)</span> for your two root locators.</p>
 <p>We are going to set the maximum iterations, <code class="docutils literal notranslate"><span class="pre">maxit=n[i]</span></code>, to the desired value in the loop, but you want as low of an error as possible. You set your specified error to <code class="docutils literal notranslate"><span class="pre">es=0</span></code>.</p>
@@ -992,23 +1000,23 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ca3427b7fb339be4f062729a1ad6a327d02b0b2648bce5dfc45f614f89a80cf8.png" src="../_images/ca3427b7fb339be4f062729a1ad6a327d02b0b2648bce5dfc45f614f89a80cf8.png" />
+<img alt="../_images/6d2f6d861610b18b1fce2f3330b5cfdcb40c2514a7cc2eaa9d52358868654a24.png" src="../_images/6d2f6d861610b18b1fce2f3330b5cfdcb40c2514a7cc2eaa9d52358868654a24.png" />
 </div>
 </div>
 </section>
 <section id="id4">
-<h2>Discussion<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>Discussion<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>There is a drastic difference between the <code class="docutils literal notranslate"><span class="pre">bisection</span></code> function and the <code class="docutils literal notranslate"><span class="pre">newtraph</span></code> function. How many iterations are necessary for the bisection method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %? How many iterations are necessary for the Newton-Raphson method to reach an error of <span class="math notranslate nohighlight">\(10^{-3}\)</span> %?</p>
 <p>Are there any benefits to the bisection method? When would the Newton-Raphson method not work? or not be appropriate?</p>
 </section>
 <section id="secant-methods">
-<h2>Secant Methods<a class="headerlink" href="#secant-methods" title="Permalink to this heading">#</a></h2>
-<p>The key to the Newton-Raphson method is its evaluation of the derivative of the function, but you can’t always evaluate the derivative. Many numerical functions, such as the solution to differential equations that you worked on in notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a>, <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a>, and <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">03</span></a> do not have analytical derivatives. Instead, you will approximate the derivative with a modified secant method.</p>
+<h2>Secant Methods<a class="headerlink" href="#secant-methods" title="Link to this heading">#</a></h2>
+<p>The key to the Newton-Raphson method is its evaluation of the derivative of the function, but you can’t always evaluate the derivative. Many numerical functions, such as the solution to differential equations that you worked on in notebooks <a class="reference internal" href="#./01_Catch_Motion.ipynb"><span class="xref myst">01</span></a>, <a class="reference internal" href="#./02_Step_Future.ipynb"><span class="xref myst">02</span></a>, and <a class="reference internal" href="#03_Get_Oscillations.ipynb"><span class="xref myst">03</span></a> do not have analytical derivatives. Instead, you will approximate the derivative with a modified secant method.</p>
 <p>Approximation of derivative:</p>
 <p><span class="math notranslate nohighlight">\(f'(x) \approx \frac{f(x+\delta x)-f(x)}{\delta x}\)</span></p>
 </section>
 <section id="modified-secant-method">
-<h2>Modified Secant method<a class="headerlink" href="#modified-secant-method" title="Permalink to this heading">#</a></h2>
+<h2>Modified Secant method<a class="headerlink" href="#modified-secant-method" title="Link to this heading">#</a></h2>
 <p>Change the x evaluations to a perturbation <span class="math notranslate nohighlight">\(\delta\)</span> [1,2].</p>
 <p><span class="math notranslate nohighlight">\(x_{i+1}=x_{i}-\frac{f(x_{i})(\delta x_{i})}{f(x_{i}+\delta x_{i})-f(x_{i})}\)</span></p>
 <div class="cell docutils container">
@@ -1078,14 +1086,14 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5dbbeb4883d216b59c25d0cf5a3a272368a50a9a3343e0db88082b9ed53a144e.png" src="../_images/5dbbeb4883d216b59c25d0cf5a3a272368a50a9a3343e0db88082b9ed53a144e.png" />
+<img alt="../_images/23de0dab2b5fdee86fcc6560c9a1a0deebf27d4426d6f7e7442a69c67dc0fe6f.png" src="../_images/23de0dab2b5fdee86fcc6560c9a1a0deebf27d4426d6f7e7442a69c67dc0fe6f.png" />
 </div>
 </div>
 <p>The modified secant can converge as quick as the Newton-Raphson method, but there is no universal <span class="math notranslate nohighlight">\(\delta x\)</span> that works well for every problem. Typically, it is set as a small number and then varied based upon the conergence rate for the problem.</p>
 </section>
 <section id="shooting-method">
-<h2>Shooting method<a class="headerlink" href="#shooting-method" title="Permalink to this heading">#</a></h2>
-<p>Now, you have multiple solving methods to revisit your <strong>Initial Value Problems</strong>. In notebooks <a class="reference internal" href="01_Catch_Motion.html"><span class="doc std std-doc">01</span></a> and <a class="reference internal" href="02_Step_Future.html"><span class="doc std std-doc">02</span></a> you measured the displacement of a ball as a function of time. You <em>assumed</em> the initial velocity was 0 in the case of the dropped object, or you approximated the velocity based upon the first two measured displacements and a finite difference approximation.</p>
+<h2>Shooting method<a class="headerlink" href="#shooting-method" title="Link to this heading">#</a></h2>
+<p>Now, you have multiple solving methods to revisit your <strong>Initial Value Problems</strong>. In notebooks <a class="reference internal" href="#./01_Catch_Motion.ipynb"><span class="xref myst">01</span></a> and <a class="reference internal" href="#02_Step_Future.ipynb"><span class="xref myst">02</span></a> you measured the displacement of a ball as a function of time. You <em>assumed</em> the initial velocity was 0 in the case of the dropped object, or you approximated the velocity based upon the first two measured displacements and a finite difference approximation.</p>
 <p>Consider the case of the tennis ball that was dropped in the <a class="reference download internal" download="" href="../_downloads/5b4a86ec241f74f5750a58ac24e044a7/fallingtennisball02.txt"><span class="xref download myst">‘data/fallingtennisball02.txt file’</span></a>. After it strikes the ground, you don’t really <em>know</em> the velocity. What you <em>do know</em> is that the position was <span class="math notranslate nohighlight">\(\approx 0\)</span> at t=0.58 s and it was <span class="math notranslate nohighlight">\(\approx 0\)</span> m at t=1.43 s. Solving your differential equation without an initial velocity is known as a “shooting” method.</p>
 <p><img alt="The shooting method imagined as a catapult aiming at a target" src="../_images/shooting.png" /></p>
 <p>Solving this type of problem where the <strong>boundaries</strong> are known is referred to as a <em>Boundary value problem</em>. Typically, boudary value problems happen over a distance, rather than points in time, but you will come back to those in the fifth module on boundary value problems.</p>
@@ -1116,7 +1124,7 @@ We reached a relative error of 5.0109798921069224e-05 with 20 iterations
 at time t=1.42 s, y=-0.0110 m
 </pre></div>
 </div>
-<img alt="../_images/c0271b1828df243202cc383836e7b7c6f75e7b19e89af86adf0beaa30c093ac7.png" src="../_images/c0271b1828df243202cc383836e7b7c6f75e7b19e89af86adf0beaa30c093ac7.png" />
+<img alt="../_images/2544ff323b634f3335766a32dc02ca1172197bec29fbeb050ef2ccdea1348c1f.png" src="../_images/2544ff323b634f3335766a32dc02ca1172197bec29fbeb050ef2ccdea1348c1f.png" />
 </div>
 </div>
 <p>Now, let’s look at the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> function you created that described the motion of the tennis ball. Remember, this function returns the derivative of the state. So if you input</p>
@@ -1151,7 +1159,7 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </div>
 </div>
-<p>To get the position as a function of time, you can use any of the integration methods that you defined in <a class="reference internal" href="03_Get_Oscillations.html"><span class="doc std std-doc">03_Get_Oscillations</span></a>. Here you copy in the second-order Runge-Kutta explicit method.</p>
+<p>To get the position as a function of time, you can use any of the integration methods that you defined in <a class="reference internal" href="#./03_Get_Oscillations.ipynb"><span class="xref myst">03_Get_Oscillations</span></a>. Here you copy in the second-order Runge-Kutta explicit method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk2_step</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
@@ -1177,7 +1185,7 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </section>
 <section id="defining-your-problem-for-python">
-<h2>Defining your problem for Python<a class="headerlink" href="#defining-your-problem-for-python" title="Permalink to this heading">#</a></h2>
+<h2>Defining your problem for Python<a class="headerlink" href="#defining-your-problem-for-python" title="Link to this heading">#</a></h2>
 <p>Now, you can finally ask your engineering question in a Python way.</p>
 <p>We need a function, <span class="math notranslate nohighlight">\(f(v_0)\)</span>, such that when you input the correct velocity for the initial condition, <span class="math notranslate nohighlight">\(f(v_0^{correct})=0\)</span></p>
 <p>So you define a new function with <code class="docutils literal notranslate"><span class="pre">def</span></code></p>
@@ -1259,16 +1267,16 @@ at time t=1.42 s, y=-0.0110 m
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fd4c55f4adbb838561e5ba610d4cf549669fd24918cdd0265c7edcf945877de3.png" src="../_images/fd4c55f4adbb838561e5ba610d4cf549669fd24918cdd0265c7edcf945877de3.png" />
+<img alt="../_images/edd0d0d6dcbbd8739ead72244c464a5f7e15657054e1a3aeb0aa8373d72417dd.png" src="../_images/edd0d0d6dcbbd8739ead72244c464a5f7e15657054e1a3aeb0aa8373d72417dd.png" />
 </div>
 </div>
 </section>
 <section id="id5">
-<h2>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>Enter your best guess for <code class="docutils literal notranslate"><span class="pre">v0</span></code>. What is the error between the measured <code class="docutils literal notranslate"><span class="pre">yT</span></code> and your predicted y(T)? <em>Hint: use your function, <code class="docutils literal notranslate"><span class="pre">f_v</span></code>, and plot the results.</em></p>
 </section>
 <section id="solving-the-engineering-problem">
-<h2>Solving the engineering problem<a class="headerlink" href="#solving-the-engineering-problem" title="Permalink to this heading">#</a></h2>
+<h2>Solving the engineering problem<a class="headerlink" href="#solving-the-engineering-problem" title="Link to this heading">#</a></h2>
 <p>Now, you have all the components you need for this “shooting” problem. You can’t evaluate a derivative easily and the bisection method is too slow. Therefore, you will use the <code class="docutils literal notranslate"><span class="pre">mod_secant</span></code> function to find the correct initial velocity.</p>
 <p>Below is the solution. <em>Just one line of code!</em></p>
 <div class="cell docutils container">
@@ -1288,7 +1296,7 @@ the solve took  3  iterations
 </div>
 </section>
 <section id="id6">
-<h2>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>Change the value of the <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">x0</span></code>. Does it change the final result? Does it change the time it took to arrive at the solution or the number of iterations?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1299,7 +1307,7 @@ the solve took  3  iterations
 </div>
 </section>
 <section id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to find the 0 of a function, aka root-finding</p></li>
 <li><p>The difference between a bracketing and an open methods for finding roots</p></li>
@@ -1313,7 +1321,7 @@ the solve took  3  iterations
 </ul>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Chapra, Steven <em>Applied Numerical Methods with Matlab for Engineers.</em> McGraw Hill.</p></li>
 <li><p><em>Computational Physics with Python</em>, lecture notes by Eric Ayars, California State University, Chico. Available online on the author’s website: <a class="reference external" href="https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf">https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf</a></p></li>
@@ -1378,6 +1386,7 @@ the solve took  3  iterations
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1438,7 +1447,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1462,8 +1471,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Extra Material: Direct stiffness method for Finite Element analysis (FEA) &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'projects/extra-FEA_material';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="How to use a for loop? in Python" href="../how-to/for-loops.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -160,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -498,10 +506,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="extra-material-direct-stiffness-method-for-finite-element-analysis-fea">
-<h1>Extra Material: Direct stiffness method for Finite Element analysis (FEA)<a class="headerlink" href="#extra-material-direct-stiffness-method-for-finite-element-analysis-fea" title="Permalink to this heading">#</a></h1>
+<h1>Extra Material: Direct stiffness method for Finite Element analysis (FEA)<a class="headerlink" href="#extra-material-direct-stiffness-method-for-finite-element-analysis-fea" title="Link to this heading">#</a></h1>
 <p>The direct stiffness approach looks at the stiffness of each individual element and adds them to the overall stiffness of the FEA structure. Starting with a single element, show below we have the following relation between forces applied and deformation</p>
 <p><img alt="Single link element with forces applied to both ends" src="../_images/link_elem.png" /></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{F}_{el} = \mathbf{K}_{el}\mathbf{u}\)</span></p>
@@ -590,12 +598,12 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;forces and deformation of single Al-bar\nscale factor = 10&#39;)
 </pre></div>
 </div>
-<img alt="../_images/dc18ed3afaa15c5d0d6fd07093adb336aeafe6130b300aaab119a5e6ce35f376.png" src="../_images/dc18ed3afaa15c5d0d6fd07093adb336aeafe6130b300aaab119a5e6ce35f376.png" />
+<img alt="../_images/f06baac309a4f3fa4dd7ef43592a01a0af0f27c10f0f774e290367b0f668ce04.png" src="../_images/f06baac309a4f3fa4dd7ef43592a01a0af0f27c10f0f774e290367b0f668ce04.png" />
 </div>
 </div>
 <section id="combining-multiple-elements">
-<h2>Combining multiple elements<a class="headerlink" href="#combining-multiple-elements" title="Permalink to this heading">#</a></h2>
-<p>This method can be extended to multiple, connected bars. We just have to do some extra book-keeping. Let’s consider the 3-bar element that we used in <span class="xref myst">02_Gauss_elimination</span>.</p>
+<h2>Combining multiple elements<a class="headerlink" href="#combining-multiple-elements" title="Link to this heading">#</a></h2>
+<p>This method can be extended to multiple, connected bars. We just have to do some extra book-keeping. Let’s consider the 3-bar element that we used in <a class="reference internal" href="#../notebooks/02_Gauss_elimination.ipynb"><span class="xref myst">02_Gauss_elimination</span></a>.</p>
 <p><img alt="Triangular truss" src="../_images/truss.png" /></p>
 <p>We have 3 elements and 3 nodes, so there are 6 degrees of freedom, with 3 constraints. Let’s use 1-m aluminum bars with <span class="math notranslate nohighlight">\(A=1~mm^2\)</span>, but set <span class="math notranslate nohighlight">\(\alpha=\beta=60^{o}\)</span>.</p>
 <p>Each element still has the stiffness defined above,</p>
@@ -763,12 +771,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/86cb374824acc5e6f557c1e7c21dd6842840249fc34ca2e2db7bbef7eeac5e22.png" src="../_images/86cb374824acc5e6f557c1e7c21dd6842840249fc34ca2e2db7bbef7eeac5e22.png" />
+<img alt="../_images/4d4c3d6fc3519af11181b5bddefbc5a9f394784d09ac4c857c8ce2e0365a33ce.png" src="../_images/4d4c3d6fc3519af11181b5bddefbc5a9f394784d09ac4c857c8ce2e0365a33ce.png" />
 </div>
 </div>
 </section>
 <section id="project-matrix-creation">
-<h2>Project Matrix creation<a class="headerlink" href="#project-matrix-creation" title="Permalink to this heading">#</a></h2>
+<h2>Project Matrix creation<a class="headerlink" href="#project-matrix-creation" title="Link to this heading">#</a></h2>
 <p>In the project, we have 7 joints <em>(nodes)</em> and 11 bars <em>(elements)</em>. That means we have 7 locations where <span class="math notranslate nohighlight">\(\sum\mathbf{F} = \mathbf{0}\)</span> and 11 stiffness matrices <span class="math notranslate nohighlight">\((\mathbf{K_1}...\mathbf{K_{11}})\)</span>. The result is 14 equations with 14 unknowns, but we have some constraints on the system. <span class="math notranslate nohighlight">\(u_{1x}=u_{1y}=0\)</span> and <span class="math notranslate nohighlight">\(u_{7y}=0.\)</span> Which leaves us with 11 unknowns. There are 14 applied forces <span class="math notranslate nohighlight">\((F_{ix},~F_{iy})\)</span> that make up the vector <span class="math notranslate nohighlight">\(\mathbf{F}.\)</span></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{u}=\left[\begin{array}{c}
         u_{1x}\\
@@ -802,7 +810,7 @@ document.write(`
         0\\\end{array}\right]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{F} = \mathbf{K_1 u}+...+\mathbf{K_{11} u}\)</span></p>
 </section>
 <section id="node-and-element-arrays">
-<h2>Node and element arrays<a class="headerlink" href="#node-and-element-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Node and element arrays<a class="headerlink" href="#node-and-element-arrays" title="Link to this heading">#</a></h2>
 <p>In FEA, we typically store the node locations and their connections in two arrays called the node array: <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and the element array: <code class="docutils literal notranslate"><span class="pre">elems</span></code>. The array <code class="docutils literal notranslate"><span class="pre">nodes</span></code> stores the node number and its x-y location. The array <code class="docutils literal notranslate"><span class="pre">elems</span></code> stores the node numbers that define each element. Our <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">elems</span></code> are printed below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -894,12 +902,12 @@ element array
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4ebf4a1876c177e027321fe640bf0ac1412cc92989b25617da77c8116dc1bc9d.png" src="../_images/4ebf4a1876c177e027321fe640bf0ac1412cc92989b25617da77c8116dc1bc9d.png" />
+<img alt="../_images/f7b1689bf11d0aa5b64acd45636b45fbf0f141cf1bba7d55afffdab8ca20b5d0.png" src="../_images/f7b1689bf11d0aa5b64acd45636b45fbf0f141cf1bba7d55afffdab8ca20b5d0.png" />
 </div>
 </div>
 </section>
 <section id="assemble-the-stiffness-matrix">
-<h2>Assemble the stiffness matrix<a class="headerlink" href="#assemble-the-stiffness-matrix" title="Permalink to this heading">#</a></h2>
+<h2>Assemble the stiffness matrix<a class="headerlink" href="#assemble-the-stiffness-matrix" title="Link to this heading">#</a></h2>
 <p>Creating the matrix to represent <span class="math notranslate nohighlight">\(\mathbf{K} = \mathbf{K}_1+...\mathbf{K}_{11}\)</span> is called <strong>assembling the stiffness matrix</strong>. We loop through each element and add the individual stiffness matrices, the same way we did for the 3-element truss above. First, we define our <span class="math notranslate nohighlight">\(\mathbf{K_{el}}\)</span> function, <code class="docutils literal notranslate"><span class="pre">Kel(node1,node2)</span></code>. The nodes define the initial length and the angle of the beam element. We can multipy the stiffness matrix by <span class="math notranslate nohighlight">\(EA\)</span> to get the actual N/m stiffness term. In our case, each beam is the same material and cross section, so we can factor out <span class="math notranslate nohighlight">\(EA\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1007,7 +1015,7 @@ element array
 </div>
 </section>
 <section id="save-the-inputs-for-the-project">
-<h2>Save the inputs for the project<a class="headerlink" href="#save-the-inputs-for-the-project" title="Permalink to this heading">#</a></h2>
+<h2>Save the inputs for the project<a class="headerlink" href="#save-the-inputs-for-the-project" title="Link to this heading">#</a></h2>
 <p>Here, we save the arrays needed to work on the project as a Linear Algebra problem. We need the <code class="docutils literal notranslate"><span class="pre">nodes</span></code>, <code class="docutils literal notranslate"><span class="pre">elems</span></code>, and <code class="docutils literal notranslate"><span class="pre">K</span></code> arrays. So, we save them in the file <code class="docutils literal notranslate"><span class="pre">fea_arrays.npz</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,7 +1026,7 @@ element array
 </div>
 </section>
 <section id="solution-for-our-fea-problem">
-<h2>Solution for our FEA problem<a class="headerlink" href="#solution-for-our-fea-problem" title="Permalink to this heading">#</a></h2>
+<h2>Solution for our FEA problem<a class="headerlink" href="#solution-for-our-fea-problem" title="Link to this heading">#</a></h2>
 <p>In FEA, you have applied forces, in <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, and displacement in <span class="math notranslate nohighlight">\(\mathbf{u}.\)</span> Typically, you have a mix of known and unknown forces and displacements. In our example, we have 14 degrees of freedom - 3 constraints for our displacements. So, we solve the problem in two steps</p>
 <ol class="arabic simple">
 <li><p>solve for the free nodes <code class="docutils literal notranslate"><span class="pre">uf</span></code> <span class="math notranslate nohighlight">\(\rightarrow \mathbf{K}[2:13,2:13] \mathbf{u}[2:13] = \mathbf{F} [2:13]\)</span></p></li>
@@ -1103,7 +1111,7 @@ F_7y:50.00 N
 </div>
 </section>
 <section id="postprocess-fea-results">
-<h2>Postprocess FEA results<a class="headerlink" href="#postprocess-fea-results" title="Permalink to this heading">#</a></h2>
+<h2>Postprocess FEA results<a class="headerlink" href="#postprocess-fea-results" title="Link to this heading">#</a></h2>
 <p>The last step in FEA (and any applied linear algebra problem), is to
 post-process the results. I have chosen to show the deflections of each
 joint and the applied forces at each node. I imported the <code class="docutils literal notranslate"><span class="pre">interact</span></code>
@@ -1201,6 +1209,7 @@ deformation.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1238,7 +1247,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1262,8 +1271,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

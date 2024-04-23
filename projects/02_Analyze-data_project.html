@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Project #02 - NYSE random walk predictor &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'projects/02_Analyze-data_project';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Computational Mechanics 03- Initial Value Problems" href="../module_03/README.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -498,7 +506,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,7 +520,7 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="project-02-nyse-random-walk-predictor">
-<h1>Project #02 - NYSE random walk predictor<a class="headerlink" href="#project-02-nyse-random-walk-predictor" title="Permalink to this heading">#</a></h1>
+<h1>Project #02 - NYSE random walk predictor<a class="headerlink" href="#project-02-nyse-random-walk-predictor" title="Link to this heading">#</a></h1>
 <p>In the <a class="reference internal" href="../module_02/04_Stats_and_Montecarlo.html"><span class="doc std std-doc">Stats and Monte Carlo</span></a> module, you created a Brownian motion model to predict the motion of particles in a fluid. The Monte Carlo model took steps in the x- and y-directions with random magnitudes.</p>
 <p>This <a class="reference external" href="https://en.wikipedia.org/wiki/Random_walk_hypothesis">random walk</a> can be used to predict stock prices. Let’s take a look at some data from the New York Stock Exchange <a class="reference external" href="https://www.kaggle.com/dgawlik/nyse">NYSE</a> from 2010 through 2017.</p>
 <blockquote>
@@ -530,7 +538,7 @@ create a predictive model.</p>
 <li><p>Generate random walk for <a class="reference external" href="https://en.wikipedia.org/wiki/Alphabet_Inc.">[GOOGL]</a> stock opening price</p></li>
 </ol>
 <section id="explore-data">
-<h2>1. Explore data<a class="headerlink" href="#explore-data" title="Permalink to this heading">#</a></h2>
+<h2>1. Explore data<a class="headerlink" href="#explore-data" title="Link to this heading">#</a></h2>
 <p>Here, I load the data into a Pandas dataframe to see what headings and values are available. I see two columns that I want to analyze</p>
 <ul class="simple">
 <li><p>‘date’</p></li>
@@ -545,63 +553,65 @@ create a predictive model.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
-Cell In[2], line 2
-      1 data = pd.read_csv(&#39;../data/nyse-data.csv&#39;)
-----&gt; 2 data[&#39;date&#39;] = pd.to_datetime(data[&#39;date&#39;])
-      3 data
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/nyse-data.csv&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data</span>
 
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1108, in to_datetime(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)
-   1106             result = arg.tz_localize(&quot;utc&quot;)
-   1107 elif isinstance(arg, ABCSeries):
--&gt; 1108     cache_array = _maybe_cache(arg, format, cache, convert_listlike)
-   1109     if not cache_array.empty:
-   1110         result = arg.map(cache_array)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1063,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s2">&quot;utc&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">ABCSeries</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1063</span>     <span class="n">cache_array</span> <span class="o">=</span> <span class="n">_maybe_cache</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="n">convert_listlike</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1064</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">cache_array</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1065</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cache_array</span><span class="p">)</span>
 
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:254, in _maybe_cache(arg, format, cache, convert_listlike)
-    252 unique_dates = unique(arg)
-    253 if len(unique_dates) &lt; len(arg):
---&gt; 254     cache_dates = convert_listlike(unique_dates, format)
-    255     # GH#45319
-    256     try:
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:247,</span> in <span class="ni">_maybe_cache</span><span class="nt">(arg, format, cache, convert_listlike)</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="n">unique_dates</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_dates</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">247</span>     <span class="n">cache_dates</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">unique_dates</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="c1"># GH#45319</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="k">try</span><span class="p">:</span>
 
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:488, in _convert_listlike_datetimes(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)
-    486 # `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.
-    487 if format is not None and format != &quot;mixed&quot;:
---&gt; 488     return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
-    490 result, tz_parsed = objects_to_datetime64ns(
-    491     arg,
-    492     dayfirst=dayfirst,
-   (...)
-    496     allow_object=True,
-    497 )
-    499 if tz_parsed is not None:
-    500     # We can take a shortcut since the datetime64 numpy array
-    501     # is in UTC
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:433,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span> <span class="c1"># `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">format</span> <span class="o">!=</span> <span class="s2">&quot;mixed&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">433</span>     <span class="k">return</span> <span class="n">_array_strptime_with_fallback</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">utc</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span> <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="n">arg</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span>     <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="c1"># is in UTC</span>
 
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:519, in _array_strptime_with_fallback(arg, name, utc, fmt, exact, errors)
-    508 def _array_strptime_with_fallback(
-    509     arg,
-    510     name,
-   (...)
-    514     errors: str,
-    515 ) -&gt; Index:
-    516     &quot;&quot;&quot;
-    517     Call array_strptime, with fallback behavior depending on &#39;errors&#39;.
-    518     &quot;&quot;&quot;
---&gt; 519     result, timezones = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
-    520     if any(tz is not None for tz in timezones):
-    521         return _return_parsed_timezone_results(result, timezones, utc, name)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:467,</span> in <span class="ni">_array_strptime_with_fallback</span><span class="nt">(arg, name, utc, fmt, exact, errors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="k">def</span> <span class="nf">_array_strptime_with_fallback</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span>     <span class="n">arg</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>     <span class="n">name</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">errors</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Index</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="sd">     Call array_strptime, with fallback behavior depending on &#39;errors&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">467</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_out</span> <span class="o">=</span> <span class="n">array_strptime</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="n">exact</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="k">if</span> <span class="n">tz_out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>         <span class="n">unit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime_data</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">dtype</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
-File strptime.pyx:534, in pandas._libs.tslibs.strptime.array_strptime()
+<span class="nn">File strptime.pyx:501,</span> in <span class="ni">pandas._libs.tslibs.strptime.array_strptime</span><span class="nt">()</span>
 
-File strptime.pyx:355, in pandas._libs.tslibs.strptime.array_strptime()
+<span class="nn">File strptime.pyx:451,</span> in <span class="ni">pandas._libs.tslibs.strptime.array_strptime</span><span class="nt">()</span>
 
-ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%m-%d %H:%M:%S&quot;, at position 251. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format=&#39;ISO8601&#39;` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format=&#39;mixed&#39;`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+<span class="nn">File strptime.pyx:583,</span> in <span class="ni">pandas._libs.tslibs.strptime._parse_with_format</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%m-%d %H:%M:%S&quot;, at position 251. You might want to try:
+    <span class="o">-</span> <span class="n">passing</span> <span class="err">`</span><span class="nb">format</span><span class="err">`</span> <span class="k">if</span> <span class="n">your</span> <span class="n">strings</span> <span class="n">have</span> <span class="n">a</span> <span class="n">consistent</span> <span class="nb">format</span><span class="p">;</span>
+    <span class="o">-</span> <span class="n">passing</span> <span class="err">`</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;ISO8601&#39;</span><span class="err">`</span> <span class="k">if</span> <span class="n">your</span> <span class="n">strings</span> <span class="n">are</span> <span class="nb">all</span> <span class="n">ISO8601</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">necessarily</span> <span class="ow">in</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="nb">format</span><span class="p">;</span>
+    <span class="o">-</span> <span class="n">passing</span> <span class="err">`</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;mixed&#39;</span><span class="err">`</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="nb">format</span> <span class="n">will</span> <span class="n">be</span> <span class="n">inferred</span> <span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">individually</span><span class="o">.</span> <span class="n">You</span> <span class="n">might</span> <span class="n">want</span> <span class="n">to</span> <span class="n">use</span> <span class="err">`</span><span class="n">dayfirst</span><span class="err">`</span> <span class="n">alongside</span> <span class="n">this</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
@@ -625,7 +635,7 @@ ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%
 </div>
 </section>
 <section id="data-analysis">
-<h2>2. Data analysis<a class="headerlink" href="#data-analysis" title="Permalink to this heading">#</a></h2>
+<h2>2. Data analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h2>
 <p>The GOOGL stock nearly doubled in price from 2010 through 2014. Day-to-day, the price fluctuates randomly. Here, I look at the fluctuations in price using <a class="reference external" href="https://numpy.org/doc/1.20/reference/generated/numpy.diff.html"><code class="docutils literal notranslate"><span class="pre">np.diff</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -667,7 +677,7 @@ ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%
 <p>From this statistical result, it looks like the price changes followed a normal distribution with an average change of <span class="math notranslate nohighlight">\(\$0.57\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\$9.84\)</span>.</p>
 </section>
 <section id="create-random-variables">
-<h2>3. Create random variables<a class="headerlink" href="#create-random-variables" title="Permalink to this heading">#</a></h2>
+<h2>3. Create random variables<a class="headerlink" href="#create-random-variables" title="Link to this heading">#</a></h2>
 <p>Now, I know the distribution shape and characteristics to simulate the random walk price changes for the GOOGL prices each day. Here, I generate random variables with the following array structure:</p>
 <table class="table">
 <thead>
@@ -724,7 +734,7 @@ ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%
 </div>
 </section>
 <section id="generate-random-walk-predictions">
-<h2>4. Generate random walk predictions<a class="headerlink" href="#generate-random-walk-predictions" title="Permalink to this heading">#</a></h2>
+<h2>4. Generate random walk predictions<a class="headerlink" href="#generate-random-walk-predictions" title="Link to this heading">#</a></h2>
 <p>Above, I show tha the simulated data follows the requested normal distribution. Now, I can cumulatively sum these steps to predict the stock prices each day. I use the  <a class="reference external" href="https://numpy.org/doc/1.20/reference/generated/numpy.cumsum.html"><code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code></a> argument, <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">0</span></code> to sum along the columns i.e. each row becomes the sum of previous rows.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
@@ -776,15 +786,15 @@ ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%
 </div>
 </section>
 <section id="wrapping-up">
-<h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
+<h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Link to this heading">#</a></h2>
 <p>In this analysis, I went through data exploration, analysis, and Monte Carlo model prediction. The average random walk should resemble a straight line. There are further insights you can get by analyzing the random walk data, but for now it looks like we can accurately predict the growth of GOOGL stock over four years. <strong>What are some caveats to this method? If we continue to predict prices into 2015, what would happen compared to the real data?</strong></p>
 </section>
 <section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
 <p>Now, you can try your hand at predicting stock prices on your own stock. Choose your own stock symbol and go through the same 4 steps I detailed above:</p>
 <ol class="arabic simple">
 <li><p>Explore data and select <em>your own</em> stock of interest</p></li>
-<li><p>Find statistical description of data: mean and standard deviation _use some of the graphing + analysis techniques in <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html"><span class="doc std std-doc">01_Cheers_stats_beers</span></a> and <span class="xref myst">02_Seeing_stats</span>.</p></li>
+<li><p>Find statistical description of data: mean and standard deviation _use some of the graphing + analysis techniques in <a class="reference internal" href="../module_02/01_Cheers_Stats_Beers.html"><span class="doc std std-doc">01_Cheers_stats_beers</span></a> and <a class="reference internal" href="#02_Seeing_Stats"><span class="xref myst">02_Seeing_stats</span></a>.</p></li>
 <li><p>Create random variables</p></li>
 <li><p>Generate random walk for <em>choose your own</em> stock opening price</p></li>
 </ol>
@@ -905,6 +915,7 @@ ValueError: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -941,7 +952,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -965,8 +976,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

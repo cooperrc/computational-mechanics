@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>03 - Linear regression with real data &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_02/03_Linear_Regression_with_Real_Data';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="04 - Statistics and Monte-Carlo Models" href="04_Stats_and_Montecarlo.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -512,16 +520,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="linear-regression-with-real-data">
-<h1>03 - Linear regression with real data<a class="headerlink" href="#linear-regression-with-real-data" title="Permalink to this heading">#</a></h1>
+<h1>03 - Linear regression with real data<a class="headerlink" href="#linear-regression-with-real-data" title="Link to this heading">#</a></h1>
 <section id="earth-temperature-over-time">
-<h2>Earth temperature over time<a class="headerlink" href="#earth-temperature-over-time" title="Permalink to this heading">#</a></h2>
+<h2>Earth temperature over time<a class="headerlink" href="#earth-temperature-over-time" title="Link to this heading">#</a></h2>
 <p>In this lesson, you will analyze real data of Earth temperature over time.</p>
 <p>Is global temperature rising? How much? This is a question of burning importance in today’s world!</p>
 <p>Data about global temperatures are available from several sources: NASA, the National Climatic Data Center (NCDC) and the University of East Anglia in the UK. Check out the <a class="reference external" href="https://www2.ucar.edu/climate/faq/how-much-has-global-temperature-risen-last-100-years">University Corporation for Atmospheric Research</a> (UCAR) for an in-depth discussion.</p>
@@ -552,7 +560,7 @@ document.write(`
 <p>Let’s get started!</p>
 </section>
 <section id="step-1-read-a-data-file">
-<h2>Step 1: Read a data file<a class="headerlink" href="#step-1-read-a-data-file" title="Permalink to this heading">#</a></h2>
+<h2>Step 1: Read a data file<a class="headerlink" href="#step-1-read-a-data-file" title="Link to this heading">#</a></h2>
 <p>We took the data from the <a class="reference external" href="https://www.ncdc.noaa.gov/cag/">NOAA</a> (National Oceanic and Atmospheric Administration) webpage. Feel free to play around with the webpage and analyze data on your own, but for now, let’s make sure you’re working with the same dataset.</p>
 <p>We have a file named <code class="docutils literal notranslate"><span class="pre">land_global_temperature_anomaly-1880-2016.csv</span></code> in our <code class="docutils literal notranslate"><span class="pre">data</span></code> folder. This file contains the year on the first column, and averages of land temperature anomaly listed sequentially on the second column, from the year 1880 to 2016. You will load the file, then make an initial plot to see what it looks like.</p>
 <p>Start by importing NumPy and pandas</p>
@@ -576,7 +584,7 @@ document.write(`
 </div>
 </section>
 <section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Inspect the data by printing <code class="docutils literal notranslate"><span class="pre">temp_data</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -670,7 +678,7 @@ document.write(`
 </div>
 </section>
 <section id="step-2-plot-the-data">
-<h2>Step 2: Plot the data<a class="headerlink" href="#step-2-plot-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Step 2: Plot the data<a class="headerlink" href="#step-2-plot-the-data" title="Link to this heading">#</a></h2>
 <p>Let’s first load the <strong>Matplotlib</strong> module called <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, for making 2D plots. Remember that to get the plots inside the notebook, you use a special “magic” command, <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -697,12 +705,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3f25b6174e8140723be658ced406e65e40d83f560a8db250c3663cc188569e11.png" src="../_images/3f25b6174e8140723be658ced406e65e40d83f560a8db250c3663cc188569e11.png" />
+<img alt="../_images/febb6326786e12306bcf59e1b2f31c83ad474f6be22cf8f9725007e4a02fc34d.png" src="../_images/febb6326786e12306bcf59e1b2f31c83ad474f6be22cf8f9725007e4a02fc34d.png" />
 </div>
 </div>
 </section>
 <section id="step-3-least-squares-linear-regression">
-<h2>Step 3: Least-squares linear regression<a class="headerlink" href="#step-3-least-squares-linear-regression" title="Permalink to this heading">#</a></h2>
+<h2>Step 3: Least-squares linear regression<a class="headerlink" href="#step-3-least-squares-linear-regression" title="Link to this heading">#</a></h2>
 <p>In order to have an idea of the general behavior of our data, you can find a smooth curve that (approximately) fits the points. You generally look for a curve that’s simple (e.g., a polynomial), and does not reproduce the noise that’s always present in experimental data.</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be the function that you’ll fit to the <span class="math notranslate nohighlight">\(n+1\)</span> data points: <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, <span class="math notranslate nohighlight">\(i = 0, 1, ... ,n\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -715,7 +723,7 @@ document.write(`
 <li><p>Computing the parameters that will give us the “best fit” to the data.</p></li>
 </ol>
 <section id="what-is-the-best-fit">
-<h3>What is the “best” fit?<a class="headerlink" href="#what-is-the-best-fit" title="Permalink to this heading">#</a></h3>
+<h3>What is the “best” fit?<a class="headerlink" href="#what-is-the-best-fit" title="Link to this heading">#</a></h3>
 <p>When the noise in the data is limited to the <span class="math notranslate nohighlight">\(y\)</span>-coordinate, it’s common to use a <strong>least-squares fit</strong> [2], which minimizes the function</p>
 <div class="math notranslate nohighlight">
 \[
@@ -741,7 +749,7 @@ document.write(`
 <p>which results in equations (2) being linear. In the case that the fitting function is polynomial, you have have <span class="math notranslate nohighlight">\(f_0(x) = 1, \; f_1(x) = x, \; f_2(x) = x^2\)</span>, and so on.</p>
 </section>
 <section id="linear-regression">
-<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h3>
+<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h3>
 <p>When you talk about linear regression you mean “fitting a function to the data.” In this case,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -840,7 +848,7 @@ document.write(`
 \]</div>
 </section>
 <section id="lets-fit">
-<h3>Let’s fit!<a class="headerlink" href="#lets-fit" title="Permalink to this heading">#</a></h3>
+<h3>Let’s fit!<a class="headerlink" href="#lets-fit" title="Link to this heading">#</a></h3>
 <p>Let’s now fit a straight line through the temperature-anomaly data, to see the trend over time. We’ll use least-squares linear regression to find the slope and intercept of a line</p>
 <p><span class="math notranslate nohighlight">\(y = a_1x+a_0\)</span></p>
 <p>that fits our data.</p>
@@ -850,7 +858,7 @@ document.write(`
 </section>
 </section>
 <section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Calculate the mean of the <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">temp_anomaly</span></code> arrays using the NumPy built-in function, <code class="docutils literal notranslate"><span class="pre">np.mean</span></code>.</p>
 <p>Assign the means to <code class="docutils literal notranslate"><span class="pre">mean_x</span></code> and <code class="docutils literal notranslate"><span class="pre">mean_y</span></code>.</p>
 <div class="cell docutils container">
@@ -923,7 +931,7 @@ document.write(`
 </div>
 </div>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function that computes the coefficients, call the function to compute them and compare the result with the values you obtained before. As a hint, you give you the structure that you should follow:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coefficients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x_mean</span><span class="p">,</span> <span class="n">y_mean</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -996,13 +1004,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/47714ecca7fc1efdf8325c381c1260f89b033e21da5b894413e095befb0fd1b1.png" src="../_images/47714ecca7fc1efdf8325c381c1260f89b033e21da5b894413e095befb0fd1b1.png" />
+<img alt="../_images/7388421497b8a04463aca29d8591beb47d20e3cc161f780d7193e657750ab52d.png" src="../_images/7388421497b8a04463aca29d8591beb47d20e3cc161f780d7193e657750ab52d.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="step-4-apply-regression-using-numpy">
-<h2>Step 4: Apply regression using NumPy<a class="headerlink" href="#step-4-apply-regression-using-numpy" title="Permalink to this heading">#</a></h2>
+<h2>Step 4: Apply regression using NumPy<a class="headerlink" href="#step-4-apply-regression-using-numpy" title="Link to this heading">#</a></h2>
 <p>Above, you coded linear regression from scratch. But, guess what: you didn’t have to because NumPy has built-in functions that do what you need!</p>
 <p>Yes! Python and NumPy are here to help! With <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">polyfit()</span></code></a>, you get the slope and <span class="math notranslate nohighlight">\(y\)</span>-intercept of the line that best fits the data. With <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.poly1d.html"><code class="docutils literal notranslate"><span class="pre">poly1d()</span></code></a>, you can build the linear function from its slope and <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
 <p>Check it out:</p>
@@ -1060,7 +1068,7 @@ document.write(`
 <p>In the line of code given above, you create the same assignment for <code class="docutils literal notranslate"><span class="pre">f_linear(x)</span></code>. One benefit of writing this out yourself is that you can see how each input is used directly.</p>
 </section>
 <section id="id3">
-<h2>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function to assign <code class="docutils literal notranslate"><span class="pre">f_linear</span></code> to our 1D polynomial instead of the <code class="docutils literal notranslate"><span class="pre">np.poly1d</span></code> assignment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1083,12 +1091,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/47714ecca7fc1efdf8325c381c1260f89b033e21da5b894413e095befb0fd1b1.png" src="../_images/47714ecca7fc1efdf8325c381c1260f89b033e21da5b894413e095befb0fd1b1.png" />
+<img alt="../_images/7388421497b8a04463aca29d8591beb47d20e3cc161f780d7193e657750ab52d.png" src="../_images/7388421497b8a04463aca29d8591beb47d20e3cc161f780d7193e657750ab52d.png" />
 </div>
 </div>
 </section>
 <section id="split-regression">
-<h2>“Split regression”<a class="headerlink" href="#split-regression" title="Permalink to this heading">#</a></h2>
+<h2>“Split regression”<a class="headerlink" href="#split-regression" title="Link to this heading">#</a></h2>
 <p>If you look at the plot above, you might notice that around 1970 the temperature starts increasing faster that the previous trend. So maybe one single straight line does not give us a good-enough fit.</p>
 <p>What if you break the data in two (before and after 1970) and do a linear regression in each segment?</p>
 <p>To do that, you first need to find the position in our <code class="docutils literal notranslate"><span class="pre">year</span></code> array where the year 1970 is located. Thankfully, NumPy has a function called  <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html"><code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code></a> that can help us. You pass a condition and <code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code> tells us where in the array the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
@@ -1153,12 +1161,12 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5303c7bd3cbe990729d2088aca68e5a9c9a15f752271faddddec046d72277a6c.png" src="../_images/5303c7bd3cbe990729d2088aca68e5a9c9a15f752271faddddec046d72277a6c.png" />
+<img alt="../_images/277fc9fdc60e1b1abe72e49aee7b36fcdfbcbaf032ab06ad209a42b31a16169b.png" src="../_images/277fc9fdc60e1b1abe72e49aee7b36fcdfbcbaf032ab06ad209a42b31a16169b.png" />
 </div>
 </div>
 </section>
 <section id="discussion-exercise">
-<h2>Discussion exercise<a class="headerlink" href="#discussion-exercise" title="Permalink to this heading">#</a></h2>
+<h2>Discussion exercise<a class="headerlink" href="#discussion-exercise" title="Link to this heading">#</a></h2>
 <p>We have two different curves for two different parts of our data set. A little problem with this and is that the end point of our first regression doesn’t match the starting point of the second regression. You did this for the purpose of learning, but it is not rigorously correct.</p>
 <p>How would you fix this issue?</p>
 <p>What would your new function, <span class="math notranslate nohighlight">\(f(x)\)</span>, look like?</p>
@@ -1169,7 +1177,7 @@ Name: Year, dtype: int64
 </ol>
 </section>
 <section id="you-learned">
-<h2>you learned:<a class="headerlink" href="#you-learned" title="Permalink to this heading">#</a></h2>
+<h2>you learned:<a class="headerlink" href="#you-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Making our plots more beautiful</p></li>
 <li><p>Defining and calling custom Python functions</p></li>
@@ -1179,7 +1187,7 @@ Name: Year, dtype: int64
 </ul>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://barbagroup.github.io/essential_skills_RRC/"><em>Essential skills for reproducible research computing</em></a> (2017). Lorena A. Barba,  Natalia C. Clementi, Gilbert Forsyth.</p></li>
 <li><p><em>Numerical Methods in Engineering with Python 3</em> (2013). Jaan Kiusalaas. Cambridge University Press.</p></li>
@@ -1245,6 +1253,7 @@ Name: Year, dtype: int64
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1295,7 +1304,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1319,8 +1328,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

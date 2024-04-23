@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>02 - Seeing stats in a new light &#8212; Computational Mechanics</title>
   
@@ -19,53 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'module_02/02_Seeing_Stats';</script>
-    <link rel="shortcut icon" href="../_static/spiderman-favicon.png"/>
+    <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="03 - Linear regression with real data" href="03_Linear_Regression_with_Real_Data.html" />
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -528,14 +536,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="seeing-stats-in-a-new-light">
-<h1>02 - Seeing stats in a new light<a class="headerlink" href="#seeing-stats-in-a-new-light" title="Permalink to this heading">#</a></h1>
+<h1>02 - Seeing stats in a new light<a class="headerlink" href="#seeing-stats-in-a-new-light" title="Link to this heading">#</a></h1>
 <p>Welcome to the second lesson in “Analyze Data,” Module 2 of your series
 in <em>Computational Mechanics</em>. In the previous lesson, <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">Cheers! Stats
 with Beers</span></a>, You did some exploratory
@@ -562,7 +570,7 @@ set for craft beers and begin!</p>
 </div>
 </div>
 <section id="read-the-data">
-<h2>Read the data<a class="headerlink" href="#read-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Read the data<a class="headerlink" href="#read-the-data" title="Link to this heading">#</a></h2>
 <p>Like in the previous lesson, you will load the data from a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file. You may have the file in your working directory if you downloaded it when working through the previous lesson. In that case, you could load it like this:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;beers.csv&quot;</span><span class="p">)</span>
 </pre></div>
@@ -577,7 +585,7 @@ set for craft beers and begin!</p>
 </div>
 </div>
 <section id="note">
-<h3>Note:<a class="headerlink" href="#note" title="Permalink to this heading">#</a></h3>
+<h3>Note:<a class="headerlink" href="#note" title="Link to this heading">#</a></h3>
 <p>If you don’t have the data file locally, download it by adding a code cell, and executing the following code in it:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
 <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://go.gwu.edu/engcomp2data1?accessType=DOWNLOAD&#39;</span>
@@ -780,7 +788,7 @@ space.</p>
 </section>
 </section>
 <section id="quantitative-vs-categorical-data">
-<h2>Quantitative vs. categorical data<a class="headerlink" href="#quantitative-vs-categorical-data" title="Permalink to this heading">#</a></h2>
+<h2>Quantitative vs. categorical data<a class="headerlink" href="#quantitative-vs-categorical-data" title="Link to this heading">#</a></h2>
 <p>As you can see in the nice table that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> printed for the
 dataframe, you have several features for each beer: the label <code class="docutils literal notranslate"><span class="pre">abv</span></code>
 corresponds to the acohol-by-volume fraction, label <code class="docutils literal notranslate"><span class="pre">ibu</span></code> refers to the
@@ -813,7 +821,7 @@ that group. For example, you could ask how many beers (in your set) are of
 the style “American IPA,” or ask how many beers you have in each style.</p>
 </section>
 <section id="visualizing-quantitative-data">
-<h2>Visualizing quantitative data<a class="headerlink" href="#visualizing-quantitative-data" title="Permalink to this heading">#</a></h2>
+<h2>Visualizing quantitative data<a class="headerlink" href="#visualizing-quantitative-data" title="Link to this heading">#</a></h2>
 <p>In the previous lesson, you played around a bit with the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>
 columns of the dataframe <code class="docutils literal notranslate"><span class="pre">beers</span></code>. For each of these columns, you
 extracted it from the dataframe and saved it into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> series,
@@ -855,7 +863,7 @@ you’ll learn about a new type of visualization: the <strong>box plot</strong>.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1deba1a18a797aaad0397ab1b730bb3065607d75e3379b391b0b83753f51e957.png" src="../_images/1deba1a18a797aaad0397ab1b730bb3065607d75e3379b391b0b83753f51e957.png" />
+<img alt="../_images/8209cc4111c9a8041e52b0c6f13e35ce91b26d885dad53c75714f9f4be2e5722.png" src="../_images/8209cc4111c9a8041e52b0c6f13e35ce91b26d885dad53c75714f9f4be2e5722.png" />
 </div>
 </div>
 <p>You can tell that the most frequent values of <code class="docutils literal notranslate"><span class="pre">abv</span></code> fall in the bin just
@@ -879,15 +887,15 @@ higher end.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6a8fb88dc8d7e2036813631efbf605637d5c12a67d982f90ac518e4334a0828d.png" src="../_images/6a8fb88dc8d7e2036813631efbf605637d5c12a67d982f90ac518e4334a0828d.png" />
+<img alt="../_images/1902a958413cab95d6edae58a93ab6136c880992cdb8572d4ef33688ff11a2ea.png" src="../_images/1902a958413cab95d6edae58a93ab6136c880992cdb8572d4ef33688ff11a2ea.png" />
 </div>
 </div>
 <p>Which one do you like better? Well, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> histogram took fewer lines of code to create.  And it doesn’t look bad at all. But you do have more fine-grained control with Matplotlib. Which method you choose in a real situation will just depend on the situation and your preference.</p>
 <section id="exploring-quantitative-data-continued">
-<h3>Exploring quantitative data (continued)<a class="headerlink" href="#exploring-quantitative-data-continued" title="Permalink to this heading">#</a></h3>
+<h3>Exploring quantitative data (continued)<a class="headerlink" href="#exploring-quantitative-data-continued" title="Link to this heading">#</a></h3>
 <p>In the <a class="reference internal" href="01_Cheers_Stats_Beers.html"><span class="doc std std-doc">previous lesson</span></a>, you learned how to compute the mean of the data using <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code>. How easy is that? But then you wrote your own custom functions to compute variance or standard deviation. There are some standard numpy libraries that you can use instead.</p>
 <section id="exercise">
-<h4>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
+<h4>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Go to the documentation of <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.var.html"><code class="docutils literal notranslate"><span class="pre">np.var()</span></code></a> and analyze if this function is computing the <em>sample variance</em>.
 <strong>Hint</strong>: Check what it says about the “data degrees of freedom.”</p></li>
@@ -929,7 +937,7 @@ You will.</p>
 </section>
 </section>
 <section id="id1">
-<h2>Exercise:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Exercise:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read the documentation about the NumPy standard deviation function, compute the standard deviation for <code class="docutils literal notranslate"><span class="pre">abv</span></code> using this function, and check that you obtained the same value than if you take the square root of the variance computed with NumPy.</p></li>
 <li><p>Compute the variance and standard deviation for the variable <code class="docutils literal notranslate"><span class="pre">ibu</span></code>.</p></li>
@@ -954,17 +962,17 @@ You will.</p>
 </div>
 </div>
 <section id="median-value">
-<h3>Median value<a class="headerlink" href="#median-value" title="Permalink to this heading">#</a></h3>
+<h3>Median value<a class="headerlink" href="#median-value" title="Link to this heading">#</a></h3>
 <p>So far, you’ve learned to characterize quantitative data using the mean, variance and standard deviation.</p>
 <p>If you watched Prof. Sainani’s lecture <a class="reference external" href="https://youtu.be/tQ5slNYRcC4">Describing Quantitative Data: Where is the center?</a> (recommended in your previous lesson), you’ll recall that she also introduced the <strong>median</strong>: the middle value in the data, the value that separates your data set in half. (If there’s an even number of data values, you take the average between the two middle values.)</p>
 <p>As you may anticipate, NumPy has a built-in function that computes the median, helpfully named <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.median.html"><code class="docutils literal notranslate"><span class="pre">numpy.median()</span></code></a>.</p>
 <section id="id2">
-<h4>Exercise:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4>Exercise:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>Using NumPy, compute the median for your variables <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>. Compare the median with the mean, and look at the histogram to locate where the values fall on the x-axis.</p>
 </section>
 </section>
 <section id="box-plots">
-<h3>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this heading">#</a></h3>
+<h3>Box plots<a class="headerlink" href="#box-plots" title="Link to this heading">#</a></h3>
 <p>Another handy way to visualize the distribution of quantitative data is using <strong>box plots</strong>. By “distribution” of the data, you mean some idea of the dataset’s “shape”: where is the center, what is the range, what is the variation in the data.
 Histograms are the most popular type of plots in exploratory data analysis. But check out box plots: they are easy to make with <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>:</p>
 <div class="cell docutils container">
@@ -974,7 +982,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/250346abd12ec86442e411de8ff3e5e6b30b966fe85785e1d07c92207886b97c.png" src="../_images/250346abd12ec86442e411de8ff3e5e6b30b966fe85785e1d07c92207886b97c.png" />
+<img alt="../_images/a0cd6e3a8313afb3cab6602de844513e5a1c43c9457a6b470ed4aab835bdb974.png" src="../_images/a0cd6e3a8313afb3cab6602de844513e5a1c43c9457a6b470ed4aab835bdb974.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -984,7 +992,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/012b243a137c140b52a7f14041975c1a5337d2e85ada0eb283b48aa678984aa3.png" src="../_images/012b243a137c140b52a7f14041975c1a5337d2e85ada0eb283b48aa678984aa3.png" />
+<img alt="../_images/80c724b816d130a82c60b85d2e42e2ff933d15155ab146bd4f041f4c13ace709.png" src="../_images/80c724b816d130a82c60b85d2e42e2ff933d15155ab146bd4f041f4c13ace709.png" />
 </div>
 </div>
 <p>What is going on here? Obviously, there is a <em>box</em>: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the <em>median</em>.</p>
@@ -1043,7 +1051,7 @@ The third quartile for ibu is 64.0
 </ul>
 <p>Any data values beyond the upper and lower extremes are shown with a marker (here, small circles) and are an indication of outliers in the data.</p>
 <section id="id3">
-<h4>Exercise:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4>Exercise:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>Calculate the end-points of the top and bottom whiskers for both the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> variables, and compare the results with the whisker end-points you see in the plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1083,17 +1091,17 @@ bottom whisker = 2.5% abv
 </div>
 </section>
 <section id="a-bit-of-history">
-<h4>A bit of history:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this heading">#</a></h4>
+<h4>A bit of history:<a class="headerlink" href="#a-bit-of-history" title="Link to this heading">#</a></h4>
 <p>“Box-and-whiskers” plots were invented by John Tukey over 45 years ago. Tukey was a famous mathematician/statistician who is credited with coining the words <em>software</em> and <em>bit</em> [4]. He was active in the efforts to break the <em>Enigma</em> code during WWII, and worked at Bell Labs in the first surface-to-air guided missile (“Nike”). A classic 1947 work on early design of the electonic computer acknowledged Tukey: he designed the electronic circuit for computing addition. Tukey was also a long-time advisor for the US Census Bureau, and a consultant for the Educational Testing Service (ETS), among many other contributions [5].</p>
 </section>
 <section id="id4">
-<h4>Note:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<h4>Note:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>Box plots are also drawn horizontally. Often, several box plots are drawn side-by-side with the purpose of comparing distributions.</p>
 </section>
 </section>
 </section>
 <section id="visualizing-categorical-data">
-<h2>Visualizing categorical data<a class="headerlink" href="#visualizing-categorical-data" title="Permalink to this heading">#</a></h2>
+<h2>Visualizing categorical data<a class="headerlink" href="#visualizing-categorical-data" title="Link to this heading">#</a></h2>
 <p>The typical method of visualizing categorical data is using <strong>bar plots</strong>. These show visually the frequency of appearance of items in each category, or the proportion of data in each category. Suppose you wanted to know how many beers of the same style are in your data set. Remember: the <em>style</em> of the beer is an example of <em>categorical data</em>. Let’s extract the column with the style information from the <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe, assign it to a variable named <code class="docutils literal notranslate"><span class="pre">style_series</span></code>, check the type of this variable, and view the first 10 elements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1260,16 +1268,16 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9838c34f1c92cb01f48e04d05c1e3f7dd0b81a32a293a61f69f87c51cd3714e0.png" src="../_images/9838c34f1c92cb01f48e04d05c1e3f7dd0b81a32a293a61f69f87c51cd3714e0.png" />
+<img alt="../_images/462f49ef4fafec036e7bd98637ae6d29d192ebbb473e37c46480cede4135adf2.png" src="../_images/462f49ef4fafec036e7bd98637ae6d29d192ebbb473e37c46480cede4135adf2.png" />
 </div>
 </div>
 </section>
 <section id="visualizing-multiple-data">
-<h2>Visualizing multiple data<a class="headerlink" href="#visualizing-multiple-data" title="Permalink to this heading">#</a></h2>
+<h2>Visualizing multiple data<a class="headerlink" href="#visualizing-multiple-data" title="Link to this heading">#</a></h2>
 <p>These visualizations are really addictive! We’re now getting ambitious: what if you wanted to show more than one feature, together on the same plot? What if you wanted to get insights about the relationship between two features through a multi-variable plot?</p>
 <p>For example, you can explore the relationship between bitterness of beers and the alcohol-by-volume fraction.</p>
 <section id="scatter-plots">
-<h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this heading">#</a></h3>
+<h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Link to this heading">#</a></h3>
 <p>Maybe you can do this: imagine a plot that has the alcohol-by-volume on the absissa, and the IBU value on the ordinate. For each beer, you can place a dot on this plot with its <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values as <span class="math notranslate nohighlight">\((x, y)\)</span> coordinates. This is called a <strong>scatter plot</strong>.</p>
 <p>We run into a bit of a problem, though. The way you handled the beer data above, you extracted the column for <code class="docutils literal notranslate"><span class="pre">abv</span></code> into a series, dropped the null entries, and saved the values into a NumPy array. You then repeated this process for the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> column. Because a lot more <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values are missing, you ended up with two arrays of different length: 2348 entries for the <code class="docutils literal notranslate"><span class="pre">abv</span></code> series, and 1405 entries for the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> series. If you want to make a scatter plot with these two features, you’ll need series (or arrays) of the same length.</p>
 <p>Let’s instead clean the whole <code class="docutils literal notranslate"><span class="pre">beers</span></code> dataframe (which will completely remove any row that has a null entry), and <em>then</em> extract the values of the two series into NumPy arrays.</p>
@@ -1319,14 +1327,14 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/051665ea6cff0fce2792c46a355902c79e32bdaf27516715360db9ad5c8f39b1.png" src="../_images/051665ea6cff0fce2792c46a355902c79e32bdaf27516715360db9ad5c8f39b1.png" />
+<img alt="../_images/79f0d5d214246324c167343f3f1165cc79282404040f512280aba448d8d61744.png" src="../_images/79f0d5d214246324c167343f3f1165cc79282404040f512280aba448d8d61744.png" />
 </div>
 </div>
 <p>Hmm. That’s a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there’s a lot of vertical spread on those dots to the right of the plot.</p>
 <p>An idea! What if the bitterness has something to do with <em>style</em>?</p>
 </section>
 <section id="bubble-chart">
-<h3>Bubble chart<a class="headerlink" href="#bubble-chart" title="Permalink to this heading">#</a></h3>
+<h3>Bubble chart<a class="headerlink" href="#bubble-chart" title="Link to this heading">#</a></h3>
 <p>What you imagined is that you could group together the beers by style, and then make a new scatter plot where each marker corresponds to a style. The beers within a style, though, have many values of alcohol fraction and bitterness: you have to come up with a “summary value” for each style. Well, why not the <em>mean</em>… you can calculate the average <code class="docutils literal notranslate"><span class="pre">abv</span></code> and the average <code class="docutils literal notranslate"><span class="pre">ibu</span></code> for all the beers in each style, use that pair as <span class="math notranslate nohighlight">\((x,y)\)</span> coordinate, and put a dot there representing the style.</p>
 <p>Better yet! We’ll make the size of the “dot” proportional to the popularity of the style in your data set! This is called a <strong>bubble chart</strong>.</p>
 <p>How to achieve this idea? you searched online for “mean of a column with pandas” and you landed in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html"><code class="docutils literal notranslate"><span class="pre">dataframe.mean()</span></code></a>. This could be helpful… But you don’t want the mean of a <em>whole</em> column—we want the mean of the column values grouped by <em>style</em>. Searching online again, you landed in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html"><code class="docutils literal notranslate"><span class="pre">dataframe.groupby()</span></code></a>. This is amazing: <code class="docutils literal notranslate"><span class="pre">pandas</span></code> can group a series for you!</p>
@@ -1372,7 +1380,7 @@ Name: count, dtype: int64
 </div>
 <p>The number of beers in each style appears on each row of <code class="docutils literal notranslate"><span class="pre">style_counts</span></code>, sorted in decreasing order of count. You have 90 different styles, and the most popular style is the “American IPA,” with 301 beers…</p>
 <section id="discuss-with-your-neighbor">
-<h4>Discuss with your neighbor:<a class="headerlink" href="#discuss-with-your-neighbor" title="Permalink to this heading">#</a></h4>
+<h4>Discuss with your neighbor:<a class="headerlink" href="#discuss-with-your-neighbor" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>What happened? you used to have 99 styles and 424 counts in the “American IPA” style. Why is it different now?</p></li>
 </ul>
@@ -1522,7 +1530,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5bcbd3b202886dea2b2d84511ea7c0b6197487126016249127d5b0726794b561.png" src="../_images/5bcbd3b202886dea2b2d84511ea7c0b6197487126016249127d5b0726794b561.png" />
+<img alt="../_images/c09ac89aafe28872ea4ce7020c045b3c33453057719b9ce8554a927e8acb306a.png" src="../_images/c09ac89aafe28872ea4ce7020c045b3c33453057719b9ce8554a927e8acb306a.png" />
 </div>
 </div>
 <p>That’s rad! Perhaps the bubbles are too small. You could multiply the <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> by a factor of 5, or maybe 10? You should experiment.</p>
@@ -1545,7 +1553,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/87562aa066858d18263026a278ae30bf469e7ea0bfd0872390e58916f31222af.png" src="../_images/87562aa066858d18263026a278ae30bf469e7ea0bfd0872390e58916f31222af.png" />
+<img alt="../_images/92f7c34bc8419c9a7f3f13b111eb2c6b82e3c8b13c3224a9e786bb18ed64786a.png" src="../_images/92f7c34bc8419c9a7f3f13b111eb2c6b82e3c8b13c3224a9e786bb18ed64786a.png" />
 </div>
 </div>
 <p>It looks like the most popular beers do follow a linear relationship between alcohol fraction and IBU. You learned a lot about beer without having a sip!</p>
@@ -1565,14 +1573,14 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6cdda1e3db2a38fc2a85f9c366b0f7b752f65ac1238dd9e0de1bf34421e71083.png" src="../_images/6cdda1e3db2a38fc2a85f9c366b0f7b752f65ac1238dd9e0de1bf34421e71083.png" />
+<img alt="../_images/179379eb77116c122d7a8c160f5348822bf022319cce8f9d05f613fc6b7619d2.png" src="../_images/179379eb77116c122d7a8c160f5348822bf022319cce8f9d05f613fc6b7619d2.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section id="what-youve-learned">
-<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Permalink to this heading">#</a></h2>
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You should always plot your data.</p></li>
 <li><p>The concepts of quantitative and categorical data.</p></li>
@@ -1587,7 +1595,7 @@ Name: count, dtype: int64
 </ul>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/nickhould/craft-beers-dataset">Craft beer datatset</a> by Jean-Nicholas Hould.</p></li>
 <li><p><a class="reference external" href="https://beerconnoisseur.com/articles/whats-meaning-ibu">What’s The Meaning Of IBU?</a> by Jim Dykstra for The Beer Connoisseur (2015).</p></li>
@@ -1655,6 +1663,7 @@ Name: count, dtype: int64
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1721,7 +1730,7 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1745,8 +1754,8 @@ By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
