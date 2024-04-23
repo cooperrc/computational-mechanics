@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#
+# tool
+#
+/usr/bin/invoke_app "$@" -t compmech \
+                        -C "start_jupyter --themes -T @tool" \
+                        -u anaconda-7 \
+                        -w headless \
+                        -r none
