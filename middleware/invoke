@@ -3,8 +3,42 @@
 #
 # tool
 #
+
+# Get the middleware and tool directories, the tool directory will be used to copy the
+# symlinks to the user directory.
+middlewareDirectory=$(readlink -f $(dirname $0))
+toolDirectory=$(realpath ${middlewareDirectory}/..)
+revision=$(basename $(realpath ${toolDirectory}))
+
+# Set the directory to copy the symlinks for the jupyter files. The directory
+# containing the links will be ${HOME}/COMPMECH
+userDirectory=${HOME}/COMPMECH/${revision}
+
+# If the user directory path does not exist, then create it.
+mkdir -p ${userDirectory}
+
+# If the user directory does not exist then create the user directory.
+if [ -d ${userDirectory} ]; then
+  # Copy and overrid the symlinks in the user directory.
+  cp -sRf ${toolDirectory}/* ${userDirectory}
+fi
+
+# Invoke the start_jupyter script, look for the Jupyter files in the user
+# directory containing links to the files.
 /usr/bin/invoke_app "$@" -t compmech \
-                        -C "start_jupyter --themes -T @tool" \
-                        -u anaconda-7 \
-                        -w headless \
-                        -r none
+                  -C "start_jupyter --themes  README.md" \
+                      -u anaconda-7 \
+                      -w headless \
+          -d $userDirectory \
+                      -r none
+
+##!/bin/sh
+#
+##
+## tool
+##
+#/usr/bin/invoke_app "$@" -t compmech \
+#                        -C "start_jupyter --themes -T @tool" \
+#                        -u anaconda-7 \
+#                        -w headless \
+#                        -r none

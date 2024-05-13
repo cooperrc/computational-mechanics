@@ -53,7 +53,7 @@ data['date'] = pd.to_datetime(data['date'])
 data
 ```
 
-I only want the `symbol == GOOGL` data, so I use a Pandas call. I also want to remove the big drop in price after Mar, 2014, so I specify the date < 2014-03-01. 
+I only want the `symbol == GOOGL` data, so I use a Pandas call. I also want to remove the big drop in price after Mar, 2014, so I specify the date < 2014-03-01.
 
 ```{code-cell} ipython3
 google_data = data[data['symbol'] == 'GOOGL']
@@ -70,7 +70,7 @@ plt.ylabel('opening price (\$)');
 
 ## 2. Data analysis
 
-The GOOGL stock nearly doubled in price from 2010 through 2014. Day-to-day, the price fluctuates randomly. Here, I look at the fluctuations in price using [`np.diff`](https://numpy.org/doc/1.20/reference/generated/numpy.diff.html). 
+The GOOGL stock nearly doubled in price from 2010 through 2014. Day-to-day, the price fluctuates randomly. Here, I look at the fluctuations in price using [`np.diff`](https://numpy.org/doc/1.20/reference/generated/numpy.diff.html).
 
 ```{code-cell} ipython3
 dprice = np.diff(google_data_pre_2014['open'])
@@ -100,7 +100,7 @@ plt.title('GOOGL changes in price over 4 years\n'+
          'avg: \${:.2f} stdev: \${:.2f}'.format(mean_dprice, std_dprice));
 ```
 
-From this statistical result, it looks like the price changes followed a normal distribution with an average change of $\$0.57$ and a standard deviation of $\$9.84$. 
+From this statistical result, it looks like the price changes followed a normal distribution with an average change of $\$0.57$ and a standard deviation of $\$9.84$.
 
 +++
 
@@ -114,7 +114,7 @@ day 1|$\Delta \$ model~1$|$\Delta \$ model~2$|$\Delta \$ model~3$|...|$\Delta \$
 day 2|$\Delta \$ model~1$|$\Delta \$ model~2$|$\Delta \$ model~3$|...|$\Delta \$ model~N$|
 ...|...|...|...|...|...|
 
-Each column is one random walk model. Each row is one simulated day. If I want to look at _one_ model predition, I would plot one column. If I want to look at the _average_ result, I take the average of each row. To start, I'll create 100 random walk models. I use the [`normal`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.normal.html#numpy.random.Generator.normal) distribution to match the statistical distribution I found in part 2. 
+Each column is one random walk model. Each row is one simulated day. If I want to look at _one_ model predition, I would plot one column. If I want to look at the _average_ result, I take the average of each row. To start, I'll create 100 random walk models. I use the [`normal`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.normal.html#numpy.random.Generator.normal) distribution to match the statistical distribution I found in part 2.
 
 ```{code-cell} ipython3
 rng = default_rng(42)
@@ -145,7 +145,7 @@ array([[1, 2, 3],
        [5, 7, 9]])
 ```
 
-Then, I plot all of the random walk models to compare to the NYSE data. The models are given transparency using the `alpha = 0.3` command (_`alpha = 0` is invisible, `alpha = 1` is opaque_). 
+Then, I plot all of the random walk models to compare to the NYSE data. The models are given transparency using the `alpha = 0.3` command (_`alpha = 0` is invisible, `alpha = 1` is opaque_).
 
 ```{code-cell} ipython3
 price_model = np.cumsum(dprice_model, axis = 0) + google_data_pre_2014['open'].values[0]
@@ -157,7 +157,7 @@ plt.xlabel('date')
 plt.ylabel('opening price (\$)');
 ```
 
-As you would expect, there are a wide variety of predictions for the price of GOOGL stocks using random numbers. Next, I try to get some insight into the average changes in the random walk model. I use the `np.mean` and `np.std` across the columns of the `price_model` prediction data, using `axis = 1` now. 
+As you would expect, there are a wide variety of predictions for the price of GOOGL stocks using random numbers. Next, I try to get some insight into the average changes in the random walk model. I use the `np.mean` and `np.std` across the columns of the `price_model` prediction data, using `axis = 1` now.
 
 ```{code-cell} ipython3
 price_model_avg = np.mean(price_model, axis = 1)
