@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="03_Get_Oscillations.html">Get with the oscillations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HW_03.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -221,7 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -426,6 +426,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-to-frame-engineering-equations-as-numerical-methods">Learning to frame engineering equations as numerical methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catch-motion"><span class="xref myst">01_Catch_Motion</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-future"><span class="xref myst">02_Step_Future</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-oscillations"><span class="xref myst">03_Get_Oscillations</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-the-root"><span class="xref myst">04_Getting_to_the_root</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hw-03"><span class="xref myst">HW_03</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-03-engineering-design-of-rocket-flights"><span class="xref myst">Project_03 - Engineering Design of rocket flights</span></a></li>
 </ul>
             </nav>
         </div>
@@ -444,7 +450,9 @@ document.write(`
 <p>Welcome to Computational Mechanics Module #3! In this module we will explore
 some more data analysis, find better ways to solve differential equations, and
 learn how to solve engineering problems with Python.</p>
-<p><a class="reference internal" href="#./notebooks/01_Catch_Motion.ipynb"><span class="xref myst">01_Catch_Motion</span></a></p>
+</section>
+<section id="catch-motion">
+<h2><a class="reference internal" href="01_Catch_Motion.html"><span class="std std-doc">01_Catch_Motion</span></a><a class="headerlink" href="#catch-motion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Work with images and videos in Python using <code class="docutils literal notranslate"><span class="pre">imageio</span></code>.</p></li>
 <li><p>Get interactive figures using the <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code> command.</p></li>
@@ -456,7 +464,9 @@ learn how to solve engineering problems with Python.</p>
 <li><p>Compute numerical derivatives using differences via array slicing.</p></li>
 <li><p>Real data shows free-fall acceleration decreases in magnitude from  <span class="math notranslate nohighlight">\(9.8\rm{m/s}^2\)</span>.</p></li>
 </ul>
-<p><a class="reference internal" href="#./notebooks/02_Step_Future.ipynb"><span class="xref myst">02_Step_Future</span></a></p>
+</section>
+<section id="step-future">
+<h2><a class="reference internal" href="02_Step_Future.html"><span class="std std-doc">02_Step_Future</span></a><a class="headerlink" href="#step-future" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Integrating an equation of motion numerically.</p></li>
 <li><p>Drawing multiple plots in one figure,</p></li>
@@ -465,7 +475,9 @@ learn how to solve engineering problems with Python.</p>
 <li><p>Euler’s method is a first-order method.</p></li>
 <li><p>Freefall with air resistance is a more realistic model.</p></li>
 </ul>
-<p><a class="reference internal" href="#./notebooks/03_Get_Oscillations.ipynb"><span class="xref myst">03_Get_Oscillations</span></a></p>
+</section>
+<section id="get-oscillations">
+<h2><a class="reference internal" href="03_Get_Oscillations.html"><span class="std std-doc">03_Get_Oscillations</span></a><a class="headerlink" href="#get-oscillations" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>vector form of the spring-mass differential equation</p></li>
 <li><p>Euler’s method produces unphysical amplitude growth in oscillatory systems</p></li>
@@ -479,7 +491,9 @@ learn how to solve engineering problems with Python.</p>
 <li><p>The difference between <em>implicit</em> and <em>explicit</em> integration</p></li>
 <li><p>The difference between stable and unstable methods</p></li>
 </ul>
-<p><a class="reference internal" href="#./notebooks/04_Getting_to_the_root.ipynb"><span class="xref myst">04_Getting_to_the_root</span></a></p>
+</section>
+<section id="getting-to-the-root">
+<h2><a class="reference internal" href="04_Getting_to_the_root.html"><span class="std std-doc">04_Getting_to_the_root</span></a><a class="headerlink" href="#getting-to-the-root" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to find the 0 of a function, aka root-finding</p></li>
 <li><p>The difference between a bracketing and an open methods for finding roots</p></li>
@@ -492,6 +506,25 @@ learn how to solve engineering problems with Python.</p>
 <li><p>method)</p></li>
 <li><p><em>Bonus: In the Problems you’ll consider stability of bracketing and open  methods.</em></p></li>
 </ul>
+</section>
+<section id="hw-03">
+<h2><a class="reference internal" href="HW_03.html"><span class="std std-doc">HW_03</span></a><a class="headerlink" href="#hw-03" title="Link to this heading">#</a></h2>
+</section>
+<section id="project-03-engineering-design-of-rocket-flights">
+<h2><a class="reference internal" href="../projects/03_IVP-project.html"><span class="std std-doc">Project_03 - Engineering Design of rocket flights</span></a><a class="headerlink" href="#project-03-engineering-design-of-rocket-flights" title="Link to this heading">#</a></h2>
+<p>You are going to end this module with a <strong>bang</strong> by looking at the
+flight path of a firework. Shown above is the initial condition of a
+firework, the <em>Freedom Flyer</em> in (a), its final height where it
+detonates in (b), the applied forces in the <strong>Free Body Diagram (FBD)</strong>
+in ©, and the <strong>momentum</strong> of the firework <span class="math notranslate nohighlight">\(m\mathbf{v}\)</span> and the
+propellent <span class="math notranslate nohighlight">\(dm \mathbf{u}\)</span> in (d).</p>
+<p>The resulting equation of motion is that the acceleration is
+proportional to the speed of the propellent and the mass rate change
+<span class="math notranslate nohighlight">\(\frac{dm}{dt}\)</span> as such</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+m\frac{dv}{dt} = u\frac{dm}{dt} -mg - cv^2.~~~~~~~~(1)
+\end{equation}\]</div>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -562,6 +595,12 @@ learn how to solve engineering problems with Python.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-to-frame-engineering-equations-as-numerical-methods">Learning to frame engineering equations as numerical methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catch-motion"><span class="xref myst">01_Catch_Motion</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-future"><span class="xref myst">02_Step_Future</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-oscillations"><span class="xref myst">03_Get_Oscillations</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-the-root"><span class="xref myst">04_Getting_to_the_root</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hw-03"><span class="xref myst">HW_03</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-03-engineering-design-of-rocket-flights"><span class="xref myst">Project_03 - Engineering Design of rocket flights</span></a></li>
 </ul>
   </nav></div>
 

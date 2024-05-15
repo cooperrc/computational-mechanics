@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Linear Algebra Introduction" href="01_Linear-Algebra.html" />
-    <link rel="prev" title="Initial Value Problems - Project" href="../projects/03_IVP-project.html" />
+    <link rel="prev" title="Project_03 - Engineering Design of rocket flights" href="../projects/03_IVP-project.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Computational Mechanics 4 - Linear Algebra</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -221,7 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -402,7 +402,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -418,6 +420,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra"><span class="xref myst">01_Linear-Algebra</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-elimination"><span class="xref myst">02_Gauss_elimination</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-algebra"><span class="xref myst">03_Linear-regression-algebra</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hw-04"><span class="xref myst">HW_04</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-04-practical-linear-algebra-for-finite-element-analysis"><span class="xref myst">Project_04 - Practical Linear Algebra for Finite Element Analysis</span></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -433,7 +447,8 @@ document.write(`
 applied linear algebra for engineering problems and revisit the topic of linear
 regression with a new toolbox of linear algebra. Our main goal, is to transform
 large systems of equations into manageable engineering solutions.</p>
-<p><a class="reference internal" href="01_Linear-Algebra.html"><span class="doc std std-doc">01_Linear-Algebra</span></a></p>
+<section id="linear-algebra">
+<h2><a class="reference internal" href="01_Linear-Algebra.html"><span class="std std-doc">01_Linear-Algebra</span></a><a class="headerlink" href="#linear-algebra" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to solve a linear algebra problem with <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code></p></li>
 <li><p>Creating a linear system of equations</p></li>
@@ -443,7 +458,9 @@ large systems of equations into manageable engineering solutions.</p>
 <li><p>Calculate the <strong>condition</strong> of a matrix</p></li>
 <li><p>Estimate the error in the solution based upon the condition of a matrix</p></li>
 </ul>
-<p><a class="reference internal" href="02_Gauss_elimination.html"><span class="doc std std-doc">02_Gauss_elimination</span></a></p>
+</section>
+<section id="gauss-elimination">
+<h2><a class="reference internal" href="02_Gauss_elimination.html"><span class="std std-doc">02_Gauss_elimination</span></a><a class="headerlink" href="#gauss-elimination" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Graph 2D and 3D linear algebra problems to identify a solution (intersections</p></li>
 <li><p>of lines and planes)</p></li>
@@ -455,7 +472,9 @@ large systems of equations into manageable engineering solutions.</p>
 <li><p>How to use the existing <code class="docutils literal notranslate"><span class="pre">scipy.linalg.lu</span></code> to create the <strong>PLU decomposition</strong></p></li>
 <li><p>How to use the <strong>PLU</strong> efficient structure to solve our linear algebra problem (<code class="docutils literal notranslate"><span class="pre">solveLU</span></code>)</p></li>
 </ul>
-<p><a class="reference internal" href="03_Linear-regression-algebra.html"><span class="doc std std-doc">03_Linear-regression-algebra</span></a></p>
+</section>
+<section id="linear-regression-algebra">
+<h2><a class="reference internal" href="03_Linear-regression-algebra.html"><span class="std std-doc">03_Linear-regression-algebra</span></a><a class="headerlink" href="#linear-regression-algebra" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How to use the <em>general least squares regression</em> method for almost any function</p></li>
 <li><p>How to calculate the coefficient of determination and correlation coefficient for a general least squares regression, <span class="math notranslate nohighlight">\(r^2~ and~ r\)</span></p></li>
@@ -463,6 +482,16 @@ large systems of equations into manageable engineering solutions.</p>
 <li><p>How to construct general least squares regression using the dependent and independent data to form <span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{Za}\)</span>.</p></li>
 <li><p>How to construct a piecewise linear regression</p></li>
 </ul>
+</section>
+<section id="hw-04">
+<h2><a class="reference internal" href="HW_04.html"><span class="std std-doc">HW_04</span></a><a class="headerlink" href="#hw-04" title="Link to this heading">#</a></h2>
+</section>
+<section id="project-04-practical-linear-algebra-for-finite-element-analysis">
+<h2><a class="reference internal" href="../projects/04_Linear_Algebra-project.html"><span class="std std-doc">Project_04 - Practical Linear Algebra for Finite Element Analysis</span></a><a class="headerlink" href="#project-04-practical-linear-algebra-for-finite-element-analysis" title="Link to this heading">#</a></h2>
+<p>In this project we will perform a linear-elastic finite element analysis (FEA) on a support structure made of 11 beams that are riveted in 7 locations to create a truss as shown in the image below.</p>
+<p><img alt="Mesh image of truss" src="../_images/mesh.png" /></p>
+<p>The triangular truss shown above can be modeled using a <a class="reference external" href="https://en.wikipedia.org/wiki/Direct_stiffness_method">direct stiffness method [1]</a>, that is detailed in the <a class="reference internal" href="#./extra-FEA_material.ipynb"><span class="xref myst">extra-FEA_material</span></a> notebook. The end result of converting this structure to a FE model. Is that each joint, labeled <span class="math notranslate nohighlight">\(n~1-7\)</span>, short for <em>node 1-7</em> can move in the x- and y-directions, but causes a force modeled with Hooke’s law. Each beam labeled <span class="math notranslate nohighlight">\(el~1-11\)</span>, short for <em>element 1-11</em>, contributes to the stiffness of the structure. We have 14 equations where the sum of the components of forces = 0, represented by the equation</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -503,7 +532,7 @@ large systems of equations into manageable engineering solutions.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Initial Value Problems - Project</p>
+        <p class="prev-next-title">Project_03 - Engineering Design of rocket flights</p>
       </div>
     </a>
     <a class="right-next"
@@ -522,7 +551,24 @@ large systems of equations into manageable engineering solutions.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra"><span class="xref myst">01_Linear-Algebra</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-elimination"><span class="xref myst">02_Gauss_elimination</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-algebra"><span class="xref myst">03_Linear-regression-algebra</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hw-04"><span class="xref myst">HW_04</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-04-practical-linear-algebra-for-finite-element-analysis"><span class="xref myst">Project_04 - Practical Linear Algebra for Finite Element Analysis</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

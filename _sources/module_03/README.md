@@ -5,7 +5,7 @@ Welcome to Computational Mechanics Module #3! In this module we will explore
 some more data analysis, find better ways to solve differential equations, and
 learn how to solve engineering problems with Python. 
 
-[01_Catch_Motion](./notebooks/01_Catch_Motion.ipynb)
+## [01_Catch_Motion](./01_Catch_Motion.md)
 
 * Work with images and videos in Python using `imageio`.
 * Get interactive figures using the `%matplotlib notebook` command.
@@ -17,7 +17,7 @@ learn how to solve engineering problems with Python.
 * Compute numerical derivatives using differences via array slicing.
 * Real data shows free-fall acceleration decreases in magnitude from  $9.8\rm{m/s}^2$.
 
-[02_Step_Future](./notebooks/02_Step_Future.ipynb)
+## [02_Step_Future](./02_Step_Future.md)
 
 * Integrating an equation of motion numerically.
 * Drawing multiple plots in one figure,
@@ -26,7 +26,7 @@ learn how to solve engineering problems with Python.
 * Euler's method is a first-order method.
 * Freefall with air resistance is a more realistic model.
 
-[03_Get_Oscillations](./notebooks/03_Get_Oscillations.ipynb)
+## [03_Get_Oscillations](./03_Get_Oscillations.md)
 
 * vector form of the spring-mass differential equation
 * Euler's method produces unphysical amplitude growth in oscillatory systems
@@ -40,7 +40,7 @@ learn how to solve engineering problems with Python.
 * The difference between _implicit_ and _explicit_ integration
 * The difference between stable and unstable methods
 
-[04_Getting_to_the_root](./notebooks/04_Getting_to_the_root.ipynb)
+## [04_Getting_to_the_root](./04_Getting_to_the_root.md)
 
 * How to find the 0 of a function, aka root-finding
 * The difference between a bracketing and an open methods for finding roots
@@ -52,3 +52,22 @@ learn how to solve engineering problems with Python.
 * Solve an initial value problem with missing initial conditions (the shooting
 * method)
 * _Bonus: In the Problems you'll consider stability of bracketing and open  methods._
+
+## [HW_03](./HW_03.md)
+
+## [Project_03 - Engineering Design of rocket flights](../projects/03_IVP-project.md)
+
+You are going to end this module with a __bang__ by looking at the
+flight path of a firework. Shown above is the initial condition of a
+firework, the _Freedom Flyer_ in (a), its final height where it
+detonates in (b), the applied forces in the __Free Body Diagram (FBD)__
+in (c), and the __momentum__ of the firework $m\mathbf{v}$ and the
+propellent $dm \mathbf{u}$ in (d). 
+
+The resulting equation of motion is that the acceleration is
+proportional to the speed of the propellent and the mass rate change
+$\frac{dm}{dt}$ as such
+
+$$\begin{equation}
+m\frac{dv}{dt} = u\frac{dm}{dt} -mg - cv^2.~~~~~~~~(1)
+\end{equation}$$

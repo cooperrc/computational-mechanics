@@ -63,7 +63,7 @@
     <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Initial Value Problems - Project" href="../projects/03_IVP-project.html" />
+    <link rel="next" title="Project_03 - Engineering Design of rocket flights" href="../projects/03_IVP-project.html" />
     <link rel="prev" title="Roots of Nonlinear functions" href="04_Getting_to_the_root.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="03_Get_Oscillations.html">Get with the oscillations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -221,7 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -523,8 +523,7 @@ document.write(`
 </div>
 <section id="problems-part-1">
 <h2>Problems <a class="reference internal" href="01_Catch_Motion.html"><span class="std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Instead of using <span class="math notranslate nohighlight">\(\frac{\Delta v}{\Delta t}\)</span>, you can use the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">numpy polyfit</a> to determine the acceleration of the ball.</p>
+<p><strong>1.</strong> Instead of using <span class="math notranslate nohighlight">\(\frac{\Delta v}{\Delta t}\)</span>, you can use the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">numpy polyfit</a> to determine the acceleration of the ball.</p>
 <p>a. Use your coordinates from the saved .npz file you used above to load your projectile motion data</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">npz_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;projectile_coords.npz&#39;</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">npz_coords</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span>
@@ -532,29 +531,26 @@ document.write(`
 <span class="n">y</span> <span class="o">=</span> <span class="n">npz_coords</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>b. Calculate <span class="math notranslate nohighlight">\(v_x\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span> using a finite difference again, then do a first-order polyfit to <span class="math notranslate nohighlight">\(v_x-\)</span> and <span class="math notranslate nohighlight">\(v_y-\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>. What is the acceleration now?</p>
-<p>c. Now, use a second-order polynomial fit for x- and y- vs t. What is acceleration now?</p>
-<p>d. Plot the polyfit lines for velocity and position (2 figures) with the finite difference velocity data points and positions. Which lines look like better e.g. which line fits the data?</p>
-</li>
-</ol>
-<ol class="arabic" start="2">
-<li><p>Not only can you measure acceleration of objects that you track, you can look at other physical constants like <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_restitution">coefficient of restitution</a>, <span class="math notranslate nohighlight">\(e\)</span> .</p>
-<p>During a collision with the ground, the coefficient of restitution is</p>
-<p><span class="math notranslate nohighlight">\(e = -\frac{v_{y}'}{v_{y}}\)</span> .</p>
-<p>Where <span class="math notranslate nohighlight">\(v_y'\)</span> is y-velocity perpendicular to the ground after impact
-and <span class="math notranslate nohighlight">\(v_y\)</span> is the y-velocity before impact.</p>
+<p>c. Use a second-order polynomial fit for x- and y- vs t. What is acceleration now?</p>
+<p>d. Plot the polyfit lines for position and time (2 figures) with the
+positions vs time. Do the fits match the data?</p>
+<p><strong>2.</strong> Not only can you measure acceleration of objects that you track, you can look at other physical constants like <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_restitution">coefficient of restitution</a>, <span class="math notranslate nohighlight">\(e\)</span> .</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> During a collision with the ground, the coefficient of restitution is
+ 
+ $e = -\frac{v_{y}&#39;}{v_{y}}$ . 
+ 
+ Where $v_y&#39;$ is y-velocity perpendicular to the ground after impact
+ and $v_y$ is the y-velocity before impact. 
+</pre></div>
+</div>
 <p>a. Calculate <span class="math notranslate nohighlight">\(v_y\)</span> and plot as a function of time from the data <code class="docutils literal notranslate"><span class="pre">'../data/fallingtennisball02.txt'</span></code></p>
 <p>b. Find the locations when <span class="math notranslate nohighlight">\(v_y\)</span> changes rapidly i.e. the impact locations. Get the maximum and minimum velocities closest to the impact location. <em>Hint: this can be a little tricky. Try slicing the data to include one collision at a time before using  the <code class="docutils literal notranslate"><span class="pre">np.min</span></code> and <code class="docutils literal notranslate"><span class="pre">np.max</span></code> commands.</em></p>
 <p>c. Calculate the <span class="math notranslate nohighlight">\(e\)</span> for each of the three collisions</p>
-</li>
-</ol>
 </section>
 <section id="problems-part-2">
 <h2>Problems <a class="reference internal" href="02_Step_Future.html"><span class="std std-doc">Part 2</span></a><a class="headerlink" href="#problems-part-2" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Integrate the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> equations for a tennis ball and a <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a> with the same initial conditions as above. Plot the resulting height vs time.</p></li>
-</ol>
-<p><em>Given:</em> y(0) = 1.6 m, v(0) = 0 m/s</p>
+<p><strong>1.</strong> Integrate the <code class="docutils literal notranslate"><span class="pre">fall_drag</span></code> equations for a tennis ball and a <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a> with the same initial conditions as above. Plot the resulting height vs time.</p>
+<p><em>Given:</em> y(0) = 10 m, v(0) = 0 m/s</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>ball</p></th>
@@ -574,30 +570,41 @@ and <span class="math notranslate nohighlight">\(v_y\)</span> is the y-velocity 
 </tbody>
 </table>
 <p>Is there a difference in the two solutions? At what times do the tennis ball and lacrosse balls reach the ground? Which was first?</p>
-<p><img alt="Projectile motion with drag" src="../_images/projectile.png" /></p>
-<p>The figure above shows the forces acting on a projectile object, like the <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a> from <a class="reference external" href="http://www.flippingphysics.com">Flipping Physics</a> that you analyzed in <a class="reference internal" href="#./01_Catch_Motion.ipynb"><span class="xref myst">lesson 01_Catch_Motion</span></a>. Consider the 2D motion of the <a class="reference external" href="https://en.wikipedia.org/wiki/Lacrosse_ball">lacrosse ball</a>, now the state vector has two extra variables,</p>
-<p><span class="math notranslate nohighlight">\(
-\mathbf{y} = \begin{bmatrix}
-x \\ v_x \\
-y \\ v_y 
-\end{bmatrix},
-\)</span></p>
-<p>and its derivative is now,</p>
-<p><span class="math notranslate nohighlight">\(\dot{\mathbf{y}} = \begin{bmatrix}
-v_x \\ -c v_x^2 \\
-v_y \\ g - cv_y^2 
-\end{bmatrix},\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(c= \frac{1}{2} \pi R^2 \rho C_d\)</span>.</p>
+<p><strong>2.</strong> A pendulum that swings in small angles follows a <span class="math notranslate nohighlight">\(\theta_0 \cos
+\omega t\)</span> where <span class="math notranslate nohighlight">\(\theta_0\)</span> is the initial angle that its released from
+rest and <span class="math notranslate nohighlight">\(\omega\)</span> is the natural frequency of the pendulum. The
+underlying differential equation is</p>
+<p><span class="math notranslate nohighlight">\(\ddot{\theta} = -\frac{g}{L}\cos\theta\)</span></p>
+<p>a. Create a <code class="docutils literal notranslate"><span class="pre">pendulum</span></code> fuction that returns <span class="math notranslate nohighlight">\([\dot{\theta},~\ddot{\theta}]\)</span> when its given <span class="math notranslate nohighlight">\([\theta,~\dot{\theta}]\)</span></p>
+<p>b. Integrate the <code class="docutils literal notranslate"><span class="pre">pendulum</span></code> function for 2 periods of oscillation given initial conditions of <span class="math notranslate nohighlight">\(y_0 = [\frac{\pi}{6}~rad,~0~rad/s]\)</span>, <span class="math notranslate nohighlight">\(g = 9.81~m/s^2\)</span>, and <span class="math notranslate nohighlight">\(L = 1~m\)</span>. Plot the angle as a function of time, <span class="math notranslate nohighlight">\(\theta-vs-t\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pendulum</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39;Computes the right-hand side of the differential equation</span>
+<span class="sd">  for the fall of a ball, with drag, in SI units.</span>
+
+<span class="sd">  Arguments</span>
+<span class="sd">  ----------    </span>
+<span class="sd">  state : array of two dependent variables [theta dtheta]^T</span>
+<span class="sd">  g : acceleration due to gravity</span>
+<span class="sd">  L : length of pendulum </span>
+<span class="sd">  Returns</span>
+<span class="sd">  -------</span>
+<span class="sd">  derivs: array of two derivatives [dtheta (-g/L*sin(theta))]^T</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">theta</span><span class="p">,</span> <span class="n">dtheta</span> <span class="o">=</span> <span class="n">y</span>
+  <span class="n">derivs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dtheta</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># your work here (replace the 0 with the differential equation</span>
+  <span class="k">return</span> <span class="n">derivs</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="problems-part-3">
 <h2>Problems <a class="reference internal" href="03_Get_Oscillations.html"><span class="std std-doc">Part 3</span></a><a class="headerlink" href="#problems-part-3" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Show that the implicit Heun’s method has the same second order convergence as the Modified Euler’s method. <em>Hint: you can use the same code from above to create the log-log plot to get the error between <span class="math notranslate nohighlight">\(2\cos(\omega t)\)</span> and the <code class="docutils literal notranslate"><span class="pre">heun_step</span></code> integration. Use the same initial conditions x(0) = 2 m and v(0)=0m/s and the same RHS function, <code class="docutils literal notranslate"><span class="pre">springmass</span></code>.</em></p></li>
-</ol>
+<p><strong>1.</strong> Show that the implicit Heun’s method has the same second order convergence as the Modified Euler’s method. _Hint: you can use the same code from above to create the log-log plot to get the error between <span class="math notranslate nohighlight">\(2\cos(\omega t)\)</span> and the <code class="docutils literal notranslate"><span class="pre">heun_step</span></code> integration. Use the same initial conditions x(0) = 2 m and v(0)=0m/s and the same RHS function, <code class="docutils literal notranslate"><span class="pre">springmass</span></code>.</p>
 <p><img alt="A lumped mass connected to a spring anddamper" src="../_images/damped-spring.png" /></p>
-<ol class="arabic simple" start="2">
-<li><p>In the image above, you have a spring, mass, <em>and damper</em>. A damper is designed to slow down a moving object. These devices are typical in automobiles, mountain bikes, doors, any place where oscillations may not be desired, but motion is required. The new differential equation, if F(t)=0, that results from this addition is</p></li>
-</ol>
+<p><strong>2.</strong> In the image above, you have a spring, mass, <em>and damper</em>. A damper is designed to slow down a moving object. These devices are typical in automobiles, mountain bikes, doors, any place where oscillations may not be desired, but motion is required. The new differential equation, if F(t)=0, that results from this addition is</p>
 <p><span class="math notranslate nohighlight">\(\ddot{x} = -\frac{b}{m}\dot{x} -\frac{k}{m}x\)</span></p>
 <p>or keeping our <em>natural frequency</em> above,</p>
 <p><span class="math notranslate nohighlight">\(\ddot{x} = -\zeta\omega\dot{x} -\omega^2x\)</span></p>
@@ -625,9 +632,7 @@ v_y \\ g - cv_y^2
 </div>
 </div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Use three methods to integrate your <code class="docutils literal notranslate"><span class="pre">smd</span></code> function for 3 time periods of oscillation and initial conditions x(0)=2 m and v(0)=0 m/s. Plot the three solutions on one graph with labels.</p></li>
-</ol>
+<p><strong>3.</strong> Use three methods to integrate your <code class="docutils literal notranslate"><span class="pre">smd</span></code> function for 3 time periods of oscillation and initial conditions x(0)=2 m and v(0)=0 m/s. Plot the three solutions on one graph with labels.</p>
 <p>a. Euler integration</p>
 <p>b. second order Runge Kutta method (modified Euler method)</p>
 <p>c. the implicit Heun’s method</p>
@@ -635,9 +640,7 @@ v_y \\ g - cv_y^2
 </section>
 <section id="id1">
 <h2>Problems <a class="reference internal" href="04_Getting_to_the_root.html"><span class="std std-doc">Part 3</span></a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>One of the main benefits of a bracketing method is the stability of solutions. Open methods are not always stable. Here is an example. One way engineers and data scientists model the probability of failure is with a <a class="reference external" href="https://byuistats.github.io/M325_Hathaway/textbook/challengerLogisticReg.html">sigmoid function e.g. this Challenger O-ring case study</a></p></li>
-</ol>
+<p><strong>1.</strong> One of the main benefits of a bracketing method is the stability of solutions. Open methods are not always stable. Here is an example. One way engineers and data scientists model the probability of failure is with a <a class="reference external" href="https://byuistats.github.io/M325_Hathaway/textbook/challengerLogisticReg.html">sigmoid function e.g. this Challenger O-ring case study</a></p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
     \sigma(T) = \frac{e^{a_0-a_1 T}}{1+e^{a_0-a_1 T}}
@@ -648,8 +651,7 @@ v_y \\ g - cv_y^2
 <p>a. Plot the function <span class="math notranslate nohighlight">\(\sigma(T)\)</span> for <span class="math notranslate nohighlight">\(T=0-100^{o}F\)</span>. Where do you see the function cross 50% (0.5)?</p>
 <p>b. Create two functions <code class="docutils literal notranslate"><span class="pre">f_T</span></code> and <code class="docutils literal notranslate"><span class="pre">dfdT</span></code> where <code class="docutils literal notranslate"><span class="pre">f_T</span></code>=<span class="math notranslate nohighlight">\(f(T)=\sigma(T) - 0.5\)</span> and <code class="docutils literal notranslate"><span class="pre">dfdT</span></code>=<span class="math notranslate nohighlight">\(\frac{df}{dT}\)</span></p>
 <p>c. Use the <code class="docutils literal notranslate"><span class="pre">incsearch</span></code> and <code class="docutils literal notranslate"><span class="pre">newtraph</span></code> functions to find the root of f(T). When does Newton-Raphson fail to converge? Why does it fail? <em>Hint: if you’re stuck here, take a look at this <a class="reference external" href="https://youtu.be/zyXRo8Qjj0A">youtube video finding an interval of convergence for the Newton-Raphson method</a>. Look at the animation of how the method converges and diverges.</em></p>
-<ol class="arabic" start="2">
-<li><p>In the <a class="reference external" href="https://cooperrc.github.io/computational-mechanics/module_03/04_Getting_to_the_root.html#shooting-method">Shooting Method
+<p><strong>2.</strong> In the <a class="reference external" href="https://cooperrc.github.io/computational-mechanics/module_03/04_Getting_to_the_root.html#shooting-method">Shooting Method
 example</a>, you determined the initial velocity after the first
 bounce by specifying the beginning y(0) and end y(T) for an object
 subject to gravity and drag. Repeat this analysis for the time period
@@ -657,8 +659,6 @@ just after the second bounce and just before the third bounce. The
 indices are given below for t[1430:2051] = 1.43-2.05 seconds.</p>
 <p>a. What is the velocity just after the second bounce?</p>
 <p>b. What is the coefficient of restitution for the second bounce? <em>Hint: use the ratio of the last velocity from above to the initial velocity calculated here.</em></p>
-</li>
-</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;../data/fallingtennisball02.txt&#39;</span>
@@ -675,7 +675,7 @@ indices are given below for t[1430:2051] = 1.43-2.05 seconds.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4300000000009008 2.051000000004969
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7efe2cd51490&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f5a707573d0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/f25a7187ac865e0c7f2ecb014911eee2e0fdc393c850ae2fc50534e54b397ef4.png" src="../_images/f25a7187ac865e0c7f2ecb014911eee2e0fdc393c850ae2fc50534e54b397ef4.png" />
@@ -728,7 +728,7 @@ indices are given below for t[1430:2051] = 1.43-2.05 seconds.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Initial Value Problems - Project</p>
+        <p class="prev-next-title">Project_03 - Engineering Design of rocket flights</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

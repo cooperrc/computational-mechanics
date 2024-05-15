@@ -63,7 +63,7 @@
     <link rel="icon" href="../_static/spiderman-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Computational Mechanics Boundary Values - Project 05" href="../projects/05-BVPs_project.html" />
+    <link rel="next" title="Project 05 - String vibrations of guitars" href="../projects/05-BVPs_project.html" />
     <link rel="prev" title="Good Vibrations" href="03_Good_Vibrations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -221,7 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="02_Keep_it_steady.html">Keep it Steady</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_Good_Vibrations.html">Good Vibrations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -518,9 +518,7 @@ document.write(`
 </div>
 <section id="problems-part-1">
 <h2>Problems <a class="reference internal" href="01_Revisiting_derivatives.html"><span class="std std-doc">Part 1</span></a><a class="headerlink" href="#problems-part-1" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Consider the shape of a simply supported beam with a distributed load function,</p></li>
-</ol>
+<p><strong>1.</strong> Consider the shape of a simply supported beam with a distributed load function,</p>
 <p><span class="math notranslate nohighlight">\(w(x) = -\frac{qx\left(L^3-2x^2L+x^3\right)}{24EI},\)</span></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(L=1~m\)</span>
@@ -532,9 +530,7 @@ document.write(`
 <p>a. Take the first derivative of the above function using a forward, backward, and central difference method</p>
 <p>b. Take the second derivative of the above function using a forward, backward, and central difference method</p>
 <p>c. Take the third derivative of the above function using a forward, backward, and central difference method</p>
-<ol class="arabic simple" start="2">
-<li><p>Consider the temperature of a fin with conductive and convective heat transfer <a class="reference external" href="https://en.wikipedia.org/wiki/Fin_(extended_surface)#Solutions">analytical solution</a> with x=0…60 mm connected to a <span class="math notranslate nohighlight">\(100^oC\)</span> base surrounded by <span class="math notranslate nohighlight">\(20^oC\)</span> air.</p></li>
-</ol>
+<p><strong>2.</strong> Consider the temperature of a fin with conductive and convective heat transfer <a class="reference external" href="https://en.wikipedia.org/wiki/Fin_(extended_surface)#Solutions">analytical solution</a> with x=0…60 mm connected to a <span class="math notranslate nohighlight">\(100^oC\)</span> base surrounded by <span class="math notranslate nohighlight">\(20^oC\)</span> air.</p>
 <p><span class="math notranslate nohighlight">\(T(x)=20+80\frac{\cosh(s(L-x))+\frac{h}{sk}\sinh(s(L-x))}{\cosh(sL)+\frac{h}{sk}\sinh(sL)}\)</span></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(s=\sqrt{\frac{2h}{kR}}\)</span></p></li>
@@ -562,9 +558,7 @@ document.write(`
 <section id="problems-part-2">
 <h2>Problems <a class="reference internal" href="02_Keep_it_steady.html"><span class="std std-doc">Part 2</span></a><a class="headerlink" href="#problems-part-2" title="Link to this heading">#</a></h2>
 <p><img alt="Thermal fin connected to a constant temperature heat sink" src="../_images/thermal_connect.png" /></p>
-<ol class="arabic simple">
-<li><p>Consider the thermal fin shown above connected to a heat sink with constant temperature. <span class="math notranslate nohighlight">\(h'=\frac{2h}{\kappa R}\)</span> is the modified convective heat transfer for the fin. And your boundary conditions give us values for <span class="math notranslate nohighlight">\(T_{0}~and~T_{7}.\)</span> You can plug in constants for forced air convection, <span class="math notranslate nohighlight">\(h=100~W/m^2K\)</span>, aluminum fin, <span class="math notranslate nohighlight">\(\kappa=200~W/mK\)</span>, and 60-mm-long and 1-mm-radius fin, the air is room temperature, <span class="math notranslate nohighlight">\(T_{\infty}=20^oC\)</span>, the base is <span class="math notranslate nohighlight">\(T_{base}=T_{0}=100^oC\)</span>, and the sink is <span class="math notranslate nohighlight">\(T_{sink}=25^oC\)</span>. Use the following finite difference equation to solve for the temperature along the fin and the heat flux through the fin given,</p></li>
-</ol>
+<p><strong>1.</strong> Consider the thermal fin shown above connected to a heat sink with constant temperature. <span class="math notranslate nohighlight">\(h'=\frac{2h}{\kappa R}\)</span> is the modified convective heat transfer for the fin. And your boundary conditions give us values for <span class="math notranslate nohighlight">\(T_{0}~and~T_{7}.\)</span> You can plug in constants for forced air convection, <span class="math notranslate nohighlight">\(h=100~W/m^2K\)</span>, aluminum fin, <span class="math notranslate nohighlight">\(\kappa=200~W/mK\)</span>, and 60-mm-long and 1-mm-radius fin, the air is room temperature, <span class="math notranslate nohighlight">\(T_{\infty}=20^oC\)</span>, the base is <span class="math notranslate nohighlight">\(T_{base}=T_{0}=100^oC\)</span>, and the sink is <span class="math notranslate nohighlight">\(T_{sink}=25^oC\)</span>. Use the following finite difference equation to solve for the temperature along the fin and the heat flux through the fin given,</p>
 <p><span class="math notranslate nohighlight">\(T(x=0)=100^oC,~and\)</span></p>
 <p><span class="math notranslate nohighlight">\(T(x=60~mm)=25^oC.\)</span></p>
 <p><span class="math notranslate nohighlight">\(\frac{T_{i-1}-2T_i+T_{i+1}}{\Delta x^2}+ h'(T_{\infty}-T_i) = 0\)</span></p>
@@ -572,9 +566,7 @@ document.write(`
 <p>b. Set up and solve the finite difference equations for <span class="math notranslate nohighlight">\(\Delta x=5~mm\)</span>, plot the resulting temperature <span class="math notranslate nohighlight">\(T(x)\)</span>.</p>
 <p>c. Set up and solve the finite difference equations for <span class="math notranslate nohighlight">\(\Delta x=1~mm\)</span>, plot the resulting temperature <span class="math notranslate nohighlight">\(T(x)\)</span>.</p>
 <p>d. Plot the heat flux through the fin, <span class="math notranslate nohighlight">\(-\kappa \frac{dT}{dx}\)</span>.</p>
-<ol class="arabic simple" start="2">
-<li><p>Consider the encastre beam shown in the <strong>Static Beam deflections</strong> section. Use the following material and geometry (1-m steel rod 1-cm-by-1-cm) with 100 N/m load applied</p></li>
-</ol>
+<p><strong>2.</strong> Consider the encastre beam shown in the <strong>Static Beam deflections</strong> section. Use the following material and geometry (1-m steel rod 1-cm-by-1-cm) with 100 N/m load applied</p>
 <p><span class="math notranslate nohighlight">\(EI \frac{d^4w}{dx^4} = q.\)</span></p>
 <p>You can approximate the function as a finite difference approximation as such,</p>
 <p><span class="math notranslate nohighlight">\(\frac{d^4w}{dx^4} \approx \frac{w(x_{i+2})−4w(x_{i+1})+6w(x_i)−4w(x_{i-1})+w(x_{i-2})}{h^4}=\frac{q}{EI}.\)</span></p>
@@ -592,18 +584,16 @@ document.write(`
 <h2>Problems <a class="reference internal" href="03_Good_Vibrations.html"><span class="std std-doc">Part 3</span></a><a class="headerlink" href="#problems-part-3" title="Link to this heading">#</a></h2>
 <p><img alt="Two masses connected to 3 springs" src="../_images/spring_mass.png" /></p>
 <p><em>Two masses connected to 3 springs</em></p>
-<ol class="arabic simple">
-<li><p>Use the 2-DOF harmonic oscillator shown considering <span class="math notranslate nohighlight">\(m_1=m_2=0.1~kg\)</span>, <span class="math notranslate nohighlight">\(k_1=k_3=1000~N/m,\)</span> and <span class="math notranslate nohighlight">\(k_2=500~N/m\)</span>.</p></li>
-</ol>
+<p><strong>1.</strong> Use the 2-DOF harmonic oscillator shown considering <span class="math notranslate nohighlight">\(m_1=m_2=0.1~kg\)</span>, <span class="math notranslate nohighlight">\(k_1=k_3=1000~N/m,\)</span> and <span class="math notranslate nohighlight">\(k_2=500~N/m\)</span>.</p>
 <p>a. Calculate the natural frequencies and mode shapes <em>(eigenvectors)</em>.</p>
 <p>b. Plot the position of <span class="math notranslate nohighlight">\(x_1~and~x_2\)</span> if the masses are at rest when mass 2 is given an initial velocity of 2 m/s.</p>
-<ol class="arabic simple" start="2">
-<li><p>Consider the G-string on the guitar, L=0.64 m, <span class="math notranslate nohighlight">\(\mu=1.14~g/m,\)</span> and T=71.81 N [1].</p></li>
-</ol>
+<p><strong>2.</strong> Consider the G-string on the guitar, L=0.64 m, <span class="math notranslate nohighlight">\(\mu=1.14~g/m,\)</span> and T=71.81 N [1].</p>
 <p><strong>Guitar string equation:</strong> <span class="math notranslate nohighlight">\(\mu\frac{\partial^2 y}{\partial t^2}=T\frac{\partial ^2 y}{\partial x^2}\)</span></p>
 <p>a. Calculate the first and second natural frequencies using 6, 30, 45, and 60 nodes. Plot the mode shapes to demonstrate convergence.</p>
-<p>b. Use 60 nodes to create an animation using the following initial condition, <span class="math notranslate nohighlight">\(y(x,0)=0\)</span> and <span class="math notranslate nohighlight">\(\dot{y}(L/2,0)=2~m/s.\)</span> e.g. <code class="docutils literal notranslate"><span class="pre">dy[30,0]=2</span></code>.</p>
-<p>c. Use 60 nodes to create an audio display using the following initial condition, <span class="math notranslate nohighlight">\(y(x,0)=0\)</span> and <span class="math notranslate nohighlight">\(\dot{y}(L/2,0)=2~m/s.\)</span> e.g. <code class="docutils literal notranslate"><span class="pre">dy[30,0]=2</span></code>.</p>
+<p>b. Use 60 nodes to create an animation using the following initial
+condition, <span class="math notranslate nohighlight">\(y(x,0)=0\)</span> and <span class="math notranslate nohighlight">\(\dot{y}(L/2,0)=50~m/s.\)</span> e.g. <code class="docutils literal notranslate"><span class="pre">dy[30,0]=50</span></code>.</p>
+<p>c. Use 60 nodes to create an audio display using the following initial
+condition, <span class="math notranslate nohighlight">\(y(x,0)=0\)</span> and <span class="math notranslate nohighlight">\(\dot{y}(L/2,0)=50~m/s.\)</span> e.g. <code class="docutils literal notranslate"><span class="pre">dy[30,0]=50</span></code>.</p>
 </section>
 </section>
 
@@ -651,7 +641,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Computational Mechanics Boundary Values - Project 05</p>
+        <p class="prev-next-title">Project 05 - String vibrations of guitars</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

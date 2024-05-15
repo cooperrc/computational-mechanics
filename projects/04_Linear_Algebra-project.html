@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_IVP-project.html">Initial Value Problems - Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -221,7 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -515,7 +515,16 @@ document.write(`
 <h2>Practical Linear Algebra for Finite Element Analysis<a class="headerlink" href="#practical-linear-algebra-for-finite-element-analysis" title="Link to this heading">#</a></h2>
 <p>In this project we will perform a linear-elastic finite element analysis (FEA) on a support structure made of 11 beams that are riveted in 7 locations to create a truss as shown in the image below.</p>
 <p><img alt="Mesh image of truss" src="../_images/mesh.png" /></p>
-<p>The triangular truss shown above can be modeled using a <a class="reference external" href="https://en.wikipedia.org/wiki/Direct_stiffness_method">direct stiffness method [1]</a>, that is detailed in the <a class="reference internal" href="#./extra-FEA_material.ipynb"><span class="xref myst">extra-FEA_material</span></a> notebook. The end result of converting this structure to a FE model. Is that each joint, labeled <span class="math notranslate nohighlight">\(n~1-7\)</span>, short for <em>node 1-7</em> can move in the x- and y-directions, but causes a force modeled with Hooke’s law. Each beam labeled <span class="math notranslate nohighlight">\(el~1-11\)</span>, short for <em>element 1-11</em>, contributes to the stiffness of the structure. We have 14 equations where the sum of the components of forces = 0, represented by the equation</p>
+<p>The triangular truss shown above can be modeled using a <a class="reference external" href="https://en.wikipedia.org/wiki/Direct_stiffness_method">direct
+stiffness method
+[1]</a>, that is
+detailed in the <a class="reference internal" href="extra-FEA_material.html"><span class="std std-doc">extra-FEA_material</span></a> notebook.
+The end result of converting this structure to a FE model. Is that each
+joint, labeled <span class="math notranslate nohighlight">\(n~1-7\)</span>, short for <em>node 1-7</em> can move in the x- and
+y-directions, but causes a force modeled with Hooke’s law. Each beam
+labeled <span class="math notranslate nohighlight">\(el~1-11\)</span>, short for <em>element 1-11</em>, contributes to the
+stiffness of the structure. We have 14 equations where the sum of the
+components of forces = 0, represented by the equation</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{F-Ku}=\mathbf{0}\)</span></p>
 <p>Where, <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> are externally applied forces, <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> are x- and y- displacements of nodes, and <span class="math notranslate nohighlight">\(\mathbf{K}\)</span> is the stiffness matrix given in <code class="docutils literal notranslate"><span class="pre">fea_arrays.npz</span></code> as <code class="docutils literal notranslate"><span class="pre">K</span></code>, shown below</p>
 <p><em>note: the array shown is 1000x(<code class="docutils literal notranslate"><span class="pre">K</span></code>). You can use units of MPa (N/mm^2), N, and mm. The array <code class="docutils literal notranslate"><span class="pre">K</span></code> is in 1/mm</em></p>

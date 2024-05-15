@@ -23,7 +23,16 @@ In this project we will perform a linear-elastic finite element analysis (FEA) o
 
 +++
 
-The triangular truss shown above can be modeled using a [direct stiffness method [1]](https://en.wikipedia.org/wiki/Direct_stiffness_method), that is detailed in the [extra-FEA_material](./extra-FEA_material.ipynb) notebook. The end result of converting this structure to a FE model. Is that each joint, labeled $n~1-7$, short for _node 1-7_ can move in the x- and y-directions, but causes a force modeled with Hooke's law. Each beam labeled $el~1-11$, short for _element 1-11_, contributes to the stiffness of the structure. We have 14 equations where the sum of the components of forces = 0, represented by the equation
+The triangular truss shown above can be modeled using a [direct
+stiffness method
+[1]](https://en.wikipedia.org/wiki/Direct_stiffness_method), that is
+detailed in the [extra-FEA_material](./extra-FEA_material.md) notebook.
+The end result of converting this structure to a FE model. Is that each
+joint, labeled $n~1-7$, short for _node 1-7_ can move in the x- and
+y-directions, but causes a force modeled with Hooke's law. Each beam
+labeled $el~1-11$, short for _element 1-11_, contributes to the
+stiffness of the structure. We have 14 equations where the sum of the
+components of forces = 0, represented by the equation
 
 $\mathbf{F-Ku}=\mathbf{0}$
 

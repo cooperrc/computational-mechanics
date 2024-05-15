@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_03/HW_03.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Initial Value Problems - Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -221,7 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_05/HW_05.html">Homework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Computational Mechanics Boundary Values - Project 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -541,10 +541,10 @@ library</a> as such</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.16247344, 0.65875207, 0.42634894, 0.96707674, 0.43289782,
-       0.87116987, 0.81371145, 0.38604658, 0.68576069, 0.47584337,
-       0.99573112, 0.77471898, 0.55235261, 0.14394714, 0.5781732 ,
-       0.83878462, 0.05810797, 0.23728293, 0.35720252, 0.77821267])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.89948263, 0.19372196, 0.22837401, 0.28169624, 0.01951758,
+       0.76152138, 0.14218716, 0.13016231, 0.18540845, 0.85654438,
+       0.89341074, 0.94337456, 0.07714498, 0.25637764, 0.32274852,
+       0.68154378, 0.12786329, 0.58157311, 0.43578646, 0.42986896])
 </pre></div>
 </div>
 </div>
@@ -577,13 +577,13 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([4., 4., 3., 4., 5.]),
- array([0.05810797, 0.2456326 , 0.43315723, 0.62068186, 0.80820649,
-        0.99573112]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([7., 4., 2., 2., 5.]),
+ array([0.01951758, 0.20428898, 0.38906038, 0.57383177, 0.75860317,
+        0.94337456]),
  &lt;BarContainer object of 5 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/8d5ac2d5e7ece93549e9e6042289921ed9c3cecaadaa470b83df999390ef7d0f.png" src="../_images/8d5ac2d5e7ece93549e9e6042289921ed9c3cecaadaa470b83df999390ef7d0f.png" />
+<img alt="../_images/d818cffaff77299d7e098fd0f8789e4cea97716a75c55425cb38a463eac505b9.png" src="../_images/d818cffaff77299d7e098fd0f8789e4cea97716a75c55425cb38a463eac505b9.png" />
 </div>
 </div>
 <p>The pyplot function <code class="docutils literal notranslate"><span class="pre">hist</span></code> displays a histogram of these randomly generated numbers.</p>
@@ -600,7 +600,7 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/16705a0911b314c75a9ed29478ddf5c3ce4aeb02a5d1ac1882930a04205252a0.png" src="../_images/16705a0911b314c75a9ed29478ddf5c3ce4aeb02a5d1ac1882930a04205252a0.png" />
+<img alt="../_images/6e5779679901253c17fad88cb07bdd4cb51a88b31d740fb0c2d6f780a3db91c8.png" src="../_images/6e5779679901253c17fad88cb07bdd4cb51a88b31d740fb0c2d6f780a3db91c8.png" />
 </div>
 </div>
 </section>
@@ -650,8 +650,8 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 <span class="sd">    &#39;&#39;&#39;</span>
     
 
-    <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
     <span class="n">R</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> <span class="c1"># compute radius</span>
     <span class="n">num_in_circle</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">R</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">);</span>
     <span class="n">total_num_pts</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">R</span><span class="p">);</span>
@@ -674,30 +674,9 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">test_pi</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">test_pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">montecarlopi</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value for pi = </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.mean(test_pi))
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;standard deviation is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.std(test_pi))
-
-<span class="nn">Cell In[5], line 15,</span> in <span class="ni">montecarlopi</span><span class="nt">(N)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">montecarlopi</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&#39;&#39;&#39;Create random x-y-coordinates to and use ratio of circle-to-square to </span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd">     calculate the value of pi</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     i.e. Acircle/Asquare = pi/4</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="sd">     our_pi: the best prediction of pi using N points</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="sd">     &#39;&#39;&#39;</span>
-<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">R</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> <span class="c1"># compute radius</span>
-
-<span class="nn">File numpy/random/_generator.pyx:354,</span> in <span class="ni">numpy.random._generator.Generator.random</span><span class="nt">()</span>
-
-<span class="ne">TypeError</span>: Cannot interpret &#39;1&#39; as a data type
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.137200
+standard deviation is 0.044364
+actual pi is 3.141593
 </pre></div>
 </div>
 </div>
@@ -723,6 +702,13 @@ we did in <a class="reference internal" href="#../module_01/03-Numerical_error">
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.141040
+standard deviation is 0.053269
+actual pi is 3.141593
+</pre></div>
+</div>
+</div>
 </div>
 <p>Compare the above 100 <code class="docutils literal notranslate"><span class="pre">test_pi</span></code> cases each 1000 points.</p>
 <p>to the below 10 <code class="docutils literal notranslate"><span class="pre">test_pi</span></code> cases each 10,000 points.</p>
@@ -737,6 +723,13 @@ we did in <a class="reference internal" href="#../module_01/03-Numerical_error">
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value for pi = </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.mean(test_pi))
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;standard deviation is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.std(test_pi))
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;actual pi is </span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.pi)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.135400
+standard deviation is 0.019145
+actual pi is 3.141593
 </pre></div>
 </div>
 </div>
@@ -758,6 +751,9 @@ we did in <a class="reference internal" href="#../module_01/03-Numerical_error">
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/6496d73df6d0f804385c4e006d0e24a2d1d895a60a72aba11687d51df4c73f64.png" src="../_images/6496d73df6d0f804385c4e006d0e24a2d1d895a60a72aba11687d51df4c73f64.png" />
+</div>
 </div>
 </section>
 <section id="example-2-simulate-brownian-motion-of-particles-in-a-fluid">
@@ -776,6 +772,17 @@ for more information in the physics and history of the phenomenon.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="400"
+            height="300"
+            src="https://www.youtube.com/embed/5jBVYvHeG2c"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 <p>In this example, your goal is to predict the location of 50 particles
 if they take 100 random steps from -0.5 to 0.5 <span class="math notranslate nohighlight">\(\mu m\)</span> in the x- and
@@ -841,6 +848,12 @@ to find the final position after each step is taken.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y-position (um)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/db1efe07921080efc3c025cb4f7cfc44e651d308c17ce6c8cc4c4c81e71f0a6e.png" src="../_images/db1efe07921080efc3c025cb4f7cfc44e651d308c17ce6c8cc4c4c81e71f0a6e.png" />
+</div>
 </div>
 <p>A curious result, even though we prescribed random motion, the final
 location did not end up back at the origin, where it started. <strong>What if
@@ -865,6 +878,12 @@ steps each.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r_final</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">r_final</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4910812280&gt;]
+</pre></div>
+</div>
+<img alt="../_images/3d893b7a9bfbbd4c8c60f0d84972251126056cbfe41a874fe7c3b97002fe358e.png" src="../_images/3d893b7a9bfbbd4c8c60f0d84972251126056cbfe41a874fe7c3b97002fe358e.png" />
 </div>
 </div>
 </section>
@@ -908,6 +927,12 @@ deviation?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Failure load is 1.89+/- 0.22 kN&#39;)
+</pre></div>
+</div>
+<img alt="../_images/942327fc69ec1afd0ce0c988264b3ee22005f8816dd4669abe58795b7959d42f.png" src="../_images/942327fc69ec1afd0ce0c988264b3ee22005f8816dd4669abe58795b7959d42f.png" />
+</div>
 </div>
 <p>Normally, the tolerance is not a maximum/minimum specification, but
 instead a normal distribution that describes the standard deviation, or
@@ -933,6 +958,12 @@ the 68% confidence interval.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Failure load is </span><span class="si">{:.2f}</span><span class="s1">+/- </span><span class="si">{:.2f}</span><span class="s1"> kN&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Ffail</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Ffail</span><span class="p">)))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Failure load is 1.88+/- 0.27 kN&#39;)
+</pre></div>
+</div>
+<img alt="../_images/a88befec2b0edcf067f638d83e3925dd1b7828e01bd5afb9b968798e732e6b36.png" src="../_images/a88befec2b0edcf067f638d83e3925dd1b7828e01bd5afb9b968798e732e6b36.png" />
 </div>
 </div>
 <p>In this propagation of uncertainty, the final value of failure load seems to be independent of wheher the distribution is uniformly random or normally distributed. In both cases, the failure load is <span class="math notranslate nohighlight">\(\approx 1.9 \pm 0.25\)</span> kN.</p>

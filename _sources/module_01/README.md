@@ -6,7 +6,7 @@ Welcome to Computational Mechanics Module #1 - Getting Started!
 There are three modules and one final project. The modules will get us started on our exploration of computational
 mechanics using Python, listed below each module are the learning objectives. 
 
-1. [01_Interacting_with_Python](./notebooks/01_Interacting_with_Python.ipynb)
+## [01_Interacting_with_Python](./01_Interacting_with_Python.md)
   * Using the `print()` function. The concept of _function_.
   * Using Python as a calculator.
   * Concepts of variable, type, assignment.
@@ -14,7 +14,7 @@ mechanics using Python, listed below each module are the learning objectives.
   * Supported operations, logical operations. 
   * Reading error messages.
 
-2. [02_Working_with_Python](./notebooks/02_Working_with_Python.ipynb)
+## [02_Working_with_Python](./02_Working_with_Python.md)
   * Good coding habits and file naming
   * How to define a function and return outputs
   * How to import libraries
@@ -24,7 +24,7 @@ mechanics using Python, listed below each module are the learning objectives.
   * Performance comparison: lists vs NumPy arrays
   * Basic plotting with `pyplot`.
 
-3. [03-Numerical_error](./notebooks/03-Numerical_error.ipynb)
+## [03_Numerical_error](./03_Numerical_error.md)
   * Numerical integration with the Euler approximation
   * The source of truncation errors
   * The source of roundoff errors
@@ -33,7 +33,9 @@ mechanics using Python, listed below each module are the learning objectives.
   * The definition of absolute error and relative error
   * How a numerical solution converges
 
-## [Computational Mechanics Project #01 - Heat Transfer in Forensic Science](./project/01_Getting-started-project.ipynb)
+## [HW_01](./HW_01.md)
+
+## [Computational Mechanics Project #01 - Heat Transfer in Forensic Science](../projects/01_Getting-started-project.md)
 
 We can use our current skillset for a macabre application. We can predict the
 time of death based upon the current temperature and change in temperature of a
@@ -43,12 +45,4 @@ Forensic scientists use Newton's law of cooling to determine the time elapsed
 since the loss of life, 
 
 $\frac{dT}{dt} = -K(T-T_a)$,
-
-where $T$ is the current temperature, $T_a$ is the ambient temperature, $t$ is
-the elapsed time in hours, and $K$ is an empirical constant. 
-
-Suppose the temperature of the corpse is 85$^o$F at 11:00 am. Then, 2 hours
-later the temperature is 74$^{o}$F. 
-
-Assume ambient temperature is a constant 65$^{o}$F.
 

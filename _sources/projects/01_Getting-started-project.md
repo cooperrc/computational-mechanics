@@ -32,12 +32,12 @@ min later the temperature is 80$^{o}$F.
 
 Assume ambient temperature is a constant 65$^{o}$F.
 
-1. Use Python to calculate $K$ using a finite difference approximation, $\frac{dT}{dt} \approx \frac{T(t+\Delta t)-T(t)}{\Delta t}$. 
+**1.** Use Python to calculate $K$ using a finite difference approximation, $\frac{dT}{dt} \approx \frac{T(t+\Delta t)-T(t)}{\Delta t}$. 
 
 ```{code-cell} ipython3
 ```
 
-2. Change your work from problem 1 to create a function that accepts the temperature at two times, ambient temperature, and the time elapsed to return $K$. 
+**2.** Change your work from problem 1 to create a function that accepts the temperature at two times, ambient temperature, and the time elapsed to return $K$. 
 
 ```{code-cell} ipython3
 ```
@@ -45,17 +45,17 @@ Assume ambient temperature is a constant 65$^{o}$F.
 ```{code-cell} ipython3
 ```
 
-3. A first-order thermal system has the following analytical solution, 
+**3.** A first-order thermal system has the following analytical solution, 
 
-    $T(t) =T_a+(T(0)-T_a)e^{-Kt}$
+$T(t) =T_a+(T(0)-T_a)e^{-Kt}$
 
-    where $T(0)$ is the temperature of the corpse at t=0 hours i.e. at the time of discovery and $T_a$ is a constant ambient temperature. 
+where $T(0)$ is the temperature of the corpse at t=0 hours i.e. at the time of discovery and $T_a$ is a constant ambient temperature. 
 
-    a. Show that an Euler integration converges to the analytical solution as the time step is decreased. Use the constant $K$ derived above and the initial temperature, T(0) = 85$^o$F. 
+a. Show that an Euler integration converges to the analytical solution as the time step is decreased. Use the constant $K$ derived above and the initial temperature, T(0) = 85$^o$F. 
 
-    b. What is the final temperature as t$\rightarrow\infty$?
-    
-    c. At what time was the corpse 98.6$^{o}$F? i.e. what was the time of death?
+b. What is the final temperature as t$\rightarrow\infty$?
+
+c. At what time was the corpse 98.6$^{o}$F? i.e. what was the time of death?
 
 ```{code-cell} ipython3
 ```

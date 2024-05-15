@@ -43,10 +43,7 @@ computational methods to solve those problems.
 
 ## [View the current syllabus](./syllabus.md) $\leftarrow$ _click here_
 
-The course schedule is kept up to date on the Google Calendar here:
-
-https://cooperrc.github.io/computational-mechanics/syllabus.html#course-schedule
-
+The course schedule is kept up to date on HuskyCT. 
 
 ### [CompMech01-Getting Started](module_01/README.md)
 
