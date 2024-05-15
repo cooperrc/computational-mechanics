@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Initial Value Problems - Project
+# Project_03 - Engineering Design of rocket flights
 
 ![Initial condition of firework with FBD and sum of momentum](../images/firework.png)
 

@@ -7,7 +7,7 @@ There are four modules and one final project. The modules will get us started on
 mechanics using Python, listed below each module are the learning objectives. 
 
 
-1. [01_Cheers_Stats_Beers](./notebooks/01_Cheers_Stats_Beers.ipynb)
+## [01_Cheers_Stats_Beers](./01_Cheers_Stats_Beers.md)
   * Read data from a `csv` file using `pandas`.
   * The concepts of Data Frame and Series in `pandas`.
   * Clean null (NaN) values from a Series using `pandas`.
@@ -19,7 +19,7 @@ mechanics using Python, listed below each module are the learning objectives.
   * Plot frequency distribution diagrams (histograms).
   * Normal distribution and 3-sigma rule.
 
-2. [02_Seeing_Stats](./notebooks/02_Seeing_Stats.ipynb)
+## [02_Seeing_Stats](./02_Seeing_Stats.md)
   * You should always plot your data.
   * The concepts of quantitative and categorical data.
   * Plotting histograms directly on columns of dataframes, using `pandas`.
@@ -32,14 +32,14 @@ mechanics using Python, listed below each module are the learning objectives.
   * Visualizing multiple data with scatter plots and bubble charts.
   * `pandas` is awesome!
 
-3. [03_Linear_Regression_with_Real_Data](./notebooks/03_Linear_Regression_with_Real_Data.ipynb)
+## [03_Linear_Regression_with_Real_Data](./03_Linear_Regression_with_Real_Data.md)
   * Making our plots more beautiful
   * Defining and calling custom Python functions
   * Applying linear regression to data
   * NumPy built-ins for linear regression
   * The Earth is warming up!!!
 
-4. [04_Stats_and_Montecarlo](./notebooks/04_Stats_and_Montecarlo.ipynb)
+## [04_Stats_and_Montecarlo](./04_Stats_and_Montecarlo.md)
   * How to generate "random" numbers in Python$^+$
   * The definition of a Monte Carlo model
   * How to calculate $\pi$ with Monte Carlo
@@ -49,6 +49,8 @@ mechanics using Python, listed below each module are the learning objectives.
   $^+$ Remember, the computer only generates pseudo-random numbers. For
   further information **and** truly random numbers  check
   [www.random.org](https://www.random.org/randomness/) 
+  
+## [HW_02](./HW_02.md)
 
 ## [Project #02 - NYSE random walk predictor](../projects/02_Analyze-data_project)
 
