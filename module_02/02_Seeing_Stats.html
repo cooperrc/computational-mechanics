@@ -863,7 +863,7 @@ you’ll learn about a new type of visualization: the <strong>box plot</strong>.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8209cc4111c9a8041e52b0c6f13e35ce91b26d885dad53c75714f9f4be2e5722.png" src="../_images/8209cc4111c9a8041e52b0c6f13e35ce91b26d885dad53c75714f9f4be2e5722.png" />
+<img alt="../_images/1223b896c38deefad629afb089e21853861d853e949e27dcf9d826288c3f9dd1.png" src="../_images/1223b896c38deefad629afb089e21853861d853e949e27dcf9d826288c3f9dd1.png" />
 </div>
 </div>
 <p>You can tell that the most frequent values of <code class="docutils literal notranslate"><span class="pre">abv</span></code> fall in the bin just
@@ -887,7 +887,7 @@ higher end.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1902a958413cab95d6edae58a93ab6136c880992cdb8572d4ef33688ff11a2ea.png" src="../_images/1902a958413cab95d6edae58a93ab6136c880992cdb8572d4ef33688ff11a2ea.png" />
+<img alt="../_images/7835fbc48e9550430421dd7584947f2c9abd956599808cae694396ce160111b8.png" src="../_images/7835fbc48e9550430421dd7584947f2c9abd956599808cae694396ce160111b8.png" />
 </div>
 </div>
 <p>Which one do you like better? Well, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> histogram took fewer lines of code to create.  And it doesn’t look bad at all. But you do have more fine-grained control with Matplotlib. Which method you choose in a real situation will just depend on the situation and your preference.</p>
@@ -982,7 +982,11 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a0cd6e3a8313afb3cab6602de844513e5a1c43c9457a6b470ed4aab835bdb974.png" src="../_images/a0cd6e3a8313afb3cab6602de844513e5a1c43c9457a6b470ed4aab835bdb974.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2015/315735715.py:1: MatplotlibDeprecationWarning: The &#39;labels&#39; parameter of boxplot() has been renamed &#39;tick_labels&#39; since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  plt.boxplot(abv, labels=[&#39;Alcohol by volume&#39;]);
+</pre></div>
+</div>
+<img alt="../_images/e41f6fdc4952361421a79804b2f10f735ab233631a659c94f7353f5fcd55b69f.png" src="../_images/e41f6fdc4952361421a79804b2f10f735ab233631a659c94f7353f5fcd55b69f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -992,7 +996,11 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/80c724b816d130a82c60b85d2e42e2ff933d15155ab146bd4f041f4c13ace709.png" src="../_images/80c724b816d130a82c60b85d2e42e2ff933d15155ab146bd4f041f4c13ace709.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2015/1528684497.py:1: MatplotlibDeprecationWarning: The &#39;labels&#39; parameter of boxplot() has been renamed &#39;tick_labels&#39; since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  plt.boxplot(ibu, labels=[&#39;International bitterness unit&#39;]);
+</pre></div>
+</div>
+<img alt="../_images/e0c83ee346050bdfae8ae3e0bb8147544187b63586ba12af002476960f5707c8.png" src="../_images/e0c83ee346050bdfae8ae3e0bb8147544187b63586ba12af002476960f5707c8.png" />
 </div>
 </div>
 <p>What is going on here? Obviously, there is a <em>box</em>: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the <em>median</em>.</p>
@@ -1268,7 +1276,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/462f49ef4fafec036e7bd98637ae6d29d192ebbb473e37c46480cede4135adf2.png" src="../_images/462f49ef4fafec036e7bd98637ae6d29d192ebbb473e37c46480cede4135adf2.png" />
+<img alt="../_images/84d8d0d66b456388f7e00acf482ceb6469514cf9cb39ac9798c6da73e622fc06.png" src="../_images/84d8d0d66b456388f7e00acf482ceb6469514cf9cb39ac9798c6da73e622fc06.png" />
 </div>
 </div>
 </section>
@@ -1327,7 +1335,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/79f0d5d214246324c167343f3f1165cc79282404040f512280aba448d8d61744.png" src="../_images/79f0d5d214246324c167343f3f1165cc79282404040f512280aba448d8d61744.png" />
+<img alt="../_images/544fecf6005f6183d15e86689a1550f253c145a29333a3529a7f3eb7974455c1.png" src="../_images/544fecf6005f6183d15e86689a1550f253c145a29333a3529a7f3eb7974455c1.png" />
 </div>
 </div>
 <p>Hmm. That’s a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there’s a lot of vertical spread on those dots to the right of the plot.</p>
@@ -1530,7 +1538,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c09ac89aafe28872ea4ce7020c045b3c33453057719b9ce8554a927e8acb306a.png" src="../_images/c09ac89aafe28872ea4ce7020c045b3c33453057719b9ce8554a927e8acb306a.png" />
+<img alt="../_images/a8a530255d4aee6c2c149e1bb76521d29f4aedb93c6e17810c78ecf7170fef8f.png" src="../_images/a8a530255d4aee6c2c149e1bb76521d29f4aedb93c6e17810c78ecf7170fef8f.png" />
 </div>
 </div>
 <p>That’s rad! Perhaps the bubbles are too small. You could multiply the <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> by a factor of 5, or maybe 10? You should experiment.</p>
@@ -1553,7 +1561,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/92f7c34bc8419c9a7f3f13b111eb2c6b82e3c8b13c3224a9e786bb18ed64786a.png" src="../_images/92f7c34bc8419c9a7f3f13b111eb2c6b82e3c8b13c3224a9e786bb18ed64786a.png" />
+<img alt="../_images/697232d1775b060f6e4fd306178854be07a85d2cd779959a7598ae6553d68349.png" src="../_images/697232d1775b060f6e4fd306178854be07a85d2cd779959a7598ae6553d68349.png" />
 </div>
 </div>
 <p>It looks like the most popular beers do follow a linear relationship between alcohol fraction and IBU. You learned a lot about beer without having a sip!</p>
@@ -1573,7 +1581,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/179379eb77116c122d7a8c160f5348822bf022319cce8f9d05f613fc6b7619d2.png" src="../_images/179379eb77116c122d7a8c160f5348822bf022319cce8f9d05f613fc6b7619d2.png" />
+<img alt="../_images/e4b72342d140673cba4f95ecf3d35fe26a70c04a2c495e313b9767a693fa16e8.png" src="../_images/e4b72342d140673cba4f95ecf3d35fe26a70c04a2c495e313b9767a693fa16e8.png" />
 </div>
 </div>
 </section>
