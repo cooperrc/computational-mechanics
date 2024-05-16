@@ -15,9 +15,6 @@ etc. and share them with anyone you meet. Just make sure you link back
 to this course website. 
 
 
-
-### JupyterHub server: <https://compmech.uconn.edu/>
-
 Join us on the Course GitHub
 [Discussions](https://github.com/cooperrc/computational-mechanics/discussions).
 
@@ -41,33 +38,32 @@ computational methods. Once we can communicate our engineering problems to
 Python code (or any other computer language) we use standard
 computational methods to solve those problems. 
 
-## [View the current syllabus](./syllabus.md) $\leftarrow$ _click here_
+## [View the current syllabus](https://cooperrc.github.io/computational-mechanics/syllabus.html) $\leftarrow$ _click here_
 
-The course schedule is kept up to date on HuskyCT. 
 
-### [CompMech01-Getting Started](module_01/README.md)
+## [CompMech01-Getting Started](module_01/README.md)
 
 - Getting comfortable with Python
 - Quantifying error in computational methods
 
-### [CompMech02-Analyze-data](module_02/README.md)
+## [CompMech02-Analyze-data](module_02/README.md)
 
 - Describing and plotting data
 - Some statistics
-- Monte Carlo modelling
+- Monte Carlo [modelling](modelling)
 
-### [CompMech03-Initial Value Problems](module_03/README.md)
+## [CompMech03-Initial Value Problems](module_03/README.md)
 
 - Creating functions that are physical models
 - Solving ordinary differential equations
 - Solving nonlinear equations
 
-### [CompMech04-Linear Algebra](module_04/README.md)
+## [CompMech04-Linear Algebra](module_04/README.md)
 
 - Define sets of equations as matrix algebra
 - Solve for multiple equations for multiple unknown variables
 
-### [CompMech05-Boundary Value Problems](module_05/README.md)
+## [CompMech05-Boundary Value Problems](module_05/README.md)
 
 - Continue creating functions that are physical models
 - Solve 1D and 2D partial differential equations with finite difference
