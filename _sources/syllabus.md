@@ -1,9 +1,8 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Winter 2023
+## ME 3255 Summer 2024
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
-- Submitting assignments: [**Google Classroom**](https://classroom.google.com/c/NjQ2NjA0MDM2NzY2?cjc=xpc7ifh)
-  class code: **xpc7ifh**
-- **JupyterHub server**: <https://compmech.uconn.edu/>
+- Submitting assignments: [**HuskyCT**](https://learn.uconn.edu)
+- **JupyterHub server**: <https://nanohub.org/tools/compmech>
 - **ME3255 - Discussions**: [GitHub Discussion](https://github.com/cooperrc/computational-mechanics/discussions)
 
 ## Course Description
@@ -94,10 +93,7 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
   Modules](https://github.com/engineersCode/EngComp) from Prof. Lorena A. Barba
   and doctoral student Natalia C. Clement at the George Washington University,
   Mechanical and Aerospace Engineering Department.
-- [Google
-  Classroom](https://classroom.google.com/c/NTIzNzEyMzE5NTc2?cjc=qgd6u57)
-  class code: **qgd6u57**
-- [JupyterHub server at compmech.uconn.edu](https://compmech.uconn.edu) is an
+- [Jupyter server at nanohub](https://nanohub.org/tools/compmech) is an
   interactive Jupyter notebook server. We will use it with Python to run our
   code, create documentation, and save assignments
 - [GitHub](https://github.com) If you prefer to
@@ -178,12 +174,7 @@ then during the final week submit an updated final grade.
 ## Course Schedule 
 > Subject to change based upon feedback and pace of course
 
-The course schedule is kept up to date on the Google Calendar here:
-
-<iframe
-src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&src=Y19jbGFzc3Jvb20yYzQ5Y2Y3NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB"
-style="border:solid 1px #777" width="500" height="300" frameborder="0"
-scrolling="no"></iframe>
+The course schedule is kept up to date on the HuskyCT.
 
 ## Grading Scale
 
@@ -204,11 +195,10 @@ scrolling="no"></iframe>
 
 ## Due Dates and Late Policy
 
-All course due dates are identified in the [ME 3255 Google
-Calendar](https://cooperrc.github.io/computational-mechanics/syllabus.html#course-schedule)
-Deadlines are based on Eastern Time; if you are in a different time zone, please
-adjust your submittal times accordingly. The instructor reserves the right to
-change dates accordingly as the course progresses.  _All changes will be
+All course due dates are identified in HuksyCT. Deadlines are based on
+Eastern Time; if you are in a different time zone, please adjust your
+submittal times accordingly. The instructor reserves the right to change
+dates accordingly as the course progresses.  _All changes will be
 communicated via the calendar or another appropriate notification._
 
 <!-- __Late Policy:__ There are no late submission penalties. If you fall -->
@@ -226,7 +216,7 @@ feedback for you to resubmit the assignment.
 
 We will make every effort to provide feedback and grades within 2
 business days.  To keep track of your performance in the course, refer
-to grades in Google Classroom.  You can resubmit any assignment with
+to grades in HuskyCT.  You can resubmit any assignment with
 improvements. Add a private comment to your submission when you have
 incorporated comments. 
 
@@ -279,11 +269,11 @@ or <http://csd.uconn.edu/>.
 The software/technical requirements for this course include:
 
 * Modern, up-to-date web browser e.g. [Chrome](https://www.google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/), [Safari (Mac OS)](https://www.apple.com/safari/), or [Microsoft Edge](https://www.microsoft.com/en-us/edge)
-* Google Classroom
+* HuskyCT
+* Python and Jupyter
 * Adobe Acrobat Reader (Adobe Reader Accessibility Statement, Adobe Reader Privacy Policy)
-* Google Apps ([Google Apps Accessibility](https://www.google.com/accessibility/), [Google for Education Privacy Policy](https://www.google.com/edu/trust/)
 * Dedicated access to high-speed internet with a minimum speed of 1.5 Mbps (4 Mbps or higher is recommended).
-* [JupyterHub at compmech.uconn.edu](https://compmech.uconn.edu)
+* [Jupyter at nanohub](https://nanohub.org/tools/compmech)
 
 __NOTE:__ This course was not tested or designed for mobile devices. 
 
