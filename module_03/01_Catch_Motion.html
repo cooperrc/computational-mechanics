@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="https://nanohub.org/tools/compmech/invoke/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_03/01_Catch_Motion.md&branch=master" target="_blank"
+      <li><a href="https://nanohub.org/tools/compmech/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_03/01_Catch_Motion.md&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -745,8 +745,8 @@ mouse-click captures.</p>
 <p>Looking ahead, what you’ll do is repeat the process of capturing mouse clicks on the image, but clicking on the ball positions. Then, you will want to have the vertical positions converted to physical length (in meters), from the pixel numbers on the image.</p>
 <p>You can get the scaling from pixels to meters via the distance between two white lines on the metered panel, which you know is <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span>.</p>
 <p>Let’s get the average vertical distance between two while lines, which you can calculate as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8f3b474-5436-4185-ae91-e42aed422b0c">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f8f3b474-5436-4185-ae91-e42aed422b0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-db85a25b-88fe-4fee-9042-5b66b318f425">
+<span class="eqno">(1)<a class="headerlink" href="#equation-db85a25b-88fe-4fee-9042-5b66b318f425" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \overline{\Delta y} = \sum_{i=0}^N \frac{y_{i+1}-y_i}{N-1}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -801,8 +801,8 @@ but <em>not</em> the photograph. <em>Sigh</em>.</p>
 </div>
 </div>
 <p>Scale the vertical displacements of the falling ball as explained above (to get distance in meters), then use the known time between flashes of the strobe light, <span class="math notranslate nohighlight">\(1/16.8\rm{s}\)</span>, to compute estimates of the velocity and acceleration of the ball at every captured instant, using:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b83400db-0d7c-4de5-a4ef-0e7a6b579589">
-<span class="eqno">(2)<a class="headerlink" href="#equation-b83400db-0d7c-4de5-a4ef-0e7a6b579589" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6fd7d507-03f8-4154-8c81-12bb7464fc42">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6fd7d507-03f8-4154-8c81-12bb7464fc42" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -1051,13 +1051,13 @@ save your variables <code class="docutils literal notranslate"><span class="pre"
 <section id="numerical-derivatives">
 <h2>Numerical derivatives<a class="headerlink" href="#numerical-derivatives" title="Link to this heading">#</a></h2>
 <p>You just computed the average velocity between two captured ball positions using <em>numerical derivative</em>. The velocity is the <em>derivative</em> of position with respect to time, and you can approximate its instantaneous value with the average velocity between two close instants in time:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a346d195-79b1-43ef-bcf2-3791df29d471">
-<span class="eqno">(3)<a class="headerlink" href="#equation-a346d195-79b1-43ef-bcf2-3791df29d471" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3625478d-9fe6-4f85-bff5-722b85b639ad">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3625478d-9fe6-4f85-bff5-722b85b639ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v(t) = \frac{dy}{dt} \approx \frac{y(t_i+\Delta t)-y(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>And acceleration is the <em>derivative</em> of velocity with respect to time; you can approximate it with the average acceleration within a time interval:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eb5772ef-3b13-4ad5-9253-cb2c850b28d7">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eb5772ef-3b13-4ad5-9253-cb2c850b28d7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-83dc1c32-934a-4786-8145-18f82a93039a">
+<span class="eqno">(4)<a class="headerlink" href="#equation-83dc1c32-934a-4786-8145-18f82a93039a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a(t) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>As you can imagine, the quality of the approximation depends on the size of the time interval: as <span class="math notranslate nohighlight">\(\Delta t\)</span> gets smaller, the error also gets smaller.</p>
