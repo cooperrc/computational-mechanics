@@ -65,8 +65,8 @@ fi
 # Invoke the start_jupyter script, look for the Jupyter files in the user
 # directory containing links to the files.
 /usr/bin/invoke_app "$@" -t compmech \
-                  -C "start_jupyter --themes" \
-                      -u anaconda-7 \
-                      -w headless \
-          -d "${HOME}" \
-                      -r none
+                                             -C "start_jupyter --themes README.md" \
+                                             -u anaconda-7 \
+                                             -w headless \
+                                             -d ${userDirectory} \
+                                             -r none
