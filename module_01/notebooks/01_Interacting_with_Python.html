@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>01 - Interacting with Python &#8212; Computational Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_01/notebooks/01_Interacting_with_Python';</script>
+    <link rel="icon" href="../../_static/spiderman-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Working_with_Python.html">02 - Working with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Numerical_error.html">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_02/README.html">Computational Mechanics 02 - Analyze Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_02/01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_02/02_Seeing_Stats.html">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_02/03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_02/04_Stats_and_Montecarlo.html">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_02/HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_03/README.html">Computational Mechanics 03- Initial Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_05/README.html">Computational Mechanics 5 - Boundary Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_01/notebooks/01_Interacting_with_Python.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/compmech/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_01/notebooks/01_Interacting_with_Python.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_01/notebooks/01_Interacting_with_Python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/module_01/notebooks/01_Interacting_with_Python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>01 - Interacting with Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">01 - Interacting with Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">What is Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-is-a-versatile-language-you-can-analyze-data-build">_Python is a versatile language, you can analyze data, build</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-started">Let’s get started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-program">Your first program</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concept-function">Key concept: function</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">Python as a calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-point">Discussion point:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-their-type">Variables and their type</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-variables">String variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-it-looks-like-a-duck-and-quacks-like-a-duck-then-its-probably-a-duck">“If it looks like a duck, and quacks like a duck, then it’s probably a duck.”</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-assignments">More assignments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-point">Reflection point</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-variables">Special variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-and-comparison-operators">Logical and comparison operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problems">Problems</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<section class="tex2jax_ignore mathjax_ignore" id="interacting-with-python">
+<h1>01 - Interacting with Python<a class="headerlink" href="#interacting-with-python" title="Link to this heading">#</a></h1>
+<p>These notebooks are a combination of original work and modified
+notebooks from <a class="reference external" href="https://github.com/engineersCode/EngComp.git">Engineers
+Code</a> learning modules.
+The learning modules are covered under a Creative Commons License, so
+you can modify and publish <em>and give credit to L.A. Barba and N.C.
+Clementi</em>.</p>
+<p>Your first goal is to interact with Python and handle data in Python.
+But let’s also learn a little bit of background.</p>
+<section id="what-is-python">
+<h2>What is Python?<a class="headerlink" href="#what-is-python" title="Link to this heading">#</a></h2>
+<p>Python was born in the late 1980s. Its creator, <a class="reference external" href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van
+Rossum</a>, named it after
+the British comedy “Monty Python’s Flying Circus.” His goal was to
+create “an easy and intuitive language just as powerful as major
+competitors,” producing computer code “that is as understandable as
+plain English.”</p>
+<p>Python is a <em>general-purpose</em> language, which means that you
+can use it for anything:  organizing data, scraping the web, creating
+websites, analyzing sounds, creating games, and of course <em>engineering
+computations</em>.</p>
+<p>Python is an <em>interpreted</em> language. This means that you can write
+Python commands and the computer can execute those instructions
+directly. Other programming languages—like C, C++ and Fortran—require a
+previous <em>compilation</em> step: translating the commands into machine
+language.  A neat ability of Python is to be used <em>interactively</em>.
+[Fernando
+Perez](<a class="reference external" href="https://en.wikipedia.org/wiki/Fernando_P%C3%A9rez_(software_developer)">https://en.wikipedia.org/wiki/Fernando_Pérez_(software_developer)</a>
+famously created <strong>IPython</strong> as a side-project during his PhD. The “I”
+in IPython stands for interactive: a style of computing that is very
+powerful for developing ideas and solutions incrementally, thinking with
+the computer as a kind of collaborator.</p>
+</section>
+<section id="why-python">
+<h2>Why Python?<a class="headerlink" href="#why-python" title="Link to this heading">#</a></h2>
+<p><em>Because it’s fun!</em> With Python, the more you learn, the more you <em>want</em>
+to learn.  You can find lots of resources online and, since Python is an
+open-source project, you’ll also find a friendly community of people
+sharing their knowledge.  <em>And it’s free!</em></p>
+<p>Python is a <em>high-productivity language</em>. As a programmer,
+you’ll need less time to develop a solution with Python than with most
+other languages.  This is important to always bring up whenever someone
+complains that “Python is slow.” Your time is more valuable than a
+machine’s!  (See the Recommended Readings section at the end of this
+lesson.) And if you really need to speed up our program, you can re-write
+the slow parts in a compiled language afterwards.  Because Python plays
+well with other languages :–)</p>
+<p>The top technology companies use Python: Google, Facebook, Dropbox,
+Wikipedia, Yahoo!, YouTube… Python took the No. 1 spot in the
+interactive list of <a class="reference external" href="http://spectrum.ieee.org/computing/software/the-2017-top-programming-languages">The 2017 Top Programming
+Languages</a>,
+by <em>IEEE Spectrum</em> (<a class="reference external" href="http://www.ieee.org/about/index.html">IEEE</a> is the
+world’s largest technical professional society).  <!-- #endregion --></p>
+<section id="python-is-a-versatile-language-you-can-analyze-data-build">
+<h3>_Python is a versatile language, you can analyze data, build<a class="headerlink" href="#python-is-a-versatile-language-you-can-analyze-data-build" title="Link to this heading">#</a></h3>
+<p>websites (e.g., Instagram, Mozilla, Pinterest), make art or music, etc.
+Because it is a versatile language, employers love Python: if you know
+Python they will want to hire you._ —Jessica McKellar, ex Director of
+the Python Software Foundation, in a <a class="reference external" href="https://youtu.be/rkx5_MRAV3A">2014
+tutorial</a>.</p>
+</section>
+</section>
+<section id="lets-get-started">
+<h2>Let’s get started<a class="headerlink" href="#lets-get-started" title="Link to this heading">#</a></h2>
+<p>You could follow this first lesson using IPython. If you have it
+installed in the computer you’re using, you enter the program by typing
+<code class="docutils literal notranslate"><span class="pre">ipython</span></code> on the command-line interface (the <strong>Terminal</strong> app on Mac
+OSX, and on Windows the <strong>PowerShell</strong> or a similar app).  A free
+service to try IPython online, right from your browser, is <a class="reference external" href="https://www.pythonanywhere.com/try-ipython/">Python
+Anywhere</a>. You can execute
+all the examples of this lesson in IPython using this service.</p>
+<p>You can also use Jupyter: an environment that combines programming with
+other content, like text and images, to form a “computational
+narrative.” All of these lessons are written in Jupyter notebooks.</p>
+<p>For this lesson, you should open a blank
+Jupyter notebook, or are working interactively with this lesson.  On a
+blank Jupyter notebook, you should have in front of you the input line
+counter:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In[1]:</span></code></p>
+<p>That input line is ready to receive any Python code to be executed
+interactively. The output of the code will be shown to you next to
+<code class="docutils literal notranslate"><span class="pre">Out[1]</span></code>, and so on for successive input/output lines in IPython, or
+code cells in Jupyter.</p>
+<section id="your-first-program">
+<h3>Your first program<a class="headerlink" href="#your-first-program" title="Link to this heading">#</a></h3>
+<p>In every programming class ever, your first program consists of printing
+a <em>“Hello”</em> message. In Python, use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, with your
+message inside quotation marks.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You just wrote your first program and you learned how to use the
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> function. Yes, <code class="docutils literal notranslate"><span class="pre">print()</span></code> is a function: we pass the <em>argument</em>
+you want the function to act on, inside the parentheses. In the case
+above, you passed a <em>string</em>, which is a series of characters between
+quotation marks. Strings will come back later in this lesson.</p>
+<section id="key-concept-function">
+<h4>Key concept: function<a class="headerlink" href="#key-concept-function" title="Link to this heading">#</a></h4>
+<p>A function is a compact collection of code that executes some action on
+its <em>arguments</em>.  Every Python function has a <em>name</em>, used to call it,
+and takes its arguments inside round brackets. Some arguments may be
+optional (which means they have a default value defined inside the
+function), others are required. For example, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function has
+one required argument: the string of characters it should print out for
+you.</p>
+<p>Python comes with many <em>built-in</em> functions, but you can also build your
+own. Chunking blocks of code into functions is one of the best
+strategies to deal with complex programs. It makes you more efficient,
+because you can reuse the code that you wrote into a function.
+Modularity and reuse are every programmer’s friends.</p>
+<!-- #region -->
+</section>
+</section>
+<section id="python-as-a-calculator">
+<h3>Python as a calculator<a class="headerlink" href="#python-as-a-calculator" title="Link to this heading">#</a></h3>
+<p>Try any arithmetic operation in IPython or a Jupyter code cell. The
+symbols are what you would expect, except for the
+“raise-to-the-power-of” operator, which you obtain with two asterisks:
+<code class="docutils literal notranslate"><span class="pre">**</span></code>. Try all of these:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">+</span>   <span class="o">-</span>   <span class="o">*</span>   <span class="o">/</span>   <span class="o">**</span>   <span class="o">%</span>   <span class="o">//</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">%</span></code> symbol is the <em>modulo</em> operator (divide and return the remainder), and the double-slash is <em>floor division</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.25</span> <span class="o">+</span> <span class="mf">3.65</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">-</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an interesting case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span><span class="o">**</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.5
+</pre></div>
+</div>
+</div>
+</div>
+<section id="discussion-point">
+<h4>Discussion point:<a class="headerlink" href="#discussion-point" title="Link to this heading">#</a></h4>
+<p><em>What happened?</em> Isn’t <span class="math notranslate nohighlight">\(9^{1/2} = 3\)</span>? (Raising to the power <span class="math notranslate nohighlight">\(1/2\)</span> is the same as taking the square root.) Did Python get this wrong?</p>
+<p>Compare with this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yes! The order of operations matters!</p>
+<p>To review orders of operations look at <a class="reference external" href="https://en.wikibooks.org/wiki/Arithmetic/Order_of_Operations">Arithmetics/Order of
+operations</a>.</p>
+<p>Once in a while, the internet <a class="reference external" href="https://twitter.com/pjmdolI/status/1155598050959745026?s=20">argues over order of
+operations</a></p>
+<p><img alt="Order of operations Twitterargument" src="https://pbs.twimg.com/media/EAmCTOJXsAYqL4r?format=jpg&amp;name=medium" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The blackboard problem is vague in its order of operations, <em>prompting
+furious opinions on social media</em>. Its not clear if the divisor is meant
+to be the result of <span class="math notranslate nohighlight">\(\frac{8}{2(2+2)}\)</span> or <span class="math notranslate nohighlight">\(\frac{8}{2}(2+2)\)</span>.</p>
+</section>
+<section id="exercises">
+<h4>Exercises:<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h4>
+<p>Use Python (as a calculator) to solve the following two problems:</p>
+<ol class="arabic">
+<li><p>The volume of a sphere with radius <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(\frac{4}{3}\pi r^3\)</span>. What is the volume of a sphere with diameter 6.65 cm?</p>
+<p>For the value of <span class="math notranslate nohighlight">\(\pi\)</span> use 3.14159 (for now). Compare your answer with the solution up to 4 decimal numbers.</p>
+<p>Hint: 523.5983 is wrong and 615.9184 is also wrong.</p>
+</li>
+<li><p>Suppose the cover price of a book is <span class="math notranslate nohighlight">\(\$ 24.95\)</span>, but bookstores get a <span class="math notranslate nohighlight">\(40\%\)</span> discount. Shipping costs <span class="math notranslate nohighlight">\(\$3\)</span> for the first copy and <span class="math notranslate nohighlight">\(75\)</span> cents for each additional copy. What is the total wholesale cost for <span class="math notranslate nohighlight">\(60\)</span> copies? Compare your answer with the solution up to 2 decimal numbers.</p></li>
+</ol>
+<p>To reveal the answers, highlight the following line of text using the mouse:</p>
+<p>Answer exercise 1: <span style="color:white"> 153.9796 </span> Answer exercise 2: <span style="color:white"> 945.45 </span></p>
+</section>
+</section>
+<section id="variables-and-their-type">
+<h3>Variables and their type<a class="headerlink" href="#variables-and-their-type" title="Link to this heading">#</a></h3>
+<p>Variables consist of two parts: a <strong>name</strong> and a <strong>value</strong>. When we want
+to give a variable its name and value, we use the equal sign: <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">value</span></code>. This is called an <em>assignment</em>. The name of the variable goes on
+the left and the value on the right.</p>
+<p>The first thing to get used to is that the equal sign in a variable
+assignment has a different meaning than it has in Algebra! Think of it
+as an arrow pointing from <code class="docutils literal notranslate"><span class="pre">name</span></code> to <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+<img alt="module_01/images/variables.png" src="module_01/images/variables.png" />
+<p>You have many possibilities for variable names: they can be made up of
+upper and lowercase letters, underscores and digits… although digits
+cannot go on the front of the name. For example, valid variable names
+are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span>
+    <span class="n">x1</span>
+    <span class="n">X_2</span>
+    <span class="n">name_3</span>
+    <span class="n">NameLastname</span>
+</pre></div>
+</div>
+<p>Keep in mind, there are reserved words that you can’t use; they are the special Python <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">keywords</a>.</p>
+<p>OK. Let’s assign some values to variables and do some operations with them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">4.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise">
+<h4>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h4>
+<p>Print the values of the variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>Let’s do some arithmetic operations with our new variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">-</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now, let’s check the values of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. Are they still the same as they were when you assigned them?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="string-variables">
+<h3>String variables<a class="headerlink" href="#string-variables" title="Link to this heading">#</a></h3>
+<p>In addition to name and value, Python variables have a <em>type</em>: the type of the value it refers to. For example, an integer value has type <code class="docutils literal notranslate"><span class="pre">int</span></code>, and a real number has type <code class="docutils literal notranslate"><span class="pre">float</span></code>. A string is a variable consisting of a sequence of characters marked by two quotes, and it has type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;this is a string&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if you try to “add” two strings?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">+</span> <span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;this is a string1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The operation above is called <em>concatenation</em>: chaining two strings together into one. Insteresting, eh? But look at this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span>
+<span class="go">---------------------------------------------------------------------------</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">&lt;ipython-input-2-13c8da8dc575&gt; in &lt;module&gt;</span>
+<span class="go">----&gt; 1 x+w</span>
+
+<span class="go">TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</span>
+</pre></div>
+</div>
+<!-- #region -->
+<p><em>Error!</em> Why? Let’s inspect what Python has to say and explore what is
+happening. It helps to read the Error message from bottom, <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code> to top, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x+w</span></code>. The
+bottom, <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, specifies what kind of error you experienced. The top
+line, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">w</span></code>, tells you where the error occurred, line <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Python is a <em>dynamic language</em>, which means that you don’t <em>need</em> to
+specify a type to invoke an existing object. The humorous nickname for
+this is “duck typing”:</p>
+<section id="if-it-looks-like-a-duck-and-quacks-like-a-duck-then-its-probably-a-duck">
+<h4>“If it looks like a duck, and quacks like a duck, then it’s probably a duck.”<a class="headerlink" href="#if-it-looks-like-a-duck-and-quacks-like-a-duck-then-its-probably-a-duck" title="Link to this heading">#</a></h4>
+<p>In other words, a variable has a type, but you don’t need to specify it.
+It will just behave like it’s supposed to when you operate with it
+(it’ll quack and walk like nature intended it to).</p>
+<p>But sometimes you need to make sure you know the type of a variable. Thankfully, Python offers a function to find out the type of a variable: <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="more-assignments">
+<h3>More assignments<a class="headerlink" href="#more-assignments" title="Link to this heading">#</a></h3>
+<p>Here you assign a new variable to the result of an operation that involves other variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_xy</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">diff_xy</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum of x and y is:&#39;</span><span class="p">,</span> <span class="n">sum_xy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The difference between x and y is:&#39;</span><span class="p">,</span> <span class="n">diff_xy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice what you did above: you used the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function with a string
+message, followed by a variable, and Python printed a useful combination
+of the message and the variable value. This is a pro tip! You want to
+print for humans. Let’s now check the type of the new variables you just created above:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">sum_xy</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">diff_xy</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="reflection-point">
+<h2>Reflection point<a class="headerlink" href="#reflection-point" title="Link to this heading">#</a></h2>
+<p>When you created <code class="docutils literal notranslate"><span class="pre">sum_xy</span></code> and <code class="docutils literal notranslate"><span class="pre">diff_xy</span></code> two new variables were created
+that depended upon previously created variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.  How else
+can you accomplish this? Could you make a function? Could you combine
+the commands in one block as a script?</p>
+<section id="special-variables">
+<h3>Special variables<a class="headerlink" href="#special-variables" title="Link to this heading">#</a></h3>
+<p>Python has special variables that are built into the language. These are:
+<code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code> and <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.
+For now, you will look at just the first three of these.</p>
+<p><strong>Boolean variables</strong> are used to represent truth values, and they can take one of two possible values: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+<em>Logical expressions</em> return a boolean. Here is the simplest logical expression, using the keyword <code class="docutils literal notranslate"><span class="pre">not</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>  <span class="ow">not</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>It returns… you guessed it… <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>The Python function <code class="docutils literal notranslate"><span class="pre">bool()</span></code> returns a truth value assigned to any argument. Any number other than zero has a truth value of <code class="docutils literal notranslate"><span class="pre">True</span></code>, as well as any nonempty string or list. The number zero and any empty string or list will have a truth value of <code class="docutils literal notranslate"><span class="pre">False</span></code>. Explore the <code class="docutils literal notranslate"><span class="pre">bool()</span></code> function with various arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;Do we need oxygen?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;We do need oxygen&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>None is not Zero</strong>: <code class="docutils literal notranslate"><span class="pre">None</span></code> is a special variable indicating that no value was assigned or that a behavior is undefined. It is different than the value zero, an empty string, or some other nil value.</p>
+<p>You can check that it is not zero by trying to add it to a number. Let’s
+see what happens when you try that:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</section>
+<section id="logical-and-comparison-operators">
+<h3>Logical and comparison operators<a class="headerlink" href="#logical-and-comparison-operators" title="Link to this heading">#</a></h3>
+<p>The Python comparison operators are: <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>. They compare two objects and return either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>: smaller than, smaller or equal, greater than, greater or equal, equal, not equal. Try it!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>You can assign the truth value of a comparison operation to a new variable name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Logical operators are the following: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>. They work just like English (with the added bonus of being always consistent, not like English speakers!).  A logical expression with <code class="docutils literal notranslate"><span class="pre">and</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> if both operands are true, and one with <code class="docutils literal notranslate"><span class="pre">or</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> when either operand is true. And the keyword <code class="docutils literal notranslate"><span class="pre">not</span></code> always negates the expression that follows.</p>
+<p>Let’s do some examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>Remember that the logical operator <code class="docutils literal notranslate"><span class="pre">and</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> only when both operands are <code class="docutils literal notranslate"><span class="pre">True</span></code>. In the case above the first operand is <code class="docutils literal notranslate"><span class="pre">True</span></code> but the second one is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>If you try the <code class="docutils literal notranslate"><span class="pre">or</span></code> operation using the same operands you should get a <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>And the negation of the second operand results in …</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>What if you negate the second operand in the <code class="docutils literal notranslate"><span class="pre">and</span></code> operation above?</p>
+<section id="note">
+<h4>Note:<a class="headerlink" href="#note" title="Link to this heading">#</a></h4>
+<p>Be careful with the order of logical operations. The order of precedence in logic is:</p>
+<ol class="arabic simple">
+<li><p>Negation</p></li>
+<li><p>And</p></li>
+<li><p>Or</p></li>
+</ol>
+<p>If you don’t rememeber this, make sure to use parentheses to indicate the order you want.</p>
+</section>
+<section id="id1">
+<h4>Exercise:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>What is happening in the case below? Play around with logical operators and try some examples.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. The concept of <em>function</em>.</p></li>
+<li><p>Using Python as a calculator.</p></li>
+<li><p>Concepts of variable, type, assignment.</p></li>
+<li><p>Special variables: <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Supported operations, logical operations.</p></li>
+<li><p>Reading error messages.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p>Throughout this course module, you will be drawing from the following references:</p>
+<ol class="arabic simple">
+<li><p><em>Effective Computation in Physics: Field Guide to Research with Python</em> (2015). Anthony Scopatz &amp; Kathryn D. Huff. O’Reilly Media, Inc.</p></li>
+<li><p><em>Python for Everybody: Exploring Data Using Python 3</em> (2016). Charles R. Severance. <a class="reference external" href="http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf">PDF available</a></p></li>
+<li><p><em>Think Python: How to Think Like a Computer Scientist</em> (2012). Allen Downey. Green Tea Press.  <a class="reference external" href="http://greenteapress.com/thinkpython/thinkpython.pdf">PDF available</a></p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Calculate some properties of a rectangular box that is 12.5”<span class="math notranslate nohighlight">\(\times\)</span>11”<span class="math notranslate nohighlight">\(\times\)</span>14” and weighs 31 lbs</p>
+<p>a. What is the volume of the box?</p>
+<p>b. What is the average density of the box?</p>
+<p>c. What is the result of the following logical operation, <code class="docutils literal notranslate"><span class="pre">volume&gt;1000</span></code> (in inches^3)</p>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>Use the variables given below, <code class="docutils literal notranslate"><span class="pre">str1</span></code> and <code class="docutils literal notranslate"><span class="pre">str2</span></code>, and check the following</p>
+<p>a. <code class="docutils literal notranslate"><span class="pre">str1&lt;str2</span></code></p>
+<p>b. <code class="docutils literal notranslate"><span class="pre">str1==str2</span></code></p>
+<p>c. <code class="docutils literal notranslate"><span class="pre">str1&gt;str2</span></code></p>
+<p>d. How could you force (b) to be true? <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.lower">Hint</a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html?highlight=str.lower#str.upper">Hint</a></p>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>The following code has an error, fix the error so that the correct result is returned:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">is</span> <span class="pre">20</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">y</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;1&quot;</span>
+<span class="n">y</span><span class="o">=</span><span class="mi">20</span>
+
+<span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">y</span> <span class="ow">and</span> <span class="n">y</span><span class="o">==</span><span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y is 20 and x is less than y&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is not less than y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Create a script that takes the clock hour in 24 hours and prints the clock hour with am or pm.</p>
+<p>Hint: Use an if-else statement with <code class="docutils literal notranslate"><span class="pre">print</span></code> commands</p>
+</li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./module_01/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">01 - Interacting with Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">What is Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-is-a-versatile-language-you-can-analyze-data-build">_Python is a versatile language, you can analyze data, build</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-get-started">Let’s get started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-program">Your first program</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concept-function">Key concept: function</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">Python as a calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-point">Discussion point:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-their-type">Variables and their type</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-variables">String variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-it-looks-like-a-duck-and-quacks-like-a-duck-then-its-probably-a-duck">“If it looks like a duck, and quacks like a duck, then it’s probably a duck.”</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-assignments">More assignments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-point">Reflection point</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-variables">Special variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-and-comparison-operators">Logical and comparison operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problems">Problems</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

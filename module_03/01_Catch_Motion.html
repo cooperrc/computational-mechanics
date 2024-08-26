@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -745,8 +745,8 @@ mouse-click captures.</p>
 <p>Looking ahead, what you’ll do is repeat the process of capturing mouse clicks on the image, but clicking on the ball positions. Then, you will want to have the vertical positions converted to physical length (in meters), from the pixel numbers on the image.</p>
 <p>You can get the scaling from pixels to meters via the distance between two white lines on the metered panel, which you know is <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span>.</p>
 <p>Let’s get the average vertical distance between two while lines, which you can calculate as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4106e16-60c9-419f-8362-704fbcedea3c">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f4106e16-60c9-419f-8362-704fbcedea3c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5c863c91-660a-4252-943f-2469f7dee80b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-5c863c91-660a-4252-943f-2469f7dee80b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \overline{\Delta y} = \sum_{i=0}^N \frac{y_{i+1}-y_i}{N-1}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -801,8 +801,8 @@ but <em>not</em> the photograph. <em>Sigh</em>.</p>
 </div>
 </div>
 <p>Scale the vertical displacements of the falling ball as explained above (to get distance in meters), then use the known time between flashes of the strobe light, <span class="math notranslate nohighlight">\(1/16.8\rm{s}\)</span>, to compute estimates of the velocity and acceleration of the ball at every captured instant, using:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-652367db-80d0-437e-b05e-106317e49e25">
-<span class="eqno">(2)<a class="headerlink" href="#equation-652367db-80d0-437e-b05e-106317e49e25" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c9568086-4d1a-4a00-a0b4-4b4a7a5b8ab6">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c9568086-4d1a-4a00-a0b4-4b4a7a5b8ab6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -1051,13 +1051,13 @@ save your variables <code class="docutils literal notranslate"><span class="pre"
 <section id="numerical-derivatives">
 <h2>Numerical derivatives<a class="headerlink" href="#numerical-derivatives" title="Link to this heading">#</a></h2>
 <p>You just computed the average velocity between two captured ball positions using <em>numerical derivative</em>. The velocity is the <em>derivative</em> of position with respect to time, and you can approximate its instantaneous value with the average velocity between two close instants in time:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-77fc8e45-2afe-4463-b868-c75d9e3db1dd">
-<span class="eqno">(3)<a class="headerlink" href="#equation-77fc8e45-2afe-4463-b868-c75d9e3db1dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bd7db38f-89c6-4a01-ad37-edc825ab085b">
+<span class="eqno">(3)<a class="headerlink" href="#equation-bd7db38f-89c6-4a01-ad37-edc825ab085b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v(t) = \frac{dy}{dt} \approx \frac{y(t_i+\Delta t)-y(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>And acceleration is the <em>derivative</em> of velocity with respect to time; you can approximate it with the average acceleration within a time interval:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d36ac66-5817-46ae-989b-feaf9f2a6b42">
-<span class="eqno">(4)<a class="headerlink" href="#equation-7d36ac66-5817-46ae-989b-feaf9f2a6b42" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8a514874-f935-446d-b0c1-eab4930e7d2d">
+<span class="eqno">(4)<a class="headerlink" href="#equation-8a514874-f935-446d-b0c1-eab4930e7d2d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a(t) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>As you can imagine, the quality of the approximation depends on the size of the time interval: as <span class="math notranslate nohighlight">\(\Delta t\)</span> gets smaller, the error also gets smaller.</p>

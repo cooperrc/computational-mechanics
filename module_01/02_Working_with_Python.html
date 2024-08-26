@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -999,7 +999,7 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1925/2664324349.py:1: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_9026/2664324349.py:1: RuntimeWarning: invalid value encountered in divide
   x_array / y_array
 </pre></div>
 </div>
@@ -1362,8 +1362,8 @@ with no numbers repeated.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[14, 47, 82, 99, 56, 10, 24, 59, 97, 17]
-[21, 35, 10, 39, 28, 85, 7, 92, 83, 11]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[64, 16, 38, 10, 68, 33, 87, 84, 21, 78]
+[1, 0, 35, 94, 7, 90, 41, 43, 33, 68]
 </pre></div>
 </div>
 </div>
@@ -1383,8 +1383,8 @@ takes to execute all the code in that cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13 µs, sys: 6 µs, total: 19 µs
-Wall time: 22.2 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13 µs, sys: 0 ns, total: 13 µs
+Wall time: 15 µs
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1396,7 @@ Wall time: 22.2 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[35, 82, 92, 138, 84, 95, 31, 151, 180, 28]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[65, 16, 73, 104, 75, 123, 128, 127, 54, 146]
 </pre></div>
 </div>
 </div>
@@ -1430,8 +1430,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[90 29 26 36 62 23 62 46 90 25]
-[75 41 41 25 81 22 61 16 58 50]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2 72 24 66 79 32 37 67  2 49]
+[25 31 95 15 39 35 99  0 64 18]
 </pre></div>
 </div>
 </div>
@@ -1445,8 +1445,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11 µs, sys: 0 ns, total: 11 µs
-Wall time: 13.4 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 10 µs, sys: 0 ns, total: 10 µs
+Wall time: 11.7 µs
 </pre></div>
 </div>
 </div>
@@ -1530,10 +1530,10 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f04acd0d1f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb2753dc370&gt;
 </pre></div>
 </div>
-<img alt="../_images/49ff0a5c9257544d4a5b3ec4c437472294bab782e2eaa7d31846560dc397736e.png" src="../_images/49ff0a5c9257544d4a5b3ec4c437472294bab782e2eaa7d31846560dc397736e.png" />
+<img alt="../_images/becdb66932b771ed635afa567cf51cddc1ad2f5816101f0d5e6f433f1c22d547.png" src="../_images/becdb66932b771ed635afa567cf51cddc1ad2f5816101f0d5e6f433f1c22d547.png" />
 </div>
 </div>
 <p>To illustrate other features, you will plot the same data, but varying the colors instead of the line style. We’ll also use LaTeX syntax to write formulas in the labels. If you want to know more about LaTeX syntax, there is a <a class="reference external" href="https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">quick guide to LaTeX</a> available online.</p>
@@ -1552,7 +1552,7 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/abfee0fb0f8d8730134c3cab25225019c15b3718e1a1d79ccbfabf0e25f753d9.png" src="../_images/abfee0fb0f8d8730134c3cab25225019c15b3718e1a1d79ccbfabf0e25f753d9.png" />
+<img alt="../_images/76c99b8131c34c4cb7440fdd818f4e04fae9fb6281f81d7b59ffe4ca4ec39aad.png" src="../_images/76c99b8131c34c4cb7440fdd818f4e04fae9fb6281f81d7b59ffe4ca4ec39aad.png" />
 </div>
 </div>
 <p>That’s very nice! By now, you are probably imagining all the great stuff

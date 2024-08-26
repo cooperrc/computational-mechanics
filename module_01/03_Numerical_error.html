@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -781,7 +781,7 @@ time from 0 to 12 seconds</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;velocity (m/s)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/321a39245c2a0e98cf978bbb417fd73b1d80001c83f40f9bd84a7bc397ae10b6.png" src="../_images/321a39245c2a0e98cf978bbb417fd73b1d80001c83f40f9bd84a7bc397ae10b6.png" />
+<img alt="../_images/14bb7d41ffde2ddac52f3cc423d12ad9439d7725fd8213d9b18f711ffe741fed.png" src="../_images/14bb7d41ffde2ddac52f3cc423d12ad9439d7725fd8213d9b18f711ffe741fed.png" />
 </div>
 </div>
 <p><strong>Note:</strong> In the above plot, the numerical solution is given at discrete points connected by lines, while the analytical solution is drawn as a line. This is a helpful convention. We plot discrete data such as numerical solutions or measured data as points and lines while analytical solutions are drawn as lines.</p>
@@ -927,9 +927,9 @@ floating point arithmetic errors we accumulate some error.</p>
 First 26 digits of pi   = 3.14159265358979323846264338
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1947/1366774004.py:6: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_9053/1366774004.py:6: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39; 0 operations 64 bit pi = %1.26f\n&#39;%double) # 64-bit
-/tmp/ipykernel_1947/1366774004.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_9053/1366774004.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39;20 operations 64 bit pi = %1.26f\n&#39;%double_operated) # 64-bit after 1000 additions and 1 subtraction
 </pre></div>
 </div>
@@ -1111,7 +1111,7 @@ Here, consider the speed from 0 to 2 seconds, so <code class="docutils literal n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 89 µs, sys: 49 µs, total: 138 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 157 µs, sys: 6 µs, total: 163 µs
 Wall time: 129 µs
 </pre></div>
 </div>
@@ -1144,10 +1144,10 @@ Wall time: 129 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc0606c9310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x728c6c23b850&gt;
 </pre></div>
 </div>
-<img alt="../_images/dbb15ded32e1e7db87eb9c591639f1f4d33b687537414d353ba3458b9729c64e.png" src="../_images/dbb15ded32e1e7db87eb9c591639f1f4d33b687537414d353ba3458b9729c64e.png" />
+<img alt="../_images/dd2aa2047178451516ea64a816f567ea59a50c9df851ebca3c3db37f99b9b32c.png" src="../_images/dd2aa2047178451516ea64a816f567ea59a50c9df851ebca3c3db37f99b9b32c.png" />
 </div>
 </div>
 <section id="id4">
@@ -1191,7 +1191,7 @@ numerical result is saved as a 32-bit floating point array. The best analytical 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Truncation and roundoff error \naccumulation in log-log plot&#39;)
 </pre></div>
 </div>
-<img alt="../_images/0bbf8e284cc85d36e24c363b315357a3900ed9f27a081fb4d381e58824127d21.png" src="../_images/0bbf8e284cc85d36e24c363b315357a3900ed9f27a081fb4d381e58824127d21.png" />
+<img alt="../_images/2870614cb685b6e168399951b70d01155f7c357ffda6112e91f4fb8a3615d6ab.png" src="../_images/2870614cb685b6e168399951b70d01155f7c357ffda6112e91f4fb8a3615d6ab.png" />
 </div>
 </div>
 <p>In the above plot “Truncation and roundoff error accumulation in log-log

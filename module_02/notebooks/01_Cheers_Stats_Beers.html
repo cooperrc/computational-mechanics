@@ -1,0 +1,1500 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>01 - Cheers! Stats with Beers &#8212; Computational Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'module_02/notebooks/01_Cheers_Stats_Beers';</script>
+    <link rel="icon" href="../../_static/spiderman-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/comp-mech-logo.svg" class="logo__image only-light" alt="Computational Mechanics - Home"/>
+    <script>document.write(`<img src="../../_static/comp-mech-logo.svg" class="logo__image only-dark" alt="Computational Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../syllabus.html">Syllabus - Computational Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_01/03_Numerical_error.html">03 - Numerical Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_01/HW_01.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/01_Getting-started-project.html">Computational Mechanics Project #01 - Heat Transfer in Forensic Science</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">Computational Mechanics 02 - Analyze Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_Cheers_Stats_Beers.html">01 - Cheers!  Stats with Beers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Seeing_Stats.html">02 - Seeing stats in a new light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Linear_Regression_with_Real_Data.html">03 - Linear regression with real data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_Stats_and_Montecarlo.html">04 - Statistics and Monte-Carlo Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HW_02.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/02_Analyze-data_project.html">Project #02 - NYSE random walk predictor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_03/README.html">Computational Mechanics 03- Initial Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/01_Catch_Motion.html">Catch things in motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/02_Step_Future.html">Step to the future</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/03_Get_Oscillations.html">Get with the oscillations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/04_Getting_to_the_root.html">Roots of Nonlinear functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_03/HW_03.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/03_IVP-project.html">Project_03 - Engineering Design of rocket flights</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_04/README.html">Computational Mechanics 4 - Linear Algebra</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/01_Linear-Algebra.html">Linear Algebra Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/02_Gauss_elimination.html">Gauss Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/03_Linear-regression-algebra.html">Linear Regression Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_04/HW_04.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/04_Linear_Algebra-project.html">CompMech04-Linear Algebra Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../module_05/README.html">Computational Mechanics 5 - Boundary Value Problems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/01_Revisiting_derivatives.html">Revisiting Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/02_Keep_it_steady.html">Keep it Steady</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/03_Good_Vibrations.html">Good Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_05/HW_05.html">Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/05-BVPs_project.html">Project 05 - String vibrations of guitars</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../how-to/README.html">Quick How-to documents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/module_02/notebooks/01_Cheers_Stats_Beers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/compmech/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/module_02/notebooks/01_Cheers_Stats_Beers.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cooperrc/computational-mechanics/issues/new?title=Issue%20on%20page%20%2Fmodule_02/notebooks/01_Cheers_Stats_Beers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/module_02/notebooks/01_Cheers_Stats_Beers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>01 - Cheers!  Stats with Beers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-read-the-data-file">Step 1: Read the data file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-explore-the-data">Step 2: Explore the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ready-stats-go">Step 3: Ready, stats, go!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-and-minimum">Maximum and minimum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value">Mean value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-and-standard-deviation">Variance and standard deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-vs-population">Sample vs. population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-code">Let’s code!</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-distribution-plots">Step 4: Distribution plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-exercise">Exploratory exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-a-normal-distribution">Comparing with a normal distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository">Standard deviation and coverage in a normal distribution. Modified figure based on original from Wikimedia Commons, the free media repository.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-point">Discussion point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-viewing">Recommended viewing</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+</div></blockquote>
+<section class="tex2jax_ignore mathjax_ignore" id="cheers-stats-with-beers">
+<h1>01 - Cheers!  Stats with Beers<a class="headerlink" href="#cheers-stats-with-beers" title="Link to this heading">#</a></h1>
+<p>Welcome to the second module in <em>Computational Mechanics</em>, your series in computational thinking for undergraduate engineering students. This module explores practical data and statistical analysis with Python.</p>
+<p>This first lesson explores how you can answer questions using data combined with practical methods from statistics.</p>
+<p>You’ll need data. Here is a great data set of
+canned craft beers in the US, scraped from the web and cleaned up by
+Jean-Nicholas Hould
+(<a class="reference external" href="https://twitter.com/NicholasHould?lang=en">&#64;NicholasHould</a> on
+Twitter)—who we want to thank for having a permissive license on his
+GitHub repository so we can reuse his
+<a class="reference external" href="https://github.com/nickhould/craft-beers-dataset">work</a>!</p>
+<p>The data source (<a class="reference external" href="https://twitter.com/craftcans">&#64;craftcans</a> on Twitter)
+doesn’t say that the set includes <em>all</em> the canned beers brewed in the
+country. So you have to asume that the data is a sample and may contain biases.</p>
+<p>You’ll process the data using <strong>NumPy</strong>—the array library for Python
+that you learned about in <a class="reference internal" href="#../module_01/02-Getting-started"><span class="xref myst">Module 1, lesson 2: Getting
+Started</span></a>.
+You’ll also learn about a new Python library for data analysis called <strong>Pandas</strong>.</p>
+<p><a class="reference external" href="http://pandas.pydata.org/"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a> is an open-source library
+providing high-performance, easy-to-use data structures and
+data-analysis tools.  Even though <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is great for data analysis,
+you won’t use all its functions in this lesson. But you’ll learn more about it later on!</p>
+<p>You’ll use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to read the data file (in <code class="docutils literal notranslate"><span class="pre">csv</span></code> format, for
+comma-separated values), display it in a table, and extract the
+columns that you need—which you’ll convert to <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays to work with.</p>
+<p>Start by importing the two Python libraries that you need.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="step-1-read-the-data-file">
+<h2>Step 1: Read the data file<a class="headerlink" href="#step-1-read-the-data-file" title="Link to this heading">#</a></h2>
+<p>Below, you’ll take a peek into the data file, <code class="docutils literal notranslate"><span class="pre">beers.csv,</span></code> using the
+system command <code class="docutils literal notranslate"><span class="pre">head</span></code> (which you can use with a bang (<code class="docutils literal notranslate"><span class="pre">!</span></code>), thanks to IPython).</p>
+<p>But first, you will download the data using a Python library for opening
+a URL on the Internet. You created a short URL for the data file in the public repository with your course materials.</p>
+<p>The cell below should download the data in your current working directory. The next cell shows you the first few lines of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span><span class="s2">&quot;../data/beers.csv&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>head: cannot open &#39;../data/beers.csv&#39; for reading: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to read the data from the <code class="docutils literal notranslate"><span class="pre">csv</span></code> file, and save it
+into a new variable called <code class="docutils literal notranslate"><span class="pre">beers</span></code>. Let’s then check the type of this
+new variable—rememeber that you can use the function <code class="docutils literal notranslate"><span class="pre">type()</span></code> to do this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/beers.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">beers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/beers.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/beers.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">beers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a new data type for us: a <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">DataFrame</span></code>. From the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> documentation: “A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>  is a 2-dimensional labeled data structure with columns of potentially different types” [4]. You can think of it as the contens of a spreadsheet, saved into one handy Python variable. If you print it out, you get a nicely laid-out table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inspect the table above. The first column is a numbering scheme for the beers. The other columns contain the following data:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">abv</span></code>: Alcohol-by-volume of the beer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ibu</span></code>: International Bittering Units of the beer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: Unique identifier of the beer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of the beer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>: Style of the beer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brewery_id</span></code>: Unique identifier of the brewery.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ounces</span></code>: Ounces of beer in the can.</p></li>
+</ul>
+</section>
+<section id="step-2-explore-the-data">
+<h2>Step 2: Explore the data<a class="headerlink" href="#step-2-explore-the-data" title="Link to this heading">#</a></h2>
+<p>In the field of statistics, <a class="reference external" href="https://en.wikipedia.org/wiki/Exploratory_data_analysis">Exploratory Data Analysis</a> (EDA) has the goal of summarizing the main features of your data, and seeing what the data can tell us without formal modeling or hypothesis-testing. [2]</p>
+<p>Let’s start by extracting the columns with the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values,
+and converting them to numpy arrays. One of the advantages of data
+frames in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is that you can access a column simply using its header, like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_frame</span><span class="p">[</span><span class="s1">&#39;name_of_column&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The output of this action is a <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">Series</span></code>. From the documentation: “a <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a 1-dimensional labeled array capable of holding any data type.” [4]</p>
+<p>Check the type of a column extracted by header:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">beers</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, you can index and slice a data series like you know how to do
+with strings, lists and arrays. Here, you display the first ten elements of the <code class="docutils literal notranslate"><span class="pre">abv</span></code> series:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beers</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inspect the data in the table again: you’ll notice that there are <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (not-a-number) elements in both the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> columns. Those values mean that there was no data reported for that beer. A typical task when cleaning up data is to deal with these pesky <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s.</p>
+<p>Let’s extract the two series corresponding to the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> columns, clean the data by removing all <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values, and then access the values of each series and assign them to a numpy array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv_series</span> <span class="o">=</span> <span class="n">beers</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">abv_series</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another advantage of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is that it has the ability to handle missing data. The  data-frame method <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> returns a new data frame with only the good values of the original: all the null values are thrown out. This is super useful!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv_clean</span> <span class="o">=</span> <span class="n">abv_series</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check out the length of the cleaned-up <code class="docutils literal notranslate"><span class="pre">abv</span></code> data; you’ll see that it’s shorter than the original. <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s gone!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">abv_clean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that a a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <em>Series</em> consists of a column of values, and
+their labels. You can extract the values via the
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.values.html"><code class="docutils literal notranslate"><span class="pre">series.values</span></code></a>
+attribute, which returns a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> (multidimensional array). In
+the case of the <code class="docutils literal notranslate"><span class="pre">abv_clean</span></code> series, you get a one-dimensional array. You save it into the variable name <code class="docutils literal notranslate"><span class="pre">abv</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv</span> <span class="o">=</span> <span class="n">abv_clean</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, repeat the whole process for the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> column: extract the column
+into a series, clean it up removing <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s, extract the series values as
+an array, check how many values you lost.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ibu_series</span> <span class="o">=</span> <span class="n">beers</span><span class="p">[</span><span class="s1">&#39;ibu&#39;</span><span class="p">]</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">ibu_series</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ibu_clean</span> <span class="o">=</span> <span class="n">ibu_series</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">ibu</span> <span class="o">=</span> <span class="n">ibu_clean</span><span class="o">.</span><span class="n">values</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">ibu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p>Write a Python function that calculates the percentage of missing values for a certain data series. Use the function to calculate the percentage of missing values for the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> data sets.</p>
+<p>For the original series, before cleaning, remember that you can access the values with <code class="docutils literal notranslate"><span class="pre">series.values</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">abv_series.values</span></code>).</p>
+<blockquote>
+<div><p><strong>Important</strong>:</p>
+<p>Notice that in the case of the variable <code class="docutils literal notranslate"><span class="pre">ibu</span></code> you are missing almost 42%
+of the values. This is important, because it will affect your analysis.
+When you do descriptive statistics, you will ignore these missing
+values, and having 42% missing will very likely cause bias.</p>
+</div></blockquote>
+</section>
+<section id="step-3-ready-stats-go">
+<h2>Step 3: Ready, stats, go!<a class="headerlink" href="#step-3-ready-stats-go" title="Link to this heading">#</a></h2>
+<p>Now, that you have numpy arrays with clean data, let’s see how you can
+process them to get some useful information.</p>
+<p>Focusing on the numerical variables <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code>, you’ll walk through
+some “descriptive statistics,” below. In other words, you aim to generate
+statistics that summarize the data concisely.</p>
+<section id="maximum-and-minimum">
+<h3>Maximum and minimum<a class="headerlink" href="#maximum-and-minimum" title="Link to this heading">#</a></h3>
+<p>The maximum and minimum values of a dataset are helpful as they tell us
+the <em>range</em> of your sample: the range gives some indication of the <em>variability</em> in the data.
+You can obtain them for your <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> arrays with the <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">max()</span></code> functions from numpy.</p>
+<p><strong>abv</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+<span class="n">abv_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum value for abv is: &#39;</span><span class="p">,</span> <span class="n">abv_min</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The maximum value for abv is: &#39;</span><span class="p">,</span> <span class="n">abv_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>ibu</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ibu_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ibu</span><span class="p">)</span>
+<span class="n">ibu_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ibu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum value for ibu is: &#39;</span><span class="p">,</span> <span class="n">ibu_min</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The maximum value for ibu is: &#39;</span><span class="p">,</span> <span class="n">ibu_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mean-value">
+<h3>Mean value<a class="headerlink" href="#mean-value" title="Link to this heading">#</a></h3>
+<p>The <strong>mean</strong> value is one of the main measures to describe the central
+tendency of the data: an indication of where’s the “center” of the data.
+If you have a sample of <span class="math notranslate nohighlight">\(N\)</span> values, <span class="math notranslate nohighlight">\(x_i\)</span>, the mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>, is calculated by:</p>
+<p><span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{N}\sum_{i} x_i\)</span></p>
+<p>In words, that is the sum of the data values divided by the number of values, <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>You’ve already learned how to write a function to compute the mean in
+<a class="reference external" href="http://go.gwu.edu/engcomp1lesson5">Module 1 Lesson 5</a>, but you also
+learned that numpy has a built-in <code class="docutils literal notranslate"><span class="pre">mean()</span></code> function. You’ll use this to
+get the mean of the <code class="docutils literal notranslate"><span class="pre">abv</span></code> and <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+<span class="n">ibu_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ibu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, you’ll print these two variables, but you’ll use some fancy new way of printing with Python’s string formatter, <code class="docutils literal notranslate"><span class="pre">string.format()</span></code>. There’s a sweet site dedicated to Python’s string formatter, called <a class="reference external" href="https://pyformat.info">PyFormat</a>, where you can learn lots of tricks!</p>
+<p>The basic trick is to use curly brackets <code class="docutils literal notranslate"><span class="pre">{}</span></code> as placeholder for a variable value that you want to print in the middle of a string (say, a sentence that explains what you are printing), and to pass the variable name as argument to <code class="docutils literal notranslate"><span class="pre">.format()</span></code>, preceded by the string.</p>
+<p>Let’s try something out…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The mean value for abv is </span><span class="si">{}</span><span class="s1"> and for ibu </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abv_mean</span><span class="p">,</span> <span class="n">ibu_mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ugh! That doesn’t look very good, does it? Here’s where Python’s string
+formatting gets fancy. You can print fewer decimal digits, so the
+sentence is more readable. For example, if you want to have four decimal
+digits, specify it this way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The mean value for abv is </span><span class="si">{:.4f}</span><span class="s1"> and for ibu </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abv_mean</span><span class="p">,</span> <span class="n">ibu_mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inside the curly brackets—the placeholders for the values you want to print—the <code class="docutils literal notranslate"><span class="pre">f</span></code> is for <code class="docutils literal notranslate"><span class="pre">float</span></code> and the <code class="docutils literal notranslate"><span class="pre">.4</span></code> is for four digits after the decimal dot. The colon here marks the beginning of the format specification (as there are options that can be passed before). There are so many tricks to Python’s string formatter that you’ll usually look up just what you need.
+Another useful resource for string formatting is the <a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/">Python String Format Cookbook</a>. Check it out!</p>
+</section>
+<section id="variance-and-standard-deviation">
+<h3>Variance and standard deviation<a class="headerlink" href="#variance-and-standard-deviation" title="Link to this heading">#</a></h3>
+<p>While the mean indicates where’s the center of your data, the
+<strong>variance</strong> and <strong>standard deviation</strong> describe the <em>spread</em> or
+variability of the data. You already mentioned that the <em>range</em>
+(difference between largest and smallest data values) is also an
+indication of variability. But the standard deviation is the most common
+measure of variability.</p>
+<p><a class="reference external" href="https://profiles.stanford.edu/kristin-sainani">Prof. Kristin Sainani</a>,
+of Stanford University, presents this in her online course on
+<a class="reference external" href="https://lagunita.stanford.edu/courses/Medicine/MedStats-SP/SelfPaced/about">Statistics in
+Medicine</a>.
+In her lecture “Describing Quantitative Data: What is the variability in
+the data?”, available <a class="reference external" href="https://youtu.be/hlFeEQF5tDc">on YouTube</a>, she
+asks: <em>What if someone were to ask you to devise a statistic that gives
+the avarage distance from the mean?</em> Think about this a little bit.</p>
+<p>The distance from the mean, for any data value, is <span class="math notranslate nohighlight">\(x_i - \bar{x}\)</span>. So
+what is the average of the distances from the mean? If you try to simply
+compute the average of all the values <span class="math notranslate nohighlight">\(x_i - \bar{x}\)</span>, some of which are
+negative, you’ll just get zero! It doesn’t work.</p>
+<p>Since the problem is the negative distances from the mean, you might
+suggest using absolute values. But this is just mathematically
+inconvenient. Another way to get rid of negative values is to take the
+squares. And that’s how you get to the expression for the <em>variance</em>: it is the average of the squares of the deviations from the mean. For a set of <span class="math notranslate nohighlight">\(N\)</span> values,</p>
+<p><span class="math notranslate nohighlight">\(\text{var} = \frac{1}{N}\sum_{i} (x_i - \bar{x})^2\)</span></p>
+<p>The variance itself is hard to interpret. The problem with it is that the units are strange (they are the square of the original units). The <strong>standard deviation</strong>, the square root of the variance, is more meaningful because it has the same units as the original variable. Often, the symbol <span class="math notranslate nohighlight">\(\sigma\)</span> is used for it:</p>
+<p><span class="math notranslate nohighlight">\(\sigma = \sqrt{\text{var}} = \sqrt{\frac{1}{N}\sum_{i} (x_i - \bar{x})^2}\)</span></p>
+</section>
+<section id="sample-vs-population">
+<h3>Sample vs. population<a class="headerlink" href="#sample-vs-population" title="Link to this heading">#</a></h3>
+<p>The above definitions are used when <span class="math notranslate nohighlight">\(N\)</span> (the number of values)
+represents the entire population. But if you have a <em>sample</em> of that
+population, the formulas have to be adjusted: instead of dividing by <span class="math notranslate nohighlight">\(N\)</span>
+you divide by <span class="math notranslate nohighlight">\(N-1\)</span>. This is important, especially when you work with
+real data since usually you have samples of populations.</p>
+<p>The <strong>standard deviation</strong> of a sample is denoted by <span class="math notranslate nohighlight">\(s\)</span>, and the formula is:</p>
+<p><span class="math notranslate nohighlight">\(s = \sqrt{\frac{1}{N-1}\sum_{i} (x_i - \bar{x})^2}\)</span></p>
+<p>Why? This gets a little technical, but the reason is that if you have a
+<em>sample</em> of the population, you don’t know the <em>real</em> value of the mean,
+and <span class="math notranslate nohighlight">\(\bar{x}\)</span> is actually an <em>estimate</em> of the mean. That’s why you’ll
+often find the symbol <span class="math notranslate nohighlight">\(\mu\)</span> used to denote the population mean, and
+distinguish it with the sample mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>. Using <span class="math notranslate nohighlight">\(\bar{x}\)</span> to
+compute the standard deviation introduces a small bias: <span class="math notranslate nohighlight">\(\bar{x}\)</span> is
+computed <em>from the sample values</em>, and the data are on average
+(slightly) closer to <span class="math notranslate nohighlight">\(\bar{x}\)</span> than the population is to <span class="math notranslate nohighlight">\(\mu\)</span>. Dividing
+by <span class="math notranslate nohighlight">\(N-1\)</span> instead of <span class="math notranslate nohighlight">\(N\)</span> corrects this bias!</p>
+<p>Prof. Sainani explains it by saying that you lost one degree of freedom
+when you estimated the mean using <span class="math notranslate nohighlight">\(\bar{x}\)</span>.  For example, say you have
+100 people and I give you their mean age, and the actual age for 99
+people from the sample: you’ll be able to calculate the age of that
+100th person. Once you calculated the mean, you only have 99 degrees of
+freedom left because that 100th person’s age is fixed.</p>
+<p>Below is a graphical distinction between the <em>sample</em> and the <em>population</em> from <a class="reference external" href="https://twitter.com/allison_horst">&#64;allison_horst on twitter</a></p>
+<p><img alt="Sample vs Population from &#64;allison_horst" src="https://pbs.twimg.com/media/EOM8s3fVUAAglHu?format=jpg&amp;name=small" /></p>
+</section>
+<section id="lets-code">
+<h3>Let’s code!<a class="headerlink" href="#lets-code" title="Link to this heading">#</a></h3>
+<p>Now that you have the math sorted out, you can program functions to
+compute the variance and the standard deviation. In your case, you are
+working with samples of the population of craft beers, so you need to use
+the formulas with <span class="math notranslate nohighlight">\(N-1\)</span> in the denominator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_var</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculates the variance of an array that contains values of a sample of a </span>
+<span class="sd">    population. </span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    array : array, contains sample of values. </span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    var   : float, variance of the array .</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">sum_sqr</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+        <span class="n">sum_sqr</span> <span class="o">+=</span> <span class="p">(</span><span class="n">element</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="n">sum_sqr</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">var</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that you used <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> in your function: do you think you can make this function even more Pythonic?</p>
+<p><em>Hint:</em> Yes!, you totally can.</p>
+<section id="id1">
+<h4>Exercise:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Re-write the function <code class="docutils literal notranslate"><span class="pre">sample_var()</span></code> using <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code> to replace the <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop. Name the function <code class="docutils literal notranslate"><span class="pre">var_pythonic</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">var_pythonic</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculates the variance of an array that contains values of a sample of a </span>
+<span class="sd">    population. </span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    array : array, contains sample of values. </span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    var   : float, variance of the array .</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">return</span> <span class="n">var</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You have the sample variance, so you take its square root to get the
+standard deviation. You can make it a function, even though it’s just
+one line of Python, to make your code more readable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_std</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Computes the standard deviation of an array that contains values</span>
+<span class="sd">    of a sample of a population.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    array : array, contains sample of values. </span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    std   : float, standard deviation of the array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sample_var</span><span class="p">(</span><span class="n">array</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">std</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s call your brand new functions and assign the output values to new variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv_std</span> <span class="o">=</span> <span class="n">sample_std</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+<span class="n">ibu_std</span> <span class="o">=</span> <span class="n">sample_std</span><span class="p">(</span><span class="n">ibu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you print these values using the string formatter, only printing 4
+decimal digits, you can display your descriptive statistics in a pleasant, human-readable way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The standard deviation for abv is </span><span class="si">{:.4f}</span><span class="s1"> and for ibu </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abv_std</span><span class="p">,</span> <span class="n">ibu_std</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These numbers tell us that the <code class="docutils literal notranslate"><span class="pre">abv</span></code> values are quite concentrated
+around the mean value, while the <code class="docutils literal notranslate"><span class="pre">ibu</span></code> values are quite spread out from
+their mean. How could you check these descriptions of the data? A good way of doing so is using graphics: various types of plots can tell us things about the data.</p>
+<p>You’ll learn about <em>histograms</em> in this lesson, and in the following
+lesson you’ll explore <em>box plots</em>.</p>
+</section>
+</section>
+</section>
+<section id="step-4-distribution-plots">
+<h2>Step 4: Distribution plots<a class="headerlink" href="#step-4-distribution-plots" title="Link to this heading">#</a></h2>
+<p>Every time that you work with data, visualizing it is very useful.
+Visualizations give us a better idea of how your data behaves. One way of
+visualizing data is with a frequency-distribution plot known as
+<strong>histogram</strong>: a graphical representation of how the data is
+distributed. To make a histogram, first you need to “bin” the range of
+values (divide the range into intervals) and then you count how many data values fall into each interval. The intervals are usually consecutive (not always), of equal size and non-overlapping.</p>
+<p>Thanks to Python and Matplotlib, making histograms is easy. You
+recommend that you always read the documentation, in this case about
+<a class="reference external" href="https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.hist.html">histograms</a>.
+You’ll show you here an example using the <code class="docutils literal notranslate"><span class="pre">hist()</span></code> function from <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, but this is just a starting point.</p>
+<p>Let’s first load the <strong>Matplotlib</strong> module called <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, for making
+2D plots. Remember that to get the plots inside the notebook, you use a special “magic” command, <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1">#Import rcParams to set font styles</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">abv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you have a line plot, but if you see this plot without any
+information you would not be able to figure out what kind of data it is!
+You need labels on the axes, a title and why not a better color, font and size of the ticks.
+<strong>Publication quality</strong> plots should always be your standard for plotting.
+How you present your data will allow others (and probably you in the future) to better understand your work.</p>
+<p>You can customize the style of your plots using parameters for the lines,
+text, font and other plot options. You set some style options that apply
+for all the plots in the current session with
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.plt.rc.html"><code class="docutils literal notranslate"><span class="pre">plt.rc()</span></code></a>
+Here, you’ll make the font of a specific type and size (sans-serif and 18
+points). You can also customize other parameters like line width, color,
+and so on (check out the documentation).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set font style and size </span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sans&#39;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll redo the same plot, but now you’ll add a few things to make it
+prettier and <strong>publication quality</strong>. You’ll add a title, label the axes
+and, show a background grid. Study the commands below and look at the
+result!</p>
+<blockquote>
+<div><p><strong>Note</strong>:
+Setting <code class="docutils literal notranslate"><span class="pre">rcParams</span></code> is a great way to control detailed plots, but there
+are also dozens of <a class="reference external" href="https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html">matplotlib
+styles</a>
+that look great. My recommendation is to keep axis/legend fonts &gt;18 pt and
+tick labels &gt;16pt. The <a class="reference external" href="https://matplotlib.org/stable/gallery/style_sheets/fivethirtyeight.html">fivethirtyeight style
+sheet</a>
+does a nice job presenting readable plots. Set the style using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I’ll use this in most of the notebooks.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#You can set the size of the figure by doing:</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1">#Plotting</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span> 
+<span class="c1">#The \n is to leave a blank line between the title and the plot</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;abv </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Alcohol by Volume (abv) &#39;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#You can set the size of the figure by doing:</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1">#Plotting</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ibu</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span> 
+<span class="c1">#The \n is to leave a blanck line between the title and the plot</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ibu </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;International Bittering Units (ibu)&#39;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the previous two plots set the colors in two ways:</p>
+<ol class="arabic">
+<li><p>A string ‘b’, which specifies blue. You could also choose from: a string representation
+one of</p>
+<p>{‘b’, ‘g’, ‘r’, ‘c’, ‘m’, ‘y’, ‘k’, ‘w’} =
+{<strong>b</strong>lue, <strong>g</strong>reen, <strong>r</strong>ed, <strong>c</strong>yan, <strong>m</strong>agenta, <strong>y</strong>ellow, blac<strong>k</strong>, <strong>w</strong>hite}</p>
+</li>
+<li><p>A RGB or RGBA (red, green, blue, alpha) tuple of float values in [0, 1] (e.g., (0.1, 0.2, 0.5) or (0.1, 0.2, 0.5, 0.3));</p></li>
+</ol>
+<p>Check out the other formatting options use can use in <a class="reference external" href="https://matplotlib.org/3.1.1/tutorials/colors/colors.html">Matplotlib colors</a> and <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.hist.html?highlight=hist#matplotlib.pyplot.hist">Matplotlib hist command</a></p>
+</section>
+<section id="exploratory-exercise">
+<h2>Exploratory exercise:<a class="headerlink" href="#exploratory-exercise" title="Link to this heading">#</a></h2>
+<p>Play around with the plots, change the values of the bins, colors, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#You can set the size of the figure by doing:</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1">#Plotting</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ibu</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span> 
+<span class="c1">#pyplot.hist(ibu, bins=20, color=(0.9, 0.8, 0, 0.1), histtype=&#39;bar&#39;, edgecolor=&#39;white&#39;) </span>
+<span class="c1">#pyplot.hist(ibu, bins=20, color=(0.1, 0.1, 0, 0.1), histtype=&#39;bar&#39;, edgecolor=&#39;white&#39;) </span>
+<span class="c1">#The \n is to leave a blanck line between the title and the plot</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ibu </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;International Bittering Units (ibu)&#39;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="comparing-with-a-normal-distribution">
+<h3>Comparing with a normal distribution<a class="headerlink" href="#comparing-with-a-normal-distribution" title="Link to this heading">#</a></h3>
+<p>A <strong>normal</strong> (or Gaussian) distribution is a special type of
+distrubution that behaves as shown in the figure: 68% of the values are
+within one standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> from the mean; 95% lie within
+<span class="math notranslate nohighlight">\(2\sigma\)</span>; and at a distance of <span class="math notranslate nohighlight">\(\pm3\sigma\)</span> from the mean, you cover
+99.7% of the values. This fact is known as the <span class="math notranslate nohighlight">\(3\)</span>-<span class="math notranslate nohighlight">\(\sigma\)</span> rule, or
+68-95-99.7 (empirical) rule.</p>
+<p><img alt="Normal distribution bell curve with 1st second and third standarddeviations marking out 68, 95, and 99.7 of the distribution." src="module_02/images/std_bell_curve.png" /></p>
+<section id="standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository">
+<h4>Standard deviation and coverage in a normal distribution. Modified figure based on original from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Standard_deviation_diagram.svg">Wikimedia Commons</a>, the free media repository.<a class="headerlink" href="#standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository" title="Link to this heading">#</a></h4>
+<p>Notice that your histograms don’t follow the shape of a normal
+distribution, known as <em>Bell Curve</em>. Our histograms are not centered in
+the mean value, and they are not symetric with respect to it. They are
+what is call <strong>skewed</strong> to the right (yes, to the <em>right</em>). A right (or positive) skewed distribution  looks like it’s been pushed to the left: the right tail is longer and most of the values are concentrated on the left of the figure. Imagine that “right-skewed” means that a force from the right pushes on the curve.</p>
+</section>
+</section>
+</section>
+<section id="discussion-point">
+<h2>Discussion point<a class="headerlink" href="#discussion-point" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>How do you think that skewness will affect the percentages of coverage by standard deviation compared to the Bell Curve?</p></li>
+</ul>
+<p><em>skewness creates a bias towards one or another direction from the mean.
+You can’t assume the mean and mode are the same value</em></p>
+<ul class="simple">
+<li><p>Can you calculate those percentages?</p></li>
+</ul>
+<p>_with logical operators! <code class="docutils literal notranslate"><span class="pre">x[x&lt;mean_x]/len(x)*100</span></code></p>
+</section>
+<section id="id2">
+<h2>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>You can calculate skewness and standard deviation in a few lines of
+Python. But before doing that, you want you to explain in your own words
+how the following piece of code works.</p>
+<p><em>Hints:</em></p>
+<ol class="arabic simple">
+<li><p>Check what the logical operation <code class="docutils literal notranslate"><span class="pre">np.logical_and(1&lt;ibu_clean,</span> <span class="pre">ibu_clean&lt;4)</span></code> returns.</p></li>
+<li><p>Check what happens if you sum booleans. For example, <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">+</span> <span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">+</span> <span class="pre">False</span></code> and so on.</p></li>
+</ol>
+<p>Now, using the same idea, you will calculate the number of elements in each interval of width <span class="math notranslate nohighlight">\((1\sigma, 2\sigma, 3\sigma)\)</span>, and get the corresponding percentage.</p>
+<p>Since you want to compute this for both of your variables, <code class="docutils literal notranslate"><span class="pre">abv</span></code> and
+<code class="docutils literal notranslate"><span class="pre">ibu</span></code>, you’ll write a function to do so. Study carefully the code below. Better yet, explain it to your neighbor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ibu 1sigma&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">ibu_clean</span><span class="o">&lt;</span><span class="n">ibu_mean</span><span class="o">+</span><span class="n">ibu_std</span><span class="p">,</span><span class="n">ibu_clean</span><span class="o">&gt;</span><span class="n">ibu_mean</span><span class="o">-</span><span class="n">ibu_std</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">ibu_clean</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ibu 2sigma&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">ibu_clean</span><span class="o">&lt;</span><span class="n">ibu_mean</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">ibu_std</span><span class="p">,</span><span class="n">ibu_clean</span><span class="o">&gt;</span><span class="n">ibu_mean</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">ibu_std</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">ibu_clean</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ibu 3sigma&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">ibu_clean</span><span class="o">&lt;</span><span class="n">ibu_mean</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">ibu_std</span><span class="p">,</span><span class="n">ibu_clean</span><span class="o">&gt;</span><span class="n">ibu_mean</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">ibu_std</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">ibu_clean</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abv 1sigma&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">abv_clean</span><span class="o">&lt;</span><span class="n">abv_mean</span><span class="o">+</span><span class="n">abv_std</span><span class="p">,</span><span class="n">abv_clean</span><span class="o">&gt;</span><span class="n">abv_mean</span><span class="o">-</span><span class="n">abv_std</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">abv_clean</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abv 2sigma&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">abv_clean</span><span class="o">&lt;</span><span class="n">abv_mean</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">abv_std</span><span class="p">,</span><span class="n">abv_clean</span><span class="o">&gt;</span><span class="n">abv_mean</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">abv_std</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">abv_clean</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abv 3sigma&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">abv_clean</span><span class="o">&lt;</span><span class="n">abv_mean</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">abv_std</span><span class="p">,</span><span class="n">abv_clean</span><span class="o">&gt;</span><span class="n">abv_mean</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">abv_std</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">abv_clean</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">std_percentages</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_mean</span><span class="p">,</span> <span class="n">x_std</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Computes the percentage of coverage at 1std, 2std and 3std from the</span>
+<span class="sd">    mean value of a certain variable x.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    x      : array, data you want to compute on. </span>
+<span class="sd">    x_mean : float, mean value of x array.</span>
+<span class="sd">    x_std  : float, standard deviation of x array.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    </span>
+<span class="sd">    per_std_1 : float, percentage of values within 1 standard deviation.</span>
+<span class="sd">    per_std_2 : float, percentage of values within 2 standard deviations.</span>
+<span class="sd">    per_std_3 : float, percentage of values within 3 standard deviations.    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">std_1</span> <span class="o">=</span> <span class="n">x_std</span>
+    <span class="n">std_2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_std</span>
+    <span class="n">std_3</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x_std</span>
+    
+    <span class="n">elem_std_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">((</span><span class="n">x_mean</span> <span class="o">-</span> <span class="n">std_1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">x_mean</span> <span class="o">+</span> <span class="n">std_1</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">per_std_1</span> <span class="o">=</span> <span class="n">elem_std_1</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+    
+    <span class="n">elem_std_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">((</span><span class="n">x_mean</span> <span class="o">-</span> <span class="n">std_2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">x_mean</span> <span class="o">+</span> <span class="n">std_2</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">per_std_2</span> <span class="o">=</span> <span class="n">elem_std_2</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+    
+    <span class="n">elem_std_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">((</span><span class="n">x_mean</span> <span class="o">-</span> <span class="n">std_3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">x_mean</span> <span class="o">+</span> <span class="n">std_3</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">per_std_3</span> <span class="o">=</span> <span class="n">elem_std_3</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+    
+    <span class="k">return</span> <span class="n">per_std_1</span><span class="p">,</span> <span class="n">per_std_2</span><span class="p">,</span> <span class="n">per_std_3</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute the percentages next. Notice that the function above returns
+three values. If you want to assign each value to a different variable,
+you need to follow a specific syntax. In your example this would be:</p>
+<p><strong>abv</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abv_std1_per</span><span class="p">,</span> <span class="n">abv_std2_per</span><span class="p">,</span> <span class="n">abv_std3_per</span> <span class="o">=</span> <span class="n">std_percentages</span><span class="p">(</span><span class="n">abv</span><span class="p">,</span> <span class="n">abv_mean</span><span class="p">,</span> <span class="n">abv_std</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pretty-print the values of your variables so you can inspect them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The percentage of coverage at 1 std of the abv_mean is : </span><span class="si">{:.2f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abv_std1_per</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The percentage of coverage at 2 std of the abv_mean is : </span><span class="si">{:.2f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abv_std2_per</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The percentage of coverage at 3 std of the abv_mean is : </span><span class="si">{:.2f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abv_std3_per</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>ibu</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ibu_std1_per</span><span class="p">,</span> <span class="n">ibu_std2_per</span><span class="p">,</span> <span class="n">ibu_std3_per</span> <span class="o">=</span> <span class="n">std_percentages</span><span class="p">(</span><span class="n">ibu</span><span class="p">,</span> <span class="n">ibu_mean</span><span class="p">,</span> <span class="n">ibu_std</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The percentage of coverage at 1 std of the ibu_mean is : </span><span class="si">{:.2f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ibu_std1_per</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The percentage of coverage at 2 std of the ibu_mean is : </span><span class="si">{:.2f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ibu_std2_per</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The percentage of coverage at 3 std of the ibu_mean is : </span><span class="si">{:.2f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ibu_std3_per</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that in both cases the percentages are not that far from the values for normal distribution (68%, 95%, 99.7%), especially for <span class="math notranslate nohighlight">\(2\sigma\)</span> and <span class="math notranslate nohighlight">\(3\sigma\)</span>. So usually you can use these values as a rule of thumb.</p>
+</section>
+<section id="what-youve-learned">
+<h2>What you’ve learned<a class="headerlink" href="#what-youve-learned" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Read data from a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
+<li><p>The concepts of Data Frame and Series in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
+<li><p>Clean null (NaN) values from a Series using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
+<li><p>Convert a <code class="docutils literal notranslate"><span class="pre">panda</span></code>s Series into a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array.</p></li>
+<li><p>Compute maximum and minimum, and range.</p></li>
+<li><p>Revise concept of mean value.</p></li>
+<li><p>Compute the variance and standard deviation.</p></li>
+<li><p>Use the mean and standard deviation to understand how the data is distributed.</p></li>
+<li><p>Plot frequency distribution diagrams (histograms).</p></li>
+<li><p>Normal distribution and 3-sigma rule.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/nickhould/craft-beers-dataset">Craft beer datatset</a> by Jean-Nicholas Hould.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Exploratory_data_analysis">Exploratory Data Analysis</a>, Wikipedia article.</p></li>
+<li><p><em>Think Python: How to Think Like a Computer Scientist</em> (2012). Allen Downey. Green Tea Press.  <a class="reference external" href="http://greenteapress.com/thinkpython/thinkpython.pdf">PDF available</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/dsintro.html">Intro to data Structures</a>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> documentation.</p></li>
+<li><p><em>Think Stats: Probability and Statistics for Programmers</em> version 1.6.0 (2011). Allen Downey. Green Tea Press.  <a class="reference external" href="http://greenteapress.com/thinkstats/thinkstats.pdf">PDF available</a></p></li>
+</ol>
+<section id="recommended-viewing">
+<h3>Recommended viewing<a class="headerlink" href="#recommended-viewing" title="Link to this heading">#</a></h3>
+<p>From <a class="reference external" href="https://lagunita.stanford.edu/courses/Medicine/MedStats-SP/SelfPaced/about">“Statistics in
+Medicine,”</a>,
+a free course in Stanford Online by Prof. Kristin Sainani, highly
+recommended three lectures:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/tQ5slNYRcC4">Describing Quantitative Data: Where is the center?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/hlFeEQF5tDc">Describing Quantitative Data: What is the variability in the data?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/qeG0uNI3DBQ">Variability in the data, continued: examples, bell curve</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./module_02/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-read-the-data-file">Step 1: Read the data file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-explore-the-data">Step 2: Explore the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ready-stats-go">Step 3: Ready, stats, go!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-and-minimum">Maximum and minimum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value">Mean value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-and-standard-deviation">Variance and standard deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-vs-population">Sample vs. population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-code">Let’s code!</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-distribution-plots">Step 4: Distribution plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-exercise">Exploratory exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-a-normal-distribution">Comparing with a normal distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation-and-coverage-in-a-normal-distribution-modified-figure-based-on-original-from-wikimedia-commons-the-free-media-repository">Standard deviation and coverage in a normal distribution. Modified figure based on original from Wikimedia Commons, the free media repository.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-point">Discussion point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-viewing">Recommended viewing</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href = https://cooperrc.github.io> Ryan C. Cooper</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

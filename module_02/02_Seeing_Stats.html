@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -863,7 +863,7 @@ you’ll learn about a new type of visualization: the <strong>box plot</strong>.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1223b896c38deefad629afb089e21853861d853e949e27dcf9d826288c3f9dd1.png" src="../_images/1223b896c38deefad629afb089e21853861d853e949e27dcf9d826288c3f9dd1.png" />
+<img alt="../_images/2e7b73fa0b761c224e280f57e69cba89a96020c2f4d7c6041dd75466d191b14c.png" src="../_images/2e7b73fa0b761c224e280f57e69cba89a96020c2f4d7c6041dd75466d191b14c.png" />
 </div>
 </div>
 <p>You can tell that the most frequent values of <code class="docutils literal notranslate"><span class="pre">abv</span></code> fall in the bin just
@@ -887,7 +887,7 @@ higher end.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7835fbc48e9550430421dd7584947f2c9abd956599808cae694396ce160111b8.png" src="../_images/7835fbc48e9550430421dd7584947f2c9abd956599808cae694396ce160111b8.png" />
+<img alt="../_images/7eace3c46a9201ebcd28d3426763b6671ca5c6942f7076a9f6fe4f31416ab6f7.png" src="../_images/7eace3c46a9201ebcd28d3426763b6671ca5c6942f7076a9f6fe4f31416ab6f7.png" />
 </div>
 </div>
 <p>Which one do you like better? Well, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> histogram took fewer lines of code to create.  And it doesn’t look bad at all. But you do have more fine-grained control with Matplotlib. Which method you choose in a real situation will just depend on the situation and your preference.</p>
@@ -982,11 +982,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2021/315735715.py:1: MatplotlibDeprecationWarning: The &#39;labels&#39; parameter of boxplot() has been renamed &#39;tick_labels&#39; since Matplotlib 3.9; support for the old name will be dropped in 3.11.
-  plt.boxplot(abv, labels=[&#39;Alcohol by volume&#39;]);
-</pre></div>
-</div>
-<img alt="../_images/e41f6fdc4952361421a79804b2f10f735ab233631a659c94f7353f5fcd55b69f.png" src="../_images/e41f6fdc4952361421a79804b2f10f735ab233631a659c94f7353f5fcd55b69f.png" />
+<img alt="../_images/b3ca199c53c4f492c47af18c581f1b94d384e3296f8256a21091376ebb36b190.png" src="../_images/b3ca199c53c4f492c47af18c581f1b94d384e3296f8256a21091376ebb36b190.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -996,11 +992,7 @@ Histograms are the most popular type of plots in exploratory data analysis. But 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2021/1528684497.py:1: MatplotlibDeprecationWarning: The &#39;labels&#39; parameter of boxplot() has been renamed &#39;tick_labels&#39; since Matplotlib 3.9; support for the old name will be dropped in 3.11.
-  plt.boxplot(ibu, labels=[&#39;International bitterness unit&#39;]);
-</pre></div>
-</div>
-<img alt="../_images/e0c83ee346050bdfae8ae3e0bb8147544187b63586ba12af002476960f5707c8.png" src="../_images/e0c83ee346050bdfae8ae3e0bb8147544187b63586ba12af002476960f5707c8.png" />
+<img alt="../_images/9df267c3eccebbb179a743883aa6caf661f6f4f7732c099c8efc1221cc95f2c3.png" src="../_images/9df267c3eccebbb179a743883aa6caf661f6f4f7732c099c8efc1221cc95f2c3.png" />
 </div>
 </div>
 <p>What is going on here? Obviously, there is a <em>box</em>: it represents 50% of the data in the middle of the data range, with the line across it (here, in orange) indicating the <em>median</em>.</p>
@@ -1188,54 +1180,54 @@ bottom whisker = 2.5% abv
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>style
 Schwarzbier                           9
-American Double / Imperial Stout      9
 Herbed / Spiced Beer                  9
-Doppelbock                            7
-Bière de Garde                        7
+American Double / Imperial Stout      9
 American Dark Wheat Ale               7
 Belgian Strong Pale Ale               7
 Bock                                  7
-English Dark Mild Ale                 6
-Foreign / Export Stout                6
+Doppelbock                            7
+Bière de Garde                        7
 Belgian Strong Dark Ale               6
-Dortmunder / Export Lager             6
-Baltic Porter                         6
 American Wild Ale                     6
 California Common / Steam Beer        6
-Irish Dry Stout                       5
+English Dark Mild Ale                 6
+Baltic Porter                         6
+Foreign / Export Stout                6
+Dortmunder / Export Lager             6
 Dubbel                                5
 Mead                                  5
+Irish Dry Stout                       5
 Maibock / Helles Bock                 5
 Euro Dark Lager                       5
+English Strong Ale                    4
 Quadrupel (Quad)                      4
 Dunkelweizen                          4
 Munich Dunkel Lager                   4
-English Strong Ale                    4
-American India Pale Lager             3
 Keller Bier / Zwickel Bier            3
+American India Pale Lager             3
 Shandy                                3
-English Bitter                        3
 Chile Beer                            3
-American Barleywine                   3
 English Barleywine                    3
 English Pale Mild Ale                 3
+English Bitter                        3
 Radler                                3
-Euro Pale Lager                       2
-Roggenbier                            2
+American Barleywine                   3
 English Stout                         2
 Old Ale                               2
+Rauchbier                             2
 American Double / Imperial Pilsner    2
 Abbey Single Ale                      2
-Rauchbier                             2
+Roggenbier                            2
+Euro Pale Lager                       2
 Smoked Beer                           1
-Braggot                               1
-Flanders Oud Bruin                    1
-Grisette                              1
+Kristalweizen                         1
 Other                                 1
 American Malt Liquor                  1
 Wheat Ale                             1
+Grisette                              1
 Flanders Red Ale                      1
-Kristalweizen                         1
+Flanders Oud Bruin                    1
+Braggot                               1
 Low Alcohol Beer                      1
 Name: count, dtype: int64
 </pre></div>
@@ -1276,7 +1268,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/84d8d0d66b456388f7e00acf482ceb6469514cf9cb39ac9798c6da73e622fc06.png" src="../_images/84d8d0d66b456388f7e00acf482ceb6469514cf9cb39ac9798c6da73e622fc06.png" />
+<img alt="../_images/411c80a2f657c01c5175f1a917ff6e2192f895967b05441bf67706f821fed31e.png" src="../_images/411c80a2f657c01c5175f1a917ff6e2192f895967b05441bf67706f821fed31e.png" />
 </div>
 </div>
 </section>
@@ -1335,7 +1327,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/544fecf6005f6183d15e86689a1550f253c145a29333a3529a7f3eb7974455c1.png" src="../_images/544fecf6005f6183d15e86689a1550f253c145a29333a3529a7f3eb7974455c1.png" />
+<img alt="../_images/14f227fc30da43287398e297a2cd5f8eaa56c508d6f01a35a8b524dd0dcd6afc.png" src="../_images/14f227fc30da43287398e297a2cd5f8eaa56c508d6f01a35a8b524dd0dcd6afc.png" />
 </div>
 </div>
 <p>Hmm. That’s a bit of a mess. Too many dots! But you do make out that the beers with low alcohol-by-volume tend to have low bitterness. For higher alcohol fraction, the beers can be anywhere on the bitterness scale: there’s a lot of vertical spread on those dots to the right of the plot.</p>
@@ -1538,7 +1530,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a8a530255d4aee6c2c149e1bb76521d29f4aedb93c6e17810c78ecf7170fef8f.png" src="../_images/a8a530255d4aee6c2c149e1bb76521d29f4aedb93c6e17810c78ecf7170fef8f.png" />
+<img alt="../_images/8c3e967de2c869d4e6fe5684bf0cded0901d7dcac752382acc65a6ccc06daf7e.png" src="../_images/8c3e967de2c869d4e6fe5684bf0cded0901d7dcac752382acc65a6ccc06daf7e.png" />
 </div>
 </div>
 <p>That’s rad! Perhaps the bubbles are too small. You could multiply the <code class="docutils literal notranslate"><span class="pre">style_counts</span></code> by a factor of 5, or maybe 10? You should experiment.</p>
@@ -1561,7 +1553,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/697232d1775b060f6e4fd306178854be07a85d2cd779959a7598ae6553d68349.png" src="../_images/697232d1775b060f6e4fd306178854be07a85d2cd779959a7598ae6553d68349.png" />
+<img alt="../_images/305a64f7e50ab1135fa7590c99096fa2f33cce4be10a0fa5309148629c3b3394.png" src="../_images/305a64f7e50ab1135fa7590c99096fa2f33cce4be10a0fa5309148629c3b3394.png" />
 </div>
 </div>
 <p>It looks like the most popular beers do follow a linear relationship between alcohol fraction and IBU. You learned a lot about beer without having a sip!</p>
@@ -1581,7 +1573,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e4b72342d140673cba4f95ecf3d35fe26a70c04a2c495e313b9767a693fa16e8.png" src="../_images/e4b72342d140673cba4f95ecf3d35fe26a70c04a2c495e313b9767a693fa16e8.png" />
+<img alt="../_images/3d6077feb8ddabee9c855fd52eca287b6c30a1d2f7ef6121ade92714883e406c.png" src="../_images/3d6077feb8ddabee9c855fd52eca287b6c30a1d2f7ef6121ade92714883e406c.png" />
 </div>
 </div>
 </section>

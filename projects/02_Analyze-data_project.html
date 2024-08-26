@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -560,21 +560,21 @@ create a predictive model.</p>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1063,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:1063,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1061</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s2">&quot;utc&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1062</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">ABCSeries</span><span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1063</span>     <span class="n">cache_array</span> <span class="o">=</span> <span class="n">_maybe_cache</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="n">convert_listlike</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1064</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">cache_array</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1065</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cache_array</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:247,</span> in <span class="ni">_maybe_cache</span><span class="nt">(arg, format, cache, convert_listlike)</span>
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:247,</span> in <span class="ni">_maybe_cache</span><span class="nt">(arg, format, cache, convert_listlike)</span>
 <span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="n">unique_dates</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_dates</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">247</span>     <span class="n">cache_dates</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">unique_dates</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="c1"># GH#45319</span>
 <span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="k">try</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:433,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)</span>
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:433,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)</span>
 <span class="g g-Whitespace">    </span><span class="mi">431</span> <span class="c1"># `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.</span>
 <span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">format</span> <span class="o">!=</span> <span class="s2">&quot;mixed&quot;</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">433</span>     <span class="k">return</span> <span class="n">_array_strptime_with_fallback</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">utc</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
@@ -588,7 +588,7 @@ create a predictive model.</p>
 <span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
 <span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="c1"># is in UTC</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:467,</span> in <span class="ni">_array_strptime_with_fallback</span><span class="nt">(arg, name, utc, fmt, exact, errors)</span>
+<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:467,</span> in <span class="ni">_array_strptime_with_fallback</span><span class="nt">(arg, name, utc, fmt, exact, errors)</span>
 <span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="k">def</span> <span class="nf">_array_strptime_with_fallback</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">457</span>     <span class="n">arg</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">458</span>     <span class="n">name</span><span class="p">,</span>

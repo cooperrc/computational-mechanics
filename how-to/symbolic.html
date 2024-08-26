@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -284,7 +284,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/how-to/symbolic.md" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/cooperrc/computational-mechanics/master?urlpath=tree/how-to/symbolic.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="https://nanohub.org/tools/compmech/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/how-to/symbolic.md&branch=master" target="_blank"
+      <li><a href="https://nanohub.org/tools/compmech/hub/user-redirect/git-pull?repo=https%3A//github.com/cooperrc/computational-mechanics&urlpath=tree/computational-mechanics/how-to/symbolic.ipynb&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,23 +381,6 @@
       
       
       <li><a href="../_sources/how-to/symbolic.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="../_sources/how-to/symbolic.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -407,7 +390,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -555,6 +538,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;sympy.core.symbol.Symbol&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> of these variables are <code class="docutils literal notranslate"><span class="pre">sympy.core.symbol.Symbol</span></code>. This means SymPy will consider <code class="docutils literal notranslate"><span class="pre">t,</span> <span class="pre">a,</span> <span class="pre">v_0,</span></code> and <code class="docutils literal notranslate"><span class="pre">x_0</span></code> as symbolic objects, not floating point or integers.</p>
 </section>
@@ -568,6 +556,10 @@ document.write(`
 <span class="n">x</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a t^{2}}{2} + t v_{0} + x_{0}\]</div>
 </div>
 </div>
 <p>The output for a SymPy equation is a <span class="math notranslate nohighlight">\(\LaTeX\)</span> equation. If you right-click on the equation you can “Show Math as TeX commands” If you want to copy into a Markdown cell or other location.</p>
@@ -586,6 +578,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a t + v_{0}\]</div>
+</div>
 </div>
 <p>The function, <span class="math notranslate nohighlight">\(\frac{dx}{dt}\)</span>, is now saved as the variable, <code class="docutils literal notranslate"><span class="pre">v</span></code>. You can solve for the time when <span class="math notranslate nohighlight">\(v(t) = 0\)</span> using <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code></p>
 <div class="cell docutils container">
@@ -596,6 +592,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{v_{0}}{a}\]</div>
+</div>
 </div>
 <p>The solution is that at <span class="math notranslate nohighlight">\(t = -\frac{v_0}{a}\)</span>, the velocity will be 0. Now, you can plug this into <code class="docutils literal notranslate"><span class="pre">x</span></code> to see what the solution at minimum speed will be.</p>
 <div class="cell docutils container">
@@ -604,6 +604,10 @@ document.write(`
 <span class="n">max_x</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle x_{0} - \frac{v_{0}^{2}}{2 a}\]</div>
 </div>
 </div>
 <p>Considering a freefall example, when <span class="math notranslate nohighlight">\(x = 0\)</span> the object will hit the ground. So you can solve for the time when <span class="math notranslate nohighlight">\(x=0\)</span>. <em>In this case you have 2 solutions because the equation is a quadratic.</em></p>
@@ -614,12 +618,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{- v_{0} + \sqrt{- 2 a x_{0} + v_{0}^{2}}}{a}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_ground</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{v_{0} + \sqrt{- 2 a x_{0} + v_{0}^{2}}}{a}\]</div>
 </div>
 </div>
 </section>
@@ -665,6 +677,11 @@ Start with <code class="docutils literal notranslate"><span class="pre">x</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height of baseball will be at time = 1.019 s, 6.097 m high
+</pre></div>
+</div>
+</div>
 </div>
 <p>Because you defined functions for <code class="docutils literal notranslate"><span class="pre">x_array</span></code> and <code class="docutils literal notranslate"><span class="pre">t_max_array</span></code>, you can input different values for <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">v_0</span></code>, and <code class="docutils literal notranslate"><span class="pre">x_0</span></code> to see the result. Here’s an example of maximum height vs initial speed:</p>
 <div class="cell docutils container">
@@ -679,6 +696,9 @@ Start with <code class="docutils literal notranslate"><span class="pre">x</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;max height (m)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b4057da6afb5e6b4fa195f58f62cc9b654b5e26488dbdeeecc90de2abad81e71.png" src="../_images/b4057da6afb5e6b4fa195f58f62cc9b654b5e26488dbdeeecc90de2abad81e71.png" />
 </div>
 </div>
 </section>
