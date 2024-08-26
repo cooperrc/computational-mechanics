@@ -1,5 +1,5 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Summer 2024
+## ME 3255 Fall 2024
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 - Submitting assignments: [**HuskyCT**](https://learn.uconn.edu)
 - **JupyterHub server**: <https://nanohub.org/tools/compmech>
@@ -102,7 +102,11 @@ __Tools used:__ [Python](https://www.python.org), [Jupyter](https://jupyter.org)
 
 ### Course Videos
 
-#### [Prof. Cooper's YouTube Channel](https://www.youtube.com/channel/UC6oOZZrQwJpOkra-QSGy3GA)
+#### [@ProfRyanCooper YouTube Channel](https://www.youtube.com/@ProfRyanCooper)
+
+[Prof. Cooper's old YouTube
+Channel](https://www.youtube.com/channel/UC6oOZZrQwJpOkra-QSGy3GA) _for
+previous recordings and more resources_
 
 ### Recommended _Free_ Resources:
 
@@ -158,7 +162,7 @@ Scientists_ 4th edition.
 | Projects      | 40 %    | Complete the module projects and submit to GitHub |
 
 __Participation__: The participation grade will be self-assigned. During
-week 2 you will submit your current grade and modes of participation,
+week 7 you will submit your current grade and modes of participation,
 then during the final week submit an updated final grade. 
 
 ## Academic Integrity: 
