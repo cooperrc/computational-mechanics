@@ -16,7 +16,7 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 data = pd.read_csv('../data/nyse-data.csv')
-data['date'] = pd.to_datetime(data['date'])
+data['date'] = pd.to_datetime(data['date'], format='ISO8601')
 data
 ------------------
 
@@ -25,7 +25,7 @@ data
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
 Cell [0;32mIn[2], line 1[0m
 [0;32m----> 1[0m data [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m../data/nyse-data.csv[39;49m[38;5;124;43m'[39;49m[43m)[49m
-[1;32m      2[0m data[[38;5;124m'[39m[38;5;124mdate[39m[38;5;124m'[39m] [38;5;241m=[39m pd[38;5;241m.[39mto_datetime(data[[38;5;124m'[39m[38;5;124mdate[39m[38;5;124m'[39m])
+[1;32m      2[0m data[[38;5;124m'[39m[38;5;124mdate[39m[38;5;124m'[39m] [38;5;241m=[39m pd[38;5;241m.[39mto_datetime(data[[38;5;124m'[39m[38;5;124mdate[39m[38;5;124m'[39m], [38;5;28mformat[39m[38;5;241m=[39m[38;5;124m'[39m[38;5;124mISO8601[39m[38;5;124m'[39m)
 [1;32m      3[0m data
 
 File [0;32m~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1026[0m, in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[0m

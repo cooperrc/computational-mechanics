@@ -547,74 +547,154 @@ create a predictive model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/nyse-data.csv&#39;</span><span class="p">)</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;ISO8601&#39;</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/nyse-data.csv&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:1063,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1061</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s2">&quot;utc&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1062</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">ABCSeries</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1063</span>     <span class="n">cache_array</span> <span class="o">=</span> <span class="n">_maybe_cache</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="n">convert_listlike</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1064</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">cache_array</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1065</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cache_array</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:247,</span> in <span class="ni">_maybe_cache</span><span class="nt">(arg, format, cache, convert_listlike)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="n">unique_dates</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_dates</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">247</span>     <span class="n">cache_dates</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">unique_dates</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="c1"># GH#45319</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:433,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span> <span class="c1"># `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">format</span> <span class="o">!=</span> <span class="s2">&quot;mixed&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">433</span>     <span class="k">return</span> <span class="n">_array_strptime_with_fallback</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">utc</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">exact</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">435</span> <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="n">arg</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span>     <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="c1"># is in UTC</span>
-
-<span class="nn">File ~/miniconda3/envs/nbdev/lib/python3.10/site-packages/pandas/core/tools/datetimes.py:467,</span> in <span class="ni">_array_strptime_with_fallback</span><span class="nt">(arg, name, utc, fmt, exact, errors)</span>
-<span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="k">def</span> <span class="nf">_array_strptime_with_fallback</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span>     <span class="n">arg</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span>     <span class="n">name</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">errors</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Index</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="sd">     Call array_strptime, with fallback behavior depending on &#39;errors&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">467</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_out</span> <span class="o">=</span> <span class="n">array_strptime</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="n">exact</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="k">if</span> <span class="n">tz_out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span>         <span class="n">unit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime_data</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">dtype</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="nn">File strptime.pyx:501,</span> in <span class="ni">pandas._libs.tslibs.strptime.array_strptime</span><span class="nt">()</span>
-
-<span class="nn">File strptime.pyx:451,</span> in <span class="ni">pandas._libs.tslibs.strptime.array_strptime</span><span class="nt">()</span>
-
-<span class="nn">File strptime.pyx:583,</span> in <span class="ni">pandas._libs.tslibs.strptime._parse_with_format</span><span class="nt">()</span>
-
-<span class="ne">ValueError</span>: time data &quot;2010-01-04&quot; doesn&#39;t match format &quot;%Y-%m-%d %H:%M:%S&quot;, at position 251. You might want to try:
-    <span class="o">-</span> <span class="n">passing</span> <span class="err">`</span><span class="nb">format</span><span class="err">`</span> <span class="k">if</span> <span class="n">your</span> <span class="n">strings</span> <span class="n">have</span> <span class="n">a</span> <span class="n">consistent</span> <span class="nb">format</span><span class="p">;</span>
-    <span class="o">-</span> <span class="n">passing</span> <span class="err">`</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;ISO8601&#39;</span><span class="err">`</span> <span class="k">if</span> <span class="n">your</span> <span class="n">strings</span> <span class="n">are</span> <span class="nb">all</span> <span class="n">ISO8601</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">necessarily</span> <span class="ow">in</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="nb">format</span><span class="p">;</span>
-    <span class="o">-</span> <span class="n">passing</span> <span class="err">`</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;mixed&#39;</span><span class="err">`</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="nb">format</span> <span class="n">will</span> <span class="n">be</span> <span class="n">inferred</span> <span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">individually</span><span class="o">.</span> <span class="n">You</span> <span class="n">might</span> <span class="n">want</span> <span class="n">to</span> <span class="n">use</span> <span class="err">`</span><span class="n">dayfirst</span><span class="err">`</span> <span class="n">alongside</span> <span class="n">this</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>symbol</th>
+      <th>open</th>
+      <th>close</th>
+      <th>low</th>
+      <th>high</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-01-05</td>
+      <td>WLTW</td>
+      <td>123.430000</td>
+      <td>125.839996</td>
+      <td>122.309998</td>
+      <td>126.250000</td>
+      <td>2163600.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016-01-06</td>
+      <td>WLTW</td>
+      <td>125.239998</td>
+      <td>119.980003</td>
+      <td>119.940002</td>
+      <td>125.540001</td>
+      <td>2386400.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2016-01-07</td>
+      <td>WLTW</td>
+      <td>116.379997</td>
+      <td>114.949997</td>
+      <td>114.930000</td>
+      <td>119.739998</td>
+      <td>2489500.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2016-01-08</td>
+      <td>WLTW</td>
+      <td>115.480003</td>
+      <td>116.620003</td>
+      <td>113.500000</td>
+      <td>117.440002</td>
+      <td>2006300.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016-01-11</td>
+      <td>WLTW</td>
+      <td>117.010002</td>
+      <td>114.970001</td>
+      <td>114.089996</td>
+      <td>117.330002</td>
+      <td>1408600.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>851259</th>
+      <td>2016-12-30</td>
+      <td>ZBH</td>
+      <td>103.309998</td>
+      <td>103.199997</td>
+      <td>102.849998</td>
+      <td>103.930000</td>
+      <td>973800.0</td>
+    </tr>
+    <tr>
+      <th>851260</th>
+      <td>2016-12-30</td>
+      <td>ZION</td>
+      <td>43.070000</td>
+      <td>43.040001</td>
+      <td>42.689999</td>
+      <td>43.310001</td>
+      <td>1938100.0</td>
+    </tr>
+    <tr>
+      <th>851261</th>
+      <td>2016-12-30</td>
+      <td>ZTS</td>
+      <td>53.639999</td>
+      <td>53.529999</td>
+      <td>53.270000</td>
+      <td>53.740002</td>
+      <td>1701200.0</td>
+    </tr>
+    <tr>
+      <th>851262</th>
+      <td>2016-12-30</td>
+      <td>AIV</td>
+      <td>44.730000</td>
+      <td>45.450001</td>
+      <td>44.410000</td>
+      <td>45.590000</td>
+      <td>1380900.0</td>
+    </tr>
+    <tr>
+      <th>851263</th>
+      <td>2016-12-30</td>
+      <td>FTV</td>
+      <td>54.200001</td>
+      <td>53.630001</td>
+      <td>53.389999</td>
+      <td>54.480000</td>
+      <td>705100.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>851264 rows × 7 columns</p>
+</div></div></div>
 </div>
 <p>I only want the <code class="docutils literal notranslate"><span class="pre">symbol</span> <span class="pre">==</span> <span class="pre">GOOGL</span></code> data, so I use a Pandas call. I also want to remove the big drop in price after Mar, 2014, so I specify the date &lt; 2014-03-01.</p>
 <div class="cell docutils container">
@@ -632,6 +712,9 @@ create a predictive model.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/5f0bb2a6dcc984be5b26b6d2ce9dc5cac9351f520e076d0f095c651f5631fa54.png" src="../_images/5f0bb2a6dcc984be5b26b6d2ce9dc5cac9351f520e076d0f095c651f5631fa54.png" />
+</div>
 </div>
 </section>
 <section id="data-analysis">
@@ -645,6 +728,9 @@ create a predictive model.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;change in opening price (\$/day)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/15841c11aad84d332f1a8a45ce5500ac33d5aa65749ef8c7befffd4be4181665.png" src="../_images/15841c11aad84d332f1a8a45ce5500ac33d5aa65749ef8c7befffd4be4181665.png" />
 </div>
 </div>
 <p>Looking at the price day-to-day, it would appear to be an average change of $0/day. Next, I explore the statistical results of the change in opening price</p>
@@ -672,6 +758,9 @@ create a predictive model.</p>
          <span class="s1">&#39;avg: \$</span><span class="si">{:.2f}</span><span class="s1"> stdev: \$</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_dprice</span><span class="p">,</span> <span class="n">std_dprice</span><span class="p">));</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2b7c3652a41c222123e522a0c9e2f6d9c8d2aa203451f0a84d4c5e13a4db7e1f.png" src="../_images/2b7c3652a41c222123e522a0c9e2f6d9c8d2aa203451f0a84d4c5e13a4db7e1f.png" />
 </div>
 </div>
 <p>From this statistical result, it looks like the price changes followed a normal distribution with an average change of <span class="math notranslate nohighlight">\(\$0.57\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\$9.84\)</span>.</p>
@@ -731,6 +820,9 @@ create a predictive model.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/8c6755b7479cc6917e315c7ba299c71cebfc58ce82096716aeb7913771e134f0.png" src="../_images/8c6755b7479cc6917e315c7ba299c71cebfc58ce82096716aeb7913771e134f0.png" />
+</div>
 </div>
 </section>
 <section id="generate-random-walk-predictions">
@@ -758,6 +850,9 @@ create a predictive model.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/c062481b235e2a32bbae42fb87555738876c4d486e2b2474ecb67a81e77d8aa0.png" src="../_images/c062481b235e2a32bbae42fb87555738876c4d486e2b2474ecb67a81e77d8aa0.png" />
+</div>
 </div>
 <p>As you would expect, there are a wide variety of predictions for the price of GOOGL stocks using random numbers. Next, I try to get some insight into the average changes in the random walk model. I use the <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> and <code class="docutils literal notranslate"><span class="pre">np.std</span></code> across the columns of the <code class="docutils literal notranslate"><span class="pre">price_model</span></code> prediction data, using <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code> now.</p>
 <div class="cell docutils container">
@@ -782,6 +877,9 @@ create a predictive model.</p>
     
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e77c2d7eef442f5581c5f52142db97a192cdba170287446b688c56980e66c48d.png" src="../_images/e77c2d7eef442f5581c5f52142db97a192cdba170287446b688c56980e66c48d.png" />
 </div>
 </div>
 </section>

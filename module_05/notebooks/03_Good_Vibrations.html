@@ -1360,54 +1360,19 @@ shortest time period =0.235 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting animate_arrays
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading animate_arrays-0.0.1-py3-none-any.whl.metadata (440 kB)
-?25l     <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/440.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺</span> <span class=" -Color -Color-Green">430.1/440.1 kB</span> <span class=" -Color -Color-Red">14.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">440.1/440.1 kB</span> <span class=" -Color -Color-Red">12.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: numpy in /home/ryan/miniconda3/lib/python3.12/site-packages (from animate_arrays) (1.26.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: animate_arrays in /home/ryan/miniconda3/lib/python3.12/site-packages (0.0.1)
+Requirement already satisfied: numpy in /home/ryan/miniconda3/lib/python3.12/site-packages (from animate_arrays) (1.26.4)
 Requirement already satisfied: matplotlib in /home/ryan/miniconda3/lib/python3.12/site-packages (from animate_arrays) (3.8.4)
+Requirement already satisfied: jupyter in /home/ryan/miniconda3/lib/python3.12/site-packages (from animate_arrays) (1.0.0)
+Requirement already satisfied: ffmpeg in /home/ryan/miniconda3/lib/python3.12/site-packages (from animate_arrays) (1.4)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter (from animate_arrays)
-  Downloading jupyter-1.0.0-py2.py3-none-any.whl.metadata (995 bytes)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ffmpeg (from animate_arrays)
-  Downloading ffmpeg-1.4.tar.gz (5.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l- done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting notebook (from jupyter-&gt;animate_arrays)
-  Downloading notebook-7.2.1-py3-none-any.whl.metadata (10 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qtconsole (from jupyter-&gt;animate_arrays)
-  Downloading qtconsole-5.5.2-py3-none-any.whl.metadata (5.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-console (from jupyter-&gt;animate_arrays)
-  Downloading jupyter_console-6.6.3-py3-none-any.whl.metadata (5.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting nbconvert (from jupyter-&gt;animate_arrays)
-  Downloading nbconvert-7.16.4-py3-none-any.whl.metadata (8.5 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipykernel (from jupyter-&gt;animate_arrays)
-  Downloading ipykernel-6.29.5-py3-none-any.whl.metadata (6.3 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipywidgets (from jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ipywidgets-8.1.5-py3-none-any.whl.metadata (2.3 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: notebook in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-&gt;animate_arrays) (7.2.1)
+Requirement already satisfied: qtconsole in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-&gt;animate_arrays) (5.5.2)
+Requirement already satisfied: jupyter-console in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-&gt;animate_arrays) (6.6.3)
+Requirement already satisfied: nbconvert in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-&gt;animate_arrays) (7.16.4)
+Requirement already satisfied: ipykernel in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-&gt;animate_arrays) (6.29.5)
+Requirement already satisfied: ipywidgets in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-&gt;animate_arrays) (8.1.5)
 Requirement already satisfied: contourpy&gt;=1.0.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;animate_arrays) (1.2.0)
 Requirement already satisfied: cycler&gt;=0.10 in /home/ryan/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;animate_arrays) (0.11.0)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;animate_arrays) (4.51.0)
@@ -1419,644 +1384,123 @@ Requirement already satisfied: python-dateutil&gt;=2.7 in /home/ryan/miniconda3/
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/ryan/miniconda3/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;animate_arrays) (1.16.0)
-Collecting comm&gt;=0.1.1 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading comm-0.2.2-py3-none-any.whl.metadata (3.7 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting debugpy&gt;=1.6.5 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading debugpy-1.8.5-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipython&gt;=7.23.1 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading ipython-8.26.0-py3-none-any.whl.metadata (5.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-client&gt;=6.1.12 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyter_client-8.6.2-py3-none-any.whl.metadata (8.3 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-core!=5.0.*,&gt;=4.12 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyter_core-5.7.2-py3-none-any.whl.metadata (3.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting matplotlib-inline&gt;=0.1 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading matplotlib_inline-0.1.7-py3-none-any.whl.metadata (3.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting nest-asyncio (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psutil (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading psutil-6.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (21 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pyzmq&gt;=24 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading pyzmq-26.2.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.2 kB)
+Requirement already satisfied: comm&gt;=0.1.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (0.2.2)
+Requirement already satisfied: debugpy&gt;=1.6.5 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (1.8.5)
+Requirement already satisfied: ipython&gt;=7.23.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (8.26.0)
+Requirement already satisfied: jupyter-client&gt;=6.1.12 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (8.6.2)
+Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (5.7.2)
+Requirement already satisfied: matplotlib-inline&gt;=0.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (0.1.7)
+Requirement already satisfied: nest-asyncio in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (1.6.0)
+Requirement already satisfied: psutil in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (6.0.0)
+Requirement already satisfied: pyzmq&gt;=24 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (26.2.0)
 Requirement already satisfied: tornado&gt;=6.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (6.3.3)
+Requirement already satisfied: traitlets&gt;=5.4.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipykernel-&gt;jupyter-&gt;animate_arrays) (5.14.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting traitlets&gt;=5.4.0 (from ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading traitlets-5.14.3-py3-none-any.whl.metadata (10 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: widgetsnbextension~=4.0.12 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipywidgets-&gt;jupyter-&gt;animate_arrays) (4.0.13)
+Requirement already satisfied: jupyterlab-widgets~=3.0.12 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipywidgets-&gt;jupyter-&gt;animate_arrays) (3.0.13)
+Requirement already satisfied: prompt-toolkit&gt;=3.0.30 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-console-&gt;jupyter-&gt;animate_arrays) (3.0.47)
+Requirement already satisfied: pygments in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-console-&gt;jupyter-&gt;animate_arrays) (2.18.0)
+Requirement already satisfied: beautifulsoup4 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (4.12.3)
+Requirement already satisfied: bleach!=5.0.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (6.1.0)
+Requirement already satisfied: defusedxml in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (0.7.1)
+Requirement already satisfied: jinja2&gt;=3.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (3.1.4)
+Requirement already satisfied: jupyterlab-pygments in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (0.3.0)
+Requirement already satisfied: markupsafe&gt;=2.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (2.1.5)
+Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (3.0.2)
+Requirement already satisfied: nbclient&gt;=0.5.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (0.10.0)
+Requirement already satisfied: nbformat&gt;=5.7 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (5.10.4)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (1.5.1)
+Requirement already satisfied: tinycss2 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbconvert-&gt;jupyter-&gt;animate_arrays) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting widgetsnbextension~=4.0.12 (from ipywidgets-&gt;jupyter-&gt;animate_arrays)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-server&lt;3,&gt;=2.4.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (2.14.2)
+Requirement already satisfied: jupyterlab-server&lt;3,&gt;=2.27.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (2.27.3)
+Requirement already satisfied: jupyterlab&lt;4.3,&gt;=4.2.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (4.2.4)
+Requirement already satisfied: notebook-shim&lt;0.3,&gt;=0.2 in /home/ryan/miniconda3/lib/python3.12/site-packages (from notebook-&gt;jupyter-&gt;animate_arrays) (0.2.4)
+Requirement already satisfied: qtpy&gt;=2.4.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from qtconsole-&gt;jupyter-&gt;animate_arrays) (2.4.1)
+Requirement already satisfied: webencodings in /home/ryan/miniconda3/lib/python3.12/site-packages (from bleach!=5.0.0-&gt;nbconvert-&gt;jupyter-&gt;animate_arrays) (0.5.1)
+Requirement already satisfied: decorator in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.19.1)
+Requirement already satisfied: stack-data in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.6.3)
+Requirement already satisfied: pexpect&gt;4.3 in /home/ryan/miniconda3/lib/python3.12/site-packages (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (4.9.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading widgetsnbextension-4.0.13-py3-none-any.whl.metadata (1.6 kB)
-Collecting jupyterlab-widgets~=3.0.12 (from ipywidgets-&gt;jupyter-&gt;animate_arrays)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: platformdirs&gt;=2.5 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (3.10.0)
+Requirement already satisfied: anyio&gt;=3.1.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (4.4.0)
+Requirement already satisfied: argon2-cffi&gt;=21.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (23.1.0)
+Requirement already satisfied: jupyter-events&gt;=0.9.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.10.0)
+Requirement already satisfied: jupyter-server-terminals&gt;=0.4.4 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.5.3)
+Requirement already satisfied: overrides&gt;=5.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (7.7.0)
+Requirement already satisfied: prometheus-client&gt;=0.9 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.20.0)
+Requirement already satisfied: send2trash&gt;=1.8.2 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.8.3)
+Requirement already satisfied: terminado&gt;=0.8.3 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.18.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading jupyterlab_widgets-3.0.13-py3-none-any.whl.metadata (4.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting prompt-toolkit&gt;=3.0.30 (from jupyter-console-&gt;jupyter-&gt;animate_arrays)
-  Downloading prompt_toolkit-3.0.47-py3-none-any.whl.metadata (6.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pygments (from jupyter-console-&gt;jupyter-&gt;animate_arrays)
-  Downloading pygments-2.18.0-py3-none-any.whl.metadata (2.5 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting beautifulsoup4 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading beautifulsoup4-4.12.3-py3-none-any.whl.metadata (3.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting bleach!=5.0.0 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading bleach-6.1.0-py3-none-any.whl.metadata (30 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting defusedxml (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jinja2&gt;=3.0 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyterlab-pygments (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl.metadata (4.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting markupsafe&gt;=2.0 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
-Collecting mistune&lt;4,&gt;=2.0.3 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading mistune-3.0.2-py3-none-any.whl.metadata (1.7 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting nbclient&gt;=0.5.0 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading nbclient-0.10.0-py3-none-any.whl.metadata (7.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting nbformat&gt;=5.7 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading nbformat-5.10.4-py3-none-any.whl.metadata (3.6 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandocfilters&gt;=1.4.1 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading pandocfilters-1.5.1-py2.py3-none-any.whl.metadata (9.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tinycss2 (from nbconvert-&gt;jupyter-&gt;animate_arrays)
-  Downloading tinycss2-1.3.0-py3-none-any.whl.metadata (3.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-server&lt;3,&gt;=2.4.0 (from notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyter_server-2.14.2-py3-none-any.whl.metadata (8.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyterlab-server&lt;3,&gt;=2.27.1 (from notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyterlab_server-2.27.3-py3-none-any.whl.metadata (5.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyterlab&lt;4.3,&gt;=4.2.0 (from notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyterlab-4.2.4-py3-none-any.whl.metadata (16 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting notebook-shim&lt;0.3,&gt;=0.2 (from notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading notebook_shim-0.2.4-py3-none-any.whl.metadata (4.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qtpy&gt;=2.4.0 (from qtconsole-&gt;jupyter-&gt;animate_arrays)
-  Downloading QtPy-2.4.1-py3-none-any.whl.metadata (12 kB)
-Collecting webencodings (from bleach!=5.0.0-&gt;nbconvert-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading webencodings-0.5.1-py2.py3-none-any.whl.metadata (2.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting decorator (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading decorator-5.1.1-py3-none-any.whl.metadata (4.0 kB)
-Collecting jedi&gt;=0.16 (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading jedi-0.19.1-py2.py3-none-any.whl.metadata (22 kB)
-Collecting stack-data (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
-Collecting pexpect&gt;4.3 (from ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
-Requirement already satisfied: platformdirs&gt;=2.5 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (3.10.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting anyio&gt;=3.1.0 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading anyio-4.4.0-py3-none-any.whl.metadata (4.6 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting argon2-cffi&gt;=21.1 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading argon2_cffi-23.1.0-py3-none-any.whl.metadata (5.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-events&gt;=0.9.0 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyter_events-0.10.0-py3-none-any.whl.metadata (5.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-server-terminals&gt;=0.4.4 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyter_server_terminals-0.5.3-py3-none-any.whl.metadata (5.6 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting overrides&gt;=5.0 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting prometheus-client&gt;=0.9 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading prometheus_client-0.20.0-py3-none-any.whl.metadata (1.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting send2trash&gt;=1.8.2 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading Send2Trash-1.8.3-py3-none-any.whl.metadata (4.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting terminado&gt;=0.8.3 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading terminado-0.18.1-py3-none-any.whl.metadata (5.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting websocket-client&gt;=1.7 (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading websocket_client-1.8.0-py3-none-any.whl.metadata (8.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting async-lru&gt;=1.0.0 (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading async_lru-2.0.4-py3-none-any.whl.metadata (4.5 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting httpx&gt;=0.25.0 (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading httpx-0.27.0-py3-none-any.whl.metadata (7.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-lsp&gt;=2.0.0 (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jupyter_lsp-2.2.5-py3-none-any.whl.metadata (1.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools&gt;=40.1.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (69.5.1)
-Collecting babel&gt;=2.10 (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading babel-2.16.0-py3-none-any.whl.metadata (1.5 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting json5&gt;=0.9.0 (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading json5-0.9.25-py3-none-any.whl.metadata (30 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jsonschema&gt;=4.18.0 (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: websocket-client&gt;=1.7 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.8.0)
+Requirement already satisfied: async-lru&gt;=1.0.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.0.4)
+Requirement already satisfied: httpx&gt;=0.25.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.27.0)
+Requirement already satisfied: jupyter-lsp&gt;=2.0.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.2.5)
+Requirement already satisfied: setuptools&gt;=40.1.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (69.5.1)
+Requirement already satisfied: babel&gt;=2.10 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.16.0)
+Requirement already satisfied: json5&gt;=0.9.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.9.25)
+Requirement already satisfied: jsonschema&gt;=4.18.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (4.23.0)
 Requirement already satisfied: requests&gt;=2.31 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.31.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting fastjsonschema&gt;=2.15 (from nbformat&gt;=5.7-&gt;nbconvert-&gt;jupyter-&gt;animate_arrays)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: fastjsonschema&gt;=2.15 in /home/ryan/miniconda3/lib/python3.12/site-packages (from nbformat&gt;=5.7-&gt;nbconvert-&gt;jupyter-&gt;animate_arrays) (2.20.0)
+Requirement already satisfied: wcwidth in /home/ryan/miniconda3/lib/python3.12/site-packages (from prompt-toolkit&gt;=3.0.30-&gt;jupyter-console-&gt;jupyter-&gt;animate_arrays) (0.2.13)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading fastjsonschema-2.20.0-py3-none-any.whl.metadata (2.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting wcwidth (from prompt-toolkit&gt;=3.0.30-&gt;jupyter-console-&gt;jupyter-&gt;animate_arrays)
-  Downloading wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting soupsieve&gt;1.2 (from beautifulsoup4-&gt;nbconvert-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading soupsieve-2.6-py3-none-any.whl.metadata (4.6 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: soupsieve&gt;1.2 in /home/ryan/miniconda3/lib/python3.12/site-packages (from beautifulsoup4-&gt;nbconvert-&gt;jupyter-&gt;animate_arrays) (2.6)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: idna&gt;=2.8 in /home/ryan/miniconda3/lib/python3.12/site-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (3.7)
-Collecting sniffio&gt;=1.1 (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting argon2-cffi-bindings (from argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: sniffio&gt;=1.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.3.1)
+Requirement already satisfied: argon2-cffi-bindings in /home/ryan/miniconda3/lib/python3.12/site-packages (from argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (21.2.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi in /home/ryan/miniconda3/lib/python3.12/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2024.2.2)
+Requirement already satisfied: httpcore==1.* in /home/ryan/miniconda3/lib/python3.12/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.0.5)
+Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in /home/ryan/miniconda3/lib/python3.12/site-packages (from httpcore==1.*-&gt;httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.14.0)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.8.4)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting httpcore==1.* (from httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading httpcore-1.0.5-py3-none-any.whl.metadata (20 kB)
-Collecting h11&lt;0.15,&gt;=0.13 (from httpcore==1.*-&gt;httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=22.2.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (24.2.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2023.12.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.35.1)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.20.0)
+Requirement already satisfied: python-json-logger&gt;=2.0.4 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.0.7)
+Requirement already satisfied: pyyaml&gt;=5.3 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (6.0.2)
+Requirement already satisfied: rfc3339-validator in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.1.4)
+Requirement already satisfied: rfc3986-validator&gt;=0.1.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (0.1.1)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /home/ryan/miniconda3/lib/python3.12/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.7.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading h11-0.14.0-py3-none-any.whl.metadata (8.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting parso&lt;0.9.0,&gt;=0.8.3 (from jedi&gt;=0.16-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading parso-0.8.4-py2.py3-none-any.whl.metadata (7.7 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting attrs&gt;=22.2.0 (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading attrs-24.2.0-py3-none-any.whl.metadata (11 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jsonschema-specifications&gt;=2023.03.6 (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl.metadata (3.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting referencing&gt;=0.28.4 (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading referencing-0.35.1-py3-none-any.whl.metadata (2.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rpds-py&gt;=0.7.1 (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading rpds_py-0.20.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting python-json-logger&gt;=2.0.4 (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading python_json_logger-2.0.7-py3-none-any.whl.metadata (6.5 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pyyaml&gt;=5.3 (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rfc3339-validator (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl.metadata (1.5 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rfc3986-validator&gt;=0.1.1 (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading rfc3986_validator-0.1.1-py2.py3-none-any.whl.metadata (1.7 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ptyprocess&gt;=0.5 (from pexpect&gt;4.3-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/ryan/miniconda3/lib/python3.12/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.0.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/ryan/miniconda3/lib/python3.12/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.0.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.1.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting executing&gt;=1.2.0 (from stack-data-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: executing&gt;=1.2.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from stack-data-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (2.0.1)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from stack-data-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (2.4.1)
+Requirement already satisfied: pure-eval in /home/ryan/miniconda3/lib/python3.12/site-packages (from stack-data-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays) (0.2.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading executing-2.0.1-py2.py3-none-any.whl.metadata (9.0 kB)
-Collecting asttokens&gt;=2.1.0 (from stack-data-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading asttokens-2.4.1-py2.py3-none-any.whl.metadata (5.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pure-eval (from stack-data-&gt;ipython&gt;=7.23.1-&gt;ipykernel-&gt;jupyter-&gt;animate_arrays)
-  Downloading pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting fqdn (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading fqdn-1.5.1-py3-none-any.whl.metadata (1.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting isoduration (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading isoduration-20.11.0-py3-none-any.whl.metadata (5.7 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: fqdn in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.5.1)
+Requirement already satisfied: isoduration in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (20.11.0)
 Requirement already satisfied: jsonpointer&gt;1.13 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting uri-template (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading uri_template-1.3.0-py3-none-any.whl.metadata (8.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting webcolors&gt;=24.6.0 (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading webcolors-24.8.0-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: uri-template in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.3.0)
+Requirement already satisfied: webcolors&gt;=24.6.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (24.8.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cffi&gt;=1.0.1 in /home/ryan/miniconda3/lib/python3.12/site-packages (from argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.16.0)
+Requirement already satisfied: pycparser in /home/ryan/miniconda3/lib/python3.12/site-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.21)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycparser in /home/ryan/miniconda3/lib/python3.12/site-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.21)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: arrow&gt;=0.15.0 in /home/ryan/miniconda3/lib/python3.12/site-packages (from isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting arrow&gt;=0.15.0 (from isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading arrow-1.3.0-py3-none-any.whl.metadata (7.5 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting types-python-dateutil&gt;=2.8.10 (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays)
-  Downloading types_python_dateutil-2.9.0.20240821-py3-none-any.whl.metadata (1.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading animate_arrays-0.0.1-py3-none-any.whl (339 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/339.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">339.4/339.4 kB</span> <span class=" -Color -Color-Red">44.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading jupyter-1.0.0-py2.py3-none-any.whl (2.7 kB)
-Downloading ipykernel-6.29.5-py3-none-any.whl (117 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/117.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">117.2/117.2 kB</span> <span class=" -Color -Color-Red">13.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading ipywidgets-8.1.5-py3-none-any.whl (139 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/139.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">139.8/139.8 kB</span> <span class=" -Color -Color-Red">18.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading jupyter_console-6.6.3-py3-none-any.whl (24 kB)
-Downloading nbconvert-7.16.4-py3-none-any.whl (257 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/257.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">257.4/257.4 kB</span> <span class=" -Color -Color-Red">13.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading notebook-7.2.1-py3-none-any.whl (5.0 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/5.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2.6/5.0 MB</span> <span class=" -Color -Color-Red">78.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">5.0/5.0 MB</span> <span class=" -Color -Color-Red">74.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5.0/5.0 MB</span> <span class=" -Color -Color-Red">63.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading qtconsole-5.5.2-py3-none-any.whl (123 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/123.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">123.4/123.4 kB</span> <span class=" -Color -Color-Red">15.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading bleach-6.1.0-py3-none-any.whl (162 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/162.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">162.8/162.8 kB</span> <span class=" -Color -Color-Red">21.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading comm-0.2.2-py3-none-any.whl (7.2 kB)
-Downloading debugpy-1.8.5-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.4 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/1.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">1.4/1.4 MB</span> <span class=" -Color -Color-Red">57.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading ipython-8.26.0-py3-none-any.whl (817 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/817.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">817.9/817.9 kB</span> <span class=" -Color -Color-Red">50.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/133.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">133.3/133.3 kB</span> <span class=" -Color -Color-Red">12.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading jupyter_client-8.6.2-py3-none-any.whl (105 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/105.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">105.9/105.9 kB</span> <span class=" -Color -Color-Red">13.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading jupyter_core-5.7.2-py3-none-any.whl (28 kB)
-Downloading jupyter_server-2.14.2-py3-none-any.whl (383 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/383.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">383.6/383.6 kB</span> <span class=" -Color -Color-Red">42.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading jupyterlab-4.2.4-py3-none-any.whl (11.6 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/11.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2.7/11.6 MB</span> <span class=" -Color -Color-Red">81.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5.4/11.6 MB</span> <span class=" -Color -Color-Red">79.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">8.1/11.6 MB</span> <span class=" -Color -Color-Red">79.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━</span> <span class=" -Color -Color-Green">10.9/11.6 MB</span> <span class=" -Color -Color-Red">79.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">11.6/11.6 MB</span> <span class=" -Color -Color-Red">68.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading jupyterlab_server-2.27.3-py3-none-any.whl (59 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/59.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">59.7/59.7 kB</span> <span class=" -Color -Color-Red">8.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading jupyterlab_widgets-3.0.13-py3-none-any.whl (214 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/214.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">214.4/214.4 kB</span> <span class=" -Color -Color-Red">31.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)
-Downloading matplotlib_inline-0.1.7-py3-none-any.whl (9.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading mistune-3.0.2-py3-none-any.whl (47 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/48.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">48.0/48.0 kB</span> <span class=" -Color -Color-Red">5.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading nbclient-0.10.0-py3-none-any.whl (25 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nbformat-5.10.4-py3-none-any.whl (78 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/78.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">78.5/78.5 kB</span> <span class=" -Color -Color-Red">10.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading notebook_shim-0.2.4-py3-none-any.whl (13 kB)
-Downloading pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading prompt_toolkit-3.0.47-py3-none-any.whl (386 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/386.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">386.4/386.4 kB</span> <span class=" -Color -Color-Red">44.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/1.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">1.2/1.2 MB</span> <span class=" -Color -Color-Red">52.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading pyzmq-26.2.0-cp312-cp312-manylinux_2_28_x86_64.whl (860 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/860.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">860.6/860.6 kB</span> <span class=" -Color -Color-Red">51.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading QtPy-2.4.1-py3-none-any.whl (93 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/93.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">93.5/93.5 kB</span> <span class=" -Color -Color-Red">12.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading traitlets-5.14.3-py3-none-any.whl (85 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/85.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">85.4/85.4 kB</span> <span class=" -Color -Color-Red">12.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading widgetsnbextension-4.0.13-py3-none-any.whl (2.3 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/2.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">2.3/2.3 MB</span> <span class=" -Color -Color-Red">78.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2.3/2.3 MB</span> <span class=" -Color -Color-Red">61.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading beautifulsoup4-4.12.3-py3-none-any.whl (147 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/147.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">147.9/147.9 kB</span> <span class=" -Color -Color-Red">22.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
-Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
-Downloading psutil-6.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (290 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/290.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">290.5/290.5 kB</span> <span class=" -Color -Color-Red">35.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading tinycss2-1.3.0-py3-none-any.whl (22 kB)
-Downloading anyio-4.4.0-py3-none-any.whl (86 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/86.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">86.8/86.8 kB</span> <span class=" -Color -Color-Red">11.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading argon2_cffi-23.1.0-py3-none-any.whl (15 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading async_lru-2.0.4-py3-none-any.whl (6.1 kB)
-Downloading babel-2.16.0-py3-none-any.whl (9.6 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/9.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2.7/9.6 MB</span> <span class=" -Color -Color-Red">80.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5.4/9.6 MB</span> <span class=" -Color -Color-Red">79.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━</span> <span class=" -Color -Color-Green">8.2/9.6 MB</span> <span class=" -Color -Color-Red">79.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">9.6/9.6 MB</span> <span class=" -Color -Color-Red">70.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading fastjsonschema-2.20.0-py3-none-any.whl (23 kB)
-Downloading httpx-0.27.0-py3-none-any.whl (75 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/75.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">75.6/75.6 kB</span> <span class=" -Color -Color-Red">10.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading httpcore-1.0.5-py3-none-any.whl (77 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/77.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">77.9/77.9 kB</span> <span class=" -Color -Color-Red">10.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading jedi-0.19.1-py2.py3-none-any.whl (1.6 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/1.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">1.6/1.6 MB</span> <span class=" -Color -Color-Red">50.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading json5-0.9.25-py3-none-any.whl (30 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/88.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">88.5/88.5 kB</span> <span class=" -Color -Color-Red">10.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading jupyter_events-0.10.0-py3-none-any.whl (18 kB)
-Downloading jupyter_lsp-2.2.5-py3-none-any.whl (69 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/69.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">69.1/69.1 kB</span> <span class=" -Color -Color-Red">8.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading jupyter_server_terminals-0.5.3-py3-none-any.whl (13 kB)
-Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/63.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">63.8/63.8 kB</span> <span class=" -Color -Color-Red">8.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading prometheus_client-0.20.0-py3-none-any.whl (54 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/54.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">54.5/54.5 kB</span> <span class=" -Color -Color-Red">6.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading Send2Trash-1.8.3-py3-none-any.whl (18 kB)
-Downloading soupsieve-2.6-py3-none-any.whl (36 kB)
-Downloading terminado-0.18.1-py3-none-any.whl (14 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
-Downloading websocket_client-1.8.0-py3-none-any.whl (58 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/58.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">58.8/58.8 kB</span> <span class=" -Color -Color-Red">4.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)
-Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
-Downloading wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading asttokens-2.4.1-py2.py3-none-any.whl (27 kB)
-Downloading attrs-24.2.0-py3-none-any.whl (63 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/63.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">63.0/63.0 kB</span> <span class=" -Color -Color-Red">6.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading executing-2.0.1-py2.py3-none-any.whl (24 kB)
-Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl (18 kB)
-Downloading parso-0.8.4-py2.py3-none-any.whl (103 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/103.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">103.7/103.7 kB</span> <span class=" -Color -Color-Red">12.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
-Downloading python_json_logger-2.0.7-py3-none-any.whl (8.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/767.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">767.5/767.5 kB</span> <span class=" -Color -Color-Red">34.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading referencing-0.35.1-py3-none-any.whl (26 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading rfc3986_validator-0.1.1-py2.py3-none-any.whl (4.2 kB)
-Downloading rpds_py-0.20.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (357 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/358.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">358.0/358.0 kB</span> <span class=" -Color -Color-Red">24.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading sniffio-1.3.1-py3-none-any.whl (10 kB)
-Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/86.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">86.2/86.2 kB</span> <span class=" -Color -Color-Red">11.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
-Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
-Downloading h11-0.14.0-py3-none-any.whl (58 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/58.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">58.3/58.3 kB</span> <span class=" -Color -Color-Red">6.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading webcolors-24.8.0-py3-none-any.whl (15 kB)
-Downloading fqdn-1.5.1-py3-none-any.whl (9.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading isoduration-20.11.0-py3-none-any.whl (11 kB)
-Downloading uri_template-1.3.0-py3-none-any.whl (11 kB)
-Downloading arrow-1.3.0-py3-none-any.whl (66 kB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/66.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">66.4/66.4 kB</span> <span class=" -Color -Color-Red">7.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading types_python_dateutil-2.9.0.20240821-py3-none-any.whl (9.7 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: ffmpeg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for ffmpeg (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for ffmpeg: filename=ffmpeg-1.4-py3-none-any.whl size=6082 sha256=2f5a3a73c84339842d500ee3486b5c1d617368b158853af2e87cce37557e2258
-  Stored in directory: /home/ryan/.cache/pip/wheels/26/21/0c/c26e09dff860a9071683e279445262346e008a9a1d2142c4ad
-Successfully built ffmpeg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: webencodings, wcwidth, pure-eval, ptyprocess, ffmpeg, fastjsonschema, widgetsnbextension, websocket-client, webcolors, uri-template, types-python-dateutil, traitlets, tinycss2, terminado, soupsieve, sniffio, send2trash, rpds-py, rfc3986-validator, rfc3339-validator, qtpy, pyzmq, pyyaml, python-json-logger, pygments, psutil, prompt-toolkit, prometheus-client, pexpect, parso, pandocfilters, overrides, nest-asyncio, mistune, markupsafe, jupyterlab-widgets, jupyterlab-pygments, json5, h11, fqdn, executing, defusedxml, decorator, debugpy, bleach, babel, attrs, async-lru, asttokens, stack-data, referencing, matplotlib-inline, jupyter-server-terminals, jupyter-core, jinja2, jedi, httpcore, comm, beautifulsoup4, arrow, argon2-cffi-bindings, anyio, jupyter-client, jsonschema-specifications, isoduration, ipython, httpx, argon2-cffi, jsonschema, ipywidgets, ipykernel, qtconsole, nbformat, jupyter-console, nbclient, jupyter-events, nbconvert, jupyter-server, notebook-shim, jupyterlab-server, jupyter-lsp, jupyterlab, notebook, jupyter, animate_arrays
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed animate_arrays-0.0.1 anyio-4.4.0 argon2-cffi-23.1.0 argon2-cffi-bindings-21.2.0 arrow-1.3.0 asttokens-2.4.1 async-lru-2.0.4 attrs-24.2.0 babel-2.16.0 beautifulsoup4-4.12.3 bleach-6.1.0 comm-0.2.2 debugpy-1.8.5 decorator-5.1.1 defusedxml-0.7.1 executing-2.0.1 fastjsonschema-2.20.0 ffmpeg-1.4 fqdn-1.5.1 h11-0.14.0 httpcore-1.0.5 httpx-0.27.0 ipykernel-6.29.5 ipython-8.26.0 ipywidgets-8.1.5 isoduration-20.11.0 jedi-0.19.1 jinja2-3.1.4 json5-0.9.25 jsonschema-4.23.0 jsonschema-specifications-2023.12.1 jupyter-1.0.0 jupyter-client-8.6.2 jupyter-console-6.6.3 jupyter-core-5.7.2 jupyter-events-0.10.0 jupyter-lsp-2.2.5 jupyter-server-2.14.2 jupyter-server-terminals-0.5.3 jupyterlab-4.2.4 jupyterlab-pygments-0.3.0 jupyterlab-server-2.27.3 jupyterlab-widgets-3.0.13 markupsafe-2.1.5 matplotlib-inline-0.1.7 mistune-3.0.2 nbclient-0.10.0 nbconvert-7.16.4 nbformat-5.10.4 nest-asyncio-1.6.0 notebook-7.2.1 notebook-shim-0.2.4 overrides-7.7.0 pandocfilters-1.5.1 parso-0.8.4 pexpect-4.9.0 prometheus-client-0.20.0 prompt-toolkit-3.0.47 psutil-6.0.0 ptyprocess-0.7.0 pure-eval-0.2.3 pygments-2.18.0 python-json-logger-2.0.7 pyyaml-6.0.2 pyzmq-26.2.0 qtconsole-5.5.2 qtpy-2.4.1 referencing-0.35.1 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rpds-py-0.20.0 send2trash-1.8.3 sniffio-1.3.1 soupsieve-2.6 stack-data-0.6.3 terminado-0.18.1 tinycss2-1.3.0 traitlets-5.14.3 types-python-dateutil-2.9.0.20240821 uri-template-1.3.0 wcwidth-0.2.13 webcolors-24.8.0 webencodings-0.5.1 websocket-client-1.8.0 widgetsnbextension-4.0.13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /home/ryan/miniconda3/lib/python3.12/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook-&gt;jupyter-&gt;animate_arrays) (2.9.0.20240821)
 </pre></div>
 </div>
 </div>
