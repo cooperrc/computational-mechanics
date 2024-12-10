@@ -29,7 +29,7 @@
 * animations
 * How to _listen_ to vibration solutions
 
-## [HW_05](./HW_05)
+## [HW_05](./HW_05.md)
 
 ## [Project 05 - String vibrations of guitars](../projects/05-BVPs_project.md)
 

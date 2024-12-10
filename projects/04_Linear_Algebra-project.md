@@ -115,7 +115,10 @@ _your array `F` is zeros, except for `F[5]=-300`, to create a -300 N load at nod
 
 c. Plug in the values for $\mathbf{u}$ into the full equation, $\mathbf{Ku}=\mathbf{F}$, to solve for the reaction forces
 
-d. Create a plot of the undeformed and deformed structure with the displacements and forces plotted as vectors (via `quiver`). Your result for aluminum should match the following result from [extra-FEA_material](./extra-FEA_material.ipynb). _note: The scale factor is applied to displacements $\mathbf{u}$, not forces._
+d. Create a plot of the undeformed and deformed structure with the
+displacements and forces plotted as vectors (via `quiver`). Your result
+for aluminum should match the following result from
+[extra-FEA_material](./extra-FEA_material.md). _note: The scale factor is applied to displacements $\mathbf{u}$, not forces._
 
 > __Note__: Look at the [extra FEA material](./extra-FEA_material). It
 > has example code that you can plug in here to make these plots.

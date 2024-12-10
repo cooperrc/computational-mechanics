@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -49,7 +49,7 @@ Here, I load the data into a Pandas dataframe to see what headings and values ar
 
 ```{code-cell} ipython3
 data = pd.read_csv('../data/nyse-data.csv')
-data['date'] = pd.to_datetime(data['date'])
+data['date'] = pd.to_datetime(data['date'], format='ISO8601')
 data
 ```
 
