@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -68,12 +68,7 @@ Now you can use the `get_data()` method on the `imageio` _Reader_ object, to gra
 
 To use this ability, you write a function with the events you want to capture, and then connect this function to the Matplotlib "event manager" using [`mpl_connect()`](https://matplotlib.org/devdocs/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.mpl_connect). In this case, you connect the `'button_press_event'` to the function named `onclick()`, which captures the $(x,y)$ coordinates of the mouse click on the figure. Magic!
 
-```{code-cell} ipython3
-def onclick(event):
-    '''Capture the x,y coordinates of a mouse click on the image'''
-    ix, iy = event.xdata, event.ydata
-    coords.append([ix, iy]) 
-```
++++
 
 ## Projectile motion
 
@@ -83,6 +78,13 @@ Now, you'll study projectile motion, using a video of a ball "fired" horizontall
 from IPython.display import YouTubeVideo
 vid = YouTubeVideo("Y4jgJK35Gf0")
 display(vid)
+```
+
+```{code-cell} ipython3
+def onclick(event):
+    '''Capture the x,y coordinates of a mouse click on the image'''
+    ix, iy = event.xdata, event.ydata
+    coords.append([ix, iy]) 
 ```
 
 We used Twitter to communicate with the author of the video and ask permission to use it in this lesson. A big _Thank You_ to Jon Thomas-Palmer for letting us use it!
@@ -158,7 +160,7 @@ gap_lines.mean()
 You computed the vertical distance between in pixels between  distances
 of $10\rm{cm}$ marks (averaging over your clicks). The
 0.1-m/`gap_lines.mean()` converts distances in pixels to distances in
-meters. 
+meters.
 
 +++
 
