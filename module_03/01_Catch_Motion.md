@@ -33,18 +33,6 @@ Let's start at the beginning. Suppose you want to use video capture of a falling
 
 Here is a neat video you found online, produced over at MIT several years ago [1]. It shows a ball being dropped in front of a metered panel, while lit by a stroboscopic light. Watch the video!
 
-```{code-cell} ipython3
-from IPython.display import YouTubeVideo
-vid = YouTubeVideo("xQ4znShlK5A")
-display(vid)
-```
-
-You learn from the video that the marks on the panel are every $0.25\rm{m}$, and on the [website](http://techtv.mit.edu/collections/physicsdemos/videos/831-strobe-of-a-falling-ball) they say that the strobe light flashes at about 15 Hz (that's 15 times per second). The final [image on Flickr](https://www.flickr.com/photos/physicsdemos/3174207211), however, notes that the strobe fired 16.8 times per second. So you have some uncertainty already!
-
-Luckily, the MIT team obtained one frame with the ball visible at several positions as it falls. This, thanks to the strobe light and a long-enough exposure of that frame. What you'd like to do is use that frame to capture the ball positions digitally, and then obtain the velocity and acceleration from the distance over time.
-
-+++
-
 You can find several toolkits for handling images and video with Python; you'll start with a simple one called [`imageio`](https://imageio.github.io). Import this library like any other, and let's load `numpy` and `pyplot` while you're at it.
 
 ```{code-cell} ipython3
@@ -57,30 +45,6 @@ plt.style.use('fivethirtyeight')
 ### Read the video
 
 With the `get_reader()` method of `imageio`, you can read a video from its source into a _Reader_ object. You don't need to worry too much about the technicalities here—you'll walk you through it all—but check the type, the length (for a video, that's number of frames), and notice you can get info, like the frames-per-second, using `get_meta_data()`.
-
-```{code-cell} ipython3
-reader = imageio.get_reader('https://go.gwu.edu/engcomp3vidmit', format='mp4')
-```
-
-```{code-cell} ipython3
-type(reader)
-```
-
-```{code-cell} ipython3
-fps = reader.get_meta_data()['fps']
-print(fps)
-```
-
-##### Note:
-
-You may get this error after calling `get_reader()` if you're not running in the class Jupyter server:
-  
-```
-NeedDownloadError: Need ffmpeg exe. You can obtain it with either:
-  - install using conda: conda install ffmpeg -c conda-forge
-  - download using the command: imageio_download_bin ffmpeg
-  - download by calling (in Python): imageio.plugins.ffmpeg.download()
-```
 
 If you do, you suggest to install `imageio-ffmpeg` package, an ffmpeg wrapper for Python that includes the `ffmpeg` executable. You can install it via `conda`:
 
@@ -102,32 +66,6 @@ Let's also set some font parameters for our plots in this notebook.
 
 Now you can use the `get_data()` method on the `imageio` _Reader_ object, to grab one of the video frames, passing the frame number. Below, you use it to grab frame number 1100, and then print the `shape` attribute to see that it's an "array-like" object with three dimensions: they are the pixel numbers in the horizontal and vertical directions, and the number of colors (3 colors in RGB format). Check the type to see that it's an `imageio` _Image_ object.
 
-```{code-cell} ipython3
-image = reader.get_data(1100)
-image.shape
-```
-
-```{code-cell} ipython3
-type(image)
-```
-
-Naturally, `imageio` plays youll with `pyplot`. You can use
-[`plt.imshow()`](https://matplotlib.org/devdocs/api/_as_gen/matplotlib.plt.imshow.html)
-to show the image in a figure. Show frame 1100, it gives a good view of
-the long-exposure image of the falling ball.
-
-##### Explore:
-
-Check out the neat interactive options that you get with `%matplotlib notebook`. Then go back and change the frame number above, and show it below. Notice that you can see the $(x,y)$ coordinates of your cursor tip while you hover on the image with the mouse.
-
-```{code-cell} ipython3
-plt.imshow(image, interpolation='nearest');
-```
-
-### Capture mouse clicks on the frame
-
-Okay! Here is where things get really interesting. Matplotlib has the ability to create [event connections](https://matplotlib.org/devdocs/users/event_handling.html?highlight=mpl_connect), that is, connect the figure canvas to user-interface events on it, like mouse clicks. 
-
 To use this ability, you write a function with the events you want to capture, and then connect this function to the Matplotlib "event manager" using [`mpl_connect()`](https://matplotlib.org/devdocs/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.mpl_connect). In this case, you connect the `'button_press_event'` to the function named `onclick()`, which captures the $(x,y)$ coordinates of the mouse click on the figure. Magic!
 
 ```{code-cell} ipython3
@@ -136,133 +74,6 @@ def onclick(event):
     ix, iy = event.xdata, event.ydata
     coords.append([ix, iy]) 
 ```
-
-```{code-cell} ipython3
-fig = plt.figure()
-plt.imshow(image, interpolation='nearest')
-
-coords = []
-connectId = fig.canvas.mpl_connect('button_press_event', onclick)
-```
-
-Notice that in the previous code cell, you created an empty list named `coords`, and inside the `onclick()` function, you are appending to it the $(x,y)$ coordinates of each mouse click on the figure. After executing the cell above, you have a connection to the figure, via the user interface: 
-
-## Exercise 
-Click with your mouse on the endpoints of the white lines of the metered panel (click on the edge of the panel to get approximately equal $x$ coordinates), then print the contents of the `coords` list below.
-
-```{code-cell} ipython3
-coords
-```
-
-The $x$ coordinates are pretty close, but there is some variation due to
-our shaky hand (or bad eyesight), and perhaps because the metered panel
-is not perfectly vertical. You can cast the `coords` list to a NumPy
-array, then grab all the first elements of the coordinate pairs, then
-get the standard deviation as an indication of our error in the
-mouse-click captures.
-
-```{code-cell} ipython3
-np.array(coords)[:,0]
-```
-
-```{code-cell} ipython3
-np.array(coords)[:,0].std()
-```
-
-Depending how shaky _your_ hand was, you may get a different value, but you got a standard deviation of about one pixel. Pretty good!
-
-+++
-
-Now, let's grab all the second elements of the coordinate pairs, corresponding to the $y$ coordinates, i.e., the vertical positions of the white lines on the video frame.
-
-```{code-cell} ipython3
-y_lines = np.array(coords)[:,1]
-y_lines
-```
-
-Looking ahead, what you'll do is repeat the process of capturing mouse clicks on the image, but clicking on the ball positions. Then, you will want to have the vertical positions converted to physical length (in meters), from the pixel numbers on the image.
-
-You can get the scaling from pixels to meters via the distance between two white lines on the metered panel, which you know is $0.25\rm{m}$. 
-
-Let's get the average vertical distance between two while lines, which you can calculate as:
-
-\begin{equation}
-\overline{\Delta y} = \sum_{i=0}^N \frac{y_{i+1}-y_i}{N-1}
-\end{equation}
-
-```{code-cell} ipython3
-gap_lines = y_lines[1:] - y_lines[0:-1]
-gap_lines.mean()
-```
-
-## Discussion 
-
-* Why did you slice the `y_lines` array like that? If you can't explain it, write out the first few terms of the sum above and think!
-
-+++
-
-### Compute the acceleration of gravity
-
-You're making good progress! You'll repeat the process of showing the image on an interactive figure, and capturing the mouse clicks on the figure canvas: but this time, you'll click on the ball positions. 
-
-Using the vertical displacements of the ball, $\Delta y_i$, and the known time between two flashes of the strobe light, $1/16.8\rm{s}$, you can get the velocity and acceleration of the ball! But first, to convert the vertical displacements to meters, you'll multiply by $0.25\rm{m}$ and divide by `gap_lines.mean()`.
-
-Before clicking on the ball positions, you may want to inspect the
-high-resolution final [photograph on
-Flickr](https://www.flickr.com/photos/physicsdemos/3174207211)—notice
-that the first faint image of the falling ball is just "touching" the
-ring finger of Bill's hand. We decided _not_ to use that photograph in
-our lesson because the Flickr post says _"All rights reserved"_, while
-the video says specifically that it is licensed under a Creative Commons
-license. In other words, MIT has granted permission to use the video,
-but _not_ the photograph. _Sigh_.
-
-OK. Go for it: capture the clicks on the ball!
-
-```{code-cell} ipython3
-fig = plt.figure()
-plt.imshow(image, interpolation='nearest')
-
-coords = []
-connectId = fig.canvas.mpl_connect('button_press_event', onclick)
-```
-
-## Exercise
-
-Click on the locations of the _ghost_ ball locations in the image above to populate `coords` with x-y-coordinates for the ball's location.
-
-```{code-cell} ipython3
-coords # view the captured ball positions
-```
-
-Scale the vertical displacements of the falling ball as explained above (to get distance in meters), then use the known time between flashes of the strobe light, $1/16.8\rm{s}$, to compute estimates of the velocity and acceleration of the ball at every captured instant, using:
-
-\begin{equation}
-v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
-\end{equation}
-
-```{code-cell} ipython3
-y_coords = np.array(coords)[:,1]
-delta_y = (y_coords[1:] - y_coords[:-1]) *0.25 / gap_lines.mean()
-```
-
-```{code-cell} ipython3
-v = delta_y * 16.8
-v
-```
-
-```{code-cell} ipython3
-a = (v[1:] - v[:-1]) *16.8
-a
-```
-
-```{code-cell} ipython3
-a[1:].mean()
-```
-
-Yikes! That's some wide variation on the acceleration estimates. Our average measurement for the acceleration of gravity is not great, but it's not far off. The actual value you are hoping to find is $9.81\rm{m/s}^2$.
-
-+++
 
 ## Projectile motion
 
@@ -303,7 +114,7 @@ Download the video, previously converted to .mp4 format to be read by `imageio`,
 
 Below, you're showing frame number 52, which you found to be the start of the portion shown at 50% speed. Go ahead and use that frame to capture mouse clicks on the intersection of several $10\rm{cm}$ lines with one vertical, so you can calculate the scaling from pixels to physical distance.
 
-```{code-cell} ipython3
+```
 from urllib.request import urlretrieve
 URL = 'http://go.gwu.edu/engcomp3vid1?accessType=DOWNLOAD'
 urlretrieve(URL, 'Projectile_Motion.mp4')
@@ -328,36 +139,47 @@ connectId = fig.canvas.mpl_connect('button_press_event', onclick)
 
 ## Exercise 
 
-Grab the coordinates of the 0, 10, 20, 30, 40, ..., 100-cm vertical positions so you can create a vertical conversion from pixels to centimeters with `gap_lines2`.
+Grab the coordinates of the 0, 10, 20, 30, 40, ..., 100-cm vertical positions so you can create a vertical conversion from pixels to centimeters with `gap_lines`.
 
 ```{code-cell} ipython3
 coords
 ```
 
 ```{code-cell} ipython3
-y_lines2 = np.array(coords)[:,1]
-y_lines2
+y_lines = np.array(coords)[:,1]
+y_lines
 ```
 
 ```{code-cell} ipython3
-gap_lines2 = y_lines2[1:] - y_lines2[0:-1]
-gap_lines2.mean()
+gap_lines = y_lines[1:] - y_lines[0:-1]
+gap_lines.mean()
 ```
 
-Above, you repeated the process to compute the vertical distance between
-the $10\rm{cm}$ marks (averaging over your clicks): the scaling of
-distances from this video will need multiplying by $0.1$ to get meters,
-and dividing by `gap_lines2.mean()`.
+You computed the vertical distance between in pixels between  distances
+of $10\rm{cm}$ marks (averaging over your clicks). The
+0.1-m/`gap_lines.mean()` converts distances in pixels to distances in
+meters. 
 
 +++
 
-Now the fun part! Study the code below: you create a `selector` widget of the `BoundedIntText` type, taking the values from 52 to 77, and stepping by 1. We already played around a lot with the video and found this frame range to contain the portion shown at 50% speed. 
+Now the fun part! Study the code below: you create a `selector` widget
+of the `BoundedIntText` type, taking the values from 52 to 77, and
+stepping by 1. We already played around a lot with the video and found
+this frame range to contain the portion shown at 50% speed. 
 
-Re-use the `onclick()` function, appending to a list named `coords`, and you call it with an event connection from Matplotlib, just like before. But now you add a call to [`widgets.interact()`](http://ipywidgets.readthedocs.io/en/stable/examples/Using%20Interact.html), using a new function named `catchclick()` that reads a new video frame and refreshes the figure with it.
+Re-use the `onclick()` function, appending to a list named `coords`, and
+you call it with an event connection from Matplotlib, just like before.
+But now you add a call to
+[`widgets.interact()`](http://ipywidgets.readthedocs.io/en/stable/examples/Using%20Interact.html),
+using a new function named `catchclick()` that reads a new video frame
+and refreshes the figure with it.
 
-Execute this cell, then click on the ball position, advance a frame, click on the new ball position, and so on, until frame 77. The mouse click positions will be saved in `coords`.
+Execute this cell, then click on the ball position, advance a frame,
+click on the new ball position, and so on, until frame 77. The mouse
+click positions will be saved in `coords`.
 
-Its better to click on the bottom edge of the ball image, rather than attempt to aim at the ball's center.
+Its better to click on the bottom edge of the ball image, rather than
+attempt to aim at the ball's center.
 
 ```{code-cell} ipython3
 selector = widgets.BoundedIntText(value=52, min=52, max=77, step=1,
@@ -387,8 +209,8 @@ this video, and save the $x$ and $y$ coordinates to new arrays. Below,
 you plot the ball positions that you captured.
 
 ```{code-cell} ipython3
-x = np.array(coords)[:,0] *0.1 / gap_lines2.mean()
-y = np.array(coords)[:,1] *0.1 / gap_lines2.mean()
+x = np.array(coords)[:,0] *0.1 / gap_lines.mean()
+y = np.array(coords)[:,1] *0.1 / gap_lines.mean()
 ```
 
 ```{code-cell} ipython3
