@@ -13,7 +13,7 @@ kernelspec:
 ---
 
 > __Content modified under Creative Commons Attribution license CC-BY
-> 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper__
+> 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba,N.C. Clementi__
 
 +++
 
@@ -61,7 +61,7 @@ So far in this course, you have used the command `%matplotlib inline` to get our
 Let's also set some font parameters for our plots in this notebook.
 
 ```{code-cell} ipython3
-%matplotlib notebook
+%matplotlib widget
 ```
 
 Now you can use the `get_data()` method on the `imageio` _Reader_ object, to grab one of the video frames, passing the frame number. Below, you use it to grab frame number 1100, and then print the `shape` attribute to see that it's an "array-like" object with three dimensions: they are the pixel numbers in the horizontal and vertical directions, and the number of colors (3 colors in RGB format). Check the type to see that it's an `imageio` _Image_ object.
@@ -298,17 +298,10 @@ plt.plot(t,y);
 ```
 
 Neat. The ball bounced 3 times during motion capture. Let's compute the
-acceleration during the first fall, before the bounce. A quick check on
-the `y` array shows that there are several points that take a negative
-value. Use the first negative entry as the top limit of a slice, and
-then compute displacements, velocity, and acceleration with that slice.
+acceleration during the first fall, before the bounce. We can find the bounce locations in different ways. Here, we will look for large changes in velocity. When the ball reaches the largest negative velocity, that's the point when it strikes the ground, 
 
 ```{code-cell} ipython3
-np.where( y < 0 )[0]
-```
-
-```{code-cell} ipython3
-delta_y = (y[1:576] - y[:575])
+delta_y = (y[1:] - y[:-1])
 ```
 
 ```{code-cell} ipython3
@@ -318,7 +311,22 @@ dt
 
 ```{code-cell} ipython3
 vy = delta_y / dt
-ay = (vy[1:] - vy[:-1]) / dt
+plt.figure();
+plt.plot(t[0:-1], vy, 'o')
+
+first_impact = np.argmin(vy)
+
+plt.plot(t[first_impact], 
+         vy[first_impact], 
+         '*', 
+         markersize = 20)
+
+plt.text(t[first_impact], 
+         vy[first_impact], 'first impact')
+```
+
+```{code-cell} ipython3
+ay = (vy[1:first_impact] - vy[:first_impact-1]) / dt
 print('The acceleration in the y direction is: {:.2f}'.format(ay.mean()))
 ```
 

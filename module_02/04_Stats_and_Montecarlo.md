@@ -12,8 +12,8 @@ kernelspec:
   name: python3
 ---
 
-> __Content created under Creative Commons Attribution license CC-BY
-> 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper__
+> __Content modified under Creative Commons Attribution license CC-BY
+> 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba, N.C. Clementi__
 
 +++
 
