@@ -89,16 +89,12 @@ We can satisfy these constraints by leaving out the first, second, and last rows
 
 a. What error would you expect when you solve for `u` in `K*u = F`? 
 
-b. Why is the condition of `K` so large? __The problem is underconstrained. It describes stiffness of structure, but not the BC's. So, we end up with sumF=0 and -sumF=0__
+b. Why is the condition of `K` so large? 
 
 c. What error would you expect when you solve for `u[2:13]` in `K[2:13,2:13]*u=F[2:13]`
 
 ```{code-cell} ipython3
-print(np.linalg.cond(K))
-print(np.linalg.cond(K[2:13,2:13]))
 
-print('expected error in x=solve(K,b) is {}'.format(10**(16-16)))
-print('expected error in x=solve(K[2:13,2:13],b) is {}'.format(10**(2-16)))
 ```
 
 ### 2. Apply a 300-N downward force to the central top node (n 4)
