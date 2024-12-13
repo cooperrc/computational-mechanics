@@ -12,6 +12,9 @@ kernelspec:
   name: python3
 ---
 
+> __Content modified under Creative Commons Attribution license CC-BY
+> 4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba, N.C. Clementi__
+
 # Linear Algebra Introduction
 
 Linear algebra is a representation of linear equations. You can separate the known constants from unknown variables to represent your system of equations. Take the following example, there are three unknowns and three equations
