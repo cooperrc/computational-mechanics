@@ -1,5 +1,5 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Winter 2024
+## ME 3255 Summer 2025
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 - Submitting assignments: [**HuskyCT**](https://learn.uconn.edu)
 - **JupyterHub server**: <https://nanohub.org/tools/compmech>
