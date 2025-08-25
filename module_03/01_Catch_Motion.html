@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
@@ -228,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 </ul>
 </li>
 </ul>
@@ -492,35 +492,22 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceleration-of-a-falling-ball">Acceleration of a falling ball</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-video">Read the video</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-video">Read the video</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-a-video-frame-in-an-interactive-figure">Show a video frame in an interactive figure</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-a-video-frame-in-an-interactive-figure">Show a video frame in an interactive figure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explore">Explore:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capture-mouse-clicks-on-the-frame">Capture mouse clicks on the frame</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-acceleration-of-gravity">Compute the acceleration of gravity</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-motion">Projectile motion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capture-mouse-clicks-on-many-frames-with-a-widget">Capture mouse clicks on many frames with a widget</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-hard-work">Saving your hard work</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-derivatives">Numerical derivatives</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-high-resolution-data">Using high-resolution data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
@@ -536,7 +523,7 @@ document.write(`
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
-4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba,N.C. Clementi</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="catch-things-in-motion">
 <h1>Catch things in motion<a class="headerlink" href="#catch-things-in-motion" title="Link to this heading">#</a></h1>
@@ -547,28 +534,6 @@ document.write(`
 <h2>Acceleration of a falling ball<a class="headerlink" href="#acceleration-of-a-falling-ball" title="Link to this heading">#</a></h2>
 <p>Let’s start at the beginning. Suppose you want to use video capture of a falling ball to <em>compute</em> the acceleration of gravity. Could you do it? With Python, of course you can!</p>
 <p>Here is a neat video you found online, produced over at MIT several years ago [1]. It shows a ball being dropped in front of a metered panel, while lit by a stroboscopic light. Watch the video!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">vid</span> <span class="o">=</span> <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;xQ4znShlK5A&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">vid</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/xQ4znShlK5A"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
-<p>You learn from the video that the marks on the panel are every <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span>, and on the <a class="reference external" href="http://techtv.mit.edu/collections/physicsdemos/videos/831-strobe-of-a-falling-ball">website</a> they say that the strobe light flashes at about 15 Hz (that’s 15 times per second). The final <a class="reference external" href="https://www.flickr.com/photos/physicsdemos/3174207211">image on Flickr</a>, however, notes that the strobe fired 16.8 times per second. So you have some uncertainty already!</p>
-<p>Luckily, the MIT team obtained one frame with the ball visible at several positions as it falls. This, thanks to the strobe light and a long-enough exposure of that frame. What you’d like to do is use that frame to capture the ball positions digitally, and then obtain the velocity and acceleration from the distance over time.</p>
 <p>You can find several toolkits for handling images and video with Python; you’ll start with a simple one called <a class="reference external" href="https://imageio.github.io"><code class="docutils literal notranslate"><span class="pre">imageio</span></code></a>. Import this library like any other, and let’s load <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> while you’re at it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,56 +544,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">imageio</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;imageio&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="read-the-video">
 <h3>Read the video<a class="headerlink" href="#read-the-video" title="Link to this heading">#</a></h3>
 <p>With the <code class="docutils literal notranslate"><span class="pre">get_reader()</span></code> method of <code class="docutils literal notranslate"><span class="pre">imageio</span></code>, you can read a video from its source into a <em>Reader</em> object. You don’t need to worry too much about the technicalities here—you’ll walk you through it all—but check the type, the length (for a video, that’s number of frames), and notice you can get info, like the frames-per-second, using <code class="docutils literal notranslate"><span class="pre">get_meta_data()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">get_reader</span><span class="p">(</span><span class="s1">&#39;https://go.gwu.edu/engcomp3vidmit&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;mp4&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fps</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">get_meta_data</span><span class="p">()[</span><span class="s1">&#39;fps&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="note">
-<h4>Note:<a class="headerlink" href="#note" title="Link to this heading">#</a></h4>
-<p>You may get this error after calling <code class="docutils literal notranslate"><span class="pre">get_reader()</span></code> if you’re not running in the class Jupyter server:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NeedDownloadError</span><span class="p">:</span> <span class="n">Need</span> <span class="n">ffmpeg</span> <span class="n">exe</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">obtain</span> <span class="n">it</span> <span class="k">with</span> <span class="n">either</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">install</span> <span class="n">using</span> <span class="n">conda</span><span class="p">:</span> <span class="n">conda</span> <span class="n">install</span> <span class="n">ffmpeg</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-  <span class="o">-</span> <span class="n">download</span> <span class="n">using</span> <span class="n">the</span> <span class="n">command</span><span class="p">:</span> <span class="n">imageio_download_bin</span> <span class="n">ffmpeg</span>
-  <span class="o">-</span> <span class="n">download</span> <span class="n">by</span> <span class="n">calling</span> <span class="p">(</span><span class="ow">in</span> <span class="n">Python</span><span class="p">):</span> <span class="n">imageio</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">ffmpeg</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
-</pre></div>
-</div>
 <p>If you do, you suggest to install <code class="docutils literal notranslate"><span class="pre">imageio-ffmpeg</span></code> package, an ffmpeg wrapper for Python that includes the <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code> executable. You can install it via <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">imageio-ffmpeg</span> <span class="pre">-c</span> <span class="pre">conda-forge</span></code></p>
-</section>
 </section>
 <section id="show-a-video-frame-in-an-interactive-figure">
 <h3>Show a video frame in an interactive figure<a class="headerlink" href="#show-a-video-frame-in-an-interactive-figure" title="Link to this heading">#</a></h3>
@@ -637,206 +558,14 @@ document.write(`
 <p>Let’s also set some font parameters for our plots in this notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now you can use the <code class="docutils literal notranslate"><span class="pre">get_data()</span></code> method on the <code class="docutils literal notranslate"><span class="pre">imageio</span></code> <em>Reader</em> object, to grab one of the video frames, passing the frame number. Below, you use it to grab frame number 1100, and then print the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute to see that it’s an “array-like” object with three dimensions: they are the pixel numbers in the horizontal and vertical directions, and the number of colors (3 colors in RGB format). Check the type to see that it’s an <code class="docutils literal notranslate"><span class="pre">imageio</span></code> <em>Image</em> object.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="mi">1100</span><span class="p">)</span>
-<span class="n">image</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Naturally, <code class="docutils literal notranslate"><span class="pre">imageio</span></code> plays youll with <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. You can use
-<a class="reference external" href="https://matplotlib.org/devdocs/api/_as_gen/matplotlib.plt.imshow.html"><code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code></a>
-to show the image in a figure. Show frame 1100, it gives a good view of
-the long-exposure image of the falling ball.</p>
-<section id="explore">
-<h4>Explore:<a class="headerlink" href="#explore" title="Link to this heading">#</a></h4>
-<p>Check out the neat interactive options that you get with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code>. Then go back and change the frame number above, and show it below. Notice that you can see the <span class="math notranslate nohighlight">\((x,y)\)</span> coordinates of your cursor tip while you hover on the image with the mouse.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="capture-mouse-clicks-on-the-frame">
-<h3>Capture mouse clicks on the frame<a class="headerlink" href="#capture-mouse-clicks-on-the-frame" title="Link to this heading">#</a></h3>
-<p>Okay! Here is where things get really interesting. Matplotlib has the ability to create <a class="reference external" href="https://matplotlib.org/devdocs/users/event_handling.html?highlight=mpl_connect">event connections</a>, that is, connect the figure canvas to user-interface events on it, like mouse clicks.</p>
 <p>To use this ability, you write a function with the events you want to capture, and then connect this function to the Matplotlib “event manager” using <a class="reference external" href="https://matplotlib.org/devdocs/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.mpl_connect"><code class="docutils literal notranslate"><span class="pre">mpl_connect()</span></code></a>. In this case, you connect the <code class="docutils literal notranslate"><span class="pre">'button_press_event'</span></code> to the function named <code class="docutils literal notranslate"><span class="pre">onclick()</span></code>, which captures the <span class="math notranslate nohighlight">\((x,y)\)</span> coordinates of the mouse click on the figure. Magic!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">onclick</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Capture the x,y coordinates of a mouse click on the image&#39;&#39;&#39;</span>
-    <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">ydata</span>
-    <span class="n">coords</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">])</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
-
-<span class="n">coords</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">connectId</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s1">&#39;button_press_event&#39;</span><span class="p">,</span> <span class="n">onclick</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Notice that in the previous code cell, you created an empty list named <code class="docutils literal notranslate"><span class="pre">coords</span></code>, and inside the <code class="docutils literal notranslate"><span class="pre">onclick()</span></code> function, you are appending to it the <span class="math notranslate nohighlight">\((x,y)\)</span> coordinates of each mouse click on the figure. After executing the cell above, you have a connection to the figure, via the user interface:</p>
 </section>
-</section>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
-<p>Click with your mouse on the endpoints of the white lines of the metered panel (click on the edge of the panel to get approximately equal <span class="math notranslate nohighlight">\(x\)</span> coordinates), then print the contents of the <code class="docutils literal notranslate"><span class="pre">coords</span></code> list below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The <span class="math notranslate nohighlight">\(x\)</span> coordinates are pretty close, but there is some variation due to
-our shaky hand (or bad eyesight), and perhaps because the metered panel
-is not perfectly vertical. You can cast the <code class="docutils literal notranslate"><span class="pre">coords</span></code> list to a NumPy
-array, then grab all the first elements of the coordinate pairs, then
-get the standard deviation as an indication of our error in the
-mouse-click captures.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Depending how shaky <em>your</em> hand was, you may get a different value, but you got a standard deviation of about one pixel. Pretty good!</p>
-<p>Now, let’s grab all the second elements of the coordinate pairs, corresponding to the <span class="math notranslate nohighlight">\(y\)</span> coordinates, i.e., the vertical positions of the white lines on the video frame.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">y_lines</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Looking ahead, what you’ll do is repeat the process of capturing mouse clicks on the image, but clicking on the ball positions. Then, you will want to have the vertical positions converted to physical length (in meters), from the pixel numbers on the image.</p>
-<p>You can get the scaling from pixels to meters via the distance between two white lines on the metered panel, which you know is <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span>.</p>
-<p>Let’s get the average vertical distance between two while lines, which you can calculate as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d852dec-a6f5-44ed-9cbe-71e6e603dd1b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7d852dec-a6f5-44ed-9cbe-71e6e603dd1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\overline{\Delta y} = \sum_{i=0}^N \frac{y_{i+1}-y_i}{N-1}
-\end{equation}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gap_lines</span> <span class="o">=</span> <span class="n">y_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">y_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">gap_lines</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Why did you slice the <code class="docutils literal notranslate"><span class="pre">y_lines</span></code> array like that? If you can’t explain it, write out the first few terms of the sum above and think!</p></li>
-</ul>
-<section id="compute-the-acceleration-of-gravity">
-<h3>Compute the acceleration of gravity<a class="headerlink" href="#compute-the-acceleration-of-gravity" title="Link to this heading">#</a></h3>
-<p>You’re making good progress! You’ll repeat the process of showing the image on an interactive figure, and capturing the mouse clicks on the figure canvas: but this time, you’ll click on the ball positions.</p>
-<p>Using the vertical displacements of the ball, <span class="math notranslate nohighlight">\(\Delta y_i\)</span>, and the known time between two flashes of the strobe light, <span class="math notranslate nohighlight">\(1/16.8\rm{s}\)</span>, you can get the velocity and acceleration of the ball! But first, to convert the vertical displacements to meters, you’ll multiply by <span class="math notranslate nohighlight">\(0.25\rm{m}\)</span> and divide by <code class="docutils literal notranslate"><span class="pre">gap_lines.mean()</span></code>.</p>
-<p>Before clicking on the ball positions, you may want to inspect the
-high-resolution final <a class="reference external" href="https://www.flickr.com/photos/physicsdemos/3174207211">photograph on
-Flickr</a>—notice
-that the first faint image of the falling ball is just “touching” the
-ring finger of Bill’s hand. We decided <em>not</em> to use that photograph in
-our lesson because the Flickr post says <em>“All rights reserved”</em>, while
-the video says specifically that it is licensed under a Creative Commons
-license. In other words, MIT has granted permission to use the video,
-but <em>not</em> the photograph. <em>Sigh</em>.</p>
-<p>OK. Go for it: capture the clicks on the ball!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
-
-<span class="n">coords</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">connectId</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s1">&#39;button_press_event&#39;</span><span class="p">,</span> <span class="n">onclick</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Click on the locations of the <em>ghost</em> ball locations in the image above to populate <code class="docutils literal notranslate"><span class="pre">coords</span></code> with x-y-coordinates for the ball’s location.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="c1"># view the captured ball positions</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Scale the vertical displacements of the falling ball as explained above (to get distance in meters), then use the known time between flashes of the strobe light, <span class="math notranslate nohighlight">\(1/16.8\rm{s}\)</span>, to compute estimates of the velocity and acceleration of the ball at every captured instant, using:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5b86f3f-501e-459e-b347-7f4b8bb86486">
-<span class="eqno">(2)<a class="headerlink" href="#equation-f5b86f3f-501e-459e-b347-7f4b8bb86486" title="Permalink to this equation">#</a></span>\[\begin{equation}
-v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
-\end{equation}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">delta_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">y_coords</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span><span class="mf">0.25</span> <span class="o">/</span> <span class="n">gap_lines</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">delta_y</span> <span class="o">*</span> <span class="mf">16.8</span>
-<span class="n">v</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span><span class="mf">16.8</span>
-<span class="n">a</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Yikes! That’s some wide variation on the acceleration estimates. Our average measurement for the acceleration of gravity is not great, but it’s not far off. The actual value you are hoping to find is <span class="math notranslate nohighlight">\(9.81\rm{m/s}^2\)</span>.</p>
 </section>
 <section id="projectile-motion">
 <h2>Projectile motion<a class="headerlink" href="#projectile-motion" title="Link to this heading">#</a></h2>
@@ -849,6 +578,27 @@ v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="400"
+            height="300"
+            src="https://www.youtube.com/embed/Y4jgJK35Gf0"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">onclick</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Capture the x,y coordinates of a mouse click on the image&#39;&#39;&#39;</span>
+    <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">ydata</span>
+    <span class="n">coords</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
 </div>
 <p>We used Twitter to communicate with the author of the video and ask permission to use it in this lesson. A big <em>Thank You</em> to Jon Thomas-Palmer for letting us use it!</p>
 <div class="cell docutils container">
@@ -858,6 +608,9 @@ v_i = \frac{y_{i+1}-y_i}{\Delta t}, \qquad a_i = \frac{v_{i+1}-v_i}{\Delta t}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You have my permission to use the video. Please provide attribution to me. I’d enjoy seeing what you do with it too!</p>&mdash; Jon Thomas-Palmer (@FlippingPhysics) <a href="https://twitter.com/FlippingPhysics/status/926785273538666497?ref_src=twsrc%5Etfw">November 4, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+</div></div>
 </div>
 <section id="capture-mouse-clicks-on-many-frames-with-a-widget">
 <h3>Capture mouse clicks on many frames with a widget<a class="headerlink" href="#capture-mouse-clicks-on-many-frames-with-a-widget" title="Link to this heading">#</a></h3>
@@ -878,14 +631,10 @@ click on the ball position each time.</p>
 </div>
 <p>Download the video, previously converted to .mp4 format to be read by <code class="docutils literal notranslate"><span class="pre">imageio</span></code>, and then load it to an <code class="docutils literal notranslate"><span class="pre">imageio</span></code> <em>Reader</em>. Notice that it has 3531 frames, and they are 720x1280 pixels in size.</p>
 <p>Below, you’re showing frame number 52, which you found to be the start of the portion shown at 50% speed. Go ahead and use that frame to capture mouse clicks on the intersection of several <span class="math notranslate nohighlight">\(10\rm{cm}\)</span> lines with one vertical, so you can calculate the scaling from pixels to physical distance.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
 <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://go.gwu.edu/engcomp3vid1?accessType=DOWNLOAD&#39;</span>
 <span class="n">urlretrieve</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="s1">&#39;Projectile_Motion.mp4&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -901,6 +650,11 @@ click on the ball position each time.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(720, 1280, 3)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -912,43 +666,72 @@ click on the ball position each time.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c0bbefbc5e00468c9f0b42b51407e8f0"}</script></div>
 </div>
 </section>
 </section>
-<section id="id2">
-<h2>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>Grab the coordinates of the 0, 10, 20, 30, 40, …, 100-cm vertical positions so you can create a vertical conversion from pixels to centimeters with <code class="docutils literal notranslate"><span class="pre">gap_lines2</span></code>.</p>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p>Grab the coordinates of the 0, 10, 20, 30, 40, …, 100-cm vertical positions so you can create a vertical conversion from pixels to centimeters with <code class="docutils literal notranslate"><span class="pre">gap_lines</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_lines2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">y_lines2</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gap_lines2</span> <span class="o">=</span> <span class="n">y_lines2</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">y_lines2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">gap_lines2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y_lines</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y_lines</span>
+
+<span class="ne">IndexError</span>: too many indices for array: array is 1-dimensional, but 2 were indexed
 </pre></div>
 </div>
 </div>
 </div>
-<p>Above, you repeated the process to compute the vertical distance between
-the <span class="math notranslate nohighlight">\(10\rm{cm}\)</span> marks (averaging over your clicks): the scaling of
-distances from this video will need multiplying by <span class="math notranslate nohighlight">\(0.1\)</span> to get meters,
-and dividing by <code class="docutils literal notranslate"><span class="pre">gap_lines2.mean()</span></code>.</p>
-<p>Now the fun part! Study the code below: you create a <code class="docutils literal notranslate"><span class="pre">selector</span></code> widget of the <code class="docutils literal notranslate"><span class="pre">BoundedIntText</span></code> type, taking the values from 52 to 77, and stepping by 1. We already played around a lot with the video and found this frame range to contain the portion shown at 50% speed.</p>
-<p>Re-use the <code class="docutils literal notranslate"><span class="pre">onclick()</span></code> function, appending to a list named <code class="docutils literal notranslate"><span class="pre">coords</span></code>, and you call it with an event connection from Matplotlib, just like before. But now you add a call to <a class="reference external" href="http://ipywidgets.readthedocs.io/en/stable/examples/Using%20Interact.html"><code class="docutils literal notranslate"><span class="pre">widgets.interact()</span></code></a>, using a new function named <code class="docutils literal notranslate"><span class="pre">catchclick()</span></code> that reads a new video frame and refreshes the figure with it.</p>
-<p>Execute this cell, then click on the ball position, advance a frame, click on the new ball position, and so on, until frame 77. The mouse click positions will be saved in <code class="docutils literal notranslate"><span class="pre">coords</span></code>.</p>
-<p>Its better to click on the bottom edge of the ball image, rather than attempt to aim at the ball’s center.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gap_lines</span> <span class="o">=</span> <span class="n">y_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">y_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">gap_lines</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You computed the vertical distance between in pixels between  distances
+of <span class="math notranslate nohighlight">\(10\rm{cm}\)</span> marks (averaging over your clicks). The
+0.1-m/<code class="docutils literal notranslate"><span class="pre">gap_lines.mean()</span></code> converts distances in pixels to distances in
+meters.</p>
+<p>Now the fun part! Study the code below: you create a <code class="docutils literal notranslate"><span class="pre">selector</span></code> widget
+of the <code class="docutils literal notranslate"><span class="pre">BoundedIntText</span></code> type, taking the values from 52 to 77, and
+stepping by 1. We already played around a lot with the video and found
+this frame range to contain the portion shown at 50% speed.</p>
+<p>Re-use the <code class="docutils literal notranslate"><span class="pre">onclick()</span></code> function, appending to a list named <code class="docutils literal notranslate"><span class="pre">coords</span></code>, and
+you call it with an event connection from Matplotlib, just like before.
+But now you add a call to
+<a class="reference external" href="http://ipywidgets.readthedocs.io/en/stable/examples/Using%20Interact.html"><code class="docutils literal notranslate"><span class="pre">widgets.interact()</span></code></a>,
+using a new function named <code class="docutils literal notranslate"><span class="pre">catchclick()</span></code> that reads a new video frame
+and refreshes the figure with it.</p>
+<p>Execute this cell, then click on the ball position, advance a frame,
+click on the new ball position, and so on, until frame 77. The mouse
+click positions will be saved in <code class="docutils literal notranslate"><span class="pre">coords</span></code>.</p>
+<p>Its better to click on the bottom edge of the ball image, rather than
+attempt to aim at the ball’s center.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selector</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">BoundedIntText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">77</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
@@ -983,8 +766,8 @@ this video, and save the <span class="math notranslate nohighlight">\(x\)</span>
 you plot the ball positions that you captured.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span><span class="mf">0.1</span> <span class="o">/</span> <span class="n">gap_lines2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span><span class="mf">0.1</span> <span class="o">/</span> <span class="n">gap_lines2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span><span class="mf">0.1</span> <span class="o">/</span> <span class="n">gap_lines</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span><span class="mf">0.1</span> <span class="o">/</span> <span class="n">gap_lines</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1041,8 +824,8 @@ save your variables <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 </section>
-<section id="id3">
-<h2>Discussion<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What did you get for the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> accelerations? What did your colleagues get?</p></li>
 <li><p>Do the results make sense to you? Why or why not?</p></li>
@@ -1051,13 +834,13 @@ save your variables <code class="docutils literal notranslate"><span class="pre"
 <section id="numerical-derivatives">
 <h2>Numerical derivatives<a class="headerlink" href="#numerical-derivatives" title="Link to this heading">#</a></h2>
 <p>You just computed the average velocity between two captured ball positions using <em>numerical derivative</em>. The velocity is the <em>derivative</em> of position with respect to time, and you can approximate its instantaneous value with the average velocity between two close instants in time:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ad0e50c-25a9-4b96-ac11-25d139aa063e">
-<span class="eqno">(3)<a class="headerlink" href="#equation-6ad0e50c-25a9-4b96-ac11-25d139aa063e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4335699e-eea4-4bec-8e77-861413334928">
+<span class="eqno">(1)<a class="headerlink" href="#equation-4335699e-eea4-4bec-8e77-861413334928" title="Permalink to this equation">#</a></span>\[\begin{equation}
 v(t) = \frac{dy}{dt} \approx \frac{y(t_i+\Delta t)-y(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>And acceleration is the <em>derivative</em> of velocity with respect to time; you can approximate it with the average acceleration within a time interval:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d0ae68d0-5a21-46dc-a9d8-c739a97ff5f4">
-<span class="eqno">(4)<a class="headerlink" href="#equation-d0ae68d0-5a21-46dc-a9d8-c739a97ff5f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c4525a22-e415-4168-b933-5c43e8356174">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c4525a22-e415-4168-b933-5c43e8356174" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a(t) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
 \end{equation}\]</div>
 <p>As you can imagine, the quality of the approximation depends on the size of the time interval: as <span class="math notranslate nohighlight">\(\Delta t\)</span> gets smaller, the error also gets smaller.</p>
@@ -1083,20 +866,10 @@ a(t) = \frac{dv}{dt} \approx \frac{v(t_i+\Delta t)-v(t_i)}{\Delta t}
 </div>
 </div>
 <p>Neat. The ball bounced 3 times during motion capture. Let’s compute the
-acceleration during the first fall, before the bounce. A quick check on
-the <code class="docutils literal notranslate"><span class="pre">y</span></code> array shows that there are several points that take a negative
-value. Use the first negative entry as the top limit of a slice, and
-then compute displacements, velocity, and acceleration with that slice.</p>
+acceleration during the first fall, before the bounce. We can find the bounce locations in different ways. Here, we will look for large changes in velocity. When the ball reaches the largest negative velocity, that’s the point when it strikes the ground,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">576</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[:</span><span class="mi">575</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1112,7 +885,25 @@ then compute displacements, velocity, and acceleration with that slice.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vy</span> <span class="o">=</span> <span class="n">delta_y</span> <span class="o">/</span> <span class="n">dt</span>
-<span class="n">ay</span> <span class="o">=</span> <span class="p">(</span><span class="n">vy</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">vy</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">dt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="n">first_impact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">vy</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">first_impact</span><span class="p">],</span> 
+         <span class="n">vy</span><span class="p">[</span><span class="n">first_impact</span><span class="p">],</span> 
+         <span class="s1">&#39;*&#39;</span><span class="p">,</span> 
+         <span class="n">markersize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">first_impact</span><span class="p">],</span> 
+         <span class="n">vy</span><span class="p">[</span><span class="n">first_impact</span><span class="p">],</span> <span class="s1">&#39;first impact&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ay</span> <span class="o">=</span> <span class="p">(</span><span class="n">vy</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">first_impact</span><span class="p">]</span> <span class="o">-</span> <span class="n">vy</span><span class="p">[:</span><span class="n">first_impact</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">dt</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The acceleration in the y direction is: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ay</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 </pre></div>
 </div>
@@ -1129,8 +920,8 @@ then compute displacements, velocity, and acceleration with that slice.</p>
 </div>
 </section>
 </section>
-<section id="id4">
-<h2>Discussion<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Discussion<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What do you see in the plot of acceleration computed from the high-resolution data?</p></li>
 <li><p>Can you explain it? What do you think is causing this?</p></li>
@@ -1225,35 +1016,22 @@ then compute displacements, velocity, and acceleration with that slice.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceleration-of-a-falling-ball">Acceleration of a falling ball</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-video">Read the video</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-video">Read the video</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-a-video-frame-in-an-interactive-figure">Show a video frame in an interactive figure</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-a-video-frame-in-an-interactive-figure">Show a video frame in an interactive figure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explore">Explore:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capture-mouse-clicks-on-the-frame">Capture mouse clicks on the frame</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-acceleration-of-gravity">Compute the acceleration of gravity</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-motion">Projectile motion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capture-mouse-clicks-on-many-frames-with-a-widget">Capture mouse clicks on many frames with a widget</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-hard-work">Saving your hard work</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-derivatives">Numerical derivatives</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-high-resolution-data">Using high-resolution data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-learned">What you’ve learned</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>

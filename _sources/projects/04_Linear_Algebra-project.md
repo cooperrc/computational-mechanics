@@ -89,16 +89,12 @@ We can satisfy these constraints by leaving out the first, second, and last rows
 
 a. What error would you expect when you solve for `u` in `K*u = F`? 
 
-b. Why is the condition of `K` so large? __The problem is underconstrained. It describes stiffness of structure, but not the BC's. So, we end up with sumF=0 and -sumF=0__
+b. Why is the condition of `K` so large? 
 
 c. What error would you expect when you solve for `u[2:13]` in `K[2:13,2:13]*u=F[2:13]`
 
 ```{code-cell} ipython3
-print(np.linalg.cond(K))
-print(np.linalg.cond(K[2:13,2:13]))
 
-print('expected error in x=solve(K,b) is {}'.format(10**(16-16)))
-print('expected error in x=solve(K[2:13,2:13],b) is {}'.format(10**(2-16)))
 ```
 
 ### 2. Apply a 300-N downward force to the central top node (n 4)
@@ -115,7 +111,10 @@ _your array `F` is zeros, except for `F[5]=-300`, to create a -300 N load at nod
 
 c. Plug in the values for $\mathbf{u}$ into the full equation, $\mathbf{Ku}=\mathbf{F}$, to solve for the reaction forces
 
-d. Create a plot of the undeformed and deformed structure with the displacements and forces plotted as vectors (via `quiver`). Your result for aluminum should match the following result from [extra-FEA_material](./extra-FEA_material.ipynb). _note: The scale factor is applied to displacements $\mathbf{u}$, not forces._
+d. Create a plot of the undeformed and deformed structure with the
+displacements and forces plotted as vectors (via `quiver`). Your result
+for aluminum should match the following result from
+[extra-FEA_material](./extra-FEA_material.md). _note: The scale factor is applied to displacements $\mathbf{u}$, not forces._
 
 > __Note__: Look at the [extra FEA material](./extra-FEA_material). It
 > has example code that you can plug in here to make these plots.

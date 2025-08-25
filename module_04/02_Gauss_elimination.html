@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
@@ -228,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 </ul>
 </li>
 </ul>
@@ -536,7 +536,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gauss-elimination">
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba, N.C. Clementi</strong></p>
+</div></blockquote>
+<section class="tex2jax_ignore mathjax_ignore" id="gauss-elimination">
 <h1>Gauss Elimination<a class="headerlink" href="#gauss-elimination" title="Link to this heading">#</a></h1>
 <section id="uncovering-the-solution-of-linear-algebra-equations">
 <h2>Uncovering the solution of linear algebra equations<a class="headerlink" href="#uncovering-the-solution-of-linear-algebra-equations" title="Link to this heading">#</a></h2>
@@ -1187,8 +1191,8 @@ y_{3}\end{array}\right]\)</span></p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 614 µs, sys: 19 µs, total: 633 µs
-Wall time: 493 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 741 µs, sys: 0 ns, total: 741 µs
+Wall time: 674 µs
 </pre></div>
 </div>
 </div>
@@ -1207,8 +1211,8 @@ Wall time: 493 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 474 µs, sys: 0 ns, total: 474 µs
-Wall time: 380 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 504 µs, sys: 0 ns, total: 504 µs
+Wall time: 408 µs
 </pre></div>
 </div>
 </div>
@@ -1246,8 +1250,8 @@ Wall time: 380 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 43.5 ms, sys: 0 ns, total: 43.5 ms
-Wall time: 41.3 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 64.7 ms, sys: 1.95 ms, total: 66.7 ms
+Wall time: 66.4 ms
 </pre></div>
 </div>
 </div>
@@ -1265,8 +1269,8 @@ Wall time: 41.3 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 71.2 ms, sys: 63 µs, total: 71.3 ms
-Wall time: 66.2 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 125 ms, sys: 2.06 ms, total: 127 ms
+Wall time: 124 ms
 </pre></div>
 </div>
 </div>
@@ -1541,11 +1545,11 @@ x_{3} \end{array} \right]=
  [ nan  nan  nan  nan]]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5968/1119853754.py:24: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7904/1119853754.py:24: RuntimeWarning: divide by zero encountered in scalar divide
   factor = Aug[i,k]/Aug[k,k]
-/tmp/ipykernel_5968/1119853754.py:25: RuntimeWarning: invalid value encountered in multiply
+/tmp/ipykernel_7904/1119853754.py:25: RuntimeWarning: invalid value encountered in multiply
   Aug[i,:] = Aug[i,:] - factor*Aug[k,:]
-/tmp/ipykernel_5968/1119853754.py:24: RuntimeWarning: invalid value encountered in scalar divide
+/tmp/ipykernel_7904/1119853754.py:24: RuntimeWarning: invalid value encountered in scalar divide
   factor = Aug[i,k]/Aug[k,k]
 </pre></div>
 </div>

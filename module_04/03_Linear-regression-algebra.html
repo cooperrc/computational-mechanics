@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
@@ -228,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 </ul>
 </li>
 </ul>
@@ -519,7 +519,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-regression-algebra">
+  <blockquote>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba, N.C. Clementi</strong></p>
+</div></blockquote>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-regression-algebra">
 <h1>Linear Regression Algebra<a class="headerlink" href="#linear-regression-algebra" title="Link to this heading">#</a></h1>
 <p>In the second Module <a class="reference internal" href="../module_02/README.html"><span class="doc std std-doc">CompMech02-Analyze-Data</span></a>, you
 imported data from the <a class="reference external" href="https://www.ncdc.noaa.gov/cag/">NOAA</a> (National
@@ -836,18 +840,6 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">mos2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../data/mos2_afm.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d</span> <span class="o">=</span> <span class="n">mos2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># deflection data</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now, you have a variable, <code class="docutils literal notranslate"><span class="pre">model</span></code>, that contains the measured values of force and assumed function, <span class="math notranslate nohighlight">\(F=A_0 \delta^3 + A_1 \delta^1\)</span>. Save the statistical output in the variable <code class="docutils literal notranslate"><span class="pre">results</span></code>. The <code class="docutils literal notranslate"><span class="pre">statsmodel</span></code> fit contains <em>a lot</em> of information. For now, look at two of the outputs</p>
 <ol class="arabic simple">
@@ -876,6 +868,67 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>coeffictients are A0 = 0.0018921394737263883, A1 = 1.5811965217538133
+Statsmodel summary of model
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared (uncentered):</th>      <td>   0.999</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared (uncentered):</th> <td>   0.999</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>          <td>4.496e+05</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 25 Aug 2025</td> <th>  Prob (F-statistic):</th>           <td>  0.00</td>  
+</tr>
+<tr>
+  <th>Time:</th>                 <td>08:42:17</td>     <th>  Log-Likelihood:    </th>          <td> -1227.5</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   460</td>      <th>  AIC:               </th>          <td>   2459.</td> 
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   458</td>      <th>  BIC:               </th>          <td>   2467.</td> 
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>              <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>              <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+   <td></td>     <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>x1</th> <td>    0.0019</td> <td> 7.29e-06</td> <td>  259.384</td> <td> 0.000</td> <td>    0.002</td> <td>    0.002</td>
+</tr>
+<tr>
+  <th>x2</th> <td>    1.5812</td> <td>    0.013</td> <td>  117.560</td> <td> 0.000</td> <td>    1.555</td> <td>    1.608</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>137.172</td> <th>  Durbin-Watson:     </th> <td>   0.373</td> 
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td> 630.686</td> 
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-1.235</td>  <th>  Prob(JB):          </th> <td>1.12e-137</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 8.177</td>  <th>  Cond. No.          </th> <td>4.72e+03</td> 
+</tr>
+</table><br/><br/>Notes:<br/>[1] R² is computed without centering (uncentered) since the model does not contain a constant.<br/>[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[3] The condition number is large, 4.72e+03. This might indicate that there are<br/>strong multicollinearity or other numerical problems.</div><img alt="../_images/4684371d0b2d8ae6615ec44b67ef8f7524780bacf0653191eca260bbff641129.png" src="../_images/4684371d0b2d8ae6615ec44b67ef8f7524780bacf0653191eca260bbff641129.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -888,6 +941,12 @@ a single layer of <span class="math notranslate nohighlight">\(MoS_2\)</span>, 0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Youngs modulus from fit = </span><span class="si">{:.0f}</span><span class="s1"> GPa&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mf">1.09</span><span class="o">/</span><span class="mf">0.61</span><span class="o">*</span><span class="mi">260</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Youngs modulus reported = 210 GPa&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Youngs modulus from fit = 192 GPa
+Youngs modulus reported = 210 GPa
 </pre></div>
 </div>
 </div>
@@ -912,6 +971,9 @@ Let’s take some voltage-vs-time data that you know has two frequency component
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/1285b5f2b31dafc81d018cca62e1942ecbcdfe46ac3dc8618d85b264c0a09718.png" src="../_images/1285b5f2b31dafc81d018cca62e1942ecbcdfe46ac3dc8618d85b264c0a09718.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -930,6 +992,9 @@ Let’s take some voltage-vs-time data that you know has two frequency component
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Amplitudes of sin(t) and sin(3t) signals</span><span class="se">\n</span><span class="s1"> </span><span class="si">{:.3f}</span><span class="s1"> V and </span><span class="si">{:.3f}</span><span class="s1"> V&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">amps</span><span class="p">));</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fb0f05c5c7efb04f1188db233e6bc2773389e3bf1f70fb898d227ca1e17fe813.png" src="../_images/fb0f05c5c7efb04f1188db233e6bc2773389e3bf1f70fb898d227ca1e17fe813.png" />
 </div>
 </div>
 </section>
@@ -959,6 +1024,26 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is every 10th row of Z
+---------------------------
+[[1880    1    0]
+ [1890    1    0]
+ [1900    1    0]
+ [1910    1    0]
+ [1920    1    0]
+ [1930    1    0]
+ [1940    1    0]
+ [1950    1    0]
+ [1960    1    0]
+ [1970    1    0]
+ [1980    1   10]
+ [1990    1   20]
+ [2000    1   30]
+ [2010    1   40]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -971,6 +1056,9 @@ after 1970, activated with a heaviside function, <span class="math notranslate n
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e56b8f595c3da514528b537ea3b75c00492905c6f47b2874b9012e7fa5af5936.png" src="../_images/e56b8f595c3da514528b537ea3b75c00492905c6f47b2874b9012e7fa5af5936.png" />
 </div>
 </div>
 </section>

@@ -1,5 +1,5 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Fall 2024
+## ME 3255 Fall 2025
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 - Submitting assignments: [**HuskyCT**](https://learn.uconn.edu)
 - **JupyterHub server**: <https://nanohub.org/tools/compmech>
@@ -212,7 +212,8 @@ communicated via the calendar or another appropriate notification._
 
 __Late Policy__: You must submit
 _something_ for every due date. You can resubmit any assignment to get
-points back, but if you miss the submission date, its a 0. If you don't
+points back, but if you miss the submission date, the grade will
+automatically updat to **0**. If you don't
 have any answers, write a question in each problem and we will give you
 feedback for you to resubmit the assignment. 
 

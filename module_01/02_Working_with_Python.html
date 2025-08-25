@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 01 - Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">02 - Working with Python</a></li>
@@ -228,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 </ul>
 </li>
 </ul>
@@ -541,7 +541,7 @@ document.write(`
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
-4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba,N.C. Clementi</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="working-with-python">
 <h1>02 - Working with Python<a class="headerlink" href="#working-with-python" title="Link to this heading">#</a></h1>
@@ -999,7 +999,7 @@ you can do more computations, like add or multiply them. For example:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5360/2664324349.py:1: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7341/2664324349.py:1: RuntimeWarning: invalid value encountered in divide
   x_array / y_array
 </pre></div>
 </div>
@@ -1362,8 +1362,8 @@ with no numbers repeated.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[72, 26, 21, 20, 27, 51, 63, 67, 24, 77]
-[2, 98, 62, 63, 15, 18, 72, 94, 95, 22]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13, 37, 53, 67, 0, 17, 39, 22, 92, 47]
+[62, 87, 12, 71, 26, 21, 15, 32, 95, 33]
 </pre></div>
 </div>
 </div>
@@ -1383,8 +1383,8 @@ takes to execute all the code in that cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 15 µs, sys: 0 ns, total: 15 µs
-Wall time: 16.5 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 16 µs, sys: 0 ns, total: 16 µs
+Wall time: 18.1 µs
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1396,7 @@ Wall time: 16.5 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[74, 124, 83, 83, 42, 69, 135, 161, 119, 99]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[75, 124, 65, 138, 26, 38, 54, 54, 187, 80]
 </pre></div>
 </div>
 </div>
@@ -1430,8 +1430,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[49  8 82 13 38 73 99 93 20 91]
-[41 51 41 71 17 79 93 83 60  5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[33 82 49 56 26 59  1  1 74 60]
+[29 40 45 24  6 85  5 51 37  1]
 </pre></div>
 </div>
 </div>
@@ -1445,8 +1445,8 @@ that the arrays and the lists are of the same length and type
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11 µs, sys: 1e+03 ns, total: 12 µs
-Wall time: 13.4 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 23 µs, sys: 2 µs, total: 25 µs
+Wall time: 29.1 µs
 </pre></div>
 </div>
 </div>
@@ -1530,7 +1530,7 @@ in the x-axis, you need to import the module <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7805245d82b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6f77270b50&gt;
 </pre></div>
 </div>
 <img alt="../_images/becdb66932b771ed635afa567cf51cddc1ad2f5816101f0d5e6f433f1c22d547.png" src="../_images/becdb66932b771ed635afa567cf51cddc1ad2f5816101f0d5e6f433f1c22d547.png" />

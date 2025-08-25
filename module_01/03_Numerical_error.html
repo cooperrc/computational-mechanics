@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Computational Mechanics 01 - Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_Working_with_Python.html">02 - Working with Python</a></li>
@@ -228,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 </ul>
 </li>
 </ul>
@@ -543,7 +543,7 @@ document.write(`
                   
   <blockquote>
 <div><p><strong>Content modified under Creative Commons Attribution license CC-BY
-4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba,N.C. Clementi</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="numerical-error">
 <h1>03 - Numerical Error<a class="headerlink" href="#numerical-error" title="Link to this heading">#</a></h1>
@@ -927,9 +927,9 @@ floating point arithmetic errors we accumulate some error.</p>
 First 26 digits of pi   = 3.14159265358979323846264338
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5387/1366774004.py:6: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7368/1366774004.py:6: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39; 0 operations 64 bit pi = %1.26f\n&#39;%double) # 64-bit
-/tmp/ipykernel_5387/1366774004.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_7368/1366774004.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39;20 operations 64 bit pi = %1.26f\n&#39;%double_operated) # 64-bit after 1000 additions and 1 subtraction
 </pre></div>
 </div>
@@ -1111,8 +1111,8 @@ Here, consider the speed from 0 to 2 seconds, so <code class="docutils literal n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 147 µs, sys: 4 µs, total: 151 µs
-Wall time: 130 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 160 µs, sys: 8 µs, total: 168 µs
+Wall time: 152 µs
 </pre></div>
 </div>
 </div>
@@ -1144,7 +1144,7 @@ Wall time: 130 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7d0d41d6bc10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd1c409a560&gt;
 </pre></div>
 </div>
 <img alt="../_images/dd2aa2047178451516ea64a816f567ea59a50c9df851ebca3c3db37f99b9b32c.png" src="../_images/dd2aa2047178451516ea64a816f567ea59a50c9df851ebca3c3db37f99b9b32c.png" />

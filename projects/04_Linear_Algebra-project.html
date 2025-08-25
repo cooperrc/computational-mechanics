@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
@@ -228,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 </ul>
 </li>
 </ul>
@@ -618,27 +618,8 @@ components of forces = 0, represented by the equation</p>
 <section id="calculate-the-condition-of-k-and-the-condition-of-k-2-13-2-13">
 <h3>1. Calculate the condition of <code class="docutils literal notranslate"><span class="pre">K</span></code> and the condition of <code class="docutils literal notranslate"><span class="pre">K[2:13,2:13]</span></code>.<a class="headerlink" href="#calculate-the-condition-of-k-and-the-condition-of-k-2-13-2-13" title="Link to this heading">#</a></h3>
 <p>a. What error would you expect when you solve for <code class="docutils literal notranslate"><span class="pre">u</span></code> in <code class="docutils literal notranslate"><span class="pre">K*u</span> <span class="pre">=</span> <span class="pre">F</span></code>?</p>
-<p>b. Why is the condition of <code class="docutils literal notranslate"><span class="pre">K</span></code> so large? <strong>The problem is underconstrained. It describes stiffness of structure, but not the BC’s. So, we end up with sumF=0 and -sumF=0</strong></p>
+<p>b. Why is the condition of <code class="docutils literal notranslate"><span class="pre">K</span></code> so large?</p>
 <p>c. What error would you expect when you solve for <code class="docutils literal notranslate"><span class="pre">u[2:13]</span></code> in <code class="docutils literal notranslate"><span class="pre">K[2:13,2:13]*u=F[2:13]</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cond</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cond</span><span class="p">(</span><span class="n">K</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">13</span><span class="p">]))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;expected error in x=solve(K,b) is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="mi">16</span><span class="o">-</span><span class="mi">16</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;expected error in x=solve(K[2:13,2:13],b) is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">16</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4577532625238035e+17
-52.23542514351006
-expected error in x=solve(K,b) is 1
-expected error in x=solve(K[2:13,2:13],b) is 1e-14
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="apply-a-300-n-downward-force-to-the-central-top-node-n-4">
 <h3>2. Apply a 300-N downward force to the central top node (n 4)<a class="headerlink" href="#apply-a-300-n-downward-force-to-the-central-top-node-n-4" title="Link to this heading">#</a></h3>
@@ -650,7 +631,10 @@ expected error in x=solve(K[2:13,2:13],b) is 1e-14
 </ul>
 <p><em>your array <code class="docutils literal notranslate"><span class="pre">F</span></code> is zeros, except for <code class="docutils literal notranslate"><span class="pre">F[5]=-300</span></code>, to create a -300 N load at node 4.</em></p>
 <p>c. Plug in the values for <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> into the full equation, <span class="math notranslate nohighlight">\(\mathbf{Ku}=\mathbf{F}\)</span>, to solve for the reaction forces</p>
-<p>d. Create a plot of the undeformed and deformed structure with the displacements and forces plotted as vectors (via <code class="docutils literal notranslate"><span class="pre">quiver</span></code>). Your result for aluminum should match the following result from <a class="reference internal" href="#./extra-FEA_material.ipynb"><span class="xref myst">extra-FEA_material</span></a>. <em>note: The scale factor is applied to displacements <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>, not forces.</em></p>
+<p>d. Create a plot of the undeformed and deformed structure with the
+displacements and forces plotted as vectors (via <code class="docutils literal notranslate"><span class="pre">quiver</span></code>). Your result
+for aluminum should match the following result from
+<a class="reference internal" href="extra-FEA_material.html"><span class="std std-doc">extra-FEA_material</span></a>. <em>note: The scale factor is applied to displacements <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>, not forces.</em></p>
 <blockquote>
 <div><p><strong>Note</strong>: Look at the <a class="reference internal" href="extra-FEA_material.html"><span class="doc std std-doc">extra FEA material</span></a>. It
 has example code that you can plug in here to make these plots.

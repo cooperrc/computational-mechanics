@@ -181,7 +181,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus - Computational Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_01/README.html">Computational Mechanics 01 - Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/01_Interacting_with_Python.html">01 - Interacting with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_01/02_Working_with_Python.html">02 - Working with Python</a></li>
@@ -228,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../how-to/polyfit.html">Creating a quadratic fit on random data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../how-to/for-loops.html">How to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop? <em>in Python</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/extra-FEA_material.html">Extra Material: Direct stiffness method for Finite Element analysis (FEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/update-github.html">Working in your  Fork on GitHub.com</a></li>
 </ul>
 </li>
 </ul>
@@ -519,8 +519,8 @@ document.write(`
                 <article class="bd-article">
                   
   <blockquote>
-<div><p><strong>Content created under Creative Commons Attribution license CC-BY
-4.0, code under BSD 3-Clause License © 2020 R.C. Cooper</strong></p>
+<div><p><strong>Content modified under Creative Commons Attribution license CC-BY
+4.0, code under BSD 3-Clause License © 2020 R.C. Cooper, L.A. Barba, N.C. Clementi</strong></p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="statistics-and-monte-carlo-models">
 <h1>04 - Statistics and Monte-Carlo Models<a class="headerlink" href="#statistics-and-monte-carlo-models" title="Link to this heading">#</a></h1>
@@ -541,10 +541,10 @@ library</a> as such</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.26207156, 0.26666289, 0.17445763, 0.98784028, 0.42155074,
-       0.73032015, 0.32361885, 0.15678015, 0.50743234, 0.69917316,
-       0.88716265, 0.77646769, 0.05364661, 0.76072172, 0.79174137,
-       0.90284891, 0.77802868, 0.29578607, 0.02226852, 0.81819303])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.73440806, 0.95325724, 0.4447691 , 0.35522323, 0.2195619 ,
+       0.2916344 , 0.47067702, 0.69606613, 0.23523765, 0.71357937,
+       0.33958438, 0.66808134, 0.41091165, 0.59430784, 0.69977265,
+       0.33617435, 0.53861218, 0.24130999, 0.55421822, 0.87467641])
 </pre></div>
 </div>
 </div>
@@ -577,13 +577,13 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([4., 4., 2., 6., 4.]),
- array([0.02226852, 0.21538287, 0.40849722, 0.60161158, 0.79472593,
-        0.98784028]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([7., 3., 3., 5., 2.]),
+ array([0.2195619 , 0.36630097, 0.51304004, 0.6597791 , 0.80651817,
+        0.95325724]),
  &lt;BarContainer object of 5 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/f3a1a81e19cc101a468b611a84ff705d56dc0915192dce408f22a422cc02d565.png" src="../_images/f3a1a81e19cc101a468b611a84ff705d56dc0915192dce408f22a422cc02d565.png" />
+<img alt="../_images/631a7b83a8a52490ea73b5a777f1b703d4acd75538319f038a5042ebae512a97.png" src="../_images/631a7b83a8a52490ea73b5a777f1b703d4acd75538319f038a5042ebae512a97.png" />
 </div>
 </div>
 <p>The pyplot function <code class="docutils literal notranslate"><span class="pre">hist</span></code> displays a histogram of these randomly generated numbers.</p>
@@ -600,7 +600,7 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bb00fceff610d14e58f4961400c5ac457262e2e02298e80d03a7d763d1d0f585.png" src="../_images/bb00fceff610d14e58f4961400c5ac457262e2e02298e80d03a7d763d1d0f585.png" />
+<img alt="../_images/e6de76529ae2f17675cb44865dc217859488fec28b89ec44cb091f7ba376ab09.png" src="../_images/e6de76529ae2f17675cb44865dc217859488fec28b89ec44cb091f7ba376ab09.png" />
 </div>
 </div>
 </section>
@@ -674,8 +674,8 @@ The call to <code class="docutils literal notranslate"><span class="pre">rng.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.119600
-standard deviation is 0.043320
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.145600
+standard deviation is 0.038458
 actual pi is 3.141593
 </pre></div>
 </div>
@@ -703,8 +703,8 @@ we did in <a class="reference internal" href="#../module_01/03-Numerical_error">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.150280
-standard deviation is 0.043075
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.137600
+standard deviation is 0.050043
 actual pi is 3.141593
 </pre></div>
 </div>
@@ -727,8 +727,8 @@ actual pi is 3.141593
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.138360
-standard deviation is 0.016367
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value for pi = 3.137280
+standard deviation is 0.021850
 actual pi is 3.141593
 </pre></div>
 </div>
@@ -752,7 +752,7 @@ actual pi is 3.141593
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c00f052ab0089cdb8774faad7c40911e9a29a50755daf3bab37707422908eaee.png" src="../_images/c00f052ab0089cdb8774faad7c40911e9a29a50755daf3bab37707422908eaee.png" />
+<img alt="../_images/dd4fd411f5a115061809ace51c872a68503104fa54cc6a2b60f8d76c7c796d07.png" src="../_images/dd4fd411f5a115061809ace51c872a68503104fa54cc6a2b60f8d76c7c796d07.png" />
 </div>
 </div>
 </section>
@@ -852,7 +852,7 @@ to find the final position after each step is taken.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y-position (um)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/921bf4c313506c60df3495d8c92f393c27054c3f9d28127e5ad86c52d577b24c.png" src="../_images/921bf4c313506c60df3495d8c92f393c27054c3f9d28127e5ad86c52d577b24c.png" />
+<img alt="../_images/ac7fd938561b841711566dff01c776c51ee529c0dce0ba8d43e211612db9be8d.png" src="../_images/ac7fd938561b841711566dff01c776c51ee529c0dce0ba8d43e211612db9be8d.png" />
 </div>
 </div>
 <p>A curious result, even though we prescribed random motion, the final
@@ -880,10 +880,10 @@ steps each.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x725db0506200&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6682d66e30&gt;]
 </pre></div>
 </div>
-<img alt="../_images/43b6badd625137991788111c8c9a799d2d7f432eb11113f9637f5e9d96945cb1.png" src="../_images/43b6badd625137991788111c8c9a799d2d7f432eb11113f9637f5e9d96945cb1.png" />
+<img alt="../_images/efe933cf9815c9eb740f340dd6627072bbb52ea0ac3ad879c7f540632b74706f.png" src="../_images/efe933cf9815c9eb740f340dd6627072bbb52ea0ac3ad879c7f540632b74706f.png" />
 </div>
 </div>
 </section>
@@ -931,7 +931,7 @@ deviation?</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Failure load is 1.89+/- 0.22 kN&#39;)
 </pre></div>
 </div>
-<img alt="../_images/86a2ce1a51fb227b7b2f0f1628539a7c6307a07ee5ab7d6d17e97c901fa61bf7.png" src="../_images/86a2ce1a51fb227b7b2f0f1628539a7c6307a07ee5ab7d6d17e97c901fa61bf7.png" />
+<img alt="../_images/5ca3dfbbf4d438f218a60695bff890943aa7d2459fd02edd0ab925821c0b1cfa.png" src="../_images/5ca3dfbbf4d438f218a60695bff890943aa7d2459fd02edd0ab925821c0b1cfa.png" />
 </div>
 </div>
 <p>Normally, the tolerance is not a maximum/minimum specification, but
@@ -963,7 +963,7 @@ the 68% confidence interval.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Failure load is 1.88+/- 0.27 kN&#39;)
 </pre></div>
 </div>
-<img alt="../_images/3f7ae1c48ad10a05a65c400a1ddd9afda14bbf21e0d6e41451cad2fde349acac.png" src="../_images/3f7ae1c48ad10a05a65c400a1ddd9afda14bbf21e0d6e41451cad2fde349acac.png" />
+<img alt="../_images/a585cd6c5d139a47f76e438405c76adab555410be3fb440c1d5fa79502578a55.png" src="../_images/a585cd6c5d139a47f76e438405c76adab555410be3fb440c1d5fa79502578a55.png" />
 </div>
 </div>
 <p>In this propagation of uncertainty, the final value of failure load seems to be independent of wheher the distribution is uniformly random or normally distributed. In both cases, the failure load is <span class="math notranslate nohighlight">\(\approx 1.9 \pm 0.25\)</span> kN.</p>
