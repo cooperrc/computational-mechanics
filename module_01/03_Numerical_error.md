@@ -1,11 +1,11 @@
 ---
 jupytext:
-  formats: notebooks//ipynb,md:myst
+  formats: md:myst,ipynb
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.16.7
 kernelspec:
   display_name: Python 3
   language: python
@@ -59,7 +59,7 @@ Now, substitute this terminal velocity into the equation and integrate to get th
 
 $v(t)=v_{terminal}\tanh{\left(\frac{gt}{v_{terminal}}\right)}$.
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 ```
@@ -68,11 +68,11 @@ import matplotlib.pyplot as plt
 
 Calculate the terminal velocity for the given parameters, g=9.81 m/s$^2$, c=0.25 kg/m, m=60 kg.
 
-```{code-cell} ipython3
+```{code-cell}
 
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 c=0.25 
 m=60
 g=9.81 
@@ -123,7 +123,7 @@ where
 - `.2` prints 2 significant figures after the decimal
 - `f` tells `format` that the input is a floating point number to print
 
-```{code-cell} ipython3
+```{code-cell}
 for t in range(0,14,2):
     print('at time {:5.2f} s, speed is {:5.2f} m/s'.format(t,v_analytical(t,m,g,c)))
 ```
@@ -171,7 +171,7 @@ time from 0 to 12 seconds
 
 t=[0,2,4,6,8,10,12]
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 #t=np.array([0,2,4,6,8,10,12])
 # or 
@@ -180,7 +180,7 @@ t=np.linspace(0,12,7)
 
 Now, you create a `for`-loop to solve for `v_numerical` at times 2, 4, 6, 8, 10, and 12 sec. We don't need to solve for `v_numerical` at time 0 seconds because this is the initial velocity of the object. In this example, the initial velocity is v(0)=0 m/s.
 
-```{code-cell} ipython3
+```{code-cell}
 v_numerical=np.zeros(len(t));
 for i in range(1,len(t)):
     v_numerical[i]=v_numerical[i-1]+((g-c/m*v_numerical[i-1]**2))*2;
@@ -190,7 +190,7 @@ v_numerical
 
 Let's print the time, velocity (analytical) and velocity (numerical) to compare the results in a table. We'll use the `print` and `format` commands to look at the results.
 
-```{code-cell} ipython3
+```{code-cell}
 print('time (s)|vel analytical (m/s)|vel numerical (m/s)')
 print('-----------------------------------------------')
 for i in range(0,len(t)):
@@ -213,14 +213,14 @@ Let's start with method (1) to compare our analytical and computational solution
 
 Import `pyplot` and update the default plotting parameters.
 
-```{code-cell} ipython3
+```{code-cell}
 import matplotlib.pyplot as plt
 
 plt.rcParams.update({'font.size': 22})
 plt.rcParams['lines.linewidth'] = 3
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 plt.plot(t,v_analytical(t,m,g,c),'-',label='analytical')
 plt.plot(t,v_numerical,'o-',label='numerical')
 plt.legend()
@@ -238,7 +238,7 @@ If you increase the number of time steps from 0 to 12 seconds what happens to v_
 
 What happens when you decrease the number of time steps?
 
-```{code-cell} ipython3
+```{code-cell}
 
 ```
 
@@ -316,7 +316,7 @@ comes in two forms:
 
 [Consider the number $\pi$](https://www.piday.org/million/). How many digits can a floating point number in a computer accurately represent?
 
-```{code-cell} ipython3
+```{code-cell}
 pi=np.pi
 
 double=np.array([pi],dtype='float64')
@@ -349,7 +349,7 @@ by 2e-16, and so on until you reach 10e-16. If we do these calculations
 by hand, we see that each step in the for loop returns $\pi$, but due to
 floating point arithmetic errors we accumulate some error.
 
-```{code-cell} ipython3
+```{code-cell}
 double=np.array([pi],dtype='float64')
 double_operated=double
 for i in range(0,10):
@@ -379,7 +379,7 @@ We can get an idea for computational limits using some built-in functions:
 
 - `np.info('float64').eps`: the smallest number that can be added to 1
 
-```{code-cell} ipython3
+```{code-cell}
 print('realmax = %1.20e\n'%np.finfo('float64').max)
 print('realmin = %1.20e\n'%np.finfo('float64').tiny)
 print('maximum relative error = %1.20e\n'%np.finfo('float64').eps)
@@ -398,7 +398,7 @@ a. We make a `for`-loop and add $eps/2$ 1000 times in the loop
 
 b. We multiply $1000*eps/2$ and add it to the result
 
-```{code-cell} ipython3
+```{code-cell}
 s1=1;
 N=1000
 eps=np.finfo('float64').eps
@@ -479,7 +479,7 @@ Answer (0.001 s): <span style="color:white"> 2001 </span>
 
 Highlight lines above for answer.
 
-```{code-cell} ipython3
+```{code-cell}
 def freefall(N):
     '''  
     help file for freefall(N)
@@ -515,7 +515,7 @@ We can visualize how the approximation approaches the exact solution with this m
 
 First, solve for `n=2` steps, so t=[0,2]. We can time the solution to get a sense of how long the computation will take for larger values of `n`.
 
-```{code-cell} ipython3
+```{code-cell}
 %%time
 n=5
 
@@ -532,12 +532,12 @@ The block of code above assigned three variables from the function `freefall`.
 
 All three variables have the same length, so you can plot them and visually compare `v_analytical` and `v_numerical`. This is the comparison method (1) from above.
 
-```{code-cell} ipython3
+```{code-cell}
 import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 plt.plot(t,v_numerical,'o',label=str(n)+' Euler steps')
 plt.plot(t,v_analytical,label='analytical')
 plt.title('First 2 seconds of freefall')
@@ -564,7 +564,7 @@ In the next plot, you consider the relative error for the velocity at t=2 s, as 
 
 $^+$ Note: In practice, there is no reason to restrict the precision of floating point numbers. The function was written this way to highlight the effect of roundoff error without significant computational resources. You would need more timesteps to observe floating point error with 64-bit floating point numbers.
 
-```{code-cell} ipython3
+```{code-cell}
 n = np.arange(500, 100000, 500) # create an array from 10^1 to 10^3 with N values
 N = len(n)
 error = np.zeros(N, dtype = np.float32)    # initialize an N-valued array of relative errors
@@ -576,7 +576,7 @@ for i in range(0,N):
     
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 plt.loglog(n, error,'o')
 plt.xlabel('number of timesteps N')
 plt.ylabel('relative error')

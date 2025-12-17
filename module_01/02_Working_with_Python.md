@@ -1,11 +1,11 @@
 ---
 jupytext:
-  formats: notebooks//ipynb,md:myst
+  formats: md:myst,ipynb
   text_representation:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.16.7
 kernelspec:
   display_name: Python 3
   language: python
@@ -43,9 +43,9 @@ Its important to comment your code
 
 - what the is the function supposed to do, 
 
-- etc. 
+- etc.
 
-```{code-cell} ipython3
+```{code-cell}
 def code(i):
     '''Example of bad variable names and bad function name'''
     m=1
@@ -54,7 +54,7 @@ def code(i):
     return m
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 code(10)
 ```
 
@@ -105,7 +105,7 @@ display the information of a function.
 
 Try it!
 
-```{code-cell} ipython3
+```{code-cell}
 def factorial_function(input_value):
     '''Good variable names and better help documentation
      
@@ -127,7 +127,7 @@ def factorial_function(input_value):
          
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 factorial_function(4)
 ```
 
@@ -157,9 +157,7 @@ The next 4 lines define a help documentation that can be accessed with in a coup
 
 3. `help(factorial_function)`
 
-
-
-```{code-cell} ipython3
+```{code-cell}
 factorial_function?
 ```
 
@@ -242,7 +240,7 @@ Once you execute that command in a code cell, you can call any NumPy function us
 
 Follow the links to explore the documentation for these very useful NumPy functions!
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 ```
 
@@ -251,7 +249,7 @@ import numpy as np
 To create a NumPy array from an existing list of (homogeneous) numbers,
 you call **`np.array()`**, like this:
 
-```{code-cell} ipython3
+```{code-cell}
 np.array([3, 5, 8, 17])
 ```
 
@@ -261,13 +259,13 @@ in addition to this. Some of them above.
 
 Play with `np.ones()` and `np.zeros()`: they create arrays full of ones
 and zeros, respectively. You pass as an argument the number of array
-elements we want. 
+elements we want.
 
-```{code-cell} ipython3
+```{code-cell}
 np.ones(5)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 np.zeros(3)
 ```
 
@@ -280,19 +278,19 @@ Another useful one: `np.arange()` gives an array of evenly spaced values in a de
 where `start` by default is zero, `stop` is not inclusive, and the default
 for `step` is one.  Play with it!
 
-```{code-cell} ipython3
+```{code-cell}
 np.arange(4)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 np.arange(2, 6)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 np.arange(2, 6, 2)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 np.arange(2, 6, 0.5)
 ```
 
@@ -302,21 +300,21 @@ np.arange(2, 6, 0.5)
 
 `np.linspace(start, stop, num)`
 
-`stop` is included by default (it can be removed, read the docs), and `num` by default is 50. 
+`stop` is included by default (it can be removed, read the docs), and `num` by default is 50.
 
-```{code-cell} ipython3
+```{code-cell}
 np.linspace(2.0, 3.0)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 len(np.linspace(2.0, 3.0))
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 np.linspace(2.0, 3.0, 6)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 np.linspace(-1, 1, 9)
 ```
 
@@ -324,7 +322,7 @@ np.linspace(-1, 1, 9)
 
 Let's assign some arrays to variable names and perform some operations with them.
 
-```{code-cell} ipython3
+```{code-cell}
 x_array = np.linspace(-1, 1, 9)
 ```
 
@@ -332,14 +330,14 @@ Now that you've saved it with a variable name, you can do some
 computations with the array. For example, take the square of every
 element of the array, in one go:
 
-```{code-cell} ipython3
+```{code-cell}
 y_array = x_array**2
 print(y_array)
 ```
 
 You can also take the square root of a positive array, using the `np.sqrt()` function:
 
-```{code-cell} ipython3
+```{code-cell}
 z_array = np.sqrt(y_array)
 print(z_array)
 ```
@@ -347,14 +345,14 @@ print(z_array)
 Now that you have different arrays `x_array`, `y_array` and `z_array`,
 you can do more computations, like add or multiply them. For example:
 
-```{code-cell} ipython3
+```{code-cell}
 add_array = x_array + y_array 
 print(add_array)
 ```
 
 Array addition is defined element-wise, like when adding two vectors (or matrices). Array multiplication is also element-wise:
 
-```{code-cell} ipython3
+```{code-cell}
 mult_array = x_array * z_array
 print(mult_array)
 ```
@@ -363,7 +361,7 @@ You can also divide arrays, but you have to be careful not to divide by zero. Th
 
 Let's see how this might look:
 
-```{code-cell} ipython3
+```{code-cell}
 x_array / y_array
 ```
 
@@ -373,39 +371,39 @@ x_array / y_array
 
 NumPy can create arrays of N dimensions.  For example, a 2D array is like a matrix, and is created from a nested list as follows:
 
-```{code-cell} ipython3
+```{code-cell}
 array_2d = np.array([[1, 2], [3, 4]])
 print(array_2d)
 ```
 
 2D arrays can be added, subtracted, and multiplied:
 
-```{code-cell} ipython3
+```{code-cell}
 X = np.array([[1, 2], [3, 4]])
 Y = np.array([[1, -1], [0, 1]])
 ```
 
 The addition of these two matrices works exactly as you would expect:
 
-```{code-cell} ipython3
+```{code-cell}
 X + Y
 ```
 
 What if you try to multiply arrays using the `'*'`operator?
 
-```{code-cell} ipython3
+```{code-cell}
 X * Y
 ```
 
 The multiplication using the `'*'` operator is element-wise. If you want to do matrix multiplication use the `'@'` operator:
 
-```{code-cell} ipython3
+```{code-cell}
 X @ Y
 ```
 
 Or equivalently use `np.dot()`:
 
-```{code-cell} ipython3
+```{code-cell}
 np.dot(X, Y)
 ```
 
@@ -422,18 +420,18 @@ give it, i.e., the number of elements in each dimension.
 
 For example:
 
-```{code-cell} ipython3
+```{code-cell}
 a = np.arange(24)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 a_3D = np.reshape(a, (2, 3, 4))
 print(a_3D)
 ```
 
 You can check for the shape of a NumPy array using the function `np.shape()`:
 
-```{code-cell} ipython3
+```{code-cell}
 np.shape(a_3D)
 ```
 
@@ -456,16 +454,16 @@ using arrays: you cannot do this with lists.
 
 Let's access some elements of our 2D array called `X`.
 
-```{code-cell} ipython3
+```{code-cell}
 X
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 # Grab the element in the 1st row and 1st column 
 X[0, 0]
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 # Grab the element in the 1st row and 2nd column 
 X[0, 1]
 ```
@@ -481,7 +479,7 @@ From the X array:
 
 Play with slicing on this array:
 
-```{code-cell} ipython3
+```{code-cell}
 # Grab the 1st column
 X[:, 0]
 ```
@@ -491,7 +489,7 @@ symbol `':'` means "all". In the example above, you are telling NumPy
 that we want all the elements from the 0-th index in the second
 dimension (the first column).
 
-```{code-cell} ipython3
+```{code-cell}
 # Grab the 1st row
 X[0, :]
 ```
@@ -505,15 +503,15 @@ From the X array:
 
 +++
 
-Let's practice with a 3D array. 
+Let's practice with a 3D array.
 
-```{code-cell} ipython3
+```{code-cell}
 a_3D
 ```
 
 If you want to grab the first column of both matrices in our `a_3D` array, do:
 
-```{code-cell} ipython3
+```{code-cell}
 a_3D[:, :, 0]
 ```
 
@@ -523,15 +521,15 @@ The line above is telling NumPy that you want:
 * second `':'`: from the second dimension, grab all the elements (all the rows).
 * `'0'`       : from the third dimension, grab the first element (first column).
 
-If you want the first 2 elements of the first column of both matrices: 
+If you want the first 2 elements of the first column of both matrices:
 
-```{code-cell} ipython3
+```{code-cell}
 a_3D[:, 0:2, 0]
 ```
 
 Below, from the first matrix in our `a_3D` array, you will grab the two middle elements (5,6):
 
-```{code-cell} ipython3
+```{code-cell}
 a_3D[0, 1, 1:3]
 ```
 
@@ -542,7 +540,7 @@ From the array named `a_3D`:
 1. Grab the two middle elements (17, 18) from the second matrix.
 2. Grab the last row from both matrices.
 3. Grab the elements of the 1st matrix that exclude the first row and the first column. 
-4. Grab the elements of the 2nd matrix that exclude the last row and the last column. 
+4. Grab the elements of the 2nd matrix that exclude the last row and the last column.
 
 +++
 
@@ -570,17 +568,17 @@ Using the Python library
 generate two lists with 100 pseudo-random elements in the range [0,100),
 with no numbers repeated.
 
-```{code-cell} ipython3
+```{code-cell}
 #import random library
 import random
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 lst_1 = random.sample(range(100), 100)
 lst_2 = random.sample(range(100), 100)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #print first 10 elements
 print(lst_1[0:10])
 print(lst_2[0:10])
@@ -591,16 +589,16 @@ element-wise sum into a new list you call `result_lst`.
 
 For timing, you can use the IPython "magic" `%%time`. Writing at the
 beginning of the code cell the command `%%time` will give us the time it
-takes to execute all the code in that cell. 
+takes to execute all the code in that cell.
 
-```{code-cell} ipython3
+```{code-cell}
 %%time
 res_lst = []
 for i in range(100):
     res_lst.append(lst_1[i] + lst_2[i])
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 print(res_lst[0:10])
 ```
 
@@ -616,12 +614,12 @@ addition of a _list_ or an _array_ of numbers, so all that matters is
 that the arrays and the lists are of the same length and type
 (integers).
 
-```{code-cell} ipython3
+```{code-cell}
 arr_1 = np.random.randint(0, 100, size=100)
 arr_2 = np.random.randint(0, 100, size=100)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #print first 10 elements
 print(arr_1[0:10])
 print(arr_2[0:10])
@@ -629,7 +627,7 @@ print(arr_2[0:10])
 
 Now, you can use the `%%time` cell magic, again, to see how long it takes NumPy to compute the element-wise sum.
 
-```{code-cell} ipython3
+```{code-cell}
 %%time
 arr_res = arr_1 + arr_2
 ```
@@ -643,7 +641,7 @@ Notice that in the case of arrays, the code not only is more readable (just one 
 ##### Exercise
 
 1. Try the comparison between lists and arrays, using bigger arrays; for example, of size 10,000. 
-2. Repeat the analysis, but now computing the operation that raises each element of an array/list to the power two. Use arrays of 10,000 elements. 
+2. Repeat the analysis, but now computing the operation that raises each element of an array/list to the power two. Use arrays of 10,000 elements.
 
 +++
 
@@ -651,14 +649,14 @@ Notice that in the case of arrays, the code not only is more readable (just one 
 
 You will love the Python library **Matplotlib**! You'll learn here about its module `pyplot`, which makes line plots. 
 
-We need some data to plot. Let's define a NumPy array, compute derived data using its square, cube and square root (element-wise), and plot these values with the original array in the x-axis. 
+We need some data to plot. Let's define a NumPy array, compute derived data using its square, cube and square root (element-wise), and plot these values with the original array in the x-axis.
 
-```{code-cell} ipython3
+```{code-cell}
 xarray = np.linspace(0, 2, 41)
 print(xarray)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 pow2 = xarray**2
 pow3 = xarray**3
 pow_half = np.sqrt(xarray)
@@ -669,8 +667,7 @@ pow_half = np.sqrt(xarray)
 To plot the resulting arrays as a function of the orginal one (`xarray`)
 in the x-axis, you need to import the module `pyplot` from **Matplotlib**.
 
-
-```{code-cell} ipython3
+```{code-cell}
 import matplotlib.pyplot as plt
 ```
 
@@ -678,18 +675,18 @@ import matplotlib.pyplot as plt
 
 The default Matplotlib fonts and linewidths are a little small. Pixels are free, so the next two lines increase the fontsize and linewidth
 
-```{code-cell} ipython3
+```{code-cell}
 plt.rcParams.update({'font.size': 22})
 plt.rcParams['lines.linewidth'] = 3
 ```
 
-The line `%matplotlib inline` is an instruction to get the output of plotting commands displayed "inline" inside the notebook. Other options for how to deal with plot output are available, but not of interest to you right now. 
+The line `%matplotlib inline` is an instruction to get the output of plotting commands displayed "inline" inside the notebook. Other options for how to deal with plot output are available, but not of interest to you right now.
 
 +++
 
 We'll use the **pyplot** `plt.plot()` function, specifying the line color (`'k'` for black) and line style (`'-'`, `'--'` and `':'` for continuous, dashed and dotted line), and giving each line a label. Note that the values for `color`, `linestyle` and `label` are given in quotes.
 
-```{code-cell} ipython3
+```{code-cell}
 #Plot x^2
 plt.plot(xarray, pow2, color='k', linestyle='-', label='square')
 #Plot x^3
@@ -704,7 +701,7 @@ To illustrate other features, you will plot the same data, but varying the color
 
 Adding a semicolon (`';'`) to the last line in the plotting code block prevents that ugly output, like `<matplotlib.legend.Legend at 0x7f8c83cc7898>`. Try it.
 
-```{code-cell} ipython3
+```{code-cell}
 #Plot x^2
 plt.plot(xarray, pow2, color='red', linestyle='-', label='$x^2$')
 #Plot x^3
@@ -726,7 +723,7 @@ If you are curious, you can explore all the beautiful plots you can make by brow
 
 ##### Exercise:
 
-Pick two different operations to apply to the `xarray` and plot them the resulting data in the same plot. 
+Pick two different operations to apply to the `xarray` and plot them the resulting data in the same plot.
 
 +++
 

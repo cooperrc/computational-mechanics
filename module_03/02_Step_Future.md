@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.16.7
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -82,7 +82,7 @@ _Note: the direction of positive acceleration was changed to up, so that a posit
 
 ### Step through time
 
-In the code cell below, you define acceleration as a function of velocity and add two parameters `c` and `m` to define drag coefficient and mass of the object.  
+In the code cell below, you define acceleration as a function of velocity and add two parameters `c` and `m` to define drag coefficient and mass of the object.
 
 ```{code-cell} ipython3
 def a_freefall(v,c=0.25,m=60):
@@ -140,7 +140,7 @@ computed variables. Note that you use the Matplotlib
 [`subplot()`](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplot.html?highlight=matplotlib%20pyplot%20subplot#matplotlib.pyplot.subplot)
 function to get the two plots in one figure. The argument to `subplot()`
 is a set of three digits, corresponding to the number of rows, number of
-columns, and plot number in a matrix of sub-plots. 
+columns, and plot number in a matrix of sub-plots.
 
 ```{code-cell} ipython3
 # plot velocity and position over time
@@ -220,7 +220,7 @@ $\dot{\mathbf{y}} = \begin{bmatrix}
 v \\ \frac{c}{m}v^2-g
 \end{bmatrix}.$
 
-Equation (9) above represents the _state_ of the system, at any given instant in time. A code design for the numerical solution that generalizes to other changing systems (or _dynamical systems_) is to write one function that computes the right-hand side of the differential equation (the derivatives of the state variables), and another function that takes a state and applies the numerical method for each time increment. The solution is then computed in one `for` statement that calls these functions. 
+Equation (9) above represents the _state_ of the system, at any given instant in time. A code design for the numerical solution that generalizes to other changing systems (or _dynamical systems_) is to write one function that computes the right-hand side of the differential equation (the derivatives of the state variables), and another function that takes a state and applies the numerical method for each time increment. The solution is then computed in one `for` statement that calls these functions.
 
 +++
 
@@ -242,8 +242,13 @@ def freefall(state,c=0,m=60):
     derivs: array of two derivatives [v, c/m*v**2-g]
     '''
     
-    derivs = np.array([state[1], -c/m*state[1]**2*np.sign(state[1])-9.81])
+    derivs = np.array([state[1], 
+                       -c/m*state[1]**2*np.sign(state[1])-9.81])
     return derivs
+```
+
+```{code-cell} ipython3
+freefall([10, 0])
 ```
 
 ```{code-cell} ipython3
@@ -281,6 +286,10 @@ v \\ -g
 \end{bmatrix}.$
 
 ```{code-cell} ipython3
+! head ../data/projectile_coords.npz
+```
+
+```{code-cell} ipython3
 filename = '../data/fallingtennisball02.txt'
 t, y = np.loadtxt(filename, usecols=[0,1], unpack=True)
 ```
@@ -293,13 +302,15 @@ number of time steps.
 
 ```{code-cell} ipython3
 #time increment
-dt = t[1]-t[0]
+dt = (t[1]-t[0])
 ```
 
 ```{code-cell} ipython3
 y0 = y[0] #initial position
 v0 = 0    #initial velocity
 N = 576   #number of steps
+
+t_num = np.arange(0,N)*dt
 ```
 
 Now, let's create a new array, called `num_sol`, to hold the results of the numerical solution. The array has dimensions `Nx2`, with each two-element row holding the state variables, $(y,v)$, at a given time instant. After saving the initial conditions in the solution array, you are ready to start stepping in time in a `for` statement. Study the code below.
@@ -313,20 +324,22 @@ num_sol = np.zeros([N,2])
 #Set intial conditions
 num_sol[0,0] = y0
 num_sol[0,1] = v0
-eulerstep(num_sol[0],freefall,dt)
+print(freefall(num_sol[0])*dt + num_sol[0])
+print(eulerstep(num_sol[0],freefall,dt))
 ```
 
 ```{code-cell} ipython3
 for i in range(N-1):
-    num_sol[i+1] = eulerstep(num_sol[i], freefall, dt)
+    num_sol_mid = eulerstep(num_sol[i], freefall, dt/2)
+    num_sol[i+1] = eulerstep(num_sol_mid, freefall, dt/2)
 ```
 
-Did it work? Exciting! Let's plot in the same figure both the numerical solution and the experimental data. 
+Did it work? Exciting! Let's plot in the same figure both the numerical solution and the experimental data.
 
 ```{code-cell} ipython3
 fig = plt.figure(figsize=(6,4))
 plt.plot(t[:N], y[:N], 's', alpha=0.8, label='Experimental data')
-plt.plot(t[:N], num_sol[:,0], linewidth=2, linestyle='-', label='Numerical solution')
+plt.plot(t_num, num_sol[:,0], linewidth=2, linestyle='-', label='Numerical solution')
 plt.xlabel('Time (s)')
 plt.ylabel('$y$ (m)')
 plt.title('Free fall tennis ball (no air resistance) \n')
@@ -336,8 +349,12 @@ plt.legend();
 The two lines look very close… but let's plot the difference to get understand the [error](https://github.uconn.edu/rcc02007/CompMech01-Getting-started/blob/master/notebooks/03_Numerical_error.ipynb).
 
 ```{code-cell} ipython3
+dt
+```
+
+```{code-cell} ipython3
 fig = plt.figure(figsize=(6,4))
-plt.plot(t[:N], y[:N]-num_sol[:,0])
+plt.plot(t[:N], y[:N]-num_sol[:, 0])
 plt.title('Difference between numerical solution and experimental data.\n')
 plt.xlabel('Time [s]')
 plt.ylabel('$y$ [m]');
@@ -392,7 +409,7 @@ has to be in the range of $6.54$–$6.86 \rm{cm}$, and its mass in the
 range of $56.0$–$59.4 \rm{g}$. Choose a value in the middle of the range for each quantity.
 
 ```{code-cell} ipython3
-def fall_drag(state,C_d=0.47,m=0.0577,R = 0.0661/2):
+def fall_drag(state,C_d=0.51,m=0.0577,R = 0.0661/2):
     '''Computes the right-hand side of the differential equation
     for the fall of a ball, with drag, in SI units.
     
@@ -463,7 +480,7 @@ plt.plot(t[:N], y[:N]-num_sol[:,0], label='No drag')
 plt.plot(t[:N], y[:N]-num_sol_drag[:,0], label='With drag')
 plt.title('Difference between numerical solution and experimental data.\n')
 plt.xlabel('Time [s]')
-plt.ylabel('$y$ [m]')
+plt.ylabel('y = num_sol - \nexperimental height [m]')
 plt.legend();
 ```
 

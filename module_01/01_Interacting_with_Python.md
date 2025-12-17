@@ -1,13 +1,13 @@
 ---
 jupytext:
-  formats: notebooks//ipynb,md:myst
+  formats: md:myst,ipynb
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -167,7 +167,8 @@ symbols are what you would expect, except for the
 The `%` symbol is the _modulo_ operator (divide and return the remainder), and the double-slash is _floor division_.
 
 ```{code-cell} ipython3
-2 + 2
+x = 2 + 2
+print('x is super cool :) number {}'.format(x))
 ```
 
 ```{code-cell} ipython3
@@ -218,7 +219,11 @@ operations](https://twitter.com/pjmdolI/status/1155598050959745026?s=20)
 __Group 1 argued that__:
 
 ```{code-cell} ipython3
-8 / (2 * (2 + 2))
+8 / (
+    (
+        (2) * ((2) + (2))
+    )
+)
 ```
 
 __Group 2 argued that__:
