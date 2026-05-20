@@ -1,5 +1,5 @@
 # Syllabus - Computational Mechanics
-## ME 3255 Winter 2026
+## ME 3255 Summer 2026
 - **GitHub page:** [cooperrc/computational-mechanics](https://github.com/cooperrc/computational-mechanics)
 - Submitting assignments: [**HuskyCT**](https://learn.uconn.edu)
 - **JupyterHub server**: <https://nanohub.org/tools/compmech>
@@ -158,13 +158,23 @@ Scientists_ 4th edition.
 
 | Item          | Percent | Requirement                                       |
 |---------------|---------|---------------------------------------------------|
-| Participation | 30 %    | Discussion questions on GitHub+, self assessed    |
-| Homework      | 30 %    | Complete the module problem sets                  |
+| Participation | 20 %    | Discussion questions on GitHub+, self assessed    |
+| Homework      | 40 %    | Complete the module problem sets                  |
 | Projects      | 40 %    | Complete the module projects and submit to GitHub |
 
-__Participation__: The participation grade will be self-assigned. During
-week 7 you will submit your current grade and modes of participation,
-then during the final week submit an updated final grade. 
+__Participation__: The participation grade will be self-assigned.
+During the end of the course. You will submit your current grade and
+modes of participation, then during the final week submit an updated
+final grade. 
+
+## Feedback and Grades
+
+We will make every effort to provide feedback and grades within 2
+business days.  To keep track of your performance in the course, refer
+to grades in HuskyCT.  You can resubmit any assignment with
+improvements. Add a private comment to your submission when you have
+incorporated comments. 
+
 
 ## Academic Integrity: 
 - The instructors of this class have a zero-tolerance policy for academic misconduct, that
@@ -223,14 +233,6 @@ with two pieces of information:
 1. When will you turn in the assignment?
 2. How are you getting help? e.g. meeting, Teams discussion, colleague,
    etc. 
-
-## Feedback and Grades
-
-We will make every effort to provide feedback and grades within 2
-business days.  To keep track of your performance in the course, refer
-to grades in HuskyCT.  You can resubmit any assignment with
-improvements. Add a private comment to your submission when you have
-incorporated comments. 
 
 <!-- ## Student Authentication and Verification -->
 <!--  -->
